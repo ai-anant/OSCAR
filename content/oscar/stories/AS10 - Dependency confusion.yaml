@@ -1,0 +1,63 @@
+id: AS10
+type: Attack Story
+date: 2021-02
+
+summary: Dependency confusion (Alex Birsan)
+description: |
+  Researcher Alex Birsan showed that public package registries (npm, PyPI,
+  RubyGems) will often prefer a higher-version public package over an
+  internal package of the same name. By publishing placeholder packages
+  matching internal names discovered in public artifacts, he executed code
+  inside dozens of large companies. The technique already exists as T0120;
+  this story records the campaign that made it famous, which OSC&R never
+  documented as an incident.
+
+attacks:
+  - attack: Public registries
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0102
+        techName: Discover used open-source dependencies
+        tactic: Reconnaissance
+        comment: |
+          Internal package names leaked from JavaScript bundles, manifests,
+          and public GitHub.
+      - techniqueID: T0107
+        techName: Discover internal artifacts names
+        tactic: Reconnaissance
+        comment: |
+          Names of private packages were enumerated from public artifacts.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: |
+          Public packages were published with the same names and higher versions.
+      - techniqueID: T0120
+        techName: Dependency confusion
+        tactic: Initial Access
+        comment: |
+          Build systems resolved the public package instead of the internal one.
+  - attack: Victim build systems
+    index: 2
+    stage: post-supply-chain
+    customer: 1
+    supplier: 0
+    techniques:
+      - techniqueID: T0159
+        techName: Malicious artifact execution
+        tactic: Execution
+        comment: |
+          Install scripts ran in CI and on developer workstations.
+      - techniqueID: T0140
+        techName: Harvest tokens from environment variables
+        tactic: Credential Access
+        comment: |
+          Proof-of-concept callbacks demonstrated access to CI secrets.
+
+gaps: []
+
+links:
+  - https://medium.com/@alex.birsan/dependency-confusion-4a5d60fec610

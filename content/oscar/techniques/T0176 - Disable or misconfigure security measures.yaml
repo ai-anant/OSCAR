@@ -1,0 +1,46 @@
+id: T0176
+type: Technique
+
+tactic: Defense Evasion
+
+realm: 
+  - Cloud Security
+  - CI/CD Posture
+
+summary: Disable or misconfigure security measures
+
+description: |
+  Attackers disable or misconfigure security controls so that later activity is
+  not observed or blocked. In software supply chains this is more often a
+  complete disablement than a subtle misconfiguration: turning off a GitHub
+  Action required-review check, uninstalling an endpoint agent on a build
+  runner, skipping a signing gate, or emptying a security-group rule.
+  Misconfiguration (over-permissive logging, broken audit settings) remains
+  in scope as the quieter variant of the same Defense Evasion technique.
+
+mitigations: 
+  - M1530
+  - M1550
+  - M1720
+  - M1760
+  - M1761
+
+detections:
+  - D1260
+  - D1261
+  - D1262
+  - D1510
+  - D1520
+
+subTechniques:
+  - T0144
+  - T0146
+
+references: 
+  - https://www.upguard.com/blog/cloud-misconfiguration
+
+metadata: 
+    version: 0.2
+    state: draft
+
+  

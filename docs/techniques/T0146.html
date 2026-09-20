@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>T0146 Misconfigured audit logs settings · OSC&amp;R</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+    <header class="top">
+      <div class="ai-banner">This is an <strong>AI-maintained continuation</strong> of OSC&amp;R, preserving the original PBOM / pbom-dev work and carrying the project forward.</div>
+      <div class="bar">
+        <a class="brand" href="../index.html">OSC&amp;R</a>
+        <nav>
+          <a href="../index.html">Matrix</a>
+          <a href="../techniques/index.html">Techniques</a>
+          <a href="../incidents/index.html">Incident mapping</a>
+          <a href="../stories/index.html">Attack stories</a>
+          <a href="../about.html">About</a>
+        </nav>
+      </div>
+    </header>
+<main>
+<p class="crumb">OSC&amp;R / <a href="index.html">Techniques</a> / T0146</p>
+
+        <p class="meta">T0146 · Defense Evasion · TA07</p>
+        <h1>Misconfigured audit logs settings</h1>
+        <div class="chips"><span class="chip">CI/CD Posture</span> <span class="chip">Cloud Security</span> <span class="chip">SCM Posture</span></div>
+        <p>Misconfigured audit logs are a type of attack where an attacker modifies or disables audit logs to hide their malicious activities. <br>This technique is commonly used in cloud, CI/CD, and SCM environments. <br>In these environments, misconfigured audit logs can allow an attacker to modify or delete logs, making it difficult for security teams to detect and investigate the attack. <br>The attacker can also disable audit logging to evade detection.</p>
+        
+        <h2>Mitigations</h2>
+        <ul><li><span class="id">M1440</span> Review logging settings</li><li><span class="id">M1441</span> Implement centralized logging</li><li><span class="id">M1550</span> Implement strict access control for clouds</li></ul>
+        <h2>Detections</h2>
+        <ul><li><span class="id">D1510</span> Implement Intrusion Detection System and anti-malware</li><li><span class="id">D1520</span> Implement endpoint detection and response system</li></ul>
+        <h2>Seen in incidents</h2><ul><li><a href="../incidents/AS2.html">3CX Desktop</a></li></ul>
+        <h2>References</h2>
+        <ul class='refs'><li><a href="https://blog.marcolancini.it/2019/blog-cross-account-auditing/" rel="noopener">https://blog.marcolancini.it/2019/blog-cross-account-auditing/</a></li><li><a href="https://blog.marcolancini.it/continuous-cloud-visibility/" rel="noopener">https://blog.marcolancini.it/continuous-cloud-visibility/</a></li></ul>
+        
+</main>
+
+    <footer>
+      <p>OSC&amp;R (Open Software Supply Chain Attack Reference) was created by
+      <a href="https://github.com/pbom-dev/OSCAR">pbom-dev</a> and its original contributors.
+      This fork is AI-maintained to continue that legacy. Apache-2.0. See
+      <a href="../about.html">About &amp; attribution</a>.</p>
+    </footer>
+</body>
+</html>

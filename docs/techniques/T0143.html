@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>T0143 External user accounts · OSC&amp;R</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+    <header class="top">
+      <div class="ai-banner">This is an <strong>AI-maintained continuation</strong> of OSC&amp;R, preserving the original PBOM / pbom-dev work and carrying the project forward.</div>
+      <div class="bar">
+        <a class="brand" href="../index.html">OSC&amp;R</a>
+        <nav>
+          <a href="../index.html">Matrix</a>
+          <a href="../techniques/index.html">Techniques</a>
+          <a href="../incidents/index.html">Incident mapping</a>
+          <a href="../stories/index.html">Attack stories</a>
+          <a href="../about.html">About</a>
+        </nav>
+      </div>
+    </header>
+<main>
+<p class="crumb">OSC&amp;R / <a href="index.html">Techniques</a> / T0143</p>
+
+        <p class="meta">T0143 · Initial Access · TA03</p>
+        <h1>External user accounts</h1>
+        <div class="chips"><span class="chip">CI/CD Posture</span> <span class="chip">Cloud Security</span> <span class="chip">SCM Posture</span></div>
+        <p>External User Accounts attack technique in the CI/CD, SCM posture and cloud security involves compromising external user accounts to gain unauthorized access to CI/CD pipelines, source code repositories or cloud systems.<br>Attackers may gain unauthorized access to these accounts through various means, such as phishing, social engineering, or password cracking. <br>Once compromised, attackers can inject malicious code into CI/CD pipelines, tamper with deployment pipelines, manipulate source code repositories, or access cloud systems. <br>This can result in the deployment of unauthorized or malicious code to production systems, introduction of vulnerabilities or backdoors into source code, theft of intellectual property, or other malicious activities.</p>
+        
+        <h2>Mitigations</h2>
+        <ul><li><span class="id">M1450</span> Implement zero trust</li><li><span class="id">M1451</span> Use network segmentation</li><li><span class="id">M1550</span> Implement strict access control for clouds</li><li><span class="id">M1661</span> Revoke user permissions</li><li><span class="id">M1860</span> Implement strong authentication mechanisms</li><li><span class="id">M1861</span> Implement strong authorization mechanisms</li></ul>
+        <h2>Detections</h2>
+        <ul><li><span class="id">D1430</span> Monitor for failed login attempts</li><li><span class="id">D1431</span> Monitor for changes of user permissions</li><li><span class="id">D1510</span> Implement Intrusion Detection System and anti-malware</li></ul>
+        
+        <h2>References</h2>
+        <p class='muted'>None listed.</p>
+        
+</main>
+
+    <footer>
+      <p>OSC&amp;R (Open Software Supply Chain Attack Reference) was created by
+      <a href="https://github.com/pbom-dev/OSCAR">pbom-dev</a> and its original contributors.
+      This fork is AI-maintained to continue that legacy. Apache-2.0. See
+      <a href="../about.html">About &amp; attribution</a>.</p>
+    </footer>
+</body>
+</html>

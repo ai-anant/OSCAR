@@ -1,0 +1,37 @@
+id: T0203
+type: Technique
+
+tactic: Reconnaissance
+
+realm:
+  - CI/CD Posture
+  - Open Source Security
+  - SCM Posture
+  - Artifact Security
+
+summary: Discover localized out-of-band deployments
+
+description: |
+  Attackers look for evidence of an out-of-band or "localized" deployment
+  path they can hijack — a `package.json` script that SSHes to production,
+  a Makefile target that publishes without the main pipeline, a leftover
+  `deploy.sh`, or a personal access token used by a developer laptop.
+  These paths are rarely covered by the same reviews, SBOMs, or admission
+  controls as the official CI/CD system, which makes them high-value
+  reconnaissance targets.
+
+mitigations:
+  - M1503
+  - M1720
+  - M1220
+
+detections:
+  - D1500
+  - D1510
+
+references:
+  - https://owasp.org/www-project-top-10-ci-cd-security-risks/
+
+metadata:
+  version: 0.1
+  state: draft

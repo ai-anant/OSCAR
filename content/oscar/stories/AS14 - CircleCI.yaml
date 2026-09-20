@@ -1,0 +1,65 @@
+id: AS14
+type: Attack Story
+date: 2023-01
+
+summary: CircleCI December 2022 / January 2023 incident
+description: |
+  CircleCI disclosed that an attacker used malware on a CircleCI employee's
+  laptop, bypassed 2FA, and accessed production systems. Session cookies and
+  customer secrets stored in CircleCI (environment variables, contexts)
+  were at risk; customers were told to rotate all secrets. OSC&R already
+  had T0165 (Create access token) written against this incident; the story
+  itself was never added.
+
+attacks:
+  - attack: CircleCI
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0153
+        techName: Compromised developer workstation
+        tactic: Initial Access
+        comment: |
+          Malware on an employee workstation was the reported initial access.
+      - techniqueID: T0112
+        techName: Compromised token
+        tactic: Initial Access
+        comment: |
+          Session cookies / tokens were reused to access production despite 2FA.
+      - techniqueID: T0165
+        techName: Create access token
+        tactic: Persistence
+        comment: |
+          After a 2FA-backed session was obtained, durable access tokens
+          could be minted — the exact pattern T0165 describes.
+      - techniqueID: T0130
+        techName: Harvest secrets from logs
+        tactic: Credential Access
+        comment: |
+          Customer CI secrets held by the platform were in the blast radius.
+  - attack: CircleCI customers
+    index: 2
+    stage: post-supply-chain
+    customer: 1
+    supplier: 0
+    techniques:
+      - techniqueID: T0199
+        techName: Secret leak
+        tactic: Impact
+        comment: |
+          Customers had to assume project secrets, context variables, and
+          OIDC-adjacent credentials were exposed and rotate them.
+      - techniqueID: T0201
+        techName: Customers compromised
+        tactic: Impact
+        comment: |
+          Anyone who did not rotate in time faced follow-on use of their
+          cloud and source-control credentials.
+
+gaps: []
+
+links:
+  - https://circleci.com/blog/jan-4-2023-incident-report/
+  - https://circleci.com/blog/january-4-2023-security-alert/

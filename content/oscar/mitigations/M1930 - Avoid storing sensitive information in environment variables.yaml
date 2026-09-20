@@ -1,5 +1,5 @@
 id: M1930
-type: Detection
+type: Mitigation
 summary: Avoid storing sensitive information in environment variables
 description: |
   Avoid storing sensitive information in environment variables wherever possible.

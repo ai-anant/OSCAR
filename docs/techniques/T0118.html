@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>T0118 Command injection · OSC&amp;R</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+    <header class="top">
+      <div class="ai-banner">This is an <strong>AI-maintained continuation</strong> of OSC&amp;R, preserving the original PBOM / pbom-dev work and carrying the project forward.</div>
+      <div class="bar">
+        <a class="brand" href="../index.html">OSC&amp;R</a>
+        <nav>
+          <a href="../index.html">Matrix</a>
+          <a href="../techniques/index.html">Techniques</a>
+          <a href="../incidents/index.html">Incident mapping</a>
+          <a href="../stories/index.html">Attack stories</a>
+          <a href="../about.html">About</a>
+        </nav>
+      </div>
+    </header>
+<main>
+<p class="crumb">OSC&amp;R / <a href="index.html">Techniques</a> / T0118</p>
+
+        <p class="meta">T0118 · Execution · TA04</p>
+        <h1>Command injection</h1>
+        <div class="chips"><span class="chip">Code Security</span></div>
+        <p>OS command injection is a web security vulnerability that allows an attacker to execute arbitrary operating system commands on the server that is running an application.<br>Command injection attacks are possible when an application passes unsafe user supplied data (forms, cookies, HTTP headers etc.) to a system shell. <br>In this attack, the attacker-supplied operating system commands are usually executed with the privileges of the vulnerable application. <br>Command injection attacks are possible largely due to insufficient input validation</p>
+        
+        <h2>Mitigations</h2>
+        <ul><li><span class="id">M1180</span> Avoid calling OS commands directly</li><li><span class="id">M1181</span> Use parametrization with input validation</li><li><span class="id">M1182</span> Implement least privilege</li><li><span class="id">M1720</span> Implement regular patches and updates</li></ul>
+        <h2>Detections</h2>
+        <ul><li><span class="id">D1170</span> Configure application audit logs to detect injection attacks</li><li><span class="id">D1171</span> Implement Web Application Firewall</li></ul>
+        <h2>Seen in incidents</h2><ul><li><a href="../incidents/AS3.html">Codecov Breach</a></li></ul>
+        <h2>References</h2>
+        <ul class='refs'><li><a href="https://owasp.org/www-community/attacks/Command_Injection" rel="noopener">https://owasp.org/www-community/attacks/Command_Injection</a></li><li><a href="https://portswigger.net/web-security/os-command-injection" rel="noopener">https://portswigger.net/web-security/os-command-injection</a></li></ul>
+        
+</main>
+
+    <footer>
+      <p>OSC&amp;R (Open Software Supply Chain Attack Reference) was created by
+      <a href="https://github.com/pbom-dev/OSCAR">pbom-dev</a> and its original contributors.
+      This fork is AI-maintained to continue that legacy. Apache-2.0. See
+      <a href="../about.html">About &amp; attribution</a>.</p>
+    </footer>
+</body>
+</html>

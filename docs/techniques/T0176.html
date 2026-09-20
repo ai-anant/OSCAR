@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>T0176 Disable or misconfigure security measures · OSC&amp;R</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+    <header class="top">
+      <div class="ai-banner">This is an <strong>AI-maintained continuation</strong> of OSC&amp;R, preserving the original PBOM / pbom-dev work and carrying the project forward.</div>
+      <div class="bar">
+        <a class="brand" href="../index.html">OSC&amp;R</a>
+        <nav>
+          <a href="../index.html">Matrix</a>
+          <a href="../techniques/index.html">Techniques</a>
+          <a href="../incidents/index.html">Incident mapping</a>
+          <a href="../stories/index.html">Attack stories</a>
+          <a href="../about.html">About</a>
+        </nav>
+      </div>
+    </header>
+<main>
+<p class="crumb">OSC&amp;R / <a href="index.html">Techniques</a> / T0176</p>
+
+        <p class="meta">T0176 · Defense Evasion · TA07</p>
+        <h1>Disable or misconfigure security measures</h1>
+        <div class="chips"><span class="chip">Cloud Security</span> <span class="chip">CI/CD Posture</span></div>
+        <p>Attackers disable or misconfigure security controls so that later activity is<br>not observed or blocked. In software supply chains this is more often a<br>complete disablement than a subtle misconfiguration: turning off a GitHub<br>Action required-review check, uninstalling an endpoint agent on a build<br>runner, skipping a signing gate, or emptying a security-group rule.<br>Misconfiguration (over-permissive logging, broken audit settings) remains<br>in scope as the quieter variant of the same Defense Evasion technique.</p>
+        <h2>Sub-techniques</h2><ul><li><a href="T0144.html">T0144</a> Misconfigured traffic log settings</li><li><a href="T0146.html">T0146</a> Misconfigured audit logs settings</li></ul>
+        <h2>Mitigations</h2>
+        <ul><li><span class="id">M1530</span> Use multi-factor authentication</li><li><span class="id">M1550</span> Implement strict access control for clouds</li><li><span class="id">M1720</span> Implement regular patches and updates</li><li><span class="id">M1760</span> Regularly review and update security configurations</li><li><span class="id">M1761</span> Implement automated security tools</li></ul>
+        <h2>Detections</h2>
+        <ul><li><span class="id">D1260</span> Implement regular security audit and review</li><li><span class="id">D1261</span> Implement penetration testing</li><li><span class="id">D1262</span> Implement vulnerability assessment</li><li><span class="id">D1510</span> Implement Intrusion Detection System and anti-malware</li><li><span class="id">D1520</span> Implement endpoint detection and response system</li></ul>
+        <h2>Seen in incidents</h2><ul><li><a href="../incidents/AS5.html">CCleaner</a></li><li><a href="../incidents/AS2.html">3CX Desktop</a></li></ul>
+        <h2>References</h2>
+        <ul class='refs'><li><a href="https://www.upguard.com/blog/cloud-misconfiguration" rel="noopener">https://www.upguard.com/blog/cloud-misconfiguration</a></li></ul>
+        
+</main>
+
+    <footer>
+      <p>OSC&amp;R (Open Software Supply Chain Attack Reference) was created by
+      <a href="https://github.com/pbom-dev/OSCAR">pbom-dev</a> and its original contributors.
+      This fork is AI-maintained to continue that legacy. Apache-2.0. See
+      <a href="../about.html">About &amp; attribution</a>.</p>
+    </footer>
+</body>
+</html>

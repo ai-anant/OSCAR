@@ -1,0 +1,60 @@
+id: AS13
+type: Attack Story
+date: 2024-12
+
+summary: Ultralytics PyPI compromise
+description: |
+  In December 2024 versions of the Ultralytics Python package on PyPI were
+  observed shipping a cryptominer. Investigation pointed at a compromised
+  GitHub Actions workflow used to publish to PyPI, not at a direct PyPI
+  account password theft. The incident sits at the intersection of T0122
+  (third-party / CI action abuse), T0109 (malicious artifact), and T0139
+  (resource hijacking), and shows that "who can publish the package" is
+  often the CI identity.
+
+attacks:
+  - attack: Ultralytics CI publish path
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0122
+        techName: Vulnerability in third-party CI/CD actions
+        tactic: Initial Access
+        comment: |
+          A GitHub Actions publishing workflow was the likely injection point
+          for the malicious release.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: |
+          Poisoned versions were uploaded to PyPI under the real project name.
+      - techniqueID: T0198
+        techName: Malicious Build Time Dependencies
+        tactic: Defense Evasion
+        comment: |
+          The miner was introduced around the build/publish step rather than
+          as an obvious source-tree commit reviewers would catch.
+  - attack: PyPI consumers
+    index: 2
+    stage: post-supply-chain
+    customer: 1
+    supplier: 0
+    techniques:
+      - techniqueID: T0159
+        techName: Malicious artifact execution
+        tactic: Execution
+        comment: |
+          `pip install ultralytics` of the affected versions ran the miner.
+      - techniqueID: T0139
+        techName: Resource hijacking
+        tactic: Impact
+        comment: |
+          CPU/GPU of installing hosts was used for cryptocurrency mining.
+
+gaps: []
+
+links:
+  - https://github.com/ultralytics/ultralytics/issues/18027
+  - https://www.stepsecurity.io/blog/crypto-mining-campaign-targets-ultralytics-pypi-package

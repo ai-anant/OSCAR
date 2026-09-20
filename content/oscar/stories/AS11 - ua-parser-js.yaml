@@ -1,0 +1,59 @@
+id: AS11
+type: Attack Story
+date: 2021-10
+
+summary: ua-parser-js npm account takeover
+description: |
+  In October 2021 the npm account of the ua-parser-js maintainer was
+  compromised. Three versions of the widely used user-agent parser were
+  published with malware that installed a cryptominer and a password
+  stealer (depending on OS). GitHub/npm yanked the versions within hours.
+  This is account-takeover → malicious publish, a pattern repeated in later
+  npm incidents (Qix/chalk, 2025).
+
+attacks:
+  - attack: ua-parser-js on npm
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0113
+        techName: Compromised user account
+        tactic: Initial Access
+        comment: |
+          The maintainer npm account was taken over; MFA on publishing was not
+          in place at the time.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: |
+          Versions 0.7.29, 0.8.0, and 1.0.0 were published with a preinstall payload.
+      - techniqueID: T0121
+        techName: Compromised legitimate artifact
+        tactic: Resource Development
+        comment: |
+          Consumers pulling the same well-known package name received malware.
+  - attack: Downstream applications
+    index: 2
+    stage: post-supply-chain
+    customer: 1
+    supplier: 0
+    techniques:
+      - techniqueID: T0151
+        techName: Installation scripts
+        tactic: Execution
+        comment: |
+          A preinstall script fetched and ran OS-specific binaries.
+      - techniqueID: T0139
+        techName: Resource hijacking
+        tactic: Impact
+        comment: |
+          Linux/macOS victims ran a cryptominer; Windows victims received a stealer.
+
+gaps:
+  - Registry-enforced 2FA for high-impact maintainers is a mitigation (M1530) that this incident showed was not universally applied.
+
+links:
+  - https://github.com/advisories/GHSA-pjwm-rvh2-c87w
+  - https://blog.github.com/changelog/2021-10-22-npm-security-update-ua-parser-js/

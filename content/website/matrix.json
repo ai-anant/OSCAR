@@ -1,1025 +1,1251 @@
 {
-    "Initial Access": {
-        "items": [
-            {
-                "tags": [
-                    "ArtifactSecurity",
-                    "CI/CDPosture",
-                    "SCMPosture"
-                ],
-                "name": "Services(Servers) compromise",
-                "tooltip": "Services(Servers) compromise",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "ArtifactSecurity",
-                    "CI/CDPosture",
-                    "Infrastructureascode",
-                    "SCMPosture",
-                    "SecretsHygiene"
-                ],
-                "name": "Compromised token",
-                "tooltip": "Compromised token",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "CI/CDPosture",
-                    "ContainerSecurity",
-                    "Infrastructureascode",
-                    "OpenSourceSecurity"
-                ],
-                "name": "Vulnerability in third-party dependency",
-                "tooltip": "Vulnerability in third-party dependency",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "ContainerSecurity",
-                    "OpenSourceSecurity"
-                ],
-                "name": "Combosquatting",
-                "tooltip": "Combosquatting",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "CloudSecurity",
-                    "Infrastructureascode"
-                ],
-                "name": "Exposed internal API",
-                "tooltip": "Exposed internal API",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "CodeSecurity",
-                    "SCMPosture"
-                ],
-                "name": "Compromised developer workstation",
-                "tooltip": "Compromised developer workstation",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "ContainerSecurity",
-                    "OpenSourceSecurity"
-                ],
-                "name": "Brandjacking",
-                "tooltip": "Brandjacking",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "CloudSecurity",
-                    "CodeSecurity",
-                    "Infrastructureascode"
-                ],
-                "name": "Weak authentication methods",
-                "tooltip": "Weak authentication methods",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "Infrastructureascode"
-                ],
-                "name": "Malicious module injection",
-                "tooltip": "Malicious module injection",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "CI/CDPosture",
-                    "OpenSourceSecurity"
-                ],
-                "name": "Vulnerable CICD template",
-                "tooltip": "Vulnerable CICD template",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "ArtifactSecurity",
-                    "CloudSecurity",
-                    "Infrastructureascode",
-                    "SCMPosture"
-                ],
-                "name": "Compromised service account",
-                "tooltip": "Compromised service account",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "ArtifactSecurity",
-                    "CloudSecurity",
-                    "Infrastructureascode",
-                    "SCMPosture"
-                ],
-                "name": "Compromised user account",
-                "tooltip": "Compromised user account",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "CI/CDPosture"
-                ],
-                "name": "Vulnerable CICD plugins",
-                "tooltip": "Vulnerable CICD plugins",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "CI/CDPosture"
-                ],
-                "name": "Exposed WebHook",
-                "tooltip": "Exposed WebHook",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "CI/CDPosture"
-                ],
-                "name": "Vulnerable CICD system",
-                "tooltip": "Vulnerable CICD system",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "CI/CDPosture",
-                    "CloudSecurity",
-                    "SCMPosture"
-                ],
-                "name": "External user accounts",
-                "tooltip": "External user accounts",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "ContainerSecurity",
-                    "OpenSourceSecurity"
-                ],
-                "name": "Repojacking",
-                "tooltip": "Repojacking",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "CloudSecurity",
-                    "Infrastructureascode"
-                ],
-                "name": "Exposed database",
-                "tooltip": "Exposed database",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "CloudSecurity",
-                    "Infrastructureascode"
-                ],
-                "name": "Permissive network access",
-                "tooltip": "Permissive network access",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "OpenSourceSecurity"
-                ],
-                "name": "Malicious IDE extension",
-                "tooltip": "Malicious IDE extension",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "ContainerSecurity",
-                    "OpenSourceSecurity"
-                ],
-                "name": "Typosquatting",
-                "tooltip": "Typosquatting",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "CloudSecurity",
-                    "Infrastructureascode"
-                ],
-                "name": "Exposed storage",
-                "tooltip": "Exposed storage",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "ArtifactSecurity",
-                    "CI/CDPosture",
-                    "CloudSecurity",
-                    "ContainerSecurity",
-                    "OpenSourceSecurity",
-                    "SCMPosture",
-                    "SecretsHygiene"
-                ],
-                "name": "Shadow IT",
-                "tooltip": "Shadow IT",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            }
+  "Reconnaissance": {
+    "items": [
+      {
+        "id": "T0100",
+        "name": "Discover naming conventions",
+        "tooltip": "Discover naming conventions",
+        "tags": [
+          "Container Security",
+          "Open Source Security",
+          "SCM Posture"
         ],
-        "amount": 0,
-        "tootlip": "Initial Access"
-    },
-    "Reconnaissance": {
-        "items": [
-            {
-                "tags": [
-                    "ContainerSecurity",
-                    "OpenSourceSecurity",
-                    "SCMPosture"
-                ],
-                "name": "Discover naming conventions",
-                "tooltip": "Discover naming conventions",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "ContainerSecurity",
-                    "OpenSourceSecurity",
-                    "SCMPosture"
-                ],
-                "name": "Discover technology stacks",
-                "tooltip": "Discover technology stacks",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "CodeSecurity",
-                    "SCMPosture"
-                ],
-                "name": "Discover coding flaws",
-                "tooltip": "Discover coding flaws",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "CI/CDPosture",
-                    "CloudSecurity"
-                ],
-                "name": "Scan configuration on public resources",
-                "tooltip": "Scan configuration on public resources",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "CI/CDPosture"
-                ],
-                "name": "Scan public CICD configurations for secrets and vulnerable actions",
-                "tooltip": "Scan public CICD configurations for secrets and vulnerable actions",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "ContainerSecurity",
-                    "SCMPosture",
-                    "SecretsHygiene"
-                ],
-                "name": "Scan public artifacts for secrets",
-                "tooltip": "Scan public artifacts for secrets",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "ContainerSecurity",
-                    "SCMPosture"
-                ],
-                "name": "Discover internal artifacts names",
-                "tooltip": "Discover internal artifacts names",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "CloudSecurity"
-                ],
-                "name": "Accidental public disclosure of internal resources",
-                "tooltip": "Accidental public disclosure of internal resources",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "CloudSecurity"
-                ],
-                "name": "Active scanning",
-                "tooltip": "Active scanning",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "ContainerSecurity",
-                    "OpenSourceSecurity",
-                    "SCMPosture"
-                ],
-                "name": "Discover used open-source dependencies",
-                "tooltip": "Discover used open-source dependencies",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            }
+        "url": "techniques/T0100.html",
+        "description": "This technique involves analyzing the naming conventions used in container images, source code repositories, and other related artifacts.\nBy examining the naming conventions, an attacker can gain insights into the technologies and frameworks used in the application, as well as potentially identifying weak spots or vulnerabilities that can be exploited.\nFor example, an attacker might use this technique to identify the specific version of a library or software component used in an application, which could then be cross-referenced with known vulnerabilities to determine if the application is at risk.\nAlternatively, an attacker might analyze naming conventions to determine the structure and organization of a codebase, which could aid in future attacks.\n"
+      },
+      {
+        "id": "T0101",
+        "name": "Discover technology stacks",
+        "tooltip": "Discover technology stacks",
+        "tags": [
+          "Container Security",
+          "Open Source Security",
+          "SCM Posture"
         ],
-        "amount": 0,
-        "tootlip": "Reconnaissance"
-    },
-    "Persistence": {
-        "items": [
-            {
-                "tags": [
-                    "CI/CDPosture"
-                ],
-                "name": "Recursive PR",
-                "tooltip": "Recursive PR",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "CI/CDPosture"
-                ],
-                "name": "Scheduled TaskJob on self hosted runner",
-                "tooltip": "Scheduled TaskJob on self hosted runner",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "SCMPosture"
-                ],
-                "name": "Deploy keys",
-                "tooltip": "Deploy keys",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "Artifact Security",
-                    "CI/CD Posture",
-                    "Cloud Security",
-                    "SCM Posture"
-                ],
-                "name": "Create access token",
-                "tooltip": "Create access token",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "CodeSecurity",
-                    "OpenSourceSecurity",
-                    "SCMPosture"
-                ],
-                "name": "Backdoor in code",
-                "tooltip": "Backdoor in code",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "CloudSecurity"
-                ],
-                "name": "Untagged resources",
-                "tooltip": "Untagged resources",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "CloudSecurity"
-                ],
-                "name": "Implant in zombie instance",
-                "tooltip": "Implant in zombie instance",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "CI/CDPosture",
-                    "SCMPosture"
-                ],
-                "name": "Add user",
-                "tooltip": "Add user",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            }
+        "url": "techniques/T0101.html",
+        "description": "This technique involves analyzing the technology stacks used in an application, such as programming languages, frameworks, libraries, and other related technologies.\nBy identifying the specific technology stack used in an application, an attacker can gain insights into the potential vulnerabilities associated with that technology, as well as potential attack vectors and weak spots in the application.\nFor example, an attacker might use this technique to identify specific versions of a library or software component used in an application, which could then be cross-referenced with known vulnerabilities to determine if the application is at risk.\nAlternatively, an attacker might analyze the technology stack to determine the overall architecture of the application and identify potential attack vectors or weak spots.\n"
+      },
+      {
+        "id": "T0102",
+        "name": "Discover used open-source dependencies",
+        "tooltip": "Discover used open-source dependencies",
+        "tags": [
+          "Container Security",
+          "Open Source Security",
+          "SCM Posture"
         ],
-        "amount": 0,
-        "tootlip": "Persistence"
-    },
-    "Defense Evasion": {
-        "items": [
-            {
-                "tags": [
-                    "CloudSecurity"
-                ],
-                "name": "Misconfigured traffic log settings",
-                "tooltip": "Misconfigured traffic log settings",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "CI/CDPosture",
-                    "SCMPosture"
-                ],
-                "name": "Bypass Review using admin permission",
-                "tooltip": "Bypass Review using admin permission",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "CloudSecurity"
-                ],
-                "name": "SaaS sprawl",
-                "tooltip": "SaaS sprawl",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "CloudSecurity"
-                ],
-                "name": "Misconfiguration of security measures",
-                "tooltip": "Misconfiguration of security measures",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "CI/CDPosture",
-                    "CloudSecurity",
-                    "SCMPosture"
-                ],
-                "name": "Misconfigured audit logs settings",
-                "tooltip": "Misconfigured audit logs settings",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "CloudSecurity",
-                    "ContainerSecurity"
-                ],
-                "name": "Malicious CompilerInterpreter",
-                "tooltip": "Malicious CompilerInterpreter",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            }
+        "url": "techniques/T0102.html",
+        "description": "This technique involves identifying the open-source dependencies used in an application, such as third-party libraries, frameworks, and other related components.\nBy identifying the specific open-source dependencies used in an application, an attacker can gain insights into the potential vulnerabilities associated with those components, as well as potential attack vectors and weak spots in the application.\nFor example, an attacker might use this technique to identify specific versions of a vulnerable open-source library used in an application, which could then be exploited to gain unauthorized access to the application or the underlying system.\n"
+      },
+      {
+        "id": "T0103",
+        "name": "Scan public artifacts for secrets",
+        "tooltip": "Scan public artifacts for secrets",
+        "tags": [
+          "Container Security",
+          "SCM Posture",
+          "Secrets Hygiene"
         ],
-        "amount": 0,
-        "tootlip": "Defense Evasion"
-    },
-    "Resource Development": {
-        "items": [
-            {
-                "tags": [
-                    "OpenSourceSecurity"
-                ],
-                "name": "Forge developer reputation",
-                "tooltip": "Forge developer reputation",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "ContainerSecurity",
-                    "OpenSourceSecurity"
-                ],
-                "name": "Malicious code contribution to an open-source repository",
-                "tooltip": "Malicious code contribution to an open-source repository",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "ContainerSecurity",
-                    "OpenSourceSecurity"
-                ],
-                "name": "Compromised legitimate artifact",
-                "tooltip": "Compromised legitimate artifact",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "ContainerSecurity",
-                    "OpenSourceSecurity"
-                ],
-                "name": "Advertise malicious artifact",
-                "tooltip": "Advertise malicious artifact",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "ContainerSecurity",
-                    "OpenSourceSecurity"
-                ],
-                "name": "Publish malicious artifact",
-                "tooltip": "Publish malicious artifact",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "OpenSourceSecurity",
-                    "SCMPosture"
-                ],
-                "name": "Accounts in public registry",
-                "tooltip": "Accounts in public registry",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            }
+        "url": "techniques/T0103.html",
+        "description": "This technique involves scanning publicly available artifacts, such as code repositories and container images, for sensitive information such as passwords, access keys, and other secrets.\nBy scanning these artifacts, an attacker can gain unauthorized access to the application or underlying system and potentially cause significant damage.\nFor example, an attacker might use this technique to scan a public code repository for hardcoded passwords or access keys, which could then be used to gain unauthorized access to the application or the underlying system.\nAlternatively, an attacker might scan a public container image for sensitive information such as database credentials, which could be used to gain access to sensitive data.\n"
+      },
+      {
+        "id": "T0104",
+        "name": "Discover coding flaws",
+        "tooltip": "Discover coding flaws",
+        "tags": [
+          "Code Security",
+          "SCM Posture"
         ],
-        "amount": 0,
-        "tootlip": "Resource Development"
-    },
-    "Credential Access": {
-        "items": [
-            {
-                "tags": [
-                    "CI/CDPosture",
-                    "CloudSecurity",
-                    "ContainerSecurity",
-                    "Infrastructureascode",
-                    "SecretsHygiene"
-                ],
-                "name": "Dump tokens from the environment variable",
-                "tooltip": "Dump tokens from the environment variable",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "CI/CDPosture",
-                    "SecretsHygiene"
-                ],
-                "name": "Passwords in CICD logs",
-                "tooltip": "Passwords in CICD logs",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "CI/CDPosture",
-                    "Infrastructureascode"
-                ],
-                "name": "Dumping short-lived token",
-                "tooltip": "Dumping short-lived token",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "CloudSecurity",
-                    "ContainerSecurity",
-                    "SecretsHygiene"
-                ],
-                "name": "Passwords in application logs",
-                "tooltip": "Passwords in application logs",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "CI/CDPosture",
-                    "SecretsHygiene"
-                ],
-                "name": "Harvest secrets from logs",
-                "tooltip": "Harvest secrets from logs",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "ArtifactSecurity"
-                ],
-                "name": "Steal credentials in container artifacts",
-                "tooltip": "Steal credentials in container artifacts",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "CodeSecurity",
-                    "ContainerSecurity",
-                    "OpenSourceSecurity"
-                ],
-                "name": "Runtime leakage of password",
-                "tooltip": "Runtime leakage of password",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "CI/CDPosture",
-                    "Infrastructureascode"
-                ],
-                "name": "Dumping credentials from files",
-                "tooltip": "Dumping credentials from files",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            }
+        "url": "techniques/T0104.html",
+        "description": "This technique involves identifying coding flaws in an application's codebase, including vulnerabilities such as buffer overflows, race conditions, injection flaws, and other software bugs that can be exploited by attackers to gain unauthorized access or cause system disruption.\nAn attacker can use this technique to gain insight into potential weaknesses in the application's codebase and identify attack vectors that can be exploited in future attacks.\nBy discovering coding flaws in an application, an attacker can develop a better understanding of the application's architecture and potential vulnerabilities.\n"
+      },
+      {
+        "id": "T0105",
+        "name": "Active scanning",
+        "tooltip": "Active scanning",
+        "tags": [
+          "Cloud Security"
         ],
-        "amount": 0,
-        "tootlip": "Credential Access"
-    },
-    "Execution": {
-        "items": [
-            {
-                "tags": [
-                    "CodeSecurity"
-                ],
-                "name": "SQL injection",
-                "tooltip": "SQL injection",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "CloudSecurity"
-                ],
-                "name": "Installation scripts",
-                "tooltip": "Installation scripts",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "CodeSecurity"
-                ],
-                "name": "Cross-site scripting",
-                "tooltip": "Cross-site scripting",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "ArtifactSecurity",
-                    "OpenSourceSecurity"
-                ],
-                "name": "Malicious artifact execution",
-                "tooltip": "Malicious artifact execution",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "OpenSourceSecurity"
-                ],
-                "name": "IDE",
-                "tooltip": "IDE",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "OpenSourceSecurity"
-                ],
-                "name": "Package Manager",
-                "tooltip": "Package Manager",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "CodeSecurity",
-                    "ContainerSecurity",
-                    "OpenSourceSecurity"
-                ],
-                "name": "Runtime Backdoor",
-                "tooltip": "Runtime Backdoor",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "CloudSecurity"
-                ],
-                "name": "Cloud workload",
-                "tooltip": "Cloud workload",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "SCMPosture"
-                ],
-                "name": "Auto merge rules in SCM",
-                "tooltip": "Auto merge rules in SCM",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "CodeSecurity"
-                ],
-                "name": "Command injection",
-                "tooltip": "Command injection",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "CodeSecurity",
-                    "ContainerSecurity",
-                    "OpenSourceSecurity"
-                ],
-                "name": "Runtime logic bomb",
-                "tooltip": "Runtime logic bomb",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "ArtifactSecurity",
-                    "ContainerSecurity",
-                    "OpenSourceSecurity"
-                ],
-                "name": "Dependency confusion",
-                "tooltip": "Dependency confusion",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "CI/CDPosture",
-                    "SCMPosture"
-                ],
-                "name": "Trigger pipeline execution",
-                "tooltip": "Trigger pipeline execution",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            }
+        "url": "techniques/T0105.html",
+        "description": "This technique involves actively scanning an organization's cloud infrastructure for vulnerabilities and misconfigurations that can be exploited by attackers to gain unauthorized access or cause system disruption.\nAn attacker can use this technique to identify vulnerable assets within an organization's cloud infrastructure and develop an understanding of the target's attack surface.\nBy conducting active scanning, an attacker can gather information about an organization's network topology, application architecture, and security controls, and use this information to plan and execute more effective attacks.\n"
+      },
+      {
+        "id": "T0106",
+        "name": "Scan configuration on public resources",
+        "tooltip": "Scan configuration on public resources",
+        "tags": [
+          "CI/CD Posture",
+          "Cloud Security"
         ],
-        "amount": 0,
-        "tootlip": "Execution"
-    },
-    "Collection": {
-        "items": [
-            {
-                "tags": [
-                    "CloudSecurity",
-                    "Infrastructureascode"
-                ],
-                "name": "Unencrypted data at transit",
-                "tooltip": "Unencrypted data at transit",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "CloudSecurity",
-                    "Infrastructureascode"
-                ],
-                "name": "Unencrypted data at rest",
-                "tooltip": "Unencrypted data at rest",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            }
+        "url": "techniques/T0106.html",
+        "description": "This technique involves scanning the configuration of public cloud resources and CI/CD pipelines for misconfigurations and vulnerabilities that can be exploited by attackers to gain unauthorized access or cause system disruption.\nAn attacker can use this technique to identify configuration weaknesses in an organization's cloud infrastructure and CI/CD pipelines, including weak authentication mechanisms, misconfigured security groups, and unsecured storage buckets.\nBy scanning the configuration of public resources, an attacker can develop an understanding of the target's attack surface and identify vulnerabilities that can be exploited in future attacks.\n"
+      },
+      {
+        "id": "T0107",
+        "name": "Discover internal artifacts names",
+        "tooltip": "Discover internal artifacts names",
+        "tags": [
+          "Container Security",
+          "SCM Posture"
         ],
-        "amount": 0,
-        "tootlip": "Collection"
-    },
-    "Lateral Movement": {
-        "items": [
-            {
-                "tags": [
-                    "ArtifactSecurity",
-                    "CI/CDPosture",
-                    "CloudSecurity",
-                    "SCMPosture"
-                ],
-                "name": "Overprivileged user account",
-                "tooltip": "Overprivileged user account",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "CodeSecurity",
-                    "SCMPosture"
-                ],
-                "name": "Push implants across repositories",
-                "tooltip": "Push implants across repositories",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            }
+        "url": "techniques/T0107.html",
+        "description": "This technique involves searching for internal artifact names used in an organization's container images and SCM repositories. \nInternal artifact names may include names of applications, libraries, and components used in the organization's container images or code repositories.\nAn attacker can use this technique to identify the types of technologies and software components used by an organization, which can help them to identify potential vulnerabilities and attack vectors.\nBy discovering internal artifact names, an attacker can also gain insight into the organization's software development practices, and potentially identify development teams or individuals that are responsible for creating and maintaining specific applications or components.\n"
+      },
+      {
+        "id": "T0142",
+        "name": "Accidental public disclosure of internal resources",
+        "tooltip": "Accidental public disclosure of internal resources",
+        "tags": [
+          "Cloud Security"
         ],
-        "amount": 0,
-        "tootlip": "Lateral Movement"
-    },
-    "Exfiltration": {
-        "items": [
-            {
-                "tags": [
-                    "SCMPosture"
-                ],
-                "name": "Source code",
-                "tooltip": "Source code",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "SCMPosture"
-                ],
-                "name": "Webhook",
-                "tooltip": "Webhook",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "CloudSecurity"
-                ],
-                "name": "Bypass of outbound traffic control",
-                "tooltip": "Bypass of outbound traffic control",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            }
+        "url": "techniques/T0142.html",
+        "description": "This technique involves searching for internal resources that have been inadvertently made public and are accessible to anyone on the internet.\nAn attacker can use this technique to identify internal resources that may contain sensitive information such as passwords, API keys, or other credentials. \nThey can also use this technique to identify other internal resources that may be of interest, such as databases or servers.\nThere are several ways that internal resources can be accidentally made public, including misconfigured security settings, unintentional exposure of credentials, or through the use of unsecured storage buckets. \nWhen resources are accidentally made public, it can be easy for an attacker to locate and access them.\n"
+      },
+      {
+        "id": "T0147",
+        "name": "Scan public CI/CD configurations for secrets and vulnerable actions",
+        "tooltip": "Scan public CI/CD configurations for secrets and vulnerable actions",
+        "tags": [
+          "CI/CD Posture"
         ],
-        "amount": 0,
-        "tootlip": "Exfiltration"
-    },
-    "Privilege Escalation": {
-        "items": [
-            {
-                "tags": [
-                    "CI/CDPosture",
-                    "ContainerSecurity"
-                ],
-                "name": "Runnersagents running with high user privileges",
-                "tooltip": "Runnersagents running with high user privileges",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "OpenSourceSecurity",
-                    "SCMPosture"
-                ],
-                "name": "Inject malicious dependency to privileged user repository",
-                "tooltip": "Inject malicious dependency to privileged user repository",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            }
+        "url": "techniques/T0147.html",
+        "description": "This technique involves scanning publicly available CI/CD configurations for potential vulnerabilities, misconfigurations, and secrets.\nAn attacker can use this technique to identify misconfigured CI/CD pipelines that may contain secrets or other sensitive information, such as API keys or login credentials. \nThey can also identify vulnerable actions, such as unsecured build agents or outdated software components, that can be exploited to gain access to an organization's infrastructure or data.\nMisconfigured or insecure CI/CD pipelines can introduce significant security risks, including data breaches and system compromise.\n"
+      },
+      {
+        "id": "T0187",
+        "name": "Exposed storage",
+        "tooltip": "Exposed storage",
+        "tags": [
+          "Cloud Security"
         ],
-        "amount": 0,
-        "tootlip": "Privilege Escalation"
-    },
-    "Impact": {
-        "items": [
-            {
-                "tags": [
-                    "CI/CDPosture",
-                    "CloudSecurity",
-                    "ContainerSecurity"
-                ],
-                "name": "Resource hijacking",
-                "tooltip": "Resource hijacking",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "SCMPosture"
-                ],
-                "name": "Delete repositories for DoS",
-                "tooltip": "Delete repositories for DoS",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            },
-            {
-                "tags": [
-                    "CloudSecurity"
-                ],
-                "name": "Misconfiguration of serverless workloads",
-                "tooltip": "Misconfiguration of serverless workloads",
-                "url": "https://pbom.dev/",
-                "subTechniques": [],
-                "subTechniuqesAmount": 0
-            }
+        "url": "techniques/T0187.html",
+        "description": "Attackers are constantly searching for any data that might help them achieve their malicious goals. \nExposed storage such as S3 buckets are highly values since it might contain sensitive information that can be used to yield an attack. \nFor example: file system snapshots that might contain code or secrets.\n"
+      },
+      {
+        "id": "T0203",
+        "name": "Discover localized out-of-band deployments",
+        "tooltip": "Discover localized out-of-band deployments",
+        "tags": [
+          "CI/CD Posture",
+          "Open Source Security",
+          "SCM Posture",
+          "Artifact Security"
         ],
-        "amount": 0,
-        "tootlip": "Impact"
-    }
+        "url": "techniques/T0203.html",
+        "description": "Attackers look for evidence of an out-of-band or \"localized\" deployment\npath they can hijack \u2014 a `package.json` script that SSHes to production,\na Makefile target that publishes without the main pipeline, a leftover\n`deploy.sh`, or a personal access token used by a developer laptop.\nThese paths are rarely covered by the same reviews, SBOMs, or admission\ncontrols as the official CI/CD system, which makes them high-value\nreconnaissance targets.\n"
+      }
+    ],
+    "amount": 12,
+    "tooltip": "Reconnaissance",
+    "tacticid": "TA01"
+  },
+  "Resource Development": {
+    "items": [
+      {
+        "id": "T0108",
+        "name": "Accounts in public registry",
+        "tooltip": "Accounts in public registry",
+        "tags": [
+          "Open Source Security",
+          "SCM Posture"
+        ],
+        "url": "techniques/T0108.html",
+        "description": "An attacker can use accounts in public registries, such as PyPI or DockerHub, to perform a supply chain attack in several ways.\nOne approach is to compromise the credentials of a legitimate developer account and use it to upload malicious packages or container images.\nThe attacker can then promote the malicious artifact by using misleading descriptions or keywords, potentially increasing the number of downloads.\nAlternatively, the attacker can create a fake developer account and upload malicious packages or container images using it.\nThe attacker may use a similar username or avatar to legitimate developers to trick users into thinking the account is legitimate.\nOnce the malicious artifact is uploaded, the attacker can promote it using various techniques, such as hijacking popular package names or using misleading descriptions.\nAnother approach is to target the infrastructure used by public registries, such as the servers or the communication channels used by developers to upload packages or container images.\nAn attacker may compromise the infrastructure and use it to inject malicious code into legitimate packages or container images as they are being uploaded.\n"
+      },
+      {
+        "id": "T0109",
+        "name": "Publish malicious artifact",
+        "tooltip": "Publish malicious artifact",
+        "tags": [
+          "Container Security",
+          "Open Source Security"
+        ],
+        "url": "techniques/T0109.html",
+        "description": "Public registries are widely used by developers and organizations to download and distribute software packages and container images, making them an attractive target for attackers.\nIn this type of attack, the attacker creates a package or container image that contains malicious code or files, such as a backdoor or other malware.\nThe attacker then uploads the package or image to PyPI, DockerHub or other registry, posing as a legitimate user or creating a fake account.\nOnce the package or image is uploaded, it becomes available for download by other users who may unsuspectingly use it in their projects.\nThe supply chain attack can have far-reaching consequences as it can affect all systems that rely on the malicious package or image.\nFor example, a Python package that is downloaded from PyPI may be used by multiple applications and libraries, potentially compromising all systems that use it.\nSimilarly, a container image with a malicious payload may be used to deploy an application across multiple environments, leading to a widespread compromise.\n"
+      },
+      {
+        "id": "T0110",
+        "name": "Advertise malicious artifact",
+        "tooltip": "Advertise malicious artifact",
+        "tags": [
+          "Container Security",
+          "Open Source Security"
+        ],
+        "url": "techniques/T0110.html",
+        "description": "An Advertise Malicious Artifact attack is a type of cyber attack in which an attacker distributes a malicious package or container image to a broader audience, typically by advertising it on popular repositories or registries.\nThe goal of this attack is to entice users into downloading and using the malicious artifact, thereby compromising their systems.\nIn this attack, the attacker may create a fake developer account or use an existing legitimate account to upload the malicious artifact to popular repositories or registries such as PyPI or DockerHub.\nThe attacker may then use various techniques to promote the malicious artifact, such as forum promotion, commenting, using misleading descriptions, tags, or keywords, or by hijacking popular package names.\nOnce users download and install the malicious package or container image, it can compromise their systems and potentially cause significant harm, such as stealing sensitive data or taking control of the system.\n"
+      },
+      {
+        "id": "T0111",
+        "name": "Malicious code contribution to an open-source repository",
+        "tooltip": "Malicious code contribution to an open-source repository",
+        "tags": [
+          "Container Security",
+          "Open Source Security"
+        ],
+        "url": "techniques/T0111.html",
+        "description": "A malicious code contribution to an open-source repository attack is a type of cyber attack that involves an attacker submitting code with malicious intent to an open-source repository. \nOpen-source repositories are used to store and manage code for open-source software projects, and they rely on community contributions to improve and maintain the codebase. \nIn this attack, the attacker may submit a seemingly harmless code contribution to the repository. However, the code contains a hidden malware payload that can be triggered later to cause damage. \nAlternatively, the code may include a backdoor that allows the attacker to gain unauthorized access to the system running the open-source software.\nOnce the code is accepted into the repository, it can be difficult to detect the presence of the malicious payload.\nThe code may be integrated into the open-source project, distributed to other projects that depend on it, and even included in software distributions used by many people. \nThis can result in a wide-scale compromise of systems that use the affected code.\n"
+      },
+      {
+        "id": "T0121",
+        "name": "Compromised legitimate artifact",
+        "tooltip": "Compromised legitimate artifact",
+        "tags": [
+          "Container Security",
+          "Open Source Security",
+          "CI/CD Posture"
+        ],
+        "url": "techniques/T0121.html",
+        "description": "A compromised legitimate artifact attack is a type of cyber attack in which an attacker replaces a legitimate package or container image with a malicious version, often without the knowledge of the original developer or distributor. \nThis attack takes advantage of the trust that users place in legitimate packages or container images, which are often used to deploy software across multiple environments.\nIn this attack, the attacker may gain access to the repository or registry where the legitimate artifact is stored, either by exploiting a vulnerability or through social engineering tactics. \nThe attacker then replaces the legitimate artifact with a malicious version that contains malware or other harmful code. \nOnce the compromised artifact is downloaded and deployed, it can compromise the system and potentially cause significant harm, such as stealing sensitive data or taking control of the system.\n"
+      },
+      {
+        "id": "T0141",
+        "name": "Fake developer reputation (Starjacking)",
+        "tooltip": "Fake developer reputation (Starjacking)",
+        "tags": [
+          "Open Source Security"
+        ],
+        "url": "techniques/T0141.html",
+        "description": "Third-party package managers, such as Node Package Manager, PyPi, and Yarn, are commonly used for integrating open-source software packages into existing development environments. These package managers provide metadata about the software and often include a link to the package's source code repository to help developers assess the software's reliability. One way developers evaluate the trustworthiness of a package is by checking its popularity, which is typically measured by the number of \"Stars\" the package has received. However, some package managers do not validate the connection between the package and its source code repository, which leaves them vulnerable to attacks. Malicious actors can manipulate the popularity statistics of a package by associating a popular source code repository URL with a malicious package, leading developers to unwittingly incorporate the malicious code into their development environment.\n"
+      }
+    ],
+    "amount": 6,
+    "tooltip": "Resource Development",
+    "tacticid": "TA02"
+  },
+  "Initial Access": {
+    "items": [
+      {
+        "id": "T0112",
+        "name": "Compromised token",
+        "tooltip": "Compromised token",
+        "tags": [
+          "SCM Posture",
+          "Secrets Hygiene",
+          "Code Security",
+          "Cloud Security",
+          "CI/CD Posture",
+          "Artifact Security"
+        ],
+        "url": "techniques/T0112.html",
+        "description": "Access to third party APIs typically uses a token to authenticate access.  \nThis token is usually a randomized string that is auto-generated by the API provider and should be at least 16 characters or more.  \nThis token is passed with a request to the API provider and if the token is valid, the request is successful.  \nEach of these tokens will usually have a set of permissions applied to it that authorizes it to perform very simple read operations, or more complex write and delete operations.  \nUnfortunately, these tokens are often accidentally embedded in applications via source code or Javascript variable exposure.  \nAttackers will often scan web applications URLs or public git repositories for exposed credentials to then in turn use those found credentials to gain access to the victims resources. \n"
+      },
+      {
+        "id": "T0113",
+        "name": "Compromised user account",
+        "tooltip": "Compromised user account",
+        "tags": [
+          "Artifact Security",
+          "Cloud Security",
+          "Infrastructure as code",
+          "SCM Posture"
+        ],
+        "url": "techniques/T0113.html",
+        "description": "A compromised user account is a serious security threat, as attackers can use it to bypass security measures that are in place to protect an organization's assets. \nAttackers can gain access to legitimate user accounts in several ways, including brute-force attacks, phishing, malware, or social engineering.\nOnce an attacker gains access to a user's account, they can access the cloud resources, artifact repository, infrastructure-as-code templates, or source code repository to steal or modify sensitive data or launch further attacks.\nIn such case an attacker is able to modify the code and cloud resources, inject malware or backdoors, or replace legitimate artifacts.\nThis can result in data breaches, system downtime, reputation damage, and financial losses.\n"
+      },
+      {
+        "id": "T0114",
+        "name": "Compromised service account",
+        "tooltip": "Compromised service account",
+        "tags": [
+          "Artifact Security",
+          "Cloud Security",
+          "Infrastructure as code",
+          "SCM Posture"
+        ],
+        "url": "techniques/T0114.html",
+        "description": "In this type of attack, the attacker gains access to a legitimate service account, which is typically used by an application or service to access cloud resources or manage infrastructure. \nThe attacker can use the compromised service account to perform actions that are authorized for the service account, such as reading, modifying, or deleting data.\nThis can result in data theft, unauthorized access to sensitive resources, and the ability to launch further attacks on other resources within the cloud environment. \n"
+      },
+      {
+        "id": "T0115",
+        "name": "Repojacking",
+        "tooltip": "Repojacking",
+        "tags": [
+          "Container Security",
+          "Open Source Security"
+        ],
+        "url": "techniques/T0115.html",
+        "description": "Dependency repository hijacking (aka repo jacking) is an obscure supply chain vulnerability, conceptually similar to subdomain takeover, that impacts over 70,000 open-source projects and affects everything from web frameworks to cryptocurrencies. \nThis vulnerability is trivial to exploit, results in remote code injection, and affects major projects from companies like Google, GitHub, Facebook, Kubernetes, NodeJS, Amazon, and many others. \nEvery project whose compilation depends on dynamically linked code from GitHub repositories is potentially vulnerable. \nWhen the linked repository owner changes their username, it becomes immediately available to be re-registered by anyone. \nThis means that any project that linked back to the original repository URL has now become vulnerable to remote code injection through dependency hijacking. \nA malicious attacker can register the old GitHub username, recreate the repository, and use it to serve malicious code to any project that depends on it.\n"
+      },
+      {
+        "id": "T0116",
+        "name": "Shadow IT",
+        "tooltip": "Shadow IT",
+        "tags": [
+          "Artifact Security",
+          "CI/CD Posture",
+          "Cloud Security",
+          "Container Security",
+          "Open Source Security",
+          "SCM Posture",
+          "Secrets Hygiene"
+        ],
+        "url": "techniques/T0116.html",
+        "description": "Shadow IT refers to the use of information technology, including software, applications, services, and devices, by employees without the approval or knowledge of the IT department. \nIt poses a risk to various areas of security, including cloud security, artifact security, CI/CD posture, container security, and open-source security. \nShadow IT can result in the use of unapproved tools, libraries, or dependencies that may contain vulnerabilities or malicious code, leading to data breaches and other security incidents. \n"
+      },
+      {
+        "id": "T0120",
+        "name": "Dependency confusion",
+        "tooltip": "Dependency confusion",
+        "tags": [
+          "Artifact Security",
+          "Container Security",
+          "Open Source Security",
+          "CI/CD Posture"
+        ],
+        "url": "techniques/T0120.html",
+        "description": "Dependency confusion is a type of supply chain attack that occurs when an attacker exploits the way some package managers, such as npm and PyPI, resolve dependencies when installing software libraries.\nIn a typical software development project, developers rely on a variety of external libraries, often referred to as dependencies, to build their applications. \nThese libraries are typically stored in a remote repository, and developers use a package manager to install and manage them. \nAn attacker will utilize prior knowledge of usage of dependencies (*Discover used open-source dependencies*) to upload a malicious package with the same name to a public repository. \nThis might \"confuse\" package managers to use to public resource instead of the local one - thus executing or infecting the CI/CD. \nThis can happen on the developer's machine or the build system and has the potential to further steps of an attack - for example, if the malicious code exfiltrate an access token to production environment\n"
+      },
+      {
+        "id": "T0122",
+        "name": "Vulnerability in third-party CI/CD actions",
+        "tooltip": "Vulnerability in third-party CI/CD actions",
+        "tags": [
+          "CI/CD Posture",
+          "Container Security",
+          "Infrastructure as code",
+          "Open Source Security"
+        ],
+        "url": "techniques/T0122.html",
+        "description": "The use of 3rd party Github actions is very common. \nSimilar to using 3rd party libraries this can also introduce security risks - a malicious Github action has access to very sensitive information - i.e exfiltrating environment variables, including backdoors or malware in source code, infecting build artifacts.\n"
+      },
+      {
+        "id": "T0123",
+        "name": "Exposed internal API",
+        "tooltip": "Exposed internal API",
+        "tags": [
+          "Cloud Security",
+          "Infrastructure as code"
+        ],
+        "url": "techniques/T0123.html",
+        "description": "Exposed internal API attack technique is when an attacker targets a publicly accessible API intended for internal use only, providing an entry point for accessing sensitive information or systems within an organization. \nThis is a common issue when API endpoints are mistakenly exposed to the public or not properly secured, which can allow attackers to gain access to sensitive data or systems.\nAttackers can discover exposed internal APIs by using automated tools to scan public IP addresses or by reverse-engineering mobile applications or browser extensions. \nOnce they have identified a vulnerable API, attackers can use it to gather information, launch attacks, or steal sensitive data.\nThe impact of this attack can be severe as attackers can bypass traditional security controls and gain access to internal systems or data that are not meant to be publicly accessible.\n"
+      },
+      {
+        "id": "T0126",
+        "name": "Exposed storage",
+        "tooltip": "Exposed storage",
+        "tags": [
+          "Cloud Security",
+          "Infrastructure as code"
+        ],
+        "url": "techniques/T0126.html",
+        "description": "Exposed storage is an attack technique where an attacker targets and exploits cloud storage containers or buckets that are publicly accessible or have weak access controls. \nThe attacker can gain access to sensitive data stored in the containers, such as personal information, financial data, or intellectual property.\nExposed storage can occur due to misconfigured access controls, where the data is mistakenly made publicly available or accessible to unauthorized users. \nThis can occur when the default security settings for cloud storage services are not properly adjusted, or when access controls are not regularly reviewed and updated.\n"
+      },
+      {
+        "id": "T0127",
+        "name": "Exposed database",
+        "tooltip": "Exposed database",
+        "tags": [
+          "Cloud Security",
+          "Infrastructure as code"
+        ],
+        "url": "techniques/T0127.html",
+        "description": "Exposing a database to the public internet can be a critical security issue, as attackers can use it to gain access to sensitive information.\nIn the context of cloud security and infrastructure as code, this attack technique typically involves misconfigured security group rules or network access control lists (ACLs) that allow public access to a database. \nIt can also occur when developers or system administrators accidentally expose database credentials or when misconfigured server configurations allow database access.\n"
+      },
+      {
+        "id": "T0128",
+        "name": "Permissive network access",
+        "tooltip": "Permissive network access",
+        "tags": [
+          "Cloud Security",
+          "Infrastructure as code",
+          "CI/CD Posture"
+        ],
+        "url": "techniques/T0128.html",
+        "description": "Permissive network access is an attack technique where an attacker targets and exploits network configurations that allow overly permissive access to a cloud-based network. \nThis could include open ports, insecure protocols, or misconfigured network security groups (NSGs). \nAn attacker can leverage this permissive access to launch a variety of attacks, such as network scanning, port scanning, or remote code execution.\nFor example, an organization may have a public-facing web application that requires access to a backend database server. \nIf the NSG rules for the database server are too permissive, allowing access from any IP address, an attacker could potentially gain access to the database server from anywhere on the internet.\n"
+      },
+      {
+        "id": "T0129",
+        "name": "Typosquatting",
+        "tooltip": "Typosquatting",
+        "tags": [
+          "Container Security",
+          "Open Source Security",
+          "CI/CD Posture"
+        ],
+        "url": "techniques/T0129.html",
+        "description": "Typosquatting is an attack technique where an attacker creates a package or container with a name that is very similar to a legitimate one, in hopes that a user will make a typo and download the malicious package or container. \nFor example, if a legitimate package is named \"numpy,\" an attacker might create a package named \"numpyy\" or \"numpi\" in hopes that a user will accidentally install the malicious package instead. \nIn container security, it involves creating a container image with a similar name to a legitimate one, while in open-source security, it involves creating a malicious package with a similar name to a legitimate one.\nOnce the user installs the malicious package or container, the attacker can potentially gain access to the user's system or data, or inject malicious code into the user's environment.\n"
+      },
+      {
+        "id": "T0133",
+        "name": "Vulnerable CICD plugins",
+        "tooltip": "Vulnerable CICD plugins",
+        "tags": [
+          "CI/CD Posture"
+        ],
+        "url": "techniques/T0133.html",
+        "description": "Vulnerable CI/CD plugins attack technique is an initial access tactic where an attacker exploits a vulnerability in a plugin used by a continuous integration and continuous delivery (CI/CD) pipeline to gain access to the pipeline or the underlying system.\nVulnerable plugins used in the CI/CD pipeline can be exploited by attackers to inject malicious code or to execute arbitrary commands on the target system.\n"
+      },
+      {
+        "id": "T0135",
+        "name": "Vulnerable CICD system",
+        "tooltip": "Vulnerable CICD system",
+        "tags": [
+          "CI/CD Posture"
+        ],
+        "url": "techniques/T0135.html",
+        "description": "An attacker can target the CI/CD system itself and exploit vulnerabilities in the system, such as insecure configurations or outdated software. \nThe attacker may also target the build scripts, which could contain secrets and sensitive information, allowing them to gain access to the underlying systems or inject malicious code into the software being built.\nSome common vulnerabilities in CI/CD systems include insecure storage of credentials, unsecured APIs, and outdated software components. \nAdditionally, attackers may take advantage of misconfigured permissions, such as overly permissive access controls that allow them to escalate privileges or access sensitive information.\n"
+      },
+      {
+        "id": "T0136",
+        "name": "Brandjacking",
+        "tooltip": "Brandjacking",
+        "tags": [
+          "Container Security",
+          "Open Source Security"
+        ],
+        "url": "techniques/T0136.html",
+        "description": "Brandjacking is a type of attack where an attacker impersonates a legitimate brand or project in an attempt to trick users into downloading and installing a malicious container or package. \nThis can happen when an attacker creates a package or container with a similar name or logo to a well-known and trusted brand or project, and then distributes it through public repositories.\nBrandjacking can be particularly dangerous in the context of container and open source security, as many developers and users rely on public repositories and may not take the time to thoroughly verify the authenticity of packages they download.\nOnce a malicious package is installed, it can be difficult to detect and can lead to serious security breaches.\n"
+      },
+      {
+        "id": "T0137",
+        "name": "Weak authentication methods",
+        "tooltip": "Weak authentication methods",
+        "tags": [
+          "Cloud Security",
+          "Code Security",
+          "Infrastructure as code",
+          "CI/CD Posture"
+        ],
+        "url": "techniques/T0137.html",
+        "description": "Weak authentication methods are a common attack technique used by threat actors to gain unauthorized access to cloud environments or code repositories. This attack technique relies on exploiting vulnerabilities in the authentication methods used to control access to resources.\nIn cloud security, weak authentication methods can be exploited through several vectors, such as stolen credentials, brute force attacks, and password spraying. \nThreat actors can also take advantage of misconfigured security groups or network access control lists (ACLs) to bypass authentication and gain access to cloud resources.\nIn code security, weak authentication methods can be exploited through vulnerabilities in source code management platforms, such as Git repositories. \nFor instance, if developers use weak passwords or if the authentication protocols used by the repository are vulnerable, attackers can steal source code or inject malicious code into the codebase.\n"
+      },
+      {
+        "id": "T0143",
+        "name": "External user accounts",
+        "tooltip": "External user accounts",
+        "tags": [
+          "CI/CD Posture",
+          "Cloud Security",
+          "SCM Posture"
+        ],
+        "url": "techniques/T0143.html",
+        "description": "External User Accounts attack technique in the CI/CD, SCM posture and cloud security involves compromising external user accounts to gain unauthorized access to CI/CD pipelines, source code repositories or cloud systems.\nAttackers may gain unauthorized access to these accounts through various means, such as phishing, social engineering, or password cracking. \nOnce compromised, attackers can inject malicious code into CI/CD pipelines, tamper with deployment pipelines, manipulate source code repositories, or access cloud systems. \nThis can result in the deployment of unauthorized or malicious code to production systems, introduction of vulnerabilities or backdoors into source code, theft of intellectual property, or other malicious activities.\n"
+      },
+      {
+        "id": "T0153",
+        "name": "Compromised developer workstation",
+        "tooltip": "Compromised developer workstation",
+        "tags": [
+          "Code Security",
+          "SCM Posture"
+        ],
+        "url": "techniques/T0153.html",
+        "description": "Compromised developer workstation attack is a technique where an attacker gains access to a developer's machine, which contains sensitive information such as access credentials, keys, and code repositories. \nThis technique can allow an attacker to steal code or modify it to include backdoors or other malicious code. \nThe attacker can also use this access to gain entry into other systems within the organization.\nThis type of attack can be carried out through various means, such as Phishing, Typosquatting, Brandjacking, malicious IDE extensions, or exploiting vulnerabilities in the developer's system. \nOnce the attacker gains access, they can install malware or backdoors, extract sensitive information, or use the machine as a foothold to carry out further attacks.\n"
+      },
+      {
+        "id": "T0154",
+        "name": "Malicious IDE extension",
+        "tooltip": "Malicious IDE extension",
+        "tags": [
+          "Open Source Security"
+        ],
+        "url": "techniques/T0154.html",
+        "description": "Malicious IDE extension attack is an attack technique in which an attacker creates a malicious extension for an Integrated Development Environment (IDE) and uploads it to the IDE's extension marketplace or repository. \nThe malicious extension may appear to be a legitimate tool or add-on, but when installed, it can perform unauthorized actions such as stealing user credentials or introducing vulnerabilities in the code.\nOnce installed, a malicious IDE extension can access the developer's code, which can contain sensitive information such as access keys, passwords, and credentials. \nThis information can then be used by the attacker to gain unauthorized access to cloud resources, steal data, or launch further attacks.\n"
+      },
+      {
+        "id": "T0157",
+        "name": "Combosquatting",
+        "tooltip": "Combosquatting",
+        "tags": [
+          "Container Security",
+          "Open Source Security"
+        ],
+        "url": "techniques/T0157.html",
+        "description": "Combosquatting is an attack technique where an attacker tries to impersonate legitimate open source packages by adding (or often appending) common words, terms, or letters to the authentic package or image name.\nFor example, there is popular JavaScript package \"lodash\" and an attacker may create a package with name \"lodashs\".\nThe goal of this attack technique is to trick users into unknowingly downloading and using these fake packages or images, which may contain malicious code, vulnerabilities, or other security risks.\n"
+      },
+      {
+        "id": "T0158",
+        "name": "Vulnerable CI/CD template",
+        "tooltip": "Vulnerable CI/CD template",
+        "tags": [
+          "CI/CD Posture",
+          "Open Source Security"
+        ],
+        "url": "techniques/T0158.html",
+        "description": "Vulnerable CI/CD template attack is an attack technique that targets the templates used in the CI/CD pipeline configuration. \nThese templates are used to automate the process of building, testing, and deploying applications. \nAttackers can modify these templates to include malicious code or configuration that can result in unauthorized access or data theft.\nIn this attack, the attacker typically searches for templates that have known vulnerabilities or weak configurations. \nOnce identified, the attacker can modify the template to include their malicious code or configuration. \nThe attacker then waits for the target to use the modified template in their CI/CD pipeline, which can result in the attacker gaining access to sensitive data or systems.\n"
+      },
+      {
+        "id": "T0179",
+        "name": "Exposed webHook",
+        "tooltip": "Exposed webHook",
+        "tags": [
+          "CI/CD Posture"
+        ],
+        "url": "techniques/T0179.html",
+        "description": "Exposed WebHook attack in CI/CD posture is a technique where an attacker exploits a publicly accessible or improperly authenticated and authorized WebHook endpoint in a CI/CD setup. \nThe attacker sends malicious payloads or triggers unauthorized actions through the WebHook, gaining unauthorized access to the CI/CD pipeline or associated resources. \nThe consequences can include unauthorized access to data, compromise of the CI/CD pipeline, injection of malicious code, or disruption of the software development process.\n"
+      },
+      {
+        "id": "T0180",
+        "name": "Compromise services / servers",
+        "tooltip": "Compromise services / servers",
+        "tags": [
+          "Artifact Security",
+          "CI/CD Posture",
+          "SCM Posture"
+        ],
+        "url": "techniques/T0180.html",
+        "description": "Services (servers) compromise attack in the supply chain is a type of attack that targets the servers hosting the software development and distribution infrastructure. \nThis attack can happen when an attacker gains access to the server through a vulnerability, misconfiguration, or social engineering attack. \nOnce the attacker gains access to the server, they can modify the source code or software packages being distributed to include malicious code or backdoors. \nThis attack can compromise multiple software projects and potentially all users who download or use the compromised software.\n"
+      },
+      {
+        "id": "T0181",
+        "name": "Malicious module injection",
+        "tooltip": "Malicious module injection",
+        "tags": [
+          "Infrastructure as code"
+        ],
+        "url": "techniques/T0181.html",
+        "description": "Malicious module injection is an attack that targets the Infrastructure as Code (IaC) process, where an attacker injects malicious code or modules into the configuration files used to define and provision infrastructure resources. \nThis can occur during the development or deployment phases of the IaC process, and the injected code can lead to backdoors, data breaches, resource hijacking, or integrity compromise.\n"
+      },
+      {
+        "id": "T0194",
+        "name": "Outdated software components",
+        "tooltip": "Outdated software components",
+        "tags": [
+          "CI/CD Posture",
+          "Container Security",
+          "Infrastructure as code",
+          "Open Source Security"
+        ],
+        "url": "techniques/T0194.html",
+        "description": "Outdated software components can impact various aspects of security. \nThe obvious one is, of course, outdated software usually means unpatched vulnerabilities. \nBut it also means that in case of an incident it will be harder for an organization to react and patch because it has higher risk of breaking functionality.\n"
+      },
+      {
+        "id": "T0197",
+        "name": "Use code from untrusted source",
+        "tooltip": "Use code from untrusted source",
+        "tags": [
+          "Open Source Security",
+          "CI/CD Posture"
+        ],
+        "url": "techniques/T0197.html",
+        "description": "It is possible to install a package not from an official package repository - but rather install directly using a URL. Packages from official repositories are usually vetted for security vulnerabilities. Installing from an unverified URL can expose your system to malicious software, including viruses, malware, or other security threats.\n"
+      },
+      {
+        "id": "T0205",
+        "name": "Compromise third-party CDN or hosted web asset",
+        "tooltip": "Compromise third-party CDN or hosted web asset",
+        "tags": [
+          "Open Source Security",
+          "Artifact Security",
+          "Cloud Security"
+        ],
+        "url": "techniques/T0205.html",
+        "description": "Instead of poisoning a package registry or source repository, the attacker\ntakes over a widely embedded CDN hostname, tag manager, or hosted JavaScript\nasset (domain expiry, registrar hijack, or operator acquisition) and serves\nmalicious content to every site that loads it. Polyfill.io (2024) is the\nreference case: a trusted script URL became a drive-by supply-chain implant\nfor hundreds of thousands of properties. OSC&R previously had no technique\nthat named this web-asset supply chain.\n"
+      }
+    ],
+    "amount": 27,
+    "tooltip": "Initial Access",
+    "tacticid": "TA03"
+  },
+  "Execution": {
+    "items": [
+      {
+        "id": "T0117",
+        "name": "SQL injection",
+        "tooltip": "SQL injection",
+        "tags": [
+          "Code Security"
+        ],
+        "url": "techniques/T0117.html",
+        "description": "SQL injection is a web security vulnerability that allows an attacker to interfere with the queries that an application makes to its database. \nA SQL injection attack consists of insertion or \"injection\" of a SQL query via the input data from the client to the application. \nSuccessful SQL injection exploit can read sensitive data from the database, modify database data (Insert/Update/Delete), execute administration operations on the database (such as shutdown the DBMS), recover the content of a given file present on the DBMS file system and in some cases issue commands to the operating system.\n"
+      },
+      {
+        "id": "T0118",
+        "name": "Command injection",
+        "tooltip": "Command injection",
+        "tags": [
+          "Code Security"
+        ],
+        "url": "techniques/T0118.html",
+        "description": "OS command injection is a web security vulnerability that allows an attacker to execute arbitrary operating system commands on the server that is running an application.\nCommand injection attacks are possible when an application passes unsafe user supplied data (forms, cookies, HTTP headers etc.) to a system shell. \nIn this attack, the attacker-supplied operating system commands are usually executed with the privileges of the vulnerable application. \nCommand injection attacks are possible largely due to insufficient input validation\n"
+      },
+      {
+        "id": "T0119",
+        "name": "Cross-site scripting",
+        "tooltip": "Cross-site scripting",
+        "tags": [
+          "Code Security"
+        ],
+        "url": "techniques/T0119.html",
+        "description": "Cross-site scripting (XSS) is a web security vulnerability that allows an attacker to compromise the interactions that users have with a vulnerable applications.\nXSS attacks occur when an attacker uses a web application to send malicious code, generally in the form of a browser side script, to a different end user. \nAn attacker can use XSS to send a malicious script to an unsuspecting user. \nThe end user browser has no way to know that the script should not be trusted, and will execute the script. Because it thinks the script came from a trusted source, the malicious script can access any cookies, session tokens, or other sensitive information retained by the browser and used with that site. \nThese scripts can even rewrite the content of the HTML page.\n"
+      },
+      {
+        "id": "T0150",
+        "name": "Runtime logic bomb",
+        "tooltip": "Runtime logic bomb",
+        "tags": [
+          "Code Security",
+          "Container Security",
+          "Open Source Security"
+        ],
+        "url": "techniques/T0150.html",
+        "description": "A logic bomb is a snippet of malicious code that is intentionally inserted into other software. \nLogic bombs are triggered when a certain condition is met.\nThe code may lie dormant for a long time and remain undetected until the bomb is triggered.\nWhen the bomb is activated, it can have devastating effects on the software, causing it to malfunction, delete data, or even grant unauthorized access to sensitive information.\nThe attack can also be designed to spread to other systems or cause damage to a wider network.\nThe malicious code is hidden within an otherwise legitimate software package.\nIt can be introduced at any point in the software supply chain.\n"
+      },
+      {
+        "id": "T0151",
+        "name": "Installation scripts",
+        "tooltip": "Installation scripts",
+        "tags": [
+          "Cloud Security",
+          "Code Security",
+          "Open Source Security"
+        ],
+        "url": "techniques/T0151.html",
+        "description": "A package installation script injection attack is a type of security exploit that involves an attacker injecting malicious code into a legitimate software package installation script.\nThe attack typically occurs when an attacker gains access to the distribution network of a software vendor or package manager, and injects malicious code into the package installation script. \nThis code may be designed to carry out a range of nefarious activities, such as stealing sensitive information, creating backdoors, or executing arbitrary code on the victim's system.\nOnce the victim downloads and installs the compromised software package, the injected code is executed, giving the attacker access to the victim's system.\n"
+      },
+      {
+        "id": "T0152",
+        "name": "IDE",
+        "tooltip": "IDE",
+        "tags": [
+          "Open Source Security"
+        ],
+        "url": "techniques/T0152.html",
+        "description": "Malicious code can be injected into build commands, build scripts or project files. \nThese commands and scripts can be executed upon IDE project build and run.\n"
+      },
+      {
+        "id": "T0155",
+        "name": "Cloud workload",
+        "tooltip": "Cloud workload",
+        "tags": [
+          "Cloud Security"
+        ],
+        "url": "techniques/T0155.html",
+        "description": "Adversaries can exploit serverless computing, integration, and automation services in cloud environments to execute arbitrary code. \nThis can be done through serverless functions, compute engines, application integration, and web servers. \nThe attackers can use these resources to run malicious code, such as crypto-mining malware or create functions that enable further compromise of the cloud environment. \nAttackers may also use event-triggered execution to persistently execute serverless functions over time, such as creating Lambda functions in AWS environments that add additional cloud credentials to a user.\n"
+      },
+      {
+        "id": "T0159",
+        "name": "Malicious artifact execution",
+        "tooltip": "Malicious artifact execution",
+        "tags": [
+          "Artifact Security",
+          "Open Source Security",
+          "CI/CD Posture"
+        ],
+        "url": "techniques/T0159.html",
+        "description": "Malicious artifact execution refers to an attack where an attacker injects or modifies a software component with malicious code that is executed when the component is used by a downstream system in the CI/CD process. \nWhen a CI/CD process lacks sufficient mechanisms to validate the integrity of code and artifacts, attackers can insert malicious code that appears to be harmless. \nThis allows the malicious code to pass through the pipeline undetected, potentially causing harm in the CI/CD process or in production.\nThe malicious code can be executed in the CI/CD process or even in production.\n"
+      },
+      {
+        "id": "T0166",
+        "name": "Trigger pipeline execution",
+        "tooltip": "Trigger pipeline execution",
+        "tags": [
+          "CI/CD Posture",
+          "SCM Posture"
+        ],
+        "url": "techniques/T0166.html",
+        "description": "The Trigger pipeline execution (Poisoned pipeline execution) attack abuses permissions against an SCM repository, in a way that causes a CI pipeline to execute malicious commands.\nUsers that have permissions to manipulate the CI configuration files, or other files which the CI pipeline job relies on, can modify them to contain malicious commands, ultimately poisoning the CI pipeline executing these commands.\nPipelines executing unreviewed code, for example those which are triggered directly off of pull requests or commits to arbitrary repository branches, are more susceptible to Trigger pipeline execution. \nThe reason is that these scenarios, by design, contain code which has not undergone any reviews or approvals.\nOnce able to execute malicious code within the CI pipeline, the attacker can conduct a wide array of malicious operations, all within the context of the pipelines identity.\n"
+      },
+      {
+        "id": "T0172",
+        "name": "Runtime backdoor",
+        "tooltip": "Runtime backdoor",
+        "tags": [
+          "Code Security",
+          "Container Security",
+          "Open Source Security"
+        ],
+        "url": "techniques/T0172.html",
+        "description": "A runtime backdoor attack is a type of cyber attack where an attacker gains unauthorized access to a computer system or network and installs a malicious software or code that allows them to control the system or steal sensitive information.\nThis type of attack is called a \"runtime\" backdoor attack because it involves manipulating the system at runtime, while it is running, rather than during the development or deployment stages.\nThe attacker typically gains access to the system through a vulnerability, such as an unpatched software flaw or weak authentication mechanism. \nOnce inside, the attacker can install a backdoor that provides them with persistent access to the system, even after the initial entry point has been closed.\n"
+      },
+      {
+        "id": "T0173",
+        "name": "Auto merge rules in SCM",
+        "tooltip": "Auto merge rules in SCM",
+        "tags": [
+          "SCM Posture"
+        ],
+        "url": "techniques/T0173.html",
+        "description": "Auto merge rules in SCM (Source Code Management) are rules that determine how code changes should be merged automatically into a main code repository or branch.\nWhile auto merge rules in SCM can help to streamline the code review and merge process, there are several security risks to consider, including:\n1. Malicious code injection: Auto merge rules may allow malicious code changes to be merged into the code repository, compromising the security of the system.\n2. Vulnerability propagation: Automatic merges can propagate security vulnerabilities to the main code repository or branch, allowing attackers to exploit these vulnerabilities to gain unauthorized access to the system.\n3. Human error: Auto merge rules can lead to errors in the code repository, such as overwriting critical code or merging code that has not been properly reviewed.\n4. Compliance violations: Auto merge rules can violate compliance requirements, such as failing to properly audit code changes or not properly segregating code changes between different teams.\n"
+      },
+      {
+        "id": "T0188",
+        "name": "Cross Site Request Forgery",
+        "tooltip": "Cross Site Request Forgery",
+        "tags": [
+          "Code Security"
+        ],
+        "url": "techniques/T0188.html",
+        "description": "Cross-Site Request Forgery, or CSRF, may have different affects, depending on the application code. \nIt is widely used in conjunction with spear-phishing attacks where adversaries will attempt to abuse authenticated users sessions to perform actions that will allow them to take over a server.\n"
+      }
+    ],
+    "amount": 12,
+    "tooltip": "Execution",
+    "tacticid": "TA04"
+  },
+  "Persistence": {
+    "items": [
+      {
+        "id": "T0134",
+        "name": "Add user",
+        "tooltip": "Add user",
+        "tags": [
+          "CI/CD Posture",
+          "SCM Posture",
+          "Cloud Security"
+        ],
+        "url": "techniques/T0134.html",
+        "description": "Add user attack technique involves adding a new user account with privileged access to the system, allowing the attacker to continue to perform malicious activities even if their original access is removed or revoked.\nIn this attack, the attacker gains access to the CI/CD system through various means, such as exploiting vulnerabilities or stealing credentials. \nOnce they have gained access, the attacker creates a new user account with elevated privileges, such as administrator or root access. \nThis allows the attacker to continue to access and control the system even if their original access is removed or blocked.\n"
+      },
+      {
+        "id": "T0138",
+        "name": "Backdoor in code",
+        "tooltip": "Backdoor in code",
+        "tags": [
+          "Code Security",
+          "Open Source Security",
+          "SCM Posture",
+          "CI/CD Posture"
+        ],
+        "url": "techniques/T0138.html",
+        "description": "Backdoor in code attack technique involves inserting a malicious code segment or backdoor into the software codebase, which allows the attacker to maintain access and control over the system even after their initial access has been removed or blocked.\nIn this attack, the attacker gains access to the codebase through various means, such as exploiting vulnerabilities or stealing credentials. \nOnce they have gained access, the attacker inserts a malicious code segment or backdoor into the codebase. \nThis code segment may be designed to execute specific malicious activities, such as stealing sensitive information, or to provide the attacker with continued access and control over the system.\n"
+      },
+      {
+        "id": "T0148",
+        "name": "Scheduled tasks on self hosted runner",
+        "tooltip": "Scheduled tasks on self hosted runner",
+        "tags": [
+          "CI/CD Posture"
+        ],
+        "url": "techniques/T0148.html",
+        "description": "In this attack, the attacker gains access to a self-hosted runner, which is a server or a virtual machine that runs the CI/CD pipelines for an organization. \nOnce access is gained, the attacker creates a scheduled task or job that runs at regular intervals, even after the initial attack has been detected and removed.\nThe scheduled task or job can be programmed to perform a variety of malicious activities, such as downloading and executing additional malware or maintaining a persistent backdoor for future attacks. \n"
+      },
+      {
+        "id": "T0161",
+        "name": "Implant in zombie instance",
+        "tooltip": "Implant in zombie instance",
+        "tags": [
+          "Cloud Security"
+        ],
+        "url": "techniques/T0161.html",
+        "description": "Implant in zombie instance is a persistence tactic used in cloud security to maintain unauthorized access to a compromised instance. \nThis technique involves planting malicious code or a backdoor into a compromised instance and using it as a \"zombie\" or \"bot\" to perform further malicious actions.\nOnce an instance is compromised, the attacker can implant a backdoor to ensure future access even if the original vulnerability is fixed or the stolen credentials are changed.\nThe implanted code can be designed to run persistently in the background, making it difficult to detect. \nAttackers can use the zombie instance to perform various malicious actions, such as stealing sensitive data, launching DDoS attacks, or using the instance for cryptocurrency mining.\n"
+      },
+      {
+        "id": "T0165",
+        "name": "Create access token",
+        "tooltip": "Create access token",
+        "tags": [
+          "Artifact Security",
+          "CI/CD Posture",
+          "Cloud Security",
+          "SCM Posture"
+        ],
+        "url": "techniques/T0165.html",
+        "description": "Following initial access, an attacker may attempt to create alternative means of access to the system that was infiltrated. \nSince the initial access may use a temporary or temporary session token - a common adversary technique would be to create an access token which will persist the access to the system. For example, after getting an initial access by abusing a compromised 2FA backed session token an attacker created access tokens that allowed both persistence and lateral movement (Circle CI reference)\n"
+      },
+      {
+        "id": "T0167",
+        "name": "Recursive PR",
+        "tooltip": "Recursive PR",
+        "tags": [
+          "CI/CD Posture"
+        ],
+        "url": "techniques/T0167.html",
+        "description": "The Recursive PR attack technique is a persistence tactic that involves an attacker submitting a pull request to a repository that contains a malicious code change. \nOnce the pull request is merged and the code change is deployed, the malicious code is executed and establishes a persistent presence in the CI/CD pipeline.\nThe attack works by creating a chain of pull requests where each subsequent pull request is used to modify the code introduced in the previous pull request.\nThis creates a recursive loop where the pipeline will continuously build and deploy new versions of the code that contain the attacker's modifications. \nBy doing so, the attacker can maintain a persistent presence in the CI/CD pipeline and potentially use it to execute further attacks.\n"
+      },
+      {
+        "id": "T0175",
+        "name": "Untagged resources",
+        "tooltip": "Untagged resources",
+        "tags": [
+          "Cloud Security"
+        ],
+        "url": "techniques/T0175.html",
+        "description": "In this technique, the attacker first gains access to the cloud environment, either through a vulnerability or by compromising user credentials. \nOnce they have access, they search for resources that are not properly tagged or have incomplete tagging, which can make them harder to track and identify.\nThe attacker then creates an untagged resource, such as an instance or a volume, and uses it to store and maintain persistent access to the compromised environment. \nSince the resource is not properly tagged, it is harder for the cloud provider or the victim to detect and identify it as a potential threat.\nThis technique can be used to maintain access to the cloud environment even after the original point of entry has been remediated or patched. \n"
+      },
+      {
+        "id": "T0178",
+        "name": "Deploy keys",
+        "tooltip": "Deploy keys",
+        "tags": [
+          "SCM Posture"
+        ],
+        "url": "techniques/T0178.html",
+        "description": "Deploy keys are SSH keys that are used to authenticate a specific machine or service to access a repository or codebase in a SCM system like Git. \nThey are typically used to automate deployments or integrations between services and repositories.\nIn this attack technique, an attacker gains access to a machine that has deploy keys configured for access to a repository or codebase. \nOnce they have access, they can obtain the private key of the deploy key and use it to gain access to the repository or codebase from other machines or services, even if the original machine is no longer accessible.\nBy doing so, the attacker can maintain persistent access to the repository or codebase, allowing them to steal sensitive information, introduce malicious code or manipulate the codebase to conduct further attacks.\n"
+      },
+      {
+        "id": "T0202",
+        "name": "Inadequate CI/CD workflow permissions",
+        "tooltip": "Inadequate CI/CD workflow permissions",
+        "tags": [
+          "CI/CD Posture",
+          "SCM Posture",
+          "Secrets Hygiene"
+        ],
+        "url": "techniques/T0202.html",
+        "description": "Pipelines that grant overly broad tokens (for example GitHub Actions\n`GITHUB_TOKEN` with `contents: write`, `id-token: write`, or pull-request\njobs that can push to default branches) let an attacker persist after the\nfirst poisoned workflow run. Persistence takes the form of a new workflow\nfile, a deploy key, a self-hosted runner registration, or a long-lived\ncloud credential minted by the job. This is distinct from overprivileged\nrunners (T0132) and from creating an access token after account takeover\n(T0165): the weakness is the workflow permission set itself.\n"
+      }
+    ],
+    "amount": 9,
+    "tooltip": "Persistence",
+    "tacticid": "TA05"
+  },
+  "Privilege Escalation": {
+    "items": [
+      {
+        "id": "T0132",
+        "name": "Overprivileged CI/CD Runners",
+        "tooltip": "Overprivileged CI/CD Runners",
+        "tags": [
+          "CI/CD Posture",
+          "Container Security"
+        ],
+        "url": "techniques/T0132.html",
+        "description": "A container/runner agent privilege escalation attack is a security threat where an attacker exploits vulnerabilities in a container/runner agent to gain elevated privileges or access to sensitive resources they are not authorized to have. \nAttackers may exploit software vulnerabilities or weaknesses in container security controls to gain access to privileged resources, execute arbitrary code, or escape the container/runner agent and gain access to the host system. \n"
+      },
+      {
+        "id": "T0164",
+        "name": "Inject malicious dependency to privileged user repository",
+        "tooltip": "Inject malicious dependency to privileged user repository",
+        "tags": [
+          "Open Source Security",
+          "SCM Posture"
+        ],
+        "url": "techniques/T0164.html",
+        "description": "Injecting a malicious dependency into a privileged user repository is a software supply chain attack where an attacker adds malicious code to a legitimate open-source library or package used as a dependency by a privileged user repository. \nBy doing so, they can gain access to the privileged resources or data associated with the repository and execute arbitrary code with elevated privileges.\n"
+      }
+    ],
+    "amount": 2,
+    "tooltip": "Privilege Escalation",
+    "tacticid": "TA06"
+  },
+  "Defense Evasion": {
+    "items": [
+      {
+        "id": "T0144",
+        "name": "Misconfigured traffic log settings",
+        "tooltip": "Misconfigured traffic log settings",
+        "tags": [
+          "Cloud Security"
+        ],
+        "url": "techniques/T0144.html",
+        "description": "If the logging settings are misconfigured or disabled, attackers can evade attack detection and hide their malicious activities in the network. \nFor example, an attacker can exploit misconfigured traffic log settings to delete or modify log files, preventing security teams from detecting their activities.\nAttackers can also use traffic obfuscation techniques to hide their activities, such as using encryption or tunneling to bypass network security controls and avoid detection. \nIf the logging settings are misconfigured, security teams may not have visibility into these types of network activities, making it easier for attackers to evade detection.\n"
+      },
+      {
+        "id": "T0146",
+        "name": "Misconfigured audit logs settings",
+        "tooltip": "Misconfigured audit logs settings",
+        "tags": [
+          "CI/CD Posture",
+          "Cloud Security",
+          "SCM Posture"
+        ],
+        "url": "techniques/T0146.html",
+        "description": "Misconfigured audit logs are a type of attack where an attacker modifies or disables audit logs to hide their malicious activities. \nThis technique is commonly used in cloud, CI/CD, and SCM environments. \nIn these environments, misconfigured audit logs can allow an attacker to modify or delete logs, making it difficult for security teams to detect and investigate the attack. \nThe attacker can also disable audit logging to evade detection. \n"
+      },
+      {
+        "id": "T0170",
+        "name": "Malicious compiler or interpreter",
+        "tooltip": "Malicious compiler or interpreter",
+        "tags": [
+          "Cloud Security",
+          "Container Security"
+        ],
+        "url": "techniques/T0170.html",
+        "description": "The malicious compiler or interpreter attack is a defense evasion technique where an attacker modifies the software development tools to insert malicious code into the final product. \nThis allows attackers to bypass security controls and gain access to systems or data. \nThe attack involves replacing a legitimate compiler or interpreter with a malicious version that can execute malicious instructions or hide the attacker's activities. \nThis technique is often used to insert backdoors into software and bypass security controls designed to prevent the execution of malicious code.\n"
+      },
+      {
+        "id": "T0174",
+        "name": "SaaS sprawl",
+        "tooltip": "SaaS sprawl",
+        "tags": [
+          "Cloud Security"
+        ],
+        "url": "techniques/T0174.html",
+        "description": "SaaS (Software as a Service) sprawl refers to a defense evasion tactic where an attacker takes advantage of the lack of visibility and control in a cloud environment to spread the use of unauthorized SaaS applications across an organization.\nIn this attack, an attacker might use a compromised user account or exploit a vulnerability to gain access to a cloud environment, then begin to sign up for and use various SaaS applications without the knowledge or approval of the organization's IT and security teams. \nThis can lead to a \"sprawl\" of unapproved SaaS applications being used throughout the organization, creating security risks and potentially violating compliance regulations.\nThe use of unauthorized SaaS applications can increase the attack surface and make it more difficult for security teams to monitor and protect the organization's data and systems. \nAdditionally, the use of these applications may introduce security vulnerabilities that can be exploited by attackers.\n"
+      },
+      {
+        "id": "T0176",
+        "name": "Disable or misconfigure security measures",
+        "tooltip": "Disable or misconfigure security measures",
+        "tags": [
+          "Cloud Security",
+          "CI/CD Posture"
+        ],
+        "url": "techniques/T0176.html",
+        "description": "Attackers disable or misconfigure security controls so that later activity is\nnot observed or blocked. In software supply chains this is more often a\ncomplete disablement than a subtle misconfiguration: turning off a GitHub\nAction required-review check, uninstalling an endpoint agent on a build\nrunner, skipping a signing gate, or emptying a security-group rule.\nMisconfiguration (over-permissive logging, broken audit settings) remains\nin scope as the quieter variant of the same Defense Evasion technique.\n"
+      },
+      {
+        "id": "T0182",
+        "name": "Bypass review using admin permission",
+        "tooltip": "Bypass review using admin permission",
+        "tags": [
+          "SCM Posture",
+          "Code Security"
+        ],
+        "url": "techniques/T0182.html",
+        "description": "The Bypass Review using admin permission attack technique refers to a defense evasion tactic where an attacker gains administrative access to a CI/CD pipeline and uses that access to bypass security reviews of code changes.\nTypically, in a CI/CD pipeline, code changes are subjected to automated and manual reviews before they are deployed. \nThese reviews help to detect and prevent the introduction of vulnerabilities or malicious code into the production environment. \nHowever, if an attacker is able to gain administrative access to the pipeline, they can bypass these reviews and directly inject malicious code into the final product.\nThis attack technique can be particularly dangerous because it allows an attacker to bypass critical security controls and deploy malicious code directly to the production environment. \nAdditionally, since the code is not subject to the normal review process, it may not be detected by traditional security controls.\n"
+      },
+      {
+        "id": "T0195",
+        "name": "Spoofed Commits",
+        "tooltip": "Spoofed Commits",
+        "tags": [
+          "SCM Posture"
+        ],
+        "url": "techniques/T0195.html",
+        "description": "By modifying metadata in commits, attackers can easily push their own code to code repositories. For example, by changing the name and email in a commit it is possible to pass as a legitimate user.\n"
+      },
+      {
+        "id": "T0198",
+        "name": "Malicious Build Time Dependencies",
+        "tooltip": "Malicious Build Time Dependencies",
+        "tags": [
+          "CI/CD Posture",
+          "Code Security",
+          "Open Source Security"
+        ],
+        "url": "techniques/T0198.html",
+        "description": "Within the CI/CD workflow, code can be pushed at different stages. During the build process, plugins are often utilized for tasks like building and testing. However, if a third-party plugin is compromised, malicious code can be introduced. For instance, an attacker gains control over a Maven plugin (a popular build framework) and inject malware during the build process. SBOM tools may not be effective in detecting such scenarios as they primarily operate on source code.\n"
+      }
+    ],
+    "amount": 8,
+    "tooltip": "Defense Evasion",
+    "tacticid": "TA07"
+  },
+  "Credential Access": {
+    "items": [
+      {
+        "id": "T0130",
+        "name": "Harvest secrets from logs",
+        "tooltip": "Harvest secrets from logs",
+        "tags": [
+          "CI/CD Posture",
+          "Secrets Hygiene"
+        ],
+        "url": "techniques/T0130.html",
+        "description": "This attack involves searching through logs generated by a system to find sensitive information that may have been inadvertently logged. \nSuch information can include passwords, API keys, access tokens, or other types of credentials.\nIn many systems, logs are generated automatically as part of normal operations.\nAttackers can exploit this by searching through the logs to find any sensitive information that has been logged. \nOnce this information is found, the attacker can use it to gain unauthorized access to the system or associated resources.\n"
+      },
+      {
+        "id": "T0140",
+        "name": "Harvest tokens from environment variables",
+        "tooltip": "Harvest tokens from environment variables",
+        "tags": [
+          "CI/CD Posture",
+          "Cloud Security",
+          "Container Security",
+          "Infrastructure as code",
+          "Secrets Hygiene"
+        ],
+        "url": "techniques/T0140.html",
+        "description": "This type of attack involves searching for environment variables that may contain sensitive information and dumping their values to gain access to the associated resources.\nIn cloud and container environments, environment variables are often used to store configuration data, including sensitive information such as passwords, tokens and API keys. \nAttackers can exploit this by searching through the environment variables of running containers or cloud instances to find any sensitive information that has been inadvertently exposed. \nOnce the sensitive information has been obtained, attackers can use it to access and compromise the associated resources.\n"
+      },
+      {
+        "id": "T0162",
+        "name": "Passwords in CI/CD logs",
+        "tooltip": "Passwords in CI/CD logs",
+        "tags": [
+          "CI/CD Posture",
+          "Secrets Hygiene"
+        ],
+        "url": "techniques/T0162.html",
+        "description": "This type of attack involves searching through the logs generated by the CI/CD system for any sensitive information that may have been inadvertently logged, such as passwords, API keys, or other types of credentials.\nIn a CI/CD system, logs are generated automatically as part of the build and deployment process. \nThese logs may contain information about the system's configuration, the commands that were executed, and any errors or warnings that were encountered. \nIn some cases, these logs may also contain sensitive information that was inadvertently included in the command-line arguments, environment variables, or other parts of the system configuration.\n"
+      },
+      {
+        "id": "T0163",
+        "name": "Runtime leakage of password",
+        "tooltip": "Runtime leakage of password",
+        "tags": [
+          "Code Security",
+          "Container Security",
+          "Open Source Security"
+        ],
+        "url": "techniques/T0163.html",
+        "description": "This attack technique involves searching for passwords or other sensitive information that is passed as parameters or environment variables during the runtime of a code or containerized application.\nAttackers can exploit this vulnerability by intercepting the runtime process and capturing the sensitive information in transit. \nOnce the password or sensitive information is captured, the attacker can use it to gain unauthorized access to the system or associated resources.\n"
+      },
+      {
+        "id": "T0183",
+        "name": "Harvesting short-lived token",
+        "tooltip": "Harvesting short-lived token",
+        "tags": [
+          "CI/CD Posture",
+          "Infrastructure as code"
+        ],
+        "url": "techniques/T0183.html",
+        "description": "This attack technique involves searching for short-lived tokens that are used during the CI/CD process and extracting them for later use in unauthorized activities.\nShort-lived tokens are often used in CI/CD systems to authenticate communication between different components, such as the build server and the deployment server.\nAn attacker can obtain these tokens from CI/CD logs, variable groups, secure files, etc.\nThese tokens typically have a limited lifespan, but if an attacker is able to capture them, they can use them to gain unauthorized access to the system or associated resources.\n"
+      },
+      {
+        "id": "T0184",
+        "name": "Harvesting sensitive information from files",
+        "tooltip": "Harvesting sensitive information from files",
+        "tags": [
+          "CI/CD Posture",
+          "Infrastructure as code"
+        ],
+        "url": "techniques/T0184.html",
+        "description": "This attack involves searching for files within the CI/CD system that may contain sensitive information such as credentials, API keys, or other access tokens.\nThese files can include configuration files, scripts, and other files that are used as part of the build and deployment process. \nAttackers can use various techniques to locate these files, including directory traversal attacks, file inclusion vulnerabilities, or simply guessing common file names or paths.\nOnce the attacker has located a file containing sensitive information, they can extract the credentials and use them to gain unauthorized access to the targeted system or application.\n"
+      },
+      {
+        "id": "T0185",
+        "name": "Steal credentials in container artifacts",
+        "tooltip": "Steal credentials in container artifacts",
+        "tags": [
+          "Artifact Security"
+        ],
+        "url": "techniques/T0185.html",
+        "description": "Attackers can steal credentials by searching through the container artifacts for any sensitive information that may have been inadvertently included, such as hard-coded passwords or API keys. \nThey can also intercept network traffic between containers and external systems to capture any credentials that may be transmitted in plaintext.\n"
+      },
+      {
+        "id": "T0189",
+        "name": "Secrets in configuration files",
+        "tooltip": "Secrets in configuration files",
+        "tags": [
+          "Secrets Hygiene",
+          "CI/CD Posture"
+        ],
+        "url": "techniques/T0189.html",
+        "description": "It is a very common mistake for developers to keep secrets in configuration files, these can include user credentials, private keys, api keys etc...  \nThose files are usually the first place where adversaries search for such information.  \n"
+      }
+    ],
+    "amount": 8,
+    "tooltip": "Credential Access",
+    "tacticid": "TA08"
+  },
+  "Lateral Movement": {
+    "items": [
+      {
+        "id": "T0131",
+        "name": "Overprivileged user account",
+        "tooltip": "Overprivileged user account",
+        "tags": [
+          "Artifact Security",
+          "CI/CD Posture",
+          "Cloud Security",
+          "SCM Posture"
+        ],
+        "url": "techniques/T0131.html",
+        "description": "The overprivileged user account attack is a technique of lateral movement tactic in which an attacker gains access to a user account with excessive privileges and uses that account to move laterally within a network, accessing resources and systems that they are not authorized to access.\nIt may affects Cloud, CI/CD accounts, an attacker can potentially manipulate the CI/CD pipeline or Cloud configuration to introduce malicious code into the software build or deployment process. \nThis could lead to the deployment of compromised software, which can result in data breaches, malware infections, or other security incidents.\n"
+      },
+      {
+        "id": "T0169",
+        "name": "Push implants across repositories",
+        "tooltip": "Push implants across repositories",
+        "tags": [
+          "Code Security",
+          "SCM Posture",
+          "CI/CD Posture"
+        ],
+        "url": "techniques/T0169.html",
+        "description": "The Push Implants across Repositories attack technique is a type of lateral movement tactic where an attacker gains access to a victim's code repository, modifies the code by implanting malicious code or backdoors, and pushes the modified code back to the repository.\nThis technique often involves the attacker stealing valid credentials, such as login credentials or SSH keys, to gain access to the victim's code repository. \nThey then modify the code, implanting the malicious code or backdoors, and push the modified code back to the repository. \nThe victim then unknowingly deploys the modified code, resulting in the compromise of their systems.\n"
+      }
+    ],
+    "amount": 2,
+    "tooltip": "Lateral Movement",
+    "tacticid": "TA09"
+  },
+  "Collection": {
+    "items": [
+      {
+        "id": "T0124",
+        "name": "Unencrypted data at rest",
+        "tooltip": "Unencrypted data at rest",
+        "tags": [
+          "Cloud Security",
+          "Infrastructure as code",
+          "CI/CD Posture"
+        ],
+        "url": "techniques/T0124.html",
+        "description": "Encryption at rest is a critical security control in cloud computing that involves encrypting data when it is stored on different cloud storage entities. \nThis type of encryption is designed to protect data from unauthorized access.\nIn cloud environments, encryption at rest is typically implemented using encryption keys that are managed by the cloud provider or by the customer. \nThe cloud provider may provide encryption services as part of their cloud offering, or customers may choose to use their own encryption tools or services to encrypt their data before storing it in the cloud.\nThe risks of not having encryption at rest in a cloud environment can lead to data theft, data loss, regulatory non-compliance, reputation damage, and legal liability. \nIt is important for organizations to implement encryption at rest to protect their sensitive data and comply with regulatory requirements.\n"
+      },
+      {
+        "id": "T0125",
+        "name": "Unencrypted data in transit",
+        "tooltip": "Unencrypted data in transit",
+        "tags": [
+          "Cloud Security",
+          "Infrastructure as code",
+          "CI/CD Posture"
+        ],
+        "url": "techniques/T0125.html",
+        "description": "Data encryption in transit refers to the process of encrypting data as it moves between two points over a network or the internet. \nIn cloud security, this involves encrypting data as it travels between a user's device and the cloud server or between different cloud servers.\nEncryption in transit is important because data transmitted over networks can be intercepted and read by attackers. \nWithout encryption, sensitive data such as login credentials, financial information, or personal data can be easily accessed by attackers, putting the data and the users at risk.\n"
+      },
+      {
+        "id": "T0190",
+        "name": "Weak encryption",
+        "tooltip": "Weak encryption",
+        "tags": [
+          "Cloud Security",
+          "Infrastructure as code"
+        ],
+        "url": "techniques/T0190.html",
+        "description": "A weak encryption attack in cloud security occurs when an attacker exploits vulnerabilities in the encryption mechanism used by a cloud service to gain unauthorized access to sensitive information. \nThis can happen when the encryption algorithm used by the cloud service is weak or when the encryption keys are not properly managed.\n"
+      },
+      {
+        "id": "T0192",
+        "name": "Sensitive information in logs",
+        "tooltip": "Sensitive information in logs",
+        "tags": [
+          "Cloud Security",
+          "CI/CD Posture"
+        ],
+        "url": "techniques/T0192.html",
+        "description": "Operational logs are a valuable source of information for organizations to monitor their systems and applications, identify issues, and improve their overall security posture. However, these logs can also contain sensitive information such as personally identifiable information (PII) data, tokens, credentials, and internal system information.\nWhile this information may be useful to legitimate system administrators and security personnel, it can also be highly valuable to attackers who want to exploit vulnerabilities in the system. An adversary may attempt to gain access to the operational logs in order to steal valuable data or deepen their attack by using the information contained within the logs to escalate their privileges and move laterally within the organization's network.\n"
+      },
+      {
+        "id": "T0193",
+        "name": "Sensitive information in environment variables",
+        "tooltip": "Sensitive information in environment variables",
+        "tags": [
+          "Cloud Security",
+          "CI/CD Posture"
+        ],
+        "url": "techniques/T0193.html",
+        "description": "Environment variables are a type of configuration parameter that contain information about the environment in which an application is running. \nThese variables can be set and accessed by the operating system or application, and may contain sensitive information such as passwords, API keys, or other credentials.\n"
+      }
+    ],
+    "amount": 5,
+    "tooltip": "Collection",
+    "tacticid": "TA10"
+  },
+  "Exfiltration": {
+    "items": [
+      {
+        "id": "T0145",
+        "name": "Bypass of outbound traffic control",
+        "tooltip": "Bypass of outbound traffic control",
+        "tags": [
+          "Cloud Security",
+          "CI/CD Posture"
+        ],
+        "url": "techniques/T0145.html",
+        "description": "Bypass of outbound traffic control in cloud security refers to an attack technique used by threat actors to bypass the security controls implemented by cloud service providers to prevent unauthorized exfiltration of data from their networks.\nThreat actors can use various tactics to bypass these outbound traffic controls and exfiltrate data from the cloud network. \nFor example, they may use encrypted channels such as VPNs or SSL/TLS to hide the data being transferred and make it difficult for the traffic control measures to detect it.\nAnother tactic that threat actors may use to bypass outbound traffic control is to blend in their data with legitimate traffic, making it harder to detect.\nFor example attacker may use Webhooks, Code repositories, Cloud storage that are legitimate to bypass outbound traffic control.\nThey may also use steganography techniques to conceal their data within seemingly innocuous files or images.\n"
+      },
+      {
+        "id": "T0156",
+        "name": "Exfiltration over webhooks",
+        "tooltip": "Exfiltration over webhooks",
+        "tags": [
+          "SCM Posture",
+          "CI/CD Posture"
+        ],
+        "url": "techniques/T0156.html",
+        "description": "A Webhook attack is a technique used by threat actors to gain unauthorized access to a target's web application and exfiltrate data from it. \nIn this type of attack, the attacker gains access to the victim's web application and installs a malicious webhook, which is a piece of code that is executed whenever a specific event occurs on the web application.\nThe webhook is designed to exfiltrate data from the victim's web application and transmit it to a remote server controlled by the attacker. \nThe data exfiltrated can include sensitive information such as user credentials, customer data, or financial information.\nWebhook attacks can be used to bypass outbound traffic control because the exfiltrated data is transmitted through legitimate channels that are often used by the web application. \nThis makes it difficult for traditional network security tools to detect the exfiltration of data.\n"
+      },
+      {
+        "id": "T0168",
+        "name": "Exfiltration to code repositories",
+        "tooltip": "Exfiltration to code repositories",
+        "tags": [
+          "SCM Posture"
+        ],
+        "url": "techniques/T0168.html",
+        "description": "Adversaries may exfiltrate data to a code repository rather than over their primary command and control channel. \nCode repositories are often accessible via an API (ex: https://api.github.com, https://gitlab.com/api). Access to these APIs are often over HTTPS, which gives the adversary an additional level of protection.\nExfiltration to a code repository can also provide a significant amount of cover to the adversary if it is a popular service already used by hosts within the network.\n"
+      }
+    ],
+    "amount": 3,
+    "tooltip": "Exfiltration",
+    "tacticid": "TA11"
+  },
+  "Impact": {
+    "items": [
+      {
+        "id": "T0139",
+        "name": "Resource hijacking",
+        "tooltip": "Resource hijacking",
+        "tags": [
+          "CI/CD Posture",
+          "Cloud Security",
+          "Container Security"
+        ],
+        "url": "techniques/T0139.html",
+        "description": "Resource hijacking is a significant threat to cloud and container security. \nIt refers to the unauthorized use of computing resources, such as CPU power, memory, and bandwidth, by an attacker who has gained control over a system or network.\nIn cloud environments, attackers can compromise cloud-based systems to perform resource-intensive tasks like cryptocurrency mining, DDoS attacks, and other malicious activities. \nThis can significantly impact system availability and negatively affect hosted services. \nAttackers can also leverage cloud-based resources to launch attacks on other targets, amplifying the impact of their actions.\nSimilarly, in containerized environments, attackers can use compromised containers to launch resource-hijacking attacks. \nBy deploying multiple containers within a cluster or environment, attackers can scale their mining activities and launch coordinated DDoS attacks.\n"
+      },
+      {
+        "id": "T0149",
+        "name": "Delete repositories",
+        "tooltip": "Delete repositories",
+        "tags": [
+          "SCM Posture"
+        ],
+        "url": "techniques/T0149.html",
+        "description": "A delete repository attack technique in a CI/CD pipeline is a type of denial-of-service (DoS) attack that targets the code repositories used by the pipeline. \nThe goal of the attack is to delete the repositories or make them unavailable, thus disrupting the pipeline's ability to build and deploy software.\nIn a typical CI/CD pipeline, code repositories are an essential component as they contain the source code for the application that is being built and deployed. \nIn a delete repository attack, an attacker gains unauthorized access to the repositories and deletes the source code. \nThis can cause significant disruptions to the pipeline, leading to delays in software releases or even complete downtime of the system.\n"
+      },
+      {
+        "id": "T0177",
+        "name": "Misconfiguration of serverless workloads",
+        "tooltip": "Misconfiguration of serverless workloads",
+        "tags": [
+          "Cloud Security"
+        ],
+        "url": "techniques/T0177.html",
+        "description": "Misconfiguration of serverless workloads is a significant security risk in cloud environments. \nExcessive permissions granted to serverless functions, lack of security controls around functions, and misconfigured third-party services are common misconfigurations that can lead to data breaches and other security incidents.\nOne of the most common misconfigurations in serverless workloads is excessive permissions granted to functions. \nServerless functions typically require specific permissions to access resources in the cloud environment, such as databases or object storage. \nIf these permissions are misconfigured or overly permissive, an attacker can gain access to sensitive data or even take control of the entire environment.\n"
+      },
+      {
+        "id": "T0186",
+        "name": "Source code leak",
+        "tooltip": "Source code leak",
+        "tags": [
+          "SCM Posture",
+          "CI/CD Posture"
+        ],
+        "url": "techniques/T0186.html",
+        "description": "When source code is disclosed, it can lead to various risks, including the loss of intellectual property, legal issues, and competitive disadvantage. \nHowever, in the context of supply chain security, source code disclosure can expose vulnerabilities such as third-party library vulnerabilities, hard-coded secrets, code weaknesses, and logic bugs. \nThese vulnerabilities can be exploited as initial access points to further attack the supply chain.\n"
+      },
+      {
+        "id": "T0191",
+        "name": "Malicious code in artifacts",
+        "tooltip": "Malicious code in artifacts",
+        "tags": [
+          "Cloud Security",
+          "Infrastructure as code",
+          "Code Security"
+        ],
+        "url": "techniques/T0191.html",
+        "description": "By infecting artifacts with malicious code, attackers can gain access to a large number of unsuspecting customers who use these components in their systems or products. \nThis can allow the attackers to steal sensitive information, disrupt operations, or take control of affected systems.\nFurthermore, because the malicious code is embedded within a seemingly legitimate component, it can be difficult to detect and remove. \nThis makes supply chain attacks particularly dangerous and challenging to defend against.\nOverall, the goal of infecting artifacts with malicious code is to spread the malware to as many targets as possible, while remaining undetected for as long as possible.\n"
+      },
+      {
+        "id": "T0196",
+        "name": "Backdoor in code",
+        "tooltip": "Backdoor in code",
+        "tags": [
+          "Code Security",
+          "Open Source Security",
+          "SCM Posture",
+          "CI/CD Posture"
+        ],
+        "url": "techniques/T0196.html",
+        "description": "Backdoor in code attack technique involves inserting a malicious code segment or backdoor into the software codebase, which allows the attacker to maintain access and control over the system even after their initial access has been removed or blocked.\nIn this attack, the attacker gains access to the codebase through various means, such as exploiting vulnerabilities or stealing credentials. \nOnce they have gained access, the attacker inserts a malicious code segment or backdoor into the codebase. \nThis code segment may be designed to execute specific malicious activities, such as stealing sensitive information, or to provide the attacker with continued access and control over the system.\n"
+      },
+      {
+        "id": "T0199",
+        "name": "Secret leak",
+        "tooltip": "Secret leak",
+        "tags": [
+          "SCM Posture",
+          "CI/CD Posture"
+        ],
+        "url": "techniques/T0199.html",
+        "description": "- In the realm of software supply chains, attackers covet secrets. Gaining access to customer secrets enables attackers to advance to the next stage of their malicious activities.\n"
+      },
+      {
+        "id": "T0200",
+        "name": "Proprietary data stolen",
+        "tooltip": "Proprietary data stolen",
+        "tags": [
+          "Code Security",
+          "Cloud Security",
+          "SCM Posture",
+          "Secrets Hygiene"
+        ],
+        "url": "techniques/T0200.html",
+        "description": "After a supply-chain foothold is established, the attacker steals proprietary\ndata \u2014 source code, designs, internal documents, customer lists, or trade secrets.\nThis is often the realized value of a compromise for espionage-motivated actors\nand is the Impact-column outcome that earlier OSC&R tactics were missing.\nDistinct from a generic secret leak: the objective is the organization's\nintellectual property, not only credentials.\n"
+      },
+      {
+        "id": "T0201",
+        "name": "Customers compromised",
+        "tooltip": "Customers compromised",
+        "tags": [
+          "Artifact Security",
+          "CI/CD Posture",
+          "Open Source Security"
+        ],
+        "url": "techniques/T0201.html",
+        "description": "The downstream consequence of a software supply-chain attack: customers who\nconsumed a poisoned update, package, or service are themselves breached.\nSolarWinds Orion, 3CX, Codecov, and Polyfill.io are canonical examples \u2014\nthe supplier is the delivery vehicle; customer environments are the prize.\nModeling this as its own Impact technique lets defenders map \"what happened\nto us because we trusted a vendor\" without collapsing it into a generic\nbackdoor label.\n"
+      }
+    ],
+    "amount": 9,
+    "tooltip": "Impact",
+    "tacticid": "TA12"
+  }
 }

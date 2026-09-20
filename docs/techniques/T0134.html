@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>T0134 Add user · OSC&amp;R</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+    <header class="top">
+      <div class="ai-banner">This is an <strong>AI-maintained continuation</strong> of OSC&amp;R, preserving the original PBOM / pbom-dev work and carrying the project forward.</div>
+      <div class="bar">
+        <a class="brand" href="../index.html">OSC&amp;R</a>
+        <nav>
+          <a href="../index.html">Matrix</a>
+          <a href="../techniques/index.html">Techniques</a>
+          <a href="../incidents/index.html">Incident mapping</a>
+          <a href="../stories/index.html">Attack stories</a>
+          <a href="../about.html">About</a>
+        </nav>
+      </div>
+    </header>
+<main>
+<p class="crumb">OSC&amp;R / <a href="index.html">Techniques</a> / T0134</p>
+
+        <p class="meta">T0134 · Persistence · TA05</p>
+        <h1>Add user</h1>
+        <div class="chips"><span class="chip">CI/CD Posture</span> <span class="chip">SCM Posture</span> <span class="chip">Cloud Security</span></div>
+        <p>Add user attack technique involves adding a new user account with privileged access to the system, allowing the attacker to continue to perform malicious activities even if their original access is removed or revoked.<br>In this attack, the attacker gains access to the CI/CD system through various means, such as exploiting vulnerabilities or stealing credentials. <br>Once they have gained access, the attacker creates a new user account with elevated privileges, such as administrator or root access. <br>This allows the attacker to continue to access and control the system even if their original access is removed or blocked.</p>
+        
+        <h2>Mitigations</h2>
+        <ul><li><span class="id">M1340</span> Implement regular account review</li><li><span class="id">M1860</span> Implement strong authentication mechanisms</li><li><span class="id">M1861</span> Implement strong authorization mechanisms</li></ul>
+        <h2>Detections</h2>
+        <ul><li><span class="id">D1260</span> Implement regular security audit and review</li><li><span class="id">D1261</span> Implement penetration testing</li><li><span class="id">D1262</span> Implement vulnerability assessment</li><li><span class="id">D1510</span> Implement Intrusion Detection System and anti-malware</li><li><span class="id">D1590</span> Implement continuous monitoring and logging of the CI/CD process</li></ul>
+        
+        <h2>References</h2>
+        <p class='muted'>None listed.</p>
+        
+</main>
+
+    <footer>
+      <p>OSC&amp;R (Open Software Supply Chain Attack Reference) was created by
+      <a href="https://github.com/pbom-dev/OSCAR">pbom-dev</a> and its original contributors.
+      This fork is AI-maintained to continue that legacy. Apache-2.0. See
+      <a href="../about.html">About &amp; attribution</a>.</p>
+    </footer>
+</body>
+</html>

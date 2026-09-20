@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>T0126 Exposed storage · OSC&amp;R</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+    <header class="top">
+      <div class="ai-banner">This is an <strong>AI-maintained continuation</strong> of OSC&amp;R, preserving the original PBOM / pbom-dev work and carrying the project forward.</div>
+      <div class="bar">
+        <a class="brand" href="../index.html">OSC&amp;R</a>
+        <nav>
+          <a href="../index.html">Matrix</a>
+          <a href="../techniques/index.html">Techniques</a>
+          <a href="../incidents/index.html">Incident mapping</a>
+          <a href="../stories/index.html">Attack stories</a>
+          <a href="../about.html">About</a>
+        </nav>
+      </div>
+    </header>
+<main>
+<p class="crumb">OSC&amp;R / <a href="index.html">Techniques</a> / T0126</p>
+
+        <p class="meta">T0126 · Initial Access · TA03</p>
+        <h1>Exposed storage</h1>
+        <div class="chips"><span class="chip">Cloud Security</span> <span class="chip">Infrastructure as code</span></div>
+        <p>Exposed storage is an attack technique where an attacker targets and exploits cloud storage containers or buckets that are publicly accessible or have weak access controls. <br>The attacker can gain access to sensitive data stored in the containers, such as personal information, financial data, or intellectual property.<br>Exposed storage can occur due to misconfigured access controls, where the data is mistakenly made publicly available or accessible to unauthorized users. <br>This can occur when the default security settings for cloud storage services are not properly adjusted, or when access controls are not regularly reviewed and updated.</p>
+        
+        <h2>Mitigations</h2>
+        <ul><li><span class="id">M1240</span> Enable data encryption at rest</li><li><span class="id">M1260</span> Implement least privilege access</li><li><span class="id">M1261</span> Implement proper access control for cloud storages</li><li><span class="id">M1550</span> Implement strict access control for clouds</li></ul>
+        <h2>Detections</h2>
+        <ul><li><span class="id">D1510</span> Implement Intrusion Detection System and anti-malware</li><li><span class="id">D1260</span> Implement regular security audit and review</li><li><span class="id">D1261</span> Implement penetration testing</li><li><span class="id">D1262</span> Implement vulnerability assessment</li></ul>
+        
+        <h2>References</h2>
+        <ul class='refs'><li><a href="https://www.trendmicro.com/vinfo/es/security/news/virtualization-and-cloud/a-misconfigured-amazon-s3-exposed-almost-50-thousand-pii-in-australia" rel="noopener">https://www.trendmicro.com/vinfo/es/security/news/virtualization-and-cloud/a-misconfigured-amazon-s3-exposed-almost-50-thousand-pii-in-australia</a></li><li><a href="https://www.darkreading.com/application-security/cloud-misconfig-exposes-3tb-sensitive-airport-data-amazon-s3-bucket" rel="noopener">https://www.darkreading.com/application-security/cloud-misconfig-exposes-3tb-sensitive-airport-data-amazon-s3-bucket</a></li></ul>
+        
+</main>
+
+    <footer>
+      <p>OSC&amp;R (Open Software Supply Chain Attack Reference) was created by
+      <a href="https://github.com/pbom-dev/OSCAR">pbom-dev</a> and its original contributors.
+      This fork is AI-maintained to continue that legacy. Apache-2.0. See
+      <a href="../about.html">About &amp; attribution</a>.</p>
+    </footer>
+</body>
+</html>

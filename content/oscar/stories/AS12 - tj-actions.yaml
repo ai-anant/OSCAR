@@ -1,0 +1,70 @@
+id: AS12
+type: Attack Story
+date: 2025-03
+
+summary: tj-actions/changed-files GitHub Action
+description: |
+  In March 2025 the popular GitHub Action tj-actions/changed-files was
+  compromised (CVE-2025-30066). A malicious commit caused the action to
+  print CI secrets (including PATs, npm tokens, and cloud keys) to build
+  logs, where they could be harvested. Thousands of repositories that
+  pinned the action loosely, or not at all, ran the poisoned version.
+  Closely related reviewdog/action-setup was reported in the same wave.
+  This is T0122 realized at ecosystem scale.
+
+attacks:
+  - attack: GitHub Marketplace action
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0122
+        techName: Vulnerability in third-party CI/CD actions
+        tactic: Initial Access
+        comment: |
+          Downstream workflows trusted a third-party action with access to
+          GITHUB_TOKEN and repository secrets.
+      - techniqueID: T0111
+        techName: Malicious code contribution to an open-source repository
+        tactic: Resource Development
+        comment: |
+          The action repository itself was modified so every consumer job
+          ran attacker-controlled code.
+      - techniqueID: T0202
+        techName: Inadequate CI/CD workflow permissions
+        tactic: Persistence
+        comment: |
+          Jobs that granted write tokens and did not pin the action to a
+          SHA amplified what the malicious step could do.
+  - attack: Consumer CI jobs
+    index: 2
+    stage: post-supply-chain
+    customer: 1
+    supplier: 0
+    techniques:
+      - techniqueID: T0130
+        techName: Harvest secrets from logs
+        tactic: Credential Access
+        comment: |
+          Secrets were dumped into GitHub Actions logs, which are often
+          readable by a wider set of identities than the job itself.
+      - techniqueID: T0140
+        techName: Harvest tokens from environment variables
+        tactic: Credential Access
+        comment: |
+          The action had access to the job environment, including GITHUB_TOKEN
+          and configured secrets.
+      - techniqueID: T0199
+        techName: Secret leak
+        tactic: Impact
+        comment: |
+          Stolen CI credentials were the impact, enabling follow-on publishes
+          and repository writes.
+
+gaps:
+  - Pinning Actions to a commit SHA (not a floating tag) is a mitigation that should be a first-class M-item if it is not already covered by M1220/M1222.
+
+links:
+  - https://www.cisa.gov/news-events/alerts/2025/03/18/supply-chain-compromise-third-party-github-action-cve-2025-30066
+  - https://github.com/tj-actions/changed-files/issues/2463

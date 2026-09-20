@@ -1,0 +1,60 @@
+id: AS15
+type: Attack Story
+date: 2025-09
+
+summary: npm chalk / debug maintainer phishing (Qix)
+description: |
+  In September 2025 the npm account of maintainer Qix (Josh Junon) was
+  phished. Malicious versions of extremely widely used packages including
+  chalk and debug — and a fan-out of related packages — were published.
+  Payloads targeted crypto-wallet activity in consuming applications. This
+  is the same shape as ua-parser-js (AS11) and event-stream (AS9) at a
+  much larger package-popularity scale.
+
+attacks:
+  - attack: npm maintainer account
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0113
+        techName: Compromised user account
+        tactic: Initial Access
+        comment: |
+          Phishing produced control of the maintainer npm identity.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: |
+          New versions of chalk, debug, and related packages were published
+          from the hijacked account.
+      - techniqueID: T0121
+        techName: Compromised legitimate artifact
+        tactic: Resource Development
+        comment: |
+          Downstream projects continued to resolve the same package names.
+  - attack: Applications depending on chalk/debug
+    index: 2
+    stage: post-supply-chain
+    customer: 1
+    supplier: 0
+    techniques:
+      - techniqueID: T0159
+        techName: Malicious artifact execution
+        tactic: Execution
+        comment: |
+          Install or runtime of the poisoned versions executed attacker code.
+      - techniqueID: T0139
+        techName: Resource hijacking
+        tactic: Impact
+        comment: |
+          Reported objective was theft of cryptocurrency / wallet material.
+
+gaps:
+  - Phishing of high-degree npm maintainers is an initial-access path OSC&R still folds into T0113; a dedicated "registry phishing" procedure would help.
+
+links:
+  - https://github.com/debug-js/debug/issues/1005
+  - https://www.aikido.dev/blog/npm-debug-and-chalk-packages-compromised
+  - https://www.stepsecurity.io/blog/supply-chain-security-alert-popular-npm-package-compromised

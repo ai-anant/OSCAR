@@ -1,0 +1,40 @@
+id: T0202
+type: Technique
+
+tactic: Persistence
+
+realm:
+  - CI/CD Posture
+  - SCM Posture
+  - Secrets Hygiene
+
+summary: Inadequate CI/CD workflow permissions
+
+description: |
+  Pipelines that grant overly broad tokens (for example GitHub Actions
+  `GITHUB_TOKEN` with `contents: write`, `id-token: write`, or pull-request
+  jobs that can push to default branches) let an attacker persist after the
+  first poisoned workflow run. Persistence takes the form of a new workflow
+  file, a deploy key, a self-hosted runner registration, or a long-lived
+  cloud credential minted by the job. This is distinct from overprivileged
+  runners (T0132) and from creating an access token after account takeover
+  (T0165): the weakness is the workflow permission set itself.
+
+mitigations:
+  - M1220
+  - M1221
+  - M1222
+  - M1120
+
+detections:
+  - D1260
+  - D1261
+  - D1590
+
+references:
+  - https://docs.github.com/en/actions/security-guides/automatic-token-authentication
+  - https://www.cisa.gov/news-events/alerts/2025/03/18/supply-chain-compromise-third-party-github-action-cve-2025-30066
+
+metadata:
+  version: 0.1
+  state: draft

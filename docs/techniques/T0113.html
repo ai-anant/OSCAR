@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>T0113 Compromised user account · OSC&amp;R</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+    <header class="top">
+      <div class="ai-banner">This is an <strong>AI-maintained continuation</strong> of OSC&amp;R, preserving the original PBOM / pbom-dev work and carrying the project forward.</div>
+      <div class="bar">
+        <a class="brand" href="../index.html">OSC&amp;R</a>
+        <nav>
+          <a href="../index.html">Matrix</a>
+          <a href="../techniques/index.html">Techniques</a>
+          <a href="../incidents/index.html">Incident mapping</a>
+          <a href="../stories/index.html">Attack stories</a>
+          <a href="../about.html">About</a>
+        </nav>
+      </div>
+    </header>
+<main>
+<p class="crumb">OSC&amp;R / <a href="index.html">Techniques</a> / T0113</p>
+
+        <p class="meta">T0113 · Initial Access · TA03</p>
+        <h1>Compromised user account</h1>
+        <div class="chips"><span class="chip">Artifact Security</span> <span class="chip">Cloud Security</span> <span class="chip">Infrastructure as code</span> <span class="chip">SCM Posture</span></div>
+        <p>A compromised user account is a serious security threat, as attackers can use it to bypass security measures that are in place to protect an organization&#x27;s assets. <br>Attackers can gain access to legitimate user accounts in several ways, including brute-force attacks, phishing, malware, or social engineering.<br>Once an attacker gains access to a user&#x27;s account, they can access the cloud resources, artifact repository, infrastructure-as-code templates, or source code repository to steal or modify sensitive data or launch further attacks.<br>In such case an attacker is able to modify the code and cloud resources, inject malware or backdoors, or replace legitimate artifacts.<br>This can result in data breaches, system downtime, reputation damage, and financial losses.</p>
+        
+        <h2>Mitigations</h2>
+        <ul><li><span class="id">M1130</span> Implement password rotation</li><li><span class="id">M1131</span> Disable or lock compromised accounts</li><li><span class="id">M1132</span> Enable MFA for user accounts</li><li><span class="id">M1450</span> Implement zero trust</li><li><span class="id">M1451</span> Use network segmentation</li><li><span class="id">M1550</span> Implement strict access control for clouds</li><li><span class="id">M1661</span> Revoke user permissions</li></ul>
+        <h2>Detections</h2>
+        <ul><li><span class="id">D1130</span> Implement account activity monitoring</li><li><span class="id">D1131</span> Implement SIEM</li><li><span class="id">D1510</span> Implement Intrusion Detection System and anti-malware</li><li><span class="id">D1520</span> Implement endpoint detection and response system</li></ul>
+        <h2>Seen in incidents</h2><ul><li><a href="../incidents/AS9.html">npm event-stream / flatmap-stream</a></li><li><a href="../incidents/AS5.html">CCleaner</a></li><li><a href="../incidents/AS108.html">JuiceStealer - PyPi Supply Chain Attack</a></li><li><a href="../incidents/AS108.html">JuiceStealer - PyPi Supply Chain Attack</a></li><li><a href="../incidents/AS107.html">Spoofed Dependabot</a></li><li><a href="../incidents/AS109.html">Pytorch Dependency Confusion</a></li><li><a href="../incidents/AS6.html">SolarWinds</a></li><li><a href="../incidents/AS2.html">3CX Desktop</a></li><li><a href="../incidents/AS15.html">npm chalk / debug maintainer phishing (Qix)</a></li><li><a href="../incidents/AS11.html">ua-parser-js npm account takeover</a></li></ul>
+        <h2>References</h2>
+        <ul class='refs'><li><a href="https://blog.gitguardian.com/poisoning-the-source-how-and-why-attackers-are-targeting-developer-accounts/" rel="noopener">https://blog.gitguardian.com/poisoning-the-source-how-and-why-attackers-are-targeting-developer-accounts/</a></li><li><a href="https://rhinosecuritylabs.com/aws/aws-iam-credentials-get-compromised/" rel="noopener">https://rhinosecuritylabs.com/aws/aws-iam-credentials-get-compromised/</a></li></ul>
+        
+</main>
+
+    <footer>
+      <p>OSC&amp;R (Open Software Supply Chain Attack Reference) was created by
+      <a href="https://github.com/pbom-dev/OSCAR">pbom-dev</a> and its original contributors.
+      This fork is AI-maintained to continue that legacy. Apache-2.0. See
+      <a href="../about.html">About &amp; attribution</a>.</p>
+    </footer>
+</body>
+</html>

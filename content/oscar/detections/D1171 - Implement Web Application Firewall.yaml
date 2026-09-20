@@ -1,5 +1,5 @@
 id: D1171
-type: Mitigation
+type: Detection
 summary: Implement Web Application Firewall
 description: |
   A web application firewall (WAF) is a security control that is designed to protect web applications from various types of cyber threats, such as web-based attacks, including Cross-Site Scripting (XSS), SQL Injection, Cross-Site Request Forgery (CSRF), and other application-layer attacks.

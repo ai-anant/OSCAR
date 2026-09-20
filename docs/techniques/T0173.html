@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>T0173 Auto merge rules in SCM · OSC&amp;R</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+    <header class="top">
+      <div class="ai-banner">This is an <strong>AI-maintained continuation</strong> of OSC&amp;R, preserving the original PBOM / pbom-dev work and carrying the project forward.</div>
+      <div class="bar">
+        <a class="brand" href="../index.html">OSC&amp;R</a>
+        <nav>
+          <a href="../index.html">Matrix</a>
+          <a href="../techniques/index.html">Techniques</a>
+          <a href="../incidents/index.html">Incident mapping</a>
+          <a href="../stories/index.html">Attack stories</a>
+          <a href="../about.html">About</a>
+        </nav>
+      </div>
+    </header>
+<main>
+<p class="crumb">OSC&amp;R / <a href="index.html">Techniques</a> / T0173</p>
+
+        <p class="meta">T0173 · Execution · TA04</p>
+        <h1>Auto merge rules in SCM</h1>
+        <div class="chips"><span class="chip">SCM Posture</span></div>
+        <p>Auto merge rules in SCM (Source Code Management) are rules that determine how code changes should be merged automatically into a main code repository or branch.<br>While auto merge rules in SCM can help to streamline the code review and merge process, there are several security risks to consider, including:<br>1. Malicious code injection: Auto merge rules may allow malicious code changes to be merged into the code repository, compromising the security of the system.<br>2. Vulnerability propagation: Automatic merges can propagate security vulnerabilities to the main code repository or branch, allowing attackers to exploit these vulnerabilities to gain unauthorized access to the system.<br>3. Human error: Auto merge rules can lead to errors in the code repository, such as overwriting critical code or merging code that has not been properly reviewed.<br>4. Compliance violations: Auto merge rules can violate compliance requirements, such as failing to properly audit code changes or not properly segregating code changes between different teams.</p>
+        
+        <h2>Mitigations</h2>
+        <ul><li><span class="id">M1730</span> Implement code reviews</li><li><span class="id">M1731</span> Implement verification of signed commits</li><li><span class="id">M1732</span> Implement code scanning for security risks</li><li><span class="id">M1860</span> Implement strong authentication mechanisms</li><li><span class="id">M1861</span> Implement strong authorization mechanisms</li></ul>
+        <h2>Detections</h2>
+        <ul><li><span class="id">D1262</span> Implement vulnerability assessment</li><li><span class="id">D1500</span> Configure monitoring of used artifacts and open-source libraries</li><li><span class="id">D1510</span> Implement Intrusion Detection System and anti-malware</li></ul>
+        
+        <h2>References</h2>
+        <ul class='refs'><li><a href="https://securityintelligence.com/posts/abusing-source-code-management-systems/" rel="noopener">https://securityintelligence.com/posts/abusing-source-code-management-systems/</a></li></ul>
+        
+</main>
+
+    <footer>
+      <p>OSC&amp;R (Open Software Supply Chain Attack Reference) was created by
+      <a href="https://github.com/pbom-dev/OSCAR">pbom-dev</a> and its original contributors.
+      This fork is AI-maintained to continue that legacy. Apache-2.0. See
+      <a href="../about.html">About &amp; attribution</a>.</p>
+    </footer>
+</body>
+</html>

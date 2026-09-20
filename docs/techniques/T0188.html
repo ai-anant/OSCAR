@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>T0188 Cross Site Request Forgery · OSC&amp;R</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+    <header class="top">
+      <div class="ai-banner">This is an <strong>AI-maintained continuation</strong> of OSC&amp;R, preserving the original PBOM / pbom-dev work and carrying the project forward.</div>
+      <div class="bar">
+        <a class="brand" href="../index.html">OSC&amp;R</a>
+        <nav>
+          <a href="../index.html">Matrix</a>
+          <a href="../techniques/index.html">Techniques</a>
+          <a href="../incidents/index.html">Incident mapping</a>
+          <a href="../stories/index.html">Attack stories</a>
+          <a href="../about.html">About</a>
+        </nav>
+      </div>
+    </header>
+<main>
+<p class="crumb">OSC&amp;R / <a href="index.html">Techniques</a> / T0188</p>
+
+        <p class="meta">T0188 · Execution · TA04</p>
+        <h1>Cross Site Request Forgery</h1>
+        <div class="chips"><span class="chip">Code Security</span></div>
+        <p>Cross-Site Request Forgery, or CSRF, may have different affects, depending on the application code. <br>It is widely used in conjunction with spear-phishing attacks where adversaries will attempt to abuse authenticated users sessions to perform actions that will allow them to take over a server.</p>
+        
+        <h2>Mitigations</h2>
+        <ul><li><span class="id">M1720</span> Implement regular patches and updates</li><li><span class="id">M1880</span> Implement Anti-CSRF token</li><li><span class="id">M1881</span> Enable SameSite cookies</li><li><span class="id">M1882</span> Implement Strict Referer Policy</li><li><span class="id">M1883</span> Implement Web Application Firewall</li></ul>
+        <h2>Detections</h2>
+        <ul><li><span class="id">D1261</span> Implement penetration testing</li><li><span class="id">D1262</span> Implement vulnerability assessment</li><li><span class="id">D1171</span> Implement Web Application Firewall</li><li><span class="id">D1880</span> Missing Anti-CSRF token</li><li><span class="id">D1881</span> Missing Referer header</li></ul>
+        
+        <h2>References</h2>
+        <ul class='refs'><li><a href="https://www.securityweek.com/csrf-vulnerability-kudu-scm-allowed-code-execution-azure-services/" rel="noopener">https://www.securityweek.com/csrf-vulnerability-kudu-scm-allowed-code-execution-azure-services/</a></li><li><a href="https://owasp.org/www-community/attacks/csrf" rel="noopener">https://owasp.org/www-community/attacks/csrf</a></li></ul>
+        
+</main>
+
+    <footer>
+      <p>OSC&amp;R (Open Software Supply Chain Attack Reference) was created by
+      <a href="https://github.com/pbom-dev/OSCAR">pbom-dev</a> and its original contributors.
+      This fork is AI-maintained to continue that legacy. Apache-2.0. See
+      <a href="../about.html">About &amp; attribution</a>.</p>
+    </footer>
+</body>
+</html>

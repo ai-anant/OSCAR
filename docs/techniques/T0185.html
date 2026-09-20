@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>T0185 Steal credentials in container artifacts · OSC&amp;R</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+    <header class="top">
+      <div class="ai-banner">This is an <strong>AI-maintained continuation</strong> of OSC&amp;R, preserving the original PBOM / pbom-dev work and carrying the project forward.</div>
+      <div class="bar">
+        <a class="brand" href="../index.html">OSC&amp;R</a>
+        <nav>
+          <a href="../index.html">Matrix</a>
+          <a href="../techniques/index.html">Techniques</a>
+          <a href="../incidents/index.html">Incident mapping</a>
+          <a href="../stories/index.html">Attack stories</a>
+          <a href="../about.html">About</a>
+        </nav>
+      </div>
+    </header>
+<main>
+<p class="crumb">OSC&amp;R / <a href="index.html">Techniques</a> / T0185</p>
+
+        <p class="meta">T0185 · Credential Access · TA08</p>
+        <h1>Steal credentials in container artifacts</h1>
+        <div class="chips"><span class="chip">Artifact Security</span></div>
+        <p>Attackers can steal credentials by searching through the container artifacts for any sensitive information that may have been inadvertently included, such as hard-coded passwords or API keys. <br>They can also intercept network traffic between containers and external systems to capture any credentials that may be transmitted in plaintext.</p>
+        
+        <h2>Mitigations</h2>
+        <ul><li><span class="id">M1550</span> Implement strict access control for clouds</li></ul>
+        <h2>Detections</h2>
+        <ul><li><span class="id">D1261</span> Implement penetration testing</li><li><span class="id">D1262</span> Implement vulnerability assessment</li><li><span class="id">D1510</span> Implement Intrusion Detection System and anti-malware</li></ul>
+        
+        <h2>References</h2>
+        <ul class='refs'><li><a href="https://cycode.com/introducing-container-secret-scanning/" rel="noopener">https://cycode.com/introducing-container-secret-scanning/</a></li></ul>
+        
+</main>
+
+    <footer>
+      <p>OSC&amp;R (Open Software Supply Chain Attack Reference) was created by
+      <a href="https://github.com/pbom-dev/OSCAR">pbom-dev</a> and its original contributors.
+      This fork is AI-maintained to continue that legacy. Apache-2.0. See
+      <a href="../about.html">About &amp; attribution</a>.</p>
+    </footer>
+</body>
+</html>

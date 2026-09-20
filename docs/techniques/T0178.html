@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>T0178 Deploy keys · OSC&amp;R</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+    <header class="top">
+      <div class="ai-banner">This is an <strong>AI-maintained continuation</strong> of OSC&amp;R, preserving the original PBOM / pbom-dev work and carrying the project forward.</div>
+      <div class="bar">
+        <a class="brand" href="../index.html">OSC&amp;R</a>
+        <nav>
+          <a href="../index.html">Matrix</a>
+          <a href="../techniques/index.html">Techniques</a>
+          <a href="../incidents/index.html">Incident mapping</a>
+          <a href="../stories/index.html">Attack stories</a>
+          <a href="../about.html">About</a>
+        </nav>
+      </div>
+    </header>
+<main>
+<p class="crumb">OSC&amp;R / <a href="index.html">Techniques</a> / T0178</p>
+
+        <p class="meta">T0178 · Persistence · TA05</p>
+        <h1>Deploy keys</h1>
+        <div class="chips"><span class="chip">SCM Posture</span></div>
+        <p>Deploy keys are SSH keys that are used to authenticate a specific machine or service to access a repository or codebase in a SCM system like Git. <br>They are typically used to automate deployments or integrations between services and repositories.<br>In this attack technique, an attacker gains access to a machine that has deploy keys configured for access to a repository or codebase. <br>Once they have access, they can obtain the private key of the deploy key and use it to gain access to the repository or codebase from other machines or services, even if the original machine is no longer accessible.<br>By doing so, the attacker can maintain persistent access to the repository or codebase, allowing them to steal sensitive information, introduce malicious code or manipulate the codebase to conduct further attacks.</p>
+        
+        <h2>Mitigations</h2>
+        <ul><li><span class="id">M1661</span> Revoke user permissions</li><li><span class="id">M1780</span> Restrict access to machines with deploy keys</li><li><span class="id">M1781</span> Use dedicated machines for deploy keys</li><li><span class="id">M1782</span> Securely store private keys</li><li><span class="id">M1783</span> Rotate deploy keys regularly</li></ul>
+        <h2>Detections</h2>
+        <ul><li><span class="id">D1510</span> Implement Intrusion Detection System and anti-malware</li><li><span class="id">D1780</span> Monitor authentication logs</li><li><span class="id">D1781</span> Audit and review deploy key access</li></ul>
+        
+        <h2>References</h2>
+        <ul class='refs'><li><a href="https://www.ibm.com/downloads/cas/OG6KNX1E" rel="noopener">https://www.ibm.com/downloads/cas/OG6KNX1E</a></li></ul>
+        
+</main>
+
+    <footer>
+      <p>OSC&amp;R (Open Software Supply Chain Attack Reference) was created by
+      <a href="https://github.com/pbom-dev/OSCAR">pbom-dev</a> and its original contributors.
+      This fork is AI-maintained to continue that legacy. Apache-2.0. See
+      <a href="../about.html">About &amp; attribution</a>.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,64 @@
+id: AS8
+type: Attack Story
+date: 2024-06
+
+summary: Polyfill.io CDN takeover
+description: |
+  The polyfill.io domain, embedded by hundreds of thousands of websites as a
+  JavaScript CDN, changed hands. The new operator served malicious script in
+  place of the expected polyfill, redirecting users and injecting extra
+  payloads. CISA and multiple CDNs issued emergency guidance to stop loading
+  assets from cdn.polyfill.io. This incident is a web-asset supply-chain
+  compromise, not a package-registry event, and was missing from OSC&R until
+  T0205 was added.
+
+attacks:
+  - attack: polyfill.io
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0205
+        techName: Compromise third-party CDN or hosted web asset
+        tactic: Initial Access
+        comment: |
+          Control of the hostname was enough; sites that hotlinked the CDN
+          began executing attacker JavaScript with no application deploy.
+      - techniqueID: T0121
+        techName: Compromised legitimate artifact
+        tactic: Resource Development
+        comment: |
+          The familiar script URL kept its name and consumers while the bytes
+          behind it changed.
+      - techniqueID: T0180
+        techName: Compromise services / servers
+        tactic: Initial Access
+        comment: |
+          Taking over the CDN service itself, rather than a consumer site,
+          multiplied blast radius.
+  - attack: Sites embedding polyfill.io
+    index: 2
+    stage: post-supply-chain
+    customer: 1
+    supplier: 0
+    techniques:
+      - techniqueID: T0159
+        techName: Malicious artifact execution
+        tactic: Execution
+        comment: |
+          Browsers executed the substituted script in the origin of every
+          embedding site.
+      - techniqueID: T0201
+        techName: Customers compromised
+        tactic: Impact
+        comment: |
+          End users of those sites were the actual victims; site owners were
+          the unwitting distribution channel.
+
+gaps:
+  - Subresource Integrity (SRI) and allow-listed CDNs are mitigations that were not previously tied to a CDN-compromise technique.
+
+links:
+  - https://sansec.io/research/polyfill-supply-chain-attack
+  - https://www.cisa.gov/news-events/alerts/2024/06/27/widespread-security-compromise-polyfillio-supply-chain-attack

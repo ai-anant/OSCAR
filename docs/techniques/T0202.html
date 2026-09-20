@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>T0202 Inadequate CI/CD workflow permissions · OSC&amp;R</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+    <header class="top">
+      <div class="ai-banner">This is an <strong>AI-maintained continuation</strong> of OSC&amp;R, preserving the original PBOM / pbom-dev work and carrying the project forward.</div>
+      <div class="bar">
+        <a class="brand" href="../index.html">OSC&amp;R</a>
+        <nav>
+          <a href="../index.html">Matrix</a>
+          <a href="../techniques/index.html">Techniques</a>
+          <a href="../incidents/index.html">Incident mapping</a>
+          <a href="../stories/index.html">Attack stories</a>
+          <a href="../about.html">About</a>
+        </nav>
+      </div>
+    </header>
+<main>
+<p class="crumb">OSC&amp;R / <a href="index.html">Techniques</a> / T0202</p>
+
+        <p class="meta">T0202 · Persistence · TA05</p>
+        <h1>Inadequate CI/CD workflow permissions</h1>
+        <div class="chips"><span class="chip">CI/CD Posture</span> <span class="chip">SCM Posture</span> <span class="chip">Secrets Hygiene</span></div>
+        <p>Pipelines that grant overly broad tokens (for example GitHub Actions<br><code>GITHUB_TOKEN</code> with <code>contents: write</code>, <code>id-token: write</code>, or pull-request<br>jobs that can push to default branches) let an attacker persist after the<br>first poisoned workflow run. Persistence takes the form of a new workflow<br>file, a deploy key, a self-hosted runner registration, or a long-lived<br>cloud credential minted by the job. This is distinct from overprivileged<br>runners (T0132) and from creating an access token after account takeover<br>(T0165): the weakness is the workflow permission set itself.</p>
+        
+        <h2>Mitigations</h2>
+        <ul><li><span class="id">M1220</span> Use only trusted third-party Github actions from reputable sources</li><li><span class="id">M1221</span> Review the Github action source code</li><li><span class="id">M1222</span> Limit the permissions granted to third-party Github actions</li><li><span class="id">M1120</span> Store credentials in vault</li></ul>
+        <h2>Detections</h2>
+        <ul><li><span class="id">D1260</span> Implement regular security audit and review</li><li><span class="id">D1261</span> Implement penetration testing</li><li><span class="id">D1590</span> Implement continuous monitoring and logging of the CI/CD process</li></ul>
+        <h2>Seen in incidents</h2><ul><li><a href="../incidents/AS12.html">tj-actions/changed-files GitHub Action</a></li></ul>
+        <h2>References</h2>
+        <ul class='refs'><li><a href="https://docs.github.com/en/actions/security-guides/automatic-token-authentication" rel="noopener">https://docs.github.com/en/actions/security-guides/automatic-token-authentication</a></li><li><a href="https://www.cisa.gov/news-events/alerts/2025/03/18/supply-chain-compromise-third-party-github-action-cve-2025-30066" rel="noopener">https://www.cisa.gov/news-events/alerts/2025/03/18/supply-chain-compromise-third-party-github-action-cve-2025-30066</a></li></ul>
+        
+</main>
+
+    <footer>
+      <p>OSC&amp;R (Open Software Supply Chain Attack Reference) was created by
+      <a href="https://github.com/pbom-dev/OSCAR">pbom-dev</a> and its original contributors.
+      This fork is AI-maintained to continue that legacy. Apache-2.0. See
+      <a href="../about.html">About &amp; attribution</a>.</p>
+    </footer>
+</body>
+</html>

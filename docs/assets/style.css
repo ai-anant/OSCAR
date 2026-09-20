@@ -1,0 +1,81 @@
+
+:root {
+  --bg: #10131a;
+  --panel: #181c25;
+  --panel-2: #1f2531;
+  --ink: #eceef2;
+  --muted: #9aa3b2;
+  --line: #2a3140;
+  --copper: #e2a24b;
+  --copper-dim: #b67b2a;
+  --teal: #6db3a8;
+  --rose: #d46a6a;
+  --chip: #2a3344;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink);
+  font-family: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif; line-height: 1.5; }
+a { color: var(--copper); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.ai-banner {
+  background: #2a2114; color: #f0d9a8; font-size: 0.85rem; padding: 0.45rem 1.2rem;
+  border-bottom: 1px solid #4a3a22; text-align: center;
+}
+.bar { display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  padding: 0.8rem 1.2rem; border-bottom: 1px solid var(--line); background: var(--panel);
+  flex-wrap: wrap; }
+.brand { font-weight: 700; letter-spacing: 0.08em; color: var(--ink); font-size: 1.05rem; }
+.brand:hover { color: var(--copper); text-decoration: none; }
+nav { display: flex; gap: 1rem; flex-wrap: wrap; font-size: 0.92rem; }
+nav a { color: var(--muted); }
+nav a:hover { color: var(--ink); }
+main { padding: 1.4rem 1.2rem 3rem; max-width: 1400px; margin: 0 auto; }
+.crumb { color: var(--muted); font-size: 0.82rem; }
+h1 { font-size: 1.8rem; margin: 0.2rem 0 0.6rem; font-weight: 650; }
+h2 { font-size: 1.15rem; margin-top: 1.6rem; }
+.lede { color: var(--muted); max-width: 70ch; }
+.muted { color: var(--muted); }
+.notice {
+  background: var(--panel); border: 1px solid var(--line); border-left: 3px solid var(--copper);
+  padding: 0.9rem 1rem; margin: 1rem 0 1.4rem;
+}
+.stats { display: flex; gap: 0.8rem; flex-wrap: wrap; margin: 1rem 0 1.4rem; }
+.stat { background: var(--panel); border: 1px solid var(--line); padding: 0.7rem 1rem; min-width: 7.5rem; }
+.stat b { display: block; font-size: 1.3rem; color: var(--copper); }
+.search { width: 100%; max-width: 28rem; padding: 0.55rem 0.7rem; background: var(--panel-2);
+  border: 1px solid var(--line); color: var(--ink); margin: 0.6rem 0 1rem; }
+.matrix-wrap { overflow-x: auto; padding-bottom: 1rem; }
+.matrix { display: grid; gap: 0.45rem; align-items: start; min-width: 1100px; }
+.col { background: var(--panel); border: 1px solid var(--line); min-width: 8.4rem; }
+.col h3 { margin: 0; padding: 0.55rem 0.45rem; font-size: 0.72rem; letter-spacing: 0.03em;
+  text-transform: uppercase; background: var(--panel-2); border-bottom: 1px solid var(--line);
+  color: var(--copper); }
+.col h3 span { display: block; color: var(--muted); font-weight: 500; font-size: 0.68rem; }
+.tech {
+  display: block; margin: 0.35rem; padding: 0.4rem 0.45rem; background: var(--chip);
+  color: var(--ink); font-size: 0.75rem; line-height: 1.25; border: 1px solid transparent;
+}
+.tech:hover { border-color: var(--copper); text-decoration: none; }
+.tech .id { color: var(--teal); font-family: ui-monospace, monospace; font-size: 0.7rem; }
+.list { display: grid; gap: 0.45rem; }
+.row {
+  display: grid; grid-template-columns: 5.5rem 12rem 1fr; gap: 0.7rem; align-items: baseline;
+  background: var(--panel); border: 1px solid var(--line); padding: 0.55rem 0.8rem;
+}
+.row .id { font-family: ui-monospace, monospace; color: var(--teal); }
+.chips { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+.chip { background: var(--chip); border: 1px solid var(--line); padding: 0.1rem 0.45rem;
+  font-size: 0.75rem; color: var(--muted); }
+.meta { color: var(--muted); font-size: 0.9rem; }
+.card { background: var(--panel); border: 1px solid var(--line); padding: 1rem 1.1rem; margin: 0.8rem 0; }
+.card h3 { margin-top: 0; }
+.gaps { border-left: 3px solid var(--rose); }
+.stage { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--teal); }
+footer { border-top: 1px solid var(--line); padding: 1.2rem; color: var(--muted); font-size: 0.85rem;
+  background: var(--panel); }
+footer p { max-width: 1400px; margin: 0 auto; }
+.refs { overflow-wrap: anywhere; }
+code { font-family: ui-monospace, SFMono-Regular, monospace; font-size: 0.88em; }
+@media (max-width: 800px) {
+  .row { grid-template-columns: 1fr; }
+}

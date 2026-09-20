@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3CX Desktop · OSC&amp;R</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+    <header class="top">
+      <div class="ai-banner">This is an <strong>AI-maintained continuation</strong> of OSC&amp;R, preserving the original PBOM / pbom-dev work and carrying the project forward.</div>
+      <div class="bar">
+        <a class="brand" href="../index.html">OSC&amp;R</a>
+        <nav>
+          <a href="../index.html">Matrix</a>
+          <a href="../techniques/index.html">Techniques</a>
+          <a href="../incidents/index.html">Incident mapping</a>
+          <a href="../stories/index.html">Attack stories</a>
+          <a href="../about.html">About</a>
+        </nav>
+      </div>
+    </header>
+<main>
+<p class="crumb">OSC&amp;R / <a href="index.html">Incidents</a> / AS2</p>
+
+        <p class="meta">AS2 · 2023-04</p>
+        <h1>3CX Desktop</h1>
+        <p>3CX is a VOIP software company with more than 600000 customers. In April 2023, the company was subject to an attack that infected their 3CX desktop software with malware. It is suspected to be a nation state attack carried out by North Korea. The attack was facilitated by attacking the supply chain of a trading software company, Trading Technologies.</p>
+        <h2>Mapped OSC&amp;R elements</h2>
+        <ul><li><a href="../techniques/T0191.html">T0191</a> Malicious code in artifacts</li><li><a href="../techniques/T0153.html">T0153</a> Compromised developer workstation</li><li><a href="../techniques/T0113.html">T0113</a> Compromised user account</li><li><a href="../techniques/T0137.html">T0137</a> Weak authentication methods</li><li><a href="../techniques/T0131.html">T0131</a> Overprivileged user account</li><li><a href="../techniques/T0184.html">T0184</a> Harvesting sensitive information from files</li><li><a href="../techniques/T0176.html">T0176</a> Disable or misconfigure security measures</li><li><a href="../techniques/T0146.html">T0146</a> Misconfigured audit logs settings</li></ul>
+        <h2><span class="stage">pre-supply-chain</span> Trading Technologies</h2><div class="card"><p class="meta"><a href="../techniques/T0191.html">T0191</a> · Impact · Malicious Code In Artifacts</p><p>The attackers trojanized the software X_TRADER. The software was digitally signed by &quot;Trading Technologies&quot; which strongly suggests that the firm&#x27;s supply chain was breached.</p></div><h2><span class="stage">supply-chain</span> 3CX</h2><div class="card"><p class="meta"><a href="../techniques/T0153.html">T0153</a> · Initial Access · Compromised Developer Workstation</p><p>A 3CX employee desktop is infected with the trojanized X_TRADER software. There is evidence that the vendor site was compromised and infected with an exploit kit that distributed the trojanized software</p></div><div class="card"><p class="meta"><a href="../techniques/T0113.html">T0113</a> · Initial Access · Compromised User Account</p><p>Attackers harvested user credentials from infected machines</p></div><div class="card"><p class="meta"><a href="../techniques/T0137.html">T0137</a> · Initial Access · Weak Authentication Methods</p><p>Attackers connected to the company VPN using credentials, as a second factor authentication was not enabled.</p></div><div class="card"><p class="meta"><a href="../techniques/T0131.html">T0131</a> · Lateral Movement · Overprivileged User Account</p><p>The compromised user had access to the entire network and the build system.</p></div><div class="card"><p class="meta"><a href="../techniques/T0184.html">T0184</a> · Credential Access · Harvesting Sensitive Information From Files</p><p>3CX used to save their application password unencrypted/un-hashed in the file system. It is not clear if that was used as part of this attack, but the fact is that they released a new client that resolves this issue.</p></div><div class="card"><p class="meta"><a href="../techniques/T0176.html">T0176</a> · Defense Evasion · Misconfigured Security Measures</p><p>The EDR (if it existed) didn&#x27;t detect malware on the desktop. The build system was not hardened (network/application). Code scanning tools didn&#x27;t exist/were not configured correctly/nobody looked into the results.</p></div><div class="card"><p class="meta"><a href="../techniques/T0146.html">T0146</a> · Defense Evasion · Misconfigured Audit Logs Settings</p><p>Access and changes to the build system and content should have been logged and alerted upon.</p></div><div class="card"><p class="meta"><a href="../techniques/T0191.html">T0191</a> · Impact · Malicious Code In Artifacts</p><p>The attacker infected the 3CX software with a backdoor.</p></div>
+        
+        <h2>Sources</h2>
+        <ul class='refs'><li><a href="https://blog.google/threat-analysis-group/countering-threats-north-korea/" rel="noopener">https://blog.google/threat-analysis-group/countering-threats-north-korea/</a></li><li><a href="https://www.mandiant.com/resources/blog/3cx-software-supply-chain-compromise" rel="noopener">https://www.mandiant.com/resources/blog/3cx-software-supply-chain-compromise</a></li><li><a href="https://www.3cx.com/blog/news/security-action-plan/" rel="noopener">https://www.3cx.com/blog/news/security-action-plan/</a></li></ul>
+        
+</main>
+
+    <footer>
+      <p>OSC&amp;R (Open Software Supply Chain Attack Reference) was created by
+      <a href="https://github.com/pbom-dev/OSCAR">pbom-dev</a> and its original contributors.
+      This fork is AI-maintained to continue that legacy. Apache-2.0. See
+      <a href="../about.html">About &amp; attribution</a>.</p>
+    </footer>
+</body>
+</html>

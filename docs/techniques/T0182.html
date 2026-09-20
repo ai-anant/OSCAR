@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>T0182 Bypass review using admin permission · OSC&amp;R</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+    <header class="top">
+      <div class="ai-banner">This is an <strong>AI-maintained continuation</strong> of OSC&amp;R, preserving the original PBOM / pbom-dev work and carrying the project forward.</div>
+      <div class="bar">
+        <a class="brand" href="../index.html">OSC&amp;R</a>
+        <nav>
+          <a href="../index.html">Matrix</a>
+          <a href="../techniques/index.html">Techniques</a>
+          <a href="../incidents/index.html">Incident mapping</a>
+          <a href="../stories/index.html">Attack stories</a>
+          <a href="../about.html">About</a>
+        </nav>
+      </div>
+    </header>
+<main>
+<p class="crumb">OSC&amp;R / <a href="index.html">Techniques</a> / T0182</p>
+
+        <p class="meta">T0182 · Defense Evasion · TA07</p>
+        <h1>Bypass review using admin permission</h1>
+        <div class="chips"><span class="chip">SCM Posture</span> <span class="chip">Code Security</span></div>
+        <p>The Bypass Review using admin permission attack technique refers to a defense evasion tactic where an attacker gains administrative access to a CI/CD pipeline and uses that access to bypass security reviews of code changes.<br>Typically, in a CI/CD pipeline, code changes are subjected to automated and manual reviews before they are deployed. <br>These reviews help to detect and prevent the introduction of vulnerabilities or malicious code into the production environment. <br>However, if an attacker is able to gain administrative access to the pipeline, they can bypass these reviews and directly inject malicious code into the final product.<br>This attack technique can be particularly dangerous because it allows an attacker to bypass critical security controls and deploy malicious code directly to the production environment. <br>Additionally, since the code is not subject to the normal review process, it may not be detected by traditional security controls.</p>
+        
+        <h2>Mitigations</h2>
+        <ul><li><span class="id">M1661</span> Revoke user permissions</li><li><span class="id">M1662</span> Evaluate pipeline execution permissions</li></ul>
+        <h2>Detections</h2>
+        <ul><li><span class="id">D1260</span> Implement regular security audit and review</li><li><span class="id">D1261</span> Implement penetration testing</li><li><span class="id">D1510</span> Implement Intrusion Detection System and anti-malware</li><li><span class="id">D1590</span> Implement continuous monitoring and logging of the CI/CD process</li></ul>
+        
+        <h2>References</h2>
+        <ul class='refs'><li><a href="https://docs.gitlab.com/ee/user/permissions.html" rel="noopener">https://docs.gitlab.com/ee/user/permissions.html</a></li><li><a href="https://www.cidersecurity.io/blog/research/bypassing-required-reviews-using-github-actions/" rel="noopener">https://www.cidersecurity.io/blog/research/bypassing-required-reviews-using-github-actions/</a></li></ul>
+        
+</main>
+
+    <footer>
+      <p>OSC&amp;R (Open Software Supply Chain Attack Reference) was created by
+      <a href="https://github.com/pbom-dev/OSCAR">pbom-dev</a> and its original contributors.
+      This fork is AI-maintained to continue that legacy. Apache-2.0. See
+      <a href="../about.html">About &amp; attribution</a>.</p>
+    </footer>
+</body>
+</html>

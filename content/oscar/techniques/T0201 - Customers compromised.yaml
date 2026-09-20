@@ -1,0 +1,38 @@
+id: T0201
+type: Technique
+
+tactic: Impact
+
+realm:
+  - Artifact Security
+  - CI/CD Posture
+  - Open Source Security
+
+summary: Customers compromised
+
+description: |
+  The downstream consequence of a software supply-chain attack: customers who
+  consumed a poisoned update, package, or service are themselves breached.
+  SolarWinds Orion, 3CX, Codecov, and Polyfill.io are canonical examples —
+  the supplier is the delivery vehicle; customer environments are the prize.
+  Modeling this as its own Impact technique lets defenders map "what happened
+  to us because we trusted a vendor" without collapsing it into a generic
+  backdoor label.
+
+mitigations:
+  - M1200
+  - M1291
+  - M1501
+  - M1860
+
+detections:
+  - D1262
+  - D1510
+
+references:
+  - https://www.cisa.gov/news-events/cybersecurity-advisories/aa21-008a
+  - https://www.mandiant.com/solarwinds-break-resource-center
+
+metadata:
+  version: 0.1
+  state: draft

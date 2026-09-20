@@ -1,44 +1,76 @@
-import sys
-import logging
 import glob
-import yaml
 import json
+import logging
+import os
+import sys
 
-### setup logging to stdout
+import yaml
+
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+TACTICS_ENUM = {
+    "Reconnaissance": "TA01",
+    "Resource Development": "TA02",
+    "Initial Access": "TA03",
+    "Execution": "TA04",
+    "Persistence": "TA05",
+    "Privilege Escalation": "TA06",
+    "Defense Evasion": "TA07",
+    "Credential Access": "TA08",
+    "Lateral Movement": "TA09",
+    "Collection": "TA10",
+    "Exfiltration": "TA11",
+    "Impact": "TA12",
+}
 
-def main(path): 
+SITE_BASE = os.environ.get("OSCAR_SITE_BASE", "https://ai-anant.github.io/OSCAR")
+
+
+def main(path, dest="matrix.json"):
     j = {}
 
-    # read all yamls from path
-    for filename in glob.glob(path + '/*.yaml'):
-        logger.info('Reading file: %s', filename)
-        with open(filename, 'r') as f:
-            # read yaml file
+    for filename in glob.glob(os.path.join(path, "*.yaml")):
+        logger.info("Reading file: %s", filename)
+        with open(filename, "r") as f:
             y = yaml.load(f, Loader=yaml.SafeLoader)
-            # convert to json
-            #print(y)
-            if y['tactic'] not in j:
-                j[y['tactic']] = {"items": [],
-                                  "amount": 0,
-                                  "tootlip": y['tactic']}
 
-            # default subtechniques
-            
-            y.setdefault('subtechinques', [])
+        tactic = y["tactic"]
+        if tactic not in j:
+            j[tactic] = {
+                "items": [],
+                "amount": 0,
+                "tooltip": tactic,
+                "tacticid": TACTICS_ENUM.get(tactic, ""),
+            }
 
-            item = {"tags": y['realm'],
-                "name": y['summary'],
-                "tooltip": y['summary'],
-                "url": "https://pbom.dev/",
-                "subTechniques": [] if y['subtechinques']==[None] else y['subtechinques'],
-                "subTechniuqesAmount": len([] if y['subtechinques']==[None] else y['subtechinques'])}
-            j[y['tactic']]['items'].append(item)
-    
-    with open('matrix.json', 'w') as f:
-        f.write(json.dumps(j, indent=4))
-        
-if __name__=='__main__':
-    main(sys.argv[1])
+        y.setdefault("subTechniques", [])
+        sub = [] if y["subTechniques"] == [None] else (y["subTechniques"] or [])
+
+        item = {
+            "id": y["id"],
+            "tags": y.get("realm") or [],
+            "name": y["summary"],
+            "tooltip": y["summary"],
+            "url": f"{SITE_BASE}/techniques/{y['id']}.html",
+            "description": y.get("description") or "",
+            "subTechniques": sub,
+            "subTechniquesAmount": len(sub),
+        }
+        j[tactic]["items"].append(item)
+        j[tactic]["amount"] += 1
+
+    j = dict(sorted(j.items(), key=lambda item: item[1].get("tacticid") or item[0]))
+    for tactic in j:
+        j[tactic]["items"] = sorted(j[tactic]["items"], key=lambda k: k["id"])
+        j[tactic]["amount"] = len(j[tactic]["items"])
+
+    with open(dest, "w") as f:
+        json.dump(j, f, indent=4)
+        f.write("\n")
+
+
+if __name__ == "__main__":
+    src = sys.argv[1] if len(sys.argv) > 1 else "content/oscar/techniques"
+    dest = sys.argv[2] if len(sys.argv) > 2 else "matrix.json"
+    main(src, dest)

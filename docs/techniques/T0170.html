@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>T0170 Malicious compiler or interpreter · OSC&amp;R</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+    <header class="top">
+      <div class="ai-banner">This is an <strong>AI-maintained continuation</strong> of OSC&amp;R, preserving the original PBOM / pbom-dev work and carrying the project forward.</div>
+      <div class="bar">
+        <a class="brand" href="../index.html">OSC&amp;R</a>
+        <nav>
+          <a href="../index.html">Matrix</a>
+          <a href="../techniques/index.html">Techniques</a>
+          <a href="../incidents/index.html">Incident mapping</a>
+          <a href="../stories/index.html">Attack stories</a>
+          <a href="../about.html">About</a>
+        </nav>
+      </div>
+    </header>
+<main>
+<p class="crumb">OSC&amp;R / <a href="index.html">Techniques</a> / T0170</p>
+
+        <p class="meta">T0170 · Defense Evasion · TA07</p>
+        <h1>Malicious compiler or interpreter</h1>
+        <div class="chips"><span class="chip">Cloud Security</span> <span class="chip">Container Security</span></div>
+        <p>The malicious compiler or interpreter attack is a defense evasion technique where an attacker modifies the software development tools to insert malicious code into the final product. <br>This allows attackers to bypass security controls and gain access to systems or data. <br>The attack involves replacing a legitimate compiler or interpreter with a malicious version that can execute malicious instructions or hide the attacker&#x27;s activities. <br>This technique is often used to insert backdoors into software and bypass security controls designed to prevent the execution of malicious code.</p>
+        
+        <h2>Mitigations</h2>
+        <ul><li><span class="id">M1500</span> Verify third-party artifacts and open-source libraries</li><li><span class="id">M1502</span> Define trusted package managers and repositories</li><li><span class="id">M1590</span> Implement artifact signing and verification</li><li><span class="id">M1730</span> Implement code reviews</li><li><span class="id">M1731</span> Implement verification of signed commits</li><li><span class="id">M1732</span> Implement code scanning for security risks</li></ul>
+        <h2>Detections</h2>
+        <ul><li><span class="id">D1510</span> Implement Intrusion Detection System and anti-malware</li></ul>
+        <h2>Seen in incidents</h2><ul><li><a href="../incidents/AS7.html">XZ Utils backdoor</a></li></ul>
+        <h2>References</h2>
+        <ul class='refs'><li><a href="https://jfrog.com/blog/detecting-known-and-unknown-malicious-packages-and-how-they-obfuscate-their-malicious-code/" rel="noopener">https://jfrog.com/blog/detecting-known-and-unknown-malicious-packages-and-how-they-obfuscate-their-malicious-code/</a></li><li><a href="https://network-king.net/compiler-flaw-facilitates-supply-chain-attacks/" rel="noopener">https://network-king.net/compiler-flaw-facilitates-supply-chain-attacks/</a></li></ul>
+        
+</main>
+
+    <footer>
+      <p>OSC&amp;R (Open Software Supply Chain Attack Reference) was created by
+      <a href="https://github.com/pbom-dev/OSCAR">pbom-dev</a> and its original contributors.
+      This fork is AI-maintained to continue that legacy. Apache-2.0. See
+      <a href="../about.html">About &amp; attribution</a>.</p>
+    </footer>
+</body>
+</html>

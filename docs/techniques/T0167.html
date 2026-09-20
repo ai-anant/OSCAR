@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>T0167 Recursive PR · OSC&amp;R</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+    <header class="top">
+      <div class="ai-banner">This is an <strong>AI-maintained continuation</strong> of OSC&amp;R, preserving the original PBOM / pbom-dev work and carrying the project forward.</div>
+      <div class="bar">
+        <a class="brand" href="../index.html">OSC&amp;R</a>
+        <nav>
+          <a href="../index.html">Matrix</a>
+          <a href="../techniques/index.html">Techniques</a>
+          <a href="../incidents/index.html">Incident mapping</a>
+          <a href="../stories/index.html">Attack stories</a>
+          <a href="../about.html">About</a>
+        </nav>
+      </div>
+    </header>
+<main>
+<p class="crumb">OSC&amp;R / <a href="index.html">Techniques</a> / T0167</p>
+
+        <p class="meta">T0167 · Persistence · TA05</p>
+        <h1>Recursive PR</h1>
+        <div class="chips"><span class="chip">CI/CD Posture</span></div>
+        <p>The Recursive PR attack technique is a persistence tactic that involves an attacker submitting a pull request to a repository that contains a malicious code change. <br>Once the pull request is merged and the code change is deployed, the malicious code is executed and establishes a persistent presence in the CI/CD pipeline.<br>The attack works by creating a chain of pull requests where each subsequent pull request is used to modify the code introduced in the previous pull request.<br>This creates a recursive loop where the pipeline will continuously build and deploy new versions of the code that contain the attacker&#x27;s modifications. <br>By doing so, the attacker can maintain a persistent presence in the CI/CD pipeline and potentially use it to execute further attacks.</p>
+        
+        <h2>Mitigations</h2>
+        <ul><li><span class="id">M1730</span> Implement code reviews</li></ul>
+        <h2>Detections</h2>
+        <ul><li><span class="id">D1510</span> Implement Intrusion Detection System and anti-malware</li><li><span class="id">D1590</span> Implement continuous monitoring and logging of the CI/CD process</li></ul>
+        
+        <h2>References</h2>
+        <ul class='refs'><li><a href="https://nathandavison.com/blog/github-actions-and-the-threat-of-malicious-pull-requests" rel="noopener">https://nathandavison.com/blog/github-actions-and-the-threat-of-malicious-pull-requests</a></li></ul>
+        
+</main>
+
+    <footer>
+      <p>OSC&amp;R (Open Software Supply Chain Attack Reference) was created by
+      <a href="https://github.com/pbom-dev/OSCAR">pbom-dev</a> and its original contributors.
+      This fork is AI-maintained to continue that legacy. Apache-2.0. See
+      <a href="../about.html">About &amp; attribution</a>.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>T0184 Harvesting sensitive information from files · OSC&amp;R</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+    <header class="top">
+      <div class="ai-banner">This is an <strong>AI-maintained continuation</strong> of OSC&amp;R, preserving the original PBOM / pbom-dev work and carrying the project forward.</div>
+      <div class="bar">
+        <a class="brand" href="../index.html">OSC&amp;R</a>
+        <nav>
+          <a href="../index.html">Matrix</a>
+          <a href="../techniques/index.html">Techniques</a>
+          <a href="../incidents/index.html">Incident mapping</a>
+          <a href="../stories/index.html">Attack stories</a>
+          <a href="../about.html">About</a>
+        </nav>
+      </div>
+    </header>
+<main>
+<p class="crumb">OSC&amp;R / <a href="index.html">Techniques</a> / T0184</p>
+
+        <p class="meta">T0184 · Credential Access · TA08</p>
+        <h1>Harvesting sensitive information from files</h1>
+        <div class="chips"><span class="chip">CI/CD Posture</span> <span class="chip">Infrastructure as code</span></div>
+        <p>This attack involves searching for files within the CI/CD system that may contain sensitive information such as credentials, API keys, or other access tokens.<br>These files can include configuration files, scripts, and other files that are used as part of the build and deployment process. <br>Attackers can use various techniques to locate these files, including directory traversal attacks, file inclusion vulnerabilities, or simply guessing common file names or paths.<br>Once the attacker has located a file containing sensitive information, they can extract the credentials and use them to gain unauthorized access to the targeted system or application.</p>
+        
+        <h2>Mitigations</h2>
+        <ul><li><span class="id">M1120</span> Store credentials in vault</li><li><span class="id">M1550</span> Implement strict access control for clouds</li><li><span class="id">M1860</span> Implement strong authentication mechanisms</li><li><span class="id">M1861</span> Implement strong authorization mechanisms</li></ul>
+        <h2>Detections</h2>
+        <ul><li><span class="id">D1260</span> Implement regular security audit and review</li><li><span class="id">D1510</span> Implement Intrusion Detection System and anti-malware</li><li><span class="id">D1590</span> Implement continuous monitoring and logging of the CI/CD process</li></ul>
+        <h2>Seen in incidents</h2><ul><li><a href="../incidents/AS2.html">3CX Desktop</a></li></ul>
+        <h2>References</h2>
+        <ul class='refs'><li><a href="https://www.synacktiv.com/en/publications/cicd-secrets-extraction-tips-and-tricks.html" rel="noopener">https://www.synacktiv.com/en/publications/cicd-secrets-extraction-tips-and-tricks.html</a></li></ul>
+        
+</main>
+
+    <footer>
+      <p>OSC&amp;R (Open Software Supply Chain Attack Reference) was created by
+      <a href="https://github.com/pbom-dev/OSCAR">pbom-dev</a> and its original contributors.
+      This fork is AI-maintained to continue that legacy. Apache-2.0. See
+      <a href="../about.html">About &amp; attribution</a>.</p>
+    </footer>
+</body>
+</html>

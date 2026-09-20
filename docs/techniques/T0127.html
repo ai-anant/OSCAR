@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>T0127 Exposed database · OSC&amp;R</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+    <header class="top">
+      <div class="ai-banner">This is an <strong>AI-maintained continuation</strong> of OSC&amp;R, preserving the original PBOM / pbom-dev work and carrying the project forward.</div>
+      <div class="bar">
+        <a class="brand" href="../index.html">OSC&amp;R</a>
+        <nav>
+          <a href="../index.html">Matrix</a>
+          <a href="../techniques/index.html">Techniques</a>
+          <a href="../incidents/index.html">Incident mapping</a>
+          <a href="../stories/index.html">Attack stories</a>
+          <a href="../about.html">About</a>
+        </nav>
+      </div>
+    </header>
+<main>
+<p class="crumb">OSC&amp;R / <a href="index.html">Techniques</a> / T0127</p>
+
+        <p class="meta">T0127 · Initial Access · TA03</p>
+        <h1>Exposed database</h1>
+        <div class="chips"><span class="chip">Cloud Security</span> <span class="chip">Infrastructure as code</span></div>
+        <p>Exposing a database to the public internet can be a critical security issue, as attackers can use it to gain access to sensitive information.<br>In the context of cloud security and infrastructure as code, this attack technique typically involves misconfigured security group rules or network access control lists (ACLs) that allow public access to a database. <br>It can also occur when developers or system administrators accidentally expose database credentials or when misconfigured server configurations allow database access.</p>
+        
+        <h2>Mitigations</h2>
+        <ul><li><span class="id">M1270</span> Implement proper access control for databases</li><li><span class="id">M1271</span> Protect database credentials</li><li><span class="id">M1272</span> Audit server configuration</li><li><span class="id">M1550</span> Implement strict access control for clouds</li><li><span class="id">M1720</span> Implement regular patches and updates</li></ul>
+        <h2>Detections</h2>
+        <ul><li><span class="id">D1131</span> Implement SIEM</li><li><span class="id">D1260</span> Implement regular security audit and review</li><li><span class="id">D1261</span> Implement penetration testing</li><li><span class="id">D1262</span> Implement vulnerability assessment</li><li><span class="id">D1270</span> Implement network scanning</li><li><span class="id">D1510</span> Implement Intrusion Detection System and anti-malware</li></ul>
+        
+        <h2>References</h2>
+        <ul class='refs'><li><a href="https://securitytrails.com/blog/open-exposed-databases" rel="noopener">https://securitytrails.com/blog/open-exposed-databases</a></li></ul>
+        
+</main>
+
+    <footer>
+      <p>OSC&amp;R (Open Software Supply Chain Attack Reference) was created by
+      <a href="https://github.com/pbom-dev/OSCAR">pbom-dev</a> and its original contributors.
+      This fork is AI-maintained to continue that legacy. Apache-2.0. See
+      <a href="../about.html">About &amp; attribution</a>.</p>
+    </footer>
+</body>
+</html>

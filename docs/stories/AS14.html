@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CircleCI December 2022 / January 2023 incident · OSC&amp;R</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+    <header class="top">
+      <div class="ai-banner">This is an <strong>AI-maintained continuation</strong> of OSC&amp;R, preserving the original PBOM / pbom-dev work and carrying the project forward.</div>
+      <div class="bar">
+        <a class="brand" href="../index.html">OSC&amp;R</a>
+        <nav>
+          <a href="../index.html">Matrix</a>
+          <a href="../techniques/index.html">Techniques</a>
+          <a href="../incidents/index.html">Incident mapping</a>
+          <a href="../stories/index.html">Attack stories</a>
+          <a href="../about.html">About</a>
+        </nav>
+      </div>
+    </header>
+<main>
+<p class="crumb">OSC&amp;R / <a href="index.html">Incidents</a> / AS14</p>
+
+        <p class="meta">AS14 · 2023-01</p>
+        <h1>CircleCI December 2022 / January 2023 incident</h1>
+        <p>CircleCI disclosed that an attacker used malware on a CircleCI employee&#x27;s<br>laptop, bypassed 2FA, and accessed production systems. Session cookies and<br>customer secrets stored in CircleCI (environment variables, contexts)<br>were at risk; customers were told to rotate all secrets. OSC&amp;R already<br>had T0165 (Create access token) written against this incident; the story<br>itself was never added.</p>
+        <h2>Mapped OSC&amp;R elements</h2>
+        <ul><li><a href="../techniques/T0153.html">T0153</a> Compromised developer workstation</li><li><a href="../techniques/T0112.html">T0112</a> Compromised token</li><li><a href="../techniques/T0165.html">T0165</a> Create access token</li><li><a href="../techniques/T0130.html">T0130</a> Harvest secrets from logs</li><li><a href="../techniques/T0199.html">T0199</a> Secret leak</li><li><a href="../techniques/T0201.html">T0201</a> Customers compromised</li></ul>
+        <h2><span class="stage">supply-chain</span> CircleCI</h2><div class="card"><p class="meta"><a href="../techniques/T0153.html">T0153</a> · Initial Access · Compromised developer workstation</p><p>Malware on an employee workstation was the reported initial access.</p></div><div class="card"><p class="meta"><a href="../techniques/T0112.html">T0112</a> · Initial Access · Compromised token</p><p>Session cookies / tokens were reused to access production despite 2FA.</p></div><div class="card"><p class="meta"><a href="../techniques/T0165.html">T0165</a> · Persistence · Create access token</p><p>After a 2FA-backed session was obtained, durable access tokens<br>could be minted — the exact pattern T0165 describes.</p></div><div class="card"><p class="meta"><a href="../techniques/T0130.html">T0130</a> · Credential Access · Harvest secrets from logs</p><p>Customer CI secrets held by the platform were in the blast radius.</p></div><h2><span class="stage">post-supply-chain</span> CircleCI customers</h2><div class="card"><p class="meta"><a href="../techniques/T0199.html">T0199</a> · Impact · Secret leak</p><p>Customers had to assume project secrets, context variables, and<br>OIDC-adjacent credentials were exposed and rotate them.</p></div><div class="card"><p class="meta"><a href="../techniques/T0201.html">T0201</a> · Impact · Customers compromised</p><p>Anyone who did not rotate in time faced follow-on use of their<br>cloud and source-control credentials.</p></div>
+        
+        <h2>Sources</h2>
+        <ul class='refs'><li><a href="https://circleci.com/blog/jan-4-2023-incident-report/" rel="noopener">https://circleci.com/blog/jan-4-2023-incident-report/</a></li><li><a href="https://circleci.com/blog/january-4-2023-security-alert/" rel="noopener">https://circleci.com/blog/january-4-2023-security-alert/</a></li></ul>
+        
+</main>
+
+    <footer>
+      <p>OSC&amp;R (Open Software Supply Chain Attack Reference) was created by
+      <a href="https://github.com/pbom-dev/OSCAR">pbom-dev</a> and its original contributors.
+      This fork is AI-maintained to continue that legacy. Apache-2.0. See
+      <a href="../about.html">About &amp; attribution</a>.</p>
+    </footer>
+</body>
+</html>

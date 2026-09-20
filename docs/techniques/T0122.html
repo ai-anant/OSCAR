@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>T0122 Vulnerability in third-party CI/CD actions · OSC&amp;R</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+    <header class="top">
+      <div class="ai-banner">This is an <strong>AI-maintained continuation</strong> of OSC&amp;R, preserving the original PBOM / pbom-dev work and carrying the project forward.</div>
+      <div class="bar">
+        <a class="brand" href="../index.html">OSC&amp;R</a>
+        <nav>
+          <a href="../index.html">Matrix</a>
+          <a href="../techniques/index.html">Techniques</a>
+          <a href="../incidents/index.html">Incident mapping</a>
+          <a href="../stories/index.html">Attack stories</a>
+          <a href="../about.html">About</a>
+        </nav>
+      </div>
+    </header>
+<main>
+<p class="crumb">OSC&amp;R / <a href="index.html">Techniques</a> / T0122</p>
+
+        <p class="meta">T0122 · Initial Access · TA03</p>
+        <h1>Vulnerability in third-party CI/CD actions</h1>
+        <div class="chips"><span class="chip">CI/CD Posture</span> <span class="chip">Container Security</span> <span class="chip">Infrastructure as code</span> <span class="chip">Open Source Security</span></div>
+        <p>The use of 3rd party Github actions is very common. <br>Similar to using 3rd party libraries this can also introduce security risks - a malicious Github action has access to very sensitive information - i.e exfiltrating environment variables, including backdoors or malware in source code, infecting build artifacts.</p>
+        
+        <h2>Mitigations</h2>
+        <ul><li><span class="id">M1120</span> Store credentials in vault</li><li><span class="id">M1220</span> Use only trusted third-party Github actions from reputable sources</li><li><span class="id">M1221</span> Review the Github action source code</li><li><span class="id">M1222</span> Limit the permissions granted to third-party Github actions</li></ul>
+        <h2>Detections</h2>
+        <ul><li><span class="id">D1260</span> Implement regular security audit and review</li><li><span class="id">D1261</span> Implement penetration testing</li><li><span class="id">D1262</span> Implement vulnerability assessment</li><li><span class="id">D1590</span> Implement continuous monitoring and logging of the CI/CD process</li></ul>
+        <h2>Seen in incidents</h2><ul><li><a href="../incidents/AS12.html">tj-actions/changed-files GitHub Action</a></li><li><a href="../incidents/AS3.html">Codecov Breach</a></li><li><a href="../incidents/AS13.html">Ultralytics PyPI compromise</a></li></ul>
+        <h2>References</h2>
+        <ul class='refs'><li><a href="https://www.truesec.com/hub/blog/secure-your-software-supply-chain-trusting-3rd-parties" rel="noopener">https://www.truesec.com/hub/blog/secure-your-software-supply-chain-trusting-3rd-parties</a></li></ul>
+        
+</main>
+
+    <footer>
+      <p>OSC&amp;R (Open Software Supply Chain Attack Reference) was created by
+      <a href="https://github.com/pbom-dev/OSCAR">pbom-dev</a> and its original contributors.
+      This fork is AI-maintained to continue that legacy. Apache-2.0. See
+      <a href="../about.html">About &amp; attribution</a>.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,37 @@
+id: T0200
+type: Technique
+
+tactic: Impact
+
+realm:
+  - Code Security
+  - Cloud Security
+  - SCM Posture
+  - Secrets Hygiene
+
+summary: Proprietary data stolen
+
+description: |
+  After a supply-chain foothold is established, the attacker steals proprietary
+  data — source code, designs, internal documents, customer lists, or trade secrets.
+  This is often the realized value of a compromise for espionage-motivated actors
+  and is the Impact-column outcome that earlier OSC&R tactics were missing.
+  Distinct from a generic secret leak: the objective is the organization's
+  intellectual property, not only credentials.
+
+mitigations:
+  - M1120
+  - M1250
+  - M1860
+
+detections:
+  - D1510
+  - D1590
+
+references:
+  - https://attack.mitre.org/tactics/TA0010/
+  - https://www.cisa.gov/news-events/cybersecurity-advisories/aa21-008a
+
+metadata:
+  version: 0.1
+  state: draft

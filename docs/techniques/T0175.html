@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>T0175 Untagged resources · OSC&amp;R</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+    <header class="top">
+      <div class="ai-banner">This is an <strong>AI-maintained continuation</strong> of OSC&amp;R, preserving the original PBOM / pbom-dev work and carrying the project forward.</div>
+      <div class="bar">
+        <a class="brand" href="../index.html">OSC&amp;R</a>
+        <nav>
+          <a href="../index.html">Matrix</a>
+          <a href="../techniques/index.html">Techniques</a>
+          <a href="../incidents/index.html">Incident mapping</a>
+          <a href="../stories/index.html">Attack stories</a>
+          <a href="../about.html">About</a>
+        </nav>
+      </div>
+    </header>
+<main>
+<p class="crumb">OSC&amp;R / <a href="index.html">Techniques</a> / T0175</p>
+
+        <p class="meta">T0175 · Persistence · TA05</p>
+        <h1>Untagged resources</h1>
+        <div class="chips"><span class="chip">Cloud Security</span></div>
+        <p>In this technique, the attacker first gains access to the cloud environment, either through a vulnerability or by compromising user credentials. <br>Once they have access, they search for resources that are not properly tagged or have incomplete tagging, which can make them harder to track and identify.<br>The attacker then creates an untagged resource, such as an instance or a volume, and uses it to store and maintain persistent access to the compromised environment. <br>Since the resource is not properly tagged, it is harder for the cloud provider or the victim to detect and identify it as a potential threat.<br>This technique can be used to maintain access to the cloud environment even after the original point of entry has been remediated or patched.</p>
+        
+        <h2>Mitigations</h2>
+        <ul><li><span class="id">M1550</span> Implement strict access control for clouds</li><li><span class="id">M1750</span> Implement proper resource tagging</li><li><span class="id">M1751</span> Implement resource management policies</li><li><span class="id">M1752</span> Regularly review and audit cloud resources</li></ul>
+        <h2>Detections</h2>
+        <ul><li><span class="id">D1131</span> Implement SIEM</li><li><span class="id">D1750</span> Monitor resource creation</li><li><span class="id">D1751</span> Monitor resource usage</li></ul>
+        
+        <h2>References</h2>
+        <ul class='refs'><li><a href="https://ismsguy.medium.com/treating-the-mishmash-of-missing-tag-resources-in-aws-using-the-cloud-custodian-part-1-63ca506f12f2" rel="noopener">https://ismsguy.medium.com/treating-the-mishmash-of-missing-tag-resources-in-aws-using-the-cloud-custodian-part-1-63ca506f12f2</a></li><li><a href="https://www.infoworld.com/article/3246986/better-cloud-management-through-cloud-resource-tagging.html" rel="noopener">https://www.infoworld.com/article/3246986/better-cloud-management-through-cloud-resource-tagging.html</a></li></ul>
+        
+</main>
+
+    <footer>
+      <p>OSC&amp;R (Open Software Supply Chain Attack Reference) was created by
+      <a href="https://github.com/pbom-dev/OSCAR">pbom-dev</a> and its original contributors.
+      This fork is AI-maintained to continue that legacy. Apache-2.0. See
+      <a href="../about.html">About &amp; attribution</a>.</p>
+    </footer>
+</body>
+</html>

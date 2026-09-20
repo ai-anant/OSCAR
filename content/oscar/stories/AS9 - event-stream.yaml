@@ -1,0 +1,61 @@
+id: AS9
+type: Attack Story
+date: 2018-11
+
+summary: npm event-stream / flatmap-stream
+description: |
+  The popular npm package event-stream, with millions of weekly downloads,
+  was handed by its original maintainer to a new owner who introduced a
+  dependency, flatmap-stream, that targeted Copay wallets and attempted to
+  steal Bitcoin. This is the textbook "abandoned package + unvetted
+  maintainer transfer" npm incident and predates most of OSC&R's original
+  attack stories.
+
+attacks:
+  - attack: event-stream maintainer transfer
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0113
+        techName: Compromised user account
+        tactic: Initial Access
+        comment: |
+          Ownership transferred to an attacker-controlled npm account after
+          the original maintainer accepted help.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: |
+          flatmap-stream was published to npm as a new dependency of event-stream.
+      - techniqueID: T0111
+        techName: Malicious code contribution to an open-source repository
+        tactic: Resource Development
+        comment: |
+          The malicious dependency was introduced via a pull/version bump that
+          looked like ordinary maintenance.
+  - attack: Copay / downstream npm users
+    index: 2
+    stage: post-supply-chain
+    customer: 1
+    supplier: 0
+    techniques:
+      - techniqueID: T0159
+        techName: Malicious artifact execution
+        tactic: Execution
+        comment: |
+          The payload decrypted and ran only in specific downstream applications.
+      - techniqueID: T0139
+        techName: Resource hijacking
+        tactic: Impact
+        comment: |
+          The objective was theft of Bitcoin from Copay wallets, not a general
+          backdoor.
+
+gaps:
+  - Package-ownership transfer without out-of-band verification is a process gap; OSC&R still has no dedicated "registry account takeover / handover" technique beyond T0113.
+
+links:
+  - https://blog.npmjs.org/post/180565383195/details-about-the-event-stream-incident
+  - https://github.com/dominictarr/event-stream/issues/116

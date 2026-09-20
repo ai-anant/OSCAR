@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>T0145 Bypass of outbound traffic control · OSC&amp;R</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+    <header class="top">
+      <div class="ai-banner">This is an <strong>AI-maintained continuation</strong> of OSC&amp;R, preserving the original PBOM / pbom-dev work and carrying the project forward.</div>
+      <div class="bar">
+        <a class="brand" href="../index.html">OSC&amp;R</a>
+        <nav>
+          <a href="../index.html">Matrix</a>
+          <a href="../techniques/index.html">Techniques</a>
+          <a href="../incidents/index.html">Incident mapping</a>
+          <a href="../stories/index.html">Attack stories</a>
+          <a href="../about.html">About</a>
+        </nav>
+      </div>
+    </header>
+<main>
+<p class="crumb">OSC&amp;R / <a href="index.html">Techniques</a> / T0145</p>
+
+        <p class="meta">T0145 · Exfiltration · TA11</p>
+        <h1>Bypass of outbound traffic control</h1>
+        <div class="chips"><span class="chip">Cloud Security</span> <span class="chip">CI/CD Posture</span></div>
+        <p>Bypass of outbound traffic control in cloud security refers to an attack technique used by threat actors to bypass the security controls implemented by cloud service providers to prevent unauthorized exfiltration of data from their networks.<br>Threat actors can use various tactics to bypass these outbound traffic controls and exfiltrate data from the cloud network. <br>For example, they may use encrypted channels such as VPNs or SSL/TLS to hide the data being transferred and make it difficult for the traffic control measures to detect it.<br>Another tactic that threat actors may use to bypass outbound traffic control is to blend in their data with legitimate traffic, making it harder to detect.<br>For example attacker may use Webhooks, Code repositories, Cloud storage that are legitimate to bypass outbound traffic control.<br>They may also use steganography techniques to conceal their data within seemingly innocuous files or images.</p>
+        
+        <h2>Mitigations</h2>
+        <ul><li><span class="id">M1250</span> Enable data encryption in transit</li><li><span class="id">M1450</span> Implement zero trust</li><li><span class="id">M1451</span> Use network segmentation</li></ul>
+        <h2>Detections</h2>
+        <ul><li><span class="id">D1510</span> Implement Intrusion Detection System and anti-malware</li></ul>
+        
+        <h2>References</h2>
+        <ul class='refs'><li><a href="https://www.xorlab.com/en/blog/data-exfiltration-most-common-techniques-and-best-prevention-tactics" rel="noopener">https://www.xorlab.com/en/blog/data-exfiltration-most-common-techniques-and-best-prevention-tactics</a></li></ul>
+        
+</main>
+
+    <footer>
+      <p>OSC&amp;R (Open Software Supply Chain Attack Reference) was created by
+      <a href="https://github.com/pbom-dev/OSCAR">pbom-dev</a> and its original contributors.
+      This fork is AI-maintained to continue that legacy. Apache-2.0. See
+      <a href="../about.html">About &amp; attribution</a>.</p>
+    </footer>
+</body>
+</html>

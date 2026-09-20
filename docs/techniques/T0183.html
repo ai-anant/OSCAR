@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>T0183 Harvesting short-lived token · OSC&amp;R</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+    <header class="top">
+      <div class="ai-banner">This is an <strong>AI-maintained continuation</strong> of OSC&amp;R, preserving the original PBOM / pbom-dev work and carrying the project forward.</div>
+      <div class="bar">
+        <a class="brand" href="../index.html">OSC&amp;R</a>
+        <nav>
+          <a href="../index.html">Matrix</a>
+          <a href="../techniques/index.html">Techniques</a>
+          <a href="../incidents/index.html">Incident mapping</a>
+          <a href="../stories/index.html">Attack stories</a>
+          <a href="../about.html">About</a>
+        </nav>
+      </div>
+    </header>
+<main>
+<p class="crumb">OSC&amp;R / <a href="index.html">Techniques</a> / T0183</p>
+
+        <p class="meta">T0183 · Credential Access · TA08</p>
+        <h1>Harvesting short-lived token</h1>
+        <div class="chips"><span class="chip">CI/CD Posture</span> <span class="chip">Infrastructure as code</span></div>
+        <p>This attack technique involves searching for short-lived tokens that are used during the CI/CD process and extracting them for later use in unauthorized activities.<br>Short-lived tokens are often used in CI/CD systems to authenticate communication between different components, such as the build server and the deployment server.<br>An attacker can obtain these tokens from CI/CD logs, variable groups, secure files, etc.<br>These tokens typically have a limited lifespan, but if an attacker is able to capture them, they can use them to gain unauthorized access to the system or associated resources.</p>
+        
+        <h2>Mitigations</h2>
+        <ul><li><span class="id">M1120</span> Store credentials in vault</li><li><span class="id">M1830</span> Restrict token access</li></ul>
+        <h2>Detections</h2>
+        <ul><li><span class="id">D1590</span> Implement continuous monitoring and logging of the CI/CD process</li></ul>
+        
+        <h2>References</h2>
+        <ul class='refs'><li><a href="https://www.synacktiv.com/en/publications/cicd-secrets-extraction-tips-and-tricks.html" rel="noopener">https://www.synacktiv.com/en/publications/cicd-secrets-extraction-tips-and-tricks.html</a></li></ul>
+        
+</main>
+
+    <footer>
+      <p>OSC&amp;R (Open Software Supply Chain Attack Reference) was created by
+      <a href="https://github.com/pbom-dev/OSCAR">pbom-dev</a> and its original contributors.
+      This fork is AI-maintained to continue that legacy. Apache-2.0. See
+      <a href="../about.html">About &amp; attribution</a>.</p>
+    </footer>
+</body>
+</html>

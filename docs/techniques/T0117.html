@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>T0117 SQL injection · OSC&amp;R</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+    <header class="top">
+      <div class="ai-banner">This is an <strong>AI-maintained continuation</strong> of OSC&amp;R, preserving the original PBOM / pbom-dev work and carrying the project forward.</div>
+      <div class="bar">
+        <a class="brand" href="../index.html">OSC&amp;R</a>
+        <nav>
+          <a href="../index.html">Matrix</a>
+          <a href="../techniques/index.html">Techniques</a>
+          <a href="../incidents/index.html">Incident mapping</a>
+          <a href="../stories/index.html">Attack stories</a>
+          <a href="../about.html">About</a>
+        </nav>
+      </div>
+    </header>
+<main>
+<p class="crumb">OSC&amp;R / <a href="index.html">Techniques</a> / T0117</p>
+
+        <p class="meta">T0117 · Execution · TA04</p>
+        <h1>SQL injection</h1>
+        <div class="chips"><span class="chip">Code Security</span></div>
+        <p>SQL injection is a web security vulnerability that allows an attacker to interfere with the queries that an application makes to its database. <br>A SQL injection attack consists of insertion or &quot;injection&quot; of a SQL query via the input data from the client to the application. <br>Successful SQL injection exploit can read sensitive data from the database, modify database data (Insert/Update/Delete), execute administration operations on the database (such as shutdown the DBMS), recover the content of a given file present on the DBMS file system and in some cases issue commands to the operating system.</p>
+        
+        <h2>Mitigations</h2>
+        <ul><li><span class="id">M1170</span> Use parameterized queries</li><li><span class="id">M1171</span> Use stored procedures</li><li><span class="id">M1172</span> Use allow-list input validation</li><li><span class="id">M1173</span> Escape all user supplied input</li><li><span class="id">M1883</span> Implement Web Application Firewall</li></ul>
+        <h2>Detections</h2>
+        <ul><li><span class="id">D1170</span> Configure application audit logs to detect injection attacks</li><li><span class="id">D1171</span> Implement Web Application Firewall</li></ul>
+        
+        <h2>References</h2>
+        <ul class='refs'><li><a href="https://www.spiceworks.com/it-security/application-security/articles/what-is-sql-injection/" rel="noopener">https://www.spiceworks.com/it-security/application-security/articles/what-is-sql-injection/</a></li><li><a href="https://owasp.org/www-community/attacks/SQL_Injection" rel="noopener">https://owasp.org/www-community/attacks/SQL_Injection</a></li><li><a href="https://portswigger.net/web-security/sql-injection" rel="noopener">https://portswigger.net/web-security/sql-injection</a></li></ul>
+        
+</main>
+
+    <footer>
+      <p>OSC&amp;R (Open Software Supply Chain Attack Reference) was created by
+      <a href="https://github.com/pbom-dev/OSCAR">pbom-dev</a> and its original contributors.
+      This fork is AI-maintained to continue that legacy. Apache-2.0. See
+      <a href="../about.html">About &amp; attribution</a>.</p>
+    </footer>
+</body>
+</html>

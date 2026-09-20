@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>T0155 Cloud workload · OSC&amp;R</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+    <header class="top">
+      <div class="ai-banner">This is an <strong>AI-maintained continuation</strong> of OSC&amp;R, preserving the original PBOM / pbom-dev work and carrying the project forward.</div>
+      <div class="bar">
+        <a class="brand" href="../index.html">OSC&amp;R</a>
+        <nav>
+          <a href="../index.html">Matrix</a>
+          <a href="../techniques/index.html">Techniques</a>
+          <a href="../incidents/index.html">Incident mapping</a>
+          <a href="../stories/index.html">Attack stories</a>
+          <a href="../about.html">About</a>
+        </nav>
+      </div>
+    </header>
+<main>
+<p class="crumb">OSC&amp;R / <a href="index.html">Techniques</a> / T0155</p>
+
+        <p class="meta">T0155 · Execution · TA04</p>
+        <h1>Cloud workload</h1>
+        <div class="chips"><span class="chip">Cloud Security</span></div>
+        <p>Adversaries can exploit serverless computing, integration, and automation services in cloud environments to execute arbitrary code. <br>This can be done through serverless functions, compute engines, application integration, and web servers. <br>The attackers can use these resources to run malicious code, such as crypto-mining malware or create functions that enable further compromise of the cloud environment. <br>Attackers may also use event-triggered execution to persistently execute serverless functions over time, such as creating Lambda functions in AWS environments that add additional cloud credentials to a user.</p>
+        
+        <h2>Mitigations</h2>
+        <ul><li><span class="id">M1532</span> Implement least privilege access controls</li><li><span class="id">M1550</span> Implement strict access control for clouds</li><li><span class="id">M1551</span> Use built-in security controls</li></ul>
+        <h2>Detections</h2>
+        <ul><li><span class="id">D1510</span> Implement Intrusion Detection System and anti-malware</li><li><span class="id">D1550</span> Implement real-time monitoring of cloud resources</li></ul>
+        
+        <h2>References</h2>
+        <ul class='refs'><li><a href="https://www.cadosecurity.com/cado-discovers-denonia-the-first-malware-specifically-targeting-lambda/" rel="noopener">https://www.cadosecurity.com/cado-discovers-denonia-the-first-malware-specifically-targeting-lambda/</a></li><li><a href="https://blog.morphisec.com/what-is-cloud-workload-security" rel="noopener">https://blog.morphisec.com/what-is-cloud-workload-security</a></li></ul>
+        
+</main>
+
+    <footer>
+      <p>OSC&amp;R (Open Software Supply Chain Attack Reference) was created by
+      <a href="https://github.com/pbom-dev/OSCAR">pbom-dev</a> and its original contributors.
+      This fork is AI-maintained to continue that legacy. Apache-2.0. See
+      <a href="../about.html">About &amp; attribution</a>.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>T0193 Sensitive information in environment variables · OSC&amp;R</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+    <header class="top">
+      <div class="ai-banner">This is an <strong>AI-maintained continuation</strong> of OSC&amp;R, preserving the original PBOM / pbom-dev work and carrying the project forward.</div>
+      <div class="bar">
+        <a class="brand" href="../index.html">OSC&amp;R</a>
+        <nav>
+          <a href="../index.html">Matrix</a>
+          <a href="../techniques/index.html">Techniques</a>
+          <a href="../incidents/index.html">Incident mapping</a>
+          <a href="../stories/index.html">Attack stories</a>
+          <a href="../about.html">About</a>
+        </nav>
+      </div>
+    </header>
+<main>
+<p class="crumb">OSC&amp;R / <a href="index.html">Techniques</a> / T0193</p>
+
+        <p class="meta">T0193 · Collection · TA10</p>
+        <h1>Sensitive information in environment variables</h1>
+        <div class="chips"><span class="chip">Cloud Security</span> <span class="chip">CI/CD Posture</span></div>
+        <p>Environment variables are a type of configuration parameter that contain information about the environment in which an application is running. <br>These variables can be set and accessed by the operating system or application, and may contain sensitive information such as passwords, API keys, or other credentials.</p>
+        
+        <h2>Mitigations</h2>
+        <ul><li><span class="id">M1120</span> Store credentials in vault</li><li><span class="id">M1930</span> Avoid storing sensitive information in environment variables</li><li><span class="id">M1931</span> Use a secure secrets management system</li></ul>
+        <h2>Detections</h2>
+        <ul><li><span class="id">D1260</span> Implement regular security audit and review</li><li><span class="id">D1261</span> Implement penetration testing</li><li><span class="id">D1262</span> Implement vulnerability assessment</li><li><span class="id">D1930</span> Regularly review and audit environment variables</li></ul>
+        
+        <h2>References</h2>
+        <ul class='refs'><li><a href="https://www.trendmicro.com/en_fi/research/22/h/analyzing-hidden-danger-of-environment-variables-for-keeping-secrets.html" rel="noopener">https://www.trendmicro.com/en_fi/research/22/h/analyzing-hidden-danger-of-environment-variables-for-keeping-secrets.html</a></li></ul>
+        
+</main>
+
+    <footer>
+      <p>OSC&amp;R (Open Software Supply Chain Attack Reference) was created by
+      <a href="https://github.com/pbom-dev/OSCAR">pbom-dev</a> and its original contributors.
+      This fork is AI-maintained to continue that legacy. Apache-2.0. See
+      <a href="../about.html">About &amp; attribution</a>.</p>
+    </footer>
+</body>
+</html>

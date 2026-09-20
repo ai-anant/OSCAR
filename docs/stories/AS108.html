@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JuiceStealer - PyPi Supply Chain Attack · OSC&amp;R</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+    <header class="top">
+      <div class="ai-banner">This is an <strong>AI-maintained continuation</strong> of OSC&amp;R, preserving the original PBOM / pbom-dev work and carrying the project forward.</div>
+      <div class="bar">
+        <a class="brand" href="../index.html">OSC&amp;R</a>
+        <nav>
+          <a href="../index.html">Matrix</a>
+          <a href="../techniques/index.html">Techniques</a>
+          <a href="../incidents/index.html">Incident mapping</a>
+          <a href="../stories/index.html">Attack stories</a>
+          <a href="../about.html">About</a>
+        </nav>
+      </div>
+    </header>
+<main>
+<p class="crumb">OSC&amp;R / <a href="index.html">Incidents</a> / AS108</p>
+
+        <p class="meta">AS108 · 2022-02</p>
+        <h1>JuiceStealer - PyPi Supply Chain Attack</h1>
+        <p>The threat actor known as &quot;JuiceLedger&quot; orchestrated a large-scale attack on PyPi, the official Python package repository. This attack was multifaceted, targeting package maintainers by attempting to compromise their PyPi accounts. Additionally, the attacker engaged in TypoSquatting, uploading malicious packages to the repository</p>
+        <h2>Mapped OSC&amp;R elements</h2>
+        <ul><li><a href="../techniques/T0113.html">T0113</a> Compromised user account</li><li><a href="../techniques/T0111.html">T0111</a> Malicious code contribution to an open-source repository</li><li><a href="../techniques/T0129.html">T0129</a> Typosquatting</li></ul>
+        <h2><span class="stage">supply-chain</span> PyPi package maintainers</h2><div class="card"><p class="meta"><a href="../techniques/T0113.html">T0113</a> · Initial Access · Compromised User Account</p><p>PyPi package maintainers received a phishing email requesting validation of their PyPi credentials, which directed them to a fraudulent PyPi login page in an attempt to steal their account information.</p></div><div class="card"><p class="meta"><a href="../techniques/T0111.html">T0111</a> · Resource Development · Malicious Code Contribution To An Open-Source Repository</p><p>These phishing attempts were successful on at least two occasions, targeting version 0.1.6 of &quot;exotel&quot; (with over 480,000 total downloads) and versions 2.0.2 and 4.0.2 of &quot;spam&quot; (with over 200,000 total downloads). The malicious code was crafted to pilfer cryptocurrency credentials and was later augmented with a broader functionality aimed at stealing Chrome passwords</p></div><div class="card"><p class="meta"><a href="../techniques/T0129.html">T0129</a> · Initial Access · Typosquatting</p><p>Simultaneously with the phishing attempts, the same malware, JuiceStealer, was introduced into hundreds of Python packages, strategically designed to mimic legitimate packages</p></div><h2><span class="stage">post-supply-chain</span> Users of code for infected repositories</h2><div class="card"><p class="meta"><a href="../techniques/T0113.html">T0113</a> · Initial Access · Compromised user account</p><p>The JuiceStealer malware, initially created to pilfer cryptocurrency wallet credentials, was subsequently modified to extract credentials from Chrome. This alteration significantly escalates the supply chain attack, increasing its potential impact</p></div>
+        
+        <h2>Sources</h2>
+        <ul class='refs'><li><a href="https://arstechnica.com/information-technology/2022/09/actors-behind-pypi-supply-chain-attack-have-been-active-since-late-2021/" rel="noopener">https://arstechnica.com/information-technology/2022/09/actors-behind-pypi-supply-chain-attack-have-been-active-since-late-2021/</a></li><li><a href="https://www.sentinelone.com/labs/pypi-phishing-campaign-juiceledger-threat-actor-pivots-from-fake-apps-to-supply-chain-attacks/" rel="noopener">https://www.sentinelone.com/labs/pypi-phishing-campaign-juiceledger-threat-actor-pivots-from-fake-apps-to-supply-chain-attacks/</a></li><li><a href="https://checkmarx.com/blog/first-known-phishing-attack-against-pypi-users/" rel="noopener">https://checkmarx.com/blog/first-known-phishing-attack-against-pypi-users/</a></li></ul>
+        
+</main>
+
+    <footer>
+      <p>OSC&amp;R (Open Software Supply Chain Attack Reference) was created by
+      <a href="https://github.com/pbom-dev/OSCAR">pbom-dev</a> and its original contributors.
+      This fork is AI-maintained to continue that legacy. Apache-2.0. See
+      <a href="../about.html">About &amp; attribution</a>.</p>
+    </footer>
+</body>
+</html>

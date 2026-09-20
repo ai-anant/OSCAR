@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CCleaner · OSC&amp;R</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+    <header class="top">
+      <div class="ai-banner">This is an <strong>AI-maintained continuation</strong> of OSC&amp;R, preserving the original PBOM / pbom-dev work and carrying the project forward.</div>
+      <div class="bar">
+        <a class="brand" href="../index.html">OSC&amp;R</a>
+        <nav>
+          <a href="../index.html">Matrix</a>
+          <a href="../techniques/index.html">Techniques</a>
+          <a href="../incidents/index.html">Incident mapping</a>
+          <a href="../stories/index.html">Attack stories</a>
+          <a href="../about.html">About</a>
+        </nav>
+      </div>
+    </header>
+<main>
+<p class="crumb">OSC&amp;R / <a href="index.html">Incidents</a> / AS5</p>
+
+        <p class="meta">AS5 · 2018</p>
+        <h1>CCleaner</h1>
+        <p>CCleaner is a popular system cleanup software</p>
+        <h2>Mapped OSC&amp;R elements</h2>
+        <ul><li><a href="../techniques/T0153.html">T0153</a> Compromised developer workstation</li><li><a href="../techniques/T0113.html">T0113</a> Compromised user account</li><li><a href="../techniques/T0137.html">T0137</a> Weak authentication methods</li><li><a href="../techniques/T0176.html">T0176</a> Disable or misconfigure security measures</li><li><a href="../techniques/T0191.html">T0191</a> Malicious code in artifacts</li></ul>
+        <h2><span class="stage">supply-chain</span> CCleaner</h2><div class="card"><p class="meta"><a href="../techniques/T0153.html">T0153</a> · Initial Access · Compromised Developer Workstation</p><p>Attacker accesses unattended workstation of on of the CCleaner developers and installed a backdoor</p></div><div class="card"><p class="meta"><a href="../techniques/T0113.html">T0113</a> · Initial Access · Compromised User Account</p><p>The developer machine was accessed by using TeamViewer. This suggests that the developer&#x27;s credentials where compromised</p></div><div class="card"><p class="meta"><a href="../techniques/T0137.html">T0137</a> · Reconnaissance · Weak Authentication Methods</p><p>The TeamViewer credentials where probably obtained from a different breach. If MFA was enabled - these credentials would not have been enough for connecting to the workstation</p></div><div class="card"><p class="meta"><a href="../techniques/T0176.html">T0176</a> · Defense Evasion · Misconfigured Security Measures</p><p>The attacker not only managed to infect more the 40 workstations in the company network but also did that for the CCleaner but also for the build system.</p></div><div class="card"><p class="meta"><a href="../techniques/T0191.html">T0191</a> · Impact · Malicious Code In Artifacts</p><p>Attackers compiled a customised version of ShadowPad, an infamous backdoor that allows attackers to download further malicious modules or steal data.</p></div>
+        
+        <h2>Sources</h2>
+        <ul class='refs'><li><a href="https://blog.avast.com/update-ccleaner-attackers-entered-via-teamviewer" rel="noopener">https://blog.avast.com/update-ccleaner-attackers-entered-via-teamviewer</a></li></ul>
+        
+</main>
+
+    <footer>
+      <p>OSC&amp;R (Open Software Supply Chain Attack Reference) was created by
+      <a href="https://github.com/pbom-dev/OSCAR">pbom-dev</a> and its original contributors.
+      This fork is AI-maintained to continue that legacy. Apache-2.0. See
+      <a href="../about.html">About &amp; attribution</a>.</p>
+    </footer>
+</body>
+</html>

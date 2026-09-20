@@ -24,7 +24,7 @@ mitigations:
   - M1732
 
 detections: 
-  - M1510
+  - D1510
 
 references: 
   - https://jfrog.com/blog/detecting-known-and-unknown-malicious-packages-and-how-they-obfuscate-their-malicious-code/

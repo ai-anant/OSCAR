@@ -1,6 +1,6 @@
 id: M1830
 type: Mitigation
-summary: 
+summary: Restrict token access
 description: |
   Restrict access to short-lived tokens to only authorized users and components. 
   This can be achieved by using access controls and permissions within the CI/CD system.

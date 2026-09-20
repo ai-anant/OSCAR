@@ -1,0 +1,15 @@
+id: D1101
+type: Detection
+summary: Monitor public registries for newly advertised packages
+description: |
+  Watch popular public registries and package indexes for new or suddenly
+  popular artifacts that reuse known names, impersonate vendors, or show
+  anomalous download/star patterns. Alert when a package matching an internal
+  or widely used name appears from an unexpected publisher.
+
+references:
+  - https://blog.pypi.org/posts/2024-03-06-malware-reporting/
+
+metadata:
+  - version: 0.1
+  - state: draft

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>T0137 Weak authentication methods · OSC&amp;R</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+    <header class="top">
+      <div class="ai-banner">This is an <strong>AI-maintained continuation</strong> of OSC&amp;R, preserving the original PBOM / pbom-dev work and carrying the project forward.</div>
+      <div class="bar">
+        <a class="brand" href="../index.html">OSC&amp;R</a>
+        <nav>
+          <a href="../index.html">Matrix</a>
+          <a href="../techniques/index.html">Techniques</a>
+          <a href="../incidents/index.html">Incident mapping</a>
+          <a href="../stories/index.html">Attack stories</a>
+          <a href="../about.html">About</a>
+        </nav>
+      </div>
+    </header>
+<main>
+<p class="crumb">OSC&amp;R / <a href="index.html">Techniques</a> / T0137</p>
+
+        <p class="meta">T0137 · Initial Access · TA03</p>
+        <h1>Weak authentication methods</h1>
+        <div class="chips"><span class="chip">Cloud Security</span> <span class="chip">Code Security</span> <span class="chip">Infrastructure as code</span> <span class="chip">CI/CD Posture</span></div>
+        <p>Weak authentication methods are a common attack technique used by threat actors to gain unauthorized access to cloud environments or code repositories. This attack technique relies on exploiting vulnerabilities in the authentication methods used to control access to resources.<br>In cloud security, weak authentication methods can be exploited through several vectors, such as stolen credentials, brute force attacks, and password spraying. <br>Threat actors can also take advantage of misconfigured security groups or network access control lists (ACLs) to bypass authentication and gain access to cloud resources.<br>In code security, weak authentication methods can be exploited through vulnerabilities in source code management platforms, such as Git repositories. <br>For instance, if developers use weak passwords or if the authentication protocols used by the repository are vulnerable, attackers can steal source code or inject malicious code into the codebase.</p>
+        
+        <h2>Mitigations</h2>
+        <ul><li><span class="id">M1130</span> Implement password rotation</li><li><span class="id">M1132</span> Enable MFA for user accounts</li><li><span class="id">M1550</span> Implement strict access control for clouds</li><li><span class="id">M1860</span> Implement strong authentication mechanisms</li><li><span class="id">M1861</span> Implement strong authorization mechanisms</li></ul>
+        <h2>Detections</h2>
+        <ul><li><span class="id">D1261</span> Implement penetration testing</li><li><span class="id">D1510</span> Implement Intrusion Detection System and anti-malware</li><li><span class="id">D1520</span> Implement endpoint detection and response system</li></ul>
+        <h2>Seen in incidents</h2><ul><li><a href="../incidents/AS5.html">CCleaner</a></li><li><a href="../incidents/AS4.html">PHP Zerodium Backdoor</a></li><li><a href="../incidents/AS2.html">3CX Desktop</a></li></ul>
+        <h2>References</h2>
+        <ul class='refs'><li><a href="https://affinity-it-security.com/what-is-weak-authentication/" rel="noopener">https://affinity-it-security.com/what-is-weak-authentication/</a></li></ul>
+        
+</main>
+
+    <footer>
+      <p>OSC&amp;R (Open Software Supply Chain Attack Reference) was created by
+      <a href="https://github.com/pbom-dev/OSCAR">pbom-dev</a> and its original contributors.
+      This fork is AI-maintained to continue that legacy. Apache-2.0. See
+      <a href="../about.html">About &amp; attribution</a>.</p>
+    </footer>
+</body>
+</html>

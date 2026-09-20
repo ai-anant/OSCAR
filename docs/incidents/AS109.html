@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pytorch Dependency Confusion · OSC&amp;R</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+    <header class="top">
+      <div class="ai-banner">This is an <strong>AI-maintained continuation</strong> of OSC&amp;R, preserving the original PBOM / pbom-dev work and carrying the project forward.</div>
+      <div class="bar">
+        <a class="brand" href="../index.html">OSC&amp;R</a>
+        <nav>
+          <a href="../index.html">Matrix</a>
+          <a href="../techniques/index.html">Techniques</a>
+          <a href="../incidents/index.html">Incident mapping</a>
+          <a href="../stories/index.html">Attack stories</a>
+          <a href="../about.html">About</a>
+        </nav>
+      </div>
+    </header>
+<main>
+<p class="crumb">OSC&amp;R / <a href="index.html">Incidents</a> / AS109</p>
+
+        <p class="meta">AS109 · 2022-12</p>
+        <h1>Pytorch Dependency Confusion</h1>
+        <p>PyTorch is a machine learning framework based on the Torch library. On December 2022, it was revealed that several builds were infected by malware that was designed to steal environment variables and files. This attack was facilitated by using dependency confusion of the package &quot;torchtriton&quot; which PyTorch was consuming.</p>
+        <h2>Mapped OSC&amp;R elements</h2>
+        <ul><li><a href="../techniques/T0113.html">T0113</a> Compromised user account</li><li><a href="../techniques/T0140.html">T0140</a> Harvest tokens from environment variables</li></ul>
+        <h2><span class="stage">supply-chain</span> Torchtriton package</h2><div class="card"><p class="meta"><a href="../techniques/T0113.html">T0113</a> · Initial Access · Dependency Confusion</p><p>Torchtriton is a package that the Pytorch project is consuming. On December 2022, the package was altered to exfiltrate sensitive information. Later on, the person that performs this attack confessed anonymously that it was done for research purposes and all the collected data was deleted.</p></div><h2><span class="stage">post-supply-chain</span> Pytorch users</h2><div class="card"><p class="meta"><a href="../techniques/T0140.html">T0140</a> · Credential Access · Harvest Tokens From Environment Variables</p><p>The malicious code within the Torchtriton package extracted and exfiltrated environment variables and files from the home directory of users who installed this package.</p></div>
+        
+        <h2>Sources</h2>
+        <ul class='refs'><li><a href="https://pytorch.org/blog/compromised-nightly-dependency/" rel="noopener">https://pytorch.org/blog/compromised-nightly-dependency/</a></li><li><a href="https://twitter.com/Ax_Sharma/status/1609586774204116994/photo/1" rel="noopener">https://twitter.com/Ax_Sharma/status/1609586774204116994/photo/1</a></li></ul>
+        
+</main>
+
+    <footer>
+      <p>OSC&amp;R (Open Software Supply Chain Attack Reference) was created by
+      <a href="https://github.com/pbom-dev/OSCAR">pbom-dev</a> and its original contributors.
+      This fork is AI-maintained to continue that legacy. Apache-2.0. See
+      <a href="../about.html">About &amp; attribution</a>.</p>
+    </footer>
+</body>
+</html>

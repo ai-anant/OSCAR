@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>T0149 Delete repositories · OSC&amp;R</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+    <header class="top">
+      <div class="ai-banner">This is an <strong>AI-maintained continuation</strong> of OSC&amp;R, preserving the original PBOM / pbom-dev work and carrying the project forward.</div>
+      <div class="bar">
+        <a class="brand" href="../index.html">OSC&amp;R</a>
+        <nav>
+          <a href="../index.html">Matrix</a>
+          <a href="../techniques/index.html">Techniques</a>
+          <a href="../incidents/index.html">Incident mapping</a>
+          <a href="../stories/index.html">Attack stories</a>
+          <a href="../about.html">About</a>
+        </nav>
+      </div>
+    </header>
+<main>
+<p class="crumb">OSC&amp;R / <a href="index.html">Techniques</a> / T0149</p>
+
+        <p class="meta">T0149 · Impact · TA12</p>
+        <h1>Delete repositories</h1>
+        <div class="chips"><span class="chip">SCM Posture</span></div>
+        <p>A delete repository attack technique in a CI/CD pipeline is a type of denial-of-service (DoS) attack that targets the code repositories used by the pipeline. <br>The goal of the attack is to delete the repositories or make them unavailable, thus disrupting the pipeline&#x27;s ability to build and deploy software.<br>In a typical CI/CD pipeline, code repositories are an essential component as they contain the source code for the application that is being built and deployed. <br>In a delete repository attack, an attacker gains unauthorized access to the repositories and deletes the source code. <br>This can cause significant disruptions to the pipeline, leading to delays in software releases or even complete downtime of the system.</p>
+        
+        <h2>Mitigations</h2>
+        <ul><li><span class="id">M1490</span> Restrict the ability to delete repositories</li><li><span class="id">M1491</span> Implement backup and recovery</li><li><span class="id">M1860</span> Implement strong authentication mechanisms</li><li><span class="id">M1861</span> Implement strong authorization mechanisms</li></ul>
+        <h2>Detections</h2>
+        <ul><li><span class="id">D1490</span> Monitor repository access</li><li><span class="id">D1590</span> Implement continuous monitoring and logging of the CI/CD process</li></ul>
+        
+        <h2>References</h2>
+        <p class='muted'>None listed.</p>
+        
+</main>
+
+    <footer>
+      <p>OSC&amp;R (Open Software Supply Chain Attack Reference) was created by
+      <a href="https://github.com/pbom-dev/OSCAR">pbom-dev</a> and its original contributors.
+      This fork is AI-maintained to continue that legacy. Apache-2.0. See
+      <a href="../about.html">About &amp; attribution</a>.</p>
+    </footer>
+</body>
+</html>

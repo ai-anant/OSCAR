@@ -1,6 +1,6 @@
 id: D1130
 type: Detection
-summary: 
+summary: Implement account activity monitoring
 description: |
   Implement monitoring mechanisms that track and analyze account activity, such as changes to permissions, creation or deletion of resources, or modifications to critical settings. 
   Regularly review and analyze account activity logs to detect any unauthorized or suspicious activities that may indicate a compromised user account.
