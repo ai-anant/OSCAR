@@ -19,6 +19,7 @@
           <a href="../incidents/index.html">Incident mapping</a>
           <a href="../stories/index.html">Attack stories</a>
           <a href="../guidance.html">Guidance</a>
+          <a href="../origins.html">Origins</a>
           <a href="../changelog.html">Changelog</a>
           <a href="../about.html">About</a>
         </nav>
@@ -31,6 +32,7 @@
         <h1>Exposed webHook</h1>
         <div class="chips"><span class="chip">CI/CD Posture</span></div>
         <p>Exposed WebHook attack in CI/CD posture is a technique where an attacker exploits a publicly accessible or improperly authenticated and authorized WebHook endpoint in a CI/CD setup. <br>The attacker sends malicious payloads or triggers unauthorized actions through the WebHook, gaining unauthorized access to the CI/CD pipeline or associated resources. <br>The consequences can include unauthorized access to data, compromise of the CI/CD pipeline, injection of malicious code, or disruption of the software development process.</p>
+        <h2>Where this idea came from</h2><p class="meta">Security research</p><p>Identified in published CI/CD or supply-chain security research cited below.</p><ul class='refs'><li><a href="https://www.cidersecurity.io/blog/research/how-we-abused-repository-webhooks-to-access-internal-ci-systems-at-scale/" rel="noopener">https://www.cidersecurity.io/blog/research/how-we-abused-repository-webhooks-to-access-internal-ci-systems-at-scale/</a></li></ul>
         
         <h2>Mitigations</h2>
         <ul><li><span class="id">M1790</span> Limit access to webhooks</li><li><span class="id">M1791</span> Use secure communication channels</li><li><span class="id">M1792</span> Implement secure WebHook configurations</li></ul>

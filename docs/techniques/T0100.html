@@ -19,6 +19,7 @@
           <a href="../incidents/index.html">Incident mapping</a>
           <a href="../stories/index.html">Attack stories</a>
           <a href="../guidance.html">Guidance</a>
+          <a href="../origins.html">Origins</a>
           <a href="../changelog.html">Changelog</a>
           <a href="../about.html">About</a>
         </nav>
@@ -31,6 +32,7 @@
         <h1>Discover naming conventions</h1>
         <div class="chips"><span class="chip">Container Security</span> <span class="chip">Open Source Security</span> <span class="chip">SCM Posture</span></div>
         <p>This technique involves analyzing the naming conventions used in container images, source code repositories, and other related artifacts.<br>By examining the naming conventions, an attacker can gain insights into the technologies and frameworks used in the application, as well as potentially identifying weak spots or vulnerabilities that can be exploited.<br>For example, an attacker might use this technique to identify the specific version of a library or software component used in an application, which could then be cross-referenced with known vulnerabilities to determine if the application is at risk.<br>Alternatively, an attacker might analyze naming conventions to determine the structure and organization of a codebase, which could aid in future attacks.</p>
+        <h2>Where this idea came from</h2><p class="meta">Standard or guidance</p><p>Recorded from defender guidance (OWASP, NIST, SLSA, CISA, or vendor secure-development docs) as an attacker-side behavior.</p><ul class='refs'><li><a href="https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/01-Information_Gathering/README" rel="noopener">https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/01-Information_Gathering/README</a></li></ul>
         
         <h2>Mitigations</h2>
         <ul><li><span class="id">M1000</span> Limit Publicly Available Information</li><li><span class="id">M1001</span> Avoid Predictable Naming Conventions</li><li><span class="id">M1503</span> Implement SCA analysis</li><li><span class="id">M1720</span> Implement regular patches and updates</li></ul>

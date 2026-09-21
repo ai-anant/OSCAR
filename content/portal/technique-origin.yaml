@@ -1,0 +1,840 @@
+techniques:
+  T0100:
+    summary: Discover naming conventions
+    tactic: Reconnaissance
+    kind: guidance
+    note: Recorded from defender guidance (OWASP, NIST, SLSA, CISA, or vendor secure-development docs) as an attacker-side
+      behavior.
+    sources:
+    - https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/01-Information_Gathering/README
+  T0101:
+    summary: Discover technology stacks
+    tactic: Reconnaissance
+    kind: guidance
+    note: Recorded from defender guidance (OWASP, NIST, SLSA, CISA, or vendor secure-development docs) as an attacker-side
+      behavior.
+    sources:
+    - https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/01-Information_Gathering/README
+  T0102:
+    summary: Discover used open-source dependencies
+    tactic: Reconnaissance
+    kind: guidance
+    note: Recorded from defender guidance (OWASP, NIST, SLSA, CISA, or vendor secure-development docs) as an attacker-side
+      behavior.
+    sources:
+    - https://cheatsheetseries.owasp.org/cheatsheets/Vulnerable_Dependency_Management_Cheat_Sheet.html
+  T0103:
+    summary: Scan public artifacts for secrets
+    tactic: Reconnaissance
+    kind: research
+    note: Identified in published CI/CD or supply-chain security research cited below.
+    sources:
+    - https://cycode.com/introducing-container-secret-scanning/
+    - https://docs.gitlab.com/ee/user/application_security/secret_detection/
+  T0104:
+    summary: Discover coding flaws
+    tactic: Reconnaissance
+    kind: guidance
+    note: Recorded from defender guidance (OWASP, NIST, SLSA, CISA, or vendor secure-development docs) as an attacker-side
+      behavior.
+    sources:
+    - https://docs.github.com/en/code-security/supply-chain-security/end-to-end-supply-chain/securing-code
+  T0105:
+    summary: Active scanning
+    tactic: Reconnaissance
+    kind: research
+    note: Identified in published CI/CD or supply-chain security research cited below.
+    sources:
+    - https://www.aquasec.com/cloud-native-academy/cspm/cloud-security-scanner/
+    - https://github.com/prowler-cloud/prowler
+  T0106:
+    summary: Scan configuration on public resources
+    tactic: Reconnaissance
+    kind: article
+    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident report.
+    sources:
+    - https://www.scmagazine.com/resource/cloud-security/5-challenges-to-public-cloud-security
+  T0107:
+    summary: Discover internal artifacts names
+    tactic: Reconnaissance
+    kind: research
+    note: Sibling of T0102. Internal package names are what Birsan enumerated from public artifacts before dependency
+      confusion. Original YAML had no URL.
+    sources:
+    - https://medium.com/@alex.birsan/dependency-confusion-4a5d60fec610
+  T0108:
+    summary: Accounts in public registry
+    tactic: Resource Development
+    kind: research
+    note: Identified in published CI/CD or supply-chain security research cited below.
+    sources:
+    - https://blog.gitguardian.com/poisoning-the-source-how-and-why-attackers-are-targeting-developer-accounts/
+    - https://thenewstack.io/php-supply-chain-attack-shows-open-sources-virtues-and-vices/
+  T0109:
+    summary: Publish malicious artifact
+    tactic: Resource Development
+    kind: research
+    note: Identified in published CI/CD or supply-chain security research cited below.
+    sources:
+    - https://sysdig.com/blog/analysis-of-supply-chain-attacks-through-public-docker-images/
+    - https://blog.sonatype.com/malware-monthly-january-2023
+    - https://owasp.org/www-project-top-10-ci-cd-security-risks/CICD-SEC-09-Improper-Artifact-Integrity-Validation
+  T0110:
+    summary: Advertise malicious artifact
+    tactic: Resource Development
+    kind: article
+    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident report.
+    sources:
+    - https://www.bleepingcomputer.com/news/security/malicious-lolip0p-pypi-packages-install-info-stealing-malware/
+  T0111:
+    summary: Malicious code contribution to an open-source repository
+    tactic: Resource Development
+    kind: research
+    note: Identified in published CI/CD or supply-chain security research cited below.
+    sources:
+    - https://thenewstack.io/php-supply-chain-attack-shows-open-sources-virtues-and-vices/
+    - https://www.darkreading.com/vulnerabilities-threats/35k-malicious-code-insertions-in-github-attack-bug-bounty
+    - https://www.legitsecurity.com/blog/how-a-massive-widespread-malware-attack-almost-occurred-on-github
+  T0112:
+    summary: Compromised token
+    tactic: Initial Access
+    kind: guidance
+    note: Recorded from defender guidance (OWASP, NIST, SLSA, CISA, or vendor secure-development docs) as an attacker-side
+      behavior.
+    sources:
+    - https://docs.github.com/en/actions/security-guides/automatic-token-authentication
+    - https://support.google.com/googleapi/answer/6310037?hl=en
+  T0113:
+    summary: Compromised user account
+    tactic: Initial Access
+    kind: research
+    note: Identified in published CI/CD or supply-chain security research cited below.
+    sources:
+    - https://blog.gitguardian.com/poisoning-the-source-how-and-why-attackers-are-targeting-developer-accounts/
+    - https://rhinosecuritylabs.com/aws/aws-iam-credentials-get-compromised/
+  T0114:
+    summary: Compromised service account
+    tactic: Initial Access
+    kind: article
+    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident report.
+    sources:
+    - https://stackoverflow.blog/2021/01/25/a-deeper-dive-into-our-may-2019-security-incident/
+  T0115:
+    summary: Repojacking
+    tactic: Initial Access
+    kind: research
+    note: Identified in published CI/CD or supply-chain security research cited below.
+    sources:
+    - https://blog.securityinnovation.com/repo-jacking-exploiting-the-dependency-supply-chain
+    - https://github.blog/2018-04-18-new-tools-for-open-source-maintainers/#popular-repository-namespace-retirement
+  T0116:
+    summary: Shadow IT
+    tactic: Initial Access
+    kind: article
+    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident report.
+    sources:
+    - https://www.thirdpartytrust.com/blog/what-is-shadow-it-digital-supply-chain/
+  T0117:
+    summary: SQL injection
+    tactic: Execution
+    kind: guidance
+    note: Recorded from defender guidance (OWASP, NIST, SLSA, CISA, or vendor secure-development docs) as an attacker-side
+      behavior.
+    sources:
+    - https://www.spiceworks.com/it-security/application-security/articles/what-is-sql-injection/
+    - https://owasp.org/www-community/attacks/SQL_Injection
+    - https://portswigger.net/web-security/sql-injection
+  T0118:
+    summary: Command injection
+    tactic: Execution
+    kind: guidance
+    note: Recorded from defender guidance (OWASP, NIST, SLSA, CISA, or vendor secure-development docs) as an attacker-side
+      behavior.
+    sources:
+    - https://owasp.org/www-community/attacks/Command_Injection
+    - https://portswigger.net/web-security/os-command-injection
+  T0119:
+    summary: Cross-site scripting
+    tactic: Execution
+    kind: guidance
+    note: Recorded from defender guidance (OWASP, NIST, SLSA, CISA, or vendor secure-development docs) as an attacker-side
+      behavior.
+    sources:
+    - https://owasp.org/www-community/attacks/xss/
+    - https://www.splunk.com/en_us/blog/learn/cross-site-scripting-xss-attacks.html
+    - https://portswigger.net/web-security/cross-site-scripting
+  T0120:
+    summary: Dependency confusion
+    tactic: Initial Access
+    kind: research
+    note: Identified in published CI/CD or supply-chain security research cited below.
+    sources:
+    - https://medium.com/@alex.birsan/dependency-confusion-4a5d60fec610
+    - https://pytorch.org/blog/compromised-nightly-dependency/
+  T0121:
+    summary: Compromised legitimate artifact
+    tactic: Resource Development
+    kind: research
+    note: Identified in published CI/CD or supply-chain security research cited below.
+    sources:
+    - https://www.legitsecurity.com/blog/why-you-can-still-get-hacked-even-after-signing-your-software-artifacts
+    - https://owasp.org/www-project-top-10-ci-cd-security-risks/CICD-SEC-09-Improper-Artifact-Integrity-Validation
+  T0122:
+    summary: Vulnerability in third-party CI/CD actions
+    tactic: Initial Access
+    kind: research
+    note: Identified in published CI/CD or supply-chain security research cited below.
+    sources:
+    - https://www.truesec.com/hub/blog/secure-your-software-supply-chain-trusting-3rd-parties
+  T0123:
+    summary: Exposed internal API
+    tactic: Initial Access
+    kind: guidance
+    note: Recorded from defender guidance (OWASP, NIST, SLSA, CISA, or vendor secure-development docs) as an attacker-side
+      behavior.
+    sources:
+    - https://owasp.org/www-project-api-security/
+    - https://techcrunch.com/2023/01/19/t-mobile-data-breach/
+  T0124:
+    summary: Unencrypted data at rest
+    tactic: Collection
+    kind: guidance
+    note: Recorded from defender guidance (OWASP, NIST, SLSA, CISA, or vendor secure-development docs) as an attacker-side
+      behavior.
+    sources:
+    - https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/protecting-data-at-rest.html
+    - https://cloud.google.com/docs/security/encryption/default-encryption
+    - https://learn.microsoft.com/en-us/azure/security/fundamentals/encryption-atrest
+  T0125:
+    summary: Unencrypted data in transit
+    tactic: Collection
+    kind: guidance
+    note: Recorded from defender guidance (OWASP, NIST, SLSA, CISA, or vendor secure-development docs) as an attacker-side
+      behavior.
+    sources:
+    - https://docs.aws.amazon.com/whitepapers/latest/efs-encrypted-file-systems/encryption-of-data-in-transit.html
+    - https://cloud.google.com/docs/security/encryption-in-transit
+  T0126:
+    summary: Exposed storage
+    tactic: Initial Access
+    kind: article
+    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident report.
+    sources:
+    - https://www.trendmicro.com/vinfo/es/security/news/virtualization-and-cloud/a-misconfigured-amazon-s3-exposed-almost-50-thousand-pii-in-australia
+    - https://www.darkreading.com/application-security/cloud-misconfig-exposes-3tb-sensitive-airport-data-amazon-s3-bucket
+  T0127:
+    summary: Exposed database
+    tactic: Initial Access
+    kind: article
+    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident report.
+    sources:
+    - https://securitytrails.com/blog/open-exposed-databases
+  T0128:
+    summary: Permissive network access
+    tactic: Initial Access
+    kind: research
+    note: Identified in published CI/CD or supply-chain security research cited below.
+    sources:
+    - https://sysdig.com/blog/aws-security-groups-guide/
+  T0129:
+    summary: Typosquatting
+    tactic: Initial Access
+    kind: research
+    note: Identified in published CI/CD or supply-chain security research cited below.
+    sources:
+    - https://bytesafe.dev/posts/understanding-typosquatting-methods/
+    - https://cycode.com/typosquatting-repojacking-domain-takeover/
+    - https://www.reversinglabs.com/blog/beware-impostor-http-libraries-lurk-on-pypi
+  T0130:
+    summary: Harvest secrets from logs
+    tactic: Credential Access
+    kind: research
+    note: Identified in published CI/CD or supply-chain security research cited below.
+    sources:
+    - https://www.synacktiv.com/en/publications/cicd-secrets-extraction-tips-and-tricks.html
+  T0131:
+    summary: Overprivileged user account
+    tactic: Lateral Movement
+    kind: research
+    note: Identified in published CI/CD or supply-chain security research cited below.
+    sources:
+    - https://learn.microsoft.com/en-us/security/zero-trust/develop/overprivileged-permissions
+    - https://www.cyberark.com/what-is/privileged-access-management/
+  T0132:
+    summary: Overprivileged CI/CD Runners
+    tactic: Privilege Escalation
+    kind: research
+    note: Identified in published CI/CD or supply-chain security research cited below.
+    sources:
+    - https://www.legitsecurity.com/blog/github-privilege-escalation-vulnerability
+    - https://dl.acm.org/doi/fullHtml/10.1145/3529320.3529325
+    - https://blog.lightspin.io/kubernetes-pod-privilege-escalation
+    - https://learn.snyk.io/lessons/container-runs-in-privileged-mode/kubernetes/
+    - https://sysdig.com/blog/detecting-mitigating-cve-2022-0492-sysdig/
+  T0133:
+    summary: Vulnerable CICD plugins
+    tactic: Initial Access
+    kind: research
+    note: Identified in published CI/CD or supply-chain security research cited below.
+    sources:
+    - https://www.legitsecurity.com/blog/how-to-continuously-detect-vulnerable-jenkins-plugins-to-avoid-a-software-supply-chain-attack
+    - https://www.jenkins.io/security/plugins/
+    - https://www.theregister.com/2022/06/30/jenkins_plugins_security_advisories/
+  T0134:
+    summary: Add user
+    tactic: Persistence
+    kind: analog
+    note: ATT&CK T1136 Create Account, applied to CI/CD, SCM, and cloud. Original YAML had no URL.
+    sources:
+    - https://attack.mitre.org/techniques/T1136/
+  T0135:
+    summary: Vulnerable CICD system
+    tactic: Initial Access
+    kind: guidance
+    note: Recorded from defender guidance (OWASP, NIST, SLSA, CISA, or vendor secure-development docs) as an attacker-side
+      behavior.
+    sources:
+    - https://www.paloaltonetworks.com/blog/prisma-cloud/shift-left-ci-cd-security-for-your-software-supply-chain/
+    - https://owasp.org/www-project-top-10-ci-cd-security-risks/
+  T0136:
+    summary: Brandjacking
+    tactic: Initial Access
+    kind: article
+    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident report.
+    sources:
+    - https://www.mend.io/resources/blog/new-supply-chain-attack-methods-april/
+  T0137:
+    summary: Weak authentication methods
+    tactic: Initial Access
+    kind: article
+    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident report.
+    sources:
+    - https://affinity-it-security.com/what-is-weak-authentication/
+  T0138:
+    summary: Backdoor in code
+    tactic: Persistence
+    kind: research
+    note: Identified in published CI/CD or supply-chain security research cited below.
+    sources:
+    - https://kerkour.com/supply-chain-attacks-and-backdoored-dependencies
+  T0139:
+    summary: Resource hijacking
+    tactic: Impact
+    kind: article
+    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident report.
+    sources:
+    - https://socprime.com/blog/purpleurchin-campaign-detection-a-new-crypto-mining-operation-massively-abuses-github-actions-and-other-popular-free-ci-cd-service-accounts/
+  T0140:
+    summary: Harvest tokens from environment variables
+    tactic: Credential Access
+    kind: article
+    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident report.
+    sources:
+    - https://www.trendmicro.com/en_ie/research/22/h/analyzing-hidden-danger-of-environment-variables-for-keeping-secrets.html
+    - https://developer.hashicorp.com/vault/docs/what-is-vault
+  T0141:
+    summary: Fake developer reputation (Starjacking)
+    tactic: Resource Development
+    kind: research
+    note: Identified in published CI/CD or supply-chain security research cited below.
+    sources:
+    - https://thenewstack.io/php-supply-chain-attack-shows-open-sources-virtues-and-vices/
+    - https://checkmarx.com/blog/starjacking-making-your-new-open-source-package-popular-in-a-snap/
+  T0142:
+    summary: Accidental public disclosure of internal resources
+    tactic: Reconnaissance
+    kind: article
+    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident report.
+    sources:
+    - https://duo.com/blog/beyond-s3-exposed-resources-on-aws
+  T0143:
+    summary: External user accounts
+    tactic: Initial Access
+    kind: guidance
+    note: 'OWASP CICD-SEC-2 (inadequate IAM): guest, contractor, and SSO-linked external identities. YAML had an
+      empty references list.'
+    sources:
+    - https://owasp.org/www-project-top-10-ci-cd-security-risks/
+  T0144:
+    summary: Misconfigured traffic log settings
+    tactic: Defense Evasion
+    kind: research
+    note: Identified in published CI/CD or supply-chain security research cited below.
+    sources:
+    - https://blog.marcolancini.it/2021/blog-security-logging-cloud-environments-gcp/
+    - https://blog.marcolancini.it/continuous-cloud-visibility/
+  T0145:
+    summary: Bypass of outbound traffic control
+    tactic: Exfiltration
+    kind: article
+    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident report.
+    sources:
+    - https://www.xorlab.com/en/blog/data-exfiltration-most-common-techniques-and-best-prevention-tactics
+  T0146:
+    summary: Misconfigured audit logs settings
+    tactic: Defense Evasion
+    kind: research
+    note: Identified in published CI/CD or supply-chain security research cited below.
+    sources:
+    - https://blog.marcolancini.it/2019/blog-cross-account-auditing/
+    - https://blog.marcolancini.it/continuous-cloud-visibility/
+  T0147:
+    summary: Scan public CI/CD configurations for secrets and vulnerable actions
+    tactic: Reconnaissance
+    kind: research
+    note: Identified in published CI/CD or supply-chain security research cited below.
+    sources:
+    - https://owasp.org/www-project-top-10-ci-cd-security-risks/
+    - https://www.aquasec.com/cloud-native-academy/supply-chain-security/ci-cd-security-threats-tools-and-best-practices/
+    - https://cycode.com/github-actions-vulnerabilities/
+  T0148:
+    summary: Scheduled tasks on self hosted runner
+    tactic: Persistence
+    kind: research
+    note: Identified in published CI/CD or supply-chain security research cited below.
+    sources:
+    - https://www.praetorian.com/blog/introducing-gato-for-ci-cd-exploitation/
+  T0149:
+    summary: Delete repositories
+    tactic: Impact
+    kind: guidance
+    note: SLSA availability threat — delete source so the pipeline cannot rebuild. Original YAML had no URL.
+    sources:
+    - https://slsa.dev/spec/v1.0/threats
+  T0150:
+    summary: Runtime logic bomb
+    tactic: Execution
+    kind: article
+    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident report.
+    sources:
+    - https://www.csoonline.com/article/2115905/logic-bomb.html
+    - https://threatpost.com/discord-stealing-malware-npm-packages/163265/
+    - https://threatpost.com/malicious-code-bombs-amazon-lyft-slack-zillow/164455/
+    - https://threatpost.com/php-infiltrated-backdoor-malware/165061/
+    - https://threatpost.com/cryptominers-python-supply-chain/167135/
+  T0151:
+    summary: Installation scripts
+    tactic: Execution
+    kind: research
+    note: Identified in published CI/CD or supply-chain security research cited below.
+    sources:
+    - https://www.fortinet.com/blog/threat-research/more-supply-chain-attacks-via-new-malicious-python-packages-in-pypi
+    - https://medium.com/checkmarx-security/the-skeleton-squad-tracing-the-origins-and-scope-of-5000-malicious-packages-on-pypi-7516c16e4da9
+    - https://medium.com/checkmarx-security/automatic-execution-of-code-upon-package-download-on-python-package-manager-cd6ed9e366a8
+  T0152:
+    summary: IDE
+    tactic: Execution
+    kind: article
+    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident report.
+    sources:
+    - https://www.trendmicro.com/en_us/research/23/a/attacking-the-supply-chain-developer.html
+  T0153:
+    summary: Compromised developer workstation
+    tactic: Initial Access
+    kind: research
+    note: Identified in published CI/CD or supply-chain security research cited below.
+    sources:
+    - https://www.reversinglabs.com/blog/vs-code-ide-hack-how-supply-chain-attacks-can-proliferate-between-developer-ecosystems
+  T0154:
+    summary: Malicious IDE extension
+    tactic: Initial Access
+    kind: research
+    note: Identified in published CI/CD or supply-chain security research cited below.
+    sources:
+    - https://blog.aquasec.com/can-you-trust-your-vscode-extensions
+  T0155:
+    summary: Cloud workload
+    tactic: Execution
+    kind: research
+    note: Identified in published CI/CD or supply-chain security research cited below.
+    sources:
+    - https://www.cadosecurity.com/cado-discovers-denonia-the-first-malware-specifically-targeting-lambda/
+    - https://blog.morphisec.com/what-is-cloud-workload-security
+  T0156:
+    summary: Exfiltration over webhooks
+    tactic: Exfiltration
+    kind: research
+    note: Identified in published CI/CD or supply-chain security research cited below.
+    sources:
+    - https://cybersecurity.att.com/blogs/labs-research/slack-phishing-attacks-using-webhooks
+    - https://checkmarx.com/blog/webhook-party-malicious-packages-caught-exfiltrating-data-via-legit-webhook-services/
+  T0157:
+    summary: Combosquatting
+    tactic: Initial Access
+    kind: article
+    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident report.
+    sources:
+    - https://dev.to/sumstrm/different-typosquatting-attacks-to-know-of-for-a-secure-supply-chain-4j70
+  T0158:
+    summary: Vulnerable CI/CD template
+    tactic: Initial Access
+    kind: research
+    note: Identified in published CI/CD or supply-chain security research cited below.
+    sources:
+    - https://cycode.com/github-actions-vulnerabilities/
+  T0159:
+    summary: Malicious artifact execution
+    tactic: Execution
+    kind: incident
+    note: Taken from a public incident, vendor advisory, or first-party write-up cited below.
+    sources:
+    - https://about.codecov.io/security-update/
+    - https://www.legitsecurity.com/blog/artifact-poisoning-vulnerability-discovered-in-rust
+    - https://owasp.org/www-project-top-10-ci-cd-security-risks/CICD-SEC-09-Improper-Artifact-Integrity-Validation
+  T0161:
+    summary: Implant in zombie instance
+    tactic: Persistence
+    kind: analog
+    note: Cloud persistence analog of ATT&CK T1525 Implant Internal Image (backdoor on an instance that looks idle).
+      Original YAML had no URL.
+    sources:
+    - https://attack.mitre.org/techniques/T1525/
+  T0162:
+    summary: Passwords in CI/CD logs
+    tactic: Credential Access
+    kind: research
+    note: Identified in published CI/CD or supply-chain security research cited below.
+    sources:
+    - https://www.synacktiv.com/en/publications/cicd-secrets-extraction-tips-and-tricks.html
+  T0163:
+    summary: Runtime leakage of password
+    tactic: Credential Access
+    kind: article
+    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident report.
+    sources:
+    - https://www.trendmicro.com/en_ie/research/22/h/analyzing-hidden-danger-of-environment-variables-for-keeping-secrets.html
+  T0164:
+    summary: Inject malicious dependency to privileged user repository
+    tactic: Privilege Escalation
+    kind: guidance
+    note: Recorded from defender guidance (OWASP, NIST, SLSA, CISA, or vendor secure-development docs) as an attacker-side
+      behavior.
+    sources:
+    - https://owasp.org/www-project-top-10-ci-cd-security-risks/CICD-SEC-03-Dependency-Chain-Abuse
+  T0165:
+    summary: Create access token
+    tactic: Persistence
+    kind: incident
+    note: Taken from a public incident, vendor advisory, or first-party write-up cited below.
+    sources:
+    - https://circleci.com/blog/jan-4-2023-incident-report/
+  T0166:
+    summary: Trigger pipeline execution
+    tactic: Execution
+    kind: research
+    note: Identified in published CI/CD or supply-chain security research cited below.
+    sources:
+    - https://medium.com/cider-sec/ppe-poisoned-pipeline-execution-34f4e8d0d4e9
+    - https://www.legitsecurity.com/blog/artifact-poisoning-vulnerability-discovered-in-rust
+    - https://owasp.org/www-project-top-10-ci-cd-security-risks/CICD-SEC-04-Poisoned-Pipeline-Execution
+  T0167:
+    summary: Recursive PR
+    tactic: Persistence
+    kind: article
+    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident report.
+    sources:
+    - https://nathandavison.com/blog/github-actions-and-the-threat-of-malicious-pull-requests
+  T0168:
+    summary: Exfiltration to code repositories
+    tactic: Exfiltration
+    kind: analog
+    note: Analog of a well-known ATT&CK or AppSec technique, applied to software supply chain.
+    sources:
+    - https://attack.mitre.org/techniques/T1567/001/
+    - https://www.optimizationcore.com/security/github-exfiltration-indicators-threat-hunt-monitor-block/
+  T0169:
+    summary: Push implants across repositories
+    tactic: Lateral Movement
+    kind: research
+    note: Identified in published CI/CD or supply-chain security research cited below.
+    sources:
+    - https://owasp.org/www-project-top-10-ci-cd-security-risks/CICD-SEC-01-Insufficient-Flow-Control-Mechanisms
+    - https://news-web.php.net/php.internals/113981
+    - https://brew.sh/2021/04/21/security-incident-disclosure/
+    - https://www.cidersecurity.io/blog/research/bypassing-required-reviews-using-github-actions/
+  T0170:
+    summary: Malicious compiler or interpreter
+    tactic: Defense Evasion
+    kind: research
+    note: Identified in published CI/CD or supply-chain security research cited below.
+    sources:
+    - https://jfrog.com/blog/detecting-known-and-unknown-malicious-packages-and-how-they-obfuscate-their-malicious-code/
+    - https://network-king.net/compiler-flaw-facilitates-supply-chain-attacks/
+  T0172:
+    summary: Runtime backdoor
+    tactic: Execution
+    kind: research
+    note: Identified in published CI/CD or supply-chain security research cited below.
+    sources:
+    - https://www.cyberark.com/resources/blog/the-anatomy-of-the-solarwinds-attack-chain
+    - https://portswigger.net/daily-swig/software-supply-chain-attacks-everything-you-need-to-know
+    - https://www.littlefish.co.uk/insights/backdoor-vulnerability-supply-chain-attacks/
+  T0173:
+    summary: Auto merge rules in SCM
+    tactic: Execution
+    kind: article
+    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident report.
+    sources:
+    - https://securityintelligence.com/posts/abusing-source-code-management-systems/
+  T0174:
+    summary: SaaS sprawl
+    tactic: Defense Evasion
+    kind: article
+    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident report.
+    sources:
+    - https://www.beamy.io/resources/blog/what-is-saas-sprawl/
+  T0175:
+    summary: Untagged resources
+    tactic: Persistence
+    kind: article
+    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident report.
+    sources:
+    - https://ismsguy.medium.com/treating-the-mishmash-of-missing-tag-resources-in-aws-using-the-cloud-custodian-part-1-63ca506f12f2
+    - https://www.infoworld.com/article/3246986/better-cloud-management-through-cloud-resource-tagging.html
+  T0176:
+    summary: Disable or misconfigure security measures
+    tactic: Defense Evasion
+    kind: article
+    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident report.
+    sources:
+    - https://www.upguard.com/blog/cloud-misconfiguration
+  T0177:
+    summary: Misconfiguration of serverless workloads
+    tactic: Impact
+    kind: article
+    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident report.
+    sources:
+    - https://cloudsecurityalliance.org/blog/2022/11/20/top-threat-9-to-cloud-computing-misconfiguration-and-exploitation-of-serverless-and-container-workloads/
+  T0178:
+    summary: Deploy keys
+    tactic: Persistence
+    kind: article
+    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident report.
+    sources:
+    - https://www.ibm.com/downloads/cas/OG6KNX1E
+  T0179:
+    summary: Exposed webHook
+    tactic: Initial Access
+    kind: research
+    note: Identified in published CI/CD or supply-chain security research cited below.
+    sources:
+    - https://www.cidersecurity.io/blog/research/how-we-abused-repository-webhooks-to-access-internal-ci-systems-at-scale/
+  T0180:
+    summary: Compromise services / servers
+    tactic: Initial Access
+    kind: article
+    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident report.
+    sources:
+    - https://research.nccgroup.com/2022/01/13/10-real-world-stories-of-how-weve-compromised-ci-cd-pipelines/
+  T0181:
+    summary: Malicious module injection
+    tactic: Initial Access
+    kind: article
+    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident report.
+    sources:
+    - https://www.trendmicro.com/vinfo/us/security/news/virtualization-and-cloud/infrastructure-as-code-security-risks-and-how-to-avoid-them
+    - https://about.gitlab.com/blog/2022/02/17/fantastic-infrastructure-as-code-security-attacks-and-how-to-find-them/
+  T0182:
+    summary: Bypass review using admin permission
+    tactic: Defense Evasion
+    kind: research
+    note: Identified in published CI/CD or supply-chain security research cited below.
+    sources:
+    - https://docs.gitlab.com/ee/user/permissions.html
+    - https://www.cidersecurity.io/blog/research/bypassing-required-reviews-using-github-actions/
+  T0183:
+    summary: Harvesting short-lived token
+    tactic: Credential Access
+    kind: research
+    note: Identified in published CI/CD or supply-chain security research cited below.
+    sources:
+    - https://www.synacktiv.com/en/publications/cicd-secrets-extraction-tips-and-tricks.html
+  T0184:
+    summary: Harvesting sensitive information from files
+    tactic: Credential Access
+    kind: research
+    note: Identified in published CI/CD or supply-chain security research cited below.
+    sources:
+    - https://www.synacktiv.com/en/publications/cicd-secrets-extraction-tips-and-tricks.html
+  T0185:
+    summary: Steal credentials in container artifacts
+    tactic: Credential Access
+    kind: research
+    note: Identified in published CI/CD or supply-chain security research cited below.
+    sources:
+    - https://cycode.com/introducing-container-secret-scanning/
+  T0186:
+    summary: Source code leak
+    tactic: Impact
+    kind: research
+    note: Identified in published CI/CD or supply-chain security research cited below.
+    sources:
+    - https://sec.okta.com/articles/2022/12/okta-code-repositories
+  T0187:
+    summary: Exposed storage
+    tactic: Reconnaissance
+    kind: article
+    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident report.
+    sources:
+    - https://www.trendmicro.com/vinfo/es/security/news/virtualization-and-cloud/a-misconfigured-amazon-s3-exposed-almost-50-thousand-pii-in-australia
+    - https://www.darkreading.com/application-security/cloud-misconfig-exposes-3tb-sensitive-airport-data-amazon-s3-bucket
+  T0188:
+    summary: Cross Site Request Forgery
+    tactic: Execution
+    kind: guidance
+    note: Recorded from defender guidance (OWASP, NIST, SLSA, CISA, or vendor secure-development docs) as an attacker-side
+      behavior.
+    sources:
+    - https://www.securityweek.com/csrf-vulnerability-kudu-scm-allowed-code-execution-azure-services/
+    - https://owasp.org/www-community/attacks/csrf
+  T0189:
+    summary: Secrets in configuration files
+    tactic: Credential Access
+    kind: article
+    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident report.
+    sources:
+    - https://spectralops.io/blog/where-your-code-secrets-hide-filetypes/
+  T0190:
+    summary: Weak encryption
+    tactic: Collection
+    kind: guidance
+    note: Recorded from defender guidance (OWASP, NIST, SLSA, CISA, or vendor secure-development docs) as an attacker-side
+      behavior.
+    sources:
+    - https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/09-Testing_for_Weak_Cryptography/04-Testing_for_Weak_Encryption
+  T0191:
+    summary: Malicious code in artifacts
+    tactic: Impact
+    kind: research
+    note: Identified in published CI/CD or supply-chain security research cited below.
+    sources:
+    - https://en.wikipedia.org/wiki/2020_United_States_federal_government_data_breach
+    - https://jfrog.com/blog/detecting-known-and-unknown-malicious-packages-and-how-they-obfuscate-their-malicious-code/
+    - https://www.legitsecurity.com/blog/why-you-can-still-get-hacked-even-after-signing-your-software-artifacts
+  T0192:
+    summary: Sensitive information in logs
+    tactic: Collection
+    kind: research
+    note: Identified in published CI/CD or supply-chain security research cited below.
+    sources:
+    - https://medium.com/google-cloud/protect-sensitive-info-in-logs-using-google-cloud-4548211d4654
+    - https://www.logiq.ai/6-ways-to-protect-sensitive-data-in-logs/
+  T0193:
+    summary: Sensitive information in environment variables
+    tactic: Collection
+    kind: article
+    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident report.
+    sources:
+    - https://www.trendmicro.com/en_fi/research/22/h/analyzing-hidden-danger-of-environment-variables-for-keeping-secrets.html
+  T0194:
+    summary: Outdated software components
+    tactic: Initial Access
+    kind: research
+    note: Identified in published CI/CD or supply-chain security research cited below.
+    sources:
+    - https://www.truesec.com/hub/blog/secure-your-software-supply-chain-trusting-3rd-parties
+  T0195:
+    summary: Spoofed Commits
+    tactic: Defense Evasion
+    kind: article
+    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident report.
+    sources:
+    - https://www.arnica.io/blog/demystifying-the-pl0x-github-attack
+  T0196:
+    summary: Backdoor in code
+    tactic: Impact
+    kind: research
+    note: Identified in published CI/CD or supply-chain security research cited below.
+    sources:
+    - https://kerkour.com/supply-chain-attacks-and-backdoored-dependencies
+  T0197:
+    summary: Use code from untrusted source
+    tactic: Initial Access
+    kind: article
+    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident report.
+    sources:
+    - https://www.thirdpartytrust.com/blog/what-is-shadow-it-digital-supply-chain/
+    - https://www.bleepingcomputer.com/news/security/new-xcodespy-malware-targets-ios-devs-in-supply-chain-attack/
+  T0198:
+    summary: Malicious Build Time Dependencies
+    tactic: Defense Evasion
+    kind: article
+    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident report.
+    sources:
+    - https://i.blackhat.com/BH-US-23/Presentations/US-23-Long-Reflections-On-Trust.pdf
+  T0199:
+    summary: Secret leak
+    tactic: Impact
+    kind: incident
+    note: Taken from a public incident, vendor advisory, or first-party write-up cited below.
+    sources:
+    - https://sec.okta.com/articles/2022/12/okta-code-repositories
+    - https://circleci.com/blog/jan-4-2023-incident-report/#what-happened
+  T0200:
+    summary: Proprietary data stolen
+    tactic: Impact
+    kind: original
+    note: 'This fork, from upstream issue #84 (Impact: proprietary data stolen).'
+    sources:
+    - https://attack.mitre.org/tactics/TA0010/
+    - https://www.cisa.gov/news-events/cybersecurity-advisories/aa21-008a
+    - https://github.com/pbom-dev/OSCAR/issues/84
+  T0201:
+    summary: Customers compromised
+    tactic: Impact
+    kind: original
+    note: 'This fork, from upstream issue #84 (Impact: customers compromised).'
+    sources:
+    - https://www.cisa.gov/news-events/cybersecurity-advisories/aa21-008a
+    - https://www.mandiant.com/solarwinds-break-resource-center
+    - https://github.com/pbom-dev/OSCAR/issues/84
+  T0202:
+    summary: Inadequate CI/CD workflow permissions
+    tactic: Persistence
+    kind: guidance
+    note: 'This fork, from upstream issue #42 and OWASP CICD-SEC-5 (pipeline-based access controls).'
+    sources:
+    - https://docs.github.com/en/actions/security-guides/automatic-token-authentication
+    - https://www.cisa.gov/news-events/alerts/2025/03/18/supply-chain-compromise-third-party-github-action-cve-2025-30066
+    - https://github.com/pbom-dev/OSCAR/issues/42
+  T0203:
+    summary: Discover localized out-of-band deployments
+    tactic: Reconnaissance
+    kind: guidance
+    note: 'This fork, from upstream issue #23; cited OWASP Top 10 CI/CD.'
+    sources:
+    - https://owasp.org/www-project-top-10-ci-cd-security-risks/
+    - https://github.com/pbom-dev/OSCAR/issues/23
+  T0205:
+    summary: Compromise third-party CDN or hosted web asset
+    tactic: Initial Access
+    kind: incident
+    note: This fork, after Polyfill.io (Sansec) showed CDN/web-asset takeover was unnamed.
+    sources:
+    - https://sansec.io/research/polyfill-supply-chain-attack
+    - https://www.cisa.gov/news-events/alerts/2024/06/27/widespread-security-compromise-polyfillio-supply-chain-attack
+  T0206:
+    summary: Forge or omit build provenance
+    tactic: Defense Evasion
+    kind: guidance
+    note: This fork, from NIST SSDF PS.3.2 and SLSA build threats (forge/omit provenance).
+    sources:
+    - https://slsa.dev/spec/v1.0/threats
+    - https://csrc.nist.gov/pubs/sp/800/218/final
+    - https://www.cisa.gov/resources-tools/resources/secure-software-development-attestation-form
+  T0207:
+    summary: Skip or forge artifact integrity verification
+    tactic: Defense Evasion
+    kind: guidance
+    note: This fork, attacker side of OWASP CICD-SEC-9 (artifact integrity validation).
+    sources:
+    - https://owasp.org/www-project-top-10-ci-cd-security-risks/
+    - https://www.w3.org/TR/SRI/
+  T0208:
+    summary: Compromise code-signing identity
+    tactic: Defense Evasion
+    kind: incident
+    note: This fork, from SLSA signed-but-malicious artifacts; SolarWinds is the canonical case.
+    sources:
+    - https://slsa.dev/spec/v1.0/threats
+    - https://orangematter.solarwinds.com/2021/05/07/an-investigative-update-of-the-cyberattack/

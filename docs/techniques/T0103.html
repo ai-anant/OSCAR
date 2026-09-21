@@ -19,6 +19,7 @@
           <a href="../incidents/index.html">Incident mapping</a>
           <a href="../stories/index.html">Attack stories</a>
           <a href="../guidance.html">Guidance</a>
+          <a href="../origins.html">Origins</a>
           <a href="../changelog.html">Changelog</a>
           <a href="../about.html">About</a>
         </nav>
@@ -31,6 +32,7 @@
         <h1>Scan public artifacts for secrets</h1>
         <div class="chips"><span class="chip">Container Security</span> <span class="chip">SCM Posture</span> <span class="chip">Secrets Hygiene</span></div>
         <p>This technique involves scanning publicly available artifacts, such as code repositories and container images, for sensitive information such as passwords, access keys, and other secrets.<br>By scanning these artifacts, an attacker can gain unauthorized access to the application or underlying system and potentially cause significant damage.<br>For example, an attacker might use this technique to scan a public code repository for hardcoded passwords or access keys, which could then be used to gain unauthorized access to the application or the underlying system.<br>Alternatively, an attacker might scan a public container image for sensitive information such as database credentials, which could be used to gain access to sensitive data.</p>
+        <h2>Where this idea came from</h2><p class="meta">Security research</p><p>Identified in published CI/CD or supply-chain security research cited below.</p><ul class='refs'><li><a href="https://cycode.com/introducing-container-secret-scanning/" rel="noopener">https://cycode.com/introducing-container-secret-scanning/</a></li><li><a href="https://docs.gitlab.com/ee/user/application_security/secret_detection/" rel="noopener">https://docs.gitlab.com/ee/user/application_security/secret_detection/</a></li></ul>
         
         <h2>Mitigations</h2>
         <ul><li><span class="id">M1120</span> Store credentials in vault</li><li><span class="id">M1732</span> Implement code scanning for security risks</li><li><span class="id">M1890</span> Encrypt secrets</li></ul>

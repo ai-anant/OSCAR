@@ -19,6 +19,7 @@
           <a href="../incidents/index.html">Incident mapping</a>
           <a href="../stories/index.html">Attack stories</a>
           <a href="../guidance.html">Guidance</a>
+          <a href="../origins.html">Origins</a>
           <a href="../changelog.html">Changelog</a>
           <a href="../about.html">About</a>
         </nav>
@@ -31,6 +32,7 @@
         <h1>Repojacking</h1>
         <div class="chips"><span class="chip">Container Security</span> <span class="chip">Open Source Security</span></div>
         <p>Dependency repository hijacking (aka repo jacking) is an obscure supply chain vulnerability, conceptually similar to subdomain takeover, that impacts over 70,000 open-source projects and affects everything from web frameworks to cryptocurrencies. <br>This vulnerability is trivial to exploit, results in remote code injection, and affects major projects from companies like Google, GitHub, Facebook, Kubernetes, NodeJS, Amazon, and many others. <br>Every project whose compilation depends on dynamically linked code from GitHub repositories is potentially vulnerable. <br>When the linked repository owner changes their username, it becomes immediately available to be re-registered by anyone. <br>This means that any project that linked back to the original repository URL has now become vulnerable to remote code injection through dependency hijacking. <br>A malicious attacker can register the old GitHub username, recreate the repository, and use it to serve malicious code to any project that depends on it.</p>
+        <h2>Where this idea came from</h2><p class="meta">Security research</p><p>Identified in published CI/CD or supply-chain security research cited below.</p><ul class='refs'><li><a href="https://blog.securityinnovation.com/repo-jacking-exploiting-the-dependency-supply-chain" rel="noopener">https://blog.securityinnovation.com/repo-jacking-exploiting-the-dependency-supply-chain</a></li><li><a href="https://github.blog/2018-04-18-new-tools-for-open-source-maintainers/#popular-repository-namespace-retirement" rel="noopener">https://github.blog/2018-04-18-new-tools-for-open-source-maintainers/#popular-repository-namespace-retirement</a></li></ul>
         
         <h2>Mitigations</h2>
         <ul><li><span class="id">M1502</span> Define trusted package managers and repositories</li><li><span class="id">M1720</span> Implement regular patches and updates</li><li><span class="id">M1730</span> Implement code reviews</li><li><span class="id">M1732</span> Implement code scanning for security risks</li></ul>

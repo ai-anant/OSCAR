@@ -19,6 +19,7 @@
           <a href="../incidents/index.html">Incident mapping</a>
           <a href="../stories/index.html">Attack stories</a>
           <a href="../guidance.html">Guidance</a>
+          <a href="../origins.html">Origins</a>
           <a href="../changelog.html">Changelog</a>
           <a href="../about.html">About</a>
         </nav>
@@ -31,6 +32,7 @@
         <h1>Skip or forge artifact integrity verification</h1>
         <div class="chips"><span class="chip">Artifact Security</span> <span class="chip">Open Source Security</span> <span class="chip">CI/CD Posture</span></div>
         <p>Consumers are supposed to verify packages, containers, and third-party<br>scripts (checksums, signatures, Sigstore, Subresource Integrity). The<br>attacker relies on that check never running, or supplies a matching but<br>attacker-controlled signature. OWASP CICD-SEC-9 names the control gap;<br>this technique is the attacker side. Polyfill.io hotlinks without SRI and<br>unsigned CI helper scripts are typical realizations.</p>
+        <h2>Where this idea came from</h2><p class="meta">Standard or guidance</p><p>This fork, attacker side of OWASP CICD-SEC-9 (artifact integrity validation).</p><ul class='refs'><li><a href="https://owasp.org/www-project-top-10-ci-cd-security-risks/" rel="noopener">https://owasp.org/www-project-top-10-ci-cd-security-risks/</a></li><li><a href="https://www.w3.org/TR/SRI/" rel="noopener">https://www.w3.org/TR/SRI/</a></li></ul>
         
         <h2>Mitigations</h2>
         <ul><li><span class="id">M1200</span> Verify package authenticity</li><li><span class="id">M1291</span> Verify package or container sources</li><li><span class="id">M1090</span> Implement code and image signing</li></ul>

@@ -19,6 +19,7 @@
           <a href="../incidents/index.html">Incident mapping</a>
           <a href="../stories/index.html">Attack stories</a>
           <a href="../guidance.html">Guidance</a>
+          <a href="../origins.html">Origins</a>
           <a href="../changelog.html">Changelog</a>
           <a href="../about.html">About</a>
         </nav>
@@ -31,6 +32,7 @@
         <h1>Malicious code in artifacts</h1>
         <div class="chips"><span class="chip">Cloud Security</span> <span class="chip">Infrastructure as code</span> <span class="chip">Code Security</span></div>
         <p>By infecting artifacts with malicious code, attackers can gain access to a large number of unsuspecting customers who use these components in their systems or products. <br>This can allow the attackers to steal sensitive information, disrupt operations, or take control of affected systems.<br>Furthermore, because the malicious code is embedded within a seemingly legitimate component, it can be difficult to detect and remove. <br>This makes supply chain attacks particularly dangerous and challenging to defend against.<br>Overall, the goal of infecting artifacts with malicious code is to spread the malware to as many targets as possible, while remaining undetected for as long as possible.</p>
+        <h2>Where this idea came from</h2><p class="meta">Security research</p><p>Identified in published CI/CD or supply-chain security research cited below.</p><ul class='refs'><li><a href="https://en.wikipedia.org/wiki/2020_United_States_federal_government_data_breach" rel="noopener">https://en.wikipedia.org/wiki/2020_United_States_federal_government_data_breach</a></li><li><a href="https://jfrog.com/blog/detecting-known-and-unknown-malicious-packages-and-how-they-obfuscate-their-malicious-code/" rel="noopener">https://jfrog.com/blog/detecting-known-and-unknown-malicious-packages-and-how-they-obfuscate-their-malicious-code/</a></li><li><a href="https://www.legitsecurity.com/blog/why-you-can-still-get-hacked-even-after-signing-your-software-artifacts" rel="noopener">https://www.legitsecurity.com/blog/why-you-can-still-get-hacked-even-after-signing-your-software-artifacts</a></li></ul>
         
         <h2>Mitigations</h2>
         <ul><li><span class="id">M1500</span> Verify third-party artifacts and open-source libraries</li><li><span class="id">M1502</span> Define trusted package managers and repositories</li><li><span class="id">M1503</span> Implement SCA analysis</li><li><span class="id">M1720</span> Implement regular patches and updates</li><li><span class="id">M1730</span> Implement code reviews</li></ul>

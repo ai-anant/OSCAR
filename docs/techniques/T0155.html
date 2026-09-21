@@ -19,6 +19,7 @@
           <a href="../incidents/index.html">Incident mapping</a>
           <a href="../stories/index.html">Attack stories</a>
           <a href="../guidance.html">Guidance</a>
+          <a href="../origins.html">Origins</a>
           <a href="../changelog.html">Changelog</a>
           <a href="../about.html">About</a>
         </nav>
@@ -31,6 +32,7 @@
         <h1>Cloud workload</h1>
         <div class="chips"><span class="chip">Cloud Security</span></div>
         <p>Adversaries can exploit serverless computing, integration, and automation services in cloud environments to execute arbitrary code. <br>This can be done through serverless functions, compute engines, application integration, and web servers. <br>The attackers can use these resources to run malicious code, such as crypto-mining malware or create functions that enable further compromise of the cloud environment. <br>Attackers may also use event-triggered execution to persistently execute serverless functions over time, such as creating Lambda functions in AWS environments that add additional cloud credentials to a user.</p>
+        <h2>Where this idea came from</h2><p class="meta">Security research</p><p>Identified in published CI/CD or supply-chain security research cited below.</p><ul class='refs'><li><a href="https://www.cadosecurity.com/cado-discovers-denonia-the-first-malware-specifically-targeting-lambda/" rel="noopener">https://www.cadosecurity.com/cado-discovers-denonia-the-first-malware-specifically-targeting-lambda/</a></li><li><a href="https://blog.morphisec.com/what-is-cloud-workload-security" rel="noopener">https://blog.morphisec.com/what-is-cloud-workload-security</a></li></ul>
         
         <h2>Mitigations</h2>
         <ul><li><span class="id">M1532</span> Implement least privilege access controls</li><li><span class="id">M1550</span> Implement strict access control for clouds</li><li><span class="id">M1551</span> Use built-in security controls</li></ul>

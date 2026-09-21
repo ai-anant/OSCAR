@@ -19,6 +19,7 @@
           <a href="../incidents/index.html">Incident mapping</a>
           <a href="../stories/index.html">Attack stories</a>
           <a href="../guidance.html">Guidance</a>
+          <a href="../origins.html">Origins</a>
           <a href="../changelog.html">Changelog</a>
           <a href="../about.html">About</a>
         </nav>
@@ -31,6 +32,7 @@
         <h1>Push implants across repositories</h1>
         <div class="chips"><span class="chip">Code Security</span> <span class="chip">SCM Posture</span> <span class="chip">CI/CD Posture</span></div>
         <p>The Push Implants across Repositories attack technique is a type of lateral movement tactic where an attacker gains access to a victim&#x27;s code repository, modifies the code by implanting malicious code or backdoors, and pushes the modified code back to the repository.<br>This technique often involves the attacker stealing valid credentials, such as login credentials or SSH keys, to gain access to the victim&#x27;s code repository. <br>They then modify the code, implanting the malicious code or backdoors, and push the modified code back to the repository. <br>The victim then unknowingly deploys the modified code, resulting in the compromise of their systems.</p>
+        <h2>Where this idea came from</h2><p class="meta">Security research</p><p>Identified in published CI/CD or supply-chain security research cited below.</p><ul class='refs'><li><a href="https://owasp.org/www-project-top-10-ci-cd-security-risks/CICD-SEC-01-Insufficient-Flow-Control-Mechanisms" rel="noopener">https://owasp.org/www-project-top-10-ci-cd-security-risks/CICD-SEC-01-Insufficient-Flow-Control-Mechanisms</a></li><li><a href="https://news-web.php.net/php.internals/113981" rel="noopener">https://news-web.php.net/php.internals/113981</a></li><li><a href="https://brew.sh/2021/04/21/security-incident-disclosure/" rel="noopener">https://brew.sh/2021/04/21/security-incident-disclosure/</a></li><li><a href="https://www.cidersecurity.io/blog/research/bypassing-required-reviews-using-github-actions/" rel="noopener">https://www.cidersecurity.io/blog/research/bypassing-required-reviews-using-github-actions/</a></li></ul>
         
         <h2>Mitigations</h2>
         <ul><li><span class="id">M1661</span> Revoke user permissions</li><li><span class="id">M1730</span> Implement code reviews</li></ul>

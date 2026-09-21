@@ -19,6 +19,7 @@
           <a href="../incidents/index.html">Incident mapping</a>
           <a href="../stories/index.html">Attack stories</a>
           <a href="../guidance.html">Guidance</a>
+          <a href="../origins.html">Origins</a>
           <a href="../changelog.html">Changelog</a>
           <a href="../about.html">About</a>
         </nav>
@@ -31,6 +32,7 @@
         <h1>Sensitive information in logs</h1>
         <div class="chips"><span class="chip">Cloud Security</span> <span class="chip">CI/CD Posture</span></div>
         <p>Operational logs are a valuable source of information for organizations to monitor their systems and applications, identify issues, and improve their overall security posture. However, these logs can also contain sensitive information such as personally identifiable information (PII) data, tokens, credentials, and internal system information.<br>While this information may be useful to legitimate system administrators and security personnel, it can also be highly valuable to attackers who want to exploit vulnerabilities in the system. An adversary may attempt to gain access to the operational logs in order to steal valuable data or deepen their attack by using the information contained within the logs to escalate their privileges and move laterally within the organization&#x27;s network.</p>
+        <h2>Where this idea came from</h2><p class="meta">Security research</p><p>Identified in published CI/CD or supply-chain security research cited below.</p><ul class='refs'><li><a href="https://medium.com/google-cloud/protect-sensitive-info-in-logs-using-google-cloud-4548211d4654" rel="noopener">https://medium.com/google-cloud/protect-sensitive-info-in-logs-using-google-cloud-4548211d4654</a></li><li><a href="https://www.logiq.ai/6-ways-to-protect-sensitive-data-in-logs/" rel="noopener">https://www.logiq.ai/6-ways-to-protect-sensitive-data-in-logs/</a></li></ul>
         
         <h2>Mitigations</h2>
         <ul><li><span class="id">M1300</span> Implement log sanitization</li><li><span class="id">M1301</span> Implement log sanitization</li><li><span class="id">M1302</span> Implement strict access controls for logs</li><li><span class="id">M1440</span> Review logging settings</li><li><span class="id">M1441</span> Implement centralized logging</li></ul>

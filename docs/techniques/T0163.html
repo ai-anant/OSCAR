@@ -19,6 +19,7 @@
           <a href="../incidents/index.html">Incident mapping</a>
           <a href="../stories/index.html">Attack stories</a>
           <a href="../guidance.html">Guidance</a>
+          <a href="../origins.html">Origins</a>
           <a href="../changelog.html">Changelog</a>
           <a href="../about.html">About</a>
         </nav>
@@ -31,6 +32,7 @@
         <h1>Runtime leakage of password</h1>
         <div class="chips"><span class="chip">Code Security</span> <span class="chip">Container Security</span> <span class="chip">Open Source Security</span></div>
         <p>This attack technique involves searching for passwords or other sensitive information that is passed as parameters or environment variables during the runtime of a code or containerized application.<br>Attackers can exploit this vulnerability by intercepting the runtime process and capturing the sensitive information in transit. <br>Once the password or sensitive information is captured, the attacker can use it to gain unauthorized access to the system or associated resources.</p>
+        <h2>Where this idea came from</h2><p class="meta">Security article</p><p>Cited from a security article or vendor blog in the original YAML; not a first-party incident report.</p><ul class='refs'><li><a href="https://www.trendmicro.com/en_ie/research/22/h/analyzing-hidden-danger-of-environment-variables-for-keeping-secrets.html" rel="noopener">https://www.trendmicro.com/en_ie/research/22/h/analyzing-hidden-danger-of-environment-variables-for-keeping-secrets.html</a></li></ul>
         
         <h2>Mitigations</h2>
         <ul><li><span class="id">M1120</span> Store credentials in vault</li><li><span class="id">M1630</span> Implement runtime encryption</li></ul>

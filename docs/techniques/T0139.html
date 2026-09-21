@@ -19,6 +19,7 @@
           <a href="../incidents/index.html">Incident mapping</a>
           <a href="../stories/index.html">Attack stories</a>
           <a href="../guidance.html">Guidance</a>
+          <a href="../origins.html">Origins</a>
           <a href="../changelog.html">Changelog</a>
           <a href="../about.html">About</a>
         </nav>
@@ -31,6 +32,7 @@
         <h1>Resource hijacking</h1>
         <div class="chips"><span class="chip">CI/CD Posture</span> <span class="chip">Cloud Security</span> <span class="chip">Container Security</span></div>
         <p>Resource hijacking is a significant threat to cloud and container security. <br>It refers to the unauthorized use of computing resources, such as CPU power, memory, and bandwidth, by an attacker who has gained control over a system or network.<br>In cloud environments, attackers can compromise cloud-based systems to perform resource-intensive tasks like cryptocurrency mining, DDoS attacks, and other malicious activities. <br>This can significantly impact system availability and negatively affect hosted services. <br>Attackers can also leverage cloud-based resources to launch attacks on other targets, amplifying the impact of their actions.<br>Similarly, in containerized environments, attackers can use compromised containers to launch resource-hijacking attacks. <br>By deploying multiple containers within a cluster or environment, attackers can scale their mining activities and launch coordinated DDoS attacks.</p>
+        <h2>Where this idea came from</h2><p class="meta">Security article</p><p>Cited from a security article or vendor blog in the original YAML; not a first-party incident report.</p><ul class='refs'><li><a href="https://socprime.com/blog/purpleurchin-campaign-detection-a-new-crypto-mining-operation-massively-abuses-github-actions-and-other-popular-free-ci-cd-service-accounts/" rel="noopener">https://socprime.com/blog/purpleurchin-campaign-detection-a-new-crypto-mining-operation-massively-abuses-github-actions-and-other-popular-free-ci-cd-service-accounts/</a></li></ul>
         
         <h2>Mitigations</h2>
         <ul><li><span class="id">M1550</span> Implement strict access control for clouds</li><li><span class="id">M1720</span> Implement regular patches and updates</li><li><span class="id">M1860</span> Implement strong authentication mechanisms</li><li><span class="id">M1861</span> Implement strong authorization mechanisms</li></ul>

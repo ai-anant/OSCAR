@@ -19,6 +19,7 @@
           <a href="../incidents/index.html">Incident mapping</a>
           <a href="../stories/index.html">Attack stories</a>
           <a href="../guidance.html">Guidance</a>
+          <a href="../origins.html">Origins</a>
           <a href="../changelog.html">Changelog</a>
           <a href="../about.html">About</a>
         </nav>
@@ -31,6 +32,7 @@
         <h1>Exfiltration over webhooks</h1>
         <div class="chips"><span class="chip">SCM Posture</span> <span class="chip">CI/CD Posture</span></div>
         <p>A Webhook attack is a technique used by threat actors to gain unauthorized access to a target&#x27;s web application and exfiltrate data from it. <br>In this type of attack, the attacker gains access to the victim&#x27;s web application and installs a malicious webhook, which is a piece of code that is executed whenever a specific event occurs on the web application.<br>The webhook is designed to exfiltrate data from the victim&#x27;s web application and transmit it to a remote server controlled by the attacker. <br>The data exfiltrated can include sensitive information such as user credentials, customer data, or financial information.<br>Webhook attacks can be used to bypass outbound traffic control because the exfiltrated data is transmitted through legitimate channels that are often used by the web application. <br>This makes it difficult for traditional network security tools to detect the exfiltration of data.</p>
+        <h2>Where this idea came from</h2><p class="meta">Security research</p><p>Identified in published CI/CD or supply-chain security research cited below.</p><ul class='refs'><li><a href="https://cybersecurity.att.com/blogs/labs-research/slack-phishing-attacks-using-webhooks" rel="noopener">https://cybersecurity.att.com/blogs/labs-research/slack-phishing-attacks-using-webhooks</a></li><li><a href="https://checkmarx.com/blog/webhook-party-malicious-packages-caught-exfiltrating-data-via-legit-webhook-services/" rel="noopener">https://checkmarx.com/blog/webhook-party-malicious-packages-caught-exfiltrating-data-via-legit-webhook-services/</a></li></ul>
         
         <h2>Mitigations</h2>
         <ul><li><span class="id">M1550</span> Implement strict access control for clouds</li><li><span class="id">M1560</span> Regularly audit webhooks</li><li><span class="id">M1561</span> Monitor outbound traffic</li><li><span class="id">M1562</span> Implement access controls for webhooks</li><li><span class="id">M1563</span> Use data encryption for webhooks</li></ul>

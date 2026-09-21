@@ -25,6 +25,9 @@ detections:
   - D1490
   - D1590
 
+references:
+  - https://slsa.dev/spec/v1.0/threats
+
 metadata: 
     version: 0.2
     state: draft

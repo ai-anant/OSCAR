@@ -19,6 +19,7 @@
           <a href="../incidents/index.html">Incident mapping</a>
           <a href="../stories/index.html">Attack stories</a>
           <a href="../guidance.html">Guidance</a>
+          <a href="../origins.html">Origins</a>
           <a href="../changelog.html">Changelog</a>
           <a href="../about.html">About</a>
         </nav>
@@ -31,6 +32,7 @@
         <h1>Vulnerable CICD plugins</h1>
         <div class="chips"><span class="chip">CI/CD Posture</span></div>
         <p>Vulnerable CI/CD plugins attack technique is an initial access tactic where an attacker exploits a vulnerability in a plugin used by a continuous integration and continuous delivery (CI/CD) pipeline to gain access to the pipeline or the underlying system.<br>Vulnerable plugins used in the CI/CD pipeline can be exploited by attackers to inject malicious code or to execute arbitrary commands on the target system.</p>
+        <h2>Where this idea came from</h2><p class="meta">Security research</p><p>Identified in published CI/CD or supply-chain security research cited below.</p><ul class='refs'><li><a href="https://www.legitsecurity.com/blog/how-to-continuously-detect-vulnerable-jenkins-plugins-to-avoid-a-software-supply-chain-attack" rel="noopener">https://www.legitsecurity.com/blog/how-to-continuously-detect-vulnerable-jenkins-plugins-to-avoid-a-software-supply-chain-attack</a></li><li><a href="https://www.jenkins.io/security/plugins/" rel="noopener">https://www.jenkins.io/security/plugins/</a></li><li><a href="https://www.theregister.com/2022/06/30/jenkins_plugins_security_advisories/" rel="noopener">https://www.theregister.com/2022/06/30/jenkins_plugins_security_advisories/</a></li></ul>
         
         <h2>Mitigations</h2>
         <ul><li><span class="id">M1330</span> Implement regular plugin updates</li><li><span class="id">M1331</span> Conduct plugin security review</li><li><span class="id">M1332</span> Implement least privilege principle for plugins</li><li><span class="id">M1720</span> Implement regular patches and updates</li></ul>

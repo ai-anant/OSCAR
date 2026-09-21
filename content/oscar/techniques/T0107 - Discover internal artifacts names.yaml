@@ -25,6 +25,9 @@ detections:
   - D1500
   - D1510
 
+references:
+  - https://medium.com/@alex.birsan/dependency-confusion-4a5d60fec610
+
 metadata: 
     version: 0.2
     state: draft

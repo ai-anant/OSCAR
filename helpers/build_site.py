@@ -118,6 +118,7 @@ def page(title, body, root_prefix, crumb, extra_head=""):
           <a href="{root_prefix}incidents/index.html">Incident mapping</a>
           <a href="{root_prefix}stories/index.html">Attack stories</a>
           <a href="{root_prefix}guidance.html">Guidance</a>
+          <a href="{root_prefix}origins.html">Origins</a>
           <a href="{root_prefix}changelog.html">Changelog</a>
           <a href="{root_prefix}about.html">About</a>
         </nav>
@@ -267,6 +268,19 @@ def build(dest):
     mits = load_yaml_dir("mitigations")
     dets = load_yaml_dir("detections")
     stories = load_yaml_dir("stories")
+    origin_path = os.path.join(ROOT, "content", "portal", "technique-origin.yaml")
+    origins = {}
+    if os.path.exists(origin_path):
+        with open(origin_path) as f:
+            origins = (yaml.safe_load(f) or {}).get("techniques") or {}
+    KIND_LABEL = {
+        "incident": "Public incident / advisory",
+        "research": "Security research",
+        "guidance": "Standard or guidance",
+        "analog": "ATT&CK / AppSec analog",
+        "article": "Security article",
+        "original": "Original OSC&R corpus",
+    }
 
     if os.path.exists(dest):
         shutil.rmtree(dest)
@@ -467,11 +481,22 @@ def build(dest):
                 "The references below are how the original authors knew it existed.</div>"
             )
         n_obs = len(used_in)
+        origin = origins.get(tid) or {}
+        origin_kind = origin.get("kind") or ("incident" if n_obs else "original")
+        origin_note = origin.get("note") or ""
+        origin_src = origin.get("sources") or t.get("references") or []
+        origin_html = (
+            f'<h2>Where this idea came from</h2>'
+            f'<p class="meta">{html.escape(KIND_LABEL.get(origin_kind, origin_kind))}</p>'
+            f'{md_lite(origin_note)}'
+            f'{refs_html(origin_src)}'
+        )
         body = f"""
         <p class="meta">{html.escape(tid)} · {html.escape(t["tactic"])} · {html.escape(TACTIC_IDS.get(t["tactic"], ""))} · {'observed in ' + str(n_obs) + ' incident(s)' if n_obs else 'identified from research/guidance'}</p>
         <h1>{html.escape(t["summary"])}</h1>
         <div class="chips">{realms}</div>
         {md_lite(t.get("description"))}
+        {origin_html}
         {sub_html}
         <h2>Mitigations</h2>
         {"<ul>" + "".join(m_links) + "</ul>" if m_links else "<p class='muted'>None linked yet.</p>"}
@@ -607,6 +632,40 @@ def build(dest):
     {''.join(cl_blocks) or '<p class="muted">No entries yet.</p>'}
     """
     write(os.path.join(dest, "changelog.html"), page("Changelog", changelog_body, "", "OSC&amp;R / Changelog"))
+
+    origin_groups = {}
+    for tid, o in origins.items():
+        origin_groups.setdefault(o.get("kind") or "original", []).append((tid, o))
+    og_html = []
+    for kind in ["incident", "research", "guidance", "analog", "article", "original"]:
+        items = sorted(origin_groups.get(kind) or [], key=lambda x: x[0])
+        if not items:
+            continue
+        rows = []
+        for tid, o in items:
+            src0 = ""
+            srcs = o.get("sources") or []
+            if srcs:
+                u = srcs[0]
+                src0 = f'<a href="{html.escape(str(u))}">{html.escape(str(u)[:70])}</a>'
+            rows.append(
+                f'<a class="row" href="techniques/{html.escape(tid)}.html">'
+                f'<span class="id">{html.escape(tid)}</span>'
+                f'<span>{html.escape(o.get("summary") or "")}</span>'
+                f'<span class="muted">{html.escape((o.get("note") or "")[:160])}</span></a>'
+            )
+        og_html.append(
+            f'<h2>{html.escape(KIND_LABEL.get(kind, kind))} ({len(items)})</h2>'
+            f'<div class="list">{"".join(rows)}</div>'
+        )
+    origins_body = f"""
+    <h1>Where each technique came from</h1>
+    <p class="lede">Every OSC&amp;R technique has an origin kind and at least one source URL.
+    Five techniques in the original corpus had no references; those now point at the
+    ATT&amp;CK, OWASP, SLSA, or research analog that justifies them.</p>
+    {''.join(og_html)}
+    """
+    write(os.path.join(dest, "origins.html"), page("Origins", origins_body, "", "OSC&amp;R / Origins"))
 
     unused_n = sum(1 for tid in techs if usage[tid] == 0)
     doc_blocks = []

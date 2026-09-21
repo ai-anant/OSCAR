@@ -19,6 +19,7 @@
           <a href="../incidents/index.html">Incident mapping</a>
           <a href="../stories/index.html">Attack stories</a>
           <a href="../guidance.html">Guidance</a>
+          <a href="../origins.html">Origins</a>
           <a href="../changelog.html">Changelog</a>
           <a href="../about.html">About</a>
         </nav>
@@ -31,6 +32,7 @@
         <h1>Runtime backdoor</h1>
         <div class="chips"><span class="chip">Code Security</span> <span class="chip">Container Security</span> <span class="chip">Open Source Security</span></div>
         <p>A runtime backdoor attack is a type of cyber attack where an attacker gains unauthorized access to a computer system or network and installs a malicious software or code that allows them to control the system or steal sensitive information.<br>This type of attack is called a &quot;runtime&quot; backdoor attack because it involves manipulating the system at runtime, while it is running, rather than during the development or deployment stages.<br>The attacker typically gains access to the system through a vulnerability, such as an unpatched software flaw or weak authentication mechanism. <br>Once inside, the attacker can install a backdoor that provides them with persistent access to the system, even after the initial entry point has been closed.</p>
+        <h2>Where this idea came from</h2><p class="meta">Security research</p><p>Identified in published CI/CD or supply-chain security research cited below.</p><ul class='refs'><li><a href="https://www.cyberark.com/resources/blog/the-anatomy-of-the-solarwinds-attack-chain" rel="noopener">https://www.cyberark.com/resources/blog/the-anatomy-of-the-solarwinds-attack-chain</a></li><li><a href="https://portswigger.net/daily-swig/software-supply-chain-attacks-everything-you-need-to-know" rel="noopener">https://portswigger.net/daily-swig/software-supply-chain-attacks-everything-you-need-to-know</a></li><li><a href="https://www.littlefish.co.uk/insights/backdoor-vulnerability-supply-chain-attacks/" rel="noopener">https://www.littlefish.co.uk/insights/backdoor-vulnerability-supply-chain-attacks/</a></li></ul>
         
         <h2>Mitigations</h2>
         <ul><li><span class="id">M1720</span> Implement regular patches and updates</li><li><span class="id">M1500</span> Verify third-party artifacts and open-source libraries</li><li><span class="id">M1501</span> Require SBOM from all third-party suppliers</li><li><span class="id">M1502</span> Define trusted package managers and repositories</li><li><span class="id">M1503</span> Implement SCA analysis</li></ul>

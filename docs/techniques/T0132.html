@@ -19,6 +19,7 @@
           <a href="../incidents/index.html">Incident mapping</a>
           <a href="../stories/index.html">Attack stories</a>
           <a href="../guidance.html">Guidance</a>
+          <a href="../origins.html">Origins</a>
           <a href="../changelog.html">Changelog</a>
           <a href="../about.html">About</a>
         </nav>
@@ -31,6 +32,7 @@
         <h1>Overprivileged CI/CD Runners</h1>
         <div class="chips"><span class="chip">CI/CD Posture</span> <span class="chip">Container Security</span></div>
         <p>A container/runner agent privilege escalation attack is a security threat where an attacker exploits vulnerabilities in a container/runner agent to gain elevated privileges or access to sensitive resources they are not authorized to have. <br>Attackers may exploit software vulnerabilities or weaknesses in container security controls to gain access to privileged resources, execute arbitrary code, or escape the container/runner agent and gain access to the host system.</p>
+        <h2>Where this idea came from</h2><p class="meta">Security research</p><p>Identified in published CI/CD or supply-chain security research cited below.</p><ul class='refs'><li><a href="https://www.legitsecurity.com/blog/github-privilege-escalation-vulnerability" rel="noopener">https://www.legitsecurity.com/blog/github-privilege-escalation-vulnerability</a></li><li><a href="https://dl.acm.org/doi/fullHtml/10.1145/3529320.3529325" rel="noopener">https://dl.acm.org/doi/fullHtml/10.1145/3529320.3529325</a></li><li><a href="https://blog.lightspin.io/kubernetes-pod-privilege-escalation" rel="noopener">https://blog.lightspin.io/kubernetes-pod-privilege-escalation</a></li><li><a href="https://learn.snyk.io/lessons/container-runs-in-privileged-mode/kubernetes/" rel="noopener">https://learn.snyk.io/lessons/container-runs-in-privileged-mode/kubernetes/</a></li><li><a href="https://sysdig.com/blog/detecting-mitigating-cve-2022-0492-sysdig/" rel="noopener">https://sysdig.com/blog/detecting-mitigating-cve-2022-0492-sysdig/</a></li></ul>
         
         <h2>Mitigations</h2>
         <ul><li><span class="id">M1320</span> Implement least privilege principle for containers</li><li><span class="id">M1321</span> Container or runner hardening</li><li><span class="id">M1322</span> Container or runner agent runtime security</li><li><span class="id">M1451</span> Use network segmentation</li><li><span class="id">M1732</span> Implement code scanning for security risks</li></ul>

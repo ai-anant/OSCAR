@@ -19,6 +19,7 @@
           <a href="../incidents/index.html">Incident mapping</a>
           <a href="../stories/index.html">Attack stories</a>
           <a href="../guidance.html">Guidance</a>
+          <a href="../origins.html">Origins</a>
           <a href="../changelog.html">Changelog</a>
           <a href="../about.html">About</a>
         </nav>
@@ -31,6 +32,7 @@
         <h1>Misconfigured audit logs settings</h1>
         <div class="chips"><span class="chip">CI/CD Posture</span> <span class="chip">Cloud Security</span> <span class="chip">SCM Posture</span></div>
         <p>Misconfigured audit logs are a type of attack where an attacker modifies or disables audit logs to hide their malicious activities. <br>This technique is commonly used in cloud, CI/CD, and SCM environments. <br>In these environments, misconfigured audit logs can allow an attacker to modify or delete logs, making it difficult for security teams to detect and investigate the attack. <br>The attacker can also disable audit logging to evade detection.</p>
+        <h2>Where this idea came from</h2><p class="meta">Security research</p><p>Identified in published CI/CD or supply-chain security research cited below.</p><ul class='refs'><li><a href="https://blog.marcolancini.it/2019/blog-cross-account-auditing/" rel="noopener">https://blog.marcolancini.it/2019/blog-cross-account-auditing/</a></li><li><a href="https://blog.marcolancini.it/continuous-cloud-visibility/" rel="noopener">https://blog.marcolancini.it/continuous-cloud-visibility/</a></li></ul>
         
         <h2>Mitigations</h2>
         <ul><li><span class="id">M1440</span> Review logging settings</li><li><span class="id">M1441</span> Implement centralized logging</li><li><span class="id">M1550</span> Implement strict access control for clouds</li></ul>

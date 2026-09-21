@@ -19,6 +19,7 @@
           <a href="../incidents/index.html">Incident mapping</a>
           <a href="../stories/index.html">Attack stories</a>
           <a href="../guidance.html">Guidance</a>
+          <a href="../origins.html">Origins</a>
           <a href="../changelog.html">Changelog</a>
           <a href="../about.html">About</a>
         </nav>
@@ -31,6 +32,7 @@
         <h1>Inject malicious dependency to privileged user repository</h1>
         <div class="chips"><span class="chip">Open Source Security</span> <span class="chip">SCM Posture</span></div>
         <p>Injecting a malicious dependency into a privileged user repository is a software supply chain attack where an attacker adds malicious code to a legitimate open-source library or package used as a dependency by a privileged user repository. <br>By doing so, they can gain access to the privileged resources or data associated with the repository and execute arbitrary code with elevated privileges.</p>
+        <h2>Where this idea came from</h2><p class="meta">Standard or guidance</p><p>Recorded from defender guidance (OWASP, NIST, SLSA, CISA, or vendor secure-development docs) as an attacker-side behavior.</p><ul class='refs'><li><a href="https://owasp.org/www-project-top-10-ci-cd-security-risks/CICD-SEC-03-Dependency-Chain-Abuse" rel="noopener">https://owasp.org/www-project-top-10-ci-cd-security-risks/CICD-SEC-03-Dependency-Chain-Abuse</a></li></ul>
         
         <h2>Mitigations</h2>
         <ul><li><span class="id">M1500</span> Verify third-party artifacts and open-source libraries</li><li><span class="id">M1502</span> Define trusted package managers and repositories</li><li><span class="id">M1503</span> Implement SCA analysis</li><li><span class="id">M1591</span> Validate dependencies</li><li><span class="id">M1732</span> Implement code scanning for security risks</li></ul>

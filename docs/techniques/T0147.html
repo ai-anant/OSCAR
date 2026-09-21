@@ -19,6 +19,7 @@
           <a href="../incidents/index.html">Incident mapping</a>
           <a href="../stories/index.html">Attack stories</a>
           <a href="../guidance.html">Guidance</a>
+          <a href="../origins.html">Origins</a>
           <a href="../changelog.html">Changelog</a>
           <a href="../about.html">About</a>
         </nav>
@@ -31,6 +32,7 @@
         <h1>Scan public CI/CD configurations for secrets and vulnerable actions</h1>
         <div class="chips"><span class="chip">CI/CD Posture</span></div>
         <p>This technique involves scanning publicly available CI/CD configurations for potential vulnerabilities, misconfigurations, and secrets.<br>An attacker can use this technique to identify misconfigured CI/CD pipelines that may contain secrets or other sensitive information, such as API keys or login credentials. <br>They can also identify vulnerable actions, such as unsecured build agents or outdated software components, that can be exploited to gain access to an organization&#x27;s infrastructure or data.<br>Misconfigured or insecure CI/CD pipelines can introduce significant security risks, including data breaches and system compromise.</p>
+        <h2>Where this idea came from</h2><p class="meta">Security research</p><p>Identified in published CI/CD or supply-chain security research cited below.</p><ul class='refs'><li><a href="https://owasp.org/www-project-top-10-ci-cd-security-risks/" rel="noopener">https://owasp.org/www-project-top-10-ci-cd-security-risks/</a></li><li><a href="https://www.aquasec.com/cloud-native-academy/supply-chain-security/ci-cd-security-threats-tools-and-best-practices/" rel="noopener">https://www.aquasec.com/cloud-native-academy/supply-chain-security/ci-cd-security-threats-tools-and-best-practices/</a></li><li><a href="https://cycode.com/github-actions-vulnerabilities/" rel="noopener">https://cycode.com/github-actions-vulnerabilities/</a></li></ul>
         
         <h2>Mitigations</h2>
         <ul><li><span class="id">M1120</span> Store credentials in vault</li><li><span class="id">M1201</span> Restrict egress traffic in CI/CD</li><li><span class="id">M1660</span> Isolate pipeline for unreviewed code</li><li><span class="id">M1662</span> Evaluate pipeline execution permissions</li><li><span class="id">M1720</span> Implement regular patches and updates</li></ul>

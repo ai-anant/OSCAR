@@ -19,6 +19,7 @@
           <a href="../incidents/index.html">Incident mapping</a>
           <a href="../stories/index.html">Attack stories</a>
           <a href="../guidance.html">Guidance</a>
+          <a href="../origins.html">Origins</a>
           <a href="../changelog.html">Changelog</a>
           <a href="../about.html">About</a>
         </nav>
@@ -31,6 +32,7 @@
         <h1>Harvest tokens from environment variables</h1>
         <div class="chips"><span class="chip">CI/CD Posture</span> <span class="chip">Cloud Security</span> <span class="chip">Container Security</span> <span class="chip">Infrastructure as code</span> <span class="chip">Secrets Hygiene</span></div>
         <p>This type of attack involves searching for environment variables that may contain sensitive information and dumping their values to gain access to the associated resources.<br>In cloud and container environments, environment variables are often used to store configuration data, including sensitive information such as passwords, tokens and API keys. <br>Attackers can exploit this by searching through the environment variables of running containers or cloud instances to find any sensitive information that has been inadvertently exposed. <br>Once the sensitive information has been obtained, attackers can use it to access and compromise the associated resources.</p>
+        <h2>Where this idea came from</h2><p class="meta">Security article</p><p>Cited from a security article or vendor blog in the original YAML; not a first-party incident report.</p><ul class='refs'><li><a href="https://www.trendmicro.com/en_ie/research/22/h/analyzing-hidden-danger-of-environment-variables-for-keeping-secrets.html" rel="noopener">https://www.trendmicro.com/en_ie/research/22/h/analyzing-hidden-danger-of-environment-variables-for-keeping-secrets.html</a></li><li><a href="https://developer.hashicorp.com/vault/docs/what-is-vault" rel="noopener">https://developer.hashicorp.com/vault/docs/what-is-vault</a></li></ul>
         
         <h2>Mitigations</h2>
         <ul><li><span class="id">M1120</span> Store credentials in vault</li><li><span class="id">M1860</span> Implement strong authentication mechanisms</li><li><span class="id">M1861</span> Implement strong authorization mechanisms</li></ul>

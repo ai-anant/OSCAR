@@ -19,6 +19,7 @@
           <a href="../incidents/index.html">Incident mapping</a>
           <a href="../stories/index.html">Attack stories</a>
           <a href="../guidance.html">Guidance</a>
+          <a href="../origins.html">Origins</a>
           <a href="../changelog.html">Changelog</a>
           <a href="../about.html">About</a>
         </nav>
@@ -31,6 +32,7 @@
         <h1>Compromise code-signing identity</h1>
         <div class="chips"><span class="chip">Artifact Security</span> <span class="chip">CI/CD Posture</span> <span class="chip">Code Security</span></div>
         <p>The attacker signs malware with a stolen or issuer-trusted code-signing<br>certificate, CI OIDC identity, or package-registry signing key so that<br>signature verification succeeds. SolarWinds Orion updates were signed as<br>SolarWinds. Distinct from spoofed git commits (T0195) and from forging<br>provenance documents (T0206): here the cryptographic identity is real<br>and compromised.</p>
+        <h2>Where this idea came from</h2><p class="meta">Public incident / advisory</p><p>This fork, from SLSA signed-but-malicious artifacts; SolarWinds is the canonical case.</p><ul class='refs'><li><a href="https://slsa.dev/spec/v1.0/threats" rel="noopener">https://slsa.dev/spec/v1.0/threats</a></li><li><a href="https://orangematter.solarwinds.com/2021/05/07/an-investigative-update-of-the-cyberattack/" rel="noopener">https://orangematter.solarwinds.com/2021/05/07/an-investigative-update-of-the-cyberattack/</a></li></ul>
         
         <h2>Mitigations</h2>
         <ul><li><span class="id">M1860</span> Implement strong authentication mechanisms</li><li><span class="id">M1120</span> Store credentials in vault</li><li><span class="id">M1530</span> Use multi-factor authentication</li></ul>

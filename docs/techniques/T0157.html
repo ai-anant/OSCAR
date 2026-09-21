@@ -19,6 +19,7 @@
           <a href="../incidents/index.html">Incident mapping</a>
           <a href="../stories/index.html">Attack stories</a>
           <a href="../guidance.html">Guidance</a>
+          <a href="../origins.html">Origins</a>
           <a href="../changelog.html">Changelog</a>
           <a href="../about.html">About</a>
         </nav>
@@ -31,6 +32,7 @@
         <h1>Combosquatting</h1>
         <div class="chips"><span class="chip">Container Security</span> <span class="chip">Open Source Security</span></div>
         <p>Combosquatting is an attack technique where an attacker tries to impersonate legitimate open source packages by adding (or often appending) common words, terms, or letters to the authentic package or image name.<br>For example, there is popular JavaScript package &quot;lodash&quot; and an attacker may create a package with name &quot;lodashs&quot;.<br>The goal of this attack technique is to trick users into unknowingly downloading and using these fake packages or images, which may contain malicious code, vulnerabilities, or other security risks.</p>
+        <h2>Where this idea came from</h2><p class="meta">Security article</p><p>Cited from a security article or vendor blog in the original YAML; not a first-party incident report.</p><ul class='refs'><li><a href="https://dev.to/sumstrm/different-typosquatting-attacks-to-know-of-for-a-secure-supply-chain-4j70" rel="noopener">https://dev.to/sumstrm/different-typosquatting-attacks-to-know-of-for-a-secure-supply-chain-4j70</a></li></ul>
         
         <h2>Mitigations</h2>
         <ul><li><span class="id">M1200</span> Verify package authenticity</li><li><span class="id">M1290</span> Double-checking package or container names</li><li><span class="id">M1291</span> Verify package or container sources</li><li><span class="id">M1500</span> Verify third-party artifacts and open-source libraries</li><li><span class="id">M1502</span> Define trusted package managers and repositories</li><li><span class="id">M1503</span> Implement SCA analysis</li><li><span class="id">M1590</span> Implement artifact signing and verification</li></ul>

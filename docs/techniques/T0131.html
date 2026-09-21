@@ -19,6 +19,7 @@
           <a href="../incidents/index.html">Incident mapping</a>
           <a href="../stories/index.html">Attack stories</a>
           <a href="../guidance.html">Guidance</a>
+          <a href="../origins.html">Origins</a>
           <a href="../changelog.html">Changelog</a>
           <a href="../about.html">About</a>
         </nav>
@@ -31,6 +32,7 @@
         <h1>Overprivileged user account</h1>
         <div class="chips"><span class="chip">Artifact Security</span> <span class="chip">CI/CD Posture</span> <span class="chip">Cloud Security</span> <span class="chip">SCM Posture</span></div>
         <p>The overprivileged user account attack is a technique of lateral movement tactic in which an attacker gains access to a user account with excessive privileges and uses that account to move laterally within a network, accessing resources and systems that they are not authorized to access.<br>It may affects Cloud, CI/CD accounts, an attacker can potentially manipulate the CI/CD pipeline or Cloud configuration to introduce malicious code into the software build or deployment process. <br>This could lead to the deployment of compromised software, which can result in data breaches, malware infections, or other security incidents.</p>
+        <h2>Where this idea came from</h2><p class="meta">Security research</p><p>Identified in published CI/CD or supply-chain security research cited below.</p><ul class='refs'><li><a href="https://learn.microsoft.com/en-us/security/zero-trust/develop/overprivileged-permissions" rel="noopener">https://learn.microsoft.com/en-us/security/zero-trust/develop/overprivileged-permissions</a></li><li><a href="https://www.cyberark.com/what-is/privileged-access-management/" rel="noopener">https://www.cyberark.com/what-is/privileged-access-management/</a></li></ul>
         
         <h2>Mitigations</h2>
         <ul><li><span class="id">M1310</span> Implement least privilege principle</li><li><span class="id">M1311</span> Implement multi-factor authentication</li><li><span class="id">M1550</span> Implement strict access control for clouds</li><li><span class="id">M1661</span> Revoke user permissions</li></ul>

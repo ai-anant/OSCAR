@@ -19,6 +19,7 @@
           <a href="../incidents/index.html">Incident mapping</a>
           <a href="../stories/index.html">Attack stories</a>
           <a href="../guidance.html">Guidance</a>
+          <a href="../origins.html">Origins</a>
           <a href="../changelog.html">Changelog</a>
           <a href="../about.html">About</a>
         </nav>
@@ -31,6 +32,7 @@
         <h1>Exposed database</h1>
         <div class="chips"><span class="chip">Cloud Security</span> <span class="chip">Infrastructure as code</span></div>
         <p>Exposing a database to the public internet can be a critical security issue, as attackers can use it to gain access to sensitive information.<br>In the context of cloud security and infrastructure as code, this attack technique typically involves misconfigured security group rules or network access control lists (ACLs) that allow public access to a database. <br>It can also occur when developers or system administrators accidentally expose database credentials or when misconfigured server configurations allow database access.</p>
+        <h2>Where this idea came from</h2><p class="meta">Security article</p><p>Cited from a security article or vendor blog in the original YAML; not a first-party incident report.</p><ul class='refs'><li><a href="https://securitytrails.com/blog/open-exposed-databases" rel="noopener">https://securitytrails.com/blog/open-exposed-databases</a></li></ul>
         
         <h2>Mitigations</h2>
         <ul><li><span class="id">M1270</span> Implement proper access control for databases</li><li><span class="id">M1271</span> Protect database credentials</li><li><span class="id">M1272</span> Audit server configuration</li><li><span class="id">M1550</span> Implement strict access control for clouds</li><li><span class="id">M1720</span> Implement regular patches and updates</li></ul>

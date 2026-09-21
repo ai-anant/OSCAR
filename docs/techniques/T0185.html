@@ -19,6 +19,7 @@
           <a href="../incidents/index.html">Incident mapping</a>
           <a href="../stories/index.html">Attack stories</a>
           <a href="../guidance.html">Guidance</a>
+          <a href="../origins.html">Origins</a>
           <a href="../changelog.html">Changelog</a>
           <a href="../about.html">About</a>
         </nav>
@@ -31,6 +32,7 @@
         <h1>Steal credentials in container artifacts</h1>
         <div class="chips"><span class="chip">Artifact Security</span></div>
         <p>Attackers can steal credentials by searching through the container artifacts for any sensitive information that may have been inadvertently included, such as hard-coded passwords or API keys. <br>They can also intercept network traffic between containers and external systems to capture any credentials that may be transmitted in plaintext.</p>
+        <h2>Where this idea came from</h2><p class="meta">Security research</p><p>Identified in published CI/CD or supply-chain security research cited below.</p><ul class='refs'><li><a href="https://cycode.com/introducing-container-secret-scanning/" rel="noopener">https://cycode.com/introducing-container-secret-scanning/</a></li></ul>
         
         <h2>Mitigations</h2>
         <ul><li><span class="id">M1550</span> Implement strict access control for clouds</li></ul>

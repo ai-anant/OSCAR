@@ -19,6 +19,7 @@
           <a href="../incidents/index.html">Incident mapping</a>
           <a href="../stories/index.html">Attack stories</a>
           <a href="../guidance.html">Guidance</a>
+          <a href="../origins.html">Origins</a>
           <a href="../changelog.html">Changelog</a>
           <a href="../about.html">About</a>
         </nav>
@@ -31,6 +32,7 @@
         <h1>Cross-site scripting</h1>
         <div class="chips"><span class="chip">Code Security</span></div>
         <p>Cross-site scripting (XSS) is a web security vulnerability that allows an attacker to compromise the interactions that users have with a vulnerable applications.<br>XSS attacks occur when an attacker uses a web application to send malicious code, generally in the form of a browser side script, to a different end user. <br>An attacker can use XSS to send a malicious script to an unsuspecting user. <br>The end user browser has no way to know that the script should not be trusted, and will execute the script. Because it thinks the script came from a trusted source, the malicious script can access any cookies, session tokens, or other sensitive information retained by the browser and used with that site. <br>These scripts can even rewrite the content of the HTML page.</p>
+        <h2>Where this idea came from</h2><p class="meta">Standard or guidance</p><p>Recorded from defender guidance (OWASP, NIST, SLSA, CISA, or vendor secure-development docs) as an attacker-side behavior.</p><ul class='refs'><li><a href="https://owasp.org/www-community/attacks/xss/" rel="noopener">https://owasp.org/www-community/attacks/xss/</a></li><li><a href="https://www.splunk.com/en_us/blog/learn/cross-site-scripting-xss-attacks.html" rel="noopener">https://www.splunk.com/en_us/blog/learn/cross-site-scripting-xss-attacks.html</a></li><li><a href="https://portswigger.net/web-security/cross-site-scripting" rel="noopener">https://portswigger.net/web-security/cross-site-scripting</a></li></ul>
         
         <h2>Mitigations</h2>
         <ul><li><span class="id">M1190</span> Use framework security mechanisms</li><li><span class="id">M1191</span> Escape all user supplied input</li><li><span class="id">M1192</span> Encode data output</li><li><span class="id">M1193</span> Use HTML sanitization</li><li><span class="id">M1194</span> Use content security policy</li><li><span class="id">M1883</span> Implement Web Application Firewall</li></ul>

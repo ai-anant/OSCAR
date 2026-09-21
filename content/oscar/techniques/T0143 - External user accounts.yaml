@@ -29,8 +29,8 @@ detections:
   - D1431
   - D1510
 
-references: 
-  - 
+references:
+  - https://owasp.org/www-project-top-10-ci-cd-security-risks/
 
 metadata: 
     version: 0.2

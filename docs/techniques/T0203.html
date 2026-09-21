@@ -19,6 +19,7 @@
           <a href="../incidents/index.html">Incident mapping</a>
           <a href="../stories/index.html">Attack stories</a>
           <a href="../guidance.html">Guidance</a>
+          <a href="../origins.html">Origins</a>
           <a href="../changelog.html">Changelog</a>
           <a href="../about.html">About</a>
         </nav>
@@ -31,6 +32,7 @@
         <h1>Discover localized out-of-band deployments</h1>
         <div class="chips"><span class="chip">CI/CD Posture</span> <span class="chip">Open Source Security</span> <span class="chip">SCM Posture</span> <span class="chip">Artifact Security</span></div>
         <p>Attackers look for evidence of an out-of-band or &quot;localized&quot; deployment<br>path they can hijack — a <code>package.json</code> script that SSHes to production,<br>a Makefile target that publishes without the main pipeline, a leftover<br><code>deploy.sh</code>, or a personal access token used by a developer laptop.<br>These paths are rarely covered by the same reviews, SBOMs, or admission<br>controls as the official CI/CD system, which makes them high-value<br>reconnaissance targets.</p>
+        <h2>Where this idea came from</h2><p class="meta">Standard or guidance</p><p>This fork, from upstream issue #23; cited OWASP Top 10 CI/CD.</p><ul class='refs'><li><a href="https://owasp.org/www-project-top-10-ci-cd-security-risks/" rel="noopener">https://owasp.org/www-project-top-10-ci-cd-security-risks/</a></li><li><a href="https://github.com/pbom-dev/OSCAR/issues/23" rel="noopener">https://github.com/pbom-dev/OSCAR/issues/23</a></li></ul>
         
         <h2>Mitigations</h2>
         <ul><li><span class="id">M1503</span> Implement SCA analysis</li><li><span class="id">M1720</span> Implement regular patches and updates</li><li><span class="id">M1220</span> Use only trusted third-party Github actions from reputable sources</li></ul>

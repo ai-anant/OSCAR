@@ -19,6 +19,7 @@
           <a href="../incidents/index.html">Incident mapping</a>
           <a href="../stories/index.html">Attack stories</a>
           <a href="../guidance.html">Guidance</a>
+          <a href="../origins.html">Origins</a>
           <a href="../changelog.html">Changelog</a>
           <a href="../about.html">About</a>
         </nav>
@@ -31,6 +32,7 @@
         <h1>Compromised developer workstation</h1>
         <div class="chips"><span class="chip">Code Security</span> <span class="chip">SCM Posture</span></div>
         <p>Compromised developer workstation attack is a technique where an attacker gains access to a developer&#x27;s machine, which contains sensitive information such as access credentials, keys, and code repositories. <br>This technique can allow an attacker to steal code or modify it to include backdoors or other malicious code. <br>The attacker can also use this access to gain entry into other systems within the organization.<br>This type of attack can be carried out through various means, such as Phishing, Typosquatting, Brandjacking, malicious IDE extensions, or exploiting vulnerabilities in the developer&#x27;s system. <br>Once the attacker gains access, they can install malware or backdoors, extract sensitive information, or use the machine as a foothold to carry out further attacks.</p>
+        <h2>Where this idea came from</h2><p class="meta">Security research</p><p>Identified in published CI/CD or supply-chain security research cited below.</p><ul class='refs'><li><a href="https://www.reversinglabs.com/blog/vs-code-ide-hack-how-supply-chain-attacks-can-proliferate-between-developer-ecosystems" rel="noopener">https://www.reversinglabs.com/blog/vs-code-ide-hack-how-supply-chain-attacks-can-proliferate-between-developer-ecosystems</a></li></ul>
         
         <h2>Mitigations</h2>
         <ul><li><span class="id">M1530</span> Use multi-factor authentication</li><li><span class="id">M1531</span> Implement endpoint security solutions</li><li><span class="id">M1532</span> Implement least privilege access controls</li><li><span class="id">M1720</span> Implement regular patches and updates</li></ul>

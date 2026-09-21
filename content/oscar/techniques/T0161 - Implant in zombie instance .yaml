@@ -22,6 +22,9 @@ mitigations:
 detections: 
   - D1510
 
+references:
+  - https://attack.mitre.org/techniques/T1525/
+
 metadata: 
     version: 0.2
     state: draft

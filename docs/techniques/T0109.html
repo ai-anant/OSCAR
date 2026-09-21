@@ -19,6 +19,7 @@
           <a href="../incidents/index.html">Incident mapping</a>
           <a href="../stories/index.html">Attack stories</a>
           <a href="../guidance.html">Guidance</a>
+          <a href="../origins.html">Origins</a>
           <a href="../changelog.html">Changelog</a>
           <a href="../about.html">About</a>
         </nav>
@@ -31,6 +32,7 @@
         <h1>Publish malicious artifact</h1>
         <div class="chips"><span class="chip">Container Security</span> <span class="chip">Open Source Security</span></div>
         <p>Public registries are widely used by developers and organizations to download and distribute software packages and container images, making them an attractive target for attackers.<br>In this type of attack, the attacker creates a package or container image that contains malicious code or files, such as a backdoor or other malware.<br>The attacker then uploads the package or image to PyPI, DockerHub or other registry, posing as a legitimate user or creating a fake account.<br>Once the package or image is uploaded, it becomes available for download by other users who may unsuspectingly use it in their projects.<br>The supply chain attack can have far-reaching consequences as it can affect all systems that rely on the malicious package or image.<br>For example, a Python package that is downloaded from PyPI may be used by multiple applications and libraries, potentially compromising all systems that use it.<br>Similarly, a container image with a malicious payload may be used to deploy an application across multiple environments, leading to a widespread compromise.</p>
+        <h2>Where this idea came from</h2><p class="meta">Security research</p><p>Identified in published CI/CD or supply-chain security research cited below.</p><ul class='refs'><li><a href="https://sysdig.com/blog/analysis-of-supply-chain-attacks-through-public-docker-images/" rel="noopener">https://sysdig.com/blog/analysis-of-supply-chain-attacks-through-public-docker-images/</a></li><li><a href="https://blog.sonatype.com/malware-monthly-january-2023" rel="noopener">https://blog.sonatype.com/malware-monthly-january-2023</a></li><li><a href="https://owasp.org/www-project-top-10-ci-cd-security-risks/CICD-SEC-09-Improper-Artifact-Integrity-Validation" rel="noopener">https://owasp.org/www-project-top-10-ci-cd-security-risks/CICD-SEC-09-Improper-Artifact-Integrity-Validation</a></li></ul>
         
         <h2>Mitigations</h2>
         <ul><li><span class="id">M1090</span> Implement code and image signing</li><li><span class="id">M1503</span> Implement SCA analysis</li><li><span class="id">M1732</span> Implement code scanning for security risks</li></ul>

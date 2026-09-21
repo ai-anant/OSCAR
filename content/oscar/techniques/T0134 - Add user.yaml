@@ -28,6 +28,9 @@ detections:
   - D1510
   - D1590
 
+references:
+  - https://attack.mitre.org/techniques/T1136/
+
 metadata: 
     version: 0.2
     state: draft

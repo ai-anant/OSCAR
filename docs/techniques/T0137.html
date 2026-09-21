@@ -19,6 +19,7 @@
           <a href="../incidents/index.html">Incident mapping</a>
           <a href="../stories/index.html">Attack stories</a>
           <a href="../guidance.html">Guidance</a>
+          <a href="../origins.html">Origins</a>
           <a href="../changelog.html">Changelog</a>
           <a href="../about.html">About</a>
         </nav>
@@ -31,6 +32,7 @@
         <h1>Weak authentication methods</h1>
         <div class="chips"><span class="chip">Cloud Security</span> <span class="chip">Code Security</span> <span class="chip">Infrastructure as code</span> <span class="chip">CI/CD Posture</span></div>
         <p>Weak authentication methods are a common attack technique used by threat actors to gain unauthorized access to cloud environments or code repositories. This attack technique relies on exploiting vulnerabilities in the authentication methods used to control access to resources.<br>In cloud security, weak authentication methods can be exploited through several vectors, such as stolen credentials, brute force attacks, and password spraying. <br>Threat actors can also take advantage of misconfigured security groups or network access control lists (ACLs) to bypass authentication and gain access to cloud resources.<br>In code security, weak authentication methods can be exploited through vulnerabilities in source code management platforms, such as Git repositories. <br>For instance, if developers use weak passwords or if the authentication protocols used by the repository are vulnerable, attackers can steal source code or inject malicious code into the codebase.</p>
+        <h2>Where this idea came from</h2><p class="meta">Security article</p><p>Cited from a security article or vendor blog in the original YAML; not a first-party incident report.</p><ul class='refs'><li><a href="https://affinity-it-security.com/what-is-weak-authentication/" rel="noopener">https://affinity-it-security.com/what-is-weak-authentication/</a></li></ul>
         
         <h2>Mitigations</h2>
         <ul><li><span class="id">M1130</span> Implement password rotation</li><li><span class="id">M1132</span> Enable MFA for user accounts</li><li><span class="id">M1550</span> Implement strict access control for clouds</li><li><span class="id">M1860</span> Implement strong authentication mechanisms</li><li><span class="id">M1861</span> Implement strong authorization mechanisms</li></ul>

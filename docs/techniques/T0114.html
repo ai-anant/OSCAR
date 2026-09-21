@@ -19,6 +19,7 @@
           <a href="../incidents/index.html">Incident mapping</a>
           <a href="../stories/index.html">Attack stories</a>
           <a href="../guidance.html">Guidance</a>
+          <a href="../origins.html">Origins</a>
           <a href="../changelog.html">Changelog</a>
           <a href="../about.html">About</a>
         </nav>
@@ -31,6 +32,7 @@
         <h1>Compromised service account</h1>
         <div class="chips"><span class="chip">Artifact Security</span> <span class="chip">Cloud Security</span> <span class="chip">Infrastructure as code</span> <span class="chip">SCM Posture</span></div>
         <p>In this type of attack, the attacker gains access to a legitimate service account, which is typically used by an application or service to access cloud resources or manage infrastructure. <br>The attacker can use the compromised service account to perform actions that are authorized for the service account, such as reading, modifying, or deleting data.<br>This can result in data theft, unauthorized access to sensitive resources, and the ability to launch further attacks on other resources within the cloud environment.</p>
+        <h2>Where this idea came from</h2><p class="meta">Security article</p><p>Cited from a security article or vendor blog in the original YAML; not a first-party incident report.</p><ul class='refs'><li><a href="https://stackoverflow.blog/2021/01/25/a-deeper-dive-into-our-may-2019-security-incident/" rel="noopener">https://stackoverflow.blog/2021/01/25/a-deeper-dive-into-our-may-2019-security-incident/</a></li></ul>
         
         <h2>Mitigations</h2>
         <ul><li><span class="id">M1130</span> Implement password rotation</li><li><span class="id">M1131</span> Disable or lock compromised accounts</li><li><span class="id">M1240</span> Enable data encryption at rest</li><li><span class="id">M1550</span> Implement strict access control for clouds</li><li><span class="id">M1661</span> Revoke user permissions</li></ul>

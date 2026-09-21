@@ -19,6 +19,7 @@
           <a href="../incidents/index.html">Incident mapping</a>
           <a href="../stories/index.html">Attack stories</a>
           <a href="../guidance.html">Guidance</a>
+          <a href="../origins.html">Origins</a>
           <a href="../changelog.html">Changelog</a>
           <a href="../about.html">About</a>
         </nav>
@@ -31,6 +32,7 @@
         <h1>Vulnerable CI/CD template</h1>
         <div class="chips"><span class="chip">CI/CD Posture</span> <span class="chip">Open Source Security</span></div>
         <p>Vulnerable CI/CD template attack is an attack technique that targets the templates used in the CI/CD pipeline configuration. <br>These templates are used to automate the process of building, testing, and deploying applications. <br>Attackers can modify these templates to include malicious code or configuration that can result in unauthorized access or data theft.<br>In this attack, the attacker typically searches for templates that have known vulnerabilities or weak configurations. <br>Once identified, the attacker can modify the template to include their malicious code or configuration. <br>The attacker then waits for the target to use the modified template in their CI/CD pipeline, which can result in the attacker gaining access to sensitive data or systems.</p>
+        <h2>Where this idea came from</h2><p class="meta">Security research</p><p>Identified in published CI/CD or supply-chain security research cited below.</p><ul class='refs'><li><a href="https://cycode.com/github-actions-vulnerabilities/" rel="noopener">https://cycode.com/github-actions-vulnerabilities/</a></li></ul>
         
         <h2>Mitigations</h2>
         <ul><li><span class="id">M1580</span> Restrict access to templates</li><li><span class="id">M1581</span> Template validation</li><li><span class="id">M1720</span> Implement regular patches and updates</li><li><span class="id">M1732</span> Implement code scanning for security risks</li></ul>

@@ -19,6 +19,7 @@
           <a href="../incidents/index.html">Incident mapping</a>
           <a href="../stories/index.html">Attack stories</a>
           <a href="../guidance.html">Guidance</a>
+          <a href="../origins.html">Origins</a>
           <a href="../changelog.html">Changelog</a>
           <a href="../about.html">About</a>
         </nav>
@@ -31,6 +32,7 @@
         <h1>Discover internal artifacts names</h1>
         <div class="chips"><span class="chip">Container Security</span> <span class="chip">SCM Posture</span></div>
         <p>This technique involves searching for internal artifact names used in an organization&#x27;s container images and SCM repositories. <br>Internal artifact names may include names of applications, libraries, and components used in the organization&#x27;s container images or code repositories.<br>An attacker can use this technique to identify the types of technologies and software components used by an organization, which can help them to identify potential vulnerabilities and attack vectors.<br>By discovering internal artifact names, an attacker can also gain insight into the organization&#x27;s software development practices, and potentially identify development teams or individuals that are responsible for creating and maintaining specific applications or components.</p>
+        <h2>Where this idea came from</h2><p class="meta">Security research</p><p>Sibling of T0102. Internal package names are what Birsan enumerated from public artifacts before dependency confusion. Original YAML had no URL.</p><ul class='refs'><li><a href="https://medium.com/@alex.birsan/dependency-confusion-4a5d60fec610" rel="noopener">https://medium.com/@alex.birsan/dependency-confusion-4a5d60fec610</a></li></ul>
         
         <h2>Mitigations</h2>
         <ul><li><span class="id">M1001</span> Avoid Predictable Naming Conventions</li><li><span class="id">M1503</span> Implement SCA analysis</li><li><span class="id">M1732</span> Implement code scanning for security risks</li></ul>
@@ -38,7 +40,7 @@
         <ul><li><span class="id">D1260</span> Implement regular security audit and review</li><li><span class="id">D1500</span> Configure monitoring of used artifacts and open-source libraries</li><li><span class="id">D1510</span> Implement Intrusion Detection System and anti-malware</li></ul>
         <h2>Observed in incidents (1)</h2><ul><li><a href="../incidents/AS10.html">Dependency confusion (Alex Birsan)</a></li></ul>
         <h2>References</h2>
-        <p class='muted'>None listed.</p>
+        <ul class='refs'><li><a href="https://medium.com/@alex.birsan/dependency-confusion-4a5d60fec610" rel="noopener">https://medium.com/@alex.birsan/dependency-confusion-4a5d60fec610</a></li></ul>
         
 </main>
 

@@ -1,5 +1,12 @@
 entries:
   - date: 2026-09-21
+    id: technique-origins
+    title: Where each technique idea came from
+    items:
+      - Added an origin kind and source URL on every technique, shown on the technique page and on /origins.html.
+      - Five original techniques had no references (T0107, T0134, T0143, T0149, T0161); they now cite ATT&CK, OWASP, SLSA, or Birsan as the analog that justifies them.
+
+  - date: 2026-09-21
     id: portal-guidance-changelog
     title: Public changelog, guidance gap-fill, and technique provenance
     items:

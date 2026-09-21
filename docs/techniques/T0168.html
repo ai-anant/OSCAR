@@ -19,6 +19,7 @@
           <a href="../incidents/index.html">Incident mapping</a>
           <a href="../stories/index.html">Attack stories</a>
           <a href="../guidance.html">Guidance</a>
+          <a href="../origins.html">Origins</a>
           <a href="../changelog.html">Changelog</a>
           <a href="../about.html">About</a>
         </nav>
@@ -31,6 +32,7 @@
         <h1>Exfiltration to code repositories</h1>
         <div class="chips"><span class="chip">SCM Posture</span></div>
         <p>Adversaries may exfiltrate data to a code repository rather than over their primary command and control channel. <br>Code repositories are often accessible via an API (ex: https://api.github.com, https://gitlab.com/api). Access to these APIs are often over HTTPS, which gives the adversary an additional level of protection.<br>Exfiltration to a code repository can also provide a significant amount of cover to the adversary if it is a popular service already used by hosts within the network.</p>
+        <h2>Where this idea came from</h2><p class="meta">ATT&amp;CK / AppSec analog</p><p>Analog of a well-known ATT&amp;CK or AppSec technique, applied to software supply chain.</p><ul class='refs'><li><a href="https://attack.mitre.org/techniques/T1567/001/" rel="noopener">https://attack.mitre.org/techniques/T1567/001/</a></li><li><a href="https://www.optimizationcore.com/security/github-exfiltration-indicators-threat-hunt-monitor-block/" rel="noopener">https://www.optimizationcore.com/security/github-exfiltration-indicators-threat-hunt-monitor-block/</a></li></ul>
         
         <h2>Mitigations</h2>
         <ul><li><span class="id">M1680</span> Limit access to code repositories</li></ul>

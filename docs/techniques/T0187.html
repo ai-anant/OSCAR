@@ -19,6 +19,7 @@
           <a href="../incidents/index.html">Incident mapping</a>
           <a href="../stories/index.html">Attack stories</a>
           <a href="../guidance.html">Guidance</a>
+          <a href="../origins.html">Origins</a>
           <a href="../changelog.html">Changelog</a>
           <a href="../about.html">About</a>
         </nav>
@@ -31,6 +32,7 @@
         <h1>Exposed storage</h1>
         <div class="chips"><span class="chip">Cloud Security</span></div>
         <p>Attackers are constantly searching for any data that might help them achieve their malicious goals. <br>Exposed storage such as S3 buckets are highly values since it might contain sensitive information that can be used to yield an attack. <br>For example: file system snapshots that might contain code or secrets.</p>
+        <h2>Where this idea came from</h2><p class="meta">Security article</p><p>Cited from a security article or vendor blog in the original YAML; not a first-party incident report.</p><ul class='refs'><li><a href="https://www.trendmicro.com/vinfo/es/security/news/virtualization-and-cloud/a-misconfigured-amazon-s3-exposed-almost-50-thousand-pii-in-australia" rel="noopener">https://www.trendmicro.com/vinfo/es/security/news/virtualization-and-cloud/a-misconfigured-amazon-s3-exposed-almost-50-thousand-pii-in-australia</a></li><li><a href="https://www.darkreading.com/application-security/cloud-misconfig-exposes-3tb-sensitive-airport-data-amazon-s3-bucket" rel="noopener">https://www.darkreading.com/application-security/cloud-misconfig-exposes-3tb-sensitive-airport-data-amazon-s3-bucket</a></li></ul>
         
         <h2>Mitigations</h2>
         <ul><li><span class="id">M1240</span> Enable data encryption at rest</li><li><span class="id">M1260</span> Implement least privilege access</li><li><span class="id">M1261</span> Implement proper access control for cloud storages</li><li><span class="id">M1550</span> Implement strict access control for clouds</li></ul>
