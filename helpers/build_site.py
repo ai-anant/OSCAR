@@ -119,6 +119,7 @@ def page(title, body, root_prefix, crumb, extra_head=""):
           <a href="{root_prefix}stories/index.html">Attack stories</a>
           <a href="{root_prefix}guidance.html">Guidance</a>
           <a href="{root_prefix}origins.html">Origins</a>
+          <a href="{root_prefix}sources.html">Sources</a>
           <a href="{root_prefix}changelog.html">Changelog</a>
           <a href="{root_prefix}about.html">About</a>
         </nav>
@@ -666,6 +667,32 @@ def build(dest):
     {''.join(og_html)}
     """
     write(os.path.join(dest, "origins.html"), page("Origins", origins_body, "", "OSC&amp;R / Origins"))
+
+    src_doc = {}
+    src_path = os.path.join(portal, "sources.yaml")
+    if os.path.exists(src_path):
+        with open(src_path) as f:
+            src_doc = yaml.safe_load(f) or {}
+    tracked, reference = [], []
+    for s in src_doc.get("sources") or []:
+        card = (
+            f'<div class="card"><h3><a href="{html.escape(s.get("url") or "#")}">{html.escape(s.get("name") or "")}</a></h3>'
+            f'<p class="meta">{html.escape(s.get("kind") or "")}'
+            f'{" · watched daily" if s.get("track") else " · guidance baseline"}</p>'
+            f'<p class="muted">{html.escape(s.get("note") or "")}</p></div>'
+        )
+        (tracked if s.get("track") else reference).append(card)
+    sources_body = f"""
+    <h1>Sources we track</h1>
+    <p class="lede">First-party research blogs and advisories the daily intake job reads.
+    Add a row in <code>content/portal/sources.yaml</code> to watch a new feed.
+    Aggregators are not primary sources.</p>
+    <h2>Watched daily</h2>
+    {''.join(tracked) or '<p class="muted">None.</p>'}
+    <h2>Guidance baselines (not polled daily)</h2>
+    {''.join(reference) or '<p class="muted">None.</p>'}
+    """
+    write(os.path.join(dest, "sources.html"), page("Sources", sources_body, "", "OSC&amp;R / Sources"))
 
     unused_n = sum(1 for tid in techs if usage[tid] == 0)
     doc_blocks = []

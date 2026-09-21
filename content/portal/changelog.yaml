@@ -1,5 +1,12 @@
 entries:
 - date: '2026-09-21'
+  id: tracked-sources
+  title: Public tracked-source list (SafeDep added)
+  items:
+  - Added content/portal/sources.yaml and /sources.html as the canonical watch list.
+  - SafeDep blog (https://safedep.io/blog/) is now a daily-tracked research source.
+  - Daily intake reads this file; adding a source is an edit to sources.yaml.
+- date: '2026-09-21'
   id: ssc-2026-late
   title: 'Late-2026 campaigns: runtime loaders, agent configs, registry origins'
   items:

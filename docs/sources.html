@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sources · OSC&amp;R</title>
+<link rel="stylesheet" href="assets/style.css">
+
+</head>
+<body>
+
+    <header class="top">
+      <div class="ai-banner">This is an <strong>AI-maintained continuation</strong> of OSC&amp;R, preserving the original PBOM / pbom-dev work and carrying the project forward.</div>
+      <div class="bar">
+        <a class="brand" href="index.html">OSC&amp;R</a>
+        <nav>
+          <a href="index.html">Matrix</a>
+          <a href="techniques/index.html">Techniques</a>
+          <a href="incidents/index.html">Incident mapping</a>
+          <a href="stories/index.html">Attack stories</a>
+          <a href="guidance.html">Guidance</a>
+          <a href="origins.html">Origins</a>
+          <a href="sources.html">Sources</a>
+          <a href="changelog.html">Changelog</a>
+          <a href="about.html">About</a>
+        </nav>
+      </div>
+    </header>
+<main>
+<p class="crumb">OSC&amp;R / Sources</p>
+
+    <h1>Sources we track</h1>
+    <p class="lede">First-party research blogs and advisories the daily intake job reads.
+    Add a row in <code>content/portal/sources.yaml</code> to watch a new feed.
+    Aggregators are not primary sources.</p>
+    <h2>Watched daily</h2>
+    <div class="card"><h3><a href="https://safedep.io/blog/">SafeDep Blog</a></h3><p class="meta">research · watched daily</p><p class="muted">Open-source malware and supply-chain write-ups (ulid-xyz, Deep-Live-Cam, Mini Shai-Hulud).</p></div><div class="card"><h3><a href="https://checkmarx.com/zero/">Checkmarx Zero</a></h3><p class="meta">research · watched daily</p><p class="muted">Malicious-package campaigns (indexed-btree runtime loaders).</p></div><div class="card"><h3><a href="https://www.crowdstrike.com/en-us/blog/">CrowdStrike blog</a></h3><p class="meta">research · watched daily</p><p class="muted">PhantomRaven and related npm stealers.</p></div><div class="card"><h3><a href="https://www.stepsecurity.io/blog?category=Threat+Intel">StepSecurity Threat Intel</a></h3><p class="meta">research · watched daily</p><p class="muted">CI/CD worms, Team PCP, crates.io, GitHub Actions tag poisoning.</p></div><div class="card"><h3><a href="https://sansec.io/research">Sansec research</a></h3><p class="meta">research · watched daily</p><p class="muted">Magecart / CDN / embedded-script supply chain (Polyfill.io, Brevo).</p></div><div class="card"><h3><a href="https://opensourcemalware.com/">OpenSourceMalware</a></h3><p class="meta">research · watched daily</p><p class="muted">Community malware intel (WeaselBiscuit and npm clusters).</p></div><div class="card"><h3><a href="https://www.morphisec.com/blog/">Morphisec blog</a></h3><p class="meta">research · watched daily</p><p class="muted">Hades campaign, AI-assistant config persistence.</p></div><div class="card"><h3><a href="https://socket.dev/blog">Socket Blog</a></h3><p class="meta">research · watched daily</p><p class="muted">Registry compromises, worms, extension/MCP supply chain.</p></div><div class="card"><h3><a href="https://www.wiz.io/blog">Wiz blog</a></h3><p class="meta">research · watched daily</p><p class="muted">Artifact-registry and cloud-adjacent supply-chain exploitation.</p></div><div class="card"><h3><a href="https://cloud.google.com/blog/topics/threat-intelligence">Google Threat Intelligence / Mandiant</a></h3><p class="meta">research · watched daily</p><p class="muted">DUSTMAKER, AI-assistant session hijack, TeamPCP.</p></div><div class="card"><h3><a href="https://www.cisa.gov/news-events/cybersecurity-advisories">CISA alerts</a></h3><p class="meta">advisory · watched daily</p><p class="muted">Government advisories on supply-chain compromises.</p></div><div class="card"><h3><a href="https://github.blog/changelog/">GitHub Changelog (npm / Actions)</a></h3><p class="meta">advisory · watched daily</p><p class="muted">npm and Actions platform security-default changes.</p></div><div class="card"><h3><a href="https://blog.rust-lang.org/">Rust blog (security)</a></h3><p class="meta">advisory · watched daily</p><p class="muted">crates.io incident advisories (arrayref / proc-macro1).</p></div><div class="card"><h3><a href="https://blog.rubygems.org/">RubyGems blog</a></h3><p class="meta">advisory · watched daily</p><p class="muted">Registry and API-key incidents.</p></div>
+    <h2>Guidance baselines (not polled daily)</h2>
+    <div class="card"><h3><a href="https://owasp.org/www-project-top-10-ci-cd-security-risks/">OWASP Top 10 CI/CD</a></h3><p class="meta">guidance · guidance baseline</p><p class="muted">Guidance baseline; re-read when the project publishes a new version, not daily.</p></div><div class="card"><h3><a href="https://csrc.nist.gov/pubs/sp/800/218/final">NIST SSDF (SP 800-218)</a></h3><p class="meta">guidance · guidance baseline</p><p class="muted">Provenance / SSDF practices.</p></div><div class="card"><h3><a href="https://slsa.dev/spec/v1.0/threats">SLSA threats</a></h3><p class="meta">guidance · guidance baseline</p><p class="muted">Build/source/dependency threat model.</p></div><div class="card"><h3><a href="https://www.cisa.gov/resources-tools/resources/secure-software-development-attestation-form">CISA Secure Software Attestation</a></h3><p class="meta">guidance · guidance baseline</p><p class="muted">Producer attestation requirements.</p></div>
+    
+</main>
+
+    <footer>
+      <p>OSC&amp;R (Open Software Supply Chain Attack Reference) was created by
+      <a href="https://github.com/pbom-dev/OSCAR">pbom-dev</a> and its original contributors.
+      This fork is AI-maintained to continue that legacy. Apache-2.0. See
+      <a href="about.html">About &amp; attribution</a>.</p>
+    </footer>
+</body>
+</html>
