@@ -9,6 +9,7 @@ import json
 import os
 import re
 import shutil
+from collections import Counter
 from datetime import datetime, timezone
 import yaml
 
@@ -195,8 +196,9 @@ h2 { font-size: 1.15rem; margin-top: 1.6rem; }
 .search { width: 100%; max-width: 28rem; padding: 0.55rem 0.7rem; background: var(--panel-2);
   border: 1px solid var(--line); color: var(--ink); margin: 0.6rem 0 1rem; }
 .matrix-wrap { overflow-x: auto; padding-bottom: 1rem; }
-.matrix { display: grid; gap: 0.45rem; align-items: start; min-width: 1100px; }
+.matrix { display: grid; gap: 0.45rem; align-items: start; }
 .col { background: var(--panel); border: 1px solid var(--line); min-width: 8.4rem; }
+.col.hidden, .tech.hidden { display: none !important; }
 .col h3 { margin: 0; padding: 0.55rem 0.45rem; font-size: 0.72rem; letter-spacing: 0.03em;
   text-transform: uppercase; background: var(--panel-2); border-bottom: 1px solid var(--line);
   color: var(--copper); }
@@ -204,9 +206,29 @@ h2 { font-size: 1.15rem; margin-top: 1.6rem; }
 .tech {
   display: block; margin: 0.35rem; padding: 0.4rem 0.45rem; background: var(--chip);
   color: var(--ink); font-size: 0.75rem; line-height: 1.25; border: 1px solid transparent;
+  position: relative;
 }
 .tech:hover { border-color: var(--copper); text-decoration: none; }
 .tech .id { color: var(--teal); font-family: ui-monospace, monospace; font-size: 0.7rem; }
+.tech .n {
+  float: right; font-family: ui-monospace, monospace; font-size: 0.68rem;
+  background: #0006; padding: 0 0.28rem; border-radius: 2px; color: var(--copper);
+}
+.tech.used-0 { opacity: 0.42; background: #161a22; }
+.tech.used-0 .n { color: var(--muted); }
+.tech.used-1 { background: #1c2a32; }
+.tech.used-2 { background: #24363c; }
+.tech.used-3 { background: #2c3a28; border-color: #3d5a32; }
+.tech.used-4 { background: #3a3420; border-color: var(--copper-dim); }
+.tech.used-5 { background: #4a3a18; border-color: var(--copper); }
+.legend { display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center;
+  color: var(--muted); font-size: 0.8rem; margin: 0.4rem 0 1rem; }
+.legend i { display: inline-block; width: 0.85rem; height: 0.85rem; margin-right: 0.25rem;
+  vertical-align: -0.1rem; border: 1px solid var(--line); }
+.legend .l0 { background: #161a22; opacity: 0.7; }
+.legend .l1 { background: #1c2a32; }
+.legend .l3 { background: #2c3a28; }
+.legend .l5 { background: #4a3a18; }
 .list { display: grid; gap: 0.45rem; }
 .row {
   display: grid; grid-template-columns: 5.5rem 12rem 1fr; gap: 0.7rem; align-items: baseline;
@@ -256,6 +278,30 @@ def build(dest):
     for tname in by_tactic:
         by_tactic[tname].sort(key=lambda x: x["id"])
 
+    usage = Counter()
+    for s in stories.values():
+        seen = set()
+        for attack in s.get("attacks") or []:
+            for tech in attack.get("techniques") or []:
+                tid = tech.get("techniqueID")
+                if tid:
+                    seen.add(tid)
+        for tid in seen:
+            usage[tid] += 1
+
+    def used_class(n):
+        if n <= 0:
+            return "used-0"
+        if n == 1:
+            return "used-1"
+        if n == 2:
+            return "used-2"
+        if n <= 4:
+            return "used-3"
+        if n <= 7:
+            return "used-4"
+        return "used-5"
+
     # matrix.json for consumers
     matrix = {}
     for tname in TACTIC_ORDER:
@@ -268,6 +314,7 @@ def build(dest):
                 "tags": t.get("realm") or [],
                 "url": f"techniques/{t['id']}.html",
                 "description": t.get("description") or "",
+                "incidentCount": usage[t["id"]],
             })
         matrix[tname] = {
             "items": items,
@@ -281,16 +328,23 @@ def build(dest):
 
     # home / matrix
     cols = []
+    n_cols = len(TACTIC_ORDER)
     for tname in TACTIC_ORDER:
+        items = sorted(
+            by_tactic.get(tname, []),
+            key=lambda t: (-usage[t["id"]], t["id"]),
+        )
         cells = []
-        for t in by_tactic.get(tname, []):
+        for t in items:
+            n = usage[t["id"]]
             cells.append(
-                f'<a class="tech" href="techniques/{html.escape(t["id"])}.html">'
+                f'<a class="tech {used_class(n)}" data-used="{n}" href="techniques/{html.escape(t["id"])}.html">'
+                f'<span class="n" title="Mapped incidents">{n}</span>'
                 f'<span class="id">{html.escape(t["id"])}</span><br>{html.escape(t["summary"])}</a>'
             )
         cols.append(
             f'<div class="col"><h3>{html.escape(tname)}'
-            f'<span>{TACTIC_IDS.get(tname, "")} · {len(by_tactic.get(tname, []))}</span></h3>'
+            f'<span>{TACTIC_IDS.get(tname, "")} · {len(items)}</span></h3>'
             + "".join(cells) + "</div>"
         )
     n_tech, n_mit, n_det, n_story = len(techs), len(mits), len(dets), len(stories)
@@ -308,20 +362,44 @@ def build(dest):
       <div class="stat"><b>{n_det}</b> detections</div>
       <div class="stat"><b>{n_story}</b> mapped incidents</div>
     </div>
-    <p><input class="search" id="q" placeholder="Filter techniques…"></p>
+    <p><input class="search" id="q" placeholder="Filter techniques… empty columns hide"></p>
+    <p class="legend">Mapped incidents:&nbsp;
+      <span><i class="l0"></i>0</span>
+      <span><i class="l1"></i>1–2</span>
+      <span><i class="l3"></i>3–4</span>
+      <span><i class="l5"></i>5+</span>
+      <span>Badge = how many documented incidents use the technique. Search hides non-matches and empty tactic columns.</span>
+    </p>
     <div class="matrix-wrap">
-      <div class="matrix" style="grid-template-columns: repeat({len(TACTIC_ORDER)}, minmax(8.4rem, 1fr))">
+      <div class="matrix" id="matrix" style="grid-template-columns: repeat({n_cols}, minmax(8.4rem, 1fr))">
         {''.join(cols)}
       </div>
     </div>
     <script>
     const q = document.getElementById('q');
-    q.addEventListener('input', () => {{
-      const v = q.value.toLowerCase();
+    const matrix = document.getElementById('matrix');
+    function applyFilter() {{
+      const v = q.value.toLowerCase().trim();
       document.querySelectorAll('.tech').forEach(el => {{
-        el.style.display = el.textContent.toLowerCase().includes(v) ? '' : 'none';
+        const hit = !v || el.textContent.toLowerCase().includes(v);
+        el.classList.toggle('hidden', !hit);
       }});
-    }});
+      let visible = 0;
+      document.querySelectorAll('.col').forEach(col => {{
+        const any = [...col.querySelectorAll('.tech')].some(t => !t.classList.contains('hidden'));
+        col.classList.toggle('hidden', !any);
+        if (any) visible++;
+      }});
+      if (visible) {{
+        matrix.style.gridTemplateColumns = 'repeat(' + visible + ', minmax(8.4rem, 1fr))';
+        matrix.style.minWidth = (visible * 8.9) + 'rem';
+      }} else {{
+        matrix.style.gridTemplateColumns = 'none';
+        matrix.style.minWidth = '0';
+      }}
+    }}
+    q.addEventListener('input', applyFilter);
+    applyFilter();
     </script>
     """
     write(os.path.join(dest, "index.html"), page("Matrix", home, "", "OSC&amp;R / Matrix"))

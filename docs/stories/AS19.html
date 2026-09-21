@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brevo Cloudflare Worker ClickFix · OSC&amp;R</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+    <header class="top">
+      <div class="ai-banner">This is an <strong>AI-maintained continuation</strong> of OSC&amp;R, preserving the original PBOM / pbom-dev work and carrying the project forward.</div>
+      <div class="bar">
+        <a class="brand" href="../index.html">OSC&amp;R</a>
+        <nav>
+          <a href="../index.html">Matrix</a>
+          <a href="../techniques/index.html">Techniques</a>
+          <a href="../incidents/index.html">Incident mapping</a>
+          <a href="../stories/index.html">Attack stories</a>
+          <a href="../about.html">About</a>
+        </nav>
+      </div>
+    </header>
+<main>
+<p class="crumb">OSC&amp;R / <a href="index.html">Incidents</a> / AS19</p>
+
+        <p class="meta">AS19 · 2026-09</p>
+        <h1>Brevo Cloudflare Worker ClickFix</h1>
+        <p>On 14 September 2026 an attacker used a long-lived Cloudflare API key that<br>had been hardcoded in Brevo application source to deploy a Worker that<br>rewrote HTML and embedded JavaScript at the CDN edge for about five and<br>a half hours. Origin files were unmodified, so integrity checks on source<br>missed it. Sansec observed malware on Brevo pages and on 100k+ customer<br>sites embedding Brevo widgets: a ClickFix overlay plus a WordPress<br>backdoor plugin aimed at logged-in administrators. Brevo&#x27;s own<br>post-mortem confirms the key, the Worker, and the window.</p>
+        <h2>Mapped OSC&amp;R elements</h2>
+        <ul><li><a href="../techniques/T0189.html">T0189</a> Secrets in configuration files</li><li><a href="../techniques/T0112.html">T0112</a> Compromised token</li><li><a href="../techniques/T0205.html">T0205</a> Compromise third-party CDN or hosted web asset</li><li><a href="../techniques/T0180.html">T0180</a> Compromise services / servers</li><li><a href="../techniques/T0159.html">T0159</a> Malicious artifact execution</li><li><a href="../techniques/T0119.html">T0119</a> Cross-site scripting</li><li><a href="../techniques/T0138.html">T0138</a> Backdoor in code</li><li><a href="../techniques/T0201.html">T0201</a> Customers compromised</li></ul>
+        <h2><span class="stage">supply-chain</span> Brevo Cloudflare account</h2><div class="card"><p class="meta"><a href="../techniques/T0189.html">T0189</a> · Credential Access · Secrets in configuration files</p><p>A Cloudflare API key with full account permissions was stored in<br>application source code (Brevo post-mortem).</p></div><div class="card"><p class="meta"><a href="../techniques/T0112.html">T0112</a> · Initial Access · Compromised token</p><p>The stolen API key created Workers, routes, and DNS records across<br>Brevo zones without an alert.</p></div><div class="card"><p class="meta"><a href="../techniques/T0205.html">T0205</a> · Initial Access · Compromise third-party CDN or hosted web asset</p><p>The Worker rewrote responses at the Cloudflare edge and stripped CSP;<br>origin was clean.</p></div><div class="card"><p class="meta"><a href="../techniques/T0180.html">T0180</a> · Initial Access · Compromise services / servers</p><p>sendibt1.com is a Brevo-operated domain; attacker DNS/SSL on that<br>zone showed write access to Brevo&#x27;s CDN naming.</p></div><h2><span class="stage">post-supply-chain</span> Customer sites embedding Brevo widgets</h2><div class="card"><p class="meta"><a href="../techniques/T0159.html">T0159</a> · Execution · Malicious artifact execution</p><p>sdk-loader.js and brevo-conversations.js on customer origins loaded<br>extra attacker script.</p></div><div class="card"><p class="meta"><a href="../techniques/T0119.html">T0119</a> · Execution · Cross-site scripting</p><p>Injected script ran in the context of customer sites and Brevo pages.</p></div><div class="card"><p class="meta"><a href="../techniques/T0138.html">T0138</a> · Persistence · Backdoor in code</p><p>Logged-in WordPress admins were targeted with a silent plugin install<br>that persisted as a must-use plugin.</p></div><div class="card"><p class="meta"><a href="../techniques/T0201.html">T0201</a> · Impact · Customers compromised</p><p>Sansec estimates 100k+ sites embedding Brevo components were in the<br>distribution path; visitors saw ClickFix, admins risked a backdoor.</p></div>
+        <div class="card gaps"><h3>Framework gaps noted</h3><ul><li>Edge/CDN response rewriting (origin untouched) is only partly covered by T0205.</li></ul></div>
+        <h2>Sources</h2>
+        <ul class='refs'><li><a href="https://status.brevo.com/incidents/01M2QBC4EZ24ZACW6SWQYVW8N3/write-up" rel="noopener">https://status.brevo.com/incidents/01M2QBC4EZ24ZACW6SWQYVW8N3/write-up</a></li><li><a href="https://sansec.io/research/brevo-supply-chain-attack" rel="noopener">https://sansec.io/research/brevo-supply-chain-attack</a></li></ul>
+        
+</main>
+
+    <footer>
+      <p>OSC&amp;R (Open Software Supply Chain Attack Reference) was created by
+      <a href="https://github.com/pbom-dev/OSCAR">pbom-dev</a> and its original contributors.
+      This fork is AI-maintained to continue that legacy. Apache-2.0. See
+      <a href="../about.html">About &amp; attribution</a>.</p>
+    </footer>
+</body>
+</html>

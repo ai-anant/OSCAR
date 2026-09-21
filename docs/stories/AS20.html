@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>@7nohe/openapi-react-query-codegen poisoned publish workflow · OSC&amp;R</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+    <header class="top">
+      <div class="ai-banner">This is an <strong>AI-maintained continuation</strong> of OSC&amp;R, preserving the original PBOM / pbom-dev work and carrying the project forward.</div>
+      <div class="bar">
+        <a class="brand" href="../index.html">OSC&amp;R</a>
+        <nav>
+          <a href="../index.html">Matrix</a>
+          <a href="../techniques/index.html">Techniques</a>
+          <a href="../incidents/index.html">Incident mapping</a>
+          <a href="../stories/index.html">Attack stories</a>
+          <a href="../about.html">About</a>
+        </nav>
+      </div>
+    </header>
+<main>
+<p class="crumb">OSC&amp;R / <a href="index.html">Incidents</a> / AS20</p>
+
+        <p class="meta">AS20 · 2026-08</p>
+        <h1>@7nohe/openapi-react-query-codegen poisoned publish workflow</h1>
+        <p>On 28 August 2026 an external GitHub user posted the comment &quot;npm publish&quot;<br>on a pull request. The project&#x27;s release workflow trusted that comment from<br>any PR participant, checked out the untrusted PR, installed its<br>dependencies, and published to npm with GitHub Actions OIDC (Trusted<br>Publishing). Ten malicious versions shipped; install hooks and a malicious<br>binding.gyp ran attacker code, downloaded Bun, and harvested GitHub<br>credentials. StepSecurity reproduced the behavior under Harden-Runner.<br>Charlie Eriksen reported the releases in GitHub issue #217.</p>
+        <h2>Mapped OSC&amp;R elements</h2>
+        <ul><li><a href="../techniques/T0147.html">T0147</a> Scan public CI/CD configurations for secrets and vulnerable actions</li><li><a href="../techniques/T0202.html">T0202</a> Inadequate CI/CD workflow permissions</li><li><a href="../techniques/T0166.html">T0166</a> Trigger pipeline execution</li><li><a href="../techniques/T0183.html">T0183</a> Harvesting short-lived token</li><li><a href="../techniques/T0109.html">T0109</a> Publish malicious artifact</li><li><a href="../techniques/T0151.html">T0151</a> Installation scripts</li><li><a href="../techniques/T0140.html">T0140</a> Harvest tokens from environment variables</li><li><a href="../techniques/T0159.html">T0159</a> Malicious artifact execution</li></ul>
+        <h2><span class="stage">supply-chain</span> GitHub Actions release workflow</h2><div class="card"><p class="meta"><a href="../techniques/T0147.html">T0147</a> · Reconnaissance · Scan public CI/CD configurations for secrets and vulnerable actions</p><p>The issue_comment workflow that published on a literal &quot;npm publish&quot;<br>comment was public and required no maintainer role check.</p></div><div class="card"><p class="meta"><a href="../techniques/T0202.html">T0202</a> · Persistence · Inadequate CI/CD workflow permissions</p><p>id-token: write plus checkout of untrusted PR head let any commenter<br>mint a Trusted Publisher identity.</p></div><div class="card"><p class="meta"><a href="../techniques/T0166.html">T0166</a> · Execution · Trigger pipeline execution</p><p>The attacker opened PRs #215/#216 and posted the trigger comment;<br>the workflow ran and published.</p></div><div class="card"><p class="meta"><a href="../techniques/T0183.html">T0183</a> · Credential Access · Harvesting short-lived token</p><p>npm Trusted Publishing used a short-lived OIDC token instead of a<br>stored npm password — still enough to publish.</p></div><div class="card"><p class="meta"><a href="../techniques/T0109.html">T0109</a> · Resource Development · Publish malicious artifact</p><p>Ten versions, including 3.0.4 mapped as npm latest, were published.</p></div><h2><span class="stage">post-supply-chain</span> Installers of the package</h2><div class="card"><p class="meta"><a href="../techniques/T0151.html">T0151</a> · Execution · Installation scripts</p><p>preinstall ran node 3FWCvzduYZg.js; binding.gyp decoded to the same<br>command via os.system when node-gyp evaluated it.</p></div><div class="card"><p class="meta"><a href="../techniques/T0140.html">T0140</a> · Credential Access · Harvest tokens from environment variables</p><p>Direct payload execution ran gh auth token and git credential-manager<br>and probed GCP metadata.</p></div><div class="card"><p class="meta"><a href="../techniques/T0159.html">T0159</a> · Execution · Malicious artifact execution</p><p>Installing an affected version was enough; npm latest still pointed<br>at 3.0.4 at the time of the write-up.</p></div>
+        <div class="card gaps"><h3>Framework gaps noted</h3><ul><li>Comment-to-publish workflows are a recurring 2026 pattern still modeled as T0202 plus T0166.</li></ul></div>
+        <h2>Sources</h2>
+        <ul class='refs'><li><a href="https://www.stepsecurity.io/blog/7nohe-openapi-react-query-codegen-compromised-npm-publishing-workflow" rel="noopener">https://www.stepsecurity.io/blog/7nohe-openapi-react-query-codegen-compromised-npm-publishing-workflow</a></li><li><a href="https://github.com/7nohe/openapi-react-query-codegen/issues/217" rel="noopener">https://github.com/7nohe/openapi-react-query-codegen/issues/217</a></li></ul>
+        
+</main>
+
+    <footer>
+      <p>OSC&amp;R (Open Software Supply Chain Attack Reference) was created by
+      <a href="https://github.com/pbom-dev/OSCAR">pbom-dev</a> and its original contributors.
+      This fork is AI-maintained to continue that legacy. Apache-2.0. See
+      <a href="../about.html">About &amp; attribution</a>.</p>
+    </footer>
+</body>
+</html>

@@ -31,6 +31,13 @@ attacks:
       tactic: Defense Evasion
       comment: |
         The attackers commits aimed to evade detection by adopting the guise of 'Dependabot,' a tool from GitHub designed to tackle security vulnerabilities in third-party libraries.
+    - techniqueID: T0167
+      techName: Recursive PR
+      tactic: Persistence
+      comment: |
+        Malicious PRs impersonating Dependabot were opened at scale so that
+        auto-merge or hurried review would land the payload and the next
+        victim's secrets.
 
     - techniqueID: T0140
       techName:  Harvest Tokens From Environment Variables

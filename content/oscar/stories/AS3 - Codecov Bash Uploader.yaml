@@ -67,6 +67,18 @@ attacks:
         tactic: Execution
         techName: Malicious Artifact Execution
         comment: Customers that utilized the Codecov image were impacted
+      - techniqueID: T0185
+        tactic: Credential Access
+        techName: Steal credentials in container artifacts
+        comment: |
+          Git credentials were left in the public Codecov Docker image — the
+          initial secret that unlocked the Bash Uploader rewrite.
+      - techniqueID: T0192
+        tactic: Collection
+        techName: Sensitive information in logs
+        comment: |
+          The modified uploader exfiltrated CI environment data that often
+          also lands in build logs.
         
               
        

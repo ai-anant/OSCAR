@@ -1,0 +1,74 @@
+id: AS22
+type: Attack Story
+date: 2026-03
+
+summary: axios npm remote-access trojan
+description: |
+  In March 2026, alongside the Team PCP wave, malicious versions axios@1.14.1
+  and axios@0.30.4 pulled in a fake dependency that dropped a cross-platform
+  remote-access trojan on install, called attacker C2, then tried to erase
+  traces. axios has over 100 million weekly downloads. StepSecurity's
+  Harden-Runner captured the live C2 callback during a GitHub Actions run
+  in CNCF's Backstage repository.
+
+attacks:
+  - attack: axios on npm
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0121
+        techName: Compromised legitimate artifact
+        tactic: Resource Development
+        comment: |
+          Two versions of axios, one of the most downloaded npm packages, shipped
+          a malicious extra dependency.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: |
+          Malicious versions 1.14.1 and 0.30.4 were published to npm.
+      - techniqueID: T0181
+        techName: Malicious module injection
+        tactic: Initial Access
+        comment: |
+          A fake dependency carried the RAT rather than axios source itself.
+  - attack: Installers including CNCF Backstage CI
+    index: 2
+    stage: post-supply-chain
+    customer: 1
+    supplier: 0
+    techniques:
+      - techniqueID: T0151
+        techName: Installation scripts
+        tactic: Execution
+        comment: |
+          The RAT dropped on install.
+      - techniqueID: T0159
+        techName: Malicious artifact execution
+        tactic: Execution
+        comment: |
+          Harden-Runner observed the C2 callback in a Backstage GitHub Actions run.
+      - techniqueID: T0145
+        techName: Bypass of outbound traffic control
+        tactic: Exfiltration
+        comment: |
+          The malware called home from CI; it was built to erase evidence of that call.
+      - techniqueID: T0176
+        techName: Disable or misconfigure security measures
+        tactic: Defense Evasion
+        comment: |
+          After the C2 callback the malware attempted to wipe its own traces.
+      - techniqueID: T0201
+        techName: Customers compromised
+        tactic: Impact
+        comment: |
+          Any project resolving those axios versions, including CNCF Backstage CI,
+          executed the payload.
+
+gaps: []
+
+links:
+  - https://www.stepsecurity.io/blog/axios-compromised-on-npm-malicious-versions-drop-remote-access-trojan
+  - https://www.stepsecurity.io/blog/state-of-open-source-supply-chain-attacks

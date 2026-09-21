@@ -1,0 +1,81 @@
+id: AS21
+type: Attack Story
+date: 2026-09
+
+summary: Deep-Live-Cam malicious git dependency
+description: |
+  On 8 September 2026 a commit on Deep-Live-Cam (96k GitHub stars) rewrote
+  requirements.txt to pull several packages from source URLs and added
+  linerequests @ git+https://github.com/pypls/requests.git — a lookalike of
+  the real Requests project. setup.py hid a loader past 434 spaces; it
+  fetched a clipboard-hijacking crypto stealer via a Telegraph page and
+  installed login persistence on Windows and macOS. The maintainer reported
+  unusual account access despite 2FA. SafeDep traced the chain; the
+  malicious revision sat on main for about 9 hours 39 minutes.
+
+attacks:
+  - attack: Deep-Live-Cam GitHub repository
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0113
+        techName: Compromised user account
+        tactic: Initial Access
+        comment: |
+          Maintainer reported unusual account access despite 2FA; unsigned
+          commit on main under hacksider.
+      - techniqueID: T0197
+        techName: Use code from untrusted source
+        tactic: Initial Access
+        comment: |
+          requirements.txt was pointed at git+https://github.com/pypls/requests.git
+          instead of PyPI.
+      - techniqueID: T0129
+        techName: Typosquatting
+        tactic: Initial Access
+        comment: |
+          pypls/requests declared package name requests and kept metadata of
+          the legitimate project.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: |
+          The pypls/requests repo existed three days before the requirements.txt
+          change.
+  - attack: Installers / end users
+    index: 2
+    stage: post-supply-chain
+    customer: 1
+    supplier: 0
+    techniques:
+      - techniqueID: T0151
+        techName: Installation scripts
+        tactic: Execution
+        comment: |
+          pip's setuptools backend executes setup.py during wheel build; the
+          loader ran before Deep-Live-Cam itself launched.
+      - techniqueID: T0159
+        techName: Malicious artifact execution
+        tactic: Execution
+        comment: |
+          Hidden exec(compile(...)) in setup.py decoded and ran the loader.
+      - techniqueID: T0139
+        techName: Resource hijacking
+        tactic: Impact
+        comment: |
+          Final payload replaced BTC/ETH/TRX/SOL addresses in the clipboard.
+      - techniqueID: T0138
+        techName: Backdoor in code
+        tactic: Persistence
+        comment: |
+          Windows Run key SysHelper and macOS LaunchAgent com.user.syshelper.plist
+          re-executed the stealer at login.
+
+gaps:
+  - git+ URL substitution in requirements.txt is a specific "replace the registry with an attacker clone" path under T0197.
+
+links:
+  - https://safedep.io/deep-live-cam-supply-chain-attack
+  - https://github.com/hacksider/Deep-Live-Cam/issues/1930

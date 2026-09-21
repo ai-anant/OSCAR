@@ -1,0 +1,141 @@
+id: AS16
+type: Attack Story
+date: 2026-05
+
+summary: TanStack Mini Shai-Hulud (CVE-2026-45321)
+description: |
+  On 11 May 2026, 84 malicious versions of 42 @tanstack/* npm packages were
+  published (GHSA-g7cv-rxg3-hmpx / CVE-2026-45321). TanStack traced the
+  compromise to a chained GitHub Actions attack (pull_request_target plus
+  cache poisoning). The payload stole cloud, GitHub, and SSH credentials,
+  persisted in Claude Code and VS Code, and could commit stolen data to
+  attacker-controlled GitHub repositories. OpenAI reported two employee
+  devices hit and limited unauthorized access to internal repos. CrowdSec
+  later tied a May 22 copy of ~170 private repositories to a laptop
+  infected in this wave.
+
+attacks:
+  - attack: TanStack npm packages
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0147
+        techName: Scan public CI/CD configurations for secrets and vulnerable actions
+        tactic: Reconnaissance
+        comment: |
+          The publish path was a public GitHub Actions workflow that could be
+          chained (pull_request_target and cache poisoning).
+      - techniqueID: T0122
+        techName: Vulnerability in third-party CI/CD actions
+        tactic: Initial Access
+        comment: |
+          TanStack traced the compromise to a chained GitHub Actions attack
+          involving pull_request_target and Actions cache poisoning.
+      - techniqueID: T0202
+        techName: Inadequate CI/CD workflow permissions
+        tactic: Persistence
+        comment: |
+          The workflow identity could publish packages; poisoned cache plus
+          privileged pull_request_target made that durable.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: |
+          84 versions across 42 @tanstack packages were published to npm.
+      - techniqueID: T0121
+        techName: Compromised legitimate artifact
+        tactic: Resource Development
+        comment: |
+          Consumers of the real @tanstack scope received the poisoned versions.
+      - techniqueID: T0158
+        techName: Vulnerable CI/CD template
+        tactic: Initial Access
+        comment: |
+          A reusable/privileged workflow pattern (pull_request_target) was the
+          injection template, not a one-off script.
+  - attack: Downstream developer machines and vendors
+    index: 2
+    stage: post-supply-chain
+    customer: 1
+    supplier: 0
+    techniques:
+      - techniqueID: T0151
+        techName: Installation scripts
+        tactic: Execution
+        comment: |
+          An optional GitHub-hosted dependency used a prepare lifecycle hook
+          (Bun) to run the JavaScript payload.
+      - techniqueID: T0159
+        techName: Malicious artifact execution
+        tactic: Execution
+        comment: |
+          Installing an affected version ran the credential stealer.
+      - techniqueID: T0140
+        techName: Harvest tokens from environment variables
+        tactic: Credential Access
+        comment: |
+          Cloud, GitHub, and CI secrets in the process environment were stolen.
+      - techniqueID: T0193
+        techName: Sensitive information in environment variables
+        tactic: Collection
+        comment: |
+          The stealer profiled the environment and collected tokens sitting in env.
+      - techniqueID: T0168
+        techName: Exfiltration to code repositories
+        tactic: Exfiltration
+        comment: |
+          Stolen data was committed to attacker-controlled GitHub repositories
+          via the GraphQL API using stolen tokens.
+      - techniqueID: T0154
+        techName: Malicious IDE extension
+        tactic: Initial Access
+        comment: |
+          Persistence hooks were installed into Claude Code and VS Code so the
+          stealer re-ran on IDE launch.
+      - techniqueID: T0152
+        techName: IDE
+        tactic: Execution
+        comment: |
+          Re-execution was tied to IDE launch, not only to npm install.
+      - techniqueID: T0166
+        techName: Trigger pipeline execution
+        tactic: Execution
+        comment: |
+          Injected GitHub Actions workflows serialized repository secrets and
+          uploaded them.
+      - techniqueID: T0183
+        techName: Harvesting short-lived token
+        tactic: Credential Access
+        comment: |
+          GitHub Actions OIDC / job tokens and short-lived cloud creds were in
+          the harvest set.
+      - techniqueID: T0169
+        techName: Push implants across repositories
+        tactic: Lateral Movement
+        comment: |
+          Injected GitHub Actions workflows and stolen tokens were used to
+          persist across repositories the victim could write.
+      - techniqueID: T0186
+        techName: Source code leak
+        tactic: Impact
+        comment: |
+          CrowdSec later attributed a copy of ~170 private repositories to a
+          laptop infected in this wave.
+      - techniqueID: T0201
+        techName: Customers compromised
+        tactic: Impact
+        comment: |
+          Downstream organizations (OpenAI, CrowdSec, Mistral AI, others) were
+          the realized victims of the poisoned packages.
+
+gaps:
+  - GitHub Actions cache poisoning as a first-class technique is still folded into T0122.
+  - Persistence inside AI coding agents (Claude Code) is only approximated by T0154/T0152.
+
+links:
+  - https://github.com/TanStack/router/security/advisories/GHSA-g7cv-rxg3-hmpx
+  - https://openai.com/index/our-response-to-the-tanstack-npm-supply-chain-attack/
+  - https://www.crowdsec.net/blog/tanstack-supply-chain-attack-analysis
+  - https://www.stepsecurity.io/blog/state-of-open-source-supply-chain-attacks

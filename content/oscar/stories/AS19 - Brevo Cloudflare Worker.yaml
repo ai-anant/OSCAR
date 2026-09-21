@@ -1,0 +1,82 @@
+id: AS19
+type: Attack Story
+date: 2026-09
+
+summary: Brevo Cloudflare Worker ClickFix
+description: |
+  On 14 September 2026 an attacker used a long-lived Cloudflare API key that
+  had been hardcoded in Brevo application source to deploy a Worker that
+  rewrote HTML and embedded JavaScript at the CDN edge for about five and
+  a half hours. Origin files were unmodified, so integrity checks on source
+  missed it. Sansec observed malware on Brevo pages and on 100k+ customer
+  sites embedding Brevo widgets: a ClickFix overlay plus a WordPress
+  backdoor plugin aimed at logged-in administrators. Brevo's own
+  post-mortem confirms the key, the Worker, and the window.
+
+attacks:
+  - attack: Brevo Cloudflare account
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0189
+        techName: Secrets in configuration files
+        tactic: Credential Access
+        comment: |
+          A Cloudflare API key with full account permissions was stored in
+          application source code (Brevo post-mortem).
+      - techniqueID: T0112
+        techName: Compromised token
+        tactic: Initial Access
+        comment: |
+          The stolen API key created Workers, routes, and DNS records across
+          Brevo zones without an alert.
+      - techniqueID: T0205
+        techName: Compromise third-party CDN or hosted web asset
+        tactic: Initial Access
+        comment: |
+          The Worker rewrote responses at the Cloudflare edge and stripped CSP;
+          origin was clean.
+      - techniqueID: T0180
+        techName: Compromise services / servers
+        tactic: Initial Access
+        comment: |
+          sendibt1.com is a Brevo-operated domain; attacker DNS/SSL on that
+          zone showed write access to Brevo's CDN naming.
+  - attack: Customer sites embedding Brevo widgets
+    index: 2
+    stage: post-supply-chain
+    customer: 1
+    supplier: 0
+    techniques:
+      - techniqueID: T0159
+        techName: Malicious artifact execution
+        tactic: Execution
+        comment: |
+          sdk-loader.js and brevo-conversations.js on customer origins loaded
+          extra attacker script.
+      - techniqueID: T0119
+        techName: Cross-site scripting
+        tactic: Execution
+        comment: |
+          Injected script ran in the context of customer sites and Brevo pages.
+      - techniqueID: T0138
+        techName: Backdoor in code
+        tactic: Persistence
+        comment: |
+          Logged-in WordPress admins were targeted with a silent plugin install
+          that persisted as a must-use plugin.
+      - techniqueID: T0201
+        techName: Customers compromised
+        tactic: Impact
+        comment: |
+          Sansec estimates 100k+ sites embedding Brevo components were in the
+          distribution path; visitors saw ClickFix, admins risked a backdoor.
+
+gaps:
+  - Edge/CDN response rewriting (origin untouched) is only partly covered by T0205.
+
+links:
+  - https://status.brevo.com/incidents/01M2QBC4EZ24ZACW6SWQYVW8N3/write-up
+  - https://sansec.io/research/brevo-supply-chain-attack

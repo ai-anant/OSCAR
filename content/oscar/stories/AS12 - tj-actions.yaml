@@ -43,18 +43,35 @@ attacks:
     customer: 1
     supplier: 0
     techniques:
+      - techniqueID: T0147
+        techName: Scan public CI/CD configurations for secrets and vulnerable actions
+        tactic: Reconnaissance
+        comment: |
+          Public workflows listing uses: tj-actions/changed-files@v* were the
+          targeting list.
       - techniqueID: T0130
         techName: Harvest secrets from logs
         tactic: Credential Access
         comment: |
           Secrets were dumped into GitHub Actions logs, which are often
           readable by a wider set of identities than the job itself.
+      - techniqueID: T0162
+        techName: Passwords in CI/CD logs
+        tactic: Credential Access
+        comment: |
+          The malicious action printed PATs, npm tokens, and cloud keys into
+          job logs.
       - techniqueID: T0140
         techName: Harvest tokens from environment variables
         tactic: Credential Access
         comment: |
           The action had access to the job environment, including GITHUB_TOKEN
           and configured secrets.
+      - techniqueID: T0193
+        techName: Sensitive information in environment variables
+        tactic: Collection
+        comment: |
+          CI secrets lived in the job env; dumping them was enough.
       - techniqueID: T0199
         techName: Secret leak
         tactic: Impact

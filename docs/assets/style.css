@@ -45,8 +45,9 @@ h2 { font-size: 1.15rem; margin-top: 1.6rem; }
 .search { width: 100%; max-width: 28rem; padding: 0.55rem 0.7rem; background: var(--panel-2);
   border: 1px solid var(--line); color: var(--ink); margin: 0.6rem 0 1rem; }
 .matrix-wrap { overflow-x: auto; padding-bottom: 1rem; }
-.matrix { display: grid; gap: 0.45rem; align-items: start; min-width: 1100px; }
+.matrix { display: grid; gap: 0.45rem; align-items: start; }
 .col { background: var(--panel); border: 1px solid var(--line); min-width: 8.4rem; }
+.col.hidden, .tech.hidden { display: none !important; }
 .col h3 { margin: 0; padding: 0.55rem 0.45rem; font-size: 0.72rem; letter-spacing: 0.03em;
   text-transform: uppercase; background: var(--panel-2); border-bottom: 1px solid var(--line);
   color: var(--copper); }
@@ -54,9 +55,29 @@ h2 { font-size: 1.15rem; margin-top: 1.6rem; }
 .tech {
   display: block; margin: 0.35rem; padding: 0.4rem 0.45rem; background: var(--chip);
   color: var(--ink); font-size: 0.75rem; line-height: 1.25; border: 1px solid transparent;
+  position: relative;
 }
 .tech:hover { border-color: var(--copper); text-decoration: none; }
 .tech .id { color: var(--teal); font-family: ui-monospace, monospace; font-size: 0.7rem; }
+.tech .n {
+  float: right; font-family: ui-monospace, monospace; font-size: 0.68rem;
+  background: #0006; padding: 0 0.28rem; border-radius: 2px; color: var(--copper);
+}
+.tech.used-0 { opacity: 0.42; background: #161a22; }
+.tech.used-0 .n { color: var(--muted); }
+.tech.used-1 { background: #1c2a32; }
+.tech.used-2 { background: #24363c; }
+.tech.used-3 { background: #2c3a28; border-color: #3d5a32; }
+.tech.used-4 { background: #3a3420; border-color: var(--copper-dim); }
+.tech.used-5 { background: #4a3a18; border-color: var(--copper); }
+.legend { display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center;
+  color: var(--muted); font-size: 0.8rem; margin: 0.4rem 0 1rem; }
+.legend i { display: inline-block; width: 0.85rem; height: 0.85rem; margin-right: 0.25rem;
+  vertical-align: -0.1rem; border: 1px solid var(--line); }
+.legend .l0 { background: #161a22; opacity: 0.7; }
+.legend .l1 { background: #1c2a32; }
+.legend .l3 { background: #2c3a28; }
+.legend .l5 { background: #4a3a18; }
 .list { display: grid; gap: 0.45rem; }
 .row {
   display: grid; grid-template-columns: 5.5rem 12rem 1fr; gap: 0.7rem; align-items: baseline;

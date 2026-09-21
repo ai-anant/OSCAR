@@ -55,6 +55,12 @@ attacks:
     customer: 1
     supplier: 0
     techniques:
+      - techniqueID: T0150
+        techName: Runtime logic bomb
+        tactic: Execution
+        comment: |
+          The backdoor armed only in specific builds (systemd-linked sshd) and
+          stayed inert in others — a selective runtime trigger.
       - techniqueID: T0172
         techName: Runtime backdoor
         tactic: Execution

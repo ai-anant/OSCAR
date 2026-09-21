@@ -1,0 +1,110 @@
+id: AS18
+type: Attack Story
+date: 2026-08
+
+summary: crates.io arrayref / proc-macro1 build-time dropper
+description: |
+  On 20 August 2026 a compromised crates.io maintainer account published
+  arrayref 0.3.10 (and shortly internment 0.8.7 and append-only-vec 0.1.9)
+  depending on a new typosquat, proc-macro1, whose build.rs downloaded and
+  ran a second-stage binary at compile time. An impersonator account
+  (dtolney) staged the typosquat of David Tolnay's proc-macro2. The Rust
+  Security Response Team deleted the malicious crates and locked the
+  account; Nextron Systems reported it. Exposure windows were 86–107 minutes.
+
+attacks:
+  - attack: crates.io
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0113
+        techName: Compromised user account
+        tactic: Initial Access
+        comment: |
+          The Rust Security Response Team assessed the arrayref author's
+          machine or credentials as compromised, not a malicious maintainer.
+      - techniqueID: T0108
+        techName: Accounts in public registry
+        tactic: Resource Development
+        comment: |
+          Attacker-owned crates.io accounts published proc-macro1, proc-macro-en,
+          arone, aronenao and related droppers two days earlier.
+      - techniqueID: T0164
+        techName: Inject malicious dependency to privileged user repository
+        tactic: Privilege Escalation
+        comment: |
+          The poisoned arrayref release added a first-ever dependency on the
+          attacker dropper; every consumer of arrayref inherited it.
+      - techniqueID: T0136
+        techName: Brandjacking
+        tactic: Initial Access
+        comment: |
+          dtolney impersonated dtolnay / proc-macro2 branding on crates.io.
+      - techniqueID: T0141
+        techName: Fake developer reputation (Starjacking)
+        tactic: Resource Development
+        comment: |
+          GitHub account dtolney impersonated David Tolnay (dtolnay), author of
+          the real proc-macro2, to make the typosquat look like a Tolnay crate.
+      - techniqueID: T0129
+        techName: Typosquatting
+        tactic: Initial Access
+        comment: |
+          proc-macro1 is a one-character typosquat of proc-macro2.
+      - techniqueID: T0110
+        techName: Advertise malicious artifact
+        tactic: Resource Development
+        comment: |
+          Clean arrayref 0.3.x releases were yanked so Cargo herded builders
+          toward the one remaining poisoned release.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: |
+          Poisoned versions of three legitimate crates plus dropper crates were
+          published to crates.io.
+      - techniqueID: T0198
+        techName: Malicious Build Time Dependencies
+        tactic: Defense Evasion
+        comment: |
+          arrayref itself had no malicious Rust source; the weapon was a new
+          build-time dependency whose build.rs ran at compile time.
+      - techniqueID: T0170
+        techName: Malicious compiler or interpreter
+        tactic: Defense Evasion
+        comment: |
+          cargo build was enough to detonate; the crate never needed to be called.
+  - attack: Downstream Rust builds
+    index: 2
+    stage: post-supply-chain
+    customer: 1
+    supplier: 0
+    techniques:
+      - techniqueID: T0159
+        techName: Malicious artifact execution
+        tactic: Execution
+        comment: |
+          Any project whose lockfile resolved the poisoned versions executed the
+          dropper during cargo build.
+      - techniqueID: T0145
+        techName: Bypass of outbound traffic control
+        tactic: Exfiltration
+        comment: |
+          build.rs fetched the payload over TLS with certificate validation
+          disabled to an IP that no Rust build should contact.
+      - techniqueID: T0201
+        techName: Customers compromised
+        tactic: Impact
+        comment: |
+          arrayref sits under tiny-skia, winit, blake3 and large crypto/GUI stacks
+          (~245M downloads). Anyone who built during the window is in scope.
+
+gaps:
+  - Yank-to-herd (deleting safe versions so the only remaining version is malicious) is not a named OSC&R technique.
+
+links:
+  - https://blog.rust-lang.org/2026/08/20/supply-chain-attack-on-arrayref
+  - https://www.stepsecurity.io/blog/arrayref-rust-crate-supply-chain-attack
+  - https://github.com/rustsec/advisory-db/issues/3161

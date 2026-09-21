@@ -1,0 +1,82 @@
+id: AS20
+type: Attack Story
+date: 2026-08
+
+summary: "@7nohe/openapi-react-query-codegen poisoned publish workflow"
+description: |
+  On 28 August 2026 an external GitHub user posted the comment "npm publish"
+  on a pull request. The project's release workflow trusted that comment from
+  any PR participant, checked out the untrusted PR, installed its
+  dependencies, and published to npm with GitHub Actions OIDC (Trusted
+  Publishing). Ten malicious versions shipped; install hooks and a malicious
+  binding.gyp ran attacker code, downloaded Bun, and harvested GitHub
+  credentials. StepSecurity reproduced the behavior under Harden-Runner.
+  Charlie Eriksen reported the releases in GitHub issue #217.
+
+attacks:
+  - attack: GitHub Actions release workflow
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0147
+        techName: Scan public CI/CD configurations for secrets and vulnerable actions
+        tactic: Reconnaissance
+        comment: |
+          The issue_comment workflow that published on a literal "npm publish"
+          comment was public and required no maintainer role check.
+      - techniqueID: T0202
+        techName: Inadequate CI/CD workflow permissions
+        tactic: Persistence
+        comment: |
+          id-token: write plus checkout of untrusted PR head let any commenter
+          mint a Trusted Publisher identity.
+      - techniqueID: T0166
+        techName: Trigger pipeline execution
+        tactic: Execution
+        comment: |
+          The attacker opened PRs #215/#216 and posted the trigger comment;
+          the workflow ran and published.
+      - techniqueID: T0183
+        techName: Harvesting short-lived token
+        tactic: Credential Access
+        comment: |
+          npm Trusted Publishing used a short-lived OIDC token instead of a
+          stored npm password — still enough to publish.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: |
+          Ten versions, including 3.0.4 mapped as npm latest, were published.
+  - attack: Installers of the package
+    index: 2
+    stage: post-supply-chain
+    customer: 1
+    supplier: 0
+    techniques:
+      - techniqueID: T0151
+        techName: Installation scripts
+        tactic: Execution
+        comment: |
+          preinstall ran node 3FWCvzduYZg.js; binding.gyp decoded to the same
+          command via os.system when node-gyp evaluated it.
+      - techniqueID: T0140
+        techName: Harvest tokens from environment variables
+        tactic: Credential Access
+        comment: |
+          Direct payload execution ran gh auth token and git credential-manager
+          and probed GCP metadata.
+      - techniqueID: T0159
+        techName: Malicious artifact execution
+        tactic: Execution
+        comment: |
+          Installing an affected version was enough; npm latest still pointed
+          at 3.0.4 at the time of the write-up.
+
+gaps:
+  - Comment-to-publish workflows are a recurring 2026 pattern still modeled as T0202 plus T0166.
+
+links:
+  - https://www.stepsecurity.io/blog/7nohe-openapi-react-query-codegen-compromised-npm-publishing-workflow
+  - https://github.com/7nohe/openapi-react-query-codegen/issues/217
