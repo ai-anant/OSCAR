@@ -1,0 +1,47 @@
+id: AS29
+type: Attack Story
+date: 2026-08
+
+summary: Unclaimed packages in official llms.txt files
+description: |
+  Alon Hertz (Evervault) scanned thousands of official llms.txt instruction
+  files. Many embed pip/npm install lines whose package names were never
+  registered. Registering a handful with a beacon produced a callback from
+  inside a Fortune 500 in under four minutes. Agents given only a vendor
+  name fetched llms.txt themselves and installed the unclaimed package.
+  This is dependency confusion against first-party instruction files, not
+  against a lockfile.
+
+attacks:
+  - attack: Unclaimed names in vendor llms.txt
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0102
+        techName: Discover used open-source dependencies
+        tactic: Reconnaissance
+        comment: Instruction files published the package names agents would install.
+      - techniqueID: T0107
+        techName: Discover internal artifacts names
+        tactic: Reconnaissance
+        comment: Names were first-party and correctly spelled, never in a public lockfile.
+      - techniqueID: T0120
+        techName: Dependency confusion
+        tactic: Initial Access
+        comment: Registering the unclaimed name made agents install attacker code.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Names from official docs were registered on PyPI and npm.
+      - techniqueID: T0110
+        techName: Advertise malicious artifact
+        tactic: Resource Development
+        comment: The advertisement was the vendor's own HTTPS llms.txt.
+
+gaps:
+  - Agent instruction files as a trust input are not a first-class OSC&R technique.
+
+links:
+  - https://medium.com/@alonhertz1/data-became-code-we-ran-code-inside-fortune-500s-using-files-they-published-for-ai-agents-0cd67ffbbffc

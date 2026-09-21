@@ -1,0 +1,46 @@
+id: AS33
+type: Attack Story
+date: 2026-09
+
+summary: TeamPCP DUSTMAKER AI workspace poisoning
+description: |
+  Google Threat Intelligence Group's AI Threat Tracker describes DUSTMAKER
+  (TeamPCP / UNC6780) as the JS/CI successor to SANDCLOCK. It drops hidden
+  .claude / .cursor / .vscode content, prompt-injects LLM scanners so they
+  skip the JS underneath, and uses trojanized MCP servers. Packages
+  published with a valid token pass agent trust checks. A separate Q2 case
+  used an AI coding chatbot plus markdown playbooks to build credential
+  harvesting in under six hours after a cloud compromise.
+
+attacks:
+  - attack: AI coding workspaces
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0210
+        techName: Poison AI coding-agent config or workspace
+        tactic: Persistence
+        comment: Hidden .claude/.cursor/.vscode drops and trojanized MCP servers.
+      - techniqueID: T0154
+        techName: Malicious IDE extension
+        tactic: Initial Access
+        comment: Workspace-dir poisoning looks like developer clutter.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Valid-token packages pass automated agent trust checks.
+      - techniqueID: T0206
+        techName: Forge or omit build provenance
+        tactic: Defense Evasion
+        comment: Provenance-presence is not trust when the token that published is valid.
+      - techniqueID: T0140
+        techName: Harvest tokens from environment variables
+        tactic: Credential Access
+        comment: JS payload built for CI credential theft.
+
+gaps: []
+
+links:
+  - https://cloud.google.com/blog/topics/threat-intelligence/from-prompting-to-autonomy-the-evolution-of-adversarial-ai

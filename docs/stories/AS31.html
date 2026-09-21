@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coder registry CDN origin pool compromise · OSC&amp;R</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+    <header class="top">
+      <div class="ai-banner">This is an <strong>AI-maintained continuation</strong> of OSC&amp;R, preserving the original PBOM / pbom-dev work and carrying the project forward.</div>
+      <div class="bar">
+        <a class="brand" href="../index.html">OSC&amp;R</a>
+        <nav>
+          <a href="../index.html">Matrix</a>
+          <a href="../techniques/index.html">Techniques</a>
+          <a href="../incidents/index.html">Incident mapping</a>
+          <a href="../stories/index.html">Attack stories</a>
+          <a href="../guidance.html">Guidance</a>
+          <a href="../origins.html">Origins</a>
+          <a href="../changelog.html">Changelog</a>
+          <a href="../about.html">About</a>
+        </nav>
+      </div>
+    </header>
+<main>
+<p class="crumb">OSC&amp;R / <a href="index.html">Incidents</a> / AS31</p>
+
+        <p class="meta">AS31 · 2026-08</p>
+        <h1>Coder registry CDN origin pool compromise</h1>
+        <p>Coder&#x27;s advisory GHSA-vx42-ghc9-gw65. An attacker added unauthorized<br>origin IPs to the Cloudflare pool serving registry.coder.com. During<br>31 August 2026, 07:35–21:45 UTC, those origins returned modified<br>Terraform modules that stole provisioner secrets, cloud and AI API keys,<br>CI/CD credentials, OIDC tokens, SSH keys, and (when running inside<br>coderd) database passwords. Consumers still talked to the real CDN<br>hostname. Patched in 2.34.9–2.37.0.</p>
+        <h2>Mapped OSC&amp;R elements</h2>
+        <ul><li><a href="../techniques/T0209.html">T0209</a> Compromise package registry or CDN origin</li><li><a href="../techniques/T0205.html">T0205</a> Compromise third-party CDN or hosted web asset</li><li><a href="../techniques/T0121.html">T0121</a> Compromised legitimate artifact</li><li><a href="../techniques/T0140.html">T0140</a> Harvest tokens from environment variables</li><li><a href="../techniques/T0201.html">T0201</a> Customers compromised</li></ul>
+        <h2><span class="stage">supply-chain</span> registry.coder.com origin pool</h2><div class="card"><p class="meta"><a href="../techniques/T0209.html">T0209</a> · Initial Access · Compromise package registry or CDN origin</p><p>Rogue origin IPs in the Cloudflare pool, not a stolen maintainer publish.</p></div><div class="card"><p class="meta"><a href="../techniques/T0205.html">T0205</a> · Initial Access · Compromise third-party CDN or hosted web asset</p><p>The CDN hostname stayed trusted while origin membership changed.</p></div><div class="card"><p class="meta"><a href="../techniques/T0121.html">T0121</a> · Resource Development · Compromised legitimate artifact</p><p>Real Terraform module names, malicious bytes.</p></div><div class="card"><p class="meta"><a href="../techniques/T0140.html">T0140</a> · Credential Access · Harvest tokens from environment variables</p><p>Provisioner env, cloud/AI keys, CI creds, OIDC, SSH.</p></div><div class="card"><p class="meta"><a href="../techniques/T0201.html">T0201</a> · Impact · Customers compromised</p><p>Anyone who pulled modules during the window ran the stealer.</p></div>
+        
+        <h2>Sources</h2>
+        <ul class='refs'><li><a href="https://github.com/coder/coder/security/advisories/GHSA-vx42-ghc9-gw65" rel="noopener">https://github.com/coder/coder/security/advisories/GHSA-vx42-ghc9-gw65</a></li></ul>
+        
+</main>
+
+    <footer>
+      <p>OSC&amp;R (Open Software Supply Chain Attack Reference) was created by
+      <a href="https://github.com/pbom-dev/OSCAR">pbom-dev</a> and its original contributors.
+      This fork is AI-maintained to continue that legacy. Apache-2.0. See
+      <a href="../about.html">About &amp; attribution</a>.</p>
+    </footer>
+</body>
+</html>

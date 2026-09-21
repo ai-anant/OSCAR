@@ -1,32 +1,46 @@
 entries:
-  - date: 2026-09-21
-    id: technique-origins
-    title: Where each technique idea came from
-    items:
-      - Added an origin kind and source URL on every technique, shown on the technique page and on /origins.html.
-      - Five original techniques had no references (T0107, T0134, T0143, T0149, T0161); they now cite ATT&CK, OWASP, SLSA, or Birsan as the analog that justifies them.
-
-  - date: 2026-09-21
-    id: portal-guidance-changelog
-    title: Public changelog, guidance gap-fill, and technique provenance
-    items:
-      - Added this changelog to the site so portal work is visible without reading git history.
-      - Compared OSC&R to OWASP Top 10 CI/CD, NIST SSDF (SP 800-218), SLSA threat model, CISA SSDF/EO 14028 lineage, and OxSecurity/Cider CI/CD research (the original PBOM authors).
-      - Added T0206 (forge or omit build provenance), T0207 (skip or forge artifact integrity), T0208 (compromise code-signing identity).
-      - Mapped those onto existing stories where they already happened (SolarWinds signing, Codecov unsigned script, Polyfill without SRI).
-      - Documented unused techniques as identified-from research or guidance, not as invented attacks. Matrix and technique pages now say observed vs identified.
-  - date: 2026-09-21
-    id: incidents-2026-matrix
-    title: 2026 incidents, matrix heat, search hides empty columns
-    items:
-      - Added AS16–AS22 from primary research (TanStack GHSA, OpenAI, CrowdSec, StepSecurity, CloudSEK, Rust blog, Brevo, Sansec, SafeDep).
-      - Matrix cells show incident counts and heat; search hides non-matches and empty tactic columns.
-      - Mapped previously unused techniques onto those cases where the fit was honest.
-  - date: 2026-09-21
-    id: fork-launch
-    title: AI-maintained fork and first public site
-    items:
-      - Forked pbom-dev/OSCAR to ai-anant/OSCAR. Attribution retained (Apache-2.0, NOTICE).
-      - Published matrix, technique pages, and incident mappings on GitHub Pages.
-      - Applied unmerged upstream PRs #113–#115 and open-issue content fixes.
-      - Added T0200–T0203, T0205 and stories AS7–AS15.
+- date: '2026-09-21'
+  id: ssc-2026-late
+  title: 'Late-2026 campaigns: runtime loaders, agent configs, registry origins'
+  items:
+  - Added T0209 (compromise package registry or CDN origin) and T0210 (poison AI coding-agent config).
+  - Added AS25–AS33 from first-party research and advisories (Checkmarx, CrowdStrike, Mandiant/Google, Jared Wray,
+    Morphisec, Coder GHSA, OpenSourceMalware, GTIG).
+  - Mapped runtime-hidden npm loaders, hidden HTTP remote deps, valid-provenance publishes, llms.txt package confusion,
+    and CDN origin-pool tampering.
+- date: 2026-09-21
+  id: technique-origins
+  title: Where each technique idea came from
+  items:
+  - Added an origin kind and source URL on every technique, shown on the technique page and on /origins.html.
+  - Five original techniques had no references (T0107, T0134, T0143, T0149, T0161); they now cite ATT&CK, OWASP,
+    SLSA, or Birsan as the analog that justifies them.
+- date: 2026-09-21
+  id: portal-guidance-changelog
+  title: Public changelog, guidance gap-fill, and technique provenance
+  items:
+  - Added this changelog to the site so portal work is visible without reading git history.
+  - Compared OSC&R to OWASP Top 10 CI/CD, NIST SSDF (SP 800-218), SLSA threat model, CISA SSDF/EO 14028 lineage,
+    and OxSecurity/Cider CI/CD research (the original PBOM authors).
+  - Added T0206 (forge or omit build provenance), T0207 (skip or forge artifact integrity), T0208 (compromise code-signing
+    identity).
+  - Mapped those onto existing stories where they already happened (SolarWinds signing, Codecov unsigned script,
+    Polyfill without SRI).
+  - Documented unused techniques as identified-from research or guidance, not as invented attacks. Matrix and technique
+    pages now say observed vs identified.
+- date: 2026-09-21
+  id: incidents-2026-matrix
+  title: 2026 incidents, matrix heat, search hides empty columns
+  items:
+  - Added AS16–AS22 from primary research (TanStack GHSA, OpenAI, CrowdSec, StepSecurity, CloudSEK, Rust blog, Brevo,
+    Sansec, SafeDep).
+  - Matrix cells show incident counts and heat; search hides non-matches and empty tactic columns.
+  - Mapped previously unused techniques onto those cases where the fit was honest.
+- date: 2026-09-21
+  id: fork-launch
+  title: AI-maintained fork and first public site
+  items:
+  - Forked pbom-dev/OSCAR to ai-anant/OSCAR. Attribution retained (Apache-2.0, NOTICE).
+  - Published matrix, technique pages, and incident mappings on GitHub Pages.
+  - Applied unmerged upstream PRs
+  - Added T0200–T0203, T0205 and stories AS7–AS15.

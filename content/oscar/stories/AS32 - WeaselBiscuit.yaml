@@ -1,0 +1,41 @@
+id: AS32
+type: Attack Story
+date: 2026-09
+
+summary: WeaselBiscuit npm import-time stealer
+description: |
+  OpenSourceMalware documented WeaselBiscuit, a stripped-down JS stealer
+  overlapping DPRK Contagious Interview tooling (BeaverTail/OtterCookie).
+  Thirteen npm packages delivered it. A detached Node child loads a payload
+  from an Npoint dead drop and runs it in memory. It profiles the host and
+  uploads Chrome extension LevelDB wholesale. No disk persistence, no RAT.
+  Several packages were still live on npm at publication.
+
+attacks:
+  - attack: npm WeaselBiscuit cluster
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Thirteen npm packages, including @biz44/* and process-* names.
+      - techniqueID: T0159
+        techName: Malicious artifact execution
+        tactic: Execution
+        comment: Import-triggered; payload executed in memory from a remote drop.
+      - techniqueID: T0184
+        techName: Harvesting sensitive information from files
+        tactic: Credential Access
+        comment: Wholesale upload of Chrome Local Extension Settings (LevelDB).
+      - techniqueID: T0108
+        techName: Accounts in public registry
+        tactic: Resource Development
+        comment: Cluster of related publisher accounts on npm.
+
+gaps: []
+
+links:
+  - https://opensourcemalware.com/blog/introducing-weaselbiscuit

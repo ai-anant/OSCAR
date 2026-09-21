@@ -838,3 +838,19 @@ techniques:
     sources:
     - https://slsa.dev/spec/v1.0/threats
     - https://orangematter.solarwinds.com/2021/05/07/an-investigative-update-of-the-cyberattack/
+  T0209:
+    summary: Compromise package registry or CDN origin
+    tactic: Initial Access
+    kind: incident
+    note: This fork, from Coder GHSA-vx42-ghc9-gw65 (rogue CDN origin pool).
+    sources:
+    - https://github.com/coder/coder/security/advisories/GHSA-vx42-ghc9-gw65
+  T0210:
+    summary: Poison AI coding-agent config or workspace
+    tactic: Persistence
+    kind: incident
+    note: This fork, from Morphisec Hades, GTIG DUSTMAKER, and Mandiant AI Risk 2026.
+    sources:
+    - https://www.morphisec.com/blog/when-your-ai-coding-assistant-becomes-the-attack-the-hades-supply-chain-campaign/
+    - https://cloud.google.com/blog/topics/threat-intelligence/from-prompting-to-autonomy-the-evolution-of-adversarial-ai
+    - https://cloud.google.com/security/resources/ai-risk-and-resilience-2026

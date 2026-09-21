@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>indexed-btree runtime npm loader · OSC&amp;R</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+    <header class="top">
+      <div class="ai-banner">This is an <strong>AI-maintained continuation</strong> of OSC&amp;R, preserving the original PBOM / pbom-dev work and carrying the project forward.</div>
+      <div class="bar">
+        <a class="brand" href="../index.html">OSC&amp;R</a>
+        <nav>
+          <a href="../index.html">Matrix</a>
+          <a href="../techniques/index.html">Techniques</a>
+          <a href="../incidents/index.html">Incident mapping</a>
+          <a href="../stories/index.html">Attack stories</a>
+          <a href="../guidance.html">Guidance</a>
+          <a href="../origins.html">Origins</a>
+          <a href="../changelog.html">Changelog</a>
+          <a href="../about.html">About</a>
+        </nav>
+      </div>
+    </header>
+<main>
+<p class="crumb">OSC&amp;R / <a href="index.html">Incidents</a> / AS25</p>
+
+        <p class="meta">AS25 · 2026-09</p>
+        <h1>indexed-btree runtime npm loader</h1>
+        <p>Checkmarx documented an npm campaign around indexed-btree (about 2 million<br>weekly downloads, impersonating sorted-btree) whose package.json had no<br>install scripts. The loader lives in BTree.prototype.set and fires when<br>the application uses the library (key == 100). Stage-1 fingerprints the<br>host and beacons Slack/Telegram; C2 is an Ethereum Sepolia contract;<br>stage-2 is X25519/ECDH-unwrapped on-chain. Nine sibling packages reached<br>366k–1.95M downloads. Blocking lifecycle scripts only moved the payload<br>from install time to import time.</p>
+        <h2>Mapped OSC&amp;R elements</h2>
+        <ul><li><a href="../techniques/T0129.html">T0129</a> Typosquatting</li><li><a href="../techniques/T0141.html">T0141</a> Fake developer reputation (Starjacking)</li><li><a href="../techniques/T0109.html">T0109</a> Publish malicious artifact</li><li><a href="../techniques/T0159.html">T0159</a> Malicious artifact execution</li><li><a href="../techniques/T0176.html">T0176</a> Disable or misconfigure security measures</li></ul>
+        <h2><span class="stage">supply-chain</span> npm indexed-btree and siblings</h2><div class="card"><p class="meta"><a href="../techniques/T0129.html">T0129</a> · Initial Access · Typosquatting</p><p>Impersonated the legitimate sorted-btree library.</p></div><div class="card"><p class="meta"><a href="../techniques/T0141.html">T0141</a> · Resource Development · Fake developer reputation (Starjacking)</p><p>A legitimate-looking GitHub repo with fabricated commit history;<br>the repo never contained the malicious code.</p></div><div class="card"><p class="meta"><a href="../techniques/T0109.html">T0109</a> · Resource Development · Publish malicious artifact</p><p>indexed-btree plus nine siblings were published to npm.</p></div><div class="card"><p class="meta"><a href="../techniques/T0159.html">T0159</a> · Execution · Malicious artifact execution</p><p>Execution was on library use, not on npm install — npm v12&#x27;s<br>install-script block never saw it.</p></div><div class="card"><p class="meta"><a href="../techniques/T0176.html">T0176</a> · Defense Evasion · Disable or misconfigure security measures</p><p>The malware could delete its files and strip the trigger from the<br>prototype after running.</p></div>
+        <div class="card gaps"><h3>Framework gaps noted</h3><ul><li>Runtime-hidden loaders that skip install hooks are still modeled as T0159 rather than a dedicated technique.</li></ul></div>
+        <h2>Sources</h2>
+        <ul class='refs'><li><a href="https://checkmarx.com/zero-post/npm-btree-malware-campaign-affects-millions-of-downloads-no-need-for-install-script/" rel="noopener">https://checkmarx.com/zero-post/npm-btree-malware-campaign-affects-millions-of-downloads-no-need-for-install-script/</a></li></ul>
+        
+</main>
+
+    <footer>
+      <p>OSC&amp;R (Open Software Supply Chain Attack Reference) was created by
+      <a href="https://github.com/pbom-dev/OSCAR">pbom-dev</a> and its original contributors.
+      This fork is AI-maintained to continue that legacy. Apache-2.0. See
+      <a href="../about.html">About &amp; attribution</a>.</p>
+    </footer>
+</body>
+</html>

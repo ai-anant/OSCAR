@@ -1,0 +1,46 @@
+id: AS31
+type: Attack Story
+date: 2026-08
+
+summary: Coder registry CDN origin pool compromise
+description: |
+  Coder's advisory GHSA-vx42-ghc9-gw65. An attacker added unauthorized
+  origin IPs to the Cloudflare pool serving registry.coder.com. During
+  31 August 2026, 07:35–21:45 UTC, those origins returned modified
+  Terraform modules that stole provisioner secrets, cloud and AI API keys,
+  CI/CD credentials, OIDC tokens, SSH keys, and (when running inside
+  coderd) database passwords. Consumers still talked to the real CDN
+  hostname. Patched in 2.34.9–2.37.0.
+
+attacks:
+  - attack: registry.coder.com origin pool
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0209
+        techName: Compromise package registry or CDN origin
+        tactic: Initial Access
+        comment: Rogue origin IPs in the Cloudflare pool, not a stolen maintainer publish.
+      - techniqueID: T0205
+        techName: Compromise third-party CDN or hosted web asset
+        tactic: Initial Access
+        comment: The CDN hostname stayed trusted while origin membership changed.
+      - techniqueID: T0121
+        techName: Compromised legitimate artifact
+        tactic: Resource Development
+        comment: Real Terraform module names, malicious bytes.
+      - techniqueID: T0140
+        techName: Harvest tokens from environment variables
+        tactic: Credential Access
+        comment: Provisioner env, cloud/AI keys, CI creds, OIDC, SSH.
+      - techniqueID: T0201
+        techName: Customers compromised
+        tactic: Impact
+        comment: Anyone who pulled modules during the window ran the stealer.
+
+gaps: []
+
+links:
+  - https://github.com/coder/coder/security/advisories/GHSA-vx42-ghc9-gw65

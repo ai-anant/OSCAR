@@ -1,0 +1,59 @@
+id: AS27
+type: Attack Story
+date: 2026-09
+
+summary: Hijacked AI coding assistant spreads Shai-Hulud
+description: |
+  Mandiant's AI Risk and Resilience 2026 report (case study 1) describes an
+  IR where an attacker hijacked an active AI coding-assistant session. The
+  assistant recommended attacker-poisoned software; the human accepted; the
+  same session installed an infostealer via PyPI, stole GitHub OAuth tokens,
+  and deployed Shai-Hulud across about 100 internal repositories. The actor
+  then poisoned a package in the company's official namespace, which a
+  second employee pulled.
+
+attacks:
+  - attack: AI coding-assistant session
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0152
+        techName: IDE
+        tactic: Execution
+        comment: The live assistant session was the install oracle.
+      - techniqueID: T0210
+        techName: Poison AI coding-agent config or workspace
+        tactic: Persistence
+        comment: Hijacked session recommended and then installed poisoned software.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Poisoned PyPI package plus later official-namespace poison.
+      - techniqueID: T0151
+        techName: Installation scripts
+        tactic: Execution
+        comment: Infostealer ran from the accepted PyPI install.
+      - techniqueID: T0112
+        techName: Compromised token
+        tactic: Initial Access
+        comment: GitHub OAuth tokens stolen from the developer environment.
+      - techniqueID: T0169
+        techName: Push implants across repositories
+        tactic: Lateral Movement
+        comment: Shai-Hulud spread across about 100 internal repositories.
+      - techniqueID: T0200
+        techName: Proprietary data stolen
+        tactic: Impact
+        comment: Secrets and product source were taken from those repos.
+      - techniqueID: T0121
+        techName: Compromised legitimate artifact
+        tactic: Resource Development
+        comment: A package in the company's official namespace was then poisoned.
+
+gaps:
+  - AI-recommended dependencies have no lockfile and no first-class OSC&R technique beyond T0210/T0152.
+
+links:
+  - https://cloud.google.com/security/resources/ai-risk-and-resilience-2026

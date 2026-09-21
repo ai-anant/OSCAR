@@ -1,0 +1,46 @@
+id: AS26
+type: Attack Story
+date: 2026-09
+
+summary: PhantomRaven hidden HTTP npm dependencies
+description: |
+  CrowdStrike described PhantomRaven, an LLM-generated npm info-stealer.
+  The typosquat package looks like Hello-world; the malware is an HTTP
+  remote dependency that npm fetches at install and that the npm web UI
+  does not show. A preinstall hook then runs and harvests GitHub Actions,
+  GitLab, Jenkins, and CircleCI environment variables. PyPI's similar-name
+  policy stopped a Python twin; npm did not.
+
+attacks:
+  - attack: npm typosquat + remote HTTP dependency
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0129
+        techName: Typosquatting
+        tactic: Initial Access
+        comment: The visible package is a typosquat; it is not where the payload lives.
+      - techniqueID: T0108
+        techName: Accounts in public registry
+        tactic: Resource Development
+        comment: Operator accounts published the typosquats and remote-dep hosts.
+      - techniqueID: T0151
+        techName: Installation scripts
+        tactic: Execution
+        comment: preinstall runs after npm fetches the hidden HTTP dependency.
+      - techniqueID: T0140
+        techName: Harvest tokens from environment variables
+        tactic: Credential Access
+        comment: Harvests CI env vars across GitHub Actions, GitLab, Jenkins, CircleCI.
+      - techniqueID: T0193
+        techName: Sensitive information in environment variables
+        tactic: Collection
+        comment: CI secrets in the job environment were the collection target.
+
+gaps:
+  - Hidden HTTP remote dependencies that the registry UI does not display are only implied by T0151.
+
+links:
+  - https://www.crowdstrike.com/en-us/blog/phantomraven-llm-generated-information-stealer-for-bug-bounty-hunting/

@@ -1,0 +1,43 @@
+id: AS30
+type: Attack Story
+date: 2026-08
+
+summary: Hades .pth and AI-assistant config persistence
+description: |
+  Morphisec described the Hades wave of the npm/PyPI campaign family.
+  Rather than monitored install scripts, Hades plants a Python .pth file
+  that runs at interpreter startup, and injects instructions into config
+  for 14 AI coding tools (Claude Code, Cursor, Copilot, Gemini, Codex,
+  and others). Uninstalling the package does not clear the box. Totals
+  reported for the wave include 294,842 secrets from 6,943 developer
+  machines. A comment in the malware prompt-injects AI security reviewers
+  into writing a clean report.
+
+attacks:
+  - attack: Developer machines and AI tool configs
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Malicious npm/PyPI packages in the same family as LiteLLM/Trivy waves.
+      - techniqueID: T0210
+        techName: Poison AI coding-agent config or workspace
+        tactic: Persistence
+        comment: Config injection across 14 AI coding tools; the assistant runs attacker code next open.
+      - techniqueID: T0154
+        techName: Malicious IDE extension
+        tactic: Initial Access
+        comment: Agent/IDE config is the persistence and execution vector.
+      - techniqueID: T0140
+        techName: Harvest tokens from environment variables
+        tactic: Credential Access
+        comment: Secrets harvested from developer machines at scale.
+
+gaps: []
+
+links:
+  - https://www.morphisec.com/blog/when-your-ai-coding-assistant-becomes-the-attack-the-hades-supply-chain-campaign/

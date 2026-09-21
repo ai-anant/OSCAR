@@ -1,0 +1,39 @@
+id: T0210
+type: Technique
+
+tactic: Persistence
+
+realm:
+  - CI/CD Posture
+  - Code Security
+  - SCM Posture
+
+summary: Poison AI coding-agent config or workspace
+
+description: |
+  The attacker writes into hidden agent directories and config that
+  developers and CI treat as local clutter — `.claude/`, `.cursor/`,
+  `.vscode/`, Copilot/Gemini/Codex settings, MCP server entries, or
+  Python `.pth` startup hooks. The next time the human or the agent
+  opens the project, attacker instructions run with the developer's
+  already-granted tools. Uninstalling a malicious package does not
+  clear this. Observed in Morphisec's Hades campaign, GTIG DUSTMAKER,
+  and Mandiant's hijacked coding-assistant case.
+
+mitigations:
+  - M1220
+  - M1120
+  - M1720
+
+detections:
+  - D1510
+  - D1590
+
+references:
+  - https://www.morphisec.com/blog/when-your-ai-coding-assistant-becomes-the-attack-the-hades-supply-chain-campaign/
+  - https://cloud.google.com/blog/topics/threat-intelligence/from-prompting-to-autonomy-the-evolution-of-adversarial-ai
+  - https://cloud.google.com/security/resources/ai-risk-and-resilience-2026
+
+metadata:
+  version: 0.1
+  state: draft
