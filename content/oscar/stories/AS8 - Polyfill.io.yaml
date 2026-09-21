@@ -49,6 +49,12 @@ attacks:
         comment: |
           Browsers executed the substituted script in the origin of every
           embedding site.
+      - techniqueID: T0207
+        techName: Skip or forge artifact integrity verification
+        tactic: Defense Evasion
+        comment: |
+          Sites hotlinked the CDN without Subresource Integrity, so the bytes
+          behind the trusted URL could change without a check failing.
       - techniqueID: T0201
         techName: Customers compromised
         tactic: Impact

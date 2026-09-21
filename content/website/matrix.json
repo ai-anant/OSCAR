@@ -176,7 +176,7 @@
         ],
         "url": "techniques/T0109.html",
         "description": "Public registries are widely used by developers and organizations to download and distribute software packages and container images, making them an attractive target for attackers.\nIn this type of attack, the attacker creates a package or container image that contains malicious code or files, such as a backdoor or other malware.\nThe attacker then uploads the package or image to PyPI, DockerHub or other registry, posing as a legitimate user or creating a fake account.\nOnce the package or image is uploaded, it becomes available for download by other users who may unsuspectingly use it in their projects.\nThe supply chain attack can have far-reaching consequences as it can affect all systems that rely on the malicious package or image.\nFor example, a Python package that is downloaded from PyPI may be used by multiple applications and libraries, potentially compromising all systems that use it.\nSimilarly, a container image with a malicious payload may be used to deploy an application across multiple environments, leading to a widespread compromise.\n",
-        "incidentCount": 11
+        "incidentCount": 12
       },
       {
         "id": "T0110",
@@ -287,7 +287,7 @@
         ],
         "url": "techniques/T0115.html",
         "description": "Dependency repository hijacking (aka repo jacking) is an obscure supply chain vulnerability, conceptually similar to subdomain takeover, that impacts over 70,000 open-source projects and affects everything from web frameworks to cryptocurrencies. \nThis vulnerability is trivial to exploit, results in remote code injection, and affects major projects from companies like Google, GitHub, Facebook, Kubernetes, NodeJS, Amazon, and many others. \nEvery project whose compilation depends on dynamically linked code from GitHub repositories is potentially vulnerable. \nWhen the linked repository owner changes their username, it becomes immediately available to be re-registered by anyone. \nThis means that any project that linked back to the original repository URL has now become vulnerable to remote code injection through dependency hijacking. \nA malicious attacker can register the old GitHub username, recreate the repository, and use it to serve malicious code to any project that depends on it.\n",
-        "incidentCount": 0
+        "incidentCount": 1
       },
       {
         "id": "T0116",
@@ -563,7 +563,7 @@
         ],
         "url": "techniques/T0197.html",
         "description": "It is possible to install a package not from an official package repository - but rather install directly using a URL. Packages from official repositories are usually vetted for security vulnerabilities. Installing from an unverified URL can expose your system to malicious software, including viruses, malware, or other security threats.\n",
-        "incidentCount": 1
+        "incidentCount": 2
       },
       {
         "id": "T0205",
@@ -689,7 +689,7 @@
         ],
         "url": "techniques/T0166.html",
         "description": "The Trigger pipeline execution (Poisoned pipeline execution) attack abuses permissions against an SCM repository, in a way that causes a CI pipeline to execute malicious commands.\nUsers that have permissions to manipulate the CI configuration files, or other files which the CI pipeline job relies on, can modify them to contain malicious commands, ultimately poisoning the CI pipeline executing these commands.\nPipelines executing unreviewed code, for example those which are triggered directly off of pull requests or commits to arbitrary repository branches, are more susceptible to Trigger pipeline execution. \nThe reason is that these scenarios, by design, contain code which has not undergone any reviews or approvals.\nOnce able to execute malicious code within the CI pipeline, the attacker can conduct a wide array of malicious operations, all within the context of the pipelines identity.\n",
-        "incidentCount": 2
+        "incidentCount": 3
       },
       {
         "id": "T0172",
@@ -769,7 +769,7 @@
         ],
         "url": "techniques/T0148.html",
         "description": "In this attack, the attacker gains access to a self-hosted runner, which is a server or a virtual machine that runs the CI/CD pipelines for an organization. \nOnce access is gained, the attacker creates a scheduled task or job that runs at regular intervals, even after the initial attack has been detected and removed.\nThe scheduled task or job can be programmed to perform a variety of malicious activities, such as downloading and executing additional malware or maintaining a persistent backdoor for future attacks. \n",
-        "incidentCount": 0
+        "incidentCount": 1
       },
       {
         "id": "T0161",
@@ -859,7 +859,7 @@
         ],
         "url": "techniques/T0132.html",
         "description": "A container/runner agent privilege escalation attack is a security threat where an attacker exploits vulnerabilities in a container/runner agent to gain elevated privileges or access to sensitive resources they are not authorized to have. \nAttackers may exploit software vulnerabilities or weaknesses in container security controls to gain access to privileged resources, execute arbitrary code, or escape the container/runner agent and gain access to the host system. \n",
-        "incidentCount": 1
+        "incidentCount": 2
       },
       {
         "id": "T0164",
@@ -974,9 +974,48 @@
         "url": "techniques/T0198.html",
         "description": "Within the CI/CD workflow, code can be pushed at different stages. During the build process, plugins are often utilized for tasks like building and testing. However, if a third-party plugin is compromised, malicious code can be introduced. For instance, an attacker gains control over a Maven plugin (a popular build framework) and inject malware during the build process. SBOM tools may not be effective in detecting such scenarios as they primarily operate on source code.\n",
         "incidentCount": 3
+      },
+      {
+        "id": "T0206",
+        "name": "Forge or omit build provenance",
+        "tooltip": "Forge or omit build provenance",
+        "tags": [
+          "CI/CD Posture",
+          "Artifact Security",
+          "SCM Posture"
+        ],
+        "url": "techniques/T0206.html",
+        "description": "The attacker ships an artifact without truthful provenance \u2014 no SBOM, a\nforged SLSA attestation, or a provenance document that names the wrong\nsource repo, builder, or commit. NIST SSDF PS.3.2 and SLSA Build L2+\nexist so consumers can reject unofficial builds; forging or skipping that\npaperwork is how a SolarWinds-style implant still looks like a legitimate\nvendor release. Distinct from malicious code in the artifact (T0191): this\ntechnique is about lying about *how* the artifact was produced.\n",
+        "incidentCount": 1
+      },
+      {
+        "id": "T0207",
+        "name": "Skip or forge artifact integrity verification",
+        "tooltip": "Skip or forge artifact integrity verification",
+        "tags": [
+          "Artifact Security",
+          "Open Source Security",
+          "CI/CD Posture"
+        ],
+        "url": "techniques/T0207.html",
+        "description": "Consumers are supposed to verify packages, containers, and third-party\nscripts (checksums, signatures, Sigstore, Subresource Integrity). The\nattacker relies on that check never running, or supplies a matching but\nattacker-controlled signature. OWASP CICD-SEC-9 names the control gap;\nthis technique is the attacker side. Polyfill.io hotlinks without SRI and\nunsigned CI helper scripts are typical realizations.\n",
+        "incidentCount": 2
+      },
+      {
+        "id": "T0208",
+        "name": "Compromise code-signing identity",
+        "tooltip": "Compromise code-signing identity",
+        "tags": [
+          "Artifact Security",
+          "CI/CD Posture",
+          "Code Security"
+        ],
+        "url": "techniques/T0208.html",
+        "description": "The attacker signs malware with a stolen or issuer-trusted code-signing\ncertificate, CI OIDC identity, or package-registry signing key so that\nsignature verification succeeds. SolarWinds Orion updates were signed as\nSolarWinds. Distinct from spoofed git commits (T0195) and from forging\nprovenance documents (T0206): here the cryptographic identity is real\nand compromised.\n",
+        "incidentCount": 1
       }
     ],
-    "amount": 8,
+    "amount": 11,
     "tooltip": "Defense Evasion",
     "tacticid": "TA07"
   },

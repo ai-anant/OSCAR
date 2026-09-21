@@ -30,9 +30,8 @@ detections:
   - D1500
 
 references: 
-  - https://www.malwarebytes.com/blog/news/2022/11/github-patches-the-latest-flaw-that-allowed-repojacking
-  - https://thehackernews.com/2022/10/github-repojacking-bug-couldve-allowed.html
   - https://blog.securityinnovation.com/repo-jacking-exploiting-the-dependency-supply-chain
+  - https://github.blog/2018-04-18-new-tools-for-open-source-maintainers/#popular-repository-namespace-retirement
 
 metadata: 
     version: 0.2

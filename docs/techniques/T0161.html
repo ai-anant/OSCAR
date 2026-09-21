@@ -18,6 +18,8 @@
           <a href="../techniques/index.html">Techniques</a>
           <a href="../incidents/index.html">Incident mapping</a>
           <a href="../stories/index.html">Attack stories</a>
+          <a href="../guidance.html">Guidance</a>
+          <a href="../changelog.html">Changelog</a>
           <a href="../about.html">About</a>
         </nav>
       </div>
@@ -25,7 +27,7 @@
 <main>
 <p class="crumb">OSC&amp;R / <a href="index.html">Techniques</a> / T0161</p>
 
-        <p class="meta">T0161 · Persistence · TA05</p>
+        <p class="meta">T0161 · Persistence · TA05 · identified from research/guidance</p>
         <h1>Implant in zombie instance</h1>
         <div class="chips"><span class="chip">Cloud Security</span></div>
         <p>Implant in zombie instance is a persistence tactic used in cloud security to maintain unauthorized access to a compromised instance. <br>This technique involves planting malicious code or a backdoor into a compromised instance and using it as a &quot;zombie&quot; or &quot;bot&quot; to perform further malicious actions.<br>Once an instance is compromised, the attacker can implant a backdoor to ensure future access even if the original vulnerability is fixed or the stolen credentials are changed.<br>The implanted code can be designed to run persistently in the background, making it difficult to detect. <br>Attackers can use the zombie instance to perform various malicious actions, such as stealing sensitive data, launching DDoS attacks, or using the instance for cryptocurrency mining.</p>
@@ -34,7 +36,7 @@
         <ul><li><span class="id">M1532</span> Implement least privilege access controls</li><li><span class="id">M1550</span> Implement strict access control for clouds</li></ul>
         <h2>Detections</h2>
         <ul><li><span class="id">D1510</span> Implement Intrusion Detection System and anti-malware</li></ul>
-        
+        <div class='notice'><strong>Identified, not yet observed here.</strong> OSC&amp;R (like ATT&amp;CK) lists techniques from pentest research, OWASP/NIST/SLSA guidance, and analog attacker behavior — not only from named public breaches. No incident in this corpus maps here yet. The references below are how the original authors knew it existed.</div>
         <h2>References</h2>
         <p class='muted'>None listed.</p>
         

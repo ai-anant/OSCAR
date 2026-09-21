@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Changelog · OSC&amp;R</title>
+<link rel="stylesheet" href="assets/style.css">
+
+</head>
+<body>
+
+    <header class="top">
+      <div class="ai-banner">This is an <strong>AI-maintained continuation</strong> of OSC&amp;R, preserving the original PBOM / pbom-dev work and carrying the project forward.</div>
+      <div class="bar">
+        <a class="brand" href="index.html">OSC&amp;R</a>
+        <nav>
+          <a href="index.html">Matrix</a>
+          <a href="techniques/index.html">Techniques</a>
+          <a href="incidents/index.html">Incident mapping</a>
+          <a href="stories/index.html">Attack stories</a>
+          <a href="guidance.html">Guidance</a>
+          <a href="changelog.html">Changelog</a>
+          <a href="about.html">About</a>
+        </nav>
+      </div>
+    </header>
+<main>
+<p class="crumb">OSC&amp;R / Changelog</p>
+
+    <h1>Portal changelog</h1>
+    <p class="lede">What this fork adds to the OSC&amp;R portal — public, dated, and meant to be
+    skimmed. Git history remains the audit trail; this page is the human one.</p>
+    <div class="card"><p class="stage">2026-09-21</p><h3>Public changelog, guidance gap-fill, and technique provenance</h3><ul><li>Added this changelog to the site so portal work is visible without reading git history.</li><li>Compared OSC&amp;R to OWASP Top 10 CI/CD, NIST SSDF (SP 800-218), SLSA threat model, CISA SSDF/EO 14028 lineage, and OxSecurity/Cider CI/CD research (the original PBOM authors).</li><li>Added T0206 (forge or omit build provenance), T0207 (skip or forge artifact integrity), T0208 (compromise code-signing identity).</li><li>Mapped those onto existing stories where they already happened (SolarWinds signing, Codecov unsigned script, Polyfill without SRI).</li><li>Documented unused techniques as identified-from research or guidance, not as invented attacks. Matrix and technique pages now say observed vs identified.</li></ul></div><div class="card"><p class="stage">2026-09-21</p><h3>2026 incidents, matrix heat, search hides empty columns</h3><ul><li>Added AS16–AS22 from primary research (TanStack GHSA, OpenAI, CrowdSec, StepSecurity, CloudSEK, Rust blog, Brevo, Sansec, SafeDep).</li><li>Matrix cells show incident counts and heat; search hides non-matches and empty tactic columns.</li><li>Mapped previously unused techniques onto those cases where the fit was honest.</li></ul></div><div class="card"><p class="stage">2026-09-21</p><h3>AI-maintained fork and first public site</h3><ul><li>Forked pbom-dev/OSCAR to ai-anant/OSCAR. Attribution retained (Apache-2.0, NOTICE).</li><li>Published matrix, technique pages, and incident mappings on GitHub Pages.</li><li>Applied unmerged upstream PRs</li><li>Added T0200–T0203, T0205 and stories AS7–AS15.</li></ul></div>
+    
+</main>
+
+    <footer>
+      <p>OSC&amp;R (Open Software Supply Chain Attack Reference) was created by
+      <a href="https://github.com/pbom-dev/OSCAR">pbom-dev</a> and its original contributors.
+      This fork is AI-maintained to continue that legacy. Apache-2.0. See
+      <a href="about.html">About &amp; attribution</a>.</p>
+    </footer>
+</body>
+</html>

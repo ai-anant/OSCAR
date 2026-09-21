@@ -18,6 +18,8 @@
           <a href="../techniques/index.html">Techniques</a>
           <a href="../incidents/index.html">Incident mapping</a>
           <a href="../stories/index.html">Attack stories</a>
+          <a href="../guidance.html">Guidance</a>
+          <a href="../changelog.html">Changelog</a>
           <a href="../about.html">About</a>
         </nav>
       </div>
@@ -25,7 +27,7 @@
 <main>
 <p class="crumb">OSC&amp;R / <a href="index.html">Techniques</a> / T0102</p>
 
-        <p class="meta">T0102 · Reconnaissance · TA01</p>
+        <p class="meta">T0102 · Reconnaissance · TA01 · observed in 1 incident(s)</p>
         <h1>Discover used open-source dependencies</h1>
         <div class="chips"><span class="chip">Container Security</span> <span class="chip">Open Source Security</span> <span class="chip">SCM Posture</span></div>
         <p>This technique involves identifying the open-source dependencies used in an application, such as third-party libraries, frameworks, and other related components.<br>By identifying the specific open-source dependencies used in an application, an attacker can gain insights into the potential vulnerabilities associated with those components, as well as potential attack vectors and weak spots in the application.<br>For example, an attacker might use this technique to identify specific versions of a vulnerable open-source library used in an application, which could then be exploited to gain unauthorized access to the application or the underlying system.</p>
@@ -34,7 +36,7 @@
         <ul><li><span class="id">M1500</span> Verify third-party artifacts and open-source libraries</li><li><span class="id">M1502</span> Define trusted package managers and repositories</li><li><span class="id">M1503</span> Implement SCA analysis</li><li><span class="id">M1720</span> Implement regular patches and updates</li><li><span class="id">M1732</span> Implement code scanning for security risks</li></ul>
         <h2>Detections</h2>
         <ul><li><span class="id">D1500</span> Configure monitoring of used artifacts and open-source libraries</li><li><span class="id">D1510</span> Implement Intrusion Detection System and anti-malware</li></ul>
-        <h2>Seen in incidents</h2><ul><li><a href="../incidents/AS10.html">Dependency confusion (Alex Birsan)</a></li></ul>
+        <h2>Observed in incidents (1)</h2><ul><li><a href="../incidents/AS10.html">Dependency confusion (Alex Birsan)</a></li></ul>
         <h2>References</h2>
         <ul class='refs'><li><a href="https://cheatsheetseries.owasp.org/cheatsheets/Vulnerable_Dependency_Management_Cheat_Sheet.html" rel="noopener">https://cheatsheetseries.owasp.org/cheatsheets/Vulnerable_Dependency_Management_Cheat_Sheet.html</a></li></ul>
         

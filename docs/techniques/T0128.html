@@ -18,6 +18,8 @@
           <a href="../techniques/index.html">Techniques</a>
           <a href="../incidents/index.html">Incident mapping</a>
           <a href="../stories/index.html">Attack stories</a>
+          <a href="../guidance.html">Guidance</a>
+          <a href="../changelog.html">Changelog</a>
           <a href="../about.html">About</a>
         </nav>
       </div>
@@ -25,7 +27,7 @@
 <main>
 <p class="crumb">OSC&amp;R / <a href="index.html">Techniques</a> / T0128</p>
 
-        <p class="meta">T0128 · Initial Access · TA03</p>
+        <p class="meta">T0128 · Initial Access · TA03 · identified from research/guidance</p>
         <h1>Permissive network access</h1>
         <div class="chips"><span class="chip">Cloud Security</span> <span class="chip">Infrastructure as code</span> <span class="chip">CI/CD Posture</span></div>
         <p>Permissive network access is an attack technique where an attacker targets and exploits network configurations that allow overly permissive access to a cloud-based network. <br>This could include open ports, insecure protocols, or misconfigured network security groups (NSGs). <br>An attacker can leverage this permissive access to launch a variety of attacks, such as network scanning, port scanning, or remote code execution.<br>For example, an organization may have a public-facing web application that requires access to a backend database server. <br>If the NSG rules for the database server are too permissive, allowing access from any IP address, an attacker could potentially gain access to the database server from anywhere on the internet.</p>
@@ -34,7 +36,7 @@
         <ul><li><span class="id">M1280</span> Implement least privilege network access</li><li><span class="id">M1281</span> Configure network security group</li><li><span class="id">M1282</span> Secure default configurations</li><li><span class="id">M1550</span> Implement strict access control for clouds</li></ul>
         <h2>Detections</h2>
         <ul><li><span class="id">D1260</span> Implement regular security audit and review</li><li><span class="id">D1261</span> Implement penetration testing</li><li><span class="id">D1262</span> Implement vulnerability assessment</li><li><span class="id">D1510</span> Implement Intrusion Detection System and anti-malware</li></ul>
-        
+        <div class='notice'><strong>Identified, not yet observed here.</strong> OSC&amp;R (like ATT&amp;CK) lists techniques from pentest research, OWASP/NIST/SLSA guidance, and analog attacker behavior — not only from named public breaches. No incident in this corpus maps here yet. The references below are how the original authors knew it existed.</div>
         <h2>References</h2>
         <ul class='refs'><li><a href="https://sysdig.com/blog/aws-security-groups-guide/" rel="noopener">https://sysdig.com/blog/aws-security-groups-guide/</a></li></ul>
         

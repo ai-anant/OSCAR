@@ -18,6 +18,8 @@
           <a href="../techniques/index.html">Techniques</a>
           <a href="../incidents/index.html">Incident mapping</a>
           <a href="../stories/index.html">Attack stories</a>
+          <a href="../guidance.html">Guidance</a>
+          <a href="../changelog.html">Changelog</a>
           <a href="../about.html">About</a>
         </nav>
       </div>
@@ -25,7 +27,7 @@
 <main>
 <p class="crumb">OSC&amp;R / <a href="index.html">Techniques</a> / T0126</p>
 
-        <p class="meta">T0126 · Initial Access · TA03</p>
+        <p class="meta">T0126 · Initial Access · TA03 · identified from research/guidance</p>
         <h1>Exposed storage</h1>
         <div class="chips"><span class="chip">Cloud Security</span> <span class="chip">Infrastructure as code</span></div>
         <p>Exposed storage is an attack technique where an attacker targets and exploits cloud storage containers or buckets that are publicly accessible or have weak access controls. <br>The attacker can gain access to sensitive data stored in the containers, such as personal information, financial data, or intellectual property.<br>Exposed storage can occur due to misconfigured access controls, where the data is mistakenly made publicly available or accessible to unauthorized users. <br>This can occur when the default security settings for cloud storage services are not properly adjusted, or when access controls are not regularly reviewed and updated.</p>
@@ -34,7 +36,7 @@
         <ul><li><span class="id">M1240</span> Enable data encryption at rest</li><li><span class="id">M1260</span> Implement least privilege access</li><li><span class="id">M1261</span> Implement proper access control for cloud storages</li><li><span class="id">M1550</span> Implement strict access control for clouds</li></ul>
         <h2>Detections</h2>
         <ul><li><span class="id">D1510</span> Implement Intrusion Detection System and anti-malware</li><li><span class="id">D1260</span> Implement regular security audit and review</li><li><span class="id">D1261</span> Implement penetration testing</li><li><span class="id">D1262</span> Implement vulnerability assessment</li></ul>
-        
+        <div class='notice'><strong>Identified, not yet observed here.</strong> OSC&amp;R (like ATT&amp;CK) lists techniques from pentest research, OWASP/NIST/SLSA guidance, and analog attacker behavior — not only from named public breaches. No incident in this corpus maps here yet. The references below are how the original authors knew it existed.</div>
         <h2>References</h2>
         <ul class='refs'><li><a href="https://www.trendmicro.com/vinfo/es/security/news/virtualization-and-cloud/a-misconfigured-amazon-s3-exposed-almost-50-thousand-pii-in-australia" rel="noopener">https://www.trendmicro.com/vinfo/es/security/news/virtualization-and-cloud/a-misconfigured-amazon-s3-exposed-almost-50-thousand-pii-in-australia</a></li><li><a href="https://www.darkreading.com/application-security/cloud-misconfig-exposes-3tb-sensitive-airport-data-amazon-s3-bucket" rel="noopener">https://www.darkreading.com/application-security/cloud-misconfig-exposes-3tb-sensitive-airport-data-amazon-s3-bucket</a></li></ul>
         

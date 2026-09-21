@@ -1,0 +1,36 @@
+id: T0207
+type: Technique
+
+tactic: Defense Evasion
+
+realm:
+  - Artifact Security
+  - Open Source Security
+  - CI/CD Posture
+
+summary: Skip or forge artifact integrity verification
+
+description: |
+  Consumers are supposed to verify packages, containers, and third-party
+  scripts (checksums, signatures, Sigstore, Subresource Integrity). The
+  attacker relies on that check never running, or supplies a matching but
+  attacker-controlled signature. OWASP CICD-SEC-9 names the control gap;
+  this technique is the attacker side. Polyfill.io hotlinks without SRI and
+  unsigned CI helper scripts are typical realizations.
+
+mitigations:
+  - M1200
+  - M1291
+  - M1090
+
+detections:
+  - D1090
+  - D1500
+
+references:
+  - https://owasp.org/www-project-top-10-ci-cd-security-risks/
+  - https://www.w3.org/TR/SRI/
+
+metadata:
+  version: 0.1
+  state: draft

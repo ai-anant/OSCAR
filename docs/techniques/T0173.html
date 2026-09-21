@@ -18,6 +18,8 @@
           <a href="../techniques/index.html">Techniques</a>
           <a href="../incidents/index.html">Incident mapping</a>
           <a href="../stories/index.html">Attack stories</a>
+          <a href="../guidance.html">Guidance</a>
+          <a href="../changelog.html">Changelog</a>
           <a href="../about.html">About</a>
         </nav>
       </div>
@@ -25,7 +27,7 @@
 <main>
 <p class="crumb">OSC&amp;R / <a href="index.html">Techniques</a> / T0173</p>
 
-        <p class="meta">T0173 · Execution · TA04</p>
+        <p class="meta">T0173 · Execution · TA04 · identified from research/guidance</p>
         <h1>Auto merge rules in SCM</h1>
         <div class="chips"><span class="chip">SCM Posture</span></div>
         <p>Auto merge rules in SCM (Source Code Management) are rules that determine how code changes should be merged automatically into a main code repository or branch.<br>While auto merge rules in SCM can help to streamline the code review and merge process, there are several security risks to consider, including:<br>1. Malicious code injection: Auto merge rules may allow malicious code changes to be merged into the code repository, compromising the security of the system.<br>2. Vulnerability propagation: Automatic merges can propagate security vulnerabilities to the main code repository or branch, allowing attackers to exploit these vulnerabilities to gain unauthorized access to the system.<br>3. Human error: Auto merge rules can lead to errors in the code repository, such as overwriting critical code or merging code that has not been properly reviewed.<br>4. Compliance violations: Auto merge rules can violate compliance requirements, such as failing to properly audit code changes or not properly segregating code changes between different teams.</p>
@@ -34,7 +36,7 @@
         <ul><li><span class="id">M1730</span> Implement code reviews</li><li><span class="id">M1731</span> Implement verification of signed commits</li><li><span class="id">M1732</span> Implement code scanning for security risks</li><li><span class="id">M1860</span> Implement strong authentication mechanisms</li><li><span class="id">M1861</span> Implement strong authorization mechanisms</li></ul>
         <h2>Detections</h2>
         <ul><li><span class="id">D1262</span> Implement vulnerability assessment</li><li><span class="id">D1500</span> Configure monitoring of used artifacts and open-source libraries</li><li><span class="id">D1510</span> Implement Intrusion Detection System and anti-malware</li></ul>
-        
+        <div class='notice'><strong>Identified, not yet observed here.</strong> OSC&amp;R (like ATT&amp;CK) lists techniques from pentest research, OWASP/NIST/SLSA guidance, and analog attacker behavior — not only from named public breaches. No incident in this corpus maps here yet. The references below are how the original authors knew it existed.</div>
         <h2>References</h2>
         <ul class='refs'><li><a href="https://securityintelligence.com/posts/abusing-source-code-management-systems/" rel="noopener">https://securityintelligence.com/posts/abusing-source-code-management-systems/</a></li></ul>
         

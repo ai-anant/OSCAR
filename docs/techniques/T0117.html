@@ -18,6 +18,8 @@
           <a href="../techniques/index.html">Techniques</a>
           <a href="../incidents/index.html">Incident mapping</a>
           <a href="../stories/index.html">Attack stories</a>
+          <a href="../guidance.html">Guidance</a>
+          <a href="../changelog.html">Changelog</a>
           <a href="../about.html">About</a>
         </nav>
       </div>
@@ -25,7 +27,7 @@
 <main>
 <p class="crumb">OSC&amp;R / <a href="index.html">Techniques</a> / T0117</p>
 
-        <p class="meta">T0117 · Execution · TA04</p>
+        <p class="meta">T0117 · Execution · TA04 · identified from research/guidance</p>
         <h1>SQL injection</h1>
         <div class="chips"><span class="chip">Code Security</span></div>
         <p>SQL injection is a web security vulnerability that allows an attacker to interfere with the queries that an application makes to its database. <br>A SQL injection attack consists of insertion or &quot;injection&quot; of a SQL query via the input data from the client to the application. <br>Successful SQL injection exploit can read sensitive data from the database, modify database data (Insert/Update/Delete), execute administration operations on the database (such as shutdown the DBMS), recover the content of a given file present on the DBMS file system and in some cases issue commands to the operating system.</p>
@@ -34,7 +36,7 @@
         <ul><li><span class="id">M1170</span> Use parameterized queries</li><li><span class="id">M1171</span> Use stored procedures</li><li><span class="id">M1172</span> Use allow-list input validation</li><li><span class="id">M1173</span> Escape all user supplied input</li><li><span class="id">M1883</span> Implement Web Application Firewall</li></ul>
         <h2>Detections</h2>
         <ul><li><span class="id">D1170</span> Configure application audit logs to detect injection attacks</li><li><span class="id">D1171</span> Implement Web Application Firewall</li></ul>
-        
+        <div class='notice'><strong>Identified, not yet observed here.</strong> OSC&amp;R (like ATT&amp;CK) lists techniques from pentest research, OWASP/NIST/SLSA guidance, and analog attacker behavior — not only from named public breaches. No incident in this corpus maps here yet. The references below are how the original authors knew it existed.</div>
         <h2>References</h2>
         <ul class='refs'><li><a href="https://www.spiceworks.com/it-security/application-security/articles/what-is-sql-injection/" rel="noopener">https://www.spiceworks.com/it-security/application-security/articles/what-is-sql-injection/</a></li><li><a href="https://owasp.org/www-community/attacks/SQL_Injection" rel="noopener">https://owasp.org/www-community/attacks/SQL_Injection</a></li><li><a href="https://portswigger.net/web-security/sql-injection" rel="noopener">https://portswigger.net/web-security/sql-injection</a></li></ul>
         

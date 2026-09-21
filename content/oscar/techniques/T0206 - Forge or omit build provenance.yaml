@@ -1,0 +1,38 @@
+id: T0206
+type: Technique
+
+tactic: Defense Evasion
+
+realm:
+  - CI/CD Posture
+  - Artifact Security
+  - SCM Posture
+
+summary: Forge or omit build provenance
+
+description: |
+  The attacker ships an artifact without truthful provenance — no SBOM, a
+  forged SLSA attestation, or a provenance document that names the wrong
+  source repo, builder, or commit. NIST SSDF PS.3.2 and SLSA Build L2+
+  exist so consumers can reject unofficial builds; forging or skipping that
+  paperwork is how a SolarWinds-style implant still looks like a legitimate
+  vendor release. Distinct from malicious code in the artifact (T0191): this
+  technique is about lying about *how* the artifact was produced.
+
+mitigations:
+  - M1200
+  - M1501
+  - M1291
+
+detections:
+  - D1500
+  - D1262
+
+references:
+  - https://slsa.dev/spec/v1.0/threats
+  - https://csrc.nist.gov/pubs/sp/800/218/final
+  - https://www.cisa.gov/resources-tools/resources/secure-software-development-attestation-form
+
+metadata:
+  version: 0.1
+  state: draft

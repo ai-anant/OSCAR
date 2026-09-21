@@ -18,6 +18,8 @@
           <a href="../techniques/index.html">Techniques</a>
           <a href="../incidents/index.html">Incident mapping</a>
           <a href="../stories/index.html">Attack stories</a>
+          <a href="../guidance.html">Guidance</a>
+          <a href="../changelog.html">Changelog</a>
           <a href="../about.html">About</a>
         </nav>
       </div>
@@ -25,7 +27,7 @@
 <main>
 <p class="crumb">OSC&amp;R / <a href="index.html">Techniques</a> / T0188</p>
 
-        <p class="meta">T0188 · Execution · TA04</p>
+        <p class="meta">T0188 · Execution · TA04 · identified from research/guidance</p>
         <h1>Cross Site Request Forgery</h1>
         <div class="chips"><span class="chip">Code Security</span></div>
         <p>Cross-Site Request Forgery, or CSRF, may have different affects, depending on the application code. <br>It is widely used in conjunction with spear-phishing attacks where adversaries will attempt to abuse authenticated users sessions to perform actions that will allow them to take over a server.</p>
@@ -34,7 +36,7 @@
         <ul><li><span class="id">M1720</span> Implement regular patches and updates</li><li><span class="id">M1880</span> Implement Anti-CSRF token</li><li><span class="id">M1881</span> Enable SameSite cookies</li><li><span class="id">M1882</span> Implement Strict Referer Policy</li><li><span class="id">M1883</span> Implement Web Application Firewall</li></ul>
         <h2>Detections</h2>
         <ul><li><span class="id">D1261</span> Implement penetration testing</li><li><span class="id">D1262</span> Implement vulnerability assessment</li><li><span class="id">D1171</span> Implement Web Application Firewall</li><li><span class="id">D1880</span> Missing Anti-CSRF token</li><li><span class="id">D1881</span> Missing Referer header</li></ul>
-        
+        <div class='notice'><strong>Identified, not yet observed here.</strong> OSC&amp;R (like ATT&amp;CK) lists techniques from pentest research, OWASP/NIST/SLSA guidance, and analog attacker behavior — not only from named public breaches. No incident in this corpus maps here yet. The references below are how the original authors knew it existed.</div>
         <h2>References</h2>
         <ul class='refs'><li><a href="https://www.securityweek.com/csrf-vulnerability-kudu-scm-allowed-code-execution-azure-services/" rel="noopener">https://www.securityweek.com/csrf-vulnerability-kudu-scm-allowed-code-execution-azure-services/</a></li><li><a href="https://owasp.org/www-community/attacks/csrf" rel="noopener">https://owasp.org/www-community/attacks/csrf</a></li></ul>
         

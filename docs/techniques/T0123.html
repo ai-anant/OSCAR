@@ -18,6 +18,8 @@
           <a href="../techniques/index.html">Techniques</a>
           <a href="../incidents/index.html">Incident mapping</a>
           <a href="../stories/index.html">Attack stories</a>
+          <a href="../guidance.html">Guidance</a>
+          <a href="../changelog.html">Changelog</a>
           <a href="../about.html">About</a>
         </nav>
       </div>
@@ -25,7 +27,7 @@
 <main>
 <p class="crumb">OSC&amp;R / <a href="index.html">Techniques</a> / T0123</p>
 
-        <p class="meta">T0123 · Initial Access · TA03</p>
+        <p class="meta">T0123 · Initial Access · TA03 · identified from research/guidance</p>
         <h1>Exposed internal API</h1>
         <div class="chips"><span class="chip">Cloud Security</span> <span class="chip">Infrastructure as code</span></div>
         <p>Exposed internal API attack technique is when an attacker targets a publicly accessible API intended for internal use only, providing an entry point for accessing sensitive information or systems within an organization. <br>This is a common issue when API endpoints are mistakenly exposed to the public or not properly secured, which can allow attackers to gain access to sensitive data or systems.<br>Attackers can discover exposed internal APIs by using automated tools to scan public IP addresses or by reverse-engineering mobile applications or browser extensions. <br>Once they have identified a vulnerable API, attackers can use it to gather information, launch attacks, or steal sensitive data.<br>The impact of this attack can be severe as attackers can bypass traditional security controls and gain access to internal systems or data that are not meant to be publicly accessible.</p>
@@ -34,7 +36,7 @@
         <ul><li><span class="id">M1230</span> Secure API access control</li><li><span class="id">M1231</span> Implement Proper API documentation</li><li><span class="id">M1232</span> Implement API endpoint hardening</li><li><span class="id">M1550</span> Implement strict access control for clouds</li><li><span class="id">M1720</span> Implement regular patches and updates</li></ul>
         <h2>Detections</h2>
         <ul><li><span class="id">D1230</span> Implement API endpoint monitoring</li><li><span class="id">D1231</span> Implement API security testing</li><li><span class="id">D1510</span> Implement Intrusion Detection System and anti-malware</li></ul>
-        
+        <div class='notice'><strong>Identified, not yet observed here.</strong> OSC&amp;R (like ATT&amp;CK) lists techniques from pentest research, OWASP/NIST/SLSA guidance, and analog attacker behavior — not only from named public breaches. No incident in this corpus maps here yet. The references below are how the original authors knew it existed.</div>
         <h2>References</h2>
         <ul class='refs'><li><a href="https://owasp.org/www-project-api-security/" rel="noopener">https://owasp.org/www-project-api-security/</a></li><li><a href="https://techcrunch.com/2023/01/19/t-mobile-data-breach/" rel="noopener">https://techcrunch.com/2023/01/19/t-mobile-data-breach/</a></li></ul>
         

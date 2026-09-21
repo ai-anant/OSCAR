@@ -18,6 +18,8 @@
           <a href="../techniques/index.html">Techniques</a>
           <a href="../incidents/index.html">Incident mapping</a>
           <a href="../stories/index.html">Attack stories</a>
+          <a href="../guidance.html">Guidance</a>
+          <a href="../changelog.html">Changelog</a>
           <a href="../about.html">About</a>
         </nav>
       </div>
@@ -25,7 +27,7 @@
 <main>
 <p class="crumb">OSC&amp;R / <a href="index.html">Techniques</a> / T0110</p>
 
-        <p class="meta">T0110 · Resource Development · TA02</p>
+        <p class="meta">T0110 · Resource Development · TA02 · observed in 1 incident(s)</p>
         <h1>Advertise malicious artifact</h1>
         <div class="chips"><span class="chip">Container Security</span> <span class="chip">Open Source Security</span></div>
         <p>An Advertise Malicious Artifact attack is a type of cyber attack in which an attacker distributes a malicious package or container image to a broader audience, typically by advertising it on popular repositories or registries.<br>The goal of this attack is to entice users into downloading and using the malicious artifact, thereby compromising their systems.<br>In this attack, the attacker may create a fake developer account or use an existing legitimate account to upload the malicious artifact to popular repositories or registries such as PyPI or DockerHub.<br>The attacker may then use various techniques to promote the malicious artifact, such as forum promotion, commenting, using misleading descriptions, tags, or keywords, or by hijacking popular package names.<br>Once users download and install the malicious package or container image, it can compromise their systems and potentially cause significant harm, such as stealing sensitive data or taking control of the system.</p>
@@ -34,7 +36,7 @@
         <ul><li><span class="id">M1090</span> Implement code and image signing</li><li><span class="id">M1500</span> Verify third-party artifacts and open-source libraries</li><li><span class="id">M1503</span> Implement SCA analysis</li><li><span class="id">M1730</span> Implement code reviews</li><li><span class="id">M1732</span> Implement code scanning for security risks</li></ul>
         <h2>Detections</h2>
         <ul><li><span class="id">D1090</span> Implement package or image integrity verification</li><li><span class="id">D1101</span> Monitor public registries for newly advertised packages</li><li><span class="id">D1500</span> Configure monitoring of used artifacts and open-source libraries</li><li><span class="id">D1510</span> Implement Intrusion Detection System and anti-malware</li></ul>
-        <h2>Seen in incidents</h2><ul><li><a href="../incidents/AS18.html">crates.io arrayref / proc-macro1 build-time dropper</a></li></ul>
+        <h2>Observed in incidents (1)</h2><ul><li><a href="../incidents/AS18.html">crates.io arrayref / proc-macro1 build-time dropper</a></li></ul>
         <h2>References</h2>
         <ul class='refs'><li><a href="https://www.bleepingcomputer.com/news/security/malicious-lolip0p-pypi-packages-install-info-stealing-malware/" rel="noopener">https://www.bleepingcomputer.com/news/security/malicious-lolip0p-pypi-packages-install-info-stealing-malware/</a></li></ul>
         

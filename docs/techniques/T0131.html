@@ -18,6 +18,8 @@
           <a href="../techniques/index.html">Techniques</a>
           <a href="../incidents/index.html">Incident mapping</a>
           <a href="../stories/index.html">Attack stories</a>
+          <a href="../guidance.html">Guidance</a>
+          <a href="../changelog.html">Changelog</a>
           <a href="../about.html">About</a>
         </nav>
       </div>
@@ -25,7 +27,7 @@
 <main>
 <p class="crumb">OSC&amp;R / <a href="index.html">Techniques</a> / T0131</p>
 
-        <p class="meta">T0131 · Lateral Movement · TA09</p>
+        <p class="meta">T0131 · Lateral Movement · TA09 · observed in 1 incident(s)</p>
         <h1>Overprivileged user account</h1>
         <div class="chips"><span class="chip">Artifact Security</span> <span class="chip">CI/CD Posture</span> <span class="chip">Cloud Security</span> <span class="chip">SCM Posture</span></div>
         <p>The overprivileged user account attack is a technique of lateral movement tactic in which an attacker gains access to a user account with excessive privileges and uses that account to move laterally within a network, accessing resources and systems that they are not authorized to access.<br>It may affects Cloud, CI/CD accounts, an attacker can potentially manipulate the CI/CD pipeline or Cloud configuration to introduce malicious code into the software build or deployment process. <br>This could lead to the deployment of compromised software, which can result in data breaches, malware infections, or other security incidents.</p>
@@ -34,7 +36,7 @@
         <ul><li><span class="id">M1310</span> Implement least privilege principle</li><li><span class="id">M1311</span> Implement multi-factor authentication</li><li><span class="id">M1550</span> Implement strict access control for clouds</li><li><span class="id">M1661</span> Revoke user permissions</li></ul>
         <h2>Detections</h2>
         <ul><li><span class="id">D1261</span> Implement penetration testing</li><li><span class="id">D1310</span> Monitor user access logs</li><li><span class="id">D1510</span> Implement Intrusion Detection System and anti-malware</li><li><span class="id">D1590</span> Implement continuous monitoring and logging of the CI/CD process</li></ul>
-        <h2>Seen in incidents</h2><ul><li><a href="../incidents/AS2.html">3CX Desktop</a></li></ul>
+        <h2>Observed in incidents (1)</h2><ul><li><a href="../incidents/AS2.html">3CX Desktop</a></li></ul>
         <h2>References</h2>
         <ul class='refs'><li><a href="https://learn.microsoft.com/en-us/security/zero-trust/develop/overprivileged-permissions" rel="noopener">https://learn.microsoft.com/en-us/security/zero-trust/develop/overprivileged-permissions</a></li><li><a href="https://www.cyberark.com/what-is/privileged-access-management/" rel="noopener">https://www.cyberark.com/what-is/privileged-access-management/</a></li></ul>
         

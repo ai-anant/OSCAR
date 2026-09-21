@@ -1,0 +1,50 @@
+documents:
+  - id: owasp-cicd-top10
+    name: OWASP Top 10 CI/CD Security Risks
+    url: https://owasp.org/www-project-top-10-ci-cd-security-risks/
+    publisher: OWASP (originated as Cider Security / OxSecurity research)
+    gaps_found:
+      - id: T0207
+        note: CICD-SEC-9 Improper Artifact Integrity Validation was only a mitigation (M1200) without an attacker technique for skipping or forging integrity checks.
+      - id: CICD-SEC-10
+        note: Insufficient logging is modeled as T0144/T0146 (misconfigured logs) but those still lack named public incidents in this corpus.
+  - id: nist-ssdf
+    name: NIST SP 800-218 SSDF
+    url: https://csrc.nist.gov/pubs/sp/800/218/final
+    publisher: NIST
+    gaps_found:
+      - id: T0206
+        note: PS.3.2 collect and share provenance for all components of software releases. OSC&R had no technique for omitting or forging that provenance.
+  - id: slsa
+    name: SLSA Threats and mitigations
+    url: https://slsa.dev/spec/v1.0/threats
+    publisher: OpenSSF / SLSA
+    gaps_found:
+      - id: T0206
+        note: SLSA build threats E/F (forge provenance, unofficial source) were only implied by T0191/T0197.
+      - id: T0208
+        note: Signed-but-malicious artifacts (producer key used on attacker output) were not named. SolarWinds is the canonical case.
+  - id: ox-cider
+    name: OxSecurity / Cider CI/CD Top 10 and research
+    url: https://owasp.org/www-project-top-10-ci-cd-security-risks/
+    publisher: Cider Security (now OxSecurity); authors of original OSC&R / pbom.dev
+    gaps_found:
+      - note: Most OSC&R techniques were identified here first (PPE, PBAC, credential hygiene, 3rd-party services), then published as OWASP. Unused techniques in OSC&R are often this research, not missing incidents.
+  - id: cisa
+    name: CISA Secure Software Development / EO 14028 artifacts
+    url: https://www.cisa.gov/resources-tools/resources/secure-software-development-attestation-form
+    publisher: CISA
+    gaps_found:
+      - id: T0206
+        note: Attestation and provenance requirements assume producers emit truthful SBOMs; forging that paperwork is an attacker technique OSC&R did not name.
+  - id: nist-800-161
+    name: NIST SP 800-161r1 Cybersecurity Supply Chain Risk Management
+    url: https://csrc.nist.gov/pubs/sp/800/161/r1/final
+    publisher: NIST
+    gaps_found:
+      - note: 800-161 is organizational C-SCRM (suppliers, contracts, hardware). OSC&R stays on attacker TTPs in software delivery. No extra T-items added; out of tactical scope.
+
+new_techniques:
+  - T0206
+  - T0207
+  - T0208

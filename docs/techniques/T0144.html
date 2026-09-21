@@ -18,6 +18,8 @@
           <a href="../techniques/index.html">Techniques</a>
           <a href="../incidents/index.html">Incident mapping</a>
           <a href="../stories/index.html">Attack stories</a>
+          <a href="../guidance.html">Guidance</a>
+          <a href="../changelog.html">Changelog</a>
           <a href="../about.html">About</a>
         </nav>
       </div>
@@ -25,7 +27,7 @@
 <main>
 <p class="crumb">OSC&amp;R / <a href="index.html">Techniques</a> / T0144</p>
 
-        <p class="meta">T0144 · Defense Evasion · TA07</p>
+        <p class="meta">T0144 · Defense Evasion · TA07 · identified from research/guidance</p>
         <h1>Misconfigured traffic log settings</h1>
         <div class="chips"><span class="chip">Cloud Security</span></div>
         <p>If the logging settings are misconfigured or disabled, attackers can evade attack detection and hide their malicious activities in the network. <br>For example, an attacker can exploit misconfigured traffic log settings to delete or modify log files, preventing security teams from detecting their activities.<br>Attackers can also use traffic obfuscation techniques to hide their activities, such as using encryption or tunneling to bypass network security controls and avoid detection. <br>If the logging settings are misconfigured, security teams may not have visibility into these types of network activities, making it easier for attackers to evade detection.</p>
@@ -34,7 +36,7 @@
         <ul><li><span class="id">M1440</span> Review logging settings</li><li><span class="id">M1441</span> Implement centralized logging</li><li><span class="id">M1550</span> Implement strict access control for clouds</li></ul>
         <h2>Detections</h2>
         <ul><li><span class="id">D1510</span> Implement Intrusion Detection System and anti-malware</li><li><span class="id">D1520</span> Implement endpoint detection and response system</li></ul>
-        
+        <div class='notice'><strong>Identified, not yet observed here.</strong> OSC&amp;R (like ATT&amp;CK) lists techniques from pentest research, OWASP/NIST/SLSA guidance, and analog attacker behavior — not only from named public breaches. No incident in this corpus maps here yet. The references below are how the original authors knew it existed.</div>
         <h2>References</h2>
         <ul class='refs'><li><a href="https://blog.marcolancini.it/2021/blog-security-logging-cloud-environments-gcp/" rel="noopener">https://blog.marcolancini.it/2021/blog-security-logging-cloud-environments-gcp/</a></li><li><a href="https://blog.marcolancini.it/continuous-cloud-visibility/" rel="noopener">https://blog.marcolancini.it/continuous-cloud-visibility/</a></li></ul>
         

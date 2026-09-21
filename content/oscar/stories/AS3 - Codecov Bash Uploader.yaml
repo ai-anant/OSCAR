@@ -67,6 +67,12 @@ attacks:
         tactic: Execution
         techName: Malicious Artifact Execution
         comment: Customers that utilized the Codecov image were impacted
+      - techniqueID: T0207
+        tactic: Defense Evasion
+        techName: Skip or forge artifact integrity verification
+        comment: |
+          Customers ran the Bash Uploader as a curl-to-pipe helper with no
+          signature or checksum pin, so the rewritten script executed as Codecov.
       - techniqueID: T0185
         tactic: Credential Access
         techName: Steal credentials in container artifacts

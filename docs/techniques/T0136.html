@@ -18,6 +18,8 @@
           <a href="../techniques/index.html">Techniques</a>
           <a href="../incidents/index.html">Incident mapping</a>
           <a href="../stories/index.html">Attack stories</a>
+          <a href="../guidance.html">Guidance</a>
+          <a href="../changelog.html">Changelog</a>
           <a href="../about.html">About</a>
         </nav>
       </div>
@@ -25,7 +27,7 @@
 <main>
 <p class="crumb">OSC&amp;R / <a href="index.html">Techniques</a> / T0136</p>
 
-        <p class="meta">T0136 · Initial Access · TA03</p>
+        <p class="meta">T0136 · Initial Access · TA03 · observed in 1 incident(s)</p>
         <h1>Brandjacking</h1>
         <div class="chips"><span class="chip">Container Security</span> <span class="chip">Open Source Security</span></div>
         <p>Brandjacking is a type of attack where an attacker impersonates a legitimate brand or project in an attempt to trick users into downloading and installing a malicious container or package. <br>This can happen when an attacker creates a package or container with a similar name or logo to a well-known and trusted brand or project, and then distributes it through public repositories.<br>Brandjacking can be particularly dangerous in the context of container and open source security, as many developers and users rely on public repositories and may not take the time to thoroughly verify the authenticity of packages they download.<br>Once a malicious package is installed, it can be difficult to detect and can lead to serious security breaches.</p>
@@ -34,7 +36,7 @@
         <ul><li><span class="id">M1200</span> Verify package authenticity</li><li><span class="id">M1500</span> Verify third-party artifacts and open-source libraries</li><li><span class="id">M1502</span> Define trusted package managers and repositories</li><li><span class="id">M1503</span> Implement SCA analysis</li></ul>
         <h2>Detections</h2>
         <ul><li><span class="id">D1500</span> Configure monitoring of used artifacts and open-source libraries</li><li><span class="id">D1510</span> Implement Intrusion Detection System and anti-malware</li><li><span class="id">D1520</span> Implement endpoint detection and response system</li></ul>
-        <h2>Seen in incidents</h2><ul><li><a href="../incidents/AS18.html">crates.io arrayref / proc-macro1 build-time dropper</a></li></ul>
+        <h2>Observed in incidents (1)</h2><ul><li><a href="../incidents/AS18.html">crates.io arrayref / proc-macro1 build-time dropper</a></li></ul>
         <h2>References</h2>
         <ul class='refs'><li><a href="https://www.mend.io/resources/blog/new-supply-chain-attack-methods-april/" rel="noopener">https://www.mend.io/resources/blog/new-supply-chain-attack-methods-april/</a></li></ul>
         

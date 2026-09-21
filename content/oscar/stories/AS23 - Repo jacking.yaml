@@ -1,0 +1,47 @@
+id: AS23
+type: Attack Story
+date: 2022-10
+
+summary: GitHub repo jacking (dependency URL takeover)
+description: |
+  Security Innovation documented dependency repository hijacking (repo
+  jacking): when a GitHub user renames or deletes their account, the old
+  owner/repo URL can be re-registered. Projects that pin dependencies by
+  GitHub URL, submodule, or git+ protocol then fetch attacker-controlled
+  code. Their analysis found over 70,000 impacted open-source projects.
+  GitHub's popular-namespace retirement mitigates some cases; it does not
+  cover smaller repos that popular projects still clone. This is how T0115
+  was identified — systematic research, not a single headline breach.
+
+attacks:
+  - attack: GitHub username / repo namespace reuse
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0115
+        techName: Repojacking
+        tactic: Initial Access
+        comment: |
+          Re-registering a vacated GitHub owner name breaks the redirect and
+          serves a replacement repository at the old URL.
+      - techniqueID: T0197
+        techName: Use code from untrusted source
+        tactic: Initial Access
+        comment: |
+          Direct GitHub URL dependencies (and git+https in manifests) are the
+          fetch path that makes jacking reach builds.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: |
+          The recreated repository can publish whatever the new owner wants
+          under a name consumers already trust.
+
+gaps:
+  - GitHub later retired some popular namespaces; OSC&R still treats jacking of non-popular names as in scope.
+
+links:
+  - https://blog.securityinnovation.com/repo-jacking-exploiting-the-dependency-supply-chain
+  - https://github.blog/2018-04-18-new-tools-for-open-source-maintainers/#popular-repository-namespace-retirement

@@ -1,0 +1,47 @@
+id: AS24
+type: Attack Story
+date: 2023-01
+
+summary: Self-hosted GitHub Actions runners (Praetorian Gato)
+description: |
+  Praetorian's 2022–2023 red-team work, released as Gato (GitHub Attack
+  Toolkit) at ShmooCon 2023, showed that non-ephemeral self-hosted Actions
+  runners are a supply-chain persistence and lateral-movement platform.
+  A job on the runner executes on the underlying host, on the internal
+  network, and can schedule follow-on workflows. GitHub's own docs warn
+  against using self-hosted runners on public repos. T0148 was identified
+  from this class of operations, not from one public victim advisory.
+
+attacks:
+  - attack: Self-hosted runner
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0148
+        techName: Scheduled tasks on self hosted runner
+        tactic: Persistence
+        comment: |
+          Self-hosted runners persist the environment between jobs; a malicious
+          workflow can leave scheduled tasks or extra runner registrations.
+      - techniqueID: T0132
+        techName: Overprivileged CI/CD Runners
+        tactic: Privilege Escalation
+        comment: |
+          The runner host sits inside the org network and holds deployment
+          credentials the public GitHub-hosted runner never sees.
+      - techniqueID: T0166
+        techName: Trigger pipeline execution
+        tactic: Execution
+        comment: |
+          Gato's attack module pushes a workflow or opens a fork PR that
+          executes on the self-hosted runner.
+
+gaps:
+  - Public named-victim write-ups for this pattern exist in later Actions worms; this story records the research identification of T0148.
+
+links:
+  - https://www.praetorian.com/blog/introducing-gato-for-ci-cd-exploitation
+  - https://www.praetorian.com/blog/self-hosted-github-runners-are-backdoors/
+  - https://github.com/praetorian-inc/gato

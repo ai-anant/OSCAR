@@ -117,6 +117,8 @@ def page(title, body, root_prefix, crumb, extra_head=""):
           <a href="{root_prefix}techniques/index.html">Techniques</a>
           <a href="{root_prefix}incidents/index.html">Incident mapping</a>
           <a href="{root_prefix}stories/index.html">Attack stories</a>
+          <a href="{root_prefix}guidance.html">Guidance</a>
+          <a href="{root_prefix}changelog.html">Changelog</a>
           <a href="{root_prefix}about.html">About</a>
         </nav>
       </div>
@@ -368,7 +370,7 @@ def build(dest):
       <span><i class="l1"></i>1–2</span>
       <span><i class="l3"></i>3–4</span>
       <span><i class="l5"></i>5+</span>
-      <span>Badge = how many documented incidents use the technique. Search hides non-matches and empty tactic columns.</span>
+      <span>Badge = mapped incidents. Dim cells are identified from research/guidance, not yet tied to a named case. Search hides non-matches and empty columns.</span>
     </p>
     <div class="matrix-wrap">
       <div class="matrix" id="matrix" style="grid-template-columns: repeat({n_cols}, minmax(8.4rem, 1fr))">
@@ -448,12 +450,25 @@ def build(dest):
                         break
         used_html = ""
         if used_in:
-            used_html = "<h2>Seen in incidents</h2><ul>" + "".join(
-                f'<li><a href="../incidents/{html.escape(s["id"])}.html">{html.escape(s["summary"])}</a></li>'
-                for s in used_in
-            ) + "</ul>"
+            used_html = (
+                f'<h2>Observed in incidents ({len(used_in)})</h2><ul>'
+                + "".join(
+                    f'<li><a href="../incidents/{html.escape(s["id"])}.html">{html.escape(s["summary"])}</a></li>'
+                    for s in used_in
+                )
+                + "</ul>"
+            )
+        else:
+            used_html = (
+                "<div class='notice'><strong>Identified, not yet observed here.</strong> "
+                "OSC&amp;R (like ATT&amp;CK) lists techniques from pentest research, "
+                "OWASP/NIST/SLSA guidance, and analog attacker behavior — not only from "
+                "named public breaches. No incident in this corpus maps here yet. "
+                "The references below are how the original authors knew it existed.</div>"
+            )
+        n_obs = len(used_in)
         body = f"""
-        <p class="meta">{html.escape(tid)} · {html.escape(t["tactic"])} · {html.escape(TACTIC_IDS.get(t["tactic"], ""))}</p>
+        <p class="meta">{html.escape(tid)} · {html.escape(t["tactic"])} · {html.escape(TACTIC_IDS.get(t["tactic"], ""))} · {'observed in ' + str(n_obs) + ' incident(s)' if n_obs else 'identified from research/guidance'}</p>
         <h1>{html.escape(t["summary"])}</h1>
         <div class="chips">{realms}</div>
         {md_lite(t.get("description"))}
@@ -565,6 +580,76 @@ def build(dest):
         )
         write(os.path.join(dest, "incidents", f"{s['id']}.html"), html_page)
         write(os.path.join(dest, "stories", f"{s['id']}.html"), html_page)
+
+    portal = os.path.join(ROOT, "content", "portal")
+    cl = {}
+    gd = {}
+    cl_path = os.path.join(portal, "changelog.yaml")
+    gd_path = os.path.join(portal, "guidance.yaml")
+    if os.path.exists(cl_path):
+        with open(cl_path) as f:
+            cl = yaml.safe_load(f) or {}
+    if os.path.exists(gd_path):
+        with open(gd_path) as f:
+            gd = yaml.safe_load(f) or {}
+
+    cl_blocks = []
+    for e in cl.get("entries") or []:
+        lis = "".join(f"<li>{html.escape(str(i))}</li>" for i in (e.get("items") or []))
+        cl_blocks.append(
+            f'<div class="card"><p class="stage">{html.escape(str(e.get("date") or ""))}</p>'
+            f'<h3>{html.escape(e.get("title") or "")}</h3><ul>{lis}</ul></div>'
+        )
+    changelog_body = f"""
+    <h1>Portal changelog</h1>
+    <p class="lede">What this fork adds to the OSC&amp;R portal — public, dated, and meant to be
+    skimmed. Git history remains the audit trail; this page is the human one.</p>
+    {''.join(cl_blocks) or '<p class="muted">No entries yet.</p>'}
+    """
+    write(os.path.join(dest, "changelog.html"), page("Changelog", changelog_body, "", "OSC&amp;R / Changelog"))
+
+    unused_n = sum(1 for tid in techs if usage[tid] == 0)
+    doc_blocks = []
+    for d in gd.get("documents") or []:
+        gaps = d.get("gaps_found") or []
+        glis = []
+        for g in gaps:
+            if isinstance(g, dict):
+                gid = g.get("id") or ""
+                note = g.get("note") or ""
+                glis.append(f"<li><strong>{html.escape(str(gid))}</strong> {html.escape(note)}</li>")
+            else:
+                glis.append(f"<li>{html.escape(str(g))}</li>")
+        doc_blocks.append(
+            f'<div class="card"><h3><a href="{html.escape(d.get("url") or "#")}">{html.escape(d.get("name") or "")}</a></h3>'
+            f'<p class="muted">{html.escape(d.get("publisher") or "")}</p>'
+            f'<ul>{"".join(glis)}</ul></div>'
+        )
+    new_ts = gd.get("new_techniques") or []
+    new_lis = "".join(
+        f'<li><a href="techniques/{html.escape(tid)}.html">{html.escape(tid)}</a> '
+        f'{html.escape(techs[tid]["summary"]) if tid in techs else ""}</li>'
+        for tid in new_ts
+    )
+    guidance_body = f"""
+    <h1>Guidance vs OSC&amp;R</h1>
+    <p class="lede">Software supply-chain guidance (OWASP, NIST SSDF, SLSA, CISA, OxSecurity/Cider)
+    is mostly <em>defender</em> language. OSC&amp;R is <em>attacker</em> language. This page records
+    where a control in those documents had no matching technique here, and what we added.</p>
+    <div class="notice"><strong>Why a technique can exist with zero incidents in this corpus.</strong>
+    The original OSC&amp;R authors (Cider / OxSecurity, who also drove the OWASP CI/CD Top 10)
+    catalogued attacker behaviors from pentest findings, analog ATT&amp;CK techniques, and
+    published research — the same way MITRE ATT&amp;CK lists techniques before every one has
+    a public victim write-up. Dim cells on the matrix are those identified-from-literature
+    entries ({unused_n} right now). Bright cells are observed in a mapped incident.
+    That is not a claim the unused ones are fake; it is a claim we have not yet attached
+    a named public case.</div>
+    <h2>Documents reviewed</h2>
+    {''.join(doc_blocks)}
+    <h2>Techniques added from this review</h2>
+    <ul>{new_lis or '<li class="muted">None</li>'}</ul>
+    """
+    write(os.path.join(dest, "guidance.html"), page("Guidance", guidance_body, "", "OSC&amp;R / Guidance"))
 
     about = f"""
     <h1>About, attribution, and stewardship</h1>

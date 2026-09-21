@@ -18,6 +18,8 @@
           <a href="../techniques/index.html">Techniques</a>
           <a href="../incidents/index.html">Incident mapping</a>
           <a href="../stories/index.html">Attack stories</a>
+          <a href="../guidance.html">Guidance</a>
+          <a href="../changelog.html">Changelog</a>
           <a href="../about.html">About</a>
         </nav>
       </div>
@@ -25,7 +27,7 @@
 <main>
 <p class="crumb">OSC&amp;R / <a href="index.html">Techniques</a> / T0133</p>
 
-        <p class="meta">T0133 · Initial Access · TA03</p>
+        <p class="meta">T0133 · Initial Access · TA03 · identified from research/guidance</p>
         <h1>Vulnerable CICD plugins</h1>
         <div class="chips"><span class="chip">CI/CD Posture</span></div>
         <p>Vulnerable CI/CD plugins attack technique is an initial access tactic where an attacker exploits a vulnerability in a plugin used by a continuous integration and continuous delivery (CI/CD) pipeline to gain access to the pipeline or the underlying system.<br>Vulnerable plugins used in the CI/CD pipeline can be exploited by attackers to inject malicious code or to execute arbitrary commands on the target system.</p>
@@ -34,7 +36,7 @@
         <ul><li><span class="id">M1330</span> Implement regular plugin updates</li><li><span class="id">M1331</span> Conduct plugin security review</li><li><span class="id">M1332</span> Implement least privilege principle for plugins</li><li><span class="id">M1720</span> Implement regular patches and updates</li></ul>
         <h2>Detections</h2>
         <ul><li><span class="id">D1260</span> Implement regular security audit and review</li><li><span class="id">D1261</span> Implement penetration testing</li><li><span class="id">D1262</span> Implement vulnerability assessment</li><li><span class="id">D1510</span> Implement Intrusion Detection System and anti-malware</li><li><span class="id">D1590</span> Implement continuous monitoring and logging of the CI/CD process</li></ul>
-        
+        <div class='notice'><strong>Identified, not yet observed here.</strong> OSC&amp;R (like ATT&amp;CK) lists techniques from pentest research, OWASP/NIST/SLSA guidance, and analog attacker behavior — not only from named public breaches. No incident in this corpus maps here yet. The references below are how the original authors knew it existed.</div>
         <h2>References</h2>
         <ul class='refs'><li><a href="https://www.legitsecurity.com/blog/how-to-continuously-detect-vulnerable-jenkins-plugins-to-avoid-a-software-supply-chain-attack" rel="noopener">https://www.legitsecurity.com/blog/how-to-continuously-detect-vulnerable-jenkins-plugins-to-avoid-a-software-supply-chain-attack</a></li><li><a href="https://www.jenkins.io/security/plugins/" rel="noopener">https://www.jenkins.io/security/plugins/</a></li><li><a href="https://www.theregister.com/2022/06/30/jenkins_plugins_security_advisories/" rel="noopener">https://www.theregister.com/2022/06/30/jenkins_plugins_security_advisories/</a></li></ul>
         

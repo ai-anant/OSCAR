@@ -56,6 +56,18 @@ attacks:
       tactic: Impact
       comment: | 
         SolarWinds reported that the attacker introduced a backdoor named Sunburst and UNC2452 into the SolarWinds Orion Software. Contrary to altering the source code itself, the attacker injected the malware into the software during the build process, as disclosed by SolarWinds.
+    - techniqueID: T0208
+      techName: Compromise code-signing identity
+      tactic: Defense Evasion
+      comment: |
+        Orion updates were signed with SolarWinds' real code-signing identity,
+        so signature checks on customer endpoints succeeded.
+    - techniqueID: T0206
+      techName: Forge or omit build provenance
+      tactic: Defense Evasion
+      comment: |
+        The implant was injected at build time; downstream provenance, if any,
+        still named the legitimate SolarWinds pipeline.
   - attack: SolarWinds Customers
     index: 2
     stage: post-supply-chain

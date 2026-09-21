@@ -1,0 +1,36 @@
+id: T0208
+type: Technique
+
+tactic: Defense Evasion
+
+realm:
+  - Artifact Security
+  - CI/CD Posture
+  - Code Security
+
+summary: Compromise code-signing identity
+
+description: |
+  The attacker signs malware with a stolen or issuer-trusted code-signing
+  certificate, CI OIDC identity, or package-registry signing key so that
+  signature verification succeeds. SolarWinds Orion updates were signed as
+  SolarWinds. Distinct from spoofed git commits (T0195) and from forging
+  provenance documents (T0206): here the cryptographic identity is real
+  and compromised.
+
+mitigations:
+  - M1860
+  - M1120
+  - M1530
+
+detections:
+  - D1260
+  - D1510
+
+references:
+  - https://slsa.dev/spec/v1.0/threats
+  - https://orangematter.solarwinds.com/2021/05/07/an-investigative-update-of-the-cyberattack/
+
+metadata:
+  version: 0.1
+  state: draft

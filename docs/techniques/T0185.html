@@ -18,6 +18,8 @@
           <a href="../techniques/index.html">Techniques</a>
           <a href="../incidents/index.html">Incident mapping</a>
           <a href="../stories/index.html">Attack stories</a>
+          <a href="../guidance.html">Guidance</a>
+          <a href="../changelog.html">Changelog</a>
           <a href="../about.html">About</a>
         </nav>
       </div>
@@ -25,7 +27,7 @@
 <main>
 <p class="crumb">OSC&amp;R / <a href="index.html">Techniques</a> / T0185</p>
 
-        <p class="meta">T0185 · Credential Access · TA08</p>
+        <p class="meta">T0185 · Credential Access · TA08 · observed in 1 incident(s)</p>
         <h1>Steal credentials in container artifacts</h1>
         <div class="chips"><span class="chip">Artifact Security</span></div>
         <p>Attackers can steal credentials by searching through the container artifacts for any sensitive information that may have been inadvertently included, such as hard-coded passwords or API keys. <br>They can also intercept network traffic between containers and external systems to capture any credentials that may be transmitted in plaintext.</p>
@@ -34,7 +36,7 @@
         <ul><li><span class="id">M1550</span> Implement strict access control for clouds</li></ul>
         <h2>Detections</h2>
         <ul><li><span class="id">D1261</span> Implement penetration testing</li><li><span class="id">D1262</span> Implement vulnerability assessment</li><li><span class="id">D1510</span> Implement Intrusion Detection System and anti-malware</li></ul>
-        <h2>Seen in incidents</h2><ul><li><a href="../incidents/AS3.html">Codecov Breach</a></li></ul>
+        <h2>Observed in incidents (1)</h2><ul><li><a href="../incidents/AS3.html">Codecov Breach</a></li></ul>
         <h2>References</h2>
         <ul class='refs'><li><a href="https://cycode.com/introducing-container-secret-scanning/" rel="noopener">https://cycode.com/introducing-container-secret-scanning/</a></li></ul>
         
