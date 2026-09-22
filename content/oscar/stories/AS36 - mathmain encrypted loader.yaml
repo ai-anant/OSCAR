@@ -1,0 +1,55 @@
+id: AS36
+type: Attack Story
+date: 2026-09
+
+summary: mathmain / mathsbase encrypted npm RAT (equation trigger)
+description: |
+  SafeDep and JFrog documented an npm campaign that copies mathjs under
+  new names (mathmain, mathsbase, math-universe) and ships an AES-256-GCM
+  loader with no install hooks. The loader stays dormant until a caller
+  runs lusolve() with a 3×3 Pascal matrix; the LU lower factor JSON is
+  the password. Decrypted stages are a remote-access implant that reads
+  a Base/Ethereum Sepolia contract, reports to Slack and Telegram, and
+  runs operator shell commands from Slack. The loader is in the npm
+  tarball, not in the public GitHub source. JFrog recovered the trigger
+  on 21 September 2026; SafeDep reproduced it against mathmain@1.0.0.
+  Reported download counts were inconsistent with dependents and
+  jsDelivr traffic. No public caller of the trigger matrix was found.
+
+attacks:
+  - attack: npm mathjs copies with encrypted runtime loader
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0129
+        techName: Typosquatting
+        tactic: Initial Access
+        comment: Packages copy mathjs under different names (mathmain, mathsbase, math-universe).
+      - techniqueID: T0141
+        techName: Fake developer reputation (Starjacking)
+        tactic: Resource Development
+        comment: Public GitHub repos exist; neither holds the loader that npm ships.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: mathsbase@1.0.1 (27 Aug), math-universe 1.0.0–1.0.2, mathmain@1.0.0 (17 Sep).
+      - techniqueID: T0150
+        techName: Runtime logic bomb
+        tactic: Execution
+        comment: Payload decrypts only when lusolve() is called with one specific matrix.
+      - techniqueID: T0159
+        techName: Malicious artifact execution
+        tactic: Execution
+        comment: No install hooks; import plus the trigger is required.
+      - techniqueID: T0172
+        techName: Runtime backdoor
+        tactic: Execution
+        comment: Decrypted agent polls Slack for shell commands; C2 also on-chain.
+
+gaps: []
+
+links:
+  - https://safedep.io/mathmain-encrypted-loader
+  - https://research.jfrog.com/post/equation-of-compromise/

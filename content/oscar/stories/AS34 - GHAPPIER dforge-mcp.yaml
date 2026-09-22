@@ -1,0 +1,65 @@
+id: AS34
+type: Attack Story
+date: 2026-09
+
+summary: GHAPPIER loader via @dforge-core/dforge-mcp trusted publishing
+description: |
+  CloudSEK documented a 105-minute window on 9 September 2026 in which
+  someone with push access to the maintainer account of the legitimate npm
+  package @dforge-core/dforge-mcp added a remote-code loader, changed three
+  lines so any push to main started the release workflow, rewrote that
+  workflow 14 minutes later to publish unattended, and shipped 0.2.21.
+  The release sat as npm latest for 35 minutes 38 seconds before the
+  maintainer published a clean 0.2.22. The malicious version carried valid
+  npm provenance: GitHub Actions OIDC trusted publishing, with the
+  attacker's commit still in Sigstore. Provenance attested where the
+  artefact was built, not that the source was honest. The payload is one
+  line in a 99 KB working JS file (`indexe.cjs`); later stages delete
+  themselves from disk. CloudSEK tied a second payload family in another
+  victim repo to PolinRider (EtherHiding / NullReceiver). No OSV or GHSA
+  advisory was published. How the maintainer push access was obtained is
+  not established.
+
+attacks:
+  - attack: Maintainer repo and npm trusted publishing
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0113
+        techName: Compromised user account
+        tactic: Initial Access
+        comment: Push to main on the real @dforge-core/dforge-mcp maintainer account.
+      - techniqueID: T0166
+        techName: Trigger pipeline execution
+        tactic: Execution
+        comment: Three-line change made any push to main start the release workflow.
+      - techniqueID: T0202
+        techName: Inadequate CI/CD workflow permissions
+        tactic: Persistence
+        comment: Workflow rewritten to publish unattended; OIDC made push equal publish.
+      - techniqueID: T0121
+        techName: Compromised legitimate artifact
+        tactic: Resource Development
+        comment: Version 0.2.21 of a real package, not a typosquat.
+      - techniqueID: T0206
+        techName: Forge or omit build provenance
+        tactic: Defense Evasion
+        comment: |
+          Provenance was valid and named the attacker's commit. Presence of
+          trusted-publishing attestation did not mean the commit was authorized.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: 0.2.21 was npm latest for 35 minutes.
+      - techniqueID: T0159
+        techName: Malicious artifact execution
+        tactic: Execution
+        comment: One-line loader in indexe.cjs; implant deletes itself after run.
+
+gaps:
+  - Honest provenance of a dishonest commit is still modeled as T0206 (forge or omit), which names the inverse failure mode.
+
+links:
+  - https://www.cloudsek.com/blog/ghappier-malware-loader-npm-supply-chain-attack

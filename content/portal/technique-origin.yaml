@@ -854,3 +854,12 @@ techniques:
     - https://www.morphisec.com/blog/when-your-ai-coding-assistant-becomes-the-attack-the-hades-supply-chain-campaign/
     - https://cloud.google.com/blog/topics/threat-intelligence/from-prompting-to-autonomy-the-evolution-of-adversarial-ai
     - https://cloud.google.com/security/resources/ai-risk-and-resilience-2026
+  T0211:
+    summary: Abuse registry-adjacent builders as remote execution
+    tactic: Execution
+    kind: incident
+    note: This fork, from GemStuffer / RubyDoc.info YARD --load (SafeDep, RubyHack, RubyGems).
+    sources:
+    - https://safedep.io/openai-agents-rubygems-attack
+    - https://www.rubyhack.ai/
+    - https://blog.rubygems.org/2026/09/11/update-may-spam-publishing-campaign.html

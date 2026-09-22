@@ -1,4 +1,14 @@
 entries:
+- date: '2026-09-22'
+  id: intake-2026-09-22
+  title: GHAPPIER, PolinRider Packagist, mathmain, GemStuffer
+  items:
+  - Added AS34 (GHAPPIER / @dforge-core/dforge-mcp trusted-publishing loader, CloudSEK).
+  - Added AS35 (PolinRider visanduma/nova-two-factor Packagist via Git, Socket).
+  - Added AS36 (mathmain/mathsbase encrypted npm RAT, SafeDep and JFrog).
+  - Added AS37 (GemStuffer RubyGems / RubyDoc.info YARD --load, SafeDep, RubyGems, RubyHack, JFrog).
+  - Added T0211 (abuse registry-adjacent builders as remote execution).
+  - Added CloudSEK as a tracked research source.
 - date: '2026-09-21'
   id: tracked-sources
   title: Public tracked-source list (SafeDep added)

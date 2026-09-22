@@ -164,7 +164,7 @@
         ],
         "url": "techniques/T0108.html",
         "description": "An attacker can use accounts in public registries, such as PyPI or DockerHub, to perform a supply chain attack in several ways.\nOne approach is to compromise the credentials of a legitimate developer account and use it to upload malicious packages or container images.\nThe attacker can then promote the malicious artifact by using misleading descriptions or keywords, potentially increasing the number of downloads.\nAlternatively, the attacker can create a fake developer account and upload malicious packages or container images using it.\nThe attacker may use a similar username or avatar to legitimate developers to trick users into thinking the account is legitimate.\nOnce the malicious artifact is uploaded, the attacker can promote it using various techniques, such as hijacking popular package names or using misleading descriptions.\nAnother approach is to target the infrastructure used by public registries, such as the servers or the communication channels used by developers to upload packages or container images.\nAn attacker may compromise the infrastructure and use it to inject malicious code into legitimate packages or container images as they are being uploaded.\n",
-        "incidentCount": 3
+        "incidentCount": 4
       },
       {
         "id": "T0109",
@@ -176,7 +176,7 @@
         ],
         "url": "techniques/T0109.html",
         "description": "Public registries are widely used by developers and organizations to download and distribute software packages and container images, making them an attractive target for attackers.\nIn this type of attack, the attacker creates a package or container image that contains malicious code or files, such as a backdoor or other malware.\nThe attacker then uploads the package or image to PyPI, DockerHub or other registry, posing as a legitimate user or creating a fake account.\nOnce the package or image is uploaded, it becomes available for download by other users who may unsuspectingly use it in their projects.\nThe supply chain attack can have far-reaching consequences as it can affect all systems that rely on the malicious package or image.\nFor example, a Python package that is downloaded from PyPI may be used by multiple applications and libraries, potentially compromising all systems that use it.\nSimilarly, a container image with a malicious payload may be used to deploy an application across multiple environments, leading to a widespread compromise.\n",
-        "incidentCount": 19
+        "incidentCount": 23
       },
       {
         "id": "T0110",
@@ -213,7 +213,7 @@
         ],
         "url": "techniques/T0121.html",
         "description": "A compromised legitimate artifact attack is a type of cyber attack in which an attacker replaces a legitimate package or container image with a malicious version, often without the knowledge of the original developer or distributor. \nThis attack takes advantage of the trust that users place in legitimate packages or container images, which are often used to deploy software across multiple environments.\nIn this attack, the attacker may gain access to the repository or registry where the legitimate artifact is stored, either by exploiting a vulnerability or through social engineering tactics. \nThe attacker then replaces the legitimate artifact with a malicious version that contains malware or other harmful code. \nOnce the compromised artifact is downloaded and deployed, it can compromise the system and potentially cause significant harm, such as stealing sensitive data or taking control of the system.\n",
-        "incidentCount": 9
+        "incidentCount": 10
       },
       {
         "id": "T0141",
@@ -224,7 +224,7 @@
         ],
         "url": "techniques/T0141.html",
         "description": "Third-party package managers, such as Node Package Manager, PyPi, and Yarn, are commonly used for integrating open-source software packages into existing development environments. These package managers provide metadata about the software and often include a link to the package's source code repository to help developers assess the software's reliability. One way developers evaluate the trustworthiness of a package is by checking its popularity, which is typically measured by the number of \"Stars\" the package has received. However, some package managers do not validate the connection between the package and its source code repository, which leaves them vulnerable to attacks. Malicious actors can manipulate the popularity statistics of a package by associating a popular source code repository URL with a malicious package, leading developers to unwittingly incorporate the malicious code into their development environment.\n",
-        "incidentCount": 2
+        "incidentCount": 3
       }
     ],
     "amount": 6,
@@ -261,7 +261,7 @@
         ],
         "url": "techniques/T0113.html",
         "description": "A compromised user account is a serious security threat, as attackers can use it to bypass security measures that are in place to protect an organization's assets. \nAttackers can gain access to legitimate user accounts in several ways, including brute-force attacks, phishing, malware, or social engineering.\nOnce an attacker gains access to a user's account, they can access the cloud resources, artifact repository, infrastructure-as-code templates, or source code repository to steal or modify sensitive data or launch further attacks.\nIn such case an attacker is able to modify the code and cloud resources, inject malware or backdoors, or replace legitimate artifacts.\nThis can result in data breaches, system downtime, reputation damage, and financial losses.\n",
-        "incidentCount": 11
+        "incidentCount": 13
       },
       {
         "id": "T0114",
@@ -394,7 +394,7 @@
         ],
         "url": "techniques/T0129.html",
         "description": "Typosquatting is an attack technique where an attacker creates a package or container with a name that is very similar to a legitimate one, in hopes that a user will make a typo and download the malicious package or container. \nFor example, if a legitimate package is named \"numpy,\" an attacker might create a package named \"numpyy\" or \"numpi\" in hopes that a user will accidentally install the malicious package instead. \nIn container security, it involves creating a container image with a similar name to a legitimate one, while in open-source security, it involves creating a malicious package with a similar name to a legitimate one.\nOnce the user installs the malicious package or container, the attacker can potentially gain access to the user's system or data, or inject malicious code into the user's environment.\n",
-        "incidentCount": 5
+        "incidentCount": 6
       },
       {
         "id": "T0133",
@@ -563,7 +563,7 @@
         ],
         "url": "techniques/T0197.html",
         "description": "It is possible to install a package not from an official package repository - but rather install directly using a URL. Packages from official repositories are usually vetted for security vulnerabilities. Installing from an unverified URL can expose your system to malicious software, including viruses, malware, or other security threats.\n",
-        "incidentCount": 2
+        "incidentCount": 3
       },
       {
         "id": "T0205",
@@ -642,7 +642,7 @@
         ],
         "url": "techniques/T0150.html",
         "description": "A logic bomb is a snippet of malicious code that is intentionally inserted into other software. \nLogic bombs are triggered when a certain condition is met.\nThe code may lie dormant for a long time and remain undetected until the bomb is triggered.\nWhen the bomb is activated, it can have devastating effects on the software, causing it to malfunction, delete data, or even grant unauthorized access to sensitive information.\nThe attack can also be designed to spread to other systems or cause damage to a wider network.\nThe malicious code is hidden within an otherwise legitimate software package.\nIt can be introduced at any point in the software supply chain.\n",
-        "incidentCount": 1
+        "incidentCount": 2
       },
       {
         "id": "T0151",
@@ -690,7 +690,7 @@
         ],
         "url": "techniques/T0159.html",
         "description": "Malicious artifact execution refers to an attack where an attacker injects or modifies a software component with malicious code that is executed when the component is used by a downstream system in the CI/CD process. \nWhen a CI/CD process lacks sufficient mechanisms to validate the integrity of code and artifacts, attackers can insert malicious code that appears to be harmless. \nThis allows the malicious code to pass through the pipeline undetected, potentially causing harm in the CI/CD process or in production.\nThe malicious code can be executed in the CI/CD process or even in production.\n",
-        "incidentCount": 14
+        "incidentCount": 17
       },
       {
         "id": "T0166",
@@ -702,7 +702,7 @@
         ],
         "url": "techniques/T0166.html",
         "description": "The Trigger pipeline execution (Poisoned pipeline execution) attack abuses permissions against an SCM repository, in a way that causes a CI pipeline to execute malicious commands.\nUsers that have permissions to manipulate the CI configuration files, or other files which the CI pipeline job relies on, can modify them to contain malicious commands, ultimately poisoning the CI pipeline executing these commands.\nPipelines executing unreviewed code, for example those which are triggered directly off of pull requests or commits to arbitrary repository branches, are more susceptible to Trigger pipeline execution. \nThe reason is that these scenarios, by design, contain code which has not undergone any reviews or approvals.\nOnce able to execute malicious code within the CI pipeline, the attacker can conduct a wide array of malicious operations, all within the context of the pipelines identity.\n",
-        "incidentCount": 4
+        "incidentCount": 5
       },
       {
         "id": "T0172",
@@ -715,7 +715,7 @@
         ],
         "url": "techniques/T0172.html",
         "description": "A runtime backdoor attack is a type of cyber attack where an attacker gains unauthorized access to a computer system or network and installs a malicious software or code that allows them to control the system or steal sensitive information.\nThis type of attack is called a \"runtime\" backdoor attack because it involves manipulating the system at runtime, while it is running, rather than during the development or deployment stages.\nThe attacker typically gains access to the system through a vulnerability, such as an unpatched software flaw or weak authentication mechanism. \nOnce inside, the attacker can install a backdoor that provides them with persistent access to the system, even after the initial entry point has been closed.\n",
-        "incidentCount": 4
+        "incidentCount": 5
       },
       {
         "id": "T0173",
@@ -738,9 +738,22 @@
         "url": "techniques/T0188.html",
         "description": "Cross-Site Request Forgery, or CSRF, may have different affects, depending on the application code. \nIt is widely used in conjunction with spear-phishing attacks where adversaries will attempt to abuse authenticated users sessions to perform actions that will allow them to take over a server.\n",
         "incidentCount": 0
+      },
+      {
+        "id": "T0211",
+        "name": "Abuse registry-adjacent builders as remote execution",
+        "tooltip": "Abuse registry-adjacent builders as remote execution",
+        "tags": [
+          "Open Source Security",
+          "CI/CD Posture",
+          "Artifact Security"
+        ],
+        "url": "techniques/T0211.html",
+        "description": "The attacker publishes a package whose files are executed not by a\ndownstream installer, but by a registry-adjacent worker that trusts\npackage contents: documentation builders (YARD `--load` on RubyDoc.info),\npreview environments, webhook handlers, or similar jobs that treat\n`.yardopts`, `setup.py`, Makefiles, or lifecycle scripts as commands.\nThe publisher never needs a victim to `gem install` / `npm install`.\nDistinct from T0151 (install hooks on the consumer host) and T0166\n(poisoning the victim project's own CI). Observed in the 2026 GemStuffer\nRubyGems campaign reconstructed by RubyHack, SafeDep, and JFrog.\n",
+        "incidentCount": 1
       }
     ],
-    "amount": 12,
+    "amount": 13,
     "tooltip": "Execution",
     "tacticid": "TA04"
   },
@@ -771,7 +784,7 @@
         ],
         "url": "techniques/T0138.html",
         "description": "Backdoor in code attack technique involves inserting a malicious code segment or backdoor into the software codebase, which allows the attacker to maintain access and control over the system even after their initial access has been removed or blocked.\nIn this attack, the attacker gains access to the codebase through various means, such as exploiting vulnerabilities or stealing credentials. \nOnce they have gained access, the attacker inserts a malicious code segment or backdoor into the codebase. \nThis code segment may be designed to execute specific malicious activities, such as stealing sensitive information, or to provide the attacker with continued access and control over the system.\n",
-        "incidentCount": 3
+        "incidentCount": 4
       },
       {
         "id": "T0148",
@@ -853,7 +866,7 @@
         ],
         "url": "techniques/T0202.html",
         "description": "Pipelines that grant overly broad tokens (for example GitHub Actions\n`GITHUB_TOKEN` with `contents: write`, `id-token: write`, or pull-request\njobs that can push to default branches) let an attacker persist after the\nfirst poisoned workflow run. Persistence takes the form of a new workflow\nfile, a deploy key, a self-hosted runner registration, or a long-lived\ncloud credential minted by the job. This is distinct from overprivileged\nrunners (T0132) and from creating an access token after account takeover\n(T0165): the weakness is the workflow permission set itself.\n",
-        "incidentCount": 4
+        "incidentCount": 5
       },
       {
         "id": "T0210",
@@ -866,7 +879,7 @@
         ],
         "url": "techniques/T0210.html",
         "description": "The attacker writes into hidden agent directories and config that\ndevelopers and CI treat as local clutter \u2014 `.claude/`, `.cursor/`,\n`.vscode/`, Copilot/Gemini/Codex settings, MCP server entries, or\nPython `.pth` startup hooks. The next time the human or the agent\nopens the project, attacker instructions run with the developer's\nalready-granted tools. Uninstalling a malicious package does not\nclear this. Observed in Morphisec's Hades campaign, GTIG DUSTMAKER,\nand Mandiant's hijacked coding-assistant case.\n",
-        "incidentCount": 3
+        "incidentCount": 4
       }
     ],
     "amount": 10,
@@ -1012,7 +1025,7 @@
         ],
         "url": "techniques/T0206.html",
         "description": "The attacker ships an artifact without truthful provenance \u2014 no SBOM, a\nforged SLSA attestation, or a provenance document that names the wrong\nsource repo, builder, or commit. NIST SSDF PS.3.2 and SLSA Build L2+\nexist so consumers can reject unofficial builds; forging or skipping that\npaperwork is how a SolarWinds-style implant still looks like a legitimate\nvendor release. Distinct from malicious code in the artifact (T0191): this\ntechnique is about lying about *how* the artifact was produced.\n",
-        "incidentCount": 3
+        "incidentCount": 4
       },
       {
         "id": "T0207",
@@ -1178,7 +1191,7 @@
         ],
         "url": "techniques/T0169.html",
         "description": "The Push Implants across Repositories attack technique is a type of lateral movement tactic where an attacker gains access to a victim's code repository, modifies the code by implanting malicious code or backdoors, and pushes the modified code back to the repository.\nThis technique often involves the attacker stealing valid credentials, such as login credentials or SSH keys, to gain access to the victim's code repository. \nThey then modify the code, implanting the malicious code or backdoors, and push the modified code back to the repository. \nThe victim then unknowingly deploys the modified code, resulting in the compromise of their systems.\n",
-        "incidentCount": 2
+        "incidentCount": 3
       }
     ],
     "amount": 2,
@@ -1309,7 +1322,7 @@
         ],
         "url": "techniques/T0139.html",
         "description": "Resource hijacking is a significant threat to cloud and container security. \nIt refers to the unauthorized use of computing resources, such as CPU power, memory, and bandwidth, by an attacker who has gained control over a system or network.\nIn cloud environments, attackers can compromise cloud-based systems to perform resource-intensive tasks like cryptocurrency mining, DDoS attacks, and other malicious activities. \nThis can significantly impact system availability and negatively affect hosted services. \nAttackers can also leverage cloud-based resources to launch attacks on other targets, amplifying the impact of their actions.\nSimilarly, in containerized environments, attackers can use compromised containers to launch resource-hijacking attacks. \nBy deploying multiple containers within a cluster or environment, attackers can scale their mining activities and launch coordinated DDoS attacks.\n",
-        "incidentCount": 5
+        "incidentCount": 6
       },
       {
         "id": "T0149",

@@ -1,0 +1,59 @@
+id: AS35
+type: Attack Story
+date: 2026-09
+
+summary: PolinRider poisons visanduma/nova-two-factor Packagist via Git
+description: |
+  Socket tracked PolinRider into Packagist through a compromised GitHub
+  developer account (`LaHiRu`) on the Visanduma organization, compromised
+  since mid-June 2026. Malicious code landed in four development versions
+  of visanduma/nova-two-factor (700k+ cumulative downloads): dev-main,
+  dev-nova4support, dev-using-inertia, and dev-nova5. No stable malicious
+  release was identified. Composer (and Go modules) can resolve straight
+  from Git, so no Packagist publishing token was required. Campaign
+  methods in this wave: force-pushed history, payloads in config or
+  `.woff2` files, `.vscode/tasks.json` with `"runOn": "folderOpen"`,
+  EtherHiding/NullReceiver dead drops, and obfuscated JS in `index.php`
+  launched via `shell_exec`. Primary objective remains cryptocurrency
+  theft plus credential stealing.
+
+attacks:
+  - attack: Compromised GitHub org and Packagist dev branches
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0113
+        techName: Compromised user account
+        tactic: Initial Access
+        comment: Malicious commits came through the LaHiRu developer account.
+      - techniqueID: T0169
+        techName: Push implants across repositories
+        tactic: Lateral Movement
+        comment: Force-pushed rewritten history; hundreds of later private-repo commits.
+      - techniqueID: T0138
+        techName: Backdoor in code
+        tactic: Persistence
+        comment: JS hidden in config / fake .woff2 files and in index.php via shell_exec.
+      - techniqueID: T0210
+        techName: Poison AI coding-agent config or workspace
+        tactic: Persistence
+        comment: '"runOn": "folderOpen" in .vscode/tasks.json runs on repo open in VS Code.'
+      - techniqueID: T0197
+        techName: Use code from untrusted source
+        tactic: Initial Access
+        comment: Composer/Go resolve from Git, so registry credentials were unnecessary.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Four Packagist dev-* versions of visanduma/nova-two-factor.
+      - techniqueID: T0159
+        techName: Malicious artifact execution
+        tactic: Execution
+        comment: Clone, IDE folderOpen, or a normal build/test starts the chain.
+
+gaps: []
+
+links:
+  - https://socket.dev/blog/polinrider-github-packagist

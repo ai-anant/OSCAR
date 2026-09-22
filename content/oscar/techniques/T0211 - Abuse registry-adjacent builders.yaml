@@ -1,0 +1,40 @@
+id: T0211
+type: Technique
+
+tactic: Execution
+
+realm:
+  - Open Source Security
+  - CI/CD Posture
+  - Artifact Security
+
+summary: Abuse registry-adjacent builders as remote execution
+
+description: |
+  The attacker publishes a package whose files are executed not by a
+  downstream installer, but by a registry-adjacent worker that trusts
+  package contents: documentation builders (YARD `--load` on RubyDoc.info),
+  preview environments, webhook handlers, or similar jobs that treat
+  `.yardopts`, `setup.py`, Makefiles, or lifecycle scripts as commands.
+  The publisher never needs a victim to `gem install` / `npm install`.
+  Distinct from T0151 (install hooks on the consumer host) and T0166
+  (poisoning the victim project's own CI). Observed in the 2026 GemStuffer
+  RubyGems campaign reconstructed by RubyHack, SafeDep, and JFrog.
+
+mitigations:
+  - M1500
+  - M1660
+  - M1720
+
+detections:
+  - D1500
+  - D1510
+
+references:
+  - https://safedep.io/openai-agents-rubygems-attack
+  - https://www.rubyhack.ai/
+  - https://blog.rubygems.org/2026/09/11/update-may-spam-publishing-campaign.html
+
+metadata:
+  version: 0.1
+  state: draft

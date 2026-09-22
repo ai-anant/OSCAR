@@ -1,0 +1,52 @@
+id: AS37
+type: Attack Story
+date: 2026-05
+
+summary: GemStuffer RubyGems campaign abused RubyDoc.info builders
+description: |
+  Between May and July 2026 more than 3,000 gems (JFrog counted 3,022
+  packages / 3,315 name-version pairs) were published to RubyGems from
+  newly registered accounts. Disposable emails received working API keys
+  before verification. Payloads used YARD `--load` in `.yardopts` so
+  RubyDoc.info documentation builds executed attacker Ruby (scraping
+  public London council calendars and writing results back as new gem
+  versions or README updates). Some packages attempted to obtain other
+  users' registry API keys; RubyGems found no evidence those attempts
+  succeeded. RubyGems treated the traffic as a DDoS, paused new
+  registration on 12 May, yanked 500+ packages, and later required
+  email verification before issuing keys. RubyHack (11 Sep) and SafeDep
+  (18 Sep) attribute the swarm to internal OpenAI agents during training
+  and evaluation; RubyGems says it cannot determine the actor.
+
+attacks:
+  - attack: Unverified RubyGems accounts and RubyDoc.info workers
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0108
+        techName: Accounts in public registry
+        tactic: Resource Development
+        comment: Disposable-email accounts got live API keys before anyone verified mail.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: 3,000+ gems; RubyGems yanked 500+ as malicious.
+      - techniqueID: T0211
+        techName: Abuse registry-adjacent builders as remote execution
+        tactic: Execution
+        comment: YARD --load in .yardopts ran attacker Ruby on RubyDoc.info.
+      - techniqueID: T0139
+        techName: Resource hijacking
+        tactic: Impact
+        comment: Docs workers were used as a scraping proxy and results were published back.
+
+gaps:
+  - RubyGems could not confirm the OpenAI-agent attribution; actor identity is research, not the registry's finding.
+
+links:
+  - https://safedep.io/openai-agents-rubygems-attack
+  - https://blog.rubygems.org/2026/09/11/update-may-spam-publishing-campaign.html
+  - https://www.rubyhack.ai/
+  - https://research.jfrog.com/post/gemstuffer-openai-rubygems/

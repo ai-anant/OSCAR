@@ -7,7 +7,13 @@ sources:
     url: https://safedep.io/blog/
     kind: research
     track: true
-    note: Open-source malware and supply-chain write-ups (ulid-xyz, Deep-Live-Cam, Mini Shai-Hulud).
+    note: Open-source malware and supply-chain write-ups (ulid-xyz, Deep-Live-Cam, Mini Shai-Hulud, mathmain, GemStuffer).
+
+  - name: CloudSEK blog
+    url: https://www.cloudsek.com/blog
+    kind: research
+    track: true
+    note: GHAPPIER npm trusted-publishing loader and related campaign write-ups.
 
   - name: Checkmarx Zero
     url: https://checkmarx.com/zero/
