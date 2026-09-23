@@ -45,11 +45,11 @@ sources:
     track: true
     note: Magecart / CDN / embedded-script supply chain (Polyfill.io, Brevo).
 
-  - name: OpenSourceMalware
-    url: https://opensourcemalware.com/
+  - name: OpenSourceMalware blog
+    url: https://opensourcemalware.com/blog
     kind: research
     track: true
-    note: Community malware intel (WeaselBiscuit and npm clusters).
+    note: Community malware intel write-ups (WeaselBiscuit, PolinRider, StubMaker). RSS at https://opensourcemalware.com/rss.xml. Homepage is a threat-search UI, not the feed.
 
   - name: Morphisec blog
     url: https://www.morphisec.com/blog/
