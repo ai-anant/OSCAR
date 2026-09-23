@@ -1,4 +1,10 @@
 entries:
+- date: '2026-09-23'
+  id: intake-2026-09-23
+  title: tw-pkgprobe-7731 Twilio npm campaign
+  items:
+  - Added AS38 (tw-pkgprobe-7731 npm package targeting Twilio developers, ReversingLabs).
+  - Added ReversingLabs blog as a tracked research source.
 - date: '2026-09-22'
   id: intake-2026-09-22
   title: GHAPPIER, PolinRider Packagist, mathmain, GemStuffer

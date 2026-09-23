@@ -1,0 +1,61 @@
+id: AS38
+type: Attack Story
+date: 2026-08
+
+summary: tw-pkgprobe-7731 npm campaign targeted Twilio developers
+description: |
+  ReversingLabs found tw-pkgprobe-7731, an npm package with no Twilio
+  affiliation, published in 11 versions on 14 August 2026 from account
+  twdepprobe7731. Comments called it an authorized Twilio HackerOne
+  probe that ran only in Twilio's serverless packager sandbox. Version
+  1.0.0 exited unless it detected a Twilio developer environment, then
+  sent environment variables, mounts, temp folders, cwd, and hostname
+  over a webhook. Versions 1.0.1–1.0.3 looked for folders named after
+  34-character Twilio SIDs and, on a match, injected a PoC package into
+  node_modules. Version 1.0.4 added ACCOUNT_SID and AUTH_TOKEN
+  exfiltration. Later versions dropped that payload; the last two
+  probed Twilio-related hosts and fetched AWS IMDS metadata without
+  using it. The name and publisher did not match Twilio's HackerOne
+  PoC rules. npm removed the package about an hour after publication.
+  RL judged the operator unsophisticated (no obfuscation, no
+  typosquat, no attempt to look like a real maintainer).
+
+attacks:
+  - attack: Malicious npm package posing as Twilio research
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0108
+        techName: Accounts in public registry
+        tactic: Resource Development
+        comment: npm account twdepprobe7731 published the cluster; not a Twilio account.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Eleven versions of tw-pkgprobe-7731 in about 45 minutes on 14 Aug.
+      - techniqueID: T0159
+        techName: Malicious artifact execution
+        tactic: Execution
+        comment: Ran after install; 1.0.0 gated on a Twilio developer environment.
+      - techniqueID: T0140
+        techName: Harvest tokens from environment variables
+        tactic: Credential Access
+        comment: 1.0.4 sent process.env.ACCOUNT_SID and AUTH_TOKEN out over the webhook.
+      - techniqueID: T0193
+        techName: Sensitive information in environment variables
+        tactic: Collection
+        comment: 1.0.0 collected env vars plus mounts, temp dirs, cwd, and hostname.
+      - techniqueID: T0156
+        techName: Exfiltration over webhooks
+        tactic: Exfiltration
+        comment: Host context and Twilio API credentials were posted to a webhook.
+
+gaps:
+  - Claiming HackerOne authorization inside package comments is not a named OSC&R technique.
+  - Injecting a PoC package into local node_modules on SID-named folders is not a named technique.
+  - The AWS IMDS fetch in a late version was unused; not mapped as credential theft.
+
+links:
+  - https://www.reversinglabs.com/blog/malicious-npm-campaign-twilio

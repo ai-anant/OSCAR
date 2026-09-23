@@ -9,6 +9,12 @@ sources:
     track: true
     note: Open-source malware and supply-chain write-ups (ulid-xyz, Deep-Live-Cam, Mini Shai-Hulud, mathmain, GemStuffer).
 
+  - name: ReversingLabs blog
+    url: https://www.reversinglabs.com/blog/
+    kind: research
+    track: true
+    note: Registry malware write-ups (tw-pkgprobe-7731 / Twilio npm campaign).
+
   - name: CloudSEK blog
     url: https://www.cloudsek.com/blog
     kind: research
