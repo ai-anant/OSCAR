@@ -1,50 +1,65 @@
-id:  AS5
+id: AS5
 type: Attack Story
-date: 2018
+date: 2017-09
 platforms:
   - windows
 
-summary: CCleaner
+summary: CCleaner 5.33 signed ShadowPad backdoor
 description: |
-        CCleaner is a popular system cleanup software
+  In September 2017 Avast/Piriform shipped CCleaner 5.33.6162 with a
+  ShadowPad-family backdoor compiled into the legitimate binary and signed
+  with Piriform’s real code-signing certificate. Avast’s investigation
+  found the initial access was an unattended developer workstation reached
+  over TeamViewer; more than 40 machines and the build system were later
+  infected. Tens of millions of downloads occurred before the poisoned
+  version was replaced. Talos and Avast published the technical follow-up.
 
-# Techniques used in attack
 attacks:
-  - attack: CCleaner
+  - attack: Piriform / Avast build
     index: 1
     stage: supply-chain
     customer: 0
     supplier: 2
     techniques:
-      
       - techniqueID: T0153
+        techName: Compromised developer workstation
         tactic: Initial Access
-        techName: Compromised Developer Workstation
-        comment: Attacker accesses unattended workstation of on of the CCleaner developers and installed a backdoor
-      
+        comment: Unattended developer workstation accessed via TeamViewer.
       - techniqueID: T0113
+        techName: Compromised user account
         tactic: Initial Access
-        techName: Compromised User Account
-        comment: |
-              The developer machine was accessed by using TeamViewer. This suggests that the developer's credentials where compromised
-      
+        comment: TeamViewer credentials reused from another breach.
       - techniqueID: T0137
-        techName: Weak Authentication Methods
-        tactic: Reconnaissance
-        comment: The TeamViewer credentials where probably obtained from a different breach. If MFA was enabled - these credentials would not have been enough for connecting to the workstation
-      
+        techName: Weak authentication methods
+        tactic: Initial Access
+        comment: No MFA on the remote-access path.
       - techniqueID: T0176
-        techName: Misconfigured Security Measures
+        techName: Disable or misconfigure security measures
         tactic: Defense Evasion
-        comment: The attacker not only managed to infect more the 40 workstations in the company network but also did that for the CCleaner but also for the build system.
-      
+        comment: Dozens of workstations and the build system were infected without stopping the release.
       - techniqueID: T0191
-        techName: Malicious Code In Artifacts
+        techName: Malicious code in artifacts
         tactic: Impact
-        comment: Attackers compiled a customised version of ShadowPad, an infamous backdoor that allows attackers to download further malicious modules or steal data.
+        comment: Custom ShadowPad built into the CCleaner installer.
+      - techniqueID: T0208
+        techName: Compromise code-signing identity
+        tactic: Defense Evasion
+        comment: The backdoored binary was signed with Piriform’s legitimate certificate.
+  - attack: CCleaner users
+    index: 2
+    stage: post-supply-chain
+    customer: 1
+    supplier: 0
+    techniques:
+      - techniqueID: T0172
+        techName: Runtime backdoor
+        tactic: Execution
+        comment: ShadowPad allowed further modules and data theft on victim PCs.
+      - techniqueID: T0201
+        techName: Customers compromised
+        tactic: Impact
+        comment: Multi-million download blast radius before the version was pulled.
 
-        
-              
-       
 links:
-    - https://blog.avast.com/update-ccleaner-attackers-entered-via-teamviewer
+  - https://blog.avast.com/update-ccleaner-attackers-entered-via-teamviewer
+  - https://blog.talosintelligence.com/avast-distributes-backdoored-ccleaner/

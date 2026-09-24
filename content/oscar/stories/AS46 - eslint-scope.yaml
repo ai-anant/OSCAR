@@ -1,0 +1,45 @@
+id: AS46
+type: Attack Story
+date: 2018-07
+platforms:
+  - npm
+
+summary: eslint-scope and eslint-config-eslint malicious publishes
+description: |
+  On 12 July 2018 the npm accounts for eslint-scope and eslint-config-eslint
+  were compromised and malicious versions published. A postinstall script
+  harvested npm credentials from the developer machine and sent them to
+  an attacker server. ESLint’s official postmortem is the primary record.
+  This is the classic “popular linter as credential harvester” case that
+  original OSC&R never documented.
+
+attacks:
+  - attack: eslint-scope on npm
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0113
+        techName: Compromised user account
+        tactic: Initial Access
+        comment: Maintainer npm accounts for eslint-scope / eslint-config-eslint taken over.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Malicious versions published under the real package names.
+      - techniqueID: T0151
+        techName: Installation scripts
+        tactic: Execution
+        comment: postinstall harvested the local npm token.
+      - techniqueID: T0140
+        techName: Harvest tokens from environment variables
+        tactic: Credential Access
+        comment: npm credentials stolen from the installing developer.
+      - techniqueID: T0121
+        techName: Compromised legitimate artifact
+        tactic: Resource Development
+        comment: Consumers of the real eslint-scope name received the harvester.
+
+links:
+  - https://eslint.org/blog/2018/07/postmortem-for-malicious-package-publishes/

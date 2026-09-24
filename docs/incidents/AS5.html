@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CCleaner · OSC&amp;R</title>
+<title>CCleaner 5.33 signed ShadowPad backdoor · OSC&amp;R</title>
 <link rel="stylesheet" href="../assets/style.css">
 
 </head>
@@ -30,16 +30,16 @@
 <main>
 <p class="crumb">OSC&amp;R / <a href="index.html">Incidents</a> / AS5</p>
 
-        <p class="meta">AS5 · 2018</p>
-        <h1>CCleaner</h1>
+        <p class="meta">AS5 · 2017-09</p>
+        <h1>CCleaner 5.33 signed ShadowPad backdoor</h1>
         <p><a class="plat" href="../platforms/windows.html">Windows software</a></p>
-        <p>CCleaner is a popular system cleanup software</p>
+        <p>In September 2017 Avast/Piriform shipped CCleaner 5.33.6162 with a<br>ShadowPad-family backdoor compiled into the legitimate binary and signed<br>with Piriform’s real code-signing certificate. Avast’s investigation<br>found the initial access was an unattended developer workstation reached<br>over TeamViewer; more than 40 machines and the build system were later<br>infected. Tens of millions of downloads occurred before the poisoned<br>version was replaced. Talos and Avast published the technical follow-up.</p>
         <h2>Mapped OSC&amp;R elements</h2>
-        <ul><li><a href="../techniques/T0153.html">T0153</a> Compromised developer workstation</li><li><a href="../techniques/T0113.html">T0113</a> Compromised user account</li><li><a href="../techniques/T0137.html">T0137</a> Weak authentication methods</li><li><a href="../techniques/T0176.html">T0176</a> Disable or misconfigure security measures</li><li><a href="../techniques/T0191.html">T0191</a> Malicious code in artifacts</li></ul>
-        <h2><span class="stage">supply-chain</span> CCleaner</h2><div class="card"><p class="meta"><a href="../techniques/T0153.html">T0153</a> · Initial Access · Compromised Developer Workstation</p><p>Attacker accesses unattended workstation of on of the CCleaner developers and installed a backdoor</p></div><div class="card"><p class="meta"><a href="../techniques/T0113.html">T0113</a> · Initial Access · Compromised User Account</p><p>The developer machine was accessed by using TeamViewer. This suggests that the developer&#x27;s credentials where compromised</p></div><div class="card"><p class="meta"><a href="../techniques/T0137.html">T0137</a> · Reconnaissance · Weak Authentication Methods</p><p>The TeamViewer credentials where probably obtained from a different breach. If MFA was enabled - these credentials would not have been enough for connecting to the workstation</p></div><div class="card"><p class="meta"><a href="../techniques/T0176.html">T0176</a> · Defense Evasion · Misconfigured Security Measures</p><p>The attacker not only managed to infect more the 40 workstations in the company network but also did that for the CCleaner but also for the build system.</p></div><div class="card"><p class="meta"><a href="../techniques/T0191.html">T0191</a> · Impact · Malicious Code In Artifacts</p><p>Attackers compiled a customised version of ShadowPad, an infamous backdoor that allows attackers to download further malicious modules or steal data.</p></div>
+        <ul><li><a href="../techniques/T0153.html">T0153</a> Compromised developer workstation</li><li><a href="../techniques/T0113.html">T0113</a> Compromised user account</li><li><a href="../techniques/T0137.html">T0137</a> Weak authentication methods</li><li><a href="../techniques/T0176.html">T0176</a> Disable or misconfigure security measures</li><li><a href="../techniques/T0191.html">T0191</a> Malicious code in artifacts</li><li><a href="../techniques/T0208.html">T0208</a> Compromise code-signing identity</li><li><a href="../techniques/T0172.html">T0172</a> Runtime backdoor</li><li><a href="../techniques/T0201.html">T0201</a> Customers compromised</li></ul>
+        <h2><span class="stage">supply-chain</span> Piriform / Avast build</h2><div class="card"><p class="meta"><a href="../techniques/T0153.html">T0153</a> · Initial Access · Compromised developer workstation</p><p>Unattended developer workstation accessed via TeamViewer.</p></div><div class="card"><p class="meta"><a href="../techniques/T0113.html">T0113</a> · Initial Access · Compromised user account</p><p>TeamViewer credentials reused from another breach.</p></div><div class="card"><p class="meta"><a href="../techniques/T0137.html">T0137</a> · Initial Access · Weak authentication methods</p><p>No MFA on the remote-access path.</p></div><div class="card"><p class="meta"><a href="../techniques/T0176.html">T0176</a> · Defense Evasion · Disable or misconfigure security measures</p><p>Dozens of workstations and the build system were infected without stopping the release.</p></div><div class="card"><p class="meta"><a href="../techniques/T0191.html">T0191</a> · Impact · Malicious code in artifacts</p><p>Custom ShadowPad built into the CCleaner installer.</p></div><div class="card"><p class="meta"><a href="../techniques/T0208.html">T0208</a> · Defense Evasion · Compromise code-signing identity</p><p>The backdoored binary was signed with Piriform’s legitimate certificate.</p></div><h2><span class="stage">post-supply-chain</span> CCleaner users</h2><div class="card"><p class="meta"><a href="../techniques/T0172.html">T0172</a> · Execution · Runtime backdoor</p><p>ShadowPad allowed further modules and data theft on victim PCs.</p></div><div class="card"><p class="meta"><a href="../techniques/T0201.html">T0201</a> · Impact · Customers compromised</p><p>Multi-million download blast radius before the version was pulled.</p></div>
         
         <h2>Sources</h2>
-        <ul class='refs'><li><a href="https://blog.avast.com/update-ccleaner-attackers-entered-via-teamviewer" rel="noopener">https://blog.avast.com/update-ccleaner-attackers-entered-via-teamviewer</a></li></ul>
+        <ul class='refs'><li><a href="https://blog.avast.com/update-ccleaner-attackers-entered-via-teamviewer" rel="noopener">https://blog.avast.com/update-ccleaner-attackers-entered-via-teamviewer</a></li><li><a href="https://blog.talosintelligence.com/avast-distributes-backdoored-ccleaner/" rel="noopener">https://blog.talosintelligence.com/avast-distributes-backdoored-ccleaner/</a></li></ul>
         
 </main>
 

@@ -1,0 +1,59 @@
+id: AS41
+type: Attack Story
+date: 2023-01
+platforms:
+  - npm
+  - pypi
+  - git
+  - vscode
+
+summary: DPRK Contagious Interview (BeaverTail / npm + git)
+description: |
+  OpenSourceMalware’s 2026 analysis of Lazarus Group’s Contagious Interview
+  campaign (tracked since 2023): fake recruiters on LinkedIn, Fiverr and
+  Upwork send developers a “coding test” that is malware. Delivery includes
+  npm packages (e.g. tailwindcss-forms-kit), git repos, and PyPI. OSM was
+  tracking 373 npm packages, 405 git repos, 988 threats and 4285 IOCs for
+  this cluster. Later waves hid loaders in VS Code tasks and fake fonts.
+
+attacks:
+  - attack: Fake-recruiter delivery
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0129
+        techName: Typosquatting
+        tactic: Initial Access
+        comment: Packages named like legitimate developer utilities (tailwindcss-forms-kit).
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Hundreds of npm (and PyPI) packages plus git repos as droppers.
+      - techniqueID: T0197
+        techName: Use code from untrusted source
+        tactic: Initial Access
+        comment: Victims were asked to clone or npm-install the “interview” project.
+      - techniqueID: T0154
+        techName: Malicious IDE extension
+        tactic: Initial Access
+        comment: Later waves abused VS Code tasks.json and fake font/dictionary files.
+  - attack: Developer workstations
+    index: 2
+    stage: post-supply-chain
+    customer: 1
+    supplier: 0
+    techniques:
+      - techniqueID: T0159
+        techName: Malicious artifact execution
+        tactic: Execution
+        comment: npm install / running the test executed BeaverTail-class stealers.
+      - techniqueID: T0139
+        techName: Resource hijacking
+        tactic: Impact
+        comment: Crypto-wallet theft and persistent backdoors on developer machines.
+
+links:
+  - https://opensourcemalware.com/blog/contagious-interview-gets-an-upgrade-for-2026
+  - https://opensourcemalware.com/blog/latest-contagious-interview-malware-campaign-abuses-microsoft-vscode-tasks

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IndonesianFoods npm worm (86k+ packages) · OSC&amp;R</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+    <header class="top">
+      <div class="ai-banner">This is an <strong>AI-maintained continuation</strong> of OSC&amp;R, preserving the original PBOM / pbom-dev work and carrying the project forward.</div>
+      <div class="bar">
+        <a class="brand" href="../index.html">OSC&amp;R</a>
+        <nav>
+          <a href="../index.html">Matrix</a>
+          <a href="../techniques/index.html">Techniques</a>
+          <a href="../incidents/index.html">Incident mapping</a>
+          <a href="../platforms/index.html">Platforms</a>
+          <a href="../stories/index.html">Attack stories</a>
+          <a href="../guidance.html">Guidance</a>
+          <a href="../origins.html">Origins</a>
+          <a href="../sources.html">Sources</a>
+          <a href="../changelog.html">Changelog</a>
+          <a href="../about.html">About</a>
+        </nav>
+      </div>
+    </header>
+<main>
+<p class="crumb">OSC&amp;R / <a href="index.html">Incidents</a> / AS42</p>
+
+        <p class="meta">AS42 · 2025-11</p>
+        <h1>IndonesianFoods npm worm (86k+ packages)</h1>
+        <p><a class="plat" href="../platforms/npm.html">npm</a></p>
+        <p>OpenSourceMalware identified an npm worm that published at least 86,583<br>packages across 60 user accounts, more than doubling the then-known<br>malicious-package count. Accounts were created for the campaign rather<br>than hijacked. The payload auto-publishes further packages (auto.js /<br>publishScript.js) and pollutes search/infrastructure; it is a volume<br>worm, not a credential stealer. Named for the internal Indonesian-food<br>dictionary. Package list is in 6mile/Indonesian-Foods-Worm.</p>
+        <h2>Mapped OSC&amp;R elements</h2>
+        <ul><li><a href="../techniques/T0108.html">T0108</a> Accounts in public registry</li><li><a href="../techniques/T0109.html">T0109</a> Publish malicious artifact</li><li><a href="../techniques/T0110.html">T0110</a> Advertise malicious artifact</li><li><a href="../techniques/T0169.html">T0169</a> Push implants across repositories</li></ul>
+        <h2><span class="stage">supply-chain</span> npm registry</h2><div class="card"><p class="meta"><a href="../techniques/T0108.html">T0108</a> · Resource Development · Accounts in public registry</p><p>Sixty purpose-created npm users, several with 5,250 packages each.</p></div><div class="card"><p class="meta"><a href="../techniques/T0109.html">T0109</a> · Resource Development · Publish malicious artifact</p><p>86k+ packages published over a multi-year staging period.</p></div><div class="card"><p class="meta"><a href="../techniques/T0110.html">T0110</a> · Resource Development · Advertise malicious artifact</p><p>Search-result pollution so a human might install one by accident.</p></div><div class="card"><p class="meta"><a href="../techniques/T0169.html">T0169</a> · Lateral Movement · Push implants across repositories</p><p>Worm scripts publish the next generation of packages from the install.</p></div>
+        
+        <h2>Sources</h2>
+        <ul class='refs'><li><a href="https://opensourcemalware.com/blog/indonesianfoods-worm-86000-malicious-npm-packages" rel="noopener">https://opensourcemalware.com/blog/indonesianfoods-worm-86000-malicious-npm-packages</a></li><li><a href="https://github.com/6mile/Indonesian-Foods-Worm" rel="noopener">https://github.com/6mile/Indonesian-Foods-Worm</a></li></ul>
+        
+</main>
+
+    <footer>
+      <p>OSC&amp;R (Open Software Supply Chain Attack Reference) was created by
+      <a href="https://github.com/pbom-dev/OSCAR">pbom-dev</a> and its original contributors.
+      This fork is AI-maintained to continue that legacy. Apache-2.0. See
+      <a href="../about.html">About &amp; attribution</a>.</p>
+    </footer>
+</body>
+</html>

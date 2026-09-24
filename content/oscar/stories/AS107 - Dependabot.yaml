@@ -5,9 +5,13 @@ platforms:
   - git
   - github-actions
 
-summary: Spoofed Dependabot
+summary: Spoofed Dependabot commits and secret-stealing Actions
 description: |
-    A large-scale attack targeted hundreds of GitHub repositories, involving malicious code commits designed to mimic "Dependabot," a standard GitHub tool. The attackers attempted to go unnoticed by impersonating this trusted tool.
+  Checkmarx documented a 2023 campaign against hundreds of GitHub
+  repositories: stolen personal access tokens, commits impersonating
+  Dependabot, a workflow that exfiltrated GitHub secrets on push, and
+  JavaScript password stealers in the tree. The Dependabot disguise was
+  meant to survive hurried review. Original OSC&R text was two sentences.
         
 # Techniques used in attack
 attacks:

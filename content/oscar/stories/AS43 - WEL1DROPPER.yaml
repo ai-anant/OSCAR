@@ -1,0 +1,42 @@
+id: AS43
+type: Attack Story
+date: 2026-08
+platforms:
+  - npm
+
+summary: WEL1DROPPER / NUL1DROPPER npm slopsquatting
+description: |
+  In 48 hours a threat actor published 700+ npm packages with AI-slop /
+  random typosquat names (OpenSourceMalware: WEL1DROPPER, also Flooding
+  Dropper / NUL1DROPPER). No preinstall/postinstall. The README tells
+  developers to require() the library; that import loads _helpers.js and
+  starts a cross-platform RAT/infostealer. Primary C2 is three Cloudflare
+  Workers; fallback reconstructs the payload from DNS TXT under wel1.ru.
+  Example package checkout-mobile-bnpl@35.6.9.
+
+attacks:
+  - attack: npm slopsquats
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0129
+        techName: Typosquatting
+        tactic: Initial Access
+        comment: Hundreds of AI-generated / random lookalike names.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: 700+ packages in two days.
+      - techniqueID: T0159
+        techName: Malicious artifact execution
+        tactic: Execution
+        comment: require() is enough; no install scripts, so npm v12 script blocks miss it.
+      - techniqueID: T0110
+        techName: Advertise malicious artifact
+        tactic: Resource Development
+        comment: README instructs developers to load the fake SDK.
+
+links:
+  - https://opensourcemalware.com/blog/russian-ai-slopsquatting-npm-campaign

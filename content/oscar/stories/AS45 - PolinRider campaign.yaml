@@ -1,0 +1,64 @@
+id: AS45
+type: Attack Story
+date: 2026-03
+platforms:
+  - git
+  - golang
+  - packagist
+  - npm
+  - vscode
+
+summary: PolinRider (DPRK) Git-to-registry jump
+description: |
+  OpenSourceMalware named PolinRider: unlike Contagious Interview’s fake
+  interviews, this cluster takes over legitimate GitHub accounts and
+  injects obfuscated JS into repos the maintainer already owns (config
+  files, fake .woff2 fonts, .vscode/tasks.json), then uses blockchain
+  dead-drops for the Lazarus stealer. First report 675 repos; later 1,951
+  across 1,047 owners, then 4,367. Because Go modules and Packagist
+  resolve from git tags — no separate publish token — poisoning GitHub
+  was enough to land artifacts on proxy.golang.org and Packagist. Socket
+  observed ~200 malicious release artifacts / 111 packages (80+ Go, 10
+  Packagist, npm, Chrome extensions). AS35 is one Packagist instance.
+
+attacks:
+  - attack: Maintainer GitHub accounts
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0113
+        techName: Compromised user account
+        tactic: Initial Access
+        comment: Legitimate GitHub maintainer accounts taken over.
+      - techniqueID: T0111
+        techName: Malicious code contribution to an open-source repository
+        tactic: Resource Development
+        comment: Obfuscated loader appended to config / fake fonts / VS Code tasks.
+      - techniqueID: T0154
+        techName: Malicious IDE extension
+        tactic: Initial Access
+        comment: .vscode/tasks.json used as the silent trigger.
+      - techniqueID: T0195
+        techName: Spoofed commits
+        tactic: Defense Evasion
+        comment: Windows script rewrote git history to hide the implant.
+  - attack: Go / Packagist / npm consumers
+    index: 2
+    stage: post-supply-chain
+    customer: 1
+    supplier: 0
+    techniques:
+      - techniqueID: T0197
+        techName: Use code from untrusted source
+        tactic: Initial Access
+        comment: go get and Packagist fetched the poisoned git tag with no extra publish step.
+      - techniqueID: T0159
+        techName: Malicious artifact execution
+        tactic: Execution
+        comment: Installing the Go module, Packagist package, or npm library ran the loader.
+
+links:
+  - https://opensourcemalware.com/blog/polinrider-jumps-the-fence
+  - https://opensourcemalware.com/blog/polinrider-caused-dozens-of-npm-and-go-compromises

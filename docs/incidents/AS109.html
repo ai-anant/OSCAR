@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Pytorch Dependency Confusion · OSC&amp;R</title>
+<title>PyTorch-nightly torchtriton dependency confusion · OSC&amp;R</title>
 <link rel="stylesheet" href="../assets/style.css">
 
 </head>
@@ -31,15 +31,15 @@
 <p class="crumb">OSC&amp;R / <a href="index.html">Incidents</a> / AS109</p>
 
         <p class="meta">AS109 · 2022-12</p>
-        <h1>Pytorch Dependency Confusion</h1>
+        <h1>PyTorch-nightly torchtriton dependency confusion</h1>
         <p><a class="plat" href="../platforms/pypi.html">PyPI</a></p>
-        <p>PyTorch is a machine learning framework based on the Torch library. On December 2022, it was revealed that several builds were infected by malware that was designed to steal environment variables and files. This attack was facilitated by using dependency confusion of the package &quot;torchtriton&quot; which PyTorch was consuming.</p>
+        <p>Between 25 and 30 December 2022, Linux pip installs of PyTorch-nightly<br>pulled a malicious torchtriton from PyPI instead of the namesake package<br>on PyTorch’s own index, because PyPI takes precedence. The extra binary<br>stole environment variables and files from the home directory. Stable<br>PyTorch packages were not affected. PyTorch’s own advisory is the<br>primary record; they replaced the dependency with pytorch-triton and<br>registered a dummy on PyPI. Original OSC&amp;R mapped this as T0113<br>(compromised user account); it is T0120.</p>
         <h2>Mapped OSC&amp;R elements</h2>
-        <ul><li><a href="../techniques/T0113.html">T0113</a> Compromised user account</li><li><a href="../techniques/T0140.html">T0140</a> Harvest tokens from environment variables</li></ul>
-        <h2><span class="stage">supply-chain</span> Torchtriton package</h2><div class="card"><p class="meta"><a href="../techniques/T0113.html">T0113</a> · Initial Access · Dependency Confusion</p><p>Torchtriton is a package that the Pytorch project is consuming. On December 2022, the package was altered to exfiltrate sensitive information. Later on, the person that performs this attack confessed anonymously that it was done for research purposes and all the collected data was deleted.</p></div><h2><span class="stage">post-supply-chain</span> Pytorch users</h2><div class="card"><p class="meta"><a href="../techniques/T0140.html">T0140</a> · Credential Access · Harvest Tokens From Environment Variables</p><p>The malicious code within the Torchtriton package extracted and exfiltrated environment variables and files from the home directory of users who installed this package.</p></div>
+        <ul><li><a href="../techniques/T0120.html">T0120</a> Dependency confusion</li><li><a href="../techniques/T0109.html">T0109</a> Publish malicious artifact</li><li><a href="../techniques/T0107.html">T0107</a> Discover internal artifacts names</li><li><a href="../techniques/T0151.html">T0151</a> Installation scripts</li><li><a href="../techniques/T0140.html">T0140</a> Harvest tokens from environment variables</li><li><a href="../techniques/T0201.html">T0201</a> Customers compromised</li></ul>
+        <h2><span class="stage">supply-chain</span> torchtriton on PyPI</h2><div class="card"><p class="meta"><a href="../techniques/T0120.html">T0120</a> · Initial Access · Dependency confusion</p><p>Same name as the internal nightly dependency; PyPI won the resolve.</p></div><div class="card"><p class="meta"><a href="../techniques/T0109.html">T0109</a> · Resource Development · Publish malicious artifact</p><p>Malicious torchtriton uploaded to the public index.</p></div><div class="card"><p class="meta"><a href="../techniques/T0107.html">T0107</a> · Reconnaissance · Discover internal artifacts names</p><p>The attacker needed the unpublished name torchtriton.</p></div><h2><span class="stage">post-supply-chain</span> PyTorch-nightly users</h2><div class="card"><p class="meta"><a href="../techniques/T0151.html">T0151</a> · Execution · Installation scripts</p><p>pip install of nightly pulled and ran the malicious wheel.</p></div><div class="card"><p class="meta"><a href="../techniques/T0140.html">T0140</a> · Credential Access · Harvest tokens from environment variables</p><p>Env vars and home-directory files were exfiltrated.</p></div><div class="card"><p class="meta"><a href="../techniques/T0201.html">T0201</a> · Impact · Customers compromised</p><p>Anyone who pip-installed Linux nightly in that five-day window.</p></div>
         
         <h2>Sources</h2>
-        <ul class='refs'><li><a href="https://pytorch.org/blog/compromised-nightly-dependency/" rel="noopener">https://pytorch.org/blog/compromised-nightly-dependency/</a></li><li><a href="https://twitter.com/Ax_Sharma/status/1609586774204116994/photo/1" rel="noopener">https://twitter.com/Ax_Sharma/status/1609586774204116994/photo/1</a></li></ul>
+        <ul class='refs'><li><a href="https://pytorch.org/blog/compromised-nightly-dependency/" rel="noopener">https://pytorch.org/blog/compromised-nightly-dependency/</a></li></ul>
         
 </main>
 

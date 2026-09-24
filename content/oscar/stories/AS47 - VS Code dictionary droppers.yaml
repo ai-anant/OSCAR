@@ -1,0 +1,49 @@
+id: AS47
+type: Attack Story
+date: 2025-12
+platforms:
+  - vscode
+  - git
+
+summary: DPRK VS Code dictionary and tasks.json droppers
+description: |
+  OpenSourceMalware documented Contagious Interview / Lazarus waves that
+  hide multi-stage droppers in VS Code configuration rather than in an
+  npm tarball: spell-check dictionary files (Dec 2025) and tasks.json
+  automation (Nov 2025, Jan 2026 “Fake Font”). Opening the repo in VS Code
+  is enough for the task or dictionary hook to run. A 72-hour window in
+  January 2026 hit at least 21 small OSS maintainers via malicious tasks.
+
+attacks:
+  - attack: VS Code workspace config
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0154
+        techName: Malicious IDE extension
+        tactic: Initial Access
+        comment: Malware in dictionary files and tasks.json, not a Marketplace extension.
+      - techniqueID: T0152
+        techName: IDE
+        tactic: Execution
+        comment: VS Code task automation / workspace open executes the loader.
+      - techniqueID: T0111
+        techName: Malicious code contribution to an open-source repository
+        tactic: Resource Development
+        comment: Config committed into the victim or bait repository.
+      - techniqueID: T0210
+        techName: Poison AI coding-agent config or workspace
+        tactic: Persistence
+        comment: Same workspace-dir pattern later seen in DUSTMAKER / Hades.
+      - techniqueID: T0159
+        techName: Malicious artifact execution
+        tactic: Execution
+        comment: BeaverTail / InvisibleFerret-class payloads on the developer machine.
+
+links:
+  - https://opensourcemalware.com/blog/dprk-malware-microsoft-vscode-dictionary-files
+  - https://opensourcemalware.com/blog/latest-contagious-interview-malware-campaign-abuses-microsoft-vscode-tasks
+  - https://opensourcemalware.com/blog/dprk-contagious-interview-campaign-fake-font-uses-malicious-vs-code-fonts
+  - https://opensourcemalware.com/blog/small-open-source-maintainers-targeted-by-vs-code-tasks-malware

@@ -17,6 +17,7 @@
           <a href="../index.html">Matrix</a>
           <a href="../techniques/index.html">Techniques</a>
           <a href="../incidents/index.html">Incident mapping</a>
+          <a href="../platforms/index.html">Platforms</a>
           <a href="../stories/index.html">Attack stories</a>
           <a href="../guidance.html">Guidance</a>
           <a href="../origins.html">Origins</a>
@@ -29,7 +30,7 @@
 <main>
 <p class="crumb">OSC&amp;R / <a href="index.html">Techniques</a> / T0172</p>
 
-        <p class="meta">T0172 · Execution · TA04 · observed in 7 incident(s)</p>
+        <p class="meta">T0172 · Execution · TA04 · observed in 8 incident(s)</p>
         <h1>Runtime backdoor</h1>
         <div class="chips"><span class="chip">Code Security</span> <span class="chip">Container Security</span> <span class="chip">Open Source Security</span></div>
         <p>A runtime backdoor attack is a type of cyber attack where an attacker gains unauthorized access to a computer system or network and installs a malicious software or code that allows them to control the system or steal sensitive information.<br>This type of attack is called a &quot;runtime&quot; backdoor attack because it involves manipulating the system at runtime, while it is running, rather than during the development or deployment stages.<br>The attacker typically gains access to the system through a vulnerability, such as an unpatched software flaw or weak authentication mechanism. <br>Once inside, the attacker can install a backdoor that provides them with persistent access to the system, even after the initial entry point has been closed.</p>
@@ -39,7 +40,7 @@
         <ul><li><span class="id">M1720</span> Implement regular patches and updates</li><li><span class="id">M1500</span> Verify third-party artifacts and open-source libraries</li><li><span class="id">M1501</span> Require SBOM from all third-party suppliers</li><li><span class="id">M1502</span> Define trusted package managers and repositories</li><li><span class="id">M1503</span> Implement SCA analysis</li></ul>
         <h2>Detections</h2>
         <ul><li><span class="id">D1510</span> Implement Intrusion Detection System and anti-malware</li><li><span class="id">D1520</span> Implement endpoint detection and response system</li></ul>
-        <h2>Observed in incidents (7)</h2><ul><li><a href="../incidents/AS4.html">PHP Zerodium Backdoor</a></li><li><a href="../incidents/AS6.html">SolarWinds</a></li><li><a href="../incidents/AS7.html">XZ Utils backdoor</a></li><li><a href="../incidents/AS36.html">mathmain / mathsbase encrypted npm RAT (equation trigger)</a></li><li><a href="../incidents/AS1.html">Webmin 1.900 RCE</a></li><li><a href="../incidents/AS40.html">Graphalgo spreads to Terraform providers and Go modules</a></li><li><a href="../incidents/AS40.html">Graphalgo spreads to Terraform providers and Go modules</a></li></ul>
+        <h2>Observed in incidents (8)</h2><ul><li><a href="../incidents/AS5.html">CCleaner 5.33 signed ShadowPad backdoor</a></li><li><a href="../incidents/AS4.html">php.net git server Zerodium backdoor</a></li><li><a href="../incidents/AS6.html">SolarWinds</a></li><li><a href="../incidents/AS7.html">XZ Utils backdoor</a></li><li><a href="../incidents/AS36.html">mathmain / mathsbase encrypted npm RAT (equation trigger)</a></li><li><a href="../incidents/AS1.html">Webmin 1.890–1.920 build-server backdoor</a></li><li><a href="../incidents/AS40.html">Graphalgo spreads to Terraform providers and Go modules</a></li><li><a href="../incidents/AS40.html">Graphalgo spreads to Terraform providers and Go modules</a></li></ul>
         <h2>References</h2>
         <ul class='refs'><li><a href="https://www.cyberark.com/resources/blog/the-anatomy-of-the-solarwinds-attack-chain" rel="noopener">https://www.cyberark.com/resources/blog/the-anatomy-of-the-solarwinds-attack-chain</a></li><li><a href="https://portswigger.net/daily-swig/software-supply-chain-attacks-everything-you-need-to-know" rel="noopener">https://portswigger.net/daily-swig/software-supply-chain-attacks-everything-you-need-to-know</a></li><li><a href="https://www.littlefish.co.uk/insights/backdoor-vulnerability-supply-chain-attacks/" rel="noopener">https://www.littlefish.co.uk/insights/backdoor-vulnerability-supply-chain-attacks/</a></li></ul>
         

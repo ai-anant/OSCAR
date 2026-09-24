@@ -1,0 +1,43 @@
+id: AS42
+type: Attack Story
+date: 2025-11
+platforms:
+  - npm
+
+summary: IndonesianFoods npm worm (86k+ packages)
+description: |
+  OpenSourceMalware identified an npm worm that published at least 86,583
+  packages across 60 user accounts, more than doubling the then-known
+  malicious-package count. Accounts were created for the campaign rather
+  than hijacked. The payload auto-publishes further packages (auto.js /
+  publishScript.js) and pollutes search/infrastructure; it is a volume
+  worm, not a credential stealer. Named for the internal Indonesian-food
+  dictionary. Package list is in 6mile/Indonesian-Foods-Worm.
+
+attacks:
+  - attack: npm registry
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0108
+        techName: Accounts in public registry
+        tactic: Resource Development
+        comment: Sixty purpose-created npm users, several with 5,250 packages each.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: 86k+ packages published over a multi-year staging period.
+      - techniqueID: T0110
+        techName: Advertise malicious artifact
+        tactic: Resource Development
+        comment: Search-result pollution so a human might install one by accident.
+      - techniqueID: T0169
+        techName: Push implants across repositories
+        tactic: Lateral Movement
+        comment: Worm scripts publish the next generation of packages from the install.
+
+links:
+  - https://opensourcemalware.com/blog/indonesianfoods-worm-86000-malicious-npm-packages
+  - https://github.com/6mile/Indonesian-Foods-Worm

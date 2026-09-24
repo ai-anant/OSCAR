@@ -1,5 +1,13 @@
 entries:
 - date: '2026-09-23'
+  id: backfill-old-incidents
+  title: Rewrite original stories and backfill older campaigns
+  items:
+  - Rewrote AS1 Webmin, AS4 PHP (date was wrongly 2023), AS5 CCleaner, AS107 Dependabot, AS108 JuiceStealer, AS109
+    PyTorch (was tagged as account takeover; it is T0120) with first-party sources and fuller technique maps.
+  - 'Added AS41–AS47 from OpenSourceMalware and ESLint: Contagious Interview, IndonesianFoods worm, WEL1DROPPER,
+    StubMaker, PolinRider campaign, eslint-scope 2018, VS Code dictionary/tasks droppers.'
+- date: '2026-09-23'
   id: platform-aggregates
   title: Platform group pages (all npm incidents, etc.)
   items:

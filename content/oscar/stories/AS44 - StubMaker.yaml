@@ -1,0 +1,49 @@
+id: AS44
+type: Attack Story
+date: 2026-08
+platforms:
+  - rubygems
+  - npm
+
+summary: StubMaker RubyGems (and npm) Windows infostealer
+description: |
+  On 15 August 2026 OpenSourceMalware found newly published RubyGems
+  typosquats whose extconf.rb fakes a native-extension build (empty make
+  targets / make_stub) while downloading a 22 MB Rust loader from GitHub
+  Releases. The loader carries an 11 MB Go infostealer in its own data
+  section — no second-stage URL after the first fetch. Targets browser
+  passwords (including Chromium ABE), wallets, seed phrases, Telegram.
+  A parallel npm cluster shared IOCs (StubMaker). Hundreds of downloads
+  before takedown.
+
+attacks:
+  - attack: RubyGems typosquats
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0129
+        techName: Typosquatting
+        tactic: Initial Access
+        comment: Clumsy typos of popular Ruby gems.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Malicious gems (and later npm twins) published to the registry.
+      - techniqueID: T0151
+        techName: Installation scripts
+        tactic: Execution
+        comment: extconf.rb runs at gem install and fetches the loader.
+      - techniqueID: T0198
+        techName: Malicious Build Time Dependencies
+        tactic: Defense Evasion
+        comment: Fake native-extension build (StubMaker) so install looks like a routine compile.
+      - techniqueID: T0184
+        techName: Harvesting sensitive information from files
+        tactic: Credential Access
+        comment: Browser creds, wallets, Telegram data stolen on Windows.
+
+links:
+  - https://opensourcemalware.com/blog/stubmaker-rubygems-windows-infostealer
+  - https://opensourcemalware.com/blog/windows-infostealer-stubmaker-npm-ruby

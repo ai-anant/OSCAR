@@ -1,44 +1,57 @@
-id:  AS109
+id: AS109
 type: Attack Story
 date: 2022-12
 platforms:
   - pypi
 
-summary: Pytorch Dependency Confusion
+summary: PyTorch-nightly torchtriton dependency confusion
 description: |
-    PyTorch is a machine learning framework based on the Torch library. On December 2022, it was revealed that several builds were infected by malware that was designed to steal environment variables and files. This attack was facilitated by using dependency confusion of the package "torchtriton" which PyTorch was consuming.
-        
-# Techniques used in attack
+  Between 25 and 30 December 2022, Linux pip installs of PyTorch-nightly
+  pulled a malicious torchtriton from PyPI instead of the namesake package
+  on PyTorch’s own index, because PyPI takes precedence. The extra binary
+  stole environment variables and files from the home directory. Stable
+  PyTorch packages were not affected. PyTorch’s own advisory is the
+  primary record; they replaced the dependency with pytorch-triton and
+  registered a dummy on PyPI. Original OSC&R mapped this as T0113
+  (compromised user account); it is T0120.
+
 attacks:
-  - attack: Torchtriton package
+  - attack: torchtriton on PyPI
     index: 1
     stage: supply-chain
     customer: 0
     supplier: 2
     techniques:
-    - techniqueID: T0113
-      techName: Dependency Confusion
-      tactic: Initial Access
-      comment: |
-        Torchtriton is a package that the Pytorch project is consuming. On December 2022, the package was altered to exfiltrate sensitive information. Later on, the person that performs this attack confessed anonymously that it was done for research purposes and all the collected data was deleted.
-        
-       
-  
-  - attack: Pytorch users
+      - techniqueID: T0120
+        techName: Dependency confusion
+        tactic: Initial Access
+        comment: Same name as the internal nightly dependency; PyPI won the resolve.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Malicious torchtriton uploaded to the public index.
+      - techniqueID: T0107
+        techName: Discover internal artifacts names
+        tactic: Reconnaissance
+        comment: The attacker needed the unpublished name torchtriton.
+  - attack: PyTorch-nightly users
     index: 2
     stage: post-supply-chain
     customer: 1
     supplier: 0
     techniques:
-    - techniqueID: T0140
-      techName: Harvest Tokens From Environment Variables
-      tactic: Credential Access
-      comment:  |
-          The malicious code within the Torchtriton package extracted and exfiltrated environment variables and files from the home directory of users who installed this package.
-
+      - techniqueID: T0151
+        techName: Installation scripts
+        tactic: Execution
+        comment: pip install of nightly pulled and ran the malicious wheel.
+      - techniqueID: T0140
+        techName: Harvest tokens from environment variables
+        tactic: Credential Access
+        comment: Env vars and home-directory files were exfiltrated.
+      - techniqueID: T0201
+        techName: Customers compromised
+        tactic: Impact
+        comment: Anyone who pip-installed Linux nightly in that five-day window.
 
 links:
-    - https://pytorch.org/blog/compromised-nightly-dependency/
-    - https://twitter.com/Ax_Sharma/status/1609586774204116994/photo/1
-
-
+  - https://pytorch.org/blog/compromised-nightly-dependency/

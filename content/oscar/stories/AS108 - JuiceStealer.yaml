@@ -1,62 +1,60 @@
-id:  AS108
+id: AS108
 type: Attack Story
 date: 2022-02
 platforms:
   - pypi
 
-summary: JuiceStealer - PyPi Supply Chain Attack
+summary: JuiceStealer PyPI phishing and typosquats
 description: |
-    The threat actor known as "JuiceLedger" orchestrated a large-scale attack on PyPi, the official Python package repository. This attack was multifaceted, targeting package maintainers by attempting to compromise their PyPi accounts. Additionally, the attacker engaged in TypoSquatting, uploading malicious packages to the repository
-        
-# Techniques used in attack
+  Checkmarx documented the first known phishing campaign against PyPI
+  maintainers: fake “validate your PyPI credentials” mail to a lookalike
+  login page. At least two legitimate packages were then published with
+  JuiceStealer (exotel 0.1.6; spam 2.0.2 / 4.0.2), stealing crypto-wallet
+  material and later Chrome passwords. The same malware was also pushed
+  through hundreds of typosquat names. SentinelOne later tied the cluster
+  to JuiceLedger activity dating to late 2021.
+
 attacks:
-  - attack: PyPi package maintainers
+  - attack: PyPI maintainers
     index: 1
     stage: supply-chain
     customer: 0
     supplier: 2
     techniques:
-    - techniqueID: T0113
-      techName: Compromised User Account
-      tactic: Initial Access
-      comment: |
-        PyPi package maintainers received a phishing email requesting validation of their PyPi credentials, which directed them to a fraudulent PyPi login page in an attempt to steal their account information.
-
-    
-
-    - techniqueID: T0111
-      techName: Malicious Code Contribution To An Open-Source Repository
-      tactic: Resource Development
-      comment: |
-        These phishing attempts were successful on at least two occasions, targeting version 0.1.6 of "exotel" (with over 480,000 total downloads) and versions 2.0.2 and 4.0.2 of "spam" (with over 200,000 total downloads). The malicious code was crafted to pilfer cryptocurrency credentials and was later augmented with a broader functionality aimed at stealing Chrome passwords
-
-
-    - techniqueID: T0129
-      techName: Typosquatting
-      tactic: Initial Access
-      comment: |
-        Simultaneously with the phishing attempts, the same malware, JuiceStealer, was introduced into hundreds of Python packages, strategically designed to mimic legitimate packages
-       
-  
-  - attack: Users of code for infected repositories
+      - techniqueID: T0113
+        techName: Compromised user account
+        tactic: Initial Access
+        comment: Phishing to a fake PyPI login stole maintainer credentials.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Poisoned versions of exotel and spam plus hundreds of typosquats.
+      - techniqueID: T0129
+        techName: Typosquatting
+        tactic: Initial Access
+        comment: Parallel upload of lookalike package names carrying JuiceStealer.
+      - techniqueID: T0111
+        techName: Malicious code contribution to an open-source repository
+        tactic: Resource Development
+        comment: Malicious code landed in already-trusted package names.
+  - attack: PyPI consumers
     index: 2
     stage: post-supply-chain
     customer: 1
     supplier: 0
     techniques:
-    - techniqueID: T0113
-      techName: Compromised user account
-      tactic: Initial Access
-      comment:  |
-          The JuiceStealer malware, initially created to pilfer cryptocurrency wallet credentials, was subsequently modified to extract credentials from Chrome. This alteration significantly escalates the supply chain attack, increasing its potential impact
-    
-    
-
+      - techniqueID: T0159
+        techName: Malicious artifact execution
+        tactic: Execution
+        comment: Installing the poisoned versions ran JuiceStealer.
+      - techniqueID: T0139
+        techName: Resource hijacking
+        tactic: Impact
+        comment: Crypto-wallet theft, later expanded to Chrome password theft.
+      - techniqueID: T0201
+        techName: Customers compromised
+        tactic: Impact
+        comment: Hundreds of thousands of historical downloads on the hijacked names.
 
 links:
-    - https://arstechnica.com/information-technology/2022/09/actors-behind-pypi-supply-chain-attack-have-been-active-since-late-2021/
-    - https://www.sentinelone.com/labs/pypi-phishing-campaign-juiceledger-threat-actor-pivots-from-fake-apps-to-supply-chain-attacks/
-    - https://checkmarx.com/blog/first-known-phishing-attack-against-pypi-users/
-    
-
-
+  - https://checkmarx.com/blog/first-known-phishing-attack-against-pypi-users/
