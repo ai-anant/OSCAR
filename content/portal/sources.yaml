@@ -63,6 +63,12 @@ sources:
     track: true
     note: Registry compromises, worms, extension/MCP supply chain.
 
+  - name: Aikido blog
+    url: https://www.aikido.dev/blog
+    kind: research
+    track: true
+    note: Graphalgo Terraform/Go modules, npm campaign write-ups.
+
   - name: Wiz blog
     url: https://www.wiz.io/blog
     kind: research

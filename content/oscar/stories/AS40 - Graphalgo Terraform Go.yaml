@@ -1,0 +1,97 @@
+id: AS40
+type: Attack Story
+date: 2026-09
+
+summary: Graphalgo spreads to Terraform providers and Go modules
+description: |
+  Aikido found Graphalgo-family Go malware in two Terraform providers
+  (gocommunity-io/dockerd and kreuzwenker/docker, a typosquat of
+  kreuzwerker/docker with 56 million reported downloads) and two Go
+  modules (gocommunity.io/orderedbtree, first seen 11 August 2026, and
+  gogets.dev/btreex, 8 September). This is the first malware Aikido
+  observed via Terraform providers. The providers stay inert unless
+  SHA-256(containerName + networkID) equals a fixed digest; that digest
+  decrypts a ZIP hidden as import-resource.sqlite3, then a detached
+  `go run .` executes the second stage. The RAT checks in to Slack
+  (frontend-devs / qa-announcements; 1,240 messages since 16 July) and
+  polls an Arbitrum Sepolia contract every 3 seconds. Actor key
+  302a3005…b526702 is shared with Graphalgo npm samples since April
+  (modern-events). gogets.dev/btreex hid the payload in a fake .sql
+  file and activated on a specific price integer; forged commits were
+  backdated to November 2025 so the Go module proxy showed a false
+  release date. The operator stood up two non-functional vanity Go
+  sites (gocommunity.io, gogets.dev) next to attacker GitHub orgs.
+  Slack check-ins named 18 hostnames (3 Windows, 5 Linux, 10 macOS).
+
+attacks:
+  - attack: Malicious Terraform providers
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0108
+        techName: Accounts in public registry
+        tactic: Resource Development
+        comment: Attacker-controlled Terraform registry namespaces gocommunity-io and kreuzwenker.
+      - techniqueID: T0129
+        techName: Typosquatting
+        tactic: Initial Access
+        comment: kreuzwenker/docker impersonates kreuzwerker/docker (56M downloads).
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Providers gocommunity-io/dockerd and kreuzwenker/docker published in early September.
+      - techniqueID: T0150
+        techName: Runtime logic bomb
+        tactic: Execution
+        comment: Payload decrypts only when SHA-256(containerName+networkID) matches one digest.
+      - techniqueID: T0159
+        techName: Malicious artifact execution
+        tactic: Execution
+        comment: Detached `go run .` of AES-decrypted ZIP posing as import-resource.sqlite3.
+      - techniqueID: T0172
+        techName: Runtime backdoor
+        tactic: Execution
+        comment: Go RAT with Slack C2 plus Arbitrum Sepolia contract polling.
+  - attack: Malicious Go modules and fake ecosystems
+    index: 2
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0108
+        techName: Accounts in public registry
+        tactic: Resource Development
+        comment: Modules gocommunity.io/orderedbtree and gogets.dev/btreex under attacker vanity paths.
+      - techniqueID: T0141
+        techName: Fake developer reputation (Starjacking)
+        tactic: Resource Development
+        comment: gocommunity.io and gogets.dev look like Go package ecosystems; they do not accept third-party packages.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: orderedbtree (11 Aug, plaintext malware) and btreex (8 Sep, malware in a fake .sql).
+      - techniqueID: T0195
+        techName: Spoofed Commits
+        tactic: Defense Evasion
+        comment: Forged commits backdated to Nov 2025 so the Go module proxy showed a false release date.
+      - techniqueID: T0150
+        techName: Runtime logic bomb
+        tactic: Execution
+        comment: btreex activates only when processing an object with one specific price integer.
+      - techniqueID: T0159
+        techName: Malicious artifact execution
+        tactic: Execution
+        comment: Same Graphalgo Go RAT as the Terraform providers.
+      - techniqueID: T0172
+        techName: Runtime backdoor
+        tactic: Execution
+        comment: Shared Slack workspaces and Ethereum key with April npm Graphalgo.
+
+gaps:
+  - Slack workspace plus Arbitrum smart-contract C2 is not a named OSC&R technique.
+  - Standing up fake vanity Go ecosystems as social-engineering fronts is only partly covered by T0141.
+
+links:
+  - https://www.aikido.dev/blog/graphalgo-terraform-go-modules

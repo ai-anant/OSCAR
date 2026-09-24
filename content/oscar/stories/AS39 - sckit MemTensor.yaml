@@ -1,0 +1,92 @@
+id: AS39
+type: Attack Story
+date: 2026-09
+
+summary: sckit worm in MemTensor npm plugin and PyPI MemoryOS
+description: |
+  StepSecurity documented malicious releases of the legitimate MemTensor
+  AI-memory plugin @memtensor/memos-cloud-openclaw-plugin on 23 September
+  2026. Versions 0.1.21, 0.1.23, and 0.1.25 added lib/sckit.js and
+  platform-native .sckit binaries. There was no install/preinstall/
+  postinstall script: the plugin's own gateway-startup and memory-recall
+  paths import launchStageZero, spawn a detached sckit binary with
+  --config64, copy the parent environment (including credentials), and
+  on recall also pass the user's prompt as SCKIT_EVENT_TEXT. Clean
+  0.1.22 and 0.1.24 restored the package; malicious contents returned
+  3 minutes 36 seconds and 3 minutes 28 seconds later. Unpacked size
+  jumped from ~272 KB to ~43.6 MB. MemTensor issue 173 reports npm
+  artifacts with no matching git commits or tags, so publishing
+  credentials were used rather than the source repo. An uncalled
+  collectStageZero helper maps NPM_TOKEN/NODE_AUTH_TOKEN. PyPI
+  MemoryOS 2.0.34 is the Python counterpart: a logging-init hook in
+  configure_logging() reaches the launcher on import, six hashed
+  payloads, and a hash-pinned CI delivery chain. Binary strings name
+  recursivePublish and a GitHub Actions template; StepSecurity treats
+  those as intended propagation, not observed extra publishes.
+
+attacks:
+  - attack: Compromised MemTensor npm plugin
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0112
+        techName: Compromised token
+        tactic: Initial Access
+        comment: npm artifacts had no matching git commits or tags; publish credentials, not the repo.
+      - techniqueID: T0121
+        techName: Compromised legitimate artifact
+        tactic: Resource Development
+        comment: Real @memtensor/memos-cloud-openclaw-plugin versions 0.1.21/0.1.23/0.1.25.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Three malicious npm versions on 23 Sep; latest pointed at 0.1.25.
+      - techniqueID: T0159
+        techName: Malicious artifact execution
+        tactic: Execution
+        comment: No install scripts; launcher runs from gateway startup and memory-recall.
+      - techniqueID: T0140
+        techName: Harvest tokens from environment variables
+        tactic: Credential Access
+        comment: Child inherits process.env; collectStageZero maps NPM_TOKEN/NODE_AUTH_TOKEN.
+      - techniqueID: T0184
+        techName: Harvesting sensitive information from files
+        tactic: Credential Access
+        comment: Decoded config sets inventory_roots to $HOME; binary strings match cloud, VCS, and registry tokens.
+      - techniqueID: T0193
+        techName: Sensitive information in environment variables
+        tactic: Collection
+        comment: Parent env plus SCKIT_EVENT_TEXT (user prompt on recall) are handed to the detached binary.
+  - attack: PyPI MemoryOS 2.0.34
+    index: 2
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0121
+        techName: Compromised legitimate artifact
+        tactic: Resource Development
+        comment: MemoryOS 2.0.34 on PyPI; same sckit payload family.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Wheel/sdist include six platform binaries via a custom Poetry build backend.
+      - techniqueID: T0159
+        techName: Malicious artifact execution
+        tactic: Execution
+        comment: Import of memos reaches configure_logging() then memos._stage0.trigger().
+      - techniqueID: T0140
+        techName: Harvest tokens from environment variables
+        tactic: Credential Access
+        comment: Python launcher copies os.environ into the child; CI helper can inherit INPUT_PASSWORD.
+
+gaps:
+  - HTTP C2 fronts on skyleen.fr (/config, /status, /batch) are not a named OSC&R technique.
+  - recursivePublish / GitHub Actions implant strings in the binary are intended worm behaviour; extra victim publishes were not shown.
+  - Passing the user's memory-recall prompt as SCKIT_EVENT_TEXT is not a named technique.
+
+links:
+  - https://www.stepsecurity.io/blog/sckit-supply-chain-worm-hits-memtensor-npm-pypi-scopes
+  - https://github.com/MemTensor/MemOS-Cloud-OpenClaw-Plugin/issues/173

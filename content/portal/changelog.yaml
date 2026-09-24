@@ -1,4 +1,11 @@
 entries:
+- date: '2026-09-24'
+  id: intake-2026-09-24
+  title: sckit MemTensor worm and Graphalgo Terraform/Go
+  items:
+  - Added AS39 (sckit credential-harvesting launcher in @memtensor/memos-cloud-openclaw-plugin and PyPI MemoryOS 2.0.34, StepSecurity).
+  - Added AS40 (Graphalgo Go malware in Terraform providers and Go modules, Aikido).
+  - Added Aikido blog as a tracked research source.
 - date: '2026-09-23'
   id: intake-2026-09-23
   title: tw-pkgprobe-7731 Twilio npm campaign

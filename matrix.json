@@ -164,7 +164,7 @@
         ],
         "url": "techniques/T0108.html",
         "description": "An attacker can use accounts in public registries, such as PyPI or DockerHub, to perform a supply chain attack in several ways.\nOne approach is to compromise the credentials of a legitimate developer account and use it to upload malicious packages or container images.\nThe attacker can then promote the malicious artifact by using misleading descriptions or keywords, potentially increasing the number of downloads.\nAlternatively, the attacker can create a fake developer account and upload malicious packages or container images using it.\nThe attacker may use a similar username or avatar to legitimate developers to trick users into thinking the account is legitimate.\nOnce the malicious artifact is uploaded, the attacker can promote it using various techniques, such as hijacking popular package names or using misleading descriptions.\nAnother approach is to target the infrastructure used by public registries, such as the servers or the communication channels used by developers to upload packages or container images.\nAn attacker may compromise the infrastructure and use it to inject malicious code into legitimate packages or container images as they are being uploaded.\n",
-        "incidentCount": 5
+        "incidentCount": 6
       },
       {
         "id": "T0109",
@@ -176,7 +176,7 @@
         ],
         "url": "techniques/T0109.html",
         "description": "Public registries are widely used by developers and organizations to download and distribute software packages and container images, making them an attractive target for attackers.\nIn this type of attack, the attacker creates a package or container image that contains malicious code or files, such as a backdoor or other malware.\nThe attacker then uploads the package or image to PyPI, DockerHub or other registry, posing as a legitimate user or creating a fake account.\nOnce the package or image is uploaded, it becomes available for download by other users who may unsuspectingly use it in their projects.\nThe supply chain attack can have far-reaching consequences as it can affect all systems that rely on the malicious package or image.\nFor example, a Python package that is downloaded from PyPI may be used by multiple applications and libraries, potentially compromising all systems that use it.\nSimilarly, a container image with a malicious payload may be used to deploy an application across multiple environments, leading to a widespread compromise.\n",
-        "incidentCount": 24
+        "incidentCount": 26
       },
       {
         "id": "T0110",
@@ -213,7 +213,7 @@
         ],
         "url": "techniques/T0121.html",
         "description": "A compromised legitimate artifact attack is a type of cyber attack in which an attacker replaces a legitimate package or container image with a malicious version, often without the knowledge of the original developer or distributor. \nThis attack takes advantage of the trust that users place in legitimate packages or container images, which are often used to deploy software across multiple environments.\nIn this attack, the attacker may gain access to the repository or registry where the legitimate artifact is stored, either by exploiting a vulnerability or through social engineering tactics. \nThe attacker then replaces the legitimate artifact with a malicious version that contains malware or other harmful code. \nOnce the compromised artifact is downloaded and deployed, it can compromise the system and potentially cause significant harm, such as stealing sensitive data or taking control of the system.\n",
-        "incidentCount": 10
+        "incidentCount": 11
       },
       {
         "id": "T0141",
@@ -224,7 +224,7 @@
         ],
         "url": "techniques/T0141.html",
         "description": "Third-party package managers, such as Node Package Manager, PyPi, and Yarn, are commonly used for integrating open-source software packages into existing development environments. These package managers provide metadata about the software and often include a link to the package's source code repository to help developers assess the software's reliability. One way developers evaluate the trustworthiness of a package is by checking its popularity, which is typically measured by the number of \"Stars\" the package has received. However, some package managers do not validate the connection between the package and its source code repository, which leaves them vulnerable to attacks. Malicious actors can manipulate the popularity statistics of a package by associating a popular source code repository URL with a malicious package, leading developers to unwittingly incorporate the malicious code into their development environment.\n",
-        "incidentCount": 3
+        "incidentCount": 4
       }
     ],
     "amount": 6,
@@ -247,7 +247,7 @@
         ],
         "url": "techniques/T0112.html",
         "description": "Access to third party APIs typically uses a token to authenticate access.  \nThis token is usually a randomized string that is auto-generated by the API provider and should be at least 16 characters or more.  \nThis token is passed with a request to the API provider and if the token is valid, the request is successful.  \nEach of these tokens will usually have a set of permissions applied to it that authorizes it to perform very simple read operations, or more complex write and delete operations.  \nUnfortunately, these tokens are often accidentally embedded in applications via source code or Javascript variable exposure.  \nAttackers will often scan web applications URLs or public git repositories for exposed credentials to then in turn use those found credentials to gain access to the victims resources. \n",
-        "incidentCount": 5
+        "incidentCount": 6
       },
       {
         "id": "T0113",
@@ -394,7 +394,7 @@
         ],
         "url": "techniques/T0129.html",
         "description": "Typosquatting is an attack technique where an attacker creates a package or container with a name that is very similar to a legitimate one, in hopes that a user will make a typo and download the malicious package or container. \nFor example, if a legitimate package is named \"numpy,\" an attacker might create a package named \"numpyy\" or \"numpi\" in hopes that a user will accidentally install the malicious package instead. \nIn container security, it involves creating a container image with a similar name to a legitimate one, while in open-source security, it involves creating a malicious package with a similar name to a legitimate one.\nOnce the user installs the malicious package or container, the attacker can potentially gain access to the user's system or data, or inject malicious code into the user's environment.\n",
-        "incidentCount": 6
+        "incidentCount": 7
       },
       {
         "id": "T0133",
@@ -642,7 +642,7 @@
         ],
         "url": "techniques/T0150.html",
         "description": "A logic bomb is a snippet of malicious code that is intentionally inserted into other software. \nLogic bombs are triggered when a certain condition is met.\nThe code may lie dormant for a long time and remain undetected until the bomb is triggered.\nWhen the bomb is activated, it can have devastating effects on the software, causing it to malfunction, delete data, or even grant unauthorized access to sensitive information.\nThe attack can also be designed to spread to other systems or cause damage to a wider network.\nThe malicious code is hidden within an otherwise legitimate software package.\nIt can be introduced at any point in the software supply chain.\n",
-        "incidentCount": 2
+        "incidentCount": 3
       },
       {
         "id": "T0151",
@@ -690,7 +690,7 @@
         ],
         "url": "techniques/T0159.html",
         "description": "Malicious artifact execution refers to an attack where an attacker injects or modifies a software component with malicious code that is executed when the component is used by a downstream system in the CI/CD process. \nWhen a CI/CD process lacks sufficient mechanisms to validate the integrity of code and artifacts, attackers can insert malicious code that appears to be harmless. \nThis allows the malicious code to pass through the pipeline undetected, potentially causing harm in the CI/CD process or in production.\nThe malicious code can be executed in the CI/CD process or even in production.\n",
-        "incidentCount": 18
+        "incidentCount": 20
       },
       {
         "id": "T0166",
@@ -715,7 +715,7 @@
         ],
         "url": "techniques/T0172.html",
         "description": "A runtime backdoor attack is a type of cyber attack where an attacker gains unauthorized access to a computer system or network and installs a malicious software or code that allows them to control the system or steal sensitive information.\nThis type of attack is called a \"runtime\" backdoor attack because it involves manipulating the system at runtime, while it is running, rather than during the development or deployment stages.\nThe attacker typically gains access to the system through a vulnerability, such as an unpatched software flaw or weak authentication mechanism. \nOnce inside, the attacker can install a backdoor that provides them with persistent access to the system, even after the initial entry point has been closed.\n",
-        "incidentCount": 5
+        "incidentCount": 6
       },
       {
         "id": "T0173",
@@ -999,7 +999,7 @@
         ],
         "url": "techniques/T0195.html",
         "description": "By modifying metadata in commits, attackers can easily push their own code to code repositories. For example, by changing the name and email in a commit it is possible to pass as a legitimate user.\n",
-        "incidentCount": 2
+        "incidentCount": 3
       },
       {
         "id": "T0198",
@@ -1085,7 +1085,7 @@
         ],
         "url": "techniques/T0140.html",
         "description": "This type of attack involves searching for environment variables that may contain sensitive information and dumping their values to gain access to the associated resources.\nIn cloud and container environments, environment variables are often used to store configuration data, including sensitive information such as passwords, tokens and API keys. \nAttackers can exploit this by searching through the environment variables of running containers or cloud instances to find any sensitive information that has been inadvertently exposed. \nOnce the sensitive information has been obtained, attackers can use it to access and compromise the associated resources.\n",
-        "incidentCount": 14
+        "incidentCount": 15
       },
       {
         "id": "T0162",
@@ -1134,7 +1134,7 @@
         ],
         "url": "techniques/T0184.html",
         "description": "This attack involves searching for files within the CI/CD system that may contain sensitive information such as credentials, API keys, or other access tokens.\nThese files can include configuration files, scripts, and other files that are used as part of the build and deployment process. \nAttackers can use various techniques to locate these files, including directory traversal attacks, file inclusion vulnerabilities, or simply guessing common file names or paths.\nOnce the attacker has located a file containing sensitive information, they can extract the credentials and use them to gain unauthorized access to the targeted system or application.\n",
-        "incidentCount": 2
+        "incidentCount": 3
       },
       {
         "id": "T0185",
@@ -1260,7 +1260,7 @@
         ],
         "url": "techniques/T0193.html",
         "description": "Environment variables are a type of configuration parameter that contain information about the environment in which an application is running. \nThese variables can be set and accessed by the operating system or application, and may contain sensitive information such as passwords, API keys, or other credentials.\n",
-        "incidentCount": 5
+        "incidentCount": 6
       }
     ],
     "amount": 5,
