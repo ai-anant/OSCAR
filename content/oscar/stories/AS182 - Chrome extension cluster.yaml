@@ -1,0 +1,41 @@
+id: AS182
+type: Attack Story
+date: 2025-12
+platforms:
+  - browser-extensions
+
+summary: Socket Chrome-extension theft cluster
+description: |
+  Socket research posts on additional Chrome Web Store malware: seed-phrase
+  exfil, hidden Solana swap fees, affiliate hijacking, Meta Business Manager
+  exports plus TOTP seeds, MEXC API keys, Phantom Shuttle VPN intercept,
+  and five extensions for HR/ERP session hijacking.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Multiple Chrome Web Store listings.
+      - techniqueID: T0136
+        techName: Brandjacking
+        tactic: Initial Access
+        comment: Wallet/VPN/HR product impersonation.
+      - techniqueID: T0184
+        techName: Harvesting sensitive information from files
+        tactic: Credential Access
+        comment: Seeds, sessions, API keys, TOTP.
+
+links:
+  - https://socket.dev/blog/malicious-chrome-extension-exfiltrates-seed-phrases
+  - https://socket.dev/blog/malicious-chrome-extension-injects-hidden-sol-fees-into-solana-swaps
+  - https://socket.dev/blog/malicious-chrome-extension-performs-hidden-affiliate-hijacking
+  - https://socket.dev/blog/malicious-chrome-extension-steals-meta-business-manager-exports-and-totp-2fa-seeds
+  - https://socket.dev/blog/malicious-chrome-extension-steals-mexc-api-keys
+  - https://socket.dev/blog/malicious-chrome-extensions-phantom-shuttle
+  - https://socket.dev/blog/5-malicious-chrome-extensions-enable-session-hijacking

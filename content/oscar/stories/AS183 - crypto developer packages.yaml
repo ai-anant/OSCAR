@@ -1,0 +1,50 @@
+id: AS183
+type: Attack Story
+date: 2025-10
+platforms:
+  - npm
+  - pypi
+
+summary: Crypto-developer package theft (Flashbots, BSC, Solana, TON)
+description: |
+  Socket posts on packages aimed at crypto developers: Flashbots SDK
+  impersonation, BSC/Ethereum targeting, Bullx credentials via Telegram,
+  Nodemailer wallet-drainer, Solana key theft, TON wallet keys, and
+  ethereum-smart-contract C2.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0129
+        techName: Typosquatting
+        tactic: Initial Access
+        comment: SDK and library lookalikes.
+      - techniqueID: T0136
+        techName: Brandjacking
+        tactic: Initial Access
+        comment: Flashbots, Nodemailer, TON.
+      - techniqueID: T0184
+        techName: Harvesting sensitive information from files
+        tactic: Credential Access
+        comment: Wallets and keys.
+
+links:
+  - https://socket.dev/blog/malicious-npm-packages-impersonate-flashbots-sdks-targeting-ethereum-wallet-credentials
+  - https://socket.dev/blog/malicious-npm-packages-target-bsc-and-ethereum
+  - https://socket.dev/blog/malicious-npm-packages-use-telegram-to-exfiltrate-bullx-credentials
+  - https://socket.dev/blog/wallet-draining-npm-package-impersonates-nodemailer
+  - https://socket.dev/blog/monkey-patched-pypi-packages-steal-solana-private-keys
+  - https://socket.dev/blog/gmail-for-exfiltration-malicious-npm-packages-target-solana-private-keys-and-drain-victim-s
+  - https://socket.dev/blog/ton-wallet-security-threat-malicious-npm-package-steals-cryptocurrency-wallet-keys
+  - https://socket.dev/blog/malicious-npm-campaign-targets-ethereum-developers
+  - https://socket.dev/blog/malicious-npm-package-targets-ethereum-developers
+  - https://socket.dev/blog/malicious-npm-package-targets-solana-developers-and-hijacks-funds
+  - https://socket.dev/blog/malicious-npm-packages-threaten-crypto-developers
+  - https://socket.dev/blog/malicious-npm-and-pypi-packages-steal-wallet-credentials
+  - https://socket.dev/blog/massive-npm-malware-campaign-leverages-ethereum-smart-contracts
+  - https://socket.dev/blog/new-pypi-malware-exfiltrates-ethereum-private-keys
+  - https://socket.dev/blog/exploiting-npm-to-build-a-blockchain-powered-botnet

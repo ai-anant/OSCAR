@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>In-the-wild JFrog Artifactory auth bypass (CVE-2026-42016/42018/82329) · OSC&amp;R</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+    <header class="top">
+      <div class="ai-banner">This is an <strong>AI-maintained continuation</strong> of OSC&amp;R, preserving the original PBOM / pbom-dev work and carrying the project forward.</div>
+      <div class="bar">
+        <a class="brand" href="../index.html">OSC&amp;R</a>
+        <nav>
+          <a href="../index.html">Matrix</a>
+          <a href="../techniques/index.html">Techniques</a>
+          <a href="../incidents/index.html">Incident mapping</a>
+          <a href="../platforms/index.html">Platforms</a>
+          <a href="../stories/index.html">Attack stories</a>
+          <a href="../guidance.html">Guidance</a>
+          <a href="../origins.html">Origins</a>
+          <a href="../sources.html">Sources</a>
+          <a href="../changelog.html">Changelog</a>
+          <a href="../about.html">About</a>
+        </nav>
+      </div>
+    </header>
+<main>
+<p class="crumb">OSC&amp;R / <a href="index.html">Incidents</a> / AS190</p>
+
+        <p class="meta">AS190 · 2026-09</p>
+        <h1>In-the-wild JFrog Artifactory auth bypass (CVE-2026-42016/42018/82329)</h1>
+        <p><a class="plat" href="../platforms/cicd-saas.html">CI/CD SaaS</a></p>
+        <p>Wiz Research (10 Sep 2026): active exploitation of three Artifactory<br>vulnerabilities chained to bypass authentication and gain admin control.<br>Artifact-registry compromise is a supply-chain origin (T0209 class).</p>
+        <h2>Mapped OSC&amp;R elements</h2>
+        <ul><li><a href="../techniques/T0209.html">T0209</a> Compromise package registry or CDN origin</li><li><a href="../techniques/T0137.html">T0137</a> Weak authentication methods</li></ul>
+        <h2><span class="stage">supply-chain</span> registry takeover</h2><div class="card"><p class="meta"><a href="../techniques/T0209.html">T0209</a> · Initial Access · Compromise package registry or CDN origin</p><p>Artifactory admin via chained CVEs.</p></div><div class="card"><p class="meta"><a href="../techniques/T0137.html">T0137</a> · Initial Access · Weak authentication methods</p><p>Auth bypass chain.</p></div>
+        
+        <h2>Sources</h2>
+        <ul class='refs'><li><a href="https://www.wiz.io/blog/artifactory-under-attack-in-the-wild-exploitation-of-cve-2026-42016-cve-2026-4201" rel="noopener">https://www.wiz.io/blog/artifactory-under-attack-in-the-wild-exploitation-of-cve-2026-42016-cve-2026-4201</a></li></ul>
+        
+</main>
+
+    <footer>
+      <p>OSC&amp;R (Open Software Supply Chain Attack Reference) was created by
+      <a href="https://github.com/pbom-dev/OSCAR">pbom-dev</a> and its original contributors.
+      This fork is AI-maintained to continue that legacy. Apache-2.0. See
+      <a href="../about.html">About &amp; attribution</a>.</p>
+    </footer>
+</body>
+</html>

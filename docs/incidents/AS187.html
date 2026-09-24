@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Named npm malware families (Skeleton Squad, Skuld, Quasar, FezBox, Koishi) · OSC&amp;R</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+    <header class="top">
+      <div class="ai-banner">This is an <strong>AI-maintained continuation</strong> of OSC&amp;R, preserving the original PBOM / pbom-dev work and carrying the project forward.</div>
+      <div class="bar">
+        <a class="brand" href="../index.html">OSC&amp;R</a>
+        <nav>
+          <a href="../index.html">Matrix</a>
+          <a href="../techniques/index.html">Techniques</a>
+          <a href="../incidents/index.html">Incident mapping</a>
+          <a href="../platforms/index.html">Platforms</a>
+          <a href="../stories/index.html">Attack stories</a>
+          <a href="../guidance.html">Guidance</a>
+          <a href="../origins.html">Origins</a>
+          <a href="../sources.html">Sources</a>
+          <a href="../changelog.html">Changelog</a>
+          <a href="../about.html">About</a>
+        </nav>
+      </div>
+    </header>
+<main>
+<p class="crumb">OSC&amp;R / <a href="index.html">Incidents</a> / AS187</p>
+
+        <p class="meta">AS187 · 2025-11</p>
+        <h1>Named npm malware families (Skeleton Squad, Skuld, Quasar, FezBox, Koishi)</h1>
+        <p><a class="plat" href="../platforms/npm.html">npm</a></p>
+        <p>Socket named-family posts: Skeleton Squad, Skuld infostealer returning<br>to npm, Quasar RAT as an npm package, FezBox QR-code cookie stealer,<br>Koishi chatbot plugin, Akiraa-WB file exfil, Advcash reverse shell,<br>ReExt git-credential theft, npm bin-script confusion, 10 typosquat<br>harvesters, 60 packages leaking host/network data, chalk/chokidar<br>typosquat payloads, wrapper packages, author-typosquatting, mimicking<br>familiar library names, Adspect cloaking redirects.</p>
+        <h2>Mapped OSC&amp;R elements</h2>
+        <ul><li><a href="../techniques/T0109.html">T0109</a> Publish malicious artifact</li><li><a href="../techniques/T0129.html">T0129</a> Typosquatting</li><li><a href="../techniques/T0172.html">T0172</a> Runtime backdoor</li><li><a href="../techniques/T0184.html">T0184</a> Harvesting sensitive information from files</li></ul>
+        <h2><span class="stage">supply-chain</span> campaign</h2><div class="card"><p class="meta"><a href="../techniques/T0109.html">T0109</a> · Resource Development · Publish malicious artifact</p><p>Named families plus typosquat waves.</p></div><div class="card"><p class="meta"><a href="../techniques/T0129.html">T0129</a> · Initial Access · Typosquatting</p><p>Library-name mimics.</p></div><div class="card"><p class="meta"><a href="../techniques/T0172.html">T0172</a> · Execution · Runtime backdoor</p><p>Quasar/Skuld/FezBox.</p></div><div class="card"><p class="meta"><a href="../techniques/T0184.html">T0184</a> · Credential Access · Harvesting sensitive information from files</p><p>Cookies, git creds, host data.</p></div>
+        
+        <h2>Sources</h2>
+        <ul class='refs'><li><a href="https://socket.dev/blog/skeleton-squad-npm" rel="noopener">https://socket.dev/blog/skeleton-squad-npm</a></li><li><a href="https://socket.dev/blog/skuld-infostealer-returns-to-npm" rel="noopener">https://socket.dev/blog/skuld-infostealer-returns-to-npm</a></li><li><a href="https://socket.dev/blog/quasar-rat-disguised-as-an-npm-package" rel="noopener">https://socket.dev/blog/quasar-rat-disguised-as-an-npm-package</a></li><li><a href="https://socket.dev/blog/malicious-fezbox-npm-package-steals-browser-passwords-from-cookies-via-innovative-qr-code" rel="noopener">https://socket.dev/blog/malicious-fezbox-npm-package-steals-browser-passwords-from-cookies-via-innovative-qr-code</a></li><li><a href="https://socket.dev/blog/malicious-koishi-chatbot-plugin" rel="noopener">https://socket.dev/blog/malicious-koishi-chatbot-plugin</a></li><li><a href="https://socket.dev/blog/malicious-akiraa-wb-npm-package-exfiltrates-files-to-external-services" rel="noopener">https://socket.dev/blog/malicious-akiraa-wb-npm-package-exfiltrates-files-to-external-services</a></li><li><a href="https://socket.dev/blog/npm-package-advcash-integration-triggers-reverse-shell" rel="noopener">https://socket.dev/blog/npm-package-advcash-integration-triggers-reverse-shell</a></li><li><a href="https://socket.dev/blog/npm-package-for-reext-react-components-library-exfiltrates-git-credentials" rel="noopener">https://socket.dev/blog/npm-package-for-reext-react-components-library-exfiltrates-git-credentials</a></li><li><a href="https://socket.dev/blog/npm-bin-script-confusion" rel="noopener">https://socket.dev/blog/npm-bin-script-confusion</a></li><li><a href="https://socket.dev/blog/10-npm-typosquatted-packages-deploy-credential-harvester" rel="noopener">https://socket.dev/blog/10-npm-typosquatted-packages-deploy-credential-harvester</a></li><li><a href="https://socket.dev/blog/60-malicious-npm-packages-leak-network-and-host-data" rel="noopener">https://socket.dev/blog/60-malicious-npm-packages-leak-network-and-host-data</a></li><li><a href="https://socket.dev/blog/kill-switch-hidden-in-npm-packages-typo-squatting-chalk-and-chokidar" rel="noopener">https://socket.dev/blog/kill-switch-hidden-in-npm-packages-typo-squatting-chalk-and-chokidar</a></li><li><a href="https://socket.dev/blog/malicious-wrapper-packages-on-npm" rel="noopener">https://socket.dev/blog/malicious-wrapper-packages-on-npm</a></li><li><a href="https://socket.dev/blog/author-typosquatting-on-npm" rel="noopener">https://socket.dev/blog/author-typosquatting-on-npm</a></li><li><a href="https://socket.dev/blog/npm-targeted-by-malware-campaign-mimicking-familiar-library-names" rel="noopener">https://socket.dev/blog/npm-targeted-by-malware-campaign-mimicking-familiar-library-names</a></li><li><a href="https://socket.dev/blog/malicious-npm-packages-inject-ssh-backdoors-via-typosquatted-libraries" rel="noopener">https://socket.dev/blog/malicious-npm-packages-inject-ssh-backdoors-via-typosquatted-libraries</a></li><li><a href="https://socket.dev/blog/malicious-npm-package-typosquats-popular-typescript-eslint-plugin" rel="noopener">https://socket.dev/blog/malicious-npm-package-typosquats-popular-typescript-eslint-plugin</a></li><li><a href="https://socket.dev/blog/malicious-npm-package-typosquats-react-login-page-to-deploy-keylogger" rel="noopener">https://socket.dev/blog/malicious-npm-package-typosquats-react-login-page-to-deploy-keylogger</a></li><li><a href="https://socket.dev/blog/malicious-npm-packages-target-react-vue-and-vite-ecosystems-with-destructive-payloads" rel="noopener">https://socket.dev/blog/malicious-npm-packages-target-react-vue-and-vite-ecosystems-with-destructive-payloads</a></li><li><a href="https://socket.dev/blog/npm-malware-campaign-uses-adspect-cloaking-to-deliver-malicious-redirects" rel="noopener">https://socket.dev/blog/npm-malware-campaign-uses-adspect-cloaking-to-deliver-malicious-redirects</a></li></ul>
+        
+</main>
+
+    <footer>
+      <p>OSC&amp;R (Open Software Supply Chain Attack Reference) was created by
+      <a href="https://github.com/pbom-dev/OSCAR">pbom-dev</a> and its original contributors.
+      This fork is AI-maintained to continue that legacy. Apache-2.0. See
+      <a href="../about.html">About &amp; attribution</a>.</p>
+    </footer>
+</body>
+</html>

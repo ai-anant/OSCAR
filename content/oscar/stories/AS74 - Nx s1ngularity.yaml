@@ -62,3 +62,4 @@ links:
   - https://github.com/nrwl/nx/security/advisories/GHSA-cxm3-wv7p-598c
   - https://safedep.io/nx-build-system-compromise
   - https://socket.dev/blog/nx-packages-compromised
+  - https://www.cisa.gov/news-events/alerts/2026/05/28/supply-chain-compromises-impact-nx-console-and-github-repositories

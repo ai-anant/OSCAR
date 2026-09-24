@@ -1,0 +1,41 @@
+id: AS186
+type: Attack Story
+date: 2025-09
+platforms:
+  - pypi
+
+summary: PyPI typosquats (passlib, fabric, cookie lib, AnyDesk, Deezer, Instagram)
+description: |
+  Socket PyPI posts: passlib and fabric SSH-library typosquats, browser-cookie
+  library mimic, AnyDesk/Malcom package, Deezer API abuse, Instagram
+  growth-tool harvester, TikTok/Instagram checker probes, crytic-compilers trojan.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0129
+        techName: Typosquatting
+        tactic: Initial Access
+        comment: Popular PyPI names.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Multiple packages.
+      - techniqueID: T0184
+        techName: Harvesting sensitive information from files
+        tactic: Credential Access
+        comment: Creds and tokens.
+
+links:
+  - https://socket.dev/blog/malicious-python-package-typosquats-popular-passlib-library
+  - https://socket.dev/blog/malicious-python-package-typosquats-fabric-ssh-library
+  - https://socket.dev/blog/typosquatting-on-pypi-malicious-package-mimics-popular-browser-cookie-library
+  - https://socket.dev/blog/unveiling-the-dangers-of-the-anydesk-malcom-malicious-python-package
+  - https://socket.dev/blog/malicious-pypi-package-exploits-deezer-api-for-coordinated-music-piracy
+  - https://socket.dev/blog/pypi-package-disguised-as-instagram-growth-tool-harvests-user-credentials
+  - https://socket.dev/blog/malicious-checker-packages-on-pypi-probe-tiktok-and-instagram
+  - https://socket.dev/blog/trojan-embedded-in-crytic-compilers-python-package

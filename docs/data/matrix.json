@@ -176,7 +176,7 @@
         ],
         "url": "techniques/T0109.html",
         "description": "Public registries are widely used by developers and organizations to download and distribute software packages and container images, making them an attractive target for attackers.\nIn this type of attack, the attacker creates a package or container image that contains malicious code or files, such as a backdoor or other malware.\nThe attacker then uploads the package or image to PyPI, DockerHub or other registry, posing as a legitimate user or creating a fake account.\nOnce the package or image is uploaded, it becomes available for download by other users who may unsuspectingly use it in their projects.\nThe supply chain attack can have far-reaching consequences as it can affect all systems that rely on the malicious package or image.\nFor example, a Python package that is downloaded from PyPI may be used by multiple applications and libraries, potentially compromising all systems that use it.\nSimilarly, a container image with a malicious payload may be used to deploy an application across multiple environments, leading to a widespread compromise.\n",
-        "incidentCount": 113
+        "incidentCount": 120
       },
       {
         "id": "T0110",
@@ -188,7 +188,7 @@
         ],
         "url": "techniques/T0110.html",
         "description": "An Advertise Malicious Artifact attack is a type of cyber attack in which an attacker distributes a malicious package or container image to a broader audience, typically by advertising it on popular repositories or registries.\nThe goal of this attack is to entice users into downloading and using the malicious artifact, thereby compromising their systems.\nIn this attack, the attacker may create a fake developer account or use an existing legitimate account to upload the malicious artifact to popular repositories or registries such as PyPI or DockerHub.\nThe attacker may then use various techniques to promote the malicious artifact, such as forum promotion, commenting, using misleading descriptions, tags, or keywords, or by hijacking popular package names.\nOnce users download and install the malicious package or container image, it can compromise their systems and potentially cause significant harm, such as stealing sensitive data or taking control of the system.\n",
-        "incidentCount": 17
+        "incidentCount": 18
       },
       {
         "id": "T0111",
@@ -224,7 +224,7 @@
         ],
         "url": "techniques/T0141.html",
         "description": "Third-party package managers, such as Node Package Manager, PyPi, and Yarn, are commonly used for integrating open-source software packages into existing development environments. These package managers provide metadata about the software and often include a link to the package's source code repository to help developers assess the software's reliability. One way developers evaluate the trustworthiness of a package is by checking its popularity, which is typically measured by the number of \"Stars\" the package has received. However, some package managers do not validate the connection between the package and its source code repository, which leaves them vulnerable to attacks. Malicious actors can manipulate the popularity statistics of a package by associating a popular source code repository URL with a malicious package, leading developers to unwittingly incorporate the malicious code into their development environment.\n",
-        "incidentCount": 4
+        "incidentCount": 5
       }
     ],
     "amount": 6,
@@ -394,7 +394,7 @@
         ],
         "url": "techniques/T0129.html",
         "description": "Typosquatting is an attack technique where an attacker creates a package or container with a name that is very similar to a legitimate one, in hopes that a user will make a typo and download the malicious package or container. \nFor example, if a legitimate package is named \"numpy,\" an attacker might create a package named \"numpyy\" or \"numpi\" in hopes that a user will accidentally install the malicious package instead. \nIn container security, it involves creating a container image with a similar name to a legitimate one, while in open-source security, it involves creating a malicious package with a similar name to a legitimate one.\nOnce the user installs the malicious package or container, the attacker can potentially gain access to the user's system or data, or inject malicious code into the user's environment.\n",
-        "incidentCount": 36
+        "incidentCount": 41
       },
       {
         "id": "T0133",
@@ -428,7 +428,7 @@
         ],
         "url": "techniques/T0136.html",
         "description": "Brandjacking is a type of attack where an attacker impersonates a legitimate brand or project in an attempt to trick users into downloading and installing a malicious container or package. \nThis can happen when an attacker creates a package or container with a similar name or logo to a well-known and trusted brand or project, and then distributes it through public repositories.\nBrandjacking can be particularly dangerous in the context of container and open source security, as many developers and users rely on public repositories and may not take the time to thoroughly verify the authenticity of packages they download.\nOnce a malicious package is installed, it can be difficult to detect and can lead to serious security breaches.\n",
-        "incidentCount": 27
+        "incidentCount": 30
       },
       {
         "id": "T0137",
@@ -442,7 +442,7 @@
         ],
         "url": "techniques/T0137.html",
         "description": "Weak authentication methods are a common attack technique used by threat actors to gain unauthorized access to cloud environments or code repositories. This attack technique relies on exploiting vulnerabilities in the authentication methods used to control access to resources.\nIn cloud security, weak authentication methods can be exploited through several vectors, such as stolen credentials, brute force attacks, and password spraying. \nThreat actors can also take advantage of misconfigured security groups or network access control lists (ACLs) to bypass authentication and gain access to cloud resources.\nIn code security, weak authentication methods can be exploited through vulnerabilities in source code management platforms, such as Git repositories. \nFor instance, if developers use weak passwords or if the authentication protocols used by the repository are vulnerable, attackers can steal source code or inject malicious code into the codebase.\n",
-        "incidentCount": 4
+        "incidentCount": 5
       },
       {
         "id": "T0143",
@@ -467,7 +467,7 @@
         ],
         "url": "techniques/T0153.html",
         "description": "Compromised developer workstation attack is a technique where an attacker gains access to a developer's machine, which contains sensitive information such as access credentials, keys, and code repositories. \nThis technique can allow an attacker to steal code or modify it to include backdoors or other malicious code. \nThe attacker can also use this access to gain entry into other systems within the organization.\nThis type of attack can be carried out through various means, such as Phishing, Typosquatting, Brandjacking, malicious IDE extensions, or exploiting vulnerabilities in the developer's system. \nOnce the attacker gains access, they can install malware or backdoors, extract sensitive information, or use the machine as a foothold to carry out further attacks.\n",
-        "incidentCount": 10
+        "incidentCount": 11
       },
       {
         "id": "T0154",
@@ -478,7 +478,7 @@
         ],
         "url": "techniques/T0154.html",
         "description": "Malicious IDE extension attack is an attack technique in which an attacker creates a malicious extension for an Integrated Development Environment (IDE) and uploads it to the IDE's extension marketplace or repository. \nThe malicious extension may appear to be a legitimate tool or add-on, but when installed, it can perform unauthorized actions such as stealing user credentials or introducing vulnerabilities in the code.\nOnce installed, a malicious IDE extension can access the developer's code, which can contain sensitive information such as access keys, passwords, and credentials. \nThis information can then be used by the attacker to gain unauthorized access to cloud resources, steal data, or launch further attacks.\n",
-        "incidentCount": 12
+        "incidentCount": 13
       },
       {
         "id": "T0157",
@@ -589,7 +589,7 @@
         ],
         "url": "techniques/T0209.html",
         "description": "Instead of publishing a malicious version under a stolen maintainer\naccount, the attacker tampers with the registry or the CDN origin pool\nthat serves it. Consumers still resolve the real hostname. Coder's\nregistry.coder.com incident (GHSA-vx42-ghc9-gw65) is the type case:\nrogue origin IPs were added to a Cloudflare pool so a legitimate CDN\nserved stolen-credential Terraform modules. Distinct from T0205 (third-party\nweb asset) and T0109 (publish to the registry as a user).\n",
-        "incidentCount": 3
+        "incidentCount": 4
       }
     ],
     "amount": 28,
@@ -715,7 +715,7 @@
         ],
         "url": "techniques/T0172.html",
         "description": "A runtime backdoor attack is a type of cyber attack where an attacker gains unauthorized access to a computer system or network and installs a malicious software or code that allows them to control the system or steal sensitive information.\nThis type of attack is called a \"runtime\" backdoor attack because it involves manipulating the system at runtime, while it is running, rather than during the development or deployment stages.\nThe attacker typically gains access to the system through a vulnerability, such as an unpatched software flaw or weak authentication mechanism. \nOnce inside, the attacker can install a backdoor that provides them with persistent access to the system, even after the initial entry point has been closed.\n",
-        "incidentCount": 27
+        "incidentCount": 31
       },
       {
         "id": "T0173",
@@ -1134,7 +1134,7 @@
         ],
         "url": "techniques/T0184.html",
         "description": "This attack involves searching for files within the CI/CD system that may contain sensitive information such as credentials, API keys, or other access tokens.\nThese files can include configuration files, scripts, and other files that are used as part of the build and deployment process. \nAttackers can use various techniques to locate these files, including directory traversal attacks, file inclusion vulnerabilities, or simply guessing common file names or paths.\nOnce the attacker has located a file containing sensitive information, they can extract the credentials and use them to gain unauthorized access to the targeted system or application.\n",
-        "incidentCount": 42
+        "incidentCount": 47
       },
       {
         "id": "T0185",
@@ -1356,7 +1356,7 @@
         ],
         "url": "techniques/T0186.html",
         "description": "When source code is disclosed, it can lead to various risks, including the loss of intellectual property, legal issues, and competitive disadvantage. \nHowever, in the context of supply chain security, source code disclosure can expose vulnerabilities such as third-party library vulnerabilities, hard-coded secrets, code weaknesses, and logic bugs. \nThese vulnerabilities can be exploited as initial access points to further attack the supply chain.\n",
-        "incidentCount": 1
+        "incidentCount": 2
       },
       {
         "id": "T0191",

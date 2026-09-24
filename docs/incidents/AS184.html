@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Telegram, Discord, and WhatsApp-developer malware packages · OSC&amp;R</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+    <header class="top">
+      <div class="ai-banner">This is an <strong>AI-maintained continuation</strong> of OSC&amp;R, preserving the original PBOM / pbom-dev work and carrying the project forward.</div>
+      <div class="bar">
+        <a class="brand" href="../index.html">OSC&amp;R</a>
+        <nav>
+          <a href="../index.html">Matrix</a>
+          <a href="../techniques/index.html">Techniques</a>
+          <a href="../incidents/index.html">Incident mapping</a>
+          <a href="../platforms/index.html">Platforms</a>
+          <a href="../stories/index.html">Attack stories</a>
+          <a href="../guidance.html">Guidance</a>
+          <a href="../origins.html">Origins</a>
+          <a href="../sources.html">Sources</a>
+          <a href="../changelog.html">Changelog</a>
+          <a href="../about.html">About</a>
+        </nav>
+      </div>
+    </header>
+<main>
+<p class="crumb">OSC&amp;R / <a href="index.html">Incidents</a> / AS184</p>
+
+        <p class="meta">AS184 · 2025-09</p>
+        <h1>Telegram, Discord, and WhatsApp-developer malware packages</h1>
+        <p><a class="plat" href="../platforms/npm.html">npm</a><a class="plat" href="../platforms/pypi.html">PyPI</a><a class="plat" href="../platforms/rubygems.html">RubyGems</a></p>
+        <p>Socket posts on messaging-app developer targeting: Telegram bot malware,<br>Ruby gems stealing Telegram tokens, PyPI Discord token theft, Blank Grabber,<br>Discord-CDN typosquats, WhatsApp remote-trigger packages, Discord as C2.</p>
+        <h2>Mapped OSC&amp;R elements</h2>
+        <ul><li><a href="../techniques/T0109.html">T0109</a> Publish malicious artifact</li><li><a href="../techniques/T0136.html">T0136</a> Brandjacking</li><li><a href="../techniques/T0172.html">T0172</a> Runtime backdoor</li><li><a href="../techniques/T0184.html">T0184</a> Harvesting sensitive information from files</li></ul>
+        <h2><span class="stage">supply-chain</span> campaign</h2><div class="card"><p class="meta"><a href="../techniques/T0109.html">T0109</a> · Resource Development · Publish malicious artifact</p><p>npm/PyPI/RubyGems lures.</p></div><div class="card"><p class="meta"><a href="../techniques/T0136.html">T0136</a> · Initial Access · Brandjacking</p><p>WhatsApp/Telegram/Discord tooling names.</p></div><div class="card"><p class="meta"><a href="../techniques/T0172.html">T0172</a> · Execution · Runtime backdoor</p><p>Remote trigger and RATs.</p></div><div class="card"><p class="meta"><a href="../techniques/T0184.html">T0184</a> · Credential Access · Harvesting sensitive information from files</p><p>Tokens and messages.</p></div>
+        
+        <h2>Sources</h2>
+        <ul class='refs'><li><a href="https://socket.dev/blog/npm-malware-targets-telegram-bot-developers" rel="noopener">https://socket.dev/blog/npm-malware-targets-telegram-bot-developers</a></li><li><a href="https://socket.dev/blog/malicious-ruby-gems-exfiltrate-telegram-tokens-and-messages-following-vietnam-ban" rel="noopener">https://socket.dev/blog/malicious-ruby-gems-exfiltrate-telegram-tokens-and-messages-following-vietnam-ban</a></li><li><a href="https://socket.dev/blog/malicious-pypi-package-targets-discord-developers-with-token-theft-and-backdoor" rel="noopener">https://socket.dev/blog/malicious-pypi-package-targets-discord-developers-with-token-theft-and-backdoor</a></li><li><a href="https://socket.dev/blog/blank-grabber-python-package-steals-info-from-discord-and-telegram" rel="noopener">https://socket.dev/blog/blank-grabber-python-package-steals-info-from-discord-and-telegram</a></li><li><a href="https://socket.dev/blog/two-typosquatting-python-packages-exploit-discord-cdn-to-deploy-malicious-payloads" rel="noopener">https://socket.dev/blog/two-typosquatting-python-packages-exploit-discord-cdn-to-deploy-malicious-payloads</a></li><li><a href="https://socket.dev/blog/trends-in-malicious-packages-targeting-discord" rel="noopener">https://socket.dev/blog/trends-in-malicious-packages-targeting-discord</a></li><li><a href="https://socket.dev/blog/malicious-npm-packages-target-whatsapp-developers-with-remote-kill-switch" rel="noopener">https://socket.dev/blog/malicious-npm-packages-target-whatsapp-developers-with-remote-kill-switch</a></li><li><a href="https://socket.dev/blog/malicious-npm-package-exploits-whatsapp-authentication-with-remote-kill-switch" rel="noopener">https://socket.dev/blog/malicious-npm-package-exploits-whatsapp-authentication-with-remote-kill-switch</a></li><li><a href="https://socket.dev/blog/weaponizing-discord-for-command-and-control" rel="noopener">https://socket.dev/blog/weaponizing-discord-for-command-and-control</a></li></ul>
+        
+</main>
+
+    <footer>
+      <p>OSC&amp;R (Open Software Supply Chain Attack Reference) was created by
+      <a href="https://github.com/pbom-dev/OSCAR">pbom-dev</a> and its original contributors.
+      This fork is AI-maintained to continue that legacy. Apache-2.0. See
+      <a href="../about.html">About &amp; attribution</a>.</p>
+    </footer>
+</body>
+</html>

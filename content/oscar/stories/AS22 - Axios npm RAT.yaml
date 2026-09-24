@@ -78,3 +78,7 @@ links:
   - https://opensourcemalware.com/blog/axios-attacker-strikes-again
   - https://safedep.io/axios-npm-supply-chain-compromise
   - https://socket.dev/blog/axios-npm-package-compromised
+  - https://www.cisa.gov/news-events/alerts/2026/04/20/supply-chain-compromise-impacts-axios-node-package-manager
+  - https://cloud.google.com/blog/topics/threat-intelligence/north-korea-threat-actor-targets-axios-npm-package
+  - https://www.wiz.io/blog/axios-npm-compromised-in-supply-chain-attack
+  - https://www.microsoft.com/en-us/security/blog/2026/04/01/mitigating-the-axios-npm-supply-chain-compromise/

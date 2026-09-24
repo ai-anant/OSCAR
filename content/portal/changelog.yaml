@@ -1,5 +1,13 @@
 entries:
 - date: '2026-09-24'
+  id: socket-leftovers-wiz-cisa-gtig
+  title: Socket leftover articles plus Wiz/CISA/GTIG SSC
+  items:
+  - Remaining Socket research one-offs grouped as AS182–AS189 so every leftover URL is on a story.
+  - Wiz arrayref post on AS18; Artifactory in-the-wild as AS190.
+  - CISA Axios alert on AS22; CISA Nx Console/Megalodon alert on AS91 plus new AS192 Nx Console 18.95.0.
+  - GTIG UNC1069 axios/WAVESHAPER.V2 write-up on AS22.
+- date: '2026-09-24'
   id: cs-morphisec-attach
   title: CrowdStrike PhantomRaven and Morphisec Hades attached
   items:

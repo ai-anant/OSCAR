@@ -1,0 +1,39 @@
+id: AS192
+type: Attack Story
+date: 2026-05
+platforms:
+  - vscode
+  - git
+
+summary: Nx Console VS Code 18.95.0 (GitHub internal repo theft)
+description: |
+  CISA alert 28 May 2026: malicious Nx Console VS Code extension
+  18.95.0 auto-updated onto developer machines and was used to reach
+  a GitHub employee device, then GitHub-owned repositories. Distinct
+  from the Aug 2025 Nx npm s1ngularity incident (AS74). CVE-2026-48027
+  in KEV. GitHub and Nx post-mortems.
+
+attacks:
+  - attack: poisoned ide extension
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0154
+        techName: Malicious IDE extension
+        tactic: Initial Access
+        comment: Nx Console 18.95.0 via VS Code auto-update.
+      - techniqueID: T0153
+        techName: Compromised developer workstation
+        tactic: Initial Access
+        comment: GitHub employee device.
+      - techniqueID: T0186
+        techName: Source code leak
+        tactic: Impact
+        comment: Unauthorized access to GitHub-owned repositories.
+
+links:
+  - https://www.cisa.gov/news-events/alerts/2026/05/28/supply-chain-compromises-impact-nx-console-and-github-repositories
+  - https://github.blog/security/investigating-unauthorized-access-to-githubs-internal-repositories/
+  - https://nx.dev/blog/nx-console-v18-95-0-postmortem

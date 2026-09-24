@@ -1,0 +1,46 @@
+id: AS189
+type: Attack Story
+date: 2025-08
+platforms:
+  - npm
+  - pypi
+  - git
+
+summary: Registry abuse, starjacking, OAST, and LLM-developer targeting
+description: |
+  Socket: 3.7M fake GitHub stars; npm registry spam; weaponizing OAST
+  across npm/PyPI/RubyGems; Gmail as C2; surveillance malware in npm and
+  PyPI; social-engineering npm malware; supply-chain attacks on
+  LLM-application developers; Roblox/Noblox infostealers.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0141
+        techName: Fake developer reputation (Starjacking)
+        tactic: Resource Development
+        comment: Fake GitHub stars.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Spam and lure packages.
+      - techniqueID: T0110
+        techName: Advertise malicious artifact
+        tactic: Resource Development
+        comment: Social engineering / OAST callbacks.
+
+links:
+  - https://socket.dev/blog/3-7-million-fake-github-stars-a-growing-threat-linked-to-scams-and-malware
+  - https://socket.dev/blog/exposing-automation-of-npm-registry-spam
+  - https://socket.dev/blog/npm-registry-spam-john-wick
+  - https://socket.dev/blog/weaponizing-oast-how-malicious-packages-exploit-npm-pypi-and-rubygems
+  - https://socket.dev/blog/using-trusted-protocols-against-you-gmail-as-a-c2-mechanism
+  - https://socket.dev/blog/surveillance-malware-hidden-in-npm-and-pypi-packages
+  - https://socket.dev/blog/social-engineering-campaign-npm-malware
+  - https://socket.dev/blog/supply-chain-attacks-targeting-llm-application-developers
+  - https://socket.dev/blog/roblox-developers-targeted-with-npm-packages-infected-with-infostealers
+  - https://socket.dev/blog/malicious-npm-package-masquerades-as-noblox-js
