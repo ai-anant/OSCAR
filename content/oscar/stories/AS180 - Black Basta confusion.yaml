@@ -1,0 +1,28 @@
+id: AS180
+type: Attack Story
+date: 2025-08
+platforms:
+  - npm
+
+summary: Black Basta dependency-confusion ambitions in OSS
+description: |
+  Socket: Black Basta ransomware group’s dependency-confusion activity in open-source ecosystems.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0120
+        techName: Dependency confusion
+        tactic: Initial Access
+        comment: Ransomware-linked confusion packages.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: OSS registry abuse.
+
+links:
+  - https://socket.dev/blog/black-basta-dependency-confusion-ambitions-and-ransomware-in-open-source-ecosystems

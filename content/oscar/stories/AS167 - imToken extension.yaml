@@ -1,0 +1,28 @@
+id: AS167
+type: Attack Story
+date: 2026-03
+platforms:
+  - browser-extensions
+
+summary: Fake imToken Chrome extension seed-phrase theft
+description: |
+  Socket: fake imToken Chrome extension steals seed phrases via phishing redirects.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0136
+        techName: Brandjacking
+        tactic: Initial Access
+        comment: imToken impersonation.
+      - techniqueID: T0184
+        techName: Harvesting sensitive information from files
+        tactic: Credential Access
+        comment: Seed phrases.
+
+links:
+  - https://socket.dev/blog/fake-imtoken-chrome-extension-steals-seed-phrases-via-phishing-redirects

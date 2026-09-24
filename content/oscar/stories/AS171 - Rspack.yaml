@@ -1,0 +1,28 @@
+id: AS171
+type: Attack Story
+date: 2026-02
+platforms:
+  - npm
+
+summary: Rspack supply chain attack
+description: |
+  Socket: Rspack supply-chain attack (compromised build/bundler package).
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0121
+        techName: Compromised legitimate artifact
+        tactic: Resource Development
+        comment: Rspack.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Malicious versions.
+
+links:
+  - https://socket.dev/blog/rspack-supply-chain-attack

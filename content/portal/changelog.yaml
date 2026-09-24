@@ -1,5 +1,17 @@
 entries:
 - date: '2026-09-24'
+  id: socket-pages-2-5
+  title: Socket research pages 2–5 plus remaining named campaigns
+  items:
+  - Walked Socket research pagination (pages 1–5). Overlaps attached to Team PCP, Contagious Interview,
+    axios, GlassWorm, Elf-Stats, SANDWORM, Shai-Hulud, Qix, is, Nx, prettier phishing, Packagist themes.
+  - 'New AS158–AS181: Chrome/WhatsApp extension floods, npm phishing infra, StegaBin, dYdX, SymPy miner,
+    Rust/Go/NuGet campaigns, imToken, fake VS Code alerts, Toptal, DuckDB, Rspack, Cursor macOS, spearphish,
+    WooCommerce carding, Maven OAuth, Google UUID, Finch, 60 gems, destructive wipe, Black Basta confusion,
+    protestware.'
+  - Skipped Socket product/fundraising posts and CVE-only (NestJS RCE). Older one-off typosquat posts
+    on pages 3–4 still thinner than named campaigns; titles are mapped where distinct.
+- date: '2026-09-24'
   id: checkmarx-zero-ssc
   title: Checkmarx Zero SSC posts attached or added
   items:

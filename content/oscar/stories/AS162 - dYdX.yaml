@@ -1,0 +1,29 @@
+id: AS162
+type: Attack Story
+date: 2026-03
+platforms:
+  - npm
+  - pypi
+
+summary: dYdX packages after maintainer compromise
+description: |
+  Socket: malicious dYdX packages published to npm and PyPI after maintainer compromise.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0113
+        techName: Compromised user account
+        tactic: Initial Access
+        comment: Maintainer compromise.
+      - techniqueID: T0121
+        techName: Compromised legitimate artifact
+        tactic: Resource Development
+        comment: dYdX packages on two registries.
+
+links:
+  - https://socket.dev/blog/malicious-dydx-packages-published-to-npm-and-pypi

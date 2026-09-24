@@ -1,0 +1,28 @@
+id: AS177
+type: Attack Story
+date: 2025-12
+platforms:
+  - crates
+
+summary: Finch crate impersonation credential theft
+description: |
+  Socket: malicious crate mimicking Finch exfiltrates credentials via a hidden dependency.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0129
+        techName: Typosquatting
+        tactic: Initial Access
+        comment: Finch lookalike.
+      - techniqueID: T0184
+        techName: Harvesting sensitive information from files
+        tactic: Credential Access
+        comment: Hidden-dep credential theft.
+
+links:
+  - https://socket.dev/blog/malicious-crate-mimicking-finch-exfiltrates-credentials

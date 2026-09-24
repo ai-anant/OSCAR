@@ -1,0 +1,28 @@
+id: AS158
+type: Attack Story
+date: 2026-04
+platforms:
+  - browser-extensions
+
+summary: 108 Chrome extensions shared-C2 session theft
+description: |
+  Socket: 108 Chrome extensions linked to data exfiltration and session theft via shared C2.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: 108 Chrome Web Store listings.
+      - techniqueID: T0184
+        techName: Harvesting sensitive information from files
+        tactic: Credential Access
+        comment: Session theft.
+
+links:
+  - https://socket.dev/blog/108-chrome-ext-linked-to-data-exfil-session-theft-shared-c2

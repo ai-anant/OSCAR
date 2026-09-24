@@ -1,0 +1,29 @@
+id: AS181
+type: Attack Story
+date: 2025-07
+platforms:
+  - npm
+
+summary: Protestware on npm targeting Russian-language users
+description: |
+  Socket: protestware on npm targeting Russian-language sites/users; later update 28 packages.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0121
+        techName: Compromised legitimate artifact
+        tactic: Resource Development
+        comment: Maintainer-inserted protest payload.
+      - techniqueID: T0159
+        techName: Malicious artifact execution
+        tactic: Execution
+        comment: Language/geo targeted payload.
+
+links:
+  - https://socket.dev/blog/protestware-on-npm-targets-russian-language-sites
+  - https://socket.dev/blog/protestware-update-28-npm-packages-affected-by-payload-targeting-russian-language-users

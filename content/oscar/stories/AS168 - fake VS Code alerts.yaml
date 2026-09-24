@@ -1,0 +1,29 @@
+id: AS168
+type: Attack Story
+date: 2026-03
+platforms:
+  - git
+  - vscode
+
+summary: Fake VS Code security-alert GitHub malware campaign
+description: |
+  Socket: widespread GitHub campaign uses fake VS Code security alerts to deliver malware.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0110
+        techName: Advertise malicious artifact
+        tactic: Resource Development
+        comment: Fake security alerts.
+      - techniqueID: T0111
+        techName: Malicious code contribution to an open-source repository
+        tactic: Resource Development
+        comment: GitHub lure repos.
+
+links:
+  - https://socket.dev/blog/widespread-github-campaign-uses-fake-vs-code-security-alerts-to-deliver-malware

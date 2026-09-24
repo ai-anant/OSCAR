@@ -1,0 +1,28 @@
+id: AS160
+type: Attack Story
+date: 2026-04
+platforms:
+  - npm
+
+summary: 175 npm packages hosting phishing infrastructure
+description: |
+  Socket: 175 malicious npm packages used the registry to host phishing infrastructure.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: 175 packages as hosting.
+      - techniqueID: T0110
+        techName: Advertise malicious artifact
+        tactic: Resource Development
+        comment: Phishing infra on npm.
+
+links:
+  - https://socket.dev/blog/175-malicious-npm-packages-host-phishing-infrastructure

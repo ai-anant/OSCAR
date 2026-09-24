@@ -1,0 +1,28 @@
+id: AS166
+type: Attack Story
+date: 2026-03
+platforms:
+  - nuget
+
+summary: Four NuGet packages JIT-hook ASP.NET credential theft
+description: |
+  Socket: four malicious NuGet packages target ASP.NET developers with JIT hooking and credential exfiltration.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Four NuGet packages.
+      - techniqueID: T0184
+        techName: Harvesting sensitive information from files
+        tactic: Credential Access
+        comment: Credential exfil.
+
+links:
+  - https://socket.dev/blog/four-malicious-nuget-packages-target-asp-net-developers-with-jit-hooking-and-credential

@@ -1,0 +1,28 @@
+id: AS174
+type: Attack Story
+date: 2025-11
+platforms:
+  - pypi
+
+summary: WooCommerce carding PyPI package
+description: |
+  Socket: malicious PyPI package targets WooCommerce stores with automated carding attacks.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: PyPI package.
+      - techniqueID: T0184
+        techName: Harvesting sensitive information from files
+        tactic: Credential Access
+        comment: Carding.
+
+links:
+  - https://socket.dev/blog/malicious-pypi-package-targets-woocommerce-stores-with-automated-carding-attacks

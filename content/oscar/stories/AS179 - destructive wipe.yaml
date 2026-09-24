@@ -1,0 +1,30 @@
+id: AS179
+type: Attack Story
+date: 2025-09
+platforms:
+  - npm
+
+summary: Destructive npm packages with remote wipe
+description: |
+  Socket: destructive npm packages enable remote system wipe (kill-switch / wipeout).
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Destructive packages.
+      - techniqueID: T0149
+        techName: Delete repositories
+        tactic: Impact
+        comment: Remote wipe of host/codebase.
+
+links:
+  - https://socket.dev/blog/destructive-npm-packages-enable-remote-system-wipe
+  - https://socket.dev/blog/npm-package-wipes-codebases-with-remote-trigger
+  - https://socket.dev/blog/wget-to-wipeout-malicious-go-modules-fetch-destructive-payload

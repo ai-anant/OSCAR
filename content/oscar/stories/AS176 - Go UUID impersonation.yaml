@@ -1,0 +1,28 @@
+id: AS176
+type: Attack Story
+date: 2025-11
+platforms:
+  - golang
+
+summary: Go packages impersonate Google UUID library
+description: |
+  Socket: malicious Go packages impersonate Google’s UUID library and exfiltrate data.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0129
+        techName: Typosquatting
+        tactic: Initial Access
+        comment: Google UUID lookalikes.
+      - techniqueID: T0184
+        techName: Harvesting sensitive information from files
+        tactic: Credential Access
+        comment: Data exfil.
+
+links:
+  - https://socket.dev/blog/malicious-go-packages-impersonate-googles-uuid-library-and-exfiltrate-data

@@ -42,3 +42,6 @@ links:
   - https://opensourcemalware.com/blog/glassworm-invades-github-npm-open-vsx-and-vs-code
   - https://socket.dev/blog/glasswasm-malware-open-vsx-extensions
   - https://checkmarx.com/zero-post/glassworm-targets-developer-ides-again-hiding-staged-malware-behind-runtime-rebuilt-loaders/
+  - https://socket.dev/blog/glassworm-sleeper-extensions-activated-on-open-vsx
+  - https://socket.dev/blog/open-vsx-transitive-glassworm-campaign
+  - https://socket.dev/blog/glassworm-loader-hits-open-vsx-via-suspected-developer-account-compromise

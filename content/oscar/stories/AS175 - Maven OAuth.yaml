@@ -1,0 +1,28 @@
+id: AS175
+type: Attack Story
+date: 2025-10
+platforms:
+  - maven
+
+summary: Malicious Maven package exfiltrates OAuth credentials
+description: |
+  Socket: malicious Maven package exfiltrates OAuth credentials.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Maven package.
+      - techniqueID: T0140
+        techName: Harvest tokens from environment variables
+        tactic: Credential Access
+        comment: OAuth creds.
+
+links:
+  - https://socket.dev/blog/malicious-maven-package-exfiltrates-oauth-credentials

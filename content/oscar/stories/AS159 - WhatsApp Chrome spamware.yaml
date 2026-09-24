@@ -1,0 +1,28 @@
+id: AS159
+type: Attack Story
+date: 2026-04
+platforms:
+  - browser-extensions
+
+summary: 131 WhatsApp spamware Chrome extensions
+description: |
+  Socket: 131 spamware extensions targeting WhatsApp flooded the Chrome Web Store.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: 131 store listings.
+      - techniqueID: T0136
+        techName: Brandjacking
+        tactic: Initial Access
+        comment: WhatsApp targeting.
+
+links:
+  - https://socket.dev/blog/131-spamware-extensions-targeting-whatsapp-flood-chrome-web-store

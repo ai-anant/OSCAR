@@ -1,0 +1,28 @@
+id: AS170
+type: Attack Story
+date: 2026-02
+platforms:
+  - npm
+
+summary: DuckDB npm account compromised
+description: |
+  Socket: DuckDB npm account compromised in a continuing supply-chain attack.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0113
+        techName: Compromised user account
+        tactic: Initial Access
+        comment: npm account.
+      - techniqueID: T0121
+        techName: Compromised legitimate artifact
+        tactic: Resource Development
+        comment: DuckDB packages.
+
+links:
+  - https://socket.dev/blog/duckdb-npm-account-compromised-in-continuing-supply-chain-attack

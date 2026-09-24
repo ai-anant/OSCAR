@@ -1,0 +1,32 @@
+id: AS165
+type: Attack Story
+date: 2026-03
+platforms:
+  - golang
+
+summary: Malicious Go crypto module Rekoobe backdoor
+description: |
+  Socket: malicious Go crypto module steals passwords and deploys Rekoobe backdoor.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Go crypto module.
+      - techniqueID: T0172
+        techName: Runtime backdoor
+        tactic: Execution
+        comment: Rekoobe.
+      - techniqueID: T0184
+        techName: Harvesting sensitive information from files
+        tactic: Credential Access
+        comment: Passwords.
+
+links:
+  - https://socket.dev/blog/malicious-go-crypto-module-steals-passwords-and-deploys-rekoobe-backdoor

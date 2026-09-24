@@ -1,0 +1,34 @@
+id: AS172
+type: Attack Story
+date: 2026-01
+platforms:
+  - npm
+  - macos
+  - vscode
+
+summary: npm packages hijack Cursor on macOS
+description: |
+  Socket: malicious npm packages hijack the Cursor editor on macOS.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: npm packages.
+      - techniqueID: T0154
+        techName: Malicious IDE extension
+        tactic: Initial Access
+        comment: Cursor hijack.
+      - techniqueID: T0210
+        techName: Poison AI coding-agent config or workspace
+        tactic: Persistence
+        comment: Editor/agent persistence.
+
+links:
+  - https://socket.dev/blog/malicious-npm-packages-hijack-cursor-editor-on-macos

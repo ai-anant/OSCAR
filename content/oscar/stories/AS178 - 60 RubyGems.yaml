@@ -1,0 +1,28 @@
+id: AS178
+type: Attack Story
+date: 2025-10
+platforms:
+  - rubygems
+
+summary: 60 malicious RubyGems targeted credential theft
+description: |
+  Socket: 60 malicious Ruby gems used in a targeted credential-theft campaign.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: 60 gems.
+      - techniqueID: T0184
+        techName: Harvesting sensitive information from files
+        tactic: Credential Access
+        comment: Credential theft.
+
+links:
+  - https://socket.dev/blog/60-malicious-ruby-gems-used-in-targeted-credential-theft-campaign

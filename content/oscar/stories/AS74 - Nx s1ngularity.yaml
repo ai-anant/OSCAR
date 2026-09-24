@@ -61,3 +61,4 @@ links:
   - https://nx.dev/blog/s1ngularity-postmortem
   - https://github.com/nrwl/nx/security/advisories/GHSA-cxm3-wv7p-598c
   - https://safedep.io/nx-build-system-compromise
+  - https://socket.dev/blog/nx-packages-compromised

@@ -1,0 +1,32 @@
+id: AS161
+type: Attack Story
+date: 2026-03
+platforms:
+  - npm
+
+summary: StegaBin 26 packages Pastebin steganography stealer
+description: |
+  Socket: StegaBin — 26 malicious npm packages use Pastebin steganography to deploy a multi-stage credential stealer.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: 26 packages.
+      - techniqueID: T0151
+        techName: Installation scripts
+        tactic: Execution
+        comment: Steganographic second stage.
+      - techniqueID: T0184
+        techName: Harvesting sensitive information from files
+        tactic: Credential Access
+        comment: Credential stealer.
+
+links:
+  - https://socket.dev/blog/stegabin-26-malicious-npm-packages-use-pastebin-steganography

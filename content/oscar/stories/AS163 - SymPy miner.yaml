@@ -1,0 +1,28 @@
+id: AS163
+type: Attack Story
+date: 2026-03
+platforms:
+  - pypi
+
+summary: PyPI SymPy impersonation cryptominer
+description: |
+  Socket: PyPI package impersonates SymPy to deliver cryptomining malware.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0129
+        techName: Typosquatting
+        tactic: Initial Access
+        comment: SymPy lookalike.
+      - techniqueID: T0139
+        techName: Resource hijacking
+        tactic: Impact
+        comment: Cryptominer.
+
+links:
+  - https://socket.dev/blog/pypi-package-impersonates-sympy-to-deliver-cryptomining-malware

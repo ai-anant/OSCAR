@@ -1,0 +1,28 @@
+id: AS164
+type: Attack Story
+date: 2026-03
+platforms:
+  - crates
+
+summary: Five Rust crates as time utilities steal .env
+description: |
+  Socket: five malicious Rust crates posed as time utilities to exfiltrate .env files.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Five crates.
+      - techniqueID: T0184
+        techName: Harvesting sensitive information from files
+        tactic: Credential Access
+        comment: .env theft.
+
+links:
+  - https://socket.dev/blog/5-malicious-rust-crates-posed-as-time-utilities-to-exfiltrate-env-files

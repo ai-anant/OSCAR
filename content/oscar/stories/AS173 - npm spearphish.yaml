@@ -1,0 +1,28 @@
+id: AS173
+type: Attack Story
+date: 2025-12
+platforms:
+  - npm
+
+summary: Spearphishing campaign abuses npm registry
+description: |
+  Socket: spearphishing campaign abuses the npm registry to target U.S. and allied manufacturing and healthcare organizations.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: npm as delivery.
+      - techniqueID: T0110
+        techName: Advertise malicious artifact
+        tactic: Resource Development
+        comment: Spearphish lures.
+
+links:
+  - https://socket.dev/blog/spearphishing-campaign-abuses-npm-registry

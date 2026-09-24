@@ -1,0 +1,28 @@
+id: AS169
+type: Attack Story
+date: 2026-02
+platforms:
+  - npm
+
+summary: Toptal GitHub org hijack 10 malicious packages
+description: |
+  Socket: Toptal GitHub organization hijacked; 10 malicious packages published.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0113
+        techName: Compromised user account
+        tactic: Initial Access
+        comment: Org hijack.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: 10 packages.
+
+links:
+  - https://socket.dev/blog/toptal-s-github-organization-hijacked-10-malicious-packages-published
