@@ -1,0 +1,33 @@
+id: AS156
+type: Attack Story
+date: 2026-06
+platforms:
+  - pypi
+
+summary: Operation Navy Ghost fake pyrogram packages on PyPI
+description: |
+  Checkmarx Zero: attackers planted a Telegram-powered backdoor across
+  fake pyrogram packages on PyPI (Operation Navy Ghost).
+
+attacks:
+  - attack: fake telegram sdk
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0129
+        techName: Typosquatting
+        tactic: Initial Access
+        comment: Fake pyrogram packages.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: PyPI campaign.
+      - techniqueID: T0172
+        techName: Runtime backdoor
+        tactic: Execution
+        comment: Telegram-powered backdoor.
+
+links:
+  - https://checkmarx.com/zero-post/operation-navy-ghost-pyrogram-telegram-supplychain-attack/

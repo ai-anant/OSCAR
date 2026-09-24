@@ -1,0 +1,28 @@
+id: AS157
+type: Attack Story
+date: 2026-07
+platforms:
+  - mcp
+  - ai-agents
+
+summary: MCP configuration poisoning (text-file machine takeover)
+description: |
+  Checkmarx Zero: MCP configuration poisoning — owning a developer
+  machine with just a text file (malicious MCP server/config). Same
+  class as T0210 / Hades (AS30), documented as a first-party research
+  incident pattern.
+
+attacks:
+  - attack: mcp config
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0210
+        techName: Poison AI coding-agent config or workspace
+        tactic: Persistence
+        comment: Malicious MCP config/text file as the implant.
+
+links:
+  - https://checkmarx.com/zero-post/mcp-configuration-poisoning-owning-your-machine-with-just-a-text-file/

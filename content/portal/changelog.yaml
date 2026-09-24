@@ -1,5 +1,12 @@
 entries:
 - date: '2026-09-24'
+  id: checkmarx-zero-ssc
+  title: Checkmarx Zero SSC posts attached or added
+  items:
+  - Attached btree/keyv/ChainVeil/Vite/GlassWorm/got-fetch Zero posts to existing incidents.
+  - New AS156 Navy Ghost pyrogram PyPI, AS157 MCP config poisoning.
+  - Skipped Zero CVE/product posts (JSX/SVG, React2Shell, n8n, npm v12 commentary).
+- date: '2026-09-24'
   id: every-ssc-article-pass
   title: Every remaining SafeDep SSC article plus Socket research catalog
   items:

@@ -41,3 +41,4 @@ attacks:
 links:
   - https://opensourcemalware.com/blog/glassworm-invades-github-npm-open-vsx-and-vs-code
   - https://socket.dev/blog/glasswasm-malware-open-vsx-extensions
+  - https://checkmarx.com/zero-post/glassworm-targets-developer-ides-again-hiding-staged-malware-behind-runtime-rebuilt-loaders/
