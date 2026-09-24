@@ -213,7 +213,7 @@
         ],
         "url": "techniques/T0121.html",
         "description": "A compromised legitimate artifact attack is a type of cyber attack in which an attacker replaces a legitimate package or container image with a malicious version, often without the knowledge of the original developer or distributor. \nThis attack takes advantage of the trust that users place in legitimate packages or container images, which are often used to deploy software across multiple environments.\nIn this attack, the attacker may gain access to the repository or registry where the legitimate artifact is stored, either by exploiting a vulnerability or through social engineering tactics. \nThe attacker then replaces the legitimate artifact with a malicious version that contains malware or other harmful code. \nOnce the compromised artifact is downloaded and deployed, it can compromise the system and potentially cause significant harm, such as stealing sensitive data or taking control of the system.\n",
-        "incidentCount": 43
+        "incidentCount": 44
       },
       {
         "id": "T0141",
@@ -690,7 +690,7 @@
         ],
         "url": "techniques/T0159.html",
         "description": "Malicious artifact execution refers to an attack where an attacker injects or modifies a software component with malicious code that is executed when the component is used by a downstream system in the CI/CD process. \nWhen a CI/CD process lacks sufficient mechanisms to validate the integrity of code and artifacts, attackers can insert malicious code that appears to be harmless. \nThis allows the malicious code to pass through the pipeline undetected, potentially causing harm in the CI/CD process or in production.\nThe malicious code can be executed in the CI/CD process or even in production.\n",
-        "incidentCount": 40
+        "incidentCount": 41
       },
       {
         "id": "T0166",
@@ -784,7 +784,7 @@
         ],
         "url": "techniques/T0138.html",
         "description": "Backdoor in code attack technique involves inserting a malicious code segment or backdoor into the software codebase, which allows the attacker to maintain access and control over the system even after their initial access has been removed or blocked.\nIn this attack, the attacker gains access to the codebase through various means, such as exploiting vulnerabilities or stealing credentials. \nOnce they have gained access, the attacker inserts a malicious code segment or backdoor into the codebase. \nThis code segment may be designed to execute specific malicious activities, such as stealing sensitive information, or to provide the attacker with continued access and control over the system.\n",
-        "incidentCount": 7
+        "incidentCount": 8
       },
       {
         "id": "T0148",
@@ -1051,7 +1051,7 @@
         ],
         "url": "techniques/T0208.html",
         "description": "The attacker signs malware with a stolen or issuer-trusted code-signing\ncertificate, CI OIDC identity, or package-registry signing key so that\nsignature verification succeeds. SolarWinds Orion updates were signed as\nSolarWinds. Distinct from spoofed git commits (T0195) and from forging\nprovenance documents (T0206): here the cryptographic identity is real\nand compromised.\n",
-        "incidentCount": 4
+        "incidentCount": 5
       }
     ],
     "amount": 11,

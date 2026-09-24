@@ -1,5 +1,15 @@
 entries:
 - date: '2026-09-24'
+  id: daemon-tools-gtig-wiz
+  title: DAEMON Tools signed-installer backdoor plus Wiz/GTIG attaches
+  items:
+  - AS195 DAEMON Tools (Kaspersky; GTIG UNC6863). Wiz SITF framework post attached to CircleCI, Ultralytics,
+    Sha1-Hulud as extra coverage.
+  - GTIG UNC1069 ClickFix/FinTech post is social-engineering, not a package registry incident — not duplicated
+    as a new story.
+  - GitHub Blog supply-chain section is hardening/changelog (Dependabot cooldown, npm/Actions defenses),
+    not new named incidents.
+- date: '2026-09-24'
   id: wiz-cisa-gtig-continue
   title: Wiz PAT campaign, GTIG Batten Down, Notepad++ update hijack
   items:

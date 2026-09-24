@@ -1,0 +1,44 @@
+id: AS195
+type: Attack Story
+date: 2026-04
+platforms:
+  - windows
+
+summary: DAEMON Tools signed installers backdoored (Apr–May 2026)
+description: |
+  Kaspersky Securelist (5 May 2026): DAEMON Tools Lite installers 12.5.0.2421
+  through 12.5.0.2434, distributed from the vendor site and signed by AVB
+  Disc Soft, carried a backdoor in DTHelper.exe, DiscSoftBusServiceLite.exe
+  and DTShellHlp.exe from 8 April. Thousands of infection attempts in 100+
+  countries; further-stage payloads on only about a dozen machines (retail,
+  scientific, government, manufacturing). GTIG tracks the actor as UNC6863
+  (SLICKDEMON / BADFALL / QUIC RAT). Vendor shipped 12.6.0.2445 without the
+  malicious behavior.
+
+attacks:
+  - attack: signed vendor installer
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0121
+        techName: Compromised legitimate artifact
+        tactic: Resource Development
+        comment: Official DAEMON Tools installers from daemon-tools.cc.
+      - techniqueID: T0208
+        techName: Compromise code-signing identity
+        tactic: Defense Evasion
+        comment: Binaries signed with AVB Disc Soft certificates.
+      - techniqueID: T0138
+        techName: Backdoor in code
+        tactic: Persistence
+        comment: Backdoor in helper/service binaries at startup.
+      - techniqueID: T0159
+        techName: Malicious artifact execution
+        tactic: Execution
+        comment: Ran with the legitimate installer.
+
+links:
+  - https://securelist.com/daemon-tools-backdoor/119654/
+  - https://cloud.google.com/blog/topics/threat-intelligence/mitigation-guidance-for-supply-chain-compromise
