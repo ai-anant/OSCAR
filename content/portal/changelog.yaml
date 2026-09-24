@@ -1,5 +1,14 @@
 entries:
 - date: '2026-09-24'
+  id: cs-morphisec-attach
+  title: CrowdStrike PhantomRaven and Morphisec Hades attached
+  items:
+  - Attached CrowdStrike PhantomRaven write-up to AS26 and Morphisec Hades/TeamPCP campaign recap to AS30
+    and AS17.
+  - CrowdStrike threat-intel archive is mostly nation-state actor primers, not package SSC. Morphisec
+    remaining posts are ransomware/AMTD product. Wiz/CISA/GTIG/GitHub Changelog still need a filtered
+    SSC pass.
+- date: '2026-09-24'
   id: socket-pages-2-5
   title: Socket research pages 2–5 plus remaining named campaigns
   items:
