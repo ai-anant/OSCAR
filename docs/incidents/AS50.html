@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Miasma botnet loader in @asyncapi npm packages · OSC&amp;R</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+    <header class="top">
+      <div class="ai-banner">This is an <strong>AI-maintained continuation</strong> of OSC&amp;R, preserving the original PBOM / pbom-dev work and carrying the project forward.</div>
+      <div class="bar">
+        <a class="brand" href="../index.html">OSC&amp;R</a>
+        <nav>
+          <a href="../index.html">Matrix</a>
+          <a href="../techniques/index.html">Techniques</a>
+          <a href="../incidents/index.html">Incident mapping</a>
+          <a href="../platforms/index.html">Platforms</a>
+          <a href="../stories/index.html">Attack stories</a>
+          <a href="../guidance.html">Guidance</a>
+          <a href="../origins.html">Origins</a>
+          <a href="../sources.html">Sources</a>
+          <a href="../changelog.html">Changelog</a>
+          <a href="../about.html">About</a>
+        </nav>
+      </div>
+    </header>
+<main>
+<p class="crumb">OSC&amp;R / <a href="index.html">Incidents</a> / AS50</p>
+
+        <p class="meta">AS50 · 2026-07</p>
+        <h1>Miasma botnet loader in @asyncapi npm packages</h1>
+        <p><a class="plat" href="../platforms/npm.html">npm</a></p>
+        <p>On 14 July 2026 Socket found four compromised @asyncapi packages<br>(generator-helpers 1.1.1, generator-components 0.7.1, generator 3.3.1,<br>specs 6.11.2) shipping a hidden JS implant. Not an install-hook attack:<br>loading the module in Node starts a detached node -e process that<br>downloads an encrypted Miasma second stage from IPFS. Same implant<br>decoded from each injected file. Preceding versions were clean.</p>
+        <h2>Mapped OSC&amp;R elements</h2>
+        <ul><li><a href="../techniques/T0121.html">T0121</a> Compromised legitimate artifact</li><li><a href="../techniques/T0109.html">T0109</a> Publish malicious artifact</li><li><a href="../techniques/T0159.html">T0159</a> Malicious artifact execution</li><li><a href="../techniques/T0181.html">T0181</a> Malicious module injection</li></ul>
+        <h2><span class="stage">supply-chain</span> @asyncapi namespace</h2><div class="card"><p class="meta"><a href="../techniques/T0121.html">T0121</a> · Resource Development · Compromised legitimate artifact</p><p>Real @asyncapi packages, malicious versions published in seconds of each other.</p></div><div class="card"><p class="meta"><a href="../techniques/T0109.html">T0109</a> · Resource Development · Publish malicious artifact</p><p>Two batches on 14 July 2026.</p></div><div class="card"><p class="meta"><a href="../techniques/T0159.html">T0159</a> · Execution · Malicious artifact execution</p><p>Runs on module load, not on npm install.</p></div><div class="card"><p class="meta"><a href="../techniques/T0181.html">T0181</a> · Initial Access · Malicious module injection</p><p>One injected source file per package, same downloader.</p></div>
+        
+        <h2>Sources</h2>
+        <ul class='refs'><li><a href="https://socket.dev/blog/asyncapi-supply-chain-attack" rel="noopener">https://socket.dev/blog/asyncapi-supply-chain-attack</a></li><li><a href="https://opensourcemalware.com/blog/miasma-blight-reaches-microsoft-73-repos-disabled-in-105-seconds" rel="noopener">https://opensourcemalware.com/blog/miasma-blight-reaches-microsoft-73-repos-disabled-in-105-seconds</a></li></ul>
+        
+</main>
+
+    <footer>
+      <p>OSC&amp;R (Open Software Supply Chain Attack Reference) was created by
+      <a href="https://github.com/pbom-dev/OSCAR">pbom-dev</a> and its original contributors.
+      This fork is AI-maintained to continue that legacy. Apache-2.0. See
+      <a href="../about.html">About &amp; attribution</a>.</p>
+    </footer>
+</body>
+</html>

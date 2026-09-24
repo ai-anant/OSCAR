@@ -1,0 +1,54 @@
+id: AS48
+type: Attack Story
+date: 2025-09
+platforms:
+  - npm
+  - github-actions
+  - git
+
+summary: Shai-Hulud first wave (@ctrl/tinycolor)
+description: |
+  In September 2025 a malicious version of @ctrl/tinycolor (then ~2M weekly
+  downloads) started the first known self-propagating worm on npm. Socket’s
+  one-year recap is the primary timeline: bundle.js ran TruffleHog against
+  the host, exfiltrated npm/GitHub/cloud secrets to a webhook and to a
+  public GitHub repo named Shai-Hulud on the victim’s account, planted a
+  GitHub Actions workflow, then used stolen npm tokens to infect other
+  packages the maintainer owned. It reached CrowdStrike’s npm namespace
+  within a day. Hundreds of packages before rollback. Later Mini Shai-Hulud
+  / ChainDrop / TanStack waves reused the pattern (AS16, AS28).
+
+attacks:
+  - attack: npm worm
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0121
+        techName: Compromised legitimate artifact
+        tactic: Resource Development
+        comment: "@ctrl/tinycolor under its real name."
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Stolen npm tokens republished the worm into other maintainer packages.
+      - techniqueID: T0140
+        techName: Harvest tokens from environment variables
+        tactic: Credential Access
+        comment: TruffleHog sweep of npm, GitHub, and cloud keys.
+      - techniqueID: T0168
+        techName: Exfiltration to code repositories
+        tactic: Exfiltration
+        comment: Public GitHub repo named Shai-Hulud created on the victim account.
+      - techniqueID: T0166
+        techName: Trigger pipeline execution
+        tactic: Execution
+        comment: Planted GitHub Actions workflow for persistence.
+      - techniqueID: T0169
+        techName: Push implants across repositories
+        tactic: Lateral Movement
+        comment: Self-propagation into every package the stolen token could publish.
+
+links:
+  - https://socket.dev/blog/happy-birthday-shai-hulud

@@ -1,0 +1,40 @@
+id: AS54
+type: Attack Story
+date: 2026-04
+platforms:
+  - npm
+
+summary: Stardrop npm campaign (VC, luxury, AI brands)
+description: |
+  OpenSourceMalware documented Stardrop: dozens of malicious npm packages
+  targeting names associated with venture-capital firms, luxury brands, and
+  AI companies. Brand-themed typosquats/lookalikes rather than generic
+  utility names, so a developer working with those firms might install by
+  mistake.
+
+attacks:
+  - attack: Brand-themed npm packages
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0129
+        techName: Typosquatting
+        tactic: Initial Access
+        comment: Names chosen to match VC, luxury, and AI brands.
+      - techniqueID: T0136
+        techName: Brandjacking
+        tactic: Initial Access
+        comment: Impersonation of well-known firm/product names.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Dozens of malicious packages.
+      - techniqueID: T0110
+        techName: Advertise malicious artifact
+        tactic: Resource Development
+        comment: Search/install path aimed at people working with those brands.
+
+links:
+  - https://opensourcemalware.com/blog/stardrop-supply-chain-attack-targets-venture-capital-firms-luxury-brands-and-ai-companies

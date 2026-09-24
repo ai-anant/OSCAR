@@ -1,0 +1,37 @@
+id: AS51
+type: Attack Story
+date: 2026-07
+platforms:
+  - npm
+
+summary: jscrambler@8.14.0 preinstall native binaries
+description: |
+  Socket detected a compromised jscrambler 8.14.0 six minutes after
+  publication on 11 July 2026 (~15.8k weekly downloads). An undocumented
+  preinstall hook runs dist/setup.js and executes a platform-specific
+  native binary (Linux, macOS, Windows) from an obfuscated CSI container.
+  Those files do not exist in 8.13.0. Install is enough; no import or CLI
+  required. High risk for CI that uses Jscrambler on production builds.
+
+attacks:
+  - attack: jscrambler on npm
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0121
+        techName: Compromised legitimate artifact
+        tactic: Resource Development
+        comment: Popular JS protection tool under its real name.
+      - techniqueID: T0151
+        techName: Installation scripts
+        tactic: Execution
+        comment: preinstall invokes hidden native binaries.
+      - techniqueID: T0140
+        techName: Harvest tokens from environment variables
+        tactic: Credential Access
+        comment: Binary runs with access to source, env, and CI credentials.
+
+links:
+  - https://socket.dev/blog/jscrambler-supply-chain-attack

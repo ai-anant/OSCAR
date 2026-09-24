@@ -1,0 +1,43 @@
+id: AS52
+type: Attack Story
+date: 2026-08
+platforms:
+  - packagist
+  - cdn
+
+summary: Packagist CMS themes delivering iOS spyware
+description: |
+  Socket found 13 malicious Composer theme packages on Packagist (five
+  vendor namespaces used by Vietnamese OphimCMS/KKPhim movie sites). The
+  theme injects JS into every page: mobile ad-fraud plus, on iPhones, a
+  WebKit-to-kernel exploit chain (FUNNULL) that installs spyware and
+  steals crypto-wallet seeds. Apple said the kernel escape was already
+  fixed in iOS/macOS 26.1; WebKit bugs were in CISA KEV. Site operators
+  install with composer require.
+
+attacks:
+  - attack: Packagist themes
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Thirteen themes across vsmov, vsphim, haiau009, chilltvcms, ophimcms.
+      - techniqueID: T0121
+        techName: Compromised legitimate artifact
+        tactic: Resource Development
+        comment: Themes for real Laravel CMS stacks.
+      - techniqueID: T0119
+        techName: Cross-site scripting
+        tactic: Execution
+        comment: Injected JS on every page of sites that installed the theme.
+      - techniqueID: T0201
+        techName: Customers compromised
+        tactic: Impact
+        comment: Site visitors (especially unpatched iPhones), not only the operator’s build.
+
+links:
+  - https://socket.dev/blog/packagist-themes-ios-spyware

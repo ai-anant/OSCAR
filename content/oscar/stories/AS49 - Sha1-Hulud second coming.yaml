@@ -1,0 +1,45 @@
+id: AS49
+type: Attack Story
+date: 2025-11
+platforms:
+  - npm
+  - github-actions
+  - git
+
+summary: "Sha1-Hulud: The Second Coming"
+description: |
+  Late November 2025 a second Shai-Hulud wave labeled itself in exfil
+  repos as "Sha1-Hulud: The Second Coming" (Socket). Execution moved to
+  preinstall, widening blast radius on developer machines and CI. New
+  payloads setup_bun.js and bun_environment.js. A destructive fallback
+  could wipe the user’s home directory. Hundreds of packages again, plus
+  tens of thousands of attacker-created GitHub repositories. StepSecurity
+  later noted detection inside CNCF Backstage.
+
+attacks:
+  - attack: npm preinstall worm
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0151
+        techName: Installation scripts
+        tactic: Execution
+        comment: Preinstall widened the set of machines that ran the worm.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Hundreds of packages; Bun-based second stage.
+      - techniqueID: T0168
+        techName: Exfiltration to code repositories
+        tactic: Exfiltration
+        comment: Tens of thousands of attacker-created GitHub exfil repos.
+      - techniqueID: T0169
+        techName: Push implants across repositories
+        tactic: Lateral Movement
+        comment: Same stolen-token republish loop as the September wave.
+
+links:
+  - https://socket.dev/blog/happy-birthday-shai-hulud
+  - https://www.stepsecurity.io/blog/state-of-open-source-supply-chain-attacks

@@ -1,0 +1,42 @@
+id: AS55
+type: Attack Story
+date: 2026-04
+platforms:
+  - git
+  - npm
+  - vscode
+  - pypi
+
+summary: GlassWorm across GitHub, npm, Open VSX, VS Code, Python
+description: |
+  OpenSourceMalware reported GlassWorm compromising 430+ GitHub projects
+  by using four ecosystems at once (GitHub, npm, Open VSX / VS Code,
+  Python). Multi-ecosystem implants so cleaning one registry does not
+  clear the campaign.
+
+attacks:
+  - attack: Multi-ecosystem implants
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0111
+        techName: Malicious code contribution to an open-source repository
+        tactic: Resource Development
+        comment: 430+ GitHub projects in the blast radius.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Parallel publishes to npm, Open VSX, and PyPI.
+      - techniqueID: T0154
+        techName: Malicious IDE extension
+        tactic: Initial Access
+        comment: Open VSX / VS Code as a delivery path.
+      - techniqueID: T0169
+        techName: Push implants across repositories
+        tactic: Lateral Movement
+        comment: Four ecosystems so remediation in one place is not enough.
+
+links:
+  - https://opensourcemalware.com/blog/glassworm-invades-github-npm-open-vsx-and-vs-code

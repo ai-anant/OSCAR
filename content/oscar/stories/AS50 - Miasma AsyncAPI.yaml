@@ -1,0 +1,42 @@
+id: AS50
+type: Attack Story
+date: 2026-07
+platforms:
+  - npm
+
+summary: Miasma botnet loader in @asyncapi npm packages
+description: |
+  On 14 July 2026 Socket found four compromised @asyncapi packages
+  (generator-helpers 1.1.1, generator-components 0.7.1, generator 3.3.1,
+  specs 6.11.2) shipping a hidden JS implant. Not an install-hook attack:
+  loading the module in Node starts a detached node -e process that
+  downloads an encrypted Miasma second stage from IPFS. Same implant
+  decoded from each injected file. Preceding versions were clean.
+
+attacks:
+  - attack: "@asyncapi namespace"
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0121
+        techName: Compromised legitimate artifact
+        tactic: Resource Development
+        comment: Real @asyncapi packages, malicious versions published in seconds of each other.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Two batches on 14 July 2026.
+      - techniqueID: T0159
+        techName: Malicious artifact execution
+        tactic: Execution
+        comment: Runs on module load, not on npm install.
+      - techniqueID: T0181
+        techName: Malicious module injection
+        tactic: Initial Access
+        comment: One injected source file per package, same downloader.
+
+links:
+  - https://socket.dev/blog/asyncapi-supply-chain-attack
+  - https://opensourcemalware.com/blog/miasma-blight-reaches-microsoft-73-repos-disabled-in-105-seconds

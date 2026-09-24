@@ -1,0 +1,42 @@
+id: AS53
+type: Attack Story
+date: 2026-02
+platforms:
+  - ai-agents
+
+summary: Malicious ClawHub / OpenClaw skills
+description: |
+  OpenSourceMalware reviewed ClawHub (then ClawdBot / MoltBot, now
+  OpenClaw) and found 386 malicious skills. 28 published 27–29 Jan 2026
+  targeting Claude Code and Moltbot; 386 more 31 Jan–2 Feb. Skills posed
+  as crypto-trading automation and delivered infostealers (exchange API
+  keys, wallet keys, SSH, browser passwords) on macOS and Windows. Shared
+  C2 91.92.242.30. No exploit — social engineering plus an unreviewed
+  skills registry.
+
+attacks:
+  - attack: ClawHub registry
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0210
+        techName: Poison AI coding-agent config or workspace
+        tactic: Persistence
+        comment: Skills are a new dependency layer with no lockfile or malware scan.
+      - techniqueID: T0110
+        techName: Advertise malicious artifact
+        tactic: Resource Development
+        comment: Professionally documented crypto-trading skills on the official hub.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: 386 malicious skills in days.
+      - techniqueID: T0184
+        techName: Harvesting sensitive information from files
+        tactic: Credential Access
+        comment: Wallet keys, SSH, browser passwords.
+
+links:
+  - https://opensourcemalware.com/blog/malicious-clawhub-skills-target-openclaw-users

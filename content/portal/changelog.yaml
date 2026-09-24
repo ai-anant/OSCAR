@@ -1,5 +1,12 @@
 entries:
 - date: '2026-09-23'
+  id: history-pass-2
+  title: 'History pass 2: Shai-Hulud, Miasma, GlassWorm, ClawHub, Packagist spyware'
+  items:
+  - 'Added AS48–AS56: Shai-Hulud first wave (@ctrl/tinycolor), Sha1-Hulud Second Coming, Miasma/@asyncapi, jscrambler
+    8.14.0, Packagist iOS spyware themes, ClawHub skills, Stardrop, GlassWorm, Elf-Stats.'
+  - 'Sources: Socket and OpenSourceMalware first-party posts.'
+- date: '2026-09-23'
   id: backfill-old-incidents
   title: Rewrite original stories and backfill older campaigns
   items:

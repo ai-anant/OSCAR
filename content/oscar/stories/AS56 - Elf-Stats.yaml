@@ -1,0 +1,33 @@
+id: AS56
+type: Attack Story
+date: 2025-12
+platforms:
+  - npm
+
+summary: Elf-Stats Christmas npm spam worm
+description: |
+  On 3 December 2025 OpenSourceMalware named Elf-Stats: a Christmas-themed
+  npm spam campaign of packages whose names start with elf-stats. 36
+  packages across 23 npm users at publication, with package.json claiming
+  automatic generation every two minutes. Payload exfiltrated filenames
+  under /opt to a webhook.site URL. Low likelihood of accidental install
+  given the names; still a worm that inflates the malicious-package corpus.
+
+attacks:
+  - attack: npm
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0108
+        techName: Accounts in public registry
+        tactic: Resource Development
+        comment: 23 npm users publishing elf-stats-* packages.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Auto-generated packages every two minutes.
+
+links:
+  - https://opensourcemalware.com/blog/elf-stats-npm-christmas-spam-campaign
