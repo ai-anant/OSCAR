@@ -1,5 +1,11 @@
 entries:
 - date: '2026-09-24'
+  id: history-pass-5b
+  title: Add Moika dependency-confusion campaign
+  items:
+  - Added AS77 Moika (183 npm packages impersonating Sberbank/EMCD internal tooling) from OpenSourceMalware’s
+    Jan–May 2026 campaign review.
+- date: '2026-09-24'
   id: history-pass-5
   title: 'History pass 5: NotPetya, prettier phishing, Nx s1ngularity, hackerbot-claw'
   items:

@@ -1,0 +1,46 @@
+id: AS77
+type: Attack Story
+date: 2026-05
+platforms:
+  - npm
+
+summary: Moika npm dependency-confusion (Sberbank / EMCD impersonation)
+description: |
+  OpenSourceMalware’s Jan–May 2026 campaign review names Moika after the
+  shared C2 oob.moika.tech. Beginning 27 May 2026 four npm accounts
+  published 183 packages across nine scoped namespaces impersonating
+  internal tooling at a Russian cloud provider, Sberbank, and the EMCD
+  crypto exchange. Packages used dependency-confusion version inflation,
+  READMEs with fabricated internal registry URLs and Jira links, and
+  postinstall hooks that dumped environment variables. A hardcoded
+  X-Secret header tied the four accounts together. Intent is ambiguous:
+  account mr.4nd3r50n has a 2024 bug-bounty history on the same names,
+  payloads ran in RECON_ONLY, and two packages were marked “BugBounty
+  testing” next to working stealers.
+
+attacks:
+  - attack: scoped namespace confusion
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0120
+        techName: Dependency confusion
+        tactic: Initial Access
+        comment: Inflated versions and internal-looking scoped names on public npm.
+      - techniqueID: T0136
+        techName: Brandjacking
+        tactic: Initial Access
+        comment: Sberbank, EMCD, and internal-tool namespaces.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: 183 packages from four accounts, one X-Secret header.
+      - techniqueID: T0151
+        techName: Installation scripts
+        tactic: Execution
+        comment: postinstall dumped environment variables to oob.moika.tech.
+
+links:
+  - https://opensourcemalware.com/blog/active-malware-campaigns-in-january-may-2026

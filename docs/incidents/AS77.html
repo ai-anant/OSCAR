@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Moika npm dependency-confusion (Sberbank / EMCD impersonation) · OSC&amp;R</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+    <header class="top">
+      <div class="ai-banner">This is an <strong>AI-maintained continuation</strong> of OSC&amp;R, preserving the original PBOM / pbom-dev work and carrying the project forward.</div>
+      <div class="bar">
+        <a class="brand" href="../index.html">OSC&amp;R</a>
+        <nav>
+          <a href="../index.html">Matrix</a>
+          <a href="../techniques/index.html">Techniques</a>
+          <a href="../incidents/index.html">Incident mapping</a>
+          <a href="../platforms/index.html">Platforms</a>
+          <a href="../stories/index.html">Attack stories</a>
+          <a href="../guidance.html">Guidance</a>
+          <a href="../origins.html">Origins</a>
+          <a href="../sources.html">Sources</a>
+          <a href="../changelog.html">Changelog</a>
+          <a href="../about.html">About</a>
+        </nav>
+      </div>
+    </header>
+<main>
+<p class="crumb">OSC&amp;R / <a href="index.html">Incidents</a> / AS77</p>
+
+        <p class="meta">AS77 · 2026-05</p>
+        <h1>Moika npm dependency-confusion (Sberbank / EMCD impersonation)</h1>
+        <p><a class="plat" href="../platforms/npm.html">npm</a></p>
+        <p>OpenSourceMalware’s Jan–May 2026 campaign review names Moika after the<br>shared C2 oob.moika.tech. Beginning 27 May 2026 four npm accounts<br>published 183 packages across nine scoped namespaces impersonating<br>internal tooling at a Russian cloud provider, Sberbank, and the EMCD<br>crypto exchange. Packages used dependency-confusion version inflation,<br>READMEs with fabricated internal registry URLs and Jira links, and<br>postinstall hooks that dumped environment variables. A hardcoded<br>X-Secret header tied the four accounts together. Intent is ambiguous:<br>account mr.4nd3r50n has a 2024 bug-bounty history on the same names,<br>payloads ran in RECON_ONLY, and two packages were marked “BugBounty<br>testing” next to working stealers.</p>
+        <h2>Mapped OSC&amp;R elements</h2>
+        <ul><li><a href="../techniques/T0120.html">T0120</a> Dependency confusion</li><li><a href="../techniques/T0136.html">T0136</a> Brandjacking</li><li><a href="../techniques/T0109.html">T0109</a> Publish malicious artifact</li><li><a href="../techniques/T0151.html">T0151</a> Installation scripts</li></ul>
+        <h2><span class="stage">supply-chain</span> scoped namespace confusion</h2><div class="card"><p class="meta"><a href="../techniques/T0120.html">T0120</a> · Initial Access · Dependency confusion</p><p>Inflated versions and internal-looking scoped names on public npm.</p></div><div class="card"><p class="meta"><a href="../techniques/T0136.html">T0136</a> · Initial Access · Brandjacking</p><p>Sberbank, EMCD, and internal-tool namespaces.</p></div><div class="card"><p class="meta"><a href="../techniques/T0109.html">T0109</a> · Resource Development · Publish malicious artifact</p><p>183 packages from four accounts, one X-Secret header.</p></div><div class="card"><p class="meta"><a href="../techniques/T0151.html">T0151</a> · Execution · Installation scripts</p><p>postinstall dumped environment variables to oob.moika.tech.</p></div>
+        
+        <h2>Sources</h2>
+        <ul class='refs'><li><a href="https://opensourcemalware.com/blog/active-malware-campaigns-in-january-may-2026" rel="noopener">https://opensourcemalware.com/blog/active-malware-campaigns-in-january-may-2026</a></li></ul>
+        
+</main>
+
+    <footer>
+      <p>OSC&amp;R (Open Software Supply Chain Attack Reference) was created by
+      <a href="https://github.com/pbom-dev/OSCAR">pbom-dev</a> and its original contributors.
+      This fork is AI-maintained to continue that legacy. Apache-2.0. See
+      <a href="../about.html">About &amp; attribution</a>.</p>
+    </footer>
+</body>
+</html>
