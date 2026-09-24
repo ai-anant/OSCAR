@@ -1,0 +1,49 @@
+id: AS82
+type: Attack Story
+date: 2026-03
+platforms:
+  - git
+  - npm
+
+summary: Neutralinojs org force-push (DPRK / PolinRider)
+description: |
+  On 2 March 2026 at 04:38–04:40 UTC compromised contributor alphagamer7
+  force-pushed four Neutralinojs repos (neutralinojs, neutralino.js,
+  neutralinojs-cli, github.io) in 132 seconds. Commits were backdated
+  5–35 days and attributed to maintainer shalithasuranga or
+  github-actions[bot]; GitHub triggering_actor showed the real pusher.
+  Payloads hid after hundreds of spaces in JS configs, used BeaverTail,
+  and pointed at Vercel C2. OSM tied it to PolinRider and the same
+  obfuscation family in 106+ other repos. OSM opened a cleanup PR;
+  Vercel took down the C2.
+
+attacks:
+  - attack: stolen contributor force-push
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0113
+        techName: Compromised user account
+        tactic: Initial Access
+        comment: Long-time contributor alphagamer7 used to force-push.
+      - techniqueID: T0195
+        techName: Spoofed Commits
+        tactic: Defense Evasion
+        comment: Backdated timestamps; author spoofed as maintainer or github-actions[bot].
+      - techniqueID: T0111
+        techName: Malicious code contribution to an open-source repository
+        tactic: Resource Development
+        comment: Whitespace-hidden JS loaders in four org repos.
+      - techniqueID: T0169
+        techName: Push implants across repositories
+        tactic: Lateral Movement
+        comment: Four repos plus extra branches in 132 seconds.
+      - techniqueID: T0172
+        techName: Runtime backdoor
+        tactic: Execution
+        comment: BeaverTail / blockchain C2 family also seen in Joyfill (AS66).
+
+links:
+  - https://opensourcemalware.com/blog/neutralinojs-compromised-in-dprk-attack

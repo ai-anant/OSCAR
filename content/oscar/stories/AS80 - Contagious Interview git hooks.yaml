@@ -1,0 +1,46 @@
+id: AS80
+type: Attack Story
+date: 2026-04
+platforms:
+  - git
+  - linux
+  - macos
+  - windows
+
+summary: Contagious Interview stage-2 in Git pre-commit / post-checkout hooks
+description: |
+  OSM found Lazarus Contagious Interview / TasksJacker lures moving the
+  stage-2 loader out of .vscode/tasks.json into .githooks/pre-commit
+  (and post-checkout). The hook fingerprints uname -s and pipes a curl
+  from precommit.vercel.app into sh or cmd, always exiting 0 so the
+  commit looks fine. Same fake-recruiter coding-assessment social
+  engineering as AS41, earlier in the workflow — fires when the
+  candidate commits, and post-checkout fires on every branch switch.
+  Identical blob SHA seen across several DeFi-themed lure repos.
+
+attacks:
+  - attack: git hook loader
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0111
+        techName: Malicious code contribution to an open-source repository
+        tactic: Resource Development
+        comment: Lure repos ship .githooks/pre-commit and post-checkout.
+      - techniqueID: T0151
+        techName: Installation scripts
+        tactic: Execution
+        comment: Hook runs automatically on commit or checkout.
+      - techniqueID: T0136
+        techName: Brandjacking
+        tactic: Initial Access
+        comment: precommit.vercel.app impersonates the pre-commit framework.
+      - techniqueID: T0172
+        techName: Runtime backdoor
+        tactic: Execution
+        comment: Per-OS second stage toward InvisibleFerret-style theft.
+
+links:
+  - https://opensourcemalware.com/blog/lazarus-group-uses-git-hooks-to-hide-malware

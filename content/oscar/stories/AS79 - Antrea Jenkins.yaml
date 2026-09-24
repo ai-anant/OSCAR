@@ -1,0 +1,55 @@
+id: AS79
+type: Attack Story
+date: 2026-05
+platforms:
+  - git
+  - jenkins
+  - github-actions
+
+summary: CNCF Antrea Jenkins slash-command credential theft
+description: |
+  On 2 May 2026 throwaway 0xedgerunner opened antrea PR 8027, posted five
+  /test-* slash commands in three seconds, and iterated 19 commits that
+  planted a Jenkins Job DSL Python-eval gadget plus bash credential
+  scrapers. OSM: the public jenkins.antrea.io UI plus unauthenticated
+  slash-command jobs let the PR author run fork code on self-hosted
+  Jenkins; the payload probed the controller at 35.164.122.165, IMDSv2,
+  and dumped secrets to paste.rs / webhook.site. Commits spoofed
+  CI Bot <ci@antrea.io>. Maintainer closed it as credential exfil; the
+  operator claimed root on the controller. Distinct from the March Trivy
+  window (AS17); Antrea maintainers said they were not hit then.
+
+attacks:
+  - attack: slash-command jenkins detonation
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0147
+        techName: Scan public CI/CD configurations for secrets and vulnerable actions
+        tactic: Reconnaissance
+        comment: Public Jenkins UI and slash-command CI mapped without auth.
+      - techniqueID: T0166
+        techName: Trigger pipeline execution
+        tactic: Execution
+        comment: Five /test-* comments on a fork PR ran Jenkins jobs.
+      - techniqueID: T0118
+        techName: Command injection
+        tactic: Execution
+        comment: Job DSL !!python/object/apply:eval gadget in 000_payload.yaml.
+      - techniqueID: T0195
+        techName: Spoofed Commits
+        tactic: Defense Evasion
+        comment: Author set to CI Bot ci@antrea.io, unverified on the throwaway account.
+      - techniqueID: T0140
+        techName: Harvest tokens from environment variables
+        tactic: Credential Access
+        comment: Env, docker/kube/aws/gcloud creds, Jenkins store, IMDSv2.
+      - techniqueID: T0156
+        techName: Exfiltration over webhooks
+        tactic: Exfiltration
+        comment: paste.rs and webhook.site collectors.
+
+links:
+  - https://opensourcemalware.com/blog/cncf-project-antrea-compromised-in-daring-github-attack

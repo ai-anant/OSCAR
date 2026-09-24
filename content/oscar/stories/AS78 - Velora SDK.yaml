@@ -1,0 +1,38 @@
+id: AS78
+type: Attack Story
+date: 2026-07
+platforms:
+  - npm
+
+summary: "@velora-dex/sdk 9.4.1 build-pipeline backdoor"
+description: |
+  OpenSourceMalware found only @velora-dex/sdk 9.4.1 (Velora / formerly
+  ParaSwap) carrying a base64 child_process.exec in dist/index.js that
+  curls http://89.36.224.5/troubleshoot/mac/install.sh and runs it under
+  nohup. Dev tags 9.4.1-dev.1/2 and every other 9.x release were clean,
+  which OSM reads as a surgical build/release compromise, not a git
+  takeover. Payload runs on import. npm removed 9.4.1 after GitHub issue
+  233; 9.4.2 is clean.
+
+attacks:
+  - attack: single-version dist implant
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0121
+        techName: Compromised legitimate artifact
+        tactic: Resource Development
+        comment: Only the 9.4.1 tarball; source/dev builds clean.
+      - techniqueID: T0159
+        techName: Malicious artifact execution
+        tactic: Execution
+        comment: Runs on import via child_process.exec.
+      - techniqueID: T0206
+        techName: Forge or omit build provenance
+        tactic: Defense Evasion
+        comment: Implant appeared in the published dist, not matching dev tags.
+
+links:
+  - https://opensourcemalware.com/blog/velora-formerly-paraswap-sdk-version-941-compromised-and-installing-malware

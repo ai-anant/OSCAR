@@ -120,7 +120,7 @@
         ],
         "url": "techniques/T0147.html",
         "description": "This technique involves scanning publicly available CI/CD configurations for potential vulnerabilities, misconfigurations, and secrets.\nAn attacker can use this technique to identify misconfigured CI/CD pipelines that may contain secrets or other sensitive information, such as API keys or login credentials. \nThey can also identify vulnerable actions, such as unsecured build agents or outdated software components, that can be exploited to gain access to an organization's infrastructure or data.\nMisconfigured or insecure CI/CD pipelines can introduce significant security risks, including data breaches and system compromise.\n",
-        "incidentCount": 4
+        "incidentCount": 5
       },
       {
         "id": "T0187",
@@ -176,7 +176,7 @@
         ],
         "url": "techniques/T0109.html",
         "description": "Public registries are widely used by developers and organizations to download and distribute software packages and container images, making them an attractive target for attackers.\nIn this type of attack, the attacker creates a package or container image that contains malicious code or files, such as a backdoor or other malware.\nThe attacker then uploads the package or image to PyPI, DockerHub or other registry, posing as a legitimate user or creating a fake account.\nOnce the package or image is uploaded, it becomes available for download by other users who may unsuspectingly use it in their projects.\nThe supply chain attack can have far-reaching consequences as it can affect all systems that rely on the malicious package or image.\nFor example, a Python package that is downloaded from PyPI may be used by multiple applications and libraries, potentially compromising all systems that use it.\nSimilarly, a container image with a malicious payload may be used to deploy an application across multiple environments, leading to a widespread compromise.\n",
-        "incidentCount": 52
+        "incidentCount": 53
       },
       {
         "id": "T0110",
@@ -188,7 +188,7 @@
         ],
         "url": "techniques/T0110.html",
         "description": "An Advertise Malicious Artifact attack is a type of cyber attack in which an attacker distributes a malicious package or container image to a broader audience, typically by advertising it on popular repositories or registries.\nThe goal of this attack is to entice users into downloading and using the malicious artifact, thereby compromising their systems.\nIn this attack, the attacker may create a fake developer account or use an existing legitimate account to upload the malicious artifact to popular repositories or registries such as PyPI or DockerHub.\nThe attacker may then use various techniques to promote the malicious artifact, such as forum promotion, commenting, using misleading descriptions, tags, or keywords, or by hijacking popular package names.\nOnce users download and install the malicious package or container image, it can compromise their systems and potentially cause significant harm, such as stealing sensitive data or taking control of the system.\n",
-        "incidentCount": 10
+        "incidentCount": 11
       },
       {
         "id": "T0111",
@@ -200,7 +200,7 @@
         ],
         "url": "techniques/T0111.html",
         "description": "A malicious code contribution to an open-source repository attack is a type of cyber attack that involves an attacker submitting code with malicious intent to an open-source repository. \nOpen-source repositories are used to store and manage code for open-source software projects, and they rely on community contributions to improve and maintain the codebase. \nIn this attack, the attacker may submit a seemingly harmless code contribution to the repository. However, the code contains a hidden malware payload that can be triggered later to cause damage. \nAlternatively, the code may include a backdoor that allows the attacker to gain unauthorized access to the system running the open-source software.\nOnce the code is accepted into the repository, it can be difficult to detect the presence of the malicious payload.\nThe code may be integrated into the open-source project, distributed to other projects that depend on it, and even included in software distributions used by many people. \nThis can result in a wide-scale compromise of systems that use the affected code.\n",
-        "incidentCount": 9
+        "incidentCount": 11
       },
       {
         "id": "T0121",
@@ -213,7 +213,7 @@
         ],
         "url": "techniques/T0121.html",
         "description": "A compromised legitimate artifact attack is a type of cyber attack in which an attacker replaces a legitimate package or container image with a malicious version, often without the knowledge of the original developer or distributor. \nThis attack takes advantage of the trust that users place in legitimate packages or container images, which are often used to deploy software across multiple environments.\nIn this attack, the attacker may gain access to the repository or registry where the legitimate artifact is stored, either by exploiting a vulnerability or through social engineering tactics. \nThe attacker then replaces the legitimate artifact with a malicious version that contains malware or other harmful code. \nOnce the compromised artifact is downloaded and deployed, it can compromise the system and potentially cause significant harm, such as stealing sensitive data or taking control of the system.\n",
-        "incidentCount": 28
+        "incidentCount": 29
       },
       {
         "id": "T0141",
@@ -261,7 +261,7 @@
         ],
         "url": "techniques/T0113.html",
         "description": "A compromised user account is a serious security threat, as attackers can use it to bypass security measures that are in place to protect an organization's assets. \nAttackers can gain access to legitimate user accounts in several ways, including brute-force attacks, phishing, malware, or social engineering.\nOnce an attacker gains access to a user's account, they can access the cloud resources, artifact repository, infrastructure-as-code templates, or source code repository to steal or modify sensitive data or launch further attacks.\nIn such case an attacker is able to modify the code and cloud resources, inject malware or backdoors, or replace legitimate artifacts.\nThis can result in data breaches, system downtime, reputation damage, and financial losses.\n",
-        "incidentCount": 20
+        "incidentCount": 21
       },
       {
         "id": "T0114",
@@ -428,7 +428,7 @@
         ],
         "url": "techniques/T0136.html",
         "description": "Brandjacking is a type of attack where an attacker impersonates a legitimate brand or project in an attempt to trick users into downloading and installing a malicious container or package. \nThis can happen when an attacker creates a package or container with a similar name or logo to a well-known and trusted brand or project, and then distributes it through public repositories.\nBrandjacking can be particularly dangerous in the context of container and open source security, as many developers and users rely on public repositories and may not take the time to thoroughly verify the authenticity of packages they download.\nOnce a malicious package is installed, it can be difficult to detect and can lead to serious security breaches.\n",
-        "incidentCount": 8
+        "incidentCount": 9
       },
       {
         "id": "T0137",
@@ -618,7 +618,7 @@
         ],
         "url": "techniques/T0118.html",
         "description": "OS command injection is a web security vulnerability that allows an attacker to execute arbitrary operating system commands on the server that is running an application.\nCommand injection attacks are possible when an application passes unsafe user supplied data (forms, cookies, HTTP headers etc.) to a system shell. \nIn this attack, the attacker-supplied operating system commands are usually executed with the privileges of the vulnerable application. \nCommand injection attacks are possible largely due to insufficient input validation\n",
-        "incidentCount": 3
+        "incidentCount": 4
       },
       {
         "id": "T0119",
@@ -655,7 +655,7 @@
         ],
         "url": "techniques/T0151.html",
         "description": "A package installation script injection attack is a type of security exploit that involves an attacker injecting malicious code into a legitimate software package installation script.\nThe attack typically occurs when an attacker gains access to the distribution network of a software vendor or package manager, and injects malicious code into the package installation script. \nThis code may be designed to carry out a range of nefarious activities, such as stealing sensitive information, creating backdoors, or executing arbitrary code on the victim's system.\nOnce the victim downloads and installs the compromised software package, the injected code is executed, giving the attacker access to the victim's system.\n",
-        "incidentCount": 21
+        "incidentCount": 23
       },
       {
         "id": "T0152",
@@ -690,7 +690,7 @@
         ],
         "url": "techniques/T0159.html",
         "description": "Malicious artifact execution refers to an attack where an attacker injects or modifies a software component with malicious code that is executed when the component is used by a downstream system in the CI/CD process. \nWhen a CI/CD process lacks sufficient mechanisms to validate the integrity of code and artifacts, attackers can insert malicious code that appears to be harmless. \nThis allows the malicious code to pass through the pipeline undetected, potentially causing harm in the CI/CD process or in production.\nThe malicious code can be executed in the CI/CD process or even in production.\n",
-        "incidentCount": 32
+        "incidentCount": 33
       },
       {
         "id": "T0166",
@@ -702,7 +702,7 @@
         ],
         "url": "techniques/T0166.html",
         "description": "The Trigger pipeline execution (Poisoned pipeline execution) attack abuses permissions against an SCM repository, in a way that causes a CI pipeline to execute malicious commands.\nUsers that have permissions to manipulate the CI configuration files, or other files which the CI pipeline job relies on, can modify them to contain malicious commands, ultimately poisoning the CI pipeline executing these commands.\nPipelines executing unreviewed code, for example those which are triggered directly off of pull requests or commits to arbitrary repository branches, are more susceptible to Trigger pipeline execution. \nThe reason is that these scenarios, by design, contain code which has not undergone any reviews or approvals.\nOnce able to execute malicious code within the CI pipeline, the attacker can conduct a wide array of malicious operations, all within the context of the pipelines identity.\n",
-        "incidentCount": 9
+        "incidentCount": 10
       },
       {
         "id": "T0172",
@@ -715,7 +715,7 @@
         ],
         "url": "techniques/T0172.html",
         "description": "A runtime backdoor attack is a type of cyber attack where an attacker gains unauthorized access to a computer system or network and installs a malicious software or code that allows them to control the system or steal sensitive information.\nThis type of attack is called a \"runtime\" backdoor attack because it involves manipulating the system at runtime, while it is running, rather than during the development or deployment stages.\nThe attacker typically gains access to the system through a vulnerability, such as an unpatched software flaw or weak authentication mechanism. \nOnce inside, the attacker can install a backdoor that provides them with persistent access to the system, even after the initial entry point has been closed.\n",
-        "incidentCount": 11
+        "incidentCount": 13
       },
       {
         "id": "T0173",
@@ -999,7 +999,7 @@
         ],
         "url": "techniques/T0195.html",
         "description": "By modifying metadata in commits, attackers can easily push their own code to code repositories. For example, by changing the name and email in a commit it is possible to pass as a legitimate user.\n",
-        "incidentCount": 4
+        "incidentCount": 6
       },
       {
         "id": "T0198",
@@ -1025,7 +1025,7 @@
         ],
         "url": "techniques/T0206.html",
         "description": "The attacker ships an artifact without truthful provenance \u2014 no SBOM, a\nforged SLSA attestation, or a provenance document that names the wrong\nsource repo, builder, or commit. NIST SSDF PS.3.2 and SLSA Build L2+\nexist so consumers can reject unofficial builds; forging or skipping that\npaperwork is how a SolarWinds-style implant still looks like a legitimate\nvendor release. Distinct from malicious code in the artifact (T0191): this\ntechnique is about lying about *how* the artifact was produced.\n",
-        "incidentCount": 5
+        "incidentCount": 6
       },
       {
         "id": "T0207",
@@ -1085,7 +1085,7 @@
         ],
         "url": "techniques/T0140.html",
         "description": "This type of attack involves searching for environment variables that may contain sensitive information and dumping their values to gain access to the associated resources.\nIn cloud and container environments, environment variables are often used to store configuration data, including sensitive information such as passwords, tokens and API keys. \nAttackers can exploit this by searching through the environment variables of running containers or cloud instances to find any sensitive information that has been inadvertently exposed. \nOnce the sensitive information has been obtained, attackers can use it to access and compromise the associated resources.\n",
-        "incidentCount": 23
+        "incidentCount": 24
       },
       {
         "id": "T0162",
@@ -1134,7 +1134,7 @@
         ],
         "url": "techniques/T0184.html",
         "description": "This attack involves searching for files within the CI/CD system that may contain sensitive information such as credentials, API keys, or other access tokens.\nThese files can include configuration files, scripts, and other files that are used as part of the build and deployment process. \nAttackers can use various techniques to locate these files, including directory traversal attacks, file inclusion vulnerabilities, or simply guessing common file names or paths.\nOnce the attacker has located a file containing sensitive information, they can extract the credentials and use them to gain unauthorized access to the targeted system or application.\n",
-        "incidentCount": 15
+        "incidentCount": 16
       },
       {
         "id": "T0185",
@@ -1191,7 +1191,7 @@
         ],
         "url": "techniques/T0169.html",
         "description": "The Push Implants across Repositories attack technique is a type of lateral movement tactic where an attacker gains access to a victim's code repository, modifies the code by implanting malicious code or backdoors, and pushes the modified code back to the repository.\nThis technique often involves the attacker stealing valid credentials, such as login credentials or SSH keys, to gain access to the victim's code repository. \nThey then modify the code, implanting the malicious code or backdoors, and push the modified code back to the repository. \nThe victim then unknowingly deploys the modified code, resulting in the compromise of their systems.\n",
-        "incidentCount": 8
+        "incidentCount": 9
       }
     ],
     "amount": 2,
@@ -1291,7 +1291,7 @@
         ],
         "url": "techniques/T0156.html",
         "description": "A Webhook attack is a technique used by threat actors to gain unauthorized access to a target's web application and exfiltrate data from it. \nIn this type of attack, the attacker gains access to the victim's web application and installs a malicious webhook, which is a piece of code that is executed whenever a specific event occurs on the web application.\nThe webhook is designed to exfiltrate data from the victim's web application and transmit it to a remote server controlled by the attacker. \nThe data exfiltrated can include sensitive information such as user credentials, customer data, or financial information.\nWebhook attacks can be used to bypass outbound traffic control because the exfiltrated data is transmitted through legitimate channels that are often used by the web application. \nThis makes it difficult for traditional network security tools to detect the exfiltration of data.\n",
-        "incidentCount": 4
+        "incidentCount": 5
       },
       {
         "id": "T0168",

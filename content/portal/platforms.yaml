@@ -21,6 +21,8 @@ platforms:
     label: NuGet
   - id: github-actions
     label: GitHub Actions
+  - id: jenkins
+    label: Jenkins
   - id: terraform
     label: Terraform
   - id: docker

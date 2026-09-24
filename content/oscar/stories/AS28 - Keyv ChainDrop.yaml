@@ -63,3 +63,4 @@ gaps: []
 
 links:
   - https://www.jaredwray.com/blog/keyv-and-cacheable-chaindrop-worm
+  - https://opensourcemalware.com/blog/new-npm-worm-keyv-cachable

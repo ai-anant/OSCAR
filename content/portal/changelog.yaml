@@ -1,5 +1,14 @@
 entries:
 - date: '2026-09-24'
+  id: osm-catalog-pass
+  title: 'OpenSourceMalware catalog: every incident post mapped'
+  items:
+  - Catalogued all 71 OSM RSS posts. Show/landscape/guidance posts skipped. Follow-up posts attached to
+    existing stories (PolinRider, Team PCP, axios, Mini Shai-Hulud, Keyv, ClawHub, Contagious Interview).
+  - 'New stories AS78–AS82: Velora SDK 9.4.1, CNCF Antrea Jenkins, Contagious Interview git hooks, XPACK
+    extortion, Neutralinojs force-push.'
+  - Added jenkins platform tag.
+- date: '2026-09-24'
   id: history-pass-5b
   title: Add Moika dependency-confusion campaign
   items:

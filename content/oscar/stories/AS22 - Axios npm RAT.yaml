@@ -74,3 +74,5 @@ gaps: []
 links:
   - https://www.stepsecurity.io/blog/axios-compromised-on-npm-malicious-versions-drop-remote-access-trojan
   - https://www.stepsecurity.io/blog/state-of-open-source-supply-chain-attacks
+  - https://opensourcemalware.com/blog/axios-compromise-transitive-dependency
+  - https://opensourcemalware.com/blog/axios-attacker-strikes-again

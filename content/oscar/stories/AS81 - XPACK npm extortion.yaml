@@ -1,0 +1,43 @@
+id: AS81
+type: Attack Story
+date: 2026-02
+platforms:
+  - npm
+
+summary: XPACK npm install-time crypto extortion (HTTP 402)
+description: |
+  OSM named XPACK: nine packages from npm user dev.chandra_bose
+  (Feb 4–7 2026), six of them published in three minutes, posing as a
+  Web3 “package monetization” platform (xpack-per-user, xpack-per-device,
+  xpack-subscription, xpack-sui, xpack-arc-gateway). preinstall.js
+  harvested GitHub identity four ways, fingerprinted the host, POSTed to
+  hack-money-xpack.vercel.app, then blocked install for five minutes
+  behind an HTTP 402 paywall (0.1 USDC/ETH) with a fake Next.js wallet
+  UI. Not a silent stealer — extortion dressed as a business model.
+
+attacks:
+  - attack: preinstall paywall
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Nine xpack-* packages, six cloned in three minutes.
+      - techniqueID: T0110
+        techName: Advertise malicious artifact
+        tactic: Resource Development
+        comment: Fake Web3 monetization / HTTP 402 legitimacy.
+      - techniqueID: T0151
+        techName: Installation scripts
+        tactic: Execution
+        comment: preinstall.js blocked npm install until payment or timeout.
+      - techniqueID: T0184
+        techName: Harvesting sensitive information from files
+        tactic: Credential Access
+        comment: GitHub username plus device fingerprint to C2.
+
+links:
+  - https://opensourcemalware.com/blog/xpack-attack-cryptocurrency-extortion-disguised-as-npm-package-monetization

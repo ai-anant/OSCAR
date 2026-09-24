@@ -57,3 +57,5 @@ attacks:
 links:
   - https://opensourcemalware.com/blog/contagious-interview-gets-an-upgrade-for-2026
   - https://opensourcemalware.com/blog/latest-contagious-interview-malware-campaign-abuses-microsoft-vscode-tasks
+  - https://opensourcemalware.com/blog/lazarus-group-uses-git-hooks-to-hide-malware
+  - https://opensourcemalware.com/blog/tasksjacker-dprk-attack-github-vscode
