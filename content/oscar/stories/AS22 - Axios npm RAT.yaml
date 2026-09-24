@@ -1,6 +1,8 @@
 id: AS22
 type: Attack Story
 date: 2026-03
+platforms:
+  - npm
 
 summary: axios npm remote-access trojan
 description: |

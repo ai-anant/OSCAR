@@ -1,6 +1,10 @@
 id: AS27
 type: Attack Story
 date: 2026-09
+platforms:
+  - pypi
+  - git
+  - ai-agents
 
 summary: Hijacked AI coding assistant spreads Shai-Hulud
 description: |

@@ -1,6 +1,9 @@
 id: AS28
 type: Attack Story
 date: 2026-08
+platforms:
+  - npm
+  - github-actions
 
 summary: Keyv / Cacheable ChainDrop worm
 description: |

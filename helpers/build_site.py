@@ -242,6 +242,15 @@ h2 { font-size: 1.15rem; margin-top: 1.6rem; }
 .chips { display: flex; flex-wrap: wrap; gap: 0.3rem; }
 .chip { background: var(--chip); border: 1px solid var(--line); padding: 0.1rem 0.45rem;
   font-size: 0.75rem; color: var(--muted); }
+.plat { display: inline-block; background: var(--chip); border: 1px solid var(--line);
+  padding: 0.08rem 0.4rem; font-size: 0.72rem; color: var(--teal); margin: 0.1rem 0.15rem 0 0; }
+.filter-bar { display: flex; flex-wrap: wrap; gap: 0.35rem; margin: 0.8rem 0 1.1rem; }
+.filter-bar button {
+  background: var(--panel); border: 1px solid var(--line); color: var(--muted);
+  padding: 0.25rem 0.55rem; cursor: pointer; font: inherit; font-size: 0.8rem;
+}
+.filter-bar button.on, .filter-bar button:hover { border-color: var(--copper); color: var(--ink); }
+.card.hidden { display: none !important; }
 .meta { color: var(--muted); font-size: 0.9rem; }
 .card { background: var(--panel); border: 1px solid var(--line); padding: 1rem 1.1rem; margin: 0.8rem 0; }
 .card h3 { margin-top: 0; }
@@ -282,6 +291,14 @@ def build(dest):
         "article": "Security article",
         "original": "Original OSC&R corpus",
     }
+    plat_path = os.path.join(ROOT, "content", "portal", "platforms.yaml")
+    plat_labels = {}
+    if os.path.exists(plat_path):
+        with open(plat_path) as f:
+            plat_doc = yaml.safe_load(f) or {}
+        for p in plat_doc.get("platforms") or []:
+            if p.get("id"):
+                plat_labels[p["id"]] = p.get("label") or p["id"]
 
     if os.path.exists(dest):
         shutil.rmtree(dest)
@@ -524,21 +541,46 @@ def build(dest):
 
     def story_card(s, prefix):
         n_techs = sum(len(a.get("techniques") or []) for a in s.get("attacks") or [])
+        plats = [p for p in (s.get("platforms") or []) if p]
+        chips = "".join(
+            f'<span class="plat">{html.escape(plat_labels.get(p, p))}</span>' for p in plats
+        )
         return (
-            f'<a class="card" href="{prefix}{html.escape(s["id"])}.html" style="display:block">'
+            f'<a class="card inc-card" data-platforms="{" ".join(html.escape(p) for p in plats)}" '
+            f'href="{prefix}{html.escape(s["id"])}.html" style="display:block">'
             f'<div class="stage">{html.escape(str(s.get("date") or ""))}</div>'
             f'<h3>{html.escape(s["summary"])}</h3>'
+            f'<p>{chips}</p>'
             f'<p class="muted">{n_techs} mapped OSC&amp;R techniques</p></a>'
         )
 
+    used_plats = sorted({p for s in stories.values() for p in (s.get("platforms") or []) if p})
+    filter_btns = ['<button type="button" class="on" data-plat-filter="all">All</button>']
+    for p in used_plats:
+        filter_btns.append(
+            f'<button type="button" data-plat-filter="{html.escape(p)}">{html.escape(plat_labels.get(p, p))}</button>'
+        )
+    filter_js = """
+    <script>
+    const btns = document.querySelectorAll('[data-plat-filter]');
+    btns.forEach(btn => btn.addEventListener('click', () => {
+      const p = btn.getAttribute('data-plat-filter');
+      btns.forEach(b => b.classList.toggle('on', b === btn));
+      document.querySelectorAll('.inc-card').forEach(c => {
+        const plats = (c.getAttribute('data-platforms') || '').split(/\\s+/);
+        c.classList.toggle('hidden', p !== 'all' && !plats.includes(p));
+      });
+    }));
+    </script>
+    """
+
     inc_index = f"""
     <h1>Incident → OSC&amp;R mapping</h1>
-    <p class="lede">Real software-supply-chain incidents mapped onto OSC&amp;R techniques.
-    Each entry documents attacker elements we can name today, and gaps where the framework
-    was missing coverage (those gaps were added as new techniques where possible).</p>
-    <div class="notice">Start here if you are reconstructing an incident: pick a case,
-    read the mapped techniques, then follow links into the matrix.</div>
+    <p class="lede">Real software-supply-chain incidents mapped onto OSC&amp;R techniques,
+    tagged by the registry or platform that was hit.</p>
+    <div class="filter-bar">{''.join(filter_btns)}</div>
     {''.join(story_card(s, '') for s in ordered_stories)}
+    {filter_js}
     """
     write(os.path.join(dest, "incidents", "index.html"), page("Incident mapping", inc_index, "../", "OSC&amp;R / Incident mapping"))
 
@@ -587,9 +629,14 @@ def build(dest):
             f'{html.escape(techs[tid]["summary"]) if tid in techs else ""}</li>'
             for tid in unique
         ) + "</ul>"
+        plats = [p for p in (s.get("platforms") or []) if p]
+        plat_html = "".join(
+            f'<span class="plat">{html.escape(plat_labels.get(p, p))}</span>' for p in plats
+        )
         body = f"""
         <p class="meta">{html.escape(s["id"])} · {html.escape(str(s.get("date") or ""))}</p>
         <h1>{html.escape(s["summary"])}</h1>
+        <p>{plat_html}</p>
         {md_lite(s.get("description"))}
         <h2>Mapped OSC&amp;R elements</h2>
         {map_list}

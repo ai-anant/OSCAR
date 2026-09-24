@@ -1,6 +1,8 @@
 id: AS8
 type: Attack Story
 date: 2024-06
+platforms:
+  - cdn
 
 summary: Polyfill.io CDN takeover
 description: |

@@ -1,6 +1,8 @@
 id:  AS6
 type: Attack Story
 date: 2019-03
+platforms:
+  - windows
 
 summary: SolarWinds
 description: |

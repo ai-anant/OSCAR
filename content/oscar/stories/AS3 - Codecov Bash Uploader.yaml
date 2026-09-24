@@ -1,6 +1,9 @@
 id:  AS3
 type: Attack Story
 date: 2021-04
+platforms:
+  - github-actions
+  - docker
 
 summary: Codecov Breach
 description: |

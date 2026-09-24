@@ -1,6 +1,8 @@
 id: AS9
 type: Attack Story
 date: 2018-11
+platforms:
+  - npm
 
 summary: npm event-stream / flatmap-stream
 description: |

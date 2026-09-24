@@ -1,6 +1,8 @@
 id: AS37
 type: Attack Story
 date: 2026-05
+platforms:
+  - rubygems
 
 summary: GemStuffer RubyGems campaign abused RubyDoc.info builders
 description: |

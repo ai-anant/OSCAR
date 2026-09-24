@@ -1,9 +1,17 @@
 entries:
+- date: '2026-09-23'
+  id: incident-platforms
+  title: Incidents tagged by platform / registry
+  items:
+  - 'Every attack story now has a platforms: list (npm, PyPI, RubyGems, Packagist, crates.io, Go, GitHub Actions,
+    Terraform, CDN, AI agents, etc.).'
+  - Incident index filters by platform. Vocabulary is content/portal/platforms.yaml.
 - date: '2026-09-24'
   id: intake-2026-09-24
   title: sckit MemTensor worm and Graphalgo Terraform/Go
   items:
-  - Added AS39 (sckit credential-harvesting launcher in @memtensor/memos-cloud-openclaw-plugin and PyPI MemoryOS 2.0.34, StepSecurity).
+  - Added AS39 (sckit credential-harvesting launcher in @memtensor/memos-cloud-openclaw-plugin and PyPI MemoryOS
+    2.0.34, StepSecurity).
   - Added AS40 (Graphalgo Go malware in Terraform providers and Go modules, Aikido).
   - Added Aikido blog as a tracked research source.
 - date: '2026-09-23'
@@ -16,7 +24,8 @@ entries:
   id: osm-blog-url
   title: OpenSourceMalware watch URL is the blog, not the homepage
   items:
-  - Tracked URL is now https://opensourcemalware.com/blog (RSS https://opensourcemalware.com/rss.xml). The site root is a threat-search UI.
+  - Tracked URL is now https://opensourcemalware.com/blog (RSS https://opensourcemalware.com/rss.xml). The site
+    root is a threat-search UI.
 - date: '2026-09-22'
   id: intake-2026-09-22
   title: GHAPPIER, PolinRider Packagist, mathmain, GemStuffer

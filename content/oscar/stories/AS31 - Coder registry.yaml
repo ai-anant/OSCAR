@@ -1,6 +1,9 @@
 id: AS31
 type: Attack Story
 date: 2026-08
+platforms:
+  - terraform
+  - cdn
 
 summary: Coder registry CDN origin pool compromise
 description: |

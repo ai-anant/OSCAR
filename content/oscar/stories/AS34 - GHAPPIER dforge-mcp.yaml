@@ -1,6 +1,9 @@
 id: AS34
 type: Attack Story
 date: 2026-09
+platforms:
+  - npm
+  - mcp
 
 summary: GHAPPIER loader via @dforge-core/dforge-mcp trusted publishing
 description: |

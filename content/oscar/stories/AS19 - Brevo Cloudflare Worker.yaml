@@ -1,6 +1,8 @@
 id: AS19
 type: Attack Story
 date: 2026-09
+platforms:
+  - cdn
 
 summary: Brevo Cloudflare Worker ClickFix
 description: |

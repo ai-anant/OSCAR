@@ -1,6 +1,9 @@
 id: AS39
 type: Attack Story
 date: 2026-09
+platforms:
+  - npm
+  - pypi
 
 summary: sckit worm in MemTensor npm plugin and PyPI MemoryOS
 description: |

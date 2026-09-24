@@ -1,6 +1,9 @@
 id:  AS2
 type: Attack Story
 date: 2023-04
+platforms:
+  - windows
+  - cicd-saas
 
 summary: 3CX Desktop
 description: |

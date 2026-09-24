@@ -1,6 +1,8 @@
 id: AS18
 type: Attack Story
 date: 2026-08
+platforms:
+  - crates
 
 summary: crates.io arrayref / proc-macro1 build-time dropper
 description: |

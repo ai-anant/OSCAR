@@ -1,6 +1,9 @@
 id: AS13
 type: Attack Story
 date: 2024-12
+platforms:
+  - pypi
+  - github-actions
 
 summary: Ultralytics PyPI compromise
 description: |

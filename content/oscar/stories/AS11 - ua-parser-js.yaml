@@ -1,6 +1,8 @@
 id: AS11
 type: Attack Story
 date: 2021-10
+platforms:
+  - npm
 
 summary: ua-parser-js npm account takeover
 description: |

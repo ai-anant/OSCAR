@@ -1,6 +1,10 @@
 id: AS10
 type: Attack Story
 date: 2021-02
+platforms:
+  - npm
+  - pypi
+  - rubygems
 
 summary: Dependency confusion (Alex Birsan)
 description: |

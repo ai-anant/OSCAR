@@ -12,6 +12,18 @@ import yaml
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 OSCAR = os.path.join(ROOT, "content", "oscar")
+PORTAL = os.path.join(ROOT, "content", "portal")
+
+def _platform_ids():
+    path = os.path.join(PORTAL, "platforms.yaml")
+    if not os.path.exists(path):
+        return set()
+    with open(path) as f:
+        doc = yaml.safe_load(f) or {}
+    return {p["id"] for p in (doc.get("platforms") or []) if p.get("id")}
+
+
+PLATFORM_IDS = _platform_ids()
 
 TACTICS = {
     "Reconnaissance",
@@ -39,7 +51,7 @@ REQUIRED = {
     "Technique": ["id", "type", "tactic", "realm", "summary", "description"],
     "Mitigation": ["id", "type", "summary", "description"],
     "Detection": ["id", "type", "summary", "description"],
-    "Attack Story": ["id", "type", "summary", "description", "attacks", "links"],
+    "Attack Story": ["id", "type", "summary", "description", "attacks", "links", "platforms"],
 }
 
 
@@ -125,6 +137,13 @@ def main():
     for oid, rec in stories.items():
         data = rec["data"]
         path = rec["path"]
+        plats = data.get("platforms")
+        if not isinstance(plats, list) or not plats:
+            errors.append(f"{path}: platforms must be a non-empty list")
+        else:
+            for p in plats:
+                if p not in PLATFORM_IDS:
+                    errors.append(f"{path}: unknown platform {p!r}")
         for attack in data.get("attacks") or []:
             for tech in attack.get("techniques") or []:
                 tid = tech.get("techniqueID")

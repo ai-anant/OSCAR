@@ -1,6 +1,9 @@
 id: AS20
 type: Attack Story
 date: 2026-08
+platforms:
+  - npm
+  - github-actions
 
 summary: "@7nohe/openapi-react-query-codegen poisoned publish workflow"
 description: |

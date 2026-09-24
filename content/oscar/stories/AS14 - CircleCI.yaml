@@ -1,6 +1,8 @@
 id: AS14
 type: Attack Story
 date: 2023-01
+platforms:
+  - cicd-saas
 
 summary: CircleCI December 2022 / January 2023 incident
 description: |

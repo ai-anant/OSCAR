@@ -1,0 +1,43 @@
+# Controlled vocabulary for attack-story `platforms:` tags.
+# Intake must pick from this list (lowercase slugs). Add a row here if a
+# new ecosystem shows up more than once.
+
+platforms:
+  - id: npm
+    label: npm
+  - id: pypi
+    label: PyPI
+  - id: rubygems
+    label: RubyGems
+  - id: packagist
+    label: Packagist / Composer
+  - id: crates
+    label: crates.io
+  - id: golang
+    label: Go modules
+  - id: maven
+    label: Maven / Java
+  - id: nuget
+    label: NuGet
+  - id: github-actions
+    label: GitHub Actions
+  - id: terraform
+    label: Terraform
+  - id: docker
+    label: Docker / containers
+  - id: vscode
+    label: VS Code / IDE
+  - id: cdn
+    label: CDN / web assets
+  - id: cicd-saas
+    label: CI/CD SaaS
+  - id: git
+    label: Git / GitHub
+  - id: ai-agents
+    label: AI coding agents
+  - id: mcp
+    label: MCP
+  - id: linux
+    label: Linux distro / packages
+  - id: windows
+    label: Windows software

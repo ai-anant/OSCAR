@@ -1,6 +1,8 @@
 id: AS12
 type: Attack Story
 date: 2025-03
+platforms:
+  - github-actions
 
 summary: tj-actions/changed-files GitHub Action
 description: |

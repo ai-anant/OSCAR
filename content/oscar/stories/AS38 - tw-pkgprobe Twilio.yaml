@@ -1,6 +1,8 @@
 id: AS38
 type: Attack Story
 date: 2026-08
+platforms:
+  - npm
 
 summary: tw-pkgprobe-7731 npm campaign targeted Twilio developers
 description: |

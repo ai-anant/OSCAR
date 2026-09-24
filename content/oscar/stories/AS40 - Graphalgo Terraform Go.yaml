@@ -1,6 +1,9 @@
 id: AS40
 type: Attack Story
 date: 2026-09
+platforms:
+  - terraform
+  - golang
 
 summary: Graphalgo spreads to Terraform providers and Go modules
 description: |

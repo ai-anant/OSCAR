@@ -1,6 +1,8 @@
 id: AS24
 type: Attack Story
 date: 2023-01
+platforms:
+  - github-actions
 
 summary: Self-hosted GitHub Actions runners (Praetorian Gato)
 description: |

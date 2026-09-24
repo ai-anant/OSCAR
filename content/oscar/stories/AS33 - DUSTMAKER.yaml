@@ -1,6 +1,11 @@
 id: AS33
 type: Attack Story
 date: 2026-09
+platforms:
+  - npm
+  - github-actions
+  - ai-agents
+  - mcp
 
 summary: TeamPCP DUSTMAKER AI workspace poisoning
 description: |

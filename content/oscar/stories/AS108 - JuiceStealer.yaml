@@ -1,6 +1,8 @@
 id:  AS108
 type: Attack Story
 date: 2022-02
+platforms:
+  - pypi
 
 summary: JuiceStealer - PyPi Supply Chain Attack
 description: |

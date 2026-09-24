@@ -1,6 +1,8 @@
 id: AS23
 type: Attack Story
 date: 2022-10
+platforms:
+  - git
 
 summary: GitHub repo jacking (dependency URL takeover)
 description: |

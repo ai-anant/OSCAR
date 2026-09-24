@@ -1,6 +1,8 @@
 id: AS15
 type: Attack Story
 date: 2025-09
+platforms:
+  - npm
 
 summary: npm chalk / debug maintainer phishing (Qix)
 description: |

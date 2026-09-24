@@ -1,6 +1,10 @@
 id: AS30
 type: Attack Story
 date: 2026-08
+platforms:
+  - npm
+  - pypi
+  - ai-agents
 
 summary: Hades .pth and AI-assistant config persistence
 description: |

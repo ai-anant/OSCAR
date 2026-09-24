@@ -1,6 +1,8 @@
 id:  AS109
 type: Attack Story
 date: 2022-12
+platforms:
+  - pypi
 
 summary: Pytorch Dependency Confusion
 description: |

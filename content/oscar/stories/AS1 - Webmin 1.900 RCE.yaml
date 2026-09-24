@@ -1,6 +1,8 @@
 id:  AS1
 type: Attack Story
 date: 2018-04
+platforms:
+  - linux
 
 summary: Webmin 1.900 RCE
 description: |

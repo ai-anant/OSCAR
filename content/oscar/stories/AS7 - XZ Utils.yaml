@@ -1,6 +1,8 @@
 id: AS7
 type: Attack Story
 date: 2024-03
+platforms:
+  - linux
 
 summary: XZ Utils backdoor
 description: |

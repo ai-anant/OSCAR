@@ -1,6 +1,8 @@
 id:  AS5
 type: Attack Story
 date: 2018
+platforms:
+  - windows
 
 summary: CCleaner
 description: |

@@ -1,6 +1,10 @@
 id: AS29
 type: Attack Story
 date: 2026-08
+platforms:
+  - npm
+  - pypi
+  - ai-agents
 
 summary: Unclaimed packages in official llms.txt files
 description: |

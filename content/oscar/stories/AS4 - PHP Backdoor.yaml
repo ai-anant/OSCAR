@@ -1,6 +1,8 @@
 id:  AS4
 type: Attack Story
 date: 2021-03
+platforms:
+  - packagist
 
 summary: PHP Zerodium Backdoor
 description: |

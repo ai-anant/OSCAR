@@ -1,6 +1,9 @@
 id:  AS107
 type: Attack Story
 date: 2023-09
+platforms:
+  - git
+  - github-actions
 
 summary: Spoofed Dependabot
 description: |
