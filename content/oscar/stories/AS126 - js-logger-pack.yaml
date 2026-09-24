@@ -1,0 +1,34 @@
+id: AS126
+type: Attack Story
+date: 2026-04
+platforms:
+  - npm
+
+summary: js-logger-pack probe to infostealer to dropper
+description: |
+  SafeDep: js-logger-pack spent three weeks on npm evolving from a
+  probe into a full infostealer and then a binary dropper. Early versions
+  installed an SSH backdoor.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Iterated malicious versions.
+      - techniqueID: T0134
+        techName: Add user
+        tactic: Persistence
+        comment: SSH authorized_keys backdoor.
+      - techniqueID: T0172
+        techName: Runtime backdoor
+        tactic: Execution
+        comment: Later binary dropper.
+
+links:
+  - https://safedep.io/malicious-js-logger-pack-npm-stealer

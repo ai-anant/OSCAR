@@ -1,0 +1,29 @@
+id: AS145
+type: Attack Story
+date: 2026-07
+platforms:
+  - github-actions
+
+summary: GitHub Actions abuse for cPanel/WHM exploitation
+description: |
+  Socket: large-scale GitHub Actions abuse powering a distributed
+  cPanel and WHM exploitation campaign (CI as compute, not just secret theft).
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0166
+        techName: Trigger pipeline execution
+        tactic: Execution
+        comment: Abused Actions runners as workers.
+      - techniqueID: T0147
+        techName: Scan public CI/CD configurations for secrets and vulnerable actions
+        tactic: Reconnaissance
+        comment: Public workflows used as a botnet.
+
+links:
+  - https://socket.dev/blog/github-actions-abuse-powers-cpanel-and-whm-exploitation

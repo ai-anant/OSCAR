@@ -1,0 +1,33 @@
+id: AS131
+type: Attack Story
+date: 2026-03
+platforms:
+  - npm
+
+summary: express-session-js typosquat paste-service RAT
+description: |
+  SafeDep: typosquat of express-session fetches and executes a full
+  RAT from a paste service (browser credentials).
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0129
+        techName: Typosquatting
+        tactic: Initial Access
+        comment: express-session lookalike.
+      - techniqueID: T0172
+        techName: Runtime backdoor
+        tactic: Execution
+        comment: Paste-service RAT.
+      - techniqueID: T0184
+        techName: Harvesting sensitive information from files
+        tactic: Credential Access
+        comment: Browser credentials.
+
+links:
+  - https://safedep.io/malicious-npm-package-express-session-js

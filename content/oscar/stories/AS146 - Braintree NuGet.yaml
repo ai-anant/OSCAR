@@ -1,0 +1,33 @@
+id: AS146
+type: Attack Story
+date: 2026-07
+platforms:
+  - nuget
+
+summary: Fake Braintree NuGet card skimmer
+description: |
+  Socket: fake Braintree NuGet package skims credit cards and harvests
+  merchant credentials.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0136
+        techName: Brandjacking
+        tactic: Initial Access
+        comment: Braintree SDK impersonation.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Malicious NuGet package.
+      - techniqueID: T0184
+        techName: Harvesting sensitive information from files
+        tactic: Credential Access
+        comment: Cards and merchant creds.
+
+links:
+  - https://socket.dev/blog/braintree-nuget-typosquat-skims-credit-cards

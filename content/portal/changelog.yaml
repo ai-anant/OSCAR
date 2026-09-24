@@ -1,5 +1,14 @@
 entries:
 - date: '2026-09-24'
+  id: every-ssc-article-pass
+  title: Every remaining SafeDep SSC article plus Socket research catalog
+  items:
+  - 'SafeDep RSS: remaining malware/confusion posts are now AS120–AS140 (skipped only product/guidance
+    and one analysis that concluded the binary was not malware).'
+  - 'Socket research listing: overlapping posts attached to existing incidents; new AS141–AS155 (extensions,
+    Alibaba RAT, Actions/cPanel, Braintree/Sicoob/Chinese UI NuGet, TrapDoor, Laravel Lang, Go lures,
+    Intercom worm, Chollima Packagist).'
+- date: '2026-09-24'
   id: remaining-sources-catalog
   title: Catalog remaining tracked sources (Aikido, StepSecurity, Rust, RubyGems, Sansec)
   items:

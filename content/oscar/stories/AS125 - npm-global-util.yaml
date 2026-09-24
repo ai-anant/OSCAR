@@ -1,0 +1,33 @@
+id: AS125
+type: Attack Story
+date: 2026-04
+platforms:
+  - npm
+
+summary: npm-global-util preinstall credential theft
+description: |
+  SafeDep: npm-global-util by raya4321 exfiltrates credentials and
+  system recon via a preinstall hook.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: raya4321 package.
+      - techniqueID: T0151
+        techName: Installation scripts
+        tactic: Execution
+        comment: preinstall hook.
+      - techniqueID: T0140
+        techName: Harvest tokens from environment variables
+        tactic: Credential Access
+        comment: Credential exfil.
+
+links:
+  - https://safedep.io/npm-global-util-malicious-package-analysis

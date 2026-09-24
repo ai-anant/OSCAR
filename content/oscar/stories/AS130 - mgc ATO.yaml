@@ -1,0 +1,33 @@
+id: AS130
+type: Attack Story
+date: 2026-04
+platforms:
+  - npm
+
+summary: mgc npm account takeover RAT
+description: |
+  SafeDep: package mgc was compromised via account takeover; four
+  malicious versions in rapid succession deployed a multi-platform RAT.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0113
+        techName: Compromised user account
+        tactic: Initial Access
+        comment: Maintainer ATO.
+      - techniqueID: T0121
+        techName: Compromised legitimate artifact
+        tactic: Resource Development
+        comment: mgc malicious versions.
+      - techniqueID: T0172
+        techName: Runtime backdoor
+        tactic: Execution
+        comment: Multi-platform RAT.
+
+links:
+  - https://safedep.io/malicious-npm-mgc-compromised-rat

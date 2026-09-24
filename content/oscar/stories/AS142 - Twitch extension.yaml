@@ -1,0 +1,29 @@
+id: AS142
+type: Attack Story
+date: 2026-09
+platforms:
+  - browser-extensions
+
+summary: Twitch browser extension leaks 30k OAuth tokens
+description: |
+  Socket: a Twitch browser extension exposed about 30,000 users’ OAuth
+  tokens to a Russian bot service.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Twitch/store extension.
+      - techniqueID: T0184
+        techName: Harvesting sensitive information from files
+        tactic: Credential Access
+        comment: OAuth tokens.
+
+links:
+  - https://socket.dev/blog/malicious-twitch-browser-extension

@@ -1,0 +1,31 @@
+id: AS155
+type: Attack Story
+date: 2026-04
+platforms:
+  - npm
+  - packagist
+
+summary: Intercom npm and Packagist Mini Shai-Hulud
+description: |
+  Socket: Intercom’s npm package compromised in Mini Shai-Hulud, then
+  a malicious Intercom PHP package on Packagist followed.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0121
+        techName: Compromised legitimate artifact
+        tactic: Resource Development
+        comment: Intercom packages.
+      - techniqueID: T0169
+        techName: Push implants across repositories
+        tactic: Lateral Movement
+        comment: Worm spread npm to Packagist.
+
+links:
+  - https://socket.dev/blog/intercom-s-npm-package-compromised-in-supply-chain-attack
+  - https://socket.dev/blog/mini-shai-hulud-packagist-malicious-intercom-php-package-compromise

@@ -1,0 +1,29 @@
+id: AS149
+type: Attack Story
+date: 2026-06
+platforms:
+  - packagist
+
+summary: Famous Chollima compromised Packagist package
+description: |
+  Socket: Famous Chollima (DPRK) targeted PHP developers through a
+  compromised Packagist package.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0121
+        techName: Compromised legitimate artifact
+        tactic: Resource Development
+        comment: Packagist package.
+      - techniqueID: T0113
+        techName: Compromised user account
+        tactic: Initial Access
+        comment: Maintainer/publish path.
+
+links:
+  - https://socket.dev/blog/famous-chollima-targets-php-developers-through-compromised-packagist-package

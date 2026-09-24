@@ -1,0 +1,29 @@
+id: AS139
+type: Attack Story
+date: 2025-07
+platforms:
+  - npm
+
+summary: llm-oracle malicious npm payload
+description: |
+  SafeDep analysis of malicious npm package llm-oracle (malware in an
+  open-source-looking library).
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: llm-oracle on npm.
+      - techniqueID: T0159
+        techName: Malicious artifact execution
+        tactic: Execution
+        comment: Embedded payload.
+
+links:
+  - https://safedep.io/malicious-oss-package-analysis-llm-oracle

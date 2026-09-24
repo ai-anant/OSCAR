@@ -1,0 +1,29 @@
+id: AS150
+type: Attack Story
+date: 2026-06
+platforms:
+  - nuget
+
+summary: NuGet Sicoob SDK impersonation
+description: |
+  Socket: malicious NuGet package impersonates the Sicoob SDK to
+  exfiltrate banking certificates and passwords.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0136
+        techName: Brandjacking
+        tactic: Initial Access
+        comment: Sicoob SDK impersonation.
+      - techniqueID: T0184
+        techName: Harvesting sensitive information from files
+        tactic: Credential Access
+        comment: Banking certs and passwords.
+
+links:
+  - https://socket.dev/blog/malicious-nuget-package-impersonates-sicoob-sdk

@@ -1,0 +1,34 @@
+id: AS132
+type: Attack Story
+date: 2026-03
+platforms:
+  - npm
+
+summary: react-refresh-update Meta library impersonation
+description: |
+  SafeDep: malicious package impersonating react-refresh (Meta,
+  about 42M weekly downloads) injects a cross-platform trojan on
+  developer machines.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0136
+        techName: Brandjacking
+        tactic: Initial Access
+        comment: react-refresh impersonation.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Trojanized package.
+      - techniqueID: T0159
+        techName: Malicious artifact execution
+        tactic: Execution
+        comment: Cross-platform trojan.
+
+links:
+  - https://safedep.io/malicious-npm-react-refresh-update

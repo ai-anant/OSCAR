@@ -1,0 +1,29 @@
+id: AS137
+type: Attack Story
+date: 2025-09
+platforms:
+  - npm
+
+summary: SLF4J Java logger impersonation on npm
+description: |
+  SafeDep: malicious npm package impersonating Java logging framework
+  SLF4J (cross-ecosystem name squat).
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0129
+        techName: Typosquatting
+        tactic: Initial Access
+        comment: SLF4J name on npm.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Malicious package.
+
+links:
+  - https://safedep.io/malicious-npm-package-impersonating-slf4j

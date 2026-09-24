@@ -1,0 +1,39 @@
+id: AS124
+type: Attack Story
+date: 2026-04
+platforms:
+  - npm
+  - windows
+
+summary: loltestpad campaign (ixpresso-core / exiouss)
+description: |
+  SafeDep: same attacker published ixpresso-core (WhatsApp-agent lure,
+  Veltrix Windows RAT) and later exiouss, an exam-cheat cookie stealer.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: ixpresso-core and exiouss.
+      - techniqueID: T0136
+        techName: Brandjacking
+        tactic: Initial Access
+        comment: WhatsApp agent and exam-cheat lures.
+      - techniqueID: T0172
+        techName: Runtime backdoor
+        tactic: Execution
+        comment: Veltrix Windows RAT.
+      - techniqueID: T0184
+        techName: Harvesting sensitive information from files
+        tactic: Credential Access
+        comment: Cookies, Discord, keystrokes.
+
+links:
+  - https://safedep.io/malicious-ixpresso-core-npm-rat
+  - https://safedep.io/malicious-exiouss-npm-exam-cheating-tool

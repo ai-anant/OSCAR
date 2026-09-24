@@ -1,0 +1,29 @@
+id: AS153
+type: Attack Story
+date: 2026-05
+platforms:
+  - golang
+
+summary: Go decimal library typosquat with DNS backdoor
+description: |
+  Socket: long-running typosquat of a popular Go decimal library with
+  a DNS backdoor.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0129
+        techName: Typosquatting
+        tactic: Initial Access
+        comment: Go decimal library lookalike.
+      - techniqueID: T0145
+        techName: Bypass of outbound traffic control
+        tactic: Exfiltration
+        comment: DNS backdoor.
+
+links:
+  - https://socket.dev/blog/popular-go-decimal-library-typosquat-dns-backdoor

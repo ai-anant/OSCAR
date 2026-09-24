@@ -1,0 +1,34 @@
+id: AS133
+type: Attack Story
+date: 2026-03
+platforms:
+  - npm
+
+summary: pino-sdk-v2 Discord webhook env stealer
+description: |
+  SafeDep: pino logger impersonation hiding obfuscated code inside a
+  legitimate-looking library file, stealing environment secrets to a
+  Discord webhook.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0136
+        techName: Brandjacking
+        tactic: Initial Access
+        comment: pino impersonation.
+      - techniqueID: T0140
+        techName: Harvest tokens from environment variables
+        tactic: Credential Access
+        comment: Env secret theft.
+      - techniqueID: T0156
+        techName: Exfiltration over webhooks
+        tactic: Exfiltration
+        comment: Discord webhook exfil.
+
+links:
+  - https://safedep.io/malicious-npm-package-pino-sdk-v2-env-exfiltration

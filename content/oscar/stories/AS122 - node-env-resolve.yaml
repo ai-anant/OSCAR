@@ -1,0 +1,29 @@
+id: AS122
+type: Attack Story
+date: 2026-04
+platforms:
+  - npm
+
+summary: node-env-resolve full RAT
+description: |
+  SafeDep: node-env-resolve installs a full-featured RAT on developer
+  machines (screen stream, credential capture).
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Purpose-built npm RAT.
+      - techniqueID: T0172
+        techName: Runtime backdoor
+        tactic: Execution
+        comment: Full RAT.
+
+links:
+  - https://safedep.io/malicious-npm-node-env-resolve-rat

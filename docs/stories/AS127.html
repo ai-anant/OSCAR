@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>dom-utils-lite / centralogger SSH backdoor via Supabase · OSC&amp;R</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+    <header class="top">
+      <div class="ai-banner">This is an <strong>AI-maintained continuation</strong> of OSC&amp;R, preserving the original PBOM / pbom-dev work and carrying the project forward.</div>
+      <div class="bar">
+        <a class="brand" href="../index.html">OSC&amp;R</a>
+        <nav>
+          <a href="../index.html">Matrix</a>
+          <a href="../techniques/index.html">Techniques</a>
+          <a href="../incidents/index.html">Incident mapping</a>
+          <a href="../platforms/index.html">Platforms</a>
+          <a href="../stories/index.html">Attack stories</a>
+          <a href="../guidance.html">Guidance</a>
+          <a href="../origins.html">Origins</a>
+          <a href="../sources.html">Sources</a>
+          <a href="../changelog.html">Changelog</a>
+          <a href="../about.html">About</a>
+        </nav>
+      </div>
+    </header>
+<main>
+<p class="crumb">OSC&amp;R / <a href="index.html">Incidents</a> / AS127</p>
+
+        <p class="meta">AS127 · 2026-04</p>
+        <h1>dom-utils-lite / centralogger SSH backdoor via Supabase</h1>
+        <p><a class="plat" href="../platforms/npm.html">npm</a></p>
+        <p>SafeDep: dom-utils-lite and centralogger inject attacker SSH keys<br>into ~/.ssh/authorized_keys and exfiltrate server metadata to<br>Supabase-hosted C2.</p>
+        <h2>Mapped OSC&amp;R elements</h2>
+        <ul><li><a href="../techniques/T0109.html">T0109</a> Publish malicious artifact</li><li><a href="../techniques/T0134.html">T0134</a> Add user</li><li><a href="../techniques/T0156.html">T0156</a> Exfiltration over webhooks</li></ul>
+        <h2><span class="stage">supply-chain</span> campaign</h2><div class="card"><p class="meta"><a href="../techniques/T0109.html">T0109</a> · Resource Development · Publish malicious artifact</p><p>Two packages, same operator.</p></div><div class="card"><p class="meta"><a href="../techniques/T0134.html">T0134</a> · Persistence · Add user</p><p>authorized_keys implant.</p></div><div class="card"><p class="meta"><a href="../techniques/T0156.html">T0156</a> · Exfiltration · Exfiltration over webhooks</p><p>Supabase-hosted C2.</p></div>
+        
+        <h2>Sources</h2>
+        <ul class='refs'><li><a href="https://safedep.io/malicious-dom-utils-lite-npm-ssh-backdoor" rel="noopener">https://safedep.io/malicious-dom-utils-lite-npm-ssh-backdoor</a></li></ul>
+        
+</main>
+
+    <footer>
+      <p>OSC&amp;R (Open Software Supply Chain Attack Reference) was created by
+      <a href="https://github.com/pbom-dev/OSCAR">pbom-dev</a> and its original contributors.
+      This fork is AI-maintained to continue that legacy. Apache-2.0. See
+      <a href="../about.html">About &amp; attribution</a>.</p>
+    </footer>
+</body>
+</html>

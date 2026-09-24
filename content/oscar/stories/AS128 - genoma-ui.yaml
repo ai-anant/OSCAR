@@ -1,0 +1,30 @@
+id: AS128
+type: Attack Story
+date: 2026-04
+platforms:
+  - npm
+
+summary: victim59 dependency confusion (Genoma UI / Needl)
+description: |
+  SafeDep: npm user victim59 targeted at least three orgs via scoped
+  packages including @genoma-ui/components and @needl-ai — public npm
+  names matching private internals.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0120
+        techName: Dependency confusion
+        tactic: Initial Access
+        comment: Scoped internal names on public npm.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: victim59 campaign.
+
+links:
+  - https://safedep.io/malicious-genoma-ui-npm-dependency-confusion-campaign

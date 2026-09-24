@@ -1,0 +1,30 @@
+id: AS140
+type: Attack Story
+date: 2025-06
+platforms:
+  - npm
+
+summary: Dependency confusion using Burp Collaborator callbacks
+description: |
+  SafeDep: multiple npm packages impersonating popular names, including
+  activity that used Burp Collaborator for dependency-confusion callbacks.
+  Public registry name collision is the SSC issue either way.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0120
+        techName: Dependency confusion
+        tactic: Initial Access
+        comment: Name collision packages.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Published to public npm.
+
+links:
+  - https://safedep.io/burp-collaborator-for-dependency-confusion-attack

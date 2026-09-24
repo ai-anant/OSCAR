@@ -112,3 +112,4 @@ links:
   - https://github.com/rustsec/advisory-db/issues/3161
   - https://safedep.io/arrayref-proc-macro1-rust-build-time-malware
   - https://www.aikido.dev/blog/two-popular-rust-crates-arrayref-and-append-only-vec-compromised-in-supply-chain-attack
+  - https://socket.dev/blog/popular-rust-crates-compromised

@@ -30,7 +30,7 @@
 <main>
 <p class="crumb">OSC&amp;R / <a href="index.html">Techniques</a> / T0118</p>
 
-        <p class="meta">T0118 · Execution · TA04 · observed in 5 incident(s)</p>
+        <p class="meta">T0118 · Execution · TA04 · observed in 6 incident(s)</p>
         <h1>Command injection</h1>
         <div class="chips"><span class="chip">Code Security</span></div>
         <p>OS command injection is a web security vulnerability that allows an attacker to execute arbitrary operating system commands on the server that is running an application.<br>Command injection attacks are possible when an application passes unsafe user supplied data (forms, cookies, HTTP headers etc.) to a system shell. <br>In this attack, the attacker-supplied operating system commands are usually executed with the privileges of the vulnerable application. <br>Command injection attacks are possible largely due to insufficient input validation</p>
@@ -40,7 +40,7 @@
         <ul><li><span class="id">M1180</span> Avoid calling OS commands directly</li><li><span class="id">M1181</span> Use parametrization with input validation</li><li><span class="id">M1182</span> Implement least privilege</li><li><span class="id">M1720</span> Implement regular patches and updates</li></ul>
         <h2>Detections</h2>
         <ul><li><span class="id">D1170</span> Configure application audit logs to detect injection attacks</li><li><span class="id">D1171</span> Implement Web Application Firewall</li></ul>
-        <h2>Observed in incidents (5)</h2><ul><li><a href="../incidents/AS111.html">36 malicious Strapi plugin packages (Redis RCE / DB theft)</a></li><li><a href="../incidents/AS74.html">Nx s1ngularity (stolen npm token via Actions injection)</a></li><li><a href="../incidents/AS3.html">Codecov Breach</a></li><li><a href="../incidents/AS75.html">hackerbot-claw autonomous GitHub Actions exploitation</a></li><li><a href="../incidents/AS79.html">CNCF Antrea Jenkins slash-command credential theft</a></li></ul>
+        <h2>Observed in incidents (6)</h2><ul><li><a href="../incidents/AS111.html">36 malicious Strapi plugin packages (Redis RCE / DB theft)</a></li><li><a href="../incidents/AS74.html">Nx s1ngularity (stolen npm token via Actions injection)</a></li><li><a href="../incidents/AS152.html">Laravel Lang RCE backdoor across 700+ versions</a></li><li><a href="../incidents/AS3.html">Codecov Breach</a></li><li><a href="../incidents/AS75.html">hackerbot-claw autonomous GitHub Actions exploitation</a></li><li><a href="../incidents/AS79.html">CNCF Antrea Jenkins slash-command credential theft</a></li></ul>
         <h2>References</h2>
         <ul class='refs'><li><a href="https://owasp.org/www-community/attacks/Command_Injection" rel="noopener">https://owasp.org/www-community/attacks/Command_Injection</a></li><li><a href="https://portswigger.net/web-security/os-command-injection" rel="noopener">https://portswigger.net/web-security/os-command-injection</a></li></ul>
         

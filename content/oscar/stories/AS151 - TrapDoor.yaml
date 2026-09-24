@@ -1,0 +1,31 @@
+id: AS151
+type: Attack Story
+date: 2026-05
+platforms:
+  - npm
+  - pypi
+  - crates
+
+summary: TrapDoor crypto stealer across 34 packages
+description: |
+  Socket: TrapDoor crypto-stealer supply chain hit 34 packages and
+  hundreds of versions across npm, PyPI, and crates.io.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: 34 packages, many versions.
+      - techniqueID: T0184
+        techName: Harvesting sensitive information from files
+        tactic: Credential Access
+        comment: Crypto steal.
+
+links:
+  - https://socket.dev/blog/trapdoor-crypto-stealer-npm-pypi-crates

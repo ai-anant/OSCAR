@@ -1,0 +1,29 @@
+id: AS136
+type: Attack Story
+date: 2025-09
+platforms:
+  - npm
+
+summary: Express cookie-parser impersonation on npm
+description: |
+  SafeDep Cloud scanning found a malicious npm package impersonating
+  the popular Express cookie-parser.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0129
+        techName: Typosquatting
+        tactic: Initial Access
+        comment: cookie-parser lookalike.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Malicious package.
+
+links:
+  - https://safedep.io/malicious-npm-package-express-cookie-parser

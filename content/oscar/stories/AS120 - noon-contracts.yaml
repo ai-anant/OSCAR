@@ -1,0 +1,34 @@
+id: AS120
+type: Attack Story
+date: 2026-04
+platforms:
+  - npm
+
+summary: "noon-contracts Noon Protocol SDK RAT"
+description: |
+  SafeDep: noon-contracts poses as a Noon Protocol SDK. On install it
+  exfiltrates SSH keys, crypto wallet private keys, and AWS credentials
+  including live STS.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0136
+        techName: Brandjacking
+        tactic: Initial Access
+        comment: Noon Protocol SDK impersonation.
+      - techniqueID: T0151
+        techName: Installation scripts
+        tactic: Execution
+        comment: Install-time exfil.
+      - techniqueID: T0184
+        techName: Harvesting sensitive information from files
+        tactic: Credential Access
+        comment: SSH, wallets, AWS STS.
+
+links:
+  - https://safedep.io/malicious-noon-contracts-npm-defi-rat

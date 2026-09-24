@@ -1,0 +1,29 @@
+id: AS134
+type: Attack Story
+date: 2025-10
+platforms:
+  - npm
+
+summary: TensorFlow.js typosquat targeting ML developers
+description: |
+  SafeDep: malicious npm package typosquatting tensorflow / TensorFlow.js
+  to hit AI/ML developers.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0129
+        techName: Typosquatting
+        tactic: Initial Access
+        comment: tensorflow lookalike.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Malicious package.
+
+links:
+  - https://safedep.io/malicious-npm-package-targeting-tensorflow-users

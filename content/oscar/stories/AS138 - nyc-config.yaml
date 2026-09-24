@@ -1,0 +1,29 @@
+id: AS138
+type: Attack Story
+date: 2025-08
+platforms:
+  - npm
+
+summary: nyc-config typosquat of @istanbuljs/load-nyc-config
+description: |
+  SafeDep: nyc-config typosquat against @istanbuljs/load-nyc-config
+  (about 25M weekly downloads).
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0129
+        techName: Typosquatting
+        tactic: Initial Access
+        comment: load-nyc-config lookalike.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Malicious package.
+
+links:
+  - https://safedep.io/nyc-config-malicious-package

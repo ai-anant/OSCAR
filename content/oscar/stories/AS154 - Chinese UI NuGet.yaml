@@ -1,0 +1,29 @@
+id: AS154
+type: Attack Story
+date: 2026-05
+platforms:
+  - nuget
+
+summary: Five NuGet packages impersonate Chinese UI libraries
+description: |
+  Socket: five malicious NuGet packages impersonate Chinese UI
+  libraries to distribute crypto-wallet and credential stealers.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0136
+        techName: Brandjacking
+        tactic: Initial Access
+        comment: Chinese UI library names.
+      - techniqueID: T0184
+        techName: Harvesting sensitive information from files
+        tactic: Credential Access
+        comment: Wallets and creds.
+
+links:
+  - https://socket.dev/blog/5-malicious-nuget-packages-impersonate-chinese-ui-libraries

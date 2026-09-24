@@ -1,0 +1,34 @@
+id: AS123
+type: Attack Story
+date: 2026-04
+platforms:
+  - npm
+
+summary: common-tg-service 502 versions Telegram hijack
+description: |
+  SafeDep: common-tg-service shipped 502 npm versions of a Telegram
+  account-takeover framework with hardcoded 2FA credentials and IMAP
+  code harvesting.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: 502 versions on npm.
+      - techniqueID: T0136
+        techName: Brandjacking
+        tactic: Initial Access
+        comment: Telegram tooling impersonation.
+      - techniqueID: T0184
+        techName: Harvesting sensitive information from files
+        tactic: Credential Access
+        comment: 2FA/IMAP harvest.
+
+links:
+  - https://safedep.io/malicious-common-tg-service-npm-telegram-hijacking-framework

@@ -1,0 +1,34 @@
+id: AS129
+type: Attack Story
+date: 2026-04
+platforms:
+  - npm
+
+summary: big.js typosquats sjs/bjs/cjs-biginteger SSH backdoors
+description: |
+  SafeDep: three waves of big.js typosquats (sjs-biginteger,
+  bjs-biginteger, cjs-biginteger) from throwaway accounts implant SSH
+  backdoors and exfiltrate credentials.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0129
+        techName: Typosquatting
+        tactic: Initial Access
+        comment: big.js lookalikes.
+      - techniqueID: T0134
+        techName: Add user
+        tactic: Persistence
+        comment: SSH backdoors.
+      - techniqueID: T0184
+        techName: Harvesting sensitive information from files
+        tactic: Credential Access
+        comment: Credential exfil.
+
+links:
+  - https://safedep.io/malicious-sjs-biginteger-npm-ssh-theft

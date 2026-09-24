@@ -1,0 +1,34 @@
+id: AS121
+type: Attack Story
+date: 2026-04
+platforms:
+  - npm
+
+summary: Trojanized fork martinez-polygon-clipping-tony
+description: |
+  SafeDep: martinez-polygon-clipping-tony is a trojanized fork of
+  martinez-polygon-clipping. postinstall downloads a PyInstaller payload
+  and talks to Telegram.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0129
+        techName: Typosquatting
+        tactic: Initial Access
+        comment: Fork/lookalike of martinez-polygon-clipping.
+      - techniqueID: T0151
+        techName: Installation scripts
+        tactic: Execution
+        comment: postinstall PyInstaller dropper.
+      - techniqueID: T0172
+        techName: Runtime backdoor
+        tactic: Execution
+        comment: Telegram RAT.
+
+links:
+  - https://safedep.io/malicious-martinez-polygon-clipping-tony-npm-telegram-rat

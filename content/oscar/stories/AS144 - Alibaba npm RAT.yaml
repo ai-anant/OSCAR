@@ -1,0 +1,33 @@
+id: AS144
+type: Attack Story
+date: 2026-08
+platforms:
+  - npm
+
+summary: npm RAT cluster targeting Alibaba developers
+description: |
+  Socket: distributed npm package cluster delivering a cross-platform
+  RAT aimed at Alibaba developers.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Cluster of npm packages.
+      - techniqueID: T0136
+        techName: Brandjacking
+        tactic: Initial Access
+        comment: Alibaba-developer targeting.
+      - techniqueID: T0172
+        techName: Runtime backdoor
+        tactic: Execution
+        comment: Cross-platform RAT.
+
+links:
+  - https://socket.dev/blog/npm-rat-targets-alibaba

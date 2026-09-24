@@ -1,0 +1,29 @@
+id: AS152
+type: Attack Story
+date: 2026-05
+platforms:
+  - packagist
+
+summary: Laravel Lang RCE backdoor across 700+ versions
+description: |
+  Socket: Laravel Lang compromised with an RCE backdoor across 700+
+  versions.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0121
+        techName: Compromised legitimate artifact
+        tactic: Resource Development
+        comment: Laravel Lang on Packagist.
+      - techniqueID: T0118
+        techName: Command injection
+        tactic: Execution
+        comment: RCE backdoor.
+
+links:
+  - https://socket.dev/blog/laravel-lang-compromise

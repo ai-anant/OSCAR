@@ -1,0 +1,30 @@
+id: AS147
+type: Attack Story
+date: 2026-07
+platforms:
+  - golang
+  - git
+
+summary: Malicious Go module plus 222 GitHub lure repos
+description: |
+  Socket: a malicious Go module exposed a GitHub malware-lure network
+  spanning 222 repositories.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Malicious Go module.
+      - techniqueID: T0111
+        techName: Malicious code contribution to an open-source repository
+        tactic: Resource Development
+        comment: 222 lure repos.
+
+links:
+  - https://socket.dev/blog/malicious-go-module-exposes-github-malware-lure-network

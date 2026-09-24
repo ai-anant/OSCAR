@@ -1,0 +1,29 @@
+id: AS135
+type: Attack Story
+date: 2025-10
+platforms:
+  - pypi
+
+summary: PyPI typosquats targeting Bittensor developers
+description: |
+  SafeDep: multiple malicious Python packages typosquatting Bittensor
+  crypto-developer libraries on PyPI.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0129
+        techName: Typosquatting
+        tactic: Initial Access
+        comment: Bittensor-related names.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Multiple PyPI packages.
+
+links:
+  - https://safedep.io/malicious-python-packages-target-crypto-developers

@@ -1,0 +1,34 @@
+id: AS127
+type: Attack Story
+date: 2026-04
+platforms:
+  - npm
+
+summary: dom-utils-lite / centralogger SSH backdoor via Supabase
+description: |
+  SafeDep: dom-utils-lite and centralogger inject attacker SSH keys
+  into ~/.ssh/authorized_keys and exfiltrate server metadata to
+  Supabase-hosted C2.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Two packages, same operator.
+      - techniqueID: T0134
+        techName: Add user
+        tactic: Persistence
+        comment: authorized_keys implant.
+      - techniqueID: T0156
+        techName: Exfiltration over webhooks
+        tactic: Exfiltration
+        comment: Supabase-hosted C2.
+
+links:
+  - https://safedep.io/malicious-dom-utils-lite-npm-ssh-backdoor

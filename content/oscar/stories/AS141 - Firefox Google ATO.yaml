@@ -1,0 +1,34 @@
+id: AS141
+type: Attack Story
+date: 2026-09
+platforms:
+  - browser-extensions
+
+summary: Malicious Firefox extension hijacks Google accounts
+description: |
+  Socket: Firefox add-on posing as a PDF identity verifier hijacks
+  Google accounts (session/OAuth). Browser-store supply chain, same class
+  as AS58/AS60.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Firefox Add-ons listing.
+      - techniqueID: T0136
+        techName: Brandjacking
+        tactic: Initial Access
+        comment: PDF identity-verifier impersonation.
+      - techniqueID: T0184
+        techName: Harvesting sensitive information from files
+        tactic: Credential Access
+        comment: Google account session.
+
+links:
+  - https://socket.dev/blog/firefox-google-account-takeover

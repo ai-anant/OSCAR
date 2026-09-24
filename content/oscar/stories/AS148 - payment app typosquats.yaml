@@ -1,0 +1,30 @@
+id: AS148
+type: Attack Story
+date: 2026-07
+platforms:
+  - npm
+  - pypi
+
+summary: npm/PyPI typosquats of secure payment apps
+description: |
+  Socket: coordinated npm and PyPI campaign typosquatting popular
+  secure payment apps.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0129
+        techName: Typosquatting
+        tactic: Initial Access
+        comment: Payment-app names on two registries.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Coordinated campaign.
+
+links:
+  - https://socket.dev/blog/npm-pypi-campaign-typosquats-popular-secure-payment-apps

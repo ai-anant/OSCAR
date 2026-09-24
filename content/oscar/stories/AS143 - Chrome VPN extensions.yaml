@@ -1,0 +1,29 @@
+id: AS143
+type: Attack Story
+date: 2026-08
+platforms:
+  - browser-extensions
+
+summary: 737 Chrome VPN extensions brand impersonation
+description: |
+  Socket: 737 Chrome VPN extensions linked to brand impersonation and
+  browser traffic redirection.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: 737 Chrome Web Store listings.
+      - techniqueID: T0136
+        techName: Brandjacking
+        tactic: Initial Access
+        comment: VPN product impersonation.
+
+links:
+  - https://socket.dev/blog/chrome-vpn-extension-impersonation
