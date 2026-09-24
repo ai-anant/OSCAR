@@ -1,0 +1,43 @@
+id: AS86
+type: Attack Story
+date: 2026-07
+platforms:
+  - npm
+  - macos
+  - mcp
+
+summary: "@copilot-mcp/apex macOS infostealer republish"
+description: |
+  npm removed @apexfdn/apex for malware; SafeDep found the operator
+  republished the same postinstall macOS infostealer as @copilot-mcp/apex
+  about 11 hours later. Targets Web3 founders/developers: browser data,
+  20+ crypto wallets, SSH/AWS/Kubernetes creds via osascript and
+  curl|zsh, beacon every 60 seconds. npm removed the republish too;
+  GitHub binaries and C2 stayed live.
+
+attacks:
+  - attack: takedown-and-republish
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0136
+        techName: Brandjacking
+        tactic: Initial Access
+        comment: "@copilot-mcp scope impersonating Copilot/MCP tooling."
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Same payload under a new name after npm takedown.
+      - techniqueID: T0151
+        techName: Installation scripts
+        tactic: Execution
+        comment: postinstall osascript / curl|zsh on macOS.
+      - techniqueID: T0184
+        techName: Harvesting sensitive information from files
+        tactic: Credential Access
+        comment: Wallets, SSH, AWS, Kubernetes.
+
+links:
+  - https://safedep.io/malicious-copilot-mcp-apex-npm-macos-infostealer

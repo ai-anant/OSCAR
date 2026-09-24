@@ -1,0 +1,36 @@
+id: AS91
+type: Attack Story
+date: 2026-05
+platforms:
+  - git
+  - github-actions
+
+summary: Megalodon mass GitHub repo backdooring via CI
+description: |
+  SafeDep named Megalodon: mass backdooring of GitHub repositories
+  through CI workflows (malicious workflow files that steal secrets and
+  persist). Same class as hackerbot-claw (AS75) and Nx s1ngularity
+  (AS74), as a named campaign rather than a single package.
+
+attacks:
+  - attack: mass workflow implant
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0147
+        techName: Scan public CI/CD configurations for secrets and vulnerable actions
+        tactic: Reconnaissance
+        comment: Repos selected for vulnerable or writable workflows.
+      - techniqueID: T0166
+        techName: Trigger pipeline execution
+        tactic: Execution
+        comment: Implanted GitHub Actions workflows.
+      - techniqueID: T0140
+        techName: Harvest tokens from environment variables
+        tactic: Credential Access
+        comment: CI secrets from the poisoned workflows.
+
+links:
+  - https://safedep.io/megalodon-mass-github-repo-backdooring-ci-workflows

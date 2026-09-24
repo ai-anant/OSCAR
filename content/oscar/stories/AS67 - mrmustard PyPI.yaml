@@ -52,3 +52,4 @@ attacks:
 links:
   - https://www.stepsecurity.io/blog/compromised-pypi-mrmustard-0-7-4-credential-stealer
   - https://github.com/XanaduAI/MrMustard/issues/656
+  - https://safedep.io/mrmustard-malicious-pypi-package

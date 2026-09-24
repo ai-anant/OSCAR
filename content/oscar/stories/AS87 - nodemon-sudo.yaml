@@ -1,0 +1,37 @@
+id: AS87
+type: Attack Story
+date: 2026-07
+platforms:
+  - npm
+
+summary: nodemon-sudo backdoor via tslint-conf (no install script)
+description: |
+  SafeDep: nodemon-sudo copies real nodemon byte for byte and adds one
+  extra dependency, tslint-conf — a repackaged pino logger carrying a
+  backdoor. No install hook. Payload fires only at runtime, one hop
+  away from the package the developer typed. Same “clean lure + dirty
+  transitive” pattern as axios/plain-crypto-js (AS22) and Mastra
+  easy-day-js (AS70).
+
+attacks:
+  - attack: clean lure dirty transitive
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0129
+        techName: Typosquatting
+        tactic: Initial Access
+        comment: nodemon-sudo impersonates nodemon.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: tslint-conf is the actual backdoor package.
+      - techniqueID: T0159
+        techName: Malicious artifact execution
+        tactic: Execution
+        comment: No postinstall; runs when the logger is required.
+
+links:
+  - https://safedep.io/malicious-nodemon-sudo-tslint-conf-npm-backdoor

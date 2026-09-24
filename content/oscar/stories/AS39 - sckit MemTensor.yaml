@@ -93,3 +93,5 @@ gaps:
 links:
   - https://www.stepsecurity.io/blog/sckit-supply-chain-worm-hits-memtensor-npm-pypi-scopes
   - https://github.com/MemTensor/MemOS-Cloud-OpenClaw-Plugin/issues/173
+  - https://safedep.io/memtensor-sckit-worm-npm-pypi
+  - https://safedep.io/sckit-go-implant-framework

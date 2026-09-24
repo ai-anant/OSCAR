@@ -1,0 +1,43 @@
+id: AS83
+type: Attack Story
+date: 2026-09
+platforms:
+  - npm
+  - git
+
+summary: ulid-xyz RAT via ioredis-xyz transitive chain
+description: |
+  SafeDep reported ulid-xyz (OSV MAL-2026-6672) as a remote-access trojan
+  that reached developers as a third-level transitive of ioredis-xyz, a
+  copy of the real ioredis client planted in 28 attacker-created GitHub
+  repositories. The implant matches the DPRK-linked MicrosoftSystem64
+  cluster. Not a hijack of the real ulid or ioredis packages — a
+  lookalike dependency chain.
+
+attacks:
+  - attack: three-deep typosquat chain
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0129
+        techName: Typosquatting
+        tactic: Initial Access
+        comment: ioredis-xyz / ulid-xyz lookalikes, not the real packages.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: RAT published as a transitive, not the top-level lure.
+      - techniqueID: T0111
+        techName: Malicious code contribution to an open-source repository
+        tactic: Resource Development
+        comment: 28 attacker GitHub repos depended on ioredis-xyz.
+      - techniqueID: T0172
+        techName: Runtime backdoor
+        tactic: Execution
+        comment: MicrosoftSystem64-family RAT.
+
+links:
+  - https://safedep.io/ulid-xyz-transitive-dependency-delivery-chain
+  - https://safedep.io/microsoftsystem64-binary-payload-analysis

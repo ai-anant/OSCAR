@@ -1,0 +1,35 @@
+id: AS92
+type: Attack Story
+date: 2026-05
+platforms:
+  - pypi
+
+summary: durabletask PyPI multi-cloud credential stealer
+description: |
+  SafeDep found a malicious durabletask on PyPI (not Microsoft’s
+  Durable Task) that stole multi-cloud credentials and included worm-like
+  propagation. Name collision with a well-known Azure/orchestration
+  library.
+
+attacks:
+  - attack: pypi name collision
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0129
+        techName: Typosquatting
+        tactic: Initial Access
+        comment: durabletask name collision on PyPI.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Multi-cloud stealer with worm-like spread.
+      - techniqueID: T0184
+        techName: Harvesting sensitive information from files
+        tactic: Credential Access
+        comment: Cloud credentials harvested from the host.
+
+links:
+  - https://safedep.io/malicious-durabletask-pypi-supply-chain-attack

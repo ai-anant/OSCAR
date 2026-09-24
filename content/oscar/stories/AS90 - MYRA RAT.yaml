@@ -1,0 +1,35 @@
+id: AS90
+type: Attack Story
+date: 2026-06
+platforms:
+  - npm
+  - linux
+
+summary: MYRA Linux RAT via apintergrationpost
+description: |
+  SafeDep documented MYRA, a full Linux RAT distributed through the npm
+  package apintergrationpost (deliberate misspelling). Not a hijack of a
+  popular library — a purpose-built RAT on the public registry.
+
+attacks:
+  - attack: purpose-built npm rat
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: apintergrationpost on npm.
+      - techniqueID: T0129
+        techName: Typosquatting
+        tactic: Initial Access
+        comment: Misspelled integration as the lure.
+      - techniqueID: T0172
+        techName: Runtime backdoor
+        tactic: Execution
+        comment: Full Linux RAT.
+
+links:
+  - https://safedep.io/malicious-apintergrationpost-npm-myra-rat

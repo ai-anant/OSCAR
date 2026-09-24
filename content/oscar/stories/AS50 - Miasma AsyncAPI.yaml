@@ -40,3 +40,9 @@ attacks:
 links:
   - https://socket.dev/blog/asyncapi-supply-chain-attack
   - https://opensourcemalware.com/blog/miasma-blight-reaches-microsoft-73-repos-disabled-in-105-seconds
+  - https://safedep.io/asyncapi-generator-supply-chain-attack-miasma-rat
+  - https://safedep.io/miasma-worm-hits-leoplatform-20-npm-packages
+  - https://safedep.io/miasma-worm-still-infected-github-repos
+  - https://safedep.io/inside-the-miasma-supply-chain-attack-toolkit
+  - https://safedep.io/config-files-that-run-code
+  - https://safedep.io/miasma-worm-ai-coding-agent-config-injection

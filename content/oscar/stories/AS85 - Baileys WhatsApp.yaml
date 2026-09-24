@@ -1,0 +1,36 @@
+id: AS85
+type: Attack Story
+date: 2026-08
+platforms:
+  - npm
+
+summary: Baileys npm forks farming WhatsApp Channel follows
+description: |
+  SafeDep tracked a campaign of npm packages that fork the Baileys
+  WhatsApp library so that a developer’s own WhatsApp account follows
+  attacker channels on install/use, inflating follower counts and
+  injecting advertising. Abuse of a real messaging API from a lookalike
+  dependency, not a classic infostealer.
+
+attacks:
+  - attack: forked library abuse
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0129
+        techName: Typosquatting
+        tactic: Initial Access
+        comment: Baileys forks/lookalikes on npm.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Packages that drive WhatsApp Channel follows.
+      - techniqueID: T0159
+        techName: Malicious artifact execution
+        tactic: Execution
+        comment: Runs with the victim’s WhatsApp session.
+
+links:
+  - https://safedep.io/malicious-baileys-npm-whatsapp-campaign

@@ -1,0 +1,36 @@
+id: AS89
+type: Attack Story
+date: 2026-06
+platforms:
+  - npm
+
+summary: "@withgoogle/stitch-sdk scope squat"
+description: |
+  SafeDep found @withgoogle/stitch-sdk harvesting developer credentials
+  by squatting Google’s unclaimed @withgoogle scope. Scope-squatting is
+  the org-namespace version of dependency confusion: the package looks
+  official because of the publisher prefix, not because Google published
+  it.
+
+attacks:
+  - attack: unclaimed scope
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0120
+        techName: Dependency confusion
+        tactic: Initial Access
+        comment: Unclaimed @withgoogle scope on npm.
+      - techniqueID: T0136
+        techName: Brandjacking
+        tactic: Initial Access
+        comment: Google Stitch SDK impersonation.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Credential harvester under the squat.
+
+links:
+  - https://safedep.io/withgoogle-stitch-sdk-scope-squat-credential-harvester

@@ -43,3 +43,5 @@ attacks:
 links:
   - https://socket.dev/blog/happy-birthday-shai-hulud
   - https://www.stepsecurity.io/blog/state-of-open-source-supply-chain-attacks
+  - https://safedep.io/malicious-pytorch-lightning-pypi-compromise
+  - https://safedep.io/shai-hulud-second-coming-supply-chain-attack

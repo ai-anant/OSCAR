@@ -1,5 +1,16 @@
 entries:
 - date: '2026-09-24'
+  id: safedep-catalog-pass
+  title: 'SafeDep catalog: attach overlaps, add six new incidents'
+  items:
+  - Attached 34 SafeDep posts to existing incidents (Team PCP including Bitwarden CLI, Shai-Hulud waves,
+    Miasma, Joyfill, mrmustard, Nx, prettier, Velora, Mastra, Moika, axios, arrayref, Keyv, sckit, 7nohe,
+    PolinRider astro.config).
+  - 'New AS83–AS94: ulid-xyz, Google bin harvesting, Baileys, @copilot-mcp/apex, nodemon-sudo, fake TradingView,
+    @withgoogle/stitch-sdk, MYRA RAT, Megalodon, durabletask, Cline v2.3.0, Schedaero.'
+  - Product/guidance posts (vet, MCP, SBOM, Gryph) skipped. Remaining SafeDep malware-package posts (Polymarket,
+    wshu, Hyatt, sl4x0, …) for the next SafeDep slice.
+- date: '2026-09-24'
   id: osm-catalog-pass
   title: 'OpenSourceMalware catalog: every incident post mapped'
   items:

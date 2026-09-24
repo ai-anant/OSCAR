@@ -1,0 +1,36 @@
+id: AS88
+type: Attack Story
+date: 2026-08
+platforms:
+  - macos
+
+summary: Fake TradingView macOS installer via YouTube ad
+description: |
+  SafeDep: a YouTube video ad impersonating TradingView delivered a fake
+  .pkg installer. Inside: a self-healing LaunchAgent, an AES-encrypted
+  V8 bytecode payload, and a Node.js MITM proxy trusted by a rogue root
+  CA. Same class as fake corepack.org (AS61): brandjacked developer-tool
+  download, not a registry hijack.
+
+attacks:
+  - attack: malvertising installer
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0136
+        techName: Brandjacking
+        tactic: Initial Access
+        comment: TradingView impersonation in a YouTube ad and .pkg.
+      - techniqueID: T0110
+        techName: Advertise malicious artifact
+        tactic: Resource Development
+        comment: Paid/video ad as the distribution channel.
+      - techniqueID: T0153
+        techName: Compromised developer workstation
+        tactic: Initial Access
+        comment: Fake installer on macOS with LaunchAgent persistence.
+
+links:
+  - https://safedep.io/youtube-ad-fake-tradingview-macos-stealer

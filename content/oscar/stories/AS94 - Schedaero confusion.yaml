@@ -1,0 +1,30 @@
+id: AS94
+type: Attack Story
+date: 2026-03
+platforms:
+  - npm
+
+summary: Schedaero dependency-confusion packages
+description: |
+  SafeDep analyzed malicious npm packages targeting Schedaero (aviation
+  software) via dependency confusion: public packages with internal-looking
+  names, payload and exfil dissected in their post.
+
+attacks:
+  - attack: internal name squat
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0120
+        techName: Dependency confusion
+        tactic: Initial Access
+        comment: Public npm names matching Schedaero internals.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Credential/exfil payload in the squat packages.
+
+links:
+  - https://safedep.io/schedaero-dependency-confusion-attack

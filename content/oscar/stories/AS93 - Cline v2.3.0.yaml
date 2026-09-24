@@ -1,0 +1,32 @@
+id: AS93
+type: Attack Story
+date: 2026-03
+platforms:
+  - vscode
+  - ai-agents
+
+summary: Cline v2.3.0 prompt-injection to unauthorized actions
+description: |
+  SafeDep analyzed a compromise of AI coding agent Cline v2.3.0: prompt
+  injection leading to unauthorized actions in the developer workspace.
+  Adjacent to T0210 (poisoned agent config) and AS27 (hijacked assistant
+  spreading Shai-Hulud).
+
+attacks:
+  - attack: agent prompt injection
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0210
+        techName: Poison AI coding-agent config or workspace
+        tactic: Persistence
+        comment: Prompt injection in Cline v2.3.0 drove unauthorized actions.
+      - techniqueID: T0154
+        techName: Malicious IDE extension
+        tactic: Initial Access
+        comment: Compromised agent/extension in the IDE.
+
+links:
+  - https://safedep.io/cline-cli-compromised

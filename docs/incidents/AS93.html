@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cline v2.3.0 prompt-injection to unauthorized actions · OSC&amp;R</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+    <header class="top">
+      <div class="ai-banner">This is an <strong>AI-maintained continuation</strong> of OSC&amp;R, preserving the original PBOM / pbom-dev work and carrying the project forward.</div>
+      <div class="bar">
+        <a class="brand" href="../index.html">OSC&amp;R</a>
+        <nav>
+          <a href="../index.html">Matrix</a>
+          <a href="../techniques/index.html">Techniques</a>
+          <a href="../incidents/index.html">Incident mapping</a>
+          <a href="../platforms/index.html">Platforms</a>
+          <a href="../stories/index.html">Attack stories</a>
+          <a href="../guidance.html">Guidance</a>
+          <a href="../origins.html">Origins</a>
+          <a href="../sources.html">Sources</a>
+          <a href="../changelog.html">Changelog</a>
+          <a href="../about.html">About</a>
+        </nav>
+      </div>
+    </header>
+<main>
+<p class="crumb">OSC&amp;R / <a href="index.html">Incidents</a> / AS93</p>
+
+        <p class="meta">AS93 · 2026-03</p>
+        <h1>Cline v2.3.0 prompt-injection to unauthorized actions</h1>
+        <p><a class="plat" href="../platforms/vscode.html">VS Code / IDE</a><a class="plat" href="../platforms/ai-agents.html">AI coding agents</a></p>
+        <p>SafeDep analyzed a compromise of AI coding agent Cline v2.3.0: prompt<br>injection leading to unauthorized actions in the developer workspace.<br>Adjacent to T0210 (poisoned agent config) and AS27 (hijacked assistant<br>spreading Shai-Hulud).</p>
+        <h2>Mapped OSC&amp;R elements</h2>
+        <ul><li><a href="../techniques/T0210.html">T0210</a> Poison AI coding-agent config or workspace</li><li><a href="../techniques/T0154.html">T0154</a> Malicious IDE extension</li></ul>
+        <h2><span class="stage">supply-chain</span> agent prompt injection</h2><div class="card"><p class="meta"><a href="../techniques/T0210.html">T0210</a> · Persistence · Poison AI coding-agent config or workspace</p><p>Prompt injection in Cline v2.3.0 drove unauthorized actions.</p></div><div class="card"><p class="meta"><a href="../techniques/T0154.html">T0154</a> · Initial Access · Malicious IDE extension</p><p>Compromised agent/extension in the IDE.</p></div>
+        
+        <h2>Sources</h2>
+        <ul class='refs'><li><a href="https://safedep.io/cline-cli-compromised" rel="noopener">https://safedep.io/cline-cli-compromised</a></li></ul>
+        
+</main>
+
+    <footer>
+      <p>OSC&amp;R (Open Software Supply Chain Attack Reference) was created by
+      <a href="https://github.com/pbom-dev/OSCAR">pbom-dev</a> and its original contributors.
+      This fork is AI-maintained to continue that legacy. Apache-2.0. See
+      <a href="../about.html">About &amp; attribution</a>.</p>
+    </footer>
+</body>
+</html>
