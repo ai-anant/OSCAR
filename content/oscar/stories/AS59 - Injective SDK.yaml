@@ -1,0 +1,41 @@
+id: AS59
+type: Attack Story
+date: 2026-07
+platforms:
+  - npm
+
+summary: Compromised Injective SDK on npm
+description: |
+  On 31 July 2026 Socket reported that the official Injective Protocol
+  JavaScript SDK on npm had been overwritten with a malicious version.
+  The poisoned package kept the public API so installs would succeed,
+  then harvested environment secrets and wallet material from developer
+  machines and CI. This is a compromised-legitimate-artifact case, not
+  a typosquat.
+
+attacks:
+  - attack: poisoned official sdk
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0121
+        techName: Compromised legitimate artifact
+        tactic: Resource Development
+        comment: Official Injective SDK package overwritten on npm.
+      - techniqueID: T0113
+        techName: Compromised user account
+        tactic: Initial Access
+        comment: Maintainer/publish credentials used to ship the bad version.
+      - techniqueID: T0140
+        techName: Harvest tokens from environment variables
+        tactic: Credential Access
+        comment: Secrets and wallet material from developer and CI environments.
+      - techniqueID: T0159
+        techName: Malicious artifact execution
+        tactic: Execution
+        comment: Payload ran on install / import while preserving the public API.
+
+links:
+  - https://socket.dev/blog/compromised-injective-sdk-npm-package

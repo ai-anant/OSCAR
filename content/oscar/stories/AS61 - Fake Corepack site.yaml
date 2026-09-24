@@ -1,0 +1,46 @@
+id: AS61
+type: Attack Story
+date: 2026-03
+platforms:
+  - npm
+  - windows
+
+summary: Fake corepack.org infostealer and proxyware
+description: |
+  After Node.js stopped bundling Corepack, Socket documented corepack.org
+  impersonating the Node.js package-manager pin tool. The real project
+  has no official site at that domain and is not distributed as a Windows
+  installer. “Download Free” redirected to an OpenShield landing page and
+  dropped vpnsetup_*.exe — an infostealer plus proxyware that enrolled
+  the machine as a bandwidth-sharing exit node. A second path delivered
+  OperaGXSetup.exe adware. Node.js contributors flagged the domain in
+  nodejs/corepack issue 803 (March 2026); it later started serving
+  executables. Install Corepack only from the npm registry.
+
+attacks:
+  - attack: brandjacked download site
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0136
+        techName: Brandjacking
+        tactic: Initial Access
+        comment: corepack.org impersonating the Node.js Corepack tool.
+      - techniqueID: T0110
+        techName: Advertise malicious artifact
+        tactic: Resource Development
+        comment: Search-result download for developers after Corepack was unbundled.
+      - techniqueID: T0153
+        techName: Compromised developer workstation
+        tactic: Initial Access
+        comment: Fake installer ran on the developer machine.
+      - techniqueID: T0184
+        techName: Harvesting sensitive information from files
+        tactic: Credential Access
+        comment: Browser profiles and stored SSH keys.
+
+links:
+  - https://socket.dev/blog/fake-corepack-site-distributes-infostealer-and-proxyware
+  - https://github.com/nodejs/corepack/issues/803

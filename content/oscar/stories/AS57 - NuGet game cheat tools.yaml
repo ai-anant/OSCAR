@@ -1,0 +1,43 @@
+id: AS57
+type: Attack Story
+date: 2026-09
+platforms:
+  - nuget
+
+summary: Eleven NuGet packages posing as game cheats
+description: |
+  On 15 September 2026 Socket published eleven malicious NuGet packages
+  posing as game-cheat / trainer tools (Fortnite, Valorant, Roblox, GTA,
+  CS2, Minecraft and similar). Combined they had been downloaded more than
+  1.8 million times. Several used a .NET AssemblyResolve handler so the
+  payload only ran when a missing dependency was requested; others dropped
+  a second-stage executable from a Discord CDN URL. Payloads included
+  infostealers, a clipper, and a reverse shell. Not a hijack of a trusted
+  library — brandjacking of game titles on a public registry.
+
+attacks:
+  - attack: malicious nuget publishes
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Eleven first-party NuGet packages under cheat/trainer names.
+      - techniqueID: T0110
+        techName: Advertise malicious artifact
+        tactic: Resource Development
+        comment: Game-title brandjacking to attract search traffic.
+      - techniqueID: T0136
+        techName: Brandjacking
+        tactic: Initial Access
+        comment: Fortnite, Valorant, Roblox, GTA, CS2, Minecraft names.
+      - techniqueID: T0159
+        techName: Malicious artifact execution
+        tactic: Execution
+        comment: AssemblyResolve delayed load or Discord-CDN second stage.
+
+links:
+  - https://socket.dev/blog/11-malicious-nuget-tools-pose-as-game-cheats

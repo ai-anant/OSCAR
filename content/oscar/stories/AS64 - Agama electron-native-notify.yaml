@@ -1,0 +1,47 @@
+id: AS64
+type: Attack Story
+date: 2019-03
+platforms:
+  - npm
+
+summary: electron-native-notify planted in Agama / Komodo wallet
+description: |
+  In March 2019 the npm security team, with Komodo, stopped a plot to
+  steal Agama wallet seeds. GitHub user sawlysawly added
+  electron-native-notify ^1.1.5 to KomodoPlatform/EasyDEX-GUI on 8 March.
+  Version 1.1.6 (23 March) was the first with a malicious payload; Agama
+  v0.3.5 shipped it on 13 April. After launch the wallet fetched a second
+  stage from updatecheck.herokuapp and exfiltrated the seed. Classic
+  “useful package, wait until adopted, then flip the next version.”
+  npm removed the package and wired npm audit.
+
+attacks:
+  - attack: delayed malicious update
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: electron-native-notify published as a useful helper, then flipped.
+      - techniqueID: T0111
+        techName: Malicious code contribution to an open-source repository
+        tactic: Resource Development
+        comment: Dependency added to KomodoPlatform/EasyDEX-GUI.
+      - techniqueID: T0121
+        techName: Compromised legitimate artifact
+        tactic: Resource Development
+        comment: Later versions of an already-adopted package carried the payload.
+      - techniqueID: T0184
+        techName: Harvesting sensitive information from files
+        tactic: Credential Access
+        comment: Agama wallet seed and login passphrases.
+      - techniqueID: T0156
+        techName: Exfiltration over webhooks
+        tactic: Exfiltration
+        comment: Second stage from updatecheck.herokuapp received the seed.
+
+links:
+  - https://blog.npmjs.org/post/185397814280/plot-to-steal-cryptocurrency-foiled-by-the-npm

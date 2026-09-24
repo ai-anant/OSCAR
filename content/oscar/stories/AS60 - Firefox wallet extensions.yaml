@@ -1,0 +1,44 @@
+id: AS60
+type: Attack Story
+date: 2026-08
+platforms:
+  - browser-extensions
+
+summary: Firefox Add-ons crypto-wallet theft
+description: |
+  Socket documented 77 malicious Firefox Add-ons impersonating crypto
+  wallets and Web3 helpers. Once enabled they intercepted wallet
+  interactions in the page, stole seeds and private keys, and forwarded
+  them to attacker infrastructure. Companion campaign to the Chrome/Edge
+  drainers (AS58), on Mozilla’s store.
+
+attacks:
+  - attack: malicious firefox add-ons
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: 77 listings on addons.mozilla.org.
+      - techniqueID: T0110
+        techName: Advertise malicious artifact
+        tactic: Resource Development
+        comment: Wallet / Web3 impersonation in Firefox search.
+      - techniqueID: T0136
+        techName: Brandjacking
+        tactic: Initial Access
+        comment: Lookalike wallet product names.
+      - techniqueID: T0154
+        techName: Malicious IDE extension
+        tactic: Initial Access
+        comment: Browser-extension analogue with page-script access.
+      - techniqueID: T0184
+        techName: Harvesting sensitive information from files
+        tactic: Credential Access
+        comment: Seed phrases and private keys from wallet UIs.
+
+links:
+  - https://socket.dev/blog/firefox-crypto-wallet-theft

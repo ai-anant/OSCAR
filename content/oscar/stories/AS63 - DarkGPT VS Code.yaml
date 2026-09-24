@@ -1,0 +1,48 @@
+id: AS63
+type: Attack Story
+date: 2025-12
+platforms:
+  - vscode
+  - windows
+
+summary: DarkGPT / Codo-AI / bitcoin-auto-trading VS Code extensions
+description: |
+  SafeDep analyzed Visual Studio Marketplace extensions EffetMer.darkgpt
+  (1.2.0 / 1.2.2), BigBlack.codo-ai 1.0.0 and ozz3dev.bitcoin-auto-trading
+  1.2.0. On activate, extension.js launched scripts/run.bat via hidden
+  PowerShell. The batch file downloaded Lightshot.exe (a signed Windows
+  binary) and Lightshot.dll from syn1112223334445556667778889990.org and
+  ran the exe so it DLL-hijacked the signed host. The DLL then fetched a
+  further payload. Windows-only. Related analysis by Koi Security.
+
+attacks:
+  - attack: malicious vscode marketplace extensions
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Three extensions on the Visual Studio Marketplace.
+      - techniqueID: T0154
+        techName: Malicious IDE extension
+        tactic: Initial Access
+        comment: activate() spawned hidden PowerShell to run run.bat.
+      - techniqueID: T0151
+        techName: Installation scripts
+        tactic: Execution
+        comment: run.bat dropped Lightshot.exe / Lightshot.dll from a remote host.
+      - techniqueID: T0208
+        techName: Compromise code-signing identity
+        tactic: Defense Evasion
+        comment: Payload hid behind a signed Lightshot.exe via DLL hijack.
+      - techniqueID: T0184
+        techName: Harvesting sensitive information from files
+        tactic: Credential Access
+        comment: Downstream stealer targeted developer-machine data.
+
+links:
+  - https://safedep.io/dark-gpt-vscode-malicious-extension
+  - https://www.koi.ai/blog/the-vs-code-malware-that-captures-your-screen

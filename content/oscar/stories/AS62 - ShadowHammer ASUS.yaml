@@ -1,0 +1,47 @@
+id: AS62
+type: Attack Story
+date: 2018-06
+platforms:
+  - windows
+
+summary: Operation ShadowHammer (ASUS Live Update)
+description: |
+  Between June and November 2018 attackers replaced ASUS Live Update
+  packages on the official liveupdate01[s].asus.com servers with
+  backdoored builds signed with legitimate ASUSTeK certificates. Kaspersky
+  (Securelist, March 2019) reported more than 57,000 of its customers had
+  installed a backdoored updater; the real target set was a hardcoded list
+  of 600+ MAC addresses. Related to the 2017 ShadowPad / BARIUM / Winnti
+  cluster (see also AS5 CCleaner). Surgical supply-chain via a vendor
+  update channel, not a public language registry.
+
+attacks:
+  - attack: signed vendor updater backdoor
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0121
+        techName: Compromised legitimate artifact
+        tactic: Resource Development
+        comment: Official ASUS Live Update packages replaced on ASUS servers.
+      - techniqueID: T0209
+        techName: Compromise package registry or CDN origin
+        tactic: Initial Access
+        comment: liveupdate01[s].asus.com origin hosted the trojanized zips.
+      - techniqueID: T0208
+        techName: Compromise code-signing identity
+        tactic: Defense Evasion
+        comment: Binaries signed with legitimate ASUSTeK Computer Inc. certificates.
+      - techniqueID: T0138
+        techName: Backdoor in code
+        tactic: Persistence
+        comment: MAC-filtered backdoor; ~600 hardcoded adapter addresses.
+      - techniqueID: T0159
+        techName: Malicious artifact execution
+        tactic: Execution
+        comment: Preinstalled updater ran the signed payload as a trusted update.
+
+links:
+  - https://securelist.com/operation-shadowhammer/89992/

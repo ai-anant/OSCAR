@@ -27,6 +27,10 @@ platforms:
     label: Docker / containers
   - id: vscode
     label: VS Code / IDE
+  - id: browser-extensions
+    label: Browser extensions
+  - id: macos
+    label: macOS software
   - id: cdn
     label: CDN / web assets
   - id: cicd-saas

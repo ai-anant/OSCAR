@@ -1,0 +1,45 @@
+id: AS58
+type: Attack Story
+date: 2026-08
+platforms:
+  - browser-extensions
+
+summary: Chrome and Edge crypto-wallet drainer extensions
+description: |
+  Socket documented a campaign of Chrome Web Store and Microsoft Edge
+  Add-ons listings that impersonated crypto wallets, airdrop helpers, and
+  Web3 tools. Once installed they hooked page scripts, scraped seed
+  phrases and private keys, and drained connected wallets. Listings used
+  stolen or lookalike publisher names and review stuffing. This is the
+  browser-store analogue of typosquatting on npm.
+
+attacks:
+  - attack: malicious browser extensions
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Chrome Web Store and Edge Add-ons listings.
+      - techniqueID: T0110
+        techName: Advertise malicious artifact
+        tactic: Resource Development
+        comment: Wallet and airdrop impersonation in store search.
+      - techniqueID: T0136
+        techName: Brandjacking
+        tactic: Initial Access
+        comment: Lookalike wallet / Web3 product names.
+      - techniqueID: T0154
+        techName: Malicious IDE extension
+        tactic: Initial Access
+        comment: Browser-extension analogue — runs in the victim browser with page access.
+      - techniqueID: T0184
+        techName: Harvesting sensitive information from files
+        tactic: Credential Access
+        comment: Seed phrases, private keys, and connected-wallet session data.
+
+links:
+  - https://socket.dev/blog/chrome-edge-extension-wallet-drainer
