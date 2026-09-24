@@ -1,0 +1,46 @@
+id: AS66
+type: Attack Story
+date: 2026-07
+platforms:
+  - npm
+
+summary: "@joyfill/components and @joyfill/layouts obfuscated RAT"
+description: |
+  On 28 July 2026 malicious 2773-beta versions of @joyfill/components and
+  @joyfill/layouts shipped an obfuscated loader in the published dist
+  bundles only — not in GitHub source. The code runs on import, so
+  npm install --ignore-scripts does not stop it. It resolves C2 via Tron /
+  Aptos / BNB Smart Chain transactions, opens a Socket.IO RAT, and stages
+  a Python credential stealer. StepSecurity detonated the versions under
+  Harden-Runner.
+
+attacks:
+  - attack: hijacked official npm packages
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0121
+        techName: Compromised legitimate artifact
+        tactic: Resource Development
+        comment: Official Joyfill packages; payload only in published tarballs.
+      - techniqueID: T0159
+        techName: Malicious artifact execution
+        tactic: Execution
+        comment: Loader runs on import, not postinstall.
+      - techniqueID: T0172
+        techName: Runtime backdoor
+        tactic: Execution
+        comment: Socket.IO RAT plus Python stealer after blockchain C2 resolve.
+      - techniqueID: T0184
+        techName: Harvesting sensitive information from files
+        tactic: Credential Access
+        comment: Staged credential theft from developer workstations.
+      - techniqueID: T0169
+        techName: Push implants across repositories
+        tactic: Lateral Movement
+        comment: Worm-like self-propagation in later stages.
+
+links:
+  - https://www.stepsecurity.io/blog/joyfill-npm-supply-chain-compromise

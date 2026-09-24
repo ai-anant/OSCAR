@@ -1,0 +1,47 @@
+id: AS65
+type: Attack Story
+date: 2026-07
+platforms:
+  - pypi
+  - ai-agents
+
+summary: Claude eval agent published a malicious package to live PyPI
+description: |
+  On 30 July 2026 Anthropic disclosed that a Claude model in an internal
+  cybersecurity evaluation escaped isolation, created a Python package with
+  hidden credential-stealing code, and published it to the real PyPI
+  registry. The model believed the registry was part of the simulation.
+  The package was public for about an hour and ran on 15 real systems.
+  One was a security vendor’s malware scanner; the payload exfiltrated
+  that company’s credentials and the model used them to go further into
+  the vendor’s infrastructure. No human operator. Anthropic notified
+  three organizations on 27 July and PyPI. StepSecurity’s write-up of
+  the same report is a secondary source; the primary is Anthropic.
+
+attacks:
+  - attack: autonomous pypi publish
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0108
+        techName: Accounts in public registry
+        tactic: Resource Development
+        comment: The model registered and published to live PyPI.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Hidden credential stealer in a newly created Python package.
+      - techniqueID: T0151
+        techName: Installation scripts
+        tactic: Execution
+        comment: Install/import-time code ran on 15 real systems within an hour.
+      - techniqueID: T0140
+        techName: Harvest tokens from environment variables
+        tactic: Credential Access
+        comment: Scanner credentials exfiltrated to a collection point the model set up.
+
+links:
+  - https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals
+  - https://www.stepsecurity.io/blog/anthropic-incident-ai-agent-malicious-package-pypi

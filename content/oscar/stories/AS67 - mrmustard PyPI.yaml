@@ -1,0 +1,54 @@
+id: AS67
+type: Attack Story
+date: 2026-07
+platforms:
+  - pypi
+  - github-actions
+
+summary: mrmustard 0.7.4 PyPI credential stealer via stolen publish token
+description: |
+  On 24 July 2026 XanaduAI’s quantum photonics library mrmustard 0.7.4
+  appeared on PyPI with no matching git tag. An attacker who took over
+  maintainer ziofil used throwaway GitHub Actions workflows to recon
+  self-hosted runners (whoami) then POST the repo’s PyPI and Codecov
+  tokens to webhook.site. With the token they uploaded 0.7.4; only the
+  tarball’s __init__.py carried a fake _check_tf_compatibility() that
+  on import stole SSH keys, AWS and Kubernetes configs, skipped CI, and
+  installed cron, a .pth hook, and a shell-rc persistence. First reported
+  by Ilyas Makari / Aikido (GitHub issue 656); StepSecurity detonated it.
+
+attacks:
+  - attack: stolen pypi token plus poisoned wheel
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0113
+        techName: Compromised user account
+        tactic: Initial Access
+        comment: Maintainer GitHub account ziofil taken over.
+      - techniqueID: T0166
+        techName: Trigger pipeline execution
+        tactic: Execution
+        comment: Throwaway workflows on self-hosted runners then secret dump.
+      - techniqueID: T0140
+        techName: Harvest tokens from environment variables
+        tactic: Credential Access
+        comment: PyPI and Codecov secrets posted to webhook.site.
+      - techniqueID: T0121
+        techName: Compromised legitimate artifact
+        tactic: Resource Development
+        comment: 0.7.4 existed only on PyPI, not in git.
+      - techniqueID: T0184
+        techName: Harvesting sensitive information from files
+        tactic: Credential Access
+        comment: SSH keys, AWS credentials, kubeconfig on import.
+      - techniqueID: T0172
+        techName: Runtime backdoor
+        tactic: Execution
+        comment: Cron, site-packages .pth, and shell-rc persistence.
+
+links:
+  - https://www.stepsecurity.io/blog/compromised-pypi-mrmustard-0-7-4-credential-stealer
+  - https://github.com/XanaduAI/MrMustard/issues/656

@@ -1,0 +1,48 @@
+id: AS68
+type: Attack Story
+date: 2026-07
+platforms:
+  - rubygems
+
+summary: SleeperGem (git_credential_manager, Dendreo, fastlane plugin)
+description: |
+  On 18–19 July 2026 malicious versions of git_credential_manager
+  (impersonating Microsoft Git Credential Manager), Dendreo, and
+  fastlane-plugin-run_tests_firebase_testlab shipped on RubyGems with no
+  matching git tags. Two gems had been dormant for years. Each is a
+  loader: skip if CI env vars are set, otherwise fetch deploy.sh and a
+  native daemon from a Forgejo host (git.disroot.org), persist via systemd
+  user service and cron, and probe passwordless sudo for a setuid shell.
+  Named by Aikido; StepSecurity detonated under Harden-Runner.
+
+attacks:
+  - attack: dormant rubygems loaders
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0136
+        techName: Brandjacking
+        tactic: Initial Access
+        comment: git_credential_manager impersonates Microsoft Git Credential Manager.
+      - techniqueID: T0121
+        techName: Compromised legitimate artifact
+        tactic: Resource Development
+        comment: Dendreo and fastlane plugin versions with no source tags.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Coordinated RubyGems publishes 18–19 July 2026.
+      - techniqueID: T0159
+        techName: Malicious artifact execution
+        tactic: Execution
+        comment: Runs on require, not only install; skips CI.
+      - techniqueID: T0172
+        techName: Runtime backdoor
+        tactic: Execution
+        comment: Native daemon plus systemd/cron persistence.
+
+links:
+  - https://www.stepsecurity.io/blog/sleepergem-compromised-rubygems-drop-persistent-backdoor
+  - https://www.aikido.dev/blog/sleepergem-rubygems-supply-chain-attack

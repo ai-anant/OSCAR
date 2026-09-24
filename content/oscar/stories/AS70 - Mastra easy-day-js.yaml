@@ -1,0 +1,53 @@
+id: AS70
+type: Attack Story
+date: 2026-06
+platforms:
+  - npm
+
+summary: "@mastra scope poisoned via typosquat easy-day-js"
+description: |
+  Between 01:12 and 02:36 UTC on 17 June 2026 an attacker republished more
+  than 140 packages in the @mastra npm scope (@mastra/core ~918k weekly
+  downloads, mastra, create-mastra) after taking a dormant maintainer
+  account. Package source was untouched; each manifest gained one new
+  dependency, the dayjs typosquat easy-day-js. That package’s setup.cjs
+  postinstall pulled a second-stage backdoor (Windows/macOS/Linux) that
+  stole browser history and data from 166 crypto-wallet and security
+  extensions (password managers, MFA, Zapier) and used a DGA fallback C2.
+  Same playbook as the March 2026 axios compromise (AS22). OpenSourceMalware
+  analysis.
+
+attacks:
+  - attack: transitive typosquat
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0113
+        techName: Compromised user account
+        tactic: Initial Access
+        comment: Dormant @mastra maintainer account taken over.
+      - techniqueID: T0121
+        techName: Compromised legitimate artifact
+        tactic: Resource Development
+        comment: 140+ @mastra packages republished with one extra dependency.
+      - techniqueID: T0129
+        techName: Typosquatting
+        tactic: Initial Access
+        comment: easy-day-js clone of dayjs injected as a transitive dep.
+      - techniqueID: T0151
+        techName: Installation scripts
+        tactic: Execution
+        comment: setup.cjs postinstall self-deleting downloader.
+      - techniqueID: T0172
+        techName: Runtime backdoor
+        tactic: Execution
+        comment: Cross-platform second stage with DGA C2.
+      - techniqueID: T0184
+        techName: Harvesting sensitive information from files
+        tactic: Credential Access
+        comment: 166 wallet, password-manager, MFA, and Zapier extension stores.
+
+links:
+  - https://opensourcemalware.com/blog/mastra-npm-malware

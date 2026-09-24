@@ -1,0 +1,43 @@
+id: AS69
+type: Attack Story
+date: 2025-07
+platforms:
+  - npm
+
+summary: npm is 3.3.1 / 5.0.0 via phished old maintainer
+description: |
+  On 19 July 2025 malicious versions 3.3.1 and 5.0.0 of the widely used
+  type-checking package is were published. Attackers phished an old
+  maintainer, had that account dropped from the package, then emailed
+  current maintainer Jordan Harband claiming npm had removed them for
+  missing 2FA. Re-adding the account let the attackers publish the next
+  morning. Same phishing campaign as eslint-config-prettier. Malicious
+  code sat unnoticed for about six hours. StepSecurity write-up; Harband
+  posted the sequence on Bluesky.
+
+attacks:
+  - attack: social-engineered maintainer restore
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0113
+        techName: Compromised user account
+        tactic: Initial Access
+        comment: Old maintainer npm account phished.
+      - techniqueID: T0137
+        techName: Weak authentication methods
+        tactic: Initial Access
+        comment: Ownership restore via a 2FA-removal story, no extra verification.
+      - techniqueID: T0121
+        techName: Compromised legitimate artifact
+        tactic: Resource Development
+        comment: is 3.3.1 and 5.0.0 on npm.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Published from a restored maintainer session.
+
+links:
+  - https://www.stepsecurity.io/blog/another-npm-supply-chain-attack-the-is-package-compromise

@@ -1,5 +1,12 @@
 entries:
 - date: '2026-09-24'
+  id: history-pass-4
+  title: 'History pass 4: Anthropic PyPI agent, Joyfill, mrmustard, SleeperGem, is, Mastra'
+  items:
+  - 'Added AS65–AS70: Anthropic eval agent on live PyPI, Joyfill npm RAT, mrmustard 0.7.4, SleeperGem
+    RubyGems, npm is 3.3.1/5.0.0, @mastra/easy-day-js.'
+  - 'Sources: Anthropic, StepSecurity, Aikido, OpenSourceMalware.'
+- date: '2026-09-24'
   id: history-pass-3
   title: 'History pass 3: NuGet cheats, wallet drainers, ShadowHammer, Agama'
   items:
