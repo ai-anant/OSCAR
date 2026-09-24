@@ -1,0 +1,44 @@
+id: AS114
+type: Attack Story
+date: 2026-08
+platforms:
+  - npm
+  - windows
+  - linux
+
+summary: BRIDGEHEAD npm typosquats jump WSL to a Windows wallet stealer
+description: |
+  CloudSEK (20 Aug 2026): forty npm typosquats of chalk, axios, commander,
+  lodash, react and typescript. Each install script profiled the host and,
+  if it was Windows or WSL, reached across into the Windows host and ran
+  a 22MB Rust wrapper from a GitHub release. 98.6% of that file was an
+  in-memory encrypted payload (no drop on disk). npm packages were
+  removed; the GitHub asset stayed up ~39 hours and kept being downloaded.
+  Targets: crypto wallets, browser creds, cookies, Telegram sessions.
+
+attacks:
+  - attack: wsl bridge
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0129
+        techName: Typosquatting
+        tactic: Initial Access
+        comment: 40 misspellings of chalk, axios, commander, lodash, react, typescript.
+      - techniqueID: T0151
+        techName: Installation scripts
+        tactic: Execution
+        comment: Courier script; real payload fetched from GitHub releases.
+      - techniqueID: T0153
+        techName: Compromised developer workstation
+        tactic: Initial Access
+        comment: WSL install reached the Windows host underneath.
+      - techniqueID: T0184
+        techName: Harvesting sensitive information from files
+        tactic: Credential Access
+        comment: Wallets, browser creds, cookies, Telegram sessions.
+
+links:
+  - https://www.cloudsek.com/blog/bridgehead-npm-typosquatting-wsl-windows-crypto-wallet-stealer

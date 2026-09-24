@@ -1,5 +1,14 @@
 entries:
 - date: '2026-09-24'
+  id: rl-cloudsek-catalog
+  title: ReversingLabs + CloudSEK catalog
+  items:
+  - 'ReversingLabs: attached AsyncAPI trust/provenance post to AS50, ClickFix posts to AS19, Hugging Face/OpenAI
+    agent commentary to AS37, containment post to AS65. Twilio/Shai-Hulud/Red Hat already linked. Remaining
+    RL RSS is product/commentary (Gartner, Spectra, SOC), skipped.'
+  - 'CloudSEK: attached LiteLLM exposure dataset to AS17 (GHAPPIER already on AS34). New AS114 BRIDGEHEAD
+    (WSL→Windows wallet stealer) and AS115 TXTBOOK (T-Bank dependency confusion via DNS TXT).'
+- date: '2026-09-24'
   id: safedep-catalog-pass-2
   title: 'SafeDep catalog pass 2: remaining named campaigns'
   items:

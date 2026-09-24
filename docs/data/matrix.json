@@ -176,7 +176,7 @@
         ],
         "url": "techniques/T0109.html",
         "description": "Public registries are widely used by developers and organizations to download and distribute software packages and container images, making them an attractive target for attackers.\nIn this type of attack, the attacker creates a package or container image that contains malicious code or files, such as a backdoor or other malware.\nThe attacker then uploads the package or image to PyPI, DockerHub or other registry, posing as a legitimate user or creating a fake account.\nOnce the package or image is uploaded, it becomes available for download by other users who may unsuspectingly use it in their projects.\nThe supply chain attack can have far-reaching consequences as it can affect all systems that rely on the malicious package or image.\nFor example, a Python package that is downloaded from PyPI may be used by multiple applications and libraries, potentially compromising all systems that use it.\nSimilarly, a container image with a malicious payload may be used to deploy an application across multiple environments, leading to a widespread compromise.\n",
-        "incidentCount": 72
+        "incidentCount": 73
       },
       {
         "id": "T0110",
@@ -318,7 +318,7 @@
         ],
         "url": "techniques/T0120.html",
         "description": "Dependency confusion is a type of supply chain attack that occurs when an attacker exploits the way some package managers, such as npm and PyPI, resolve dependencies when installing software libraries.\nIn a typical software development project, developers rely on a variety of external libraries, often referred to as dependencies, to build their applications. \nThese libraries are typically stored in a remote repository, and developers use a package manager to install and manage them. \nAn attacker will utilize prior knowledge of usage of dependencies (*Discover used open-source dependencies*) to upload a malicious package with the same name to a public repository. \nThis might \"confuse\" package managers to use to public resource instead of the local one - thus executing or infecting the CI/CD. \nThis can happen on the developer's machine or the build system and has the potential to further steps of an attack - for example, if the malicious code exfiltrate an access token to production environment\n",
-        "incidentCount": 9
+        "incidentCount": 10
       },
       {
         "id": "T0122",
@@ -394,7 +394,7 @@
         ],
         "url": "techniques/T0129.html",
         "description": "Typosquatting is an attack technique where an attacker creates a package or container with a name that is very similar to a legitimate one, in hopes that a user will make a typo and download the malicious package or container. \nFor example, if a legitimate package is named \"numpy,\" an attacker might create a package named \"numpyy\" or \"numpi\" in hopes that a user will accidentally install the malicious package instead. \nIn container security, it involves creating a container image with a similar name to a legitimate one, while in open-source security, it involves creating a malicious package with a similar name to a legitimate one.\nOnce the user installs the malicious package or container, the attacker can potentially gain access to the user's system or data, or inject malicious code into the user's environment.\n",
-        "incidentCount": 21
+        "incidentCount": 22
       },
       {
         "id": "T0133",
@@ -467,7 +467,7 @@
         ],
         "url": "techniques/T0153.html",
         "description": "Compromised developer workstation attack is a technique where an attacker gains access to a developer's machine, which contains sensitive information such as access credentials, keys, and code repositories. \nThis technique can allow an attacker to steal code or modify it to include backdoors or other malicious code. \nThe attacker can also use this access to gain entry into other systems within the organization.\nThis type of attack can be carried out through various means, such as Phishing, Typosquatting, Brandjacking, malicious IDE extensions, or exploiting vulnerabilities in the developer's system. \nOnce the attacker gains access, they can install malware or backdoors, extract sensitive information, or use the machine as a foothold to carry out further attacks.\n",
-        "incidentCount": 8
+        "incidentCount": 9
       },
       {
         "id": "T0154",
@@ -655,7 +655,7 @@
         ],
         "url": "techniques/T0151.html",
         "description": "A package installation script injection attack is a type of security exploit that involves an attacker injecting malicious code into a legitimate software package installation script.\nThe attack typically occurs when an attacker gains access to the distribution network of a software vendor or package manager, and injects malicious code into the package installation script. \nThis code may be designed to carry out a range of nefarious activities, such as stealing sensitive information, creating backdoors, or executing arbitrary code on the victim's system.\nOnce the victim downloads and installs the compromised software package, the injected code is executed, giving the attacker access to the victim's system.\n",
-        "incidentCount": 31
+        "incidentCount": 32
       },
       {
         "id": "T0152",
@@ -715,7 +715,7 @@
         ],
         "url": "techniques/T0172.html",
         "description": "A runtime backdoor attack is a type of cyber attack where an attacker gains unauthorized access to a computer system or network and installs a malicious software or code that allows them to control the system or steal sensitive information.\nThis type of attack is called a \"runtime\" backdoor attack because it involves manipulating the system at runtime, while it is running, rather than during the development or deployment stages.\nThe attacker typically gains access to the system through a vulnerability, such as an unpatched software flaw or weak authentication mechanism. \nOnce inside, the attacker can install a backdoor that provides them with persistent access to the system, even after the initial entry point has been closed.\n",
-        "incidentCount": 17
+        "incidentCount": 18
       },
       {
         "id": "T0173",
@@ -1134,7 +1134,7 @@
         ],
         "url": "techniques/T0184.html",
         "description": "This attack involves searching for files within the CI/CD system that may contain sensitive information such as credentials, API keys, or other access tokens.\nThese files can include configuration files, scripts, and other files that are used as part of the build and deployment process. \nAttackers can use various techniques to locate these files, including directory traversal attacks, file inclusion vulnerabilities, or simply guessing common file names or paths.\nOnce the attacker has located a file containing sensitive information, they can extract the credentials and use them to gain unauthorized access to the targeted system or application.\n",
-        "incidentCount": 20
+        "incidentCount": 21
       },
       {
         "id": "T0185",
@@ -1279,7 +1279,7 @@
         ],
         "url": "techniques/T0145.html",
         "description": "Bypass of outbound traffic control in cloud security refers to an attack technique used by threat actors to bypass the security controls implemented by cloud service providers to prevent unauthorized exfiltration of data from their networks.\nThreat actors can use various tactics to bypass these outbound traffic controls and exfiltrate data from the cloud network. \nFor example, they may use encrypted channels such as VPNs or SSL/TLS to hide the data being transferred and make it difficult for the traffic control measures to detect it.\nAnother tactic that threat actors may use to bypass outbound traffic control is to blend in their data with legitimate traffic, making it harder to detect.\nFor example attacker may use Webhooks, Code repositories, Cloud storage that are legitimate to bypass outbound traffic control.\nThey may also use steganography techniques to conceal their data within seemingly innocuous files or images.\n",
-        "incidentCount": 4
+        "incidentCount": 5
       },
       {
         "id": "T0156",

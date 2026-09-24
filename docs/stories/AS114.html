@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BRIDGEHEAD npm typosquats jump WSL to a Windows wallet stealer · OSC&amp;R</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+    <header class="top">
+      <div class="ai-banner">This is an <strong>AI-maintained continuation</strong> of OSC&amp;R, preserving the original PBOM / pbom-dev work and carrying the project forward.</div>
+      <div class="bar">
+        <a class="brand" href="../index.html">OSC&amp;R</a>
+        <nav>
+          <a href="../index.html">Matrix</a>
+          <a href="../techniques/index.html">Techniques</a>
+          <a href="../incidents/index.html">Incident mapping</a>
+          <a href="../platforms/index.html">Platforms</a>
+          <a href="../stories/index.html">Attack stories</a>
+          <a href="../guidance.html">Guidance</a>
+          <a href="../origins.html">Origins</a>
+          <a href="../sources.html">Sources</a>
+          <a href="../changelog.html">Changelog</a>
+          <a href="../about.html">About</a>
+        </nav>
+      </div>
+    </header>
+<main>
+<p class="crumb">OSC&amp;R / <a href="index.html">Incidents</a> / AS114</p>
+
+        <p class="meta">AS114 · 2026-08</p>
+        <h1>BRIDGEHEAD npm typosquats jump WSL to a Windows wallet stealer</h1>
+        <p><a class="plat" href="../platforms/npm.html">npm</a><a class="plat" href="../platforms/windows.html">Windows software</a><a class="plat" href="../platforms/linux.html">Linux distro / packages</a></p>
+        <p>CloudSEK (20 Aug 2026): forty npm typosquats of chalk, axios, commander,<br>lodash, react and typescript. Each install script profiled the host and,<br>if it was Windows or WSL, reached across into the Windows host and ran<br>a 22MB Rust wrapper from a GitHub release. 98.6% of that file was an<br>in-memory encrypted payload (no drop on disk). npm packages were<br>removed; the GitHub asset stayed up ~39 hours and kept being downloaded.<br>Targets: crypto wallets, browser creds, cookies, Telegram sessions.</p>
+        <h2>Mapped OSC&amp;R elements</h2>
+        <ul><li><a href="../techniques/T0129.html">T0129</a> Typosquatting</li><li><a href="../techniques/T0151.html">T0151</a> Installation scripts</li><li><a href="../techniques/T0153.html">T0153</a> Compromised developer workstation</li><li><a href="../techniques/T0184.html">T0184</a> Harvesting sensitive information from files</li></ul>
+        <h2><span class="stage">supply-chain</span> wsl bridge</h2><div class="card"><p class="meta"><a href="../techniques/T0129.html">T0129</a> · Initial Access · Typosquatting</p><p>40 misspellings of chalk, axios, commander, lodash, react, typescript.</p></div><div class="card"><p class="meta"><a href="../techniques/T0151.html">T0151</a> · Execution · Installation scripts</p><p>Courier script; real payload fetched from GitHub releases.</p></div><div class="card"><p class="meta"><a href="../techniques/T0153.html">T0153</a> · Initial Access · Compromised developer workstation</p><p>WSL install reached the Windows host underneath.</p></div><div class="card"><p class="meta"><a href="../techniques/T0184.html">T0184</a> · Credential Access · Harvesting sensitive information from files</p><p>Wallets, browser creds, cookies, Telegram sessions.</p></div>
+        
+        <h2>Sources</h2>
+        <ul class='refs'><li><a href="https://www.cloudsek.com/blog/bridgehead-npm-typosquatting-wsl-windows-crypto-wallet-stealer" rel="noopener">https://www.cloudsek.com/blog/bridgehead-npm-typosquatting-wsl-windows-crypto-wallet-stealer</a></li></ul>
+        
+</main>
+
+    <footer>
+      <p>OSC&amp;R (Open Software Supply Chain Attack Reference) was created by
+      <a href="https://github.com/pbom-dev/OSCAR">pbom-dev</a> and its original contributors.
+      This fork is AI-maintained to continue that legacy. Apache-2.0. See
+      <a href="../about.html">About &amp; attribution</a>.</p>
+    </footer>
+</body>
+</html>
