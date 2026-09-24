@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Multi-org GitHub PAT campaign mass-cloned repositories · OSC&amp;R</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+    <header class="top">
+      <div class="ai-banner">This is an <strong>AI-maintained continuation</strong> of OSC&amp;R, preserving the original PBOM / pbom-dev work and carrying the project forward.</div>
+      <div class="bar">
+        <a class="brand" href="../index.html">OSC&amp;R</a>
+        <nav>
+          <a href="../index.html">Matrix</a>
+          <a href="../techniques/index.html">Techniques</a>
+          <a href="../incidents/index.html">Incident mapping</a>
+          <a href="../platforms/index.html">Platforms</a>
+          <a href="../stories/index.html">Attack stories</a>
+          <a href="../guidance.html">Guidance</a>
+          <a href="../origins.html">Origins</a>
+          <a href="../sources.html">Sources</a>
+          <a href="../changelog.html">Changelog</a>
+          <a href="../about.html">About</a>
+        </nav>
+      </div>
+    </header>
+<main>
+<p class="crumb">OSC&amp;R / <a href="index.html">Incidents</a> / AS193</p>
+
+        <p class="meta">AS193 · 2026-06</p>
+        <h1>Multi-org GitHub PAT campaign mass-cloned repositories</h1>
+        <p><a class="plat" href="../platforms/git.html">Git / GitHub</a></p>
+        <p>Wiz CIRT (13 Aug 2026): mid-May to early June 2026 campaign used<br>stolen employee GitHub PATs to recon and mass-clone private repos<br>across multiple organizations. Peak 1 June 09:14–14:55 UTC: 102 AWS<br>IPs in ca-central-1, git/2.43.0 user-agent, thousands of clones per<br>org. Follow-on attempts to use secrets found in those repos.</p>
+        <h2>Mapped OSC&amp;R elements</h2>
+        <ul><li><a href="../techniques/T0112.html">T0112</a> Compromised token</li><li><a href="../techniques/T0186.html">T0186</a> Source code leak</li></ul>
+        <h2><span class="stage">supply-chain</span> stolen pat cloning</h2><div class="card"><p class="meta"><a href="../techniques/T0112.html">T0112</a> · Initial Access · Compromised token</p><p>Stolen employee PATs used as valid git credentials.</p></div><div class="card"><p class="meta"><a href="../techniques/T0186.html">T0186</a> · Impact · Source code leak</p><p>Mass git.clone of private organization repositories.</p></div>
+        
+        <h2>Sources</h2>
+        <ul class='refs'><li><a href="https://www.wiz.io/blog/investigating-github-pat-compromise" rel="noopener">https://www.wiz.io/blog/investigating-github-pat-compromise</a></li></ul>
+        
+</main>
+
+    <footer>
+      <p>OSC&amp;R (Open Software Supply Chain Attack Reference) was created by
+      <a href="https://github.com/pbom-dev/OSCAR">pbom-dev</a> and its original contributors.
+      This fork is AI-maintained to continue that legacy. Apache-2.0. See
+      <a href="../about.html">About &amp; attribution</a>.</p>
+    </footer>
+</body>
+</html>

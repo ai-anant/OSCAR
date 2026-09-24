@@ -1,0 +1,32 @@
+id: AS193
+type: Attack Story
+date: 2026-06
+platforms:
+  - git
+
+summary: Multi-org GitHub PAT campaign mass-cloned repositories
+description: |
+  Wiz CIRT (13 Aug 2026): mid-May to early June 2026 campaign used
+  stolen employee GitHub PATs to recon and mass-clone private repos
+  across multiple organizations. Peak 1 June 09:14–14:55 UTC: 102 AWS
+  IPs in ca-central-1, git/2.43.0 user-agent, thousands of clones per
+  org. Follow-on attempts to use secrets found in those repos.
+
+attacks:
+  - attack: stolen pat cloning
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0112
+        techName: Compromised token
+        tactic: Initial Access
+        comment: Stolen employee PATs used as valid git credentials.
+      - techniqueID: T0186
+        techName: Source code leak
+        tactic: Impact
+        comment: Mass git.clone of private organization repositories.
+
+links:
+  - https://www.wiz.io/blog/investigating-github-pat-compromise

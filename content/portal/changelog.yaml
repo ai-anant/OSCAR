@@ -1,5 +1,17 @@
 entries:
 - date: '2026-09-24'
+  id: wiz-cisa-gtig-continue
+  title: Wiz PAT campaign, GTIG Batten Down, Notepad++ update hijack
+  items:
+  - Wiz CIRT GitHub PAT mass-clone campaign as AS193. LiteLLM Wiz post is product CVEs (default keys/MCP),
+    not the Team PCP package incident — not duplicated.
+  - GTIG “Batten Down Your Packages” attached to Team PCP and axios; SolarWinds and 3CX GTIG posts on
+    AS6/AS2; AI tracker on AS27.
+  - New AS194 Notepad++ update hijack (project incident note + GTIG). CISA supply-chain search page 2
+    still Nx/Axios/SBOM/ICS only.
+  - GitHub Changelog remaining items are platform features (stage-only npm tokens, Actions cache-mode),
+    not named incidents.
+- date: '2026-09-24'
   id: socket-leftovers-wiz-cisa-gtig
   title: Socket leftover articles plus Wiz/CISA/GTIG SSC
   items:
