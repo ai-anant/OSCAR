@@ -19,6 +19,8 @@ platforms:
     label: Maven / Java
   - id: nuget
     label: NuGet
+  - id: pub
+    label: pub.dev / Dart
   - id: github-actions
     label: GitHub Actions
   - id: jenkins

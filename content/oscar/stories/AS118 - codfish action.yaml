@@ -1,0 +1,41 @@
+id: AS118
+type: Attack Story
+date: 2026-06
+platforms:
+  - github-actions
+
+summary: codfish/semantic-release-action tag hijack (Miasma)
+description: |
+  Aikido (24 Jun 2026): an imposter force-push grafted two malicious
+  commits and moved sixteen tags including floating v2–v5 on
+  codfish/semantic-release-action. Composite action still runs the real
+  action (so CI looks green), then setup-bun and an obfuscated index.js.
+  Dead-drop marker thebeautifulsnadsoftime matches the Miasma toolkit
+  (AS50). Workflows on mutable tags pull attacker code on the next run.
+
+attacks:
+  - attack: floating tag rewrite
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0195
+        techName: Spoofed Commits
+        tactic: Defense Evasion
+        comment: Orphan commits reused a 2023 merge author/date/message.
+      - techniqueID: T0122
+        techName: Vulnerability in third-party CI/CD actions
+        tactic: Initial Access
+        comment: Mutable major tags v2–v5 repointed.
+      - techniqueID: T0140
+        techName: Harvest tokens from environment variables
+        tactic: Credential Access
+        comment: GITHUB_TOKEN / NPM_TOKEN on release workflows.
+      - techniqueID: T0168
+        techName: Exfiltration to code repositories
+        tactic: Exfiltration
+        comment: Miasma GitHub commit-search dead drop.
+
+links:
+  - https://www.aikido.dev/blog/compromised-github-action-codfish-steals-secrets

@@ -1,0 +1,38 @@
+id: AS117
+type: Attack Story
+date: 2026-09
+platforms:
+  - github-actions
+  - crates
+
+summary: Miri writes env secrets into target/ readable from PR caches
+description: |
+  Rust Security Response Team (21 Sep 2026): cargo miri stored all
+  environment variables under target/. Combined with GitHub Actions cache
+  (PRs can read caches written on main), a later PR can recover CI secrets
+  from the cache. Not a registry hijack — a tool+platform pairing. Short
+  term fix: Miri only preserves CARGO_* (except tokens) and OUT_DIR.
+  Nightly 2026-09-22.
+
+attacks:
+  - attack: cache readable secrets
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0130
+        techName: Harvest secrets from logs
+        tactic: Credential Access
+        comment: Secrets persisted in cached target/ rather than logs, same class.
+      - techniqueID: T0193
+        techName: Sensitive information in environment variables
+        tactic: Collection
+        comment: Miri dumped the full environment into the cache.
+      - techniqueID: T0162
+        techName: Passwords in CI/CD logs
+        tactic: Credential Access
+        comment: PR jobs could read the poisoned cache.
+
+links:
+  - https://blog.rust-lang.org/2026/09/21/github-actions-leaking-secrets-when-miri-output-is-cached/

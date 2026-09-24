@@ -1,0 +1,44 @@
+id: AS116
+type: Attack Story
+date: 2026-09
+platforms:
+  - pub
+  - macos
+
+summary: pub.dev universal_file_viewer ships XCSSET (infected maintainer)
+description: |
+  Aikido (8 Sep 2026): first malware they found on pub.dev. Flutter package
+  universal_file_viewer 0.1.5 was published from a maintainer machine
+  already infected with XCSSET. Dart lib/ is clean; example/ Android Gradle
+  and Xcode projects carry wormed build hooks. Adding the package as a
+  dependency does not fire it — cloning and building the example app does.
+  XCSSET then worms into every Gradle/Xcode/git repo on the machine and
+  steals browser/Telegram data. Unit 42 / Microsoft cover the malware
+  family; Aikido covers this registry hit.
+
+attacks:
+  - attack: infected-maintainer publish
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0153
+        techName: Compromised developer workstation
+        tactic: Initial Access
+        comment: Maintainer Mac already had XCSSET; publish shipped the hooks.
+      - techniqueID: T0121
+        techName: Compromised legitimate artifact
+        tactic: Resource Development
+        comment: universal_file_viewer 0.1.5 on pub.dev.
+      - techniqueID: T0111
+        techName: Malicious code contribution to an open-source repository
+        tactic: Resource Development
+        comment: Wormed example/ Gradle and pbxproj files.
+      - techniqueID: T0169
+        techName: Push implants across repositories
+        tactic: Lateral Movement
+        comment: android_finder / git_finder / replicator_finder on the next victim.
+
+links:
+  - https://www.aikido.dev/blog/compromised-flutter-package-on-pub-dev-contains-xcsset-malware

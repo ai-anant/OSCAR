@@ -1,5 +1,17 @@
 entries:
 - date: '2026-09-24'
+  id: remaining-sources-catalog
+  title: Catalog remaining tracked sources (Aikido, StepSecurity, Rust, RubyGems, Sansec)
+  items:
+  - Attached Aikido/StepSecurity write-ups onto existing incidents (Graphalgo, 7nohe, arrayref, Keyv,
+    AsyncAPI, Injective, SleeperGem, sckit, Team PCP, Anthropic, Joyfill, mrmustard, is, tj-actions).
+    RubyGems May spam post already on AS37.
+  - New AS116 pub.dev XCSSET (Aikido), AS117 Miri Actions cache (Rust blog), AS118 codfish/semantic-release-action
+    tag hijack (Aikido/Miasma), AS119 OptinMonster plugin chain (Sansec). Added pub.dev platform tag.
+  - Checkmarx Zero recent index is LLM hunting not new SSC campaigns (got-fetch already AS73). CrowdStrike/Morphisec/Wiz/GTIG/CISA/GitHub
+    Changelog remaining posts are non-SSC or already cited (PhantomRaven, Hades, DUSTMAKER). Socket research
+    posts were catalogued in earlier history passes.
+- date: '2026-09-24'
   id: rl-cloudsek-catalog
   title: ReversingLabs + CloudSEK catalog
   items:

@@ -200,7 +200,7 @@
         ],
         "url": "techniques/T0111.html",
         "description": "A malicious code contribution to an open-source repository attack is a type of cyber attack that involves an attacker submitting code with malicious intent to an open-source repository. \nOpen-source repositories are used to store and manage code for open-source software projects, and they rely on community contributions to improve and maintain the codebase. \nIn this attack, the attacker may submit a seemingly harmless code contribution to the repository. However, the code contains a hidden malware payload that can be triggered later to cause damage. \nAlternatively, the code may include a backdoor that allows the attacker to gain unauthorized access to the system running the open-source software.\nOnce the code is accepted into the repository, it can be difficult to detect the presence of the malicious payload.\nThe code may be integrated into the open-source project, distributed to other projects that depend on it, and even included in software distributions used by many people. \nThis can result in a wide-scale compromise of systems that use the affected code.\n",
-        "incidentCount": 12
+        "incidentCount": 13
       },
       {
         "id": "T0121",
@@ -213,7 +213,7 @@
         ],
         "url": "techniques/T0121.html",
         "description": "A compromised legitimate artifact attack is a type of cyber attack in which an attacker replaces a legitimate package or container image with a malicious version, often without the knowledge of the original developer or distributor. \nThis attack takes advantage of the trust that users place in legitimate packages or container images, which are often used to deploy software across multiple environments.\nIn this attack, the attacker may gain access to the repository or registry where the legitimate artifact is stored, either by exploiting a vulnerability or through social engineering tactics. \nThe attacker then replaces the legitimate artifact with a malicious version that contains malware or other harmful code. \nOnce the compromised artifact is downloaded and deployed, it can compromise the system and potentially cause significant harm, such as stealing sensitive data or taking control of the system.\n",
-        "incidentCount": 32
+        "incidentCount": 34
       },
       {
         "id": "T0141",
@@ -332,7 +332,7 @@
         ],
         "url": "techniques/T0122.html",
         "description": "The use of 3rd party Github actions is very common. \nSimilar to using 3rd party libraries this can also introduce security risks - a malicious Github action has access to very sensitive information - i.e exfiltrating environment variables, including backdoors or malware in source code, infecting build artifacts.\n",
-        "incidentCount": 5
+        "incidentCount": 6
       },
       {
         "id": "T0123",
@@ -467,7 +467,7 @@
         ],
         "url": "techniques/T0153.html",
         "description": "Compromised developer workstation attack is a technique where an attacker gains access to a developer's machine, which contains sensitive information such as access credentials, keys, and code repositories. \nThis technique can allow an attacker to steal code or modify it to include backdoors or other malicious code. \nThe attacker can also use this access to gain entry into other systems within the organization.\nThis type of attack can be carried out through various means, such as Phishing, Typosquatting, Brandjacking, malicious IDE extensions, or exploiting vulnerabilities in the developer's system. \nOnce the attacker gains access, they can install malware or backdoors, extract sensitive information, or use the machine as a foothold to carry out further attacks.\n",
-        "incidentCount": 9
+        "incidentCount": 10
       },
       {
         "id": "T0154",
@@ -576,7 +576,7 @@
         ],
         "url": "techniques/T0205.html",
         "description": "Instead of poisoning a package registry or source repository, the attacker\ntakes over a widely embedded CDN hostname, tag manager, or hosted JavaScript\nasset (domain expiry, registrar hijack, or operator acquisition) and serves\nmalicious content to every site that loads it. Polyfill.io (2024) is the\nreference case: a trusted script URL became a drive-by supply-chain implant\nfor hundreds of thousands of properties. OSC&R previously had no technique\nthat named this web-asset supply chain.\n",
-        "incidentCount": 3
+        "incidentCount": 4
       },
       {
         "id": "T0209",
@@ -770,7 +770,7 @@
         ],
         "url": "techniques/T0134.html",
         "description": "Add user attack technique involves adding a new user account with privileged access to the system, allowing the attacker to continue to perform malicious activities even if their original access is removed or revoked.\nIn this attack, the attacker gains access to the CI/CD system through various means, such as exploiting vulnerabilities or stealing credentials. \nOnce they have gained access, the attacker creates a new user account with elevated privileges, such as administrator or root access. \nThis allows the attacker to continue to access and control the system even if their original access is removed or blocked.\n",
-        "incidentCount": 0
+        "incidentCount": 1
       },
       {
         "id": "T0138",
@@ -999,7 +999,7 @@
         ],
         "url": "techniques/T0195.html",
         "description": "By modifying metadata in commits, attackers can easily push their own code to code repositories. For example, by changing the name and email in a commit it is possible to pass as a legitimate user.\n",
-        "incidentCount": 6
+        "incidentCount": 7
       },
       {
         "id": "T0198",
@@ -1070,7 +1070,7 @@
         ],
         "url": "techniques/T0130.html",
         "description": "This attack involves searching through logs generated by a system to find sensitive information that may have been inadvertently logged. \nSuch information can include passwords, API keys, access tokens, or other types of credentials.\nIn many systems, logs are generated automatically as part of normal operations.\nAttackers can exploit this by searching through the logs to find any sensitive information that has been logged. \nOnce this information is found, the attacker can use it to gain unauthorized access to the system or associated resources.\n",
-        "incidentCount": 2
+        "incidentCount": 3
       },
       {
         "id": "T0140",
@@ -1085,7 +1085,7 @@
         ],
         "url": "techniques/T0140.html",
         "description": "This type of attack involves searching for environment variables that may contain sensitive information and dumping their values to gain access to the associated resources.\nIn cloud and container environments, environment variables are often used to store configuration data, including sensitive information such as passwords, tokens and API keys. \nAttackers can exploit this by searching through the environment variables of running containers or cloud instances to find any sensitive information that has been inadvertently exposed. \nOnce the sensitive information has been obtained, attackers can use it to access and compromise the associated resources.\n",
-        "incidentCount": 26
+        "incidentCount": 27
       },
       {
         "id": "T0162",
@@ -1097,7 +1097,7 @@
         ],
         "url": "techniques/T0162.html",
         "description": "This type of attack involves searching through the logs generated by the CI/CD system for any sensitive information that may have been inadvertently logged, such as passwords, API keys, or other types of credentials.\nIn a CI/CD system, logs are generated automatically as part of the build and deployment process. \nThese logs may contain information about the system's configuration, the commands that were executed, and any errors or warnings that were encountered. \nIn some cases, these logs may also contain sensitive information that was inadvertently included in the command-line arguments, environment variables, or other parts of the system configuration.\n",
-        "incidentCount": 2
+        "incidentCount": 3
       },
       {
         "id": "T0163",
@@ -1191,7 +1191,7 @@
         ],
         "url": "techniques/T0169.html",
         "description": "The Push Implants across Repositories attack technique is a type of lateral movement tactic where an attacker gains access to a victim's code repository, modifies the code by implanting malicious code or backdoors, and pushes the modified code back to the repository.\nThis technique often involves the attacker stealing valid credentials, such as login credentials or SSH keys, to gain access to the victim's code repository. \nThey then modify the code, implanting the malicious code or backdoors, and push the modified code back to the repository. \nThe victim then unknowingly deploys the modified code, resulting in the compromise of their systems.\n",
-        "incidentCount": 10
+        "incidentCount": 11
       }
     ],
     "amount": 2,
@@ -1260,7 +1260,7 @@
         ],
         "url": "techniques/T0193.html",
         "description": "Environment variables are a type of configuration parameter that contain information about the environment in which an application is running. \nThese variables can be set and accessed by the operating system or application, and may contain sensitive information such as passwords, API keys, or other credentials.\n",
-        "incidentCount": 6
+        "incidentCount": 7
       }
     ],
     "amount": 5,
@@ -1302,7 +1302,7 @@
         ],
         "url": "techniques/T0168.html",
         "description": "Adversaries may exfiltrate data to a code repository rather than over their primary command and control channel. \nCode repositories are often accessible via an API (ex: https://api.github.com, https://gitlab.com/api). Access to these APIs are often over HTTPS, which gives the adversary an additional level of protection.\nExfiltration to a code repository can also provide a significant amount of cover to the adversary if it is a popular service already used by hosts within the network.\n",
-        "incidentCount": 4
+        "incidentCount": 5
       }
     ],
     "amount": 3,

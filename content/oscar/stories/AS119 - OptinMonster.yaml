@@ -1,0 +1,36 @@
+id: AS119
+type: Attack Story
+date: 2026-06
+platforms:
+  - cdn
+
+summary: OptinMonster / TrustPulse / PushEngage plugin supply chain
+description: |
+  Sansec (13 Jun 2026): malware in OptinMonster, TrustPulse and PushEngage
+  WordPress plugins added admin accounts and a hidden backdoor on ~1.2
+  million sites. First verified malware 12 Jun via a.* domains; tidio.cc
+  registered 28 Apr. Classic third-party web-plugin supply chain (same
+  class as Polyfill.io AS8).
+
+attacks:
+  - attack: plugin origin compromise
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0205
+        techName: Compromise third-party CDN or hosted web asset
+        tactic: Initial Access
+        comment: Widely embedded marketing plugins pushed malware to 1.2M sites.
+      - techniqueID: T0121
+        techName: Compromised legitimate artifact
+        tactic: Resource Development
+        comment: OptinMonster, TrustPulse, PushEngage.
+      - techniqueID: T0134
+        techName: Add user
+        tactic: Persistence
+        comment: Malware added admin accounts plus a hidden backdoor.
+
+links:
+  - https://sansec.io/research/optinmonster-supply-chain-attack

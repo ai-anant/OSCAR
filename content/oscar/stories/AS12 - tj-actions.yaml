@@ -87,3 +87,4 @@ gaps:
 links:
   - https://www.cisa.gov/news-events/alerts/2025/03/18/supply-chain-compromise-third-party-github-action-cve-2025-30066
   - https://github.com/tj-actions/changed-files/issues/2463
+  - https://www.stepsecurity.io/blog/harden-runner-detection-tj-actions-changed-files-action-is-compromised

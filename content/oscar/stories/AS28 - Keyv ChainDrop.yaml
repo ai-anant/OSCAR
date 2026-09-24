@@ -65,3 +65,5 @@ links:
   - https://www.jaredwray.com/blog/keyv-and-cacheable-chaindrop-worm
   - https://opensourcemalware.com/blog/new-npm-worm-keyv-cachable
   - https://safedep.io/keyv-npm-supply-chain-compromise
+  - https://www.aikido.dev/blog/keyv-and-friends-compromised-in-npm-supply-chain-attack
+  - https://www.stepsecurity.io/blog/chaindrop-npm-worm
