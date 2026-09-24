@@ -17,6 +17,7 @@
           <a href="../index.html">Matrix</a>
           <a href="../techniques/index.html">Techniques</a>
           <a href="../incidents/index.html">Incident mapping</a>
+          <a href="../platforms/index.html">Platforms</a>
           <a href="../stories/index.html">Attack stories</a>
           <a href="../guidance.html">Guidance</a>
           <a href="../origins.html">Origins</a>
@@ -31,7 +32,7 @@
 
         <p class="meta">AS19 · 2026-09</p>
         <h1>Brevo Cloudflare Worker ClickFix</h1>
-        <p><span class="plat">CDN / web assets</span></p>
+        <p><a class="plat" href="../platforms/cdn.html">CDN / web assets</a></p>
         <p>On 14 September 2026 an attacker used a long-lived Cloudflare API key that<br>had been hardcoded in Brevo application source to deploy a Worker that<br>rewrote HTML and embedded JavaScript at the CDN edge for about five and<br>a half hours. Origin files were unmodified, so integrity checks on source<br>missed it. Sansec observed malware on Brevo pages and on 100k+ customer<br>sites embedding Brevo widgets: a ClickFix overlay plus a WordPress<br>backdoor plugin aimed at logged-in administrators. Brevo&#x27;s own<br>post-mortem confirms the key, the Worker, and the window.</p>
         <h2>Mapped OSC&amp;R elements</h2>
         <ul><li><a href="../techniques/T0189.html">T0189</a> Secrets in configuration files</li><li><a href="../techniques/T0112.html">T0112</a> Compromised token</li><li><a href="../techniques/T0205.html">T0205</a> Compromise third-party CDN or hosted web asset</li><li><a href="../techniques/T0180.html">T0180</a> Compromise services / servers</li><li><a href="../techniques/T0159.html">T0159</a> Malicious artifact execution</li><li><a href="../techniques/T0119.html">T0119</a> Cross-site scripting</li><li><a href="../techniques/T0138.html">T0138</a> Backdoor in code</li><li><a href="../techniques/T0201.html">T0201</a> Customers compromised</li></ul>

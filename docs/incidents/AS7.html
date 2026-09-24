@@ -17,6 +17,7 @@
           <a href="../index.html">Matrix</a>
           <a href="../techniques/index.html">Techniques</a>
           <a href="../incidents/index.html">Incident mapping</a>
+          <a href="../platforms/index.html">Platforms</a>
           <a href="../stories/index.html">Attack stories</a>
           <a href="../guidance.html">Guidance</a>
           <a href="../origins.html">Origins</a>
@@ -31,7 +32,7 @@
 
         <p class="meta">AS7 · 2024-03</p>
         <h1>XZ Utils backdoor</h1>
-        <p><span class="plat">Linux distro / packages</span></p>
+        <p><a class="plat" href="../platforms/linux.html">Linux distro / packages</a></p>
         <p>Over roughly two years a persona known as Jia Tan slowly gained maintainer<br>trust on xz/liblzma, then shipped a stealth backdoor in versions 5.6.0 and<br>5.6.1. The implant hid in test files and the build system, not in obvious<br>C sources, and activated during the build of systemd-linked sshd on some<br>Linux distributions. Discovery was accidental (Andres Freund, March 2024)<br>before the backdoored packages reached most stable releases. This is the<br>canonical &quot;patient social engineering of an open-source maintainer&quot; case.</p>
         <h2>Mapped OSC&amp;R elements</h2>
         <ul><li><a href="../techniques/T0111.html">T0111</a> Malicious code contribution to an open-source repository</li><li><a href="../techniques/T0138.html">T0138</a> Backdoor in code</li><li><a href="../techniques/T0198.html">T0198</a> Malicious Build Time Dependencies</li><li><a href="../techniques/T0191.html">T0191</a> Malicious code in artifacts</li><li><a href="../techniques/T0170.html">T0170</a> Malicious compiler or interpreter</li><li><a href="../techniques/T0150.html">T0150</a> Runtime logic bomb</li><li><a href="../techniques/T0172.html">T0172</a> Runtime backdoor</li><li><a href="../techniques/T0201.html">T0201</a> Customers compromised</li></ul>

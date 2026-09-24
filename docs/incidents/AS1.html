@@ -17,6 +17,7 @@
           <a href="../index.html">Matrix</a>
           <a href="../techniques/index.html">Techniques</a>
           <a href="../incidents/index.html">Incident mapping</a>
+          <a href="../platforms/index.html">Platforms</a>
           <a href="../stories/index.html">Attack stories</a>
           <a href="../guidance.html">Guidance</a>
           <a href="../origins.html">Origins</a>
@@ -31,7 +32,7 @@
 
         <p class="meta">AS1 · 2018-04</p>
         <h1>Webmin 1.900 RCE</h1>
-        <p><span class="plat">Linux distro / packages</span></p>
+        <p><a class="plat" href="../platforms/linux.html">Linux distro / packages</a></p>
         <p>Webmin, a widely used server administration software, experienced a security incident where attackers introduced a backdoor into version 1.890. This backdoor allowed individuals with knowledge of it to execute commands with root privileges. Subsequent versions, 1.900 to 1.920, also contained a similar backdoor in the code, but it was not exploitable in a default Webmin installation. Only if an administrator had specifically enabled the &quot;changing of expired passwords&quot; feature in the Webmin Configuration ⇾ Authentication section, could it be utilized by an attacker. These vulnerabilities were not accidental flaws; rather, the Webmin source code was deliberately modified to include a concealed vulnerability.</p>
         <h2>Mapped OSC&amp;R elements</h2>
         <ul><li><a href="../techniques/T0180.html">T0180</a> Compromise services / servers</li><li><a href="../techniques/T0191.html">T0191</a> Malicious code in artifacts</li><li><a href="../techniques/T0135.html">T0135</a> Vulnerable CICD system</li><li><a href="../techniques/T0194.html">T0194</a> Outdated software components</li><li><a href="../techniques/T0172.html">T0172</a> Runtime backdoor</li></ul>

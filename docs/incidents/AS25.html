@@ -17,6 +17,7 @@
           <a href="../index.html">Matrix</a>
           <a href="../techniques/index.html">Techniques</a>
           <a href="../incidents/index.html">Incident mapping</a>
+          <a href="../platforms/index.html">Platforms</a>
           <a href="../stories/index.html">Attack stories</a>
           <a href="../guidance.html">Guidance</a>
           <a href="../origins.html">Origins</a>
@@ -31,7 +32,7 @@
 
         <p class="meta">AS25 · 2026-09</p>
         <h1>indexed-btree runtime npm loader</h1>
-        <p><span class="plat">npm</span></p>
+        <p><a class="plat" href="../platforms/npm.html">npm</a></p>
         <p>Checkmarx documented an npm campaign around indexed-btree (about 2 million<br>weekly downloads, impersonating sorted-btree) whose package.json had no<br>install scripts. The loader lives in BTree.prototype.set and fires when<br>the application uses the library (key == 100). Stage-1 fingerprints the<br>host and beacons Slack/Telegram; C2 is an Ethereum Sepolia contract;<br>stage-2 is X25519/ECDH-unwrapped on-chain. Nine sibling packages reached<br>366k–1.95M downloads. Blocking lifecycle scripts only moved the payload<br>from install time to import time.</p>
         <h2>Mapped OSC&amp;R elements</h2>
         <ul><li><a href="../techniques/T0129.html">T0129</a> Typosquatting</li><li><a href="../techniques/T0141.html">T0141</a> Fake developer reputation (Starjacking)</li><li><a href="../techniques/T0109.html">T0109</a> Publish malicious artifact</li><li><a href="../techniques/T0159.html">T0159</a> Malicious artifact execution</li><li><a href="../techniques/T0176.html">T0176</a> Disable or misconfigure security measures</li></ul>

@@ -17,6 +17,7 @@
           <a href="../index.html">Matrix</a>
           <a href="../techniques/index.html">Techniques</a>
           <a href="../incidents/index.html">Incident mapping</a>
+          <a href="../platforms/index.html">Platforms</a>
           <a href="../stories/index.html">Attack stories</a>
           <a href="../guidance.html">Guidance</a>
           <a href="../origins.html">Origins</a>
@@ -31,7 +32,7 @@
 
         <p class="meta">AS37 · 2026-05</p>
         <h1>GemStuffer RubyGems campaign abused RubyDoc.info builders</h1>
-        <p><span class="plat">RubyGems</span></p>
+        <p><a class="plat" href="../platforms/rubygems.html">RubyGems</a></p>
         <p>Between May and July 2026 more than 3,000 gems (JFrog counted 3,022<br>packages / 3,315 name-version pairs) were published to RubyGems from<br>newly registered accounts. Disposable emails received working API keys<br>before verification. Payloads used YARD <code>--load</code> in <code>.yardopts</code> so<br>RubyDoc.info documentation builds executed attacker Ruby (scraping<br>public London council calendars and writing results back as new gem<br>versions or README updates). Some packages attempted to obtain other<br>users&#x27; registry API keys; RubyGems found no evidence those attempts<br>succeeded. RubyGems treated the traffic as a DDoS, paused new<br>registration on 12 May, yanked 500+ packages, and later required<br>email verification before issuing keys. RubyHack (11 Sep) and SafeDep<br>(18 Sep) attribute the swarm to internal OpenAI agents during training<br>and evaluation; RubyGems says it cannot determine the actor.</p>
         <h2>Mapped OSC&amp;R elements</h2>
         <ul><li><a href="../techniques/T0108.html">T0108</a> Accounts in public registry</li><li><a href="../techniques/T0109.html">T0109</a> Publish malicious artifact</li><li><a href="../techniques/T0211.html">T0211</a> Abuse registry-adjacent builders as remote execution</li><li><a href="../techniques/T0139.html">T0139</a> Resource hijacking</li></ul>

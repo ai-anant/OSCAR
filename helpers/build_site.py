@@ -116,6 +116,7 @@ def page(title, body, root_prefix, crumb, extra_head=""):
           <a href="{root_prefix}index.html">Matrix</a>
           <a href="{root_prefix}techniques/index.html">Techniques</a>
           <a href="{root_prefix}incidents/index.html">Incident mapping</a>
+          <a href="{root_prefix}platforms/index.html">Platforms</a>
           <a href="{root_prefix}stories/index.html">Attack stories</a>
           <a href="{root_prefix}guidance.html">Guidance</a>
           <a href="{root_prefix}origins.html">Origins</a>
@@ -245,11 +246,14 @@ h2 { font-size: 1.15rem; margin-top: 1.6rem; }
 .plat { display: inline-block; background: var(--chip); border: 1px solid var(--line);
   padding: 0.08rem 0.4rem; font-size: 0.72rem; color: var(--teal); margin: 0.1rem 0.15rem 0 0; }
 .filter-bar { display: flex; flex-wrap: wrap; gap: 0.35rem; margin: 0.8rem 0 1.1rem; }
-.filter-bar button {
+.filter-bar button, .filter-bar a {
   background: var(--panel); border: 1px solid var(--line); color: var(--muted);
   padding: 0.25rem 0.55rem; cursor: pointer; font: inherit; font-size: 0.8rem;
+  text-decoration: none; display: inline-block;
 }
-.filter-bar button.on, .filter-bar button:hover { border-color: var(--copper); color: var(--ink); }
+.filter-bar button.on, .filter-bar button:hover, .filter-bar a:hover, .filter-bar a.on {
+  border-color: var(--copper); color: var(--ink); text-decoration: none;
+}
 .card.hidden { display: none !important; }
 .meta { color: var(--muted); font-size: 0.9rem; }
 .card { background: var(--panel); border: 1px solid var(--line); padding: 1rem 1.1rem; margin: 0.8rem 0; }
@@ -539,48 +543,51 @@ def build(dest):
 
     ordered_stories = sorted(stories.values(), key=story_sort_key, reverse=True)
 
-    def story_card(s, prefix):
+    def story_card(s, story_href, plat_href):
         n_techs = sum(len(a.get("techniques") or []) for a in s.get("attacks") or [])
         plats = [p for p in (s.get("platforms") or []) if p]
         chips = "".join(
-            f'<span class="plat">{html.escape(plat_labels.get(p, p))}</span>' for p in plats
+            f'<span class="plat">{html.escape(plat_labels.get(p, p))}</span>'
+            if not plat_href
+            else (
+                f'<a class="plat" href="{html.escape(plat_href)}{html.escape(p)}.html" '
+                f'onclick="event.stopPropagation()">{html.escape(plat_labels.get(p, p))}</a>'
+            )
+            for p in plats
         )
         return (
             f'<a class="card inc-card" data-platforms="{" ".join(html.escape(p) for p in plats)}" '
-            f'href="{prefix}{html.escape(s["id"])}.html" style="display:block">'
+            f'href="{story_href}{html.escape(s["id"])}.html" style="display:block">'
             f'<div class="stage">{html.escape(str(s.get("date") or ""))}</div>'
             f'<h3>{html.escape(s["summary"])}</h3>'
             f'<p>{chips}</p>'
             f'<p class="muted">{n_techs} mapped OSC&amp;R techniques</p></a>'
         )
 
-    used_plats = sorted({p for s in stories.values() for p in (s.get("platforms") or []) if p})
-    filter_btns = ['<button type="button" class="on" data-plat-filter="all">All</button>']
+    used_plats = sorted(
+        {p for s in stories.values() for p in (s.get("platforms") or []) if p},
+        key=lambda p: (
+            -sum(1 for s in stories.values() if p in (s.get("platforms") or [])),
+            p,
+        ),
+    )
+    plat_counts = {
+        p: sum(1 for s in stories.values() if p in (s.get("platforms") or []))
+        for p in used_plats
+    }
+    filter_btns = ['<a class="on" href="index.html">All</a>']
     for p in used_plats:
         filter_btns.append(
-            f'<button type="button" data-plat-filter="{html.escape(p)}">{html.escape(plat_labels.get(p, p))}</button>'
+            f'<a href="../platforms/{html.escape(p)}.html">'
+            f'{html.escape(plat_labels.get(p, p))} ({plat_counts[p]})</a>'
         )
-    filter_js = """
-    <script>
-    const btns = document.querySelectorAll('[data-plat-filter]');
-    btns.forEach(btn => btn.addEventListener('click', () => {
-      const p = btn.getAttribute('data-plat-filter');
-      btns.forEach(b => b.classList.toggle('on', b === btn));
-      document.querySelectorAll('.inc-card').forEach(c => {
-        const plats = (c.getAttribute('data-platforms') || '').split(/\\s+/);
-        c.classList.toggle('hidden', p !== 'all' && !plats.includes(p));
-      });
-    }));
-    </script>
-    """
 
     inc_index = f"""
     <h1>Incident → OSC&amp;R mapping</h1>
     <p class="lede">Real software-supply-chain incidents mapped onto OSC&amp;R techniques,
-    tagged by the registry or platform that was hit.</p>
+    tagged by the registry or platform that was hit. Open a platform for the full group.</p>
     <div class="filter-bar">{''.join(filter_btns)}</div>
-    {''.join(story_card(s, '') for s in ordered_stories)}
-    {filter_js}
+    {''.join(story_card(s, '', '../platforms/') for s in ordered_stories)}
     """
     write(os.path.join(dest, "incidents", "index.html"), page("Incident mapping", inc_index, "../", "OSC&amp;R / Incident mapping"))
 
@@ -588,9 +595,50 @@ def build(dest):
     <h1>Attack stories</h1>
     <p class="lede">Narrative reconstructions of supply-chain attacks, using OSC&amp;R techniques
     as the shared language.</p>
-    {''.join(story_card(s, '') for s in ordered_stories)}
+    {''.join(story_card(s, '', '../platforms/') for s in ordered_stories)}
     """
     write(os.path.join(dest, "stories", "index.html"), page("Attack stories", st_index, "../", "OSC&amp;R / Attack stories"))
+
+    by_plat = {p: [] for p in used_plats}
+    for s in ordered_stories:
+        for p in s.get("platforms") or []:
+            if p in by_plat:
+                by_plat[p].append(s)
+    agg_cards = []
+    for p in used_plats:
+        items = by_plat[p]
+        agg_cards.append(
+            f'<a class="card" href="{html.escape(p)}.html" style="display:block">'
+            f'<h3>{html.escape(plat_labels.get(p, p))}</h3>'
+            f'<p class="muted"><b>{len(items)}</b> incidents</p></a>'
+        )
+    plat_index = f"""
+    <h1>Incidents by platform</h1>
+    <p class="lede">Group aggregates — open a platform to see every mapped incident that hit it
+    (npm, PyPI, GitHub Actions, Terraform, and the rest).</p>
+    {''.join(agg_cards)}
+    """
+    write(os.path.join(dest, "platforms", "index.html"), page("Platforms", plat_index, "../", "OSC&amp;R / Platforms"))
+    for p in used_plats:
+        items = by_plat[p]
+        other = "".join(
+            f'<a href="{html.escape(q)}.html">{html.escape(plat_labels.get(q, q))} ({plat_counts[q]})</a>'
+            for q in used_plats if q != p
+        )
+        body = f"""
+        <h1>{html.escape(plat_labels.get(p, p))}</h1>
+        <p class="lede">{len(items)} mapped incident(s) that touched this platform or registry.</p>
+        <div class="filter-bar">
+          <a href="index.html">All platforms</a>
+          <a class="on" href="{html.escape(p)}.html">{html.escape(plat_labels.get(p, p))} ({len(items)})</a>
+          {other}
+        </div>
+        {''.join(story_card(s, '../incidents/', './') for s in items)}
+        """
+        write(
+            os.path.join(dest, "platforms", f"{p}.html"),
+            page(plat_labels.get(p, p), body, "../", f'OSC&amp;R / <a href="index.html">Platforms</a> / {html.escape(plat_labels.get(p, p))}'),
+        )
 
     for s in stories.values():
         stages = []
@@ -631,7 +679,8 @@ def build(dest):
         ) + "</ul>"
         plats = [p for p in (s.get("platforms") or []) if p]
         plat_html = "".join(
-            f'<span class="plat">{html.escape(plat_labels.get(p, p))}</span>' for p in plats
+            f'<a class="plat" href="../platforms/{html.escape(p)}.html">{html.escape(plat_labels.get(p, p))}</a>'
+            for p in plats
         )
         body = f"""
         <p class="meta">{html.escape(s["id"])} · {html.escape(str(s.get("date") or ""))}</p>
