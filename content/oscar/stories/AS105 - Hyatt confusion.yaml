@@ -1,0 +1,30 @@
+id: AS105
+type: Attack Story
+date: 2025-10
+platforms:
+  - npm
+
+summary: Hyatt internal-dependency impersonation on npm
+description: |
+  SafeDep found three malicious npm packages disguised as Hyatt internal
+  dependencies, using install hooks. Same class as Schedaero (AS94) and
+  sl4x0 (AS104).
+
+attacks:
+  - attack: internal name squat
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0120
+        techName: Dependency confusion
+        tactic: Initial Access
+        comment: Hyatt-looking package names on public npm.
+      - techniqueID: T0151
+        techName: Installation scripts
+        tactic: Execution
+        comment: Install hooks executed the payload.
+
+links:
+  - https://safedep.io/malicious-npm-packages-hyatt-campaign

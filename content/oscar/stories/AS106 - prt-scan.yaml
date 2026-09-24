@@ -1,0 +1,35 @@
+id: AS106
+type: Attack Story
+date: 2026-04
+platforms:
+  - github-actions
+  - git
+
+summary: prt-scan 219 malicious PRs stealing CI secrets
+description: |
+  SafeDep: a throwaway GitHub account submitted 219+ malicious pull
+  requests in a single day, each carrying a 352-line payload that steals
+  CI secrets. Adjacent to Megalodon (AS91) and hackerbot-claw (AS75).
+
+attacks:
+  - attack: mass malicious prs
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0147
+        techName: Scan public CI/CD configurations for secrets and vulnerable actions
+        tactic: Reconnaissance
+        comment: 219+ target repos in one day.
+      - techniqueID: T0166
+        techName: Trigger pipeline execution
+        tactic: Execution
+        comment: Malicious PRs as the detonation path.
+      - techniqueID: T0140
+        techName: Harvest tokens from environment variables
+        tactic: Credential Access
+        comment: 352-line CI-secret payload.
+
+links:
+  - https://safedep.io/prt-scan-github-actions-exfiltration-campaign

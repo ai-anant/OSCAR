@@ -1,0 +1,30 @@
+id: AS112
+type: Attack Story
+date: 2026-03
+platforms:
+  - npm
+
+summary: SANDWORM_MODE (yarsg / format-defaults)
+description: |
+  SafeDep’s step-by-step analysis of the SANDWORM_MODE npm campaign:
+  malicious packages yarsg and format-defaults with a decoded
+  multi-stage payload. Named campaign, not a one-off typosquat.
+
+attacks:
+  - attack: named loader campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: yarsg and format-defaults.
+      - techniqueID: T0159
+        techName: Malicious artifact execution
+        tactic: Execution
+        comment: Multi-stage SANDWORM_MODE loader.
+
+links:
+  - https://safedep.io/npm-sandworm-mode-supply-chain-attack

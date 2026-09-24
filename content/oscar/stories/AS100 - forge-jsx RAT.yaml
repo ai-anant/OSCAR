@@ -1,0 +1,40 @@
+id: AS100
+type: Attack Story
+date: 2026-04
+platforms:
+  - npm
+
+summary: forge-jsx / forge-jsxy Autodesk-themed npm RAT
+description: |
+  SafeDep: forge-jsx posed as an Autodesk Forge SDK and on install
+  deployed a keylogger, recursive .env scanner, and shell-history theft.
+  After takedown, forge-jsxy continued with 22 versions over 22 days
+  (crypto stealers and more). Same operator, iterated RAT.
+
+attacks:
+  - attack: sdk impersonation rat
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0136
+        techName: Brandjacking
+        tactic: Initial Access
+        comment: Autodesk Forge SDK impersonation.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: forge-jsx then 22 forge-jsxy versions.
+      - techniqueID: T0151
+        techName: Installation scripts
+        tactic: Execution
+        comment: Install-time keylogger and .env scanner.
+      - techniqueID: T0172
+        techName: Runtime backdoor
+        tactic: Execution
+        comment: Multi-platform RAT, iterated 22 days.
+
+links:
+  - https://safedep.io/malicious-forge-jsx-npm-rat
+  - https://safedep.io/malicious-forge-jsxy-npm-rat-evolution

@@ -1,0 +1,34 @@
+id: AS102
+type: Attack Story
+date: 2026-04
+platforms:
+  - npm
+
+summary: node-ipc 9.1.6 / 9.2.3 / 12.0.1 DNS-exfil stealer
+description: |
+  SafeDep: maintainer-account takeover of node-ipc published 9.1.6,
+  9.2.3 and 12.0.1 with an 80KB obfuscated credential stealer using DNS
+  exfiltration. Distinct from the 2022 protestware incident.
+
+attacks:
+  - attack: ato plus dns exfil
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0113
+        techName: Compromised user account
+        tactic: Initial Access
+        comment: Maintainer account takeover.
+      - techniqueID: T0121
+        techName: Compromised legitimate artifact
+        tactic: Resource Development
+        comment: node-ipc 9.1.6, 9.2.3, 12.0.1.
+      - techniqueID: T0145
+        techName: Bypass of outbound traffic control
+        tactic: Exfiltration
+        comment: DNS exfiltration of credentials.
+
+links:
+  - https://safedep.io/malicious-node-ipc-npm-compromise

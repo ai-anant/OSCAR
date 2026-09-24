@@ -1,0 +1,31 @@
+id: AS97
+type: Attack Story
+date: 2026-06
+platforms:
+  - npm
+  - windows
+
+summary: ProcWire Windows binary split across five npm packages
+description: |
+  SafeDep: five npm packages published in a 12-minute burst split a
+  Windows binary dropper across a fake utility toolkit. The loader hid
+  in a preinstall hook.
+
+attacks:
+  - attack: split dropper
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Five packages in 12 minutes, one dropper split across them.
+      - techniqueID: T0151
+        techName: Installation scripts
+        tactic: Execution
+        comment: preinstall loader on Windows.
+
+links:
+  - https://safedep.io/procwire-npm-windows-dropper-campaign

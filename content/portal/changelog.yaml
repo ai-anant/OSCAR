@@ -1,5 +1,15 @@
 entries:
 - date: '2026-09-24'
+  id: safedep-catalog-pass-2
+  title: 'SafeDep catalog pass 2: remaining named campaigns'
+  items:
+  - Attached SafeDep tinycolor/Qix posts to AS48 and AS15.
+  - 'New AS95–AS106 and AS110–AS113: Polymarket, wshu.net, ProcWire, axios Epsilon typosquats, terminal3airport
+    adware, forge-jsx, art-template, node-ipc 2026, Claude Code hooks, sl4x0, Hyatt, prt-scan, @fairwords
+    worm, Strapi plugins, SANDWORM_MODE, hermes-px.'
+  - SafeDep product/guidance posts still skipped. Smaller one-off package posts (nyc-config, SLF4J impersonation,
+    cookie-parser, llm-oracle, ixpresso) remain.
+- date: '2026-09-24'
   id: safedep-catalog-pass
   title: 'SafeDep catalog: attach overlaps, add six new incidents'
   items:

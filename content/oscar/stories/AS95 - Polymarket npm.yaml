@@ -1,0 +1,44 @@
+id: AS95
+type: Attack Story
+date: 2026-05
+platforms:
+  - npm
+  - git
+
+summary: Polymarket fake-bot and wallet-key npm campaign
+description: |
+  SafeDep documented a Polymarket-themed npm campaign in several posts:
+  a GitHub “arbitrage bot” (53 forks) with a malicious npm dependency;
+  nine packages that social-engineer a postinstall prompt and exfiltrate
+  raw wallet keys; and redeem-onchain-sdk impersonating a helper SDK
+  (SSH, AWS, npm tokens, Docker, Chrome). Ten coordinated npm accounts
+  and four delivery techniques.
+
+attacks:
+  - attack: social-engineered crypto packages
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0110
+        techName: Advertise malicious artifact
+        tactic: Resource Development
+        comment: Fake Polymarket bot repo and helper-SDK names.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Nine-plus packages across ten npm accounts.
+      - techniqueID: T0151
+        techName: Installation scripts
+        tactic: Execution
+        comment: postinstall prompt harvested raw private keys.
+      - techniqueID: T0184
+        techName: Harvesting sensitive information from files
+        tactic: Credential Access
+        comment: Wallet keys, SSH, AWS, npm, Docker, Chrome.
+
+links:
+  - https://safedep.io/defi-infostealer-fake-arbitrage-bot-npm
+  - https://safedep.io/malicious-polymarket-npm-crypto-wallet-drainer
+  - https://safedep.io/redeem-onchain-sdk-polymarket-npm-malware

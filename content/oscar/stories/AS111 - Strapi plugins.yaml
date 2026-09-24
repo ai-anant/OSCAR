@@ -1,0 +1,34 @@
+id: AS111
+type: Attack Story
+date: 2026-04
+platforms:
+  - npm
+
+summary: 36 malicious Strapi plugin packages (Redis RCE / DB theft)
+description: |
+  SafeDep: thirty-six malicious npm packages from four sock-puppet
+  accounts (umarbek1233, kekylf12, tikeqemif26 and one more) posing as
+  Strapi plugins. Payload: Redis RCE, database theft, C2 agent.
+
+attacks:
+  - attack: fake plugins
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: 36 packages, four accounts.
+      - techniqueID: T0136
+        techName: Brandjacking
+        tactic: Initial Access
+        comment: Strapi plugin impersonation.
+      - techniqueID: T0118
+        techName: Command injection
+        tactic: Execution
+        comment: Redis RCE in the payload.
+
+links:
+  - https://safedep.io/malicious-npm-strapi-plugin-events-c2-agent

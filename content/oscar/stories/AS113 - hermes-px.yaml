@@ -1,0 +1,35 @@
+id: AS113
+type: Attack Story
+date: 2026-04
+platforms:
+  - pypi
+  - ai-agents
+
+summary: hermes-px PyPI steals AI conversations
+description: |
+  SafeDep: hermes-px on PyPI steals AI conversations via triple-encrypted
+  exfiltration to Supabase, routing through a hijacked university
+  endpoint. Name-squatting on “Hermes” AI tooling.
+
+attacks:
+  - attack: ai conversation theft
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0129
+        techName: Typosquatting
+        tactic: Initial Access
+        comment: hermes-px on PyPI.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Triple-encrypted exfil to Supabase.
+      - techniqueID: T0200
+        techName: Proprietary data stolen
+        tactic: Impact
+        comment: AI conversation contents.
+
+links:
+  - https://safedep.io/malicious-hermes-px-pypi-ai-conversation-stealer

@@ -1,0 +1,34 @@
+id: AS98
+type: Attack Story
+date: 2026-06
+platforms:
+  - npm
+
+summary: turbo-axios / faster-axios Epsilon Stealer typosquats
+description: |
+  SafeDep: two axios typosquats (turbo-axios, faster-axios) delivered
+  Epsilon Stealer through a four-stage chain, including an Electron
+  stage. Distinct from the real axios compromise (AS22).
+
+attacks:
+  - attack: axios lookalikes
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0129
+        techName: Typosquatting
+        tactic: Initial Access
+        comment: turbo-axios and faster-axios.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Four-stage Epsilon Stealer chain.
+      - techniqueID: T0172
+        techName: Runtime backdoor
+        tactic: Execution
+        comment: Electron-stage stealer.
+
+links:
+  - https://safedep.io/malicious-faster-axios-npm-epsilon-stealer

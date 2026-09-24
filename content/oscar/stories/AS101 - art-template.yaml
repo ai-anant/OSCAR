@@ -1,0 +1,35 @@
+id: AS101
+type: Attack Story
+date: 2026-05
+platforms:
+  - npm
+
+summary: art-template 4.13.3–4.13.7 ownership-transfer hijack
+description: |
+  SafeDep: art-template versions 4.13.3 through 4.13.7 were compromised
+  after the original author was tricked into transferring npm ownership.
+  Payload delivered an iOS browser exploit kit. Account-transfer social
+  engineering, not a phishing-token add.
+
+attacks:
+  - attack: ownership transfer
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0113
+        techName: Compromised user account
+        tactic: Initial Access
+        comment: Author tricked into transferring package ownership.
+      - techniqueID: T0121
+        techName: Compromised legitimate artifact
+        tactic: Resource Development
+        comment: art-template 4.13.3–4.13.7.
+      - techniqueID: T0159
+        techName: Malicious artifact execution
+        tactic: Execution
+        comment: iOS browser exploit kit in the hijacked releases.
+
+links:
+  - https://safedep.io/art-template-npm-supply-chain-compromise

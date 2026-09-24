@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Polymarket fake-bot and wallet-key npm campaign · OSC&amp;R</title>
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
+    <header class="top">
+      <div class="ai-banner">This is an <strong>AI-maintained continuation</strong> of OSC&amp;R, preserving the original PBOM / pbom-dev work and carrying the project forward.</div>
+      <div class="bar">
+        <a class="brand" href="../index.html">OSC&amp;R</a>
+        <nav>
+          <a href="../index.html">Matrix</a>
+          <a href="../techniques/index.html">Techniques</a>
+          <a href="../incidents/index.html">Incident mapping</a>
+          <a href="../platforms/index.html">Platforms</a>
+          <a href="../stories/index.html">Attack stories</a>
+          <a href="../guidance.html">Guidance</a>
+          <a href="../origins.html">Origins</a>
+          <a href="../sources.html">Sources</a>
+          <a href="../changelog.html">Changelog</a>
+          <a href="../about.html">About</a>
+        </nav>
+      </div>
+    </header>
+<main>
+<p class="crumb">OSC&amp;R / <a href="index.html">Incidents</a> / AS95</p>
+
+        <p class="meta">AS95 · 2026-05</p>
+        <h1>Polymarket fake-bot and wallet-key npm campaign</h1>
+        <p><a class="plat" href="../platforms/npm.html">npm</a><a class="plat" href="../platforms/git.html">Git / GitHub</a></p>
+        <p>SafeDep documented a Polymarket-themed npm campaign in several posts:<br>a GitHub “arbitrage bot” (53 forks) with a malicious npm dependency;<br>nine packages that social-engineer a postinstall prompt and exfiltrate<br>raw wallet keys; and redeem-onchain-sdk impersonating a helper SDK<br>(SSH, AWS, npm tokens, Docker, Chrome). Ten coordinated npm accounts<br>and four delivery techniques.</p>
+        <h2>Mapped OSC&amp;R elements</h2>
+        <ul><li><a href="../techniques/T0110.html">T0110</a> Advertise malicious artifact</li><li><a href="../techniques/T0109.html">T0109</a> Publish malicious artifact</li><li><a href="../techniques/T0151.html">T0151</a> Installation scripts</li><li><a href="../techniques/T0184.html">T0184</a> Harvesting sensitive information from files</li></ul>
+        <h2><span class="stage">supply-chain</span> social-engineered crypto packages</h2><div class="card"><p class="meta"><a href="../techniques/T0110.html">T0110</a> · Resource Development · Advertise malicious artifact</p><p>Fake Polymarket bot repo and helper-SDK names.</p></div><div class="card"><p class="meta"><a href="../techniques/T0109.html">T0109</a> · Resource Development · Publish malicious artifact</p><p>Nine-plus packages across ten npm accounts.</p></div><div class="card"><p class="meta"><a href="../techniques/T0151.html">T0151</a> · Execution · Installation scripts</p><p>postinstall prompt harvested raw private keys.</p></div><div class="card"><p class="meta"><a href="../techniques/T0184.html">T0184</a> · Credential Access · Harvesting sensitive information from files</p><p>Wallet keys, SSH, AWS, npm, Docker, Chrome.</p></div>
+        
+        <h2>Sources</h2>
+        <ul class='refs'><li><a href="https://safedep.io/defi-infostealer-fake-arbitrage-bot-npm" rel="noopener">https://safedep.io/defi-infostealer-fake-arbitrage-bot-npm</a></li><li><a href="https://safedep.io/malicious-polymarket-npm-crypto-wallet-drainer" rel="noopener">https://safedep.io/malicious-polymarket-npm-crypto-wallet-drainer</a></li><li><a href="https://safedep.io/redeem-onchain-sdk-polymarket-npm-malware" rel="noopener">https://safedep.io/redeem-onchain-sdk-polymarket-npm-malware</a></li></ul>
+        
+</main>
+
+    <footer>
+      <p>OSC&amp;R (Open Software Supply Chain Attack Reference) was created by
+      <a href="https://github.com/pbom-dev/OSCAR">pbom-dev</a> and its original contributors.
+      This fork is AI-maintained to continue that legacy. Apache-2.0. See
+      <a href="../about.html">About &amp; attribution</a>.</p>
+    </footer>
+</body>
+</html>

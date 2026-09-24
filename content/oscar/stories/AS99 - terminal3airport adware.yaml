@@ -1,0 +1,30 @@
+id: AS99
+type: Attack Story
+date: 2026-06
+platforms:
+  - npm
+
+summary: 141 npm packages as adware hosting (terminal3airport)
+description: |
+  SafeDep: npm account terminal3airport published 141 packages containing
+  a web proxy unblocker disguised as tutoring websites, loading pop-under
+  adware. Abuse of the registry as a CDN, not a targeted ATO.
+
+attacks:
+  - attack: registry as cdn
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: 141 packages from one account.
+      - techniqueID: T0110
+        techName: Advertise malicious artifact
+        tactic: Resource Development
+        comment: Tutoring-site disguise.
+
+links:
+  - https://safedep.io/malicious-npm-terminal3airport-proxy-adware-spam

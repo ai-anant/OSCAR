@@ -1,0 +1,34 @@
+id: AS96
+type: Attack Story
+date: 2026-06
+platforms:
+  - npm
+
+summary: wshu.net 15-package multi-stage infostealer
+description: |
+  SafeDep: one actor seeded 15 npm packages across 13 throwaway scopes
+  in a single morning. Each shipped a ~270KB obfuscated downloader
+  behind a postinstall hook (wshu.net campaign).
+
+attacks:
+  - attack: burst publish
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0108
+        techName: Accounts in public registry
+        tactic: Resource Development
+        comment: 13 throwaway scopes in one morning.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: 15 packages, same ~270KB downloader.
+      - techniqueID: T0151
+        techName: Installation scripts
+        tactic: Execution
+        comment: postinstall obfuscated downloader.
+
+links:
+  - https://safedep.io/wshu-net-npm-credential-stealer-campaign

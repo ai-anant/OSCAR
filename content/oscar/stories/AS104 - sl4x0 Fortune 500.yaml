@@ -1,0 +1,30 @@
+id: AS104
+type: Attack Story
+date: 2026-03
+platforms:
+  - npm
+
+summary: sl4x0 dependency confusion (92 packages, Fortune 500)
+description: |
+  SafeDep: sl4x0 actor published 92 dependency-confusion packages aimed
+  at 20+ organizations including Adobe, Ford, Sony, and Coca-Cola.
+  Internal-looking names on public npm.
+
+attacks:
+  - attack: multi-org name squat
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0120
+        techName: Dependency confusion
+        tactic: Initial Access
+        comment: 92 packages, 20+ orgs (Adobe, Ford, Sony, Coca-Cola).
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Sustained campaign under sl4x0.
+
+links:
+  - https://safedep.io/sl4x0-dependency-confusion-campaign

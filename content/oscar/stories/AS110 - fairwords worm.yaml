@@ -1,0 +1,35 @@
+id: AS110
+type: Attack Story
+date: 2026-04
+platforms:
+  - npm
+
+summary: "@fairwords credential worm"
+description: |
+  SafeDep: three @fairwords npm packages were compromised with a
+  self-propagating worm that harvests credentials, crypto wallets, and
+  Chrome passwords. Same worm class as Shai-Hulud / ChainDrop, scoped
+  to that publisher.
+
+attacks:
+  - attack: scoped worm
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0121
+        techName: Compromised legitimate artifact
+        tactic: Resource Development
+        comment: Three @fairwords packages.
+      - techniqueID: T0169
+        techName: Push implants across repositories
+        tactic: Lateral Movement
+        comment: Self-propagating credential worm.
+      - techniqueID: T0184
+        techName: Harvesting sensitive information from files
+        tactic: Credential Access
+        comment: Wallets and Chrome passwords.
+
+links:
+  - https://safedep.io/malicious-fairwords-npm-credential-worm

@@ -1,0 +1,37 @@
+id: AS103
+type: Attack Story
+date: 2026-04
+platforms:
+  - npm
+  - ai-agents
+  - linux
+
+summary: Typosquat npm packages backdoor Claude Code SessionStart
+description: |
+  SafeDep: five typosquatting npm packages shipped a hidden ELF binary
+  that fires on install and re-runs via Claude Code’s SessionStart hook
+  on every developer session. Persistence in the AI-agent lifecycle,
+  not only npm postinstall (T0210).
+
+attacks:
+  - attack: agent hook persistence
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0129
+        techName: Typosquatting
+        tactic: Initial Access
+        comment: Five lookalike npm packages.
+      - techniqueID: T0151
+        techName: Installation scripts
+        tactic: Execution
+        comment: Hidden ELF runs at install.
+      - techniqueID: T0210
+        techName: Poison AI coding-agent config or workspace
+        tactic: Persistence
+        comment: Claude Code SessionStart hook re-runs the payload.
+
+links:
+  - https://safedep.io/malicious-npm-packages-claude-code-hooks
