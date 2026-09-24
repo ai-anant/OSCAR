@@ -1,0 +1,44 @@
+id: AS76
+type: Attack Story
+date: 2026-07
+platforms:
+  - npm
+
+summary: Typosquatted AI-tool npm packages under a real-identity publisher
+description: |
+  OpenSourceMalware documented a July 2026 npm campaign of typosquatted
+  AI-tool packages that collected git, SSH, and cloud identity data in
+  install scripts and never needed to run at import time. Unlike typical
+  throwaway-account floods, packages were published under a coherent real
+  identity and iterated across at least five packages, including
+  @aspect-security/argon2 — a broken-shell package that only had to be
+  installed. Beacon traffic was dressed as telemetry. OSM’s point: install
+  time is code execution, and runtime scanners miss packages with no
+  runtime.
+
+attacks:
+  - attack: install-time telemetry stealers
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0129
+        techName: Typosquatting
+        tactic: Initial Access
+        comment: AI-tool name lookalikes on npm.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Iterated across five packages under one identity, including @aspect-security/argon2.
+      - techniqueID: T0151
+        techName: Installation scripts
+        tactic: Execution
+        comment: Harvest happened at install; no runtime payload required.
+      - techniqueID: T0184
+        techName: Harvesting sensitive information from files
+        tactic: Credential Access
+        comment: git emails, SSH material, cloud configs, employer DNS.
+
+links:
+  - https://opensourcemalware.com/blog/cybersecurity-startup-publishes-infostealers-to-npm

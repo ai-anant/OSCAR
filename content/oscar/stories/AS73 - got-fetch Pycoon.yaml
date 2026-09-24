@@ -1,0 +1,43 @@
+id: AS73
+type: Attack Story
+date: 2025-07
+platforms:
+  - npm
+  - windows
+
+summary: got-fetch 5.1.11/5.1.12 Pycoon stealer
+description: |
+  Checkmarx Zero found got-fetch 5.1.11 and 5.1.12 (~50k weekly downloads)
+  shipping crashreporter.dll, a Pycoon information stealer for Windows.
+  Maintainer @alexghr confirmed the same npnjs.com phishing mail as the
+  eslint-config-prettier wave (AS72), rotated tokens, and deprecated the
+  package. Payload differs from the prettier node-gyp.dll dropper. npm
+  removed the versions; cached copies in internal registries remained a
+  risk.
+
+attacks:
+  - attack: phished maintainer publish
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0113
+        techName: Compromised user account
+        tactic: Initial Access
+        comment: Maintainer phished via npnjs.com lookalike.
+      - techniqueID: T0121
+        techName: Compromised legitimate artifact
+        tactic: Resource Development
+        comment: got-fetch 5.1.11 and 5.1.12 on npm.
+      - techniqueID: T0151
+        techName: Installation scripts
+        tactic: Execution
+        comment: Dropped crashreporter.dll (Pycoon) on Windows.
+      - techniqueID: T0184
+        techName: Harvesting sensitive information from files
+        tactic: Credential Access
+        comment: Pycoon information stealer.
+
+links:
+  - https://checkmarx.com/zero-post/supply-chain-phishing-campaign-drops-more-malware-into-npm-got-fetch-5-1/

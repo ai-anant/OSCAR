@@ -1,5 +1,13 @@
 entries:
 - date: '2026-09-24'
+  id: history-pass-5
+  title: 'History pass 5: NotPetya, prettier phishing, Nx s1ngularity, hackerbot-claw'
+  items:
+  - 'Added AS71–AS76: NotPetya via M.E.Doc (ESET), eslint-config-prettier phishing, got-fetch Pycoon (Checkmarx),
+    Nx s1ngularity (nx.dev), hackerbot-claw (StepSecurity), Aspect Security npm install-time stealers
+    (OSM).'
+  - 'Sources: ESET WeLiveSecurity, StepSecurity, Checkmarx Zero, Nx post-mortem, OpenSourceMalware.'
+- date: '2026-09-24'
   id: history-pass-4
   title: 'History pass 4: Anthropic PyPI agent, Joyfill, mrmustard, SleeperGem, is, Mastra'
   items:

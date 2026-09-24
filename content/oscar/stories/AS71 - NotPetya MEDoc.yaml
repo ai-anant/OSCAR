@@ -1,0 +1,46 @@
+id: AS71
+type: Attack Story
+date: 2017-06
+platforms:
+  - windows
+  - linux
+
+summary: NotPetya via M.E.Doc accounting-software updates
+description: |
+  On 27 June 2017 Diskcoder.C (NotPetya / ExPetr) wiped machines across
+  Ukraine and companies with VPN links into Ukraine. ESET showed the
+  initial vector was a supply-chain push through M.E.Doc, Ukrainian
+  accounting software: a PHP backdoor (medoc_online.php) on the vendor
+  update/FTP server let TeleBots ship a malicious update that applied
+  without user interaction. The same channel had earlier delivered
+  Win32/Filecoder.AESNI.C (XData). NotPetya then spread inside LANs via
+  EternalBlue/DoublePulsar, Mimikatz + PsExec, and WMI. MBR encryption
+  was modified so recovery was impossible; the ransom screen was a
+  decoy. First-party write-up: ESET WeLiveSecurity, 30 June 2017.
+
+attacks:
+  - attack: poisoned vendor updater
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0209
+        techName: Compromise package registry or CDN origin
+        tactic: Initial Access
+        comment: M.E.Doc update/FTP server hosted a PHP backdoor and pushed the update.
+      - techniqueID: T0121
+        techName: Compromised legitimate artifact
+        tactic: Resource Development
+        comment: Automatic M.E.Doc updates carried Diskcoder.C.
+      - techniqueID: T0138
+        techName: Backdoor in code
+        tactic: Persistence
+        comment: medoc_online.php on the vendor server; TeleBots VBS backdoors earlier.
+      - techniqueID: T0159
+        techName: Malicious artifact execution
+        tactic: Execution
+        comment: Update applied without user interaction, then LAN worming.
+
+links:
+  - https://www.welivesecurity.com/2017/06/30/telebots-back-supply-chain-attacks-against-ukraine/

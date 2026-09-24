@@ -1,0 +1,62 @@
+id: AS74
+type: Attack Story
+date: 2025-08
+platforms:
+  - npm
+  - github-actions
+
+summary: Nx s1ngularity (stolen npm token via Actions injection)
+description: |
+  On 26 August 2025 attackers published malicious versions of nx and
+  several @nx/* packages for about four hours. Nx’s post-mortem: a
+  pull_request_target workflow echoed unsanitized PR titles, repository
+  Actions permissions were still read/write, and publish.yml allowed
+  workflow_dispatch. That let an external PR steal a GitHub token, plant
+  a branch, trigger publish, and exfiltrate NPM_TOKEN. Stolen token
+  bypassed CI; packages lacked npm provenance. postinstall scanned the
+  host, tried local AI CLIs, and uploaded loot to public GitHub repos via
+  gh. ~6M weekly installs. Primary: nx.dev post-mortem and GHSA-cxm3-wv7p-598c.
+
+attacks:
+  - attack: actions injection to stolen npm token
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0118
+        techName: Command injection
+        tactic: Execution
+        comment: Unsanitized PR title in a pull_request_target workflow.
+      - techniqueID: T0202
+        techName: Inadequate CI/CD workflow permissions
+        tactic: Persistence
+        comment: Repo still on GitHub’s old read/write Actions default.
+      - techniqueID: T0166
+        techName: Trigger pipeline execution
+        tactic: Execution
+        comment: workflow_dispatch used via API to run publish.yml on a planted branch.
+      - techniqueID: T0140
+        techName: Harvest tokens from environment variables
+        tactic: Credential Access
+        comment: NPM_TOKEN stolen from the publish job.
+      - techniqueID: T0121
+        techName: Compromised legitimate artifact
+        tactic: Resource Development
+        comment: nx 20.9–21.8 and matching @nx/* versions, no provenance.
+      - techniqueID: T0206
+        techName: Forge or omit build provenance
+        tactic: Defense Evasion
+        comment: Detection clue — malicious publishes were unsigned.
+      - techniqueID: T0151
+        techName: Installation scripts
+        tactic: Execution
+        comment: postinstall scanned the host and invoked local AI tools.
+      - techniqueID: T0168
+        techName: Exfiltration to code repositories
+        tactic: Exfiltration
+        comment: Loot uploaded to public GitHub repos via GitHub CLI.
+
+links:
+  - https://nx.dev/blog/s1ngularity-postmortem
+  - https://github.com/nrwl/nx/security/advisories/GHSA-cxm3-wv7p-598c

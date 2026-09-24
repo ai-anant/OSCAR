@@ -1,0 +1,44 @@
+id: AS72
+type: Attack Story
+date: 2025-07
+platforms:
+  - npm
+  - windows
+
+summary: eslint-config-prettier phishing (npnjs.com) and node-gyp.dll
+description: |
+  In July 2025 maintainer JounQin confirmed a phishing mail that added a
+  malicious npm token. Attackers published eslint-config-prettier 8.10.1,
+  9.1.1, 10.1.6 and 10.1.7 plus eslint-plugin-prettier 4.2.2/4.2.3,
+  synckit 0.11.9, @pkgr/core 0.2.8 and napi-postinstall 0.3.1. Affected
+  prettier versions ran install.js which launched node-gyp.dll on Windows
+  (CVE assigned). Same npnjs.com campaign later hit npm is (AS69) and
+  got-fetch (AS73). Dependabot/Renovate PRs upgraded some repos onto the
+  bad versions. StepSecurity investigation.
+
+attacks:
+  - attack: phished maintainer token
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0113
+        techName: Compromised user account
+        tactic: Initial Access
+        comment: Phishing added a new npm token on JounQin’s account.
+      - techniqueID: T0121
+        techName: Compromised legitimate artifact
+        tactic: Resource Development
+        comment: Multiple prettier-ecosystem packages republished.
+      - techniqueID: T0151
+        techName: Installation scripts
+        tactic: Execution
+        comment: install.js launched node-gyp.dll on Windows.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Versions published outside the project’s CI, no provenance.
+
+links:
+  - https://www.stepsecurity.io/blog/supply-chain-security-alert-eslint-config-prettier-package-shows-signs-of-compromise
