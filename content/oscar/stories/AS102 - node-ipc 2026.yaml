@@ -2,36 +2,40 @@ id: AS102
 type: Attack Story
 date: 2026-04
 platforms:
-  - npm
-
+- npm
 summary: node-ipc 9.1.6 / 9.2.3 / 12.0.1 DNS-exfil stealer
-description: |
-  SafeDep: maintainer-account takeover of node-ipc published 9.1.6,
+description: 'SafeDep: maintainer-account takeover of node-ipc published 9.1.6,
+
   9.2.3 and 12.0.1 with an 80KB obfuscated credential stealer using DNS
+
   exfiltration. Distinct from the 2022 protestware incident.
 
+  '
 attacks:
-  - attack: ato plus dns exfil
-    index: 1
-    stage: supply-chain
-    customer: 0
-    supplier: 2
-    techniques:
-      - techniqueID: T0113
-        techName: Compromised user account
-        tactic: Initial Access
-        comment: Maintainer account takeover.
-      - techniqueID: T0121
-        techName: Compromised legitimate artifact
-        tactic: Resource Development
-        comment: node-ipc 9.1.6, 9.2.3, 12.0.1.
-      - techniqueID: T0145
-        techName: Bypass of outbound traffic control
-        tactic: Exfiltration
-        comment: DNS exfiltration of credentials.
-
+- attack: ato plus dns exfil
+  index: 1
+  stage: supply-chain
+  customer: 0
+  supplier: 2
+  techniques:
+  - techniqueID: T0113
+    techName: Compromised user account
+    tactic: Initial Access
+    comment: Maintainer account takeover.
+  - techniqueID: T0121
+    techName: Compromised legitimate artifact
+    tactic: Resource Development
+    comment: node-ipc 9.1.6, 9.2.3, 12.0.1.
+  - techniqueID: T0145
+    techName: Bypass of outbound traffic control
+    tactic: Exfiltration
+    comment: DNS exfiltration of credentials.
+  - techniqueID: T0100
+    techName: Discover naming conventions
+    tactic: Reconnaissance
+    comment: Company internals discovered via docs/DNS to mirror private names.
 links:
-  - https://safedep.io/malicious-node-ipc-npm-compromise
-  - https://socket.dev/blog/node-ipc-package-compromised
-  - https://snyk.io/blog/peacenotwar-protestware-node-ipc-package-vulnerability/
-  - https://github.com/advisories/GHSA-97m3-w2cp-4xx6
+- https://safedep.io/malicious-node-ipc-npm-compromise
+- https://socket.dev/blog/node-ipc-package-compromised
+- https://snyk.io/blog/peacenotwar-protestware-node-ipc-package-vulnerability/
+- https://github.com/advisories/GHSA-97m3-w2cp-4xx6

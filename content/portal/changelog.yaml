@@ -1,5 +1,18 @@
 entries:
 - date: '2026-09-25'
+  id: zero-ref-origin-audit
+  title: 'Zero-reference technique audit: every technique now has an incident or sharp origin'
+  items:
+  - 'Audited all 109 techniques for references and incident mappings. Five had zero mappings and generic-only
+    sources: T0100 naming conventions, T0101 technology stacks, T0104 coding flaws, T0143 external user
+    accounts, T0190 weak encryption.'
+  - 'Mapped the behaviors onto existing incidents: TXTBOOK/Birsan (T0100), Polyfill.io (T0101), Artifactory
+    CVE chain (T0104), @7nohe + prt-scan + hackerbot-claw (T0143), Velora plain-HTTP C2 + SleeperGem VERIFY_NONE
+    (T0190).'
+  - 'Three techniques had incidents but generic-only refs — incident links added to their origin entries:
+    T0102, T0149 (destructive npm wipe), T0164 (arrayref privileged-repo injection).'
+  - Zero techniques remain with neither an incident mapping nor a specific source.
+- date: '2026-09-25'
   id: fix-nested-anchor-cards
   title: Fixed blank cards on incident/platform lists (nested anchors)
   items:

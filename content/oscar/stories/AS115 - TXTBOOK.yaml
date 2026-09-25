@@ -2,41 +2,48 @@ id: AS115
 type: Attack Story
 date: 2026-08
 platforms:
-  - npm
-  - pypi
-
+- npm
+- pypi
 summary: TXTBOOK dependency confusion against Tinkoff / T-Bank
-description: |
-  CloudSEK tracks TXTBOOK: 993 public npm packages (after a PyPI start)
+description: 'CloudSEK tracks TXTBOOK: 993 public npm packages (after a PyPI start)
+
   reconstructing Tinkoff / T-Bank internal names (BNPL, business banking,
+
   analytics). The second-stage loader resolves the bank’s internal
+
   artifact repository and proceeds only if it answers — so it runs inside
+
   the target network. Delivery reassembles a Sliver implant from several
+
   hundred DNS TXT records instead of an HTTP download.
 
+  '
 attacks:
-  - attack: private-namespace confusion
-    index: 1
-    stage: supply-chain
-    customer: 0
-    supplier: 2
-    techniques:
-      - techniqueID: T0120
-        techName: Dependency confusion
-        tactic: Initial Access
-        comment: 993 packages matching T-Bank private names.
-      - techniqueID: T0109
-        techName: Publish malicious artifact
-        tactic: Resource Development
-        comment: PyPI first, then npm at scale.
-      - techniqueID: T0145
-        techName: Bypass of outbound traffic control
-        tactic: Exfiltration
-        comment: Implant delivered as DNS TXT records, not HTTP.
-      - techniqueID: T0172
-        techName: Runtime backdoor
-        tactic: Execution
-        comment: Sliver third stage.
-
+- attack: private-namespace confusion
+  index: 1
+  stage: supply-chain
+  customer: 0
+  supplier: 2
+  techniques:
+  - techniqueID: T0120
+    techName: Dependency confusion
+    tactic: Initial Access
+    comment: 993 packages matching T-Bank private names.
+  - techniqueID: T0109
+    techName: Publish malicious artifact
+    tactic: Resource Development
+    comment: PyPI first, then npm at scale.
+  - techniqueID: T0145
+    techName: Bypass of outbound traffic control
+    tactic: Exfiltration
+    comment: Implant delivered as DNS TXT records, not HTTP.
+  - techniqueID: T0172
+    techName: Runtime backdoor
+    tactic: Execution
+    comment: Sliver third stage.
+  - techniqueID: T0100
+    techName: Discover naming conventions
+    tactic: Reconnaissance
+    comment: Names reproduce T-Bank private package namespaces — recon of internal naming.
 links:
-  - https://www.cloudsek.com/blog/txtbook-a-supply-chain-heist-rehearsed-in-public
+- https://www.cloudsek.com/blog/txtbook-a-supply-chain-heist-rehearsed-in-public

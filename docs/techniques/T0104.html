@@ -31,17 +31,17 @@
 <main>
 <p class="crumb">OSC&amp;R / <a href="index.html">Techniques</a> / T0104</p>
 
-        <p class="meta">T0104 · Reconnaissance · TA01 · identified from research/guidance</p>
+        <p class="meta">T0104 · Reconnaissance · TA01 · observed in 1 incident(s)</p>
         <h1>Discover coding flaws</h1>
         <div class="chips"><span class="chip">Code Security</span> <span class="chip">SCM Posture</span></div>
         <p>This technique involves identifying coding flaws in an application&#x27;s codebase, including vulnerabilities such as buffer overflows, race conditions, injection flaws, and other software bugs that can be exploited by attackers to gain unauthorized access or cause system disruption.<br>An attacker can use this technique to gain insight into potential weaknesses in the application&#x27;s codebase and identify attack vectors that can be exploited in future attacks.<br>By discovering coding flaws in an application, an attacker can develop a better understanding of the application&#x27;s architecture and potential vulnerabilities.</p>
-        <h2>Where this idea came from</h2><p class="meta">Standard or guidance</p><p>Recorded from defender guidance (OWASP, NIST, SLSA, CISA, or vendor secure-development docs) as an attacker-side behavior.</p><ul class='refs'><li><a href="https://docs.github.com/en/code-security/supply-chain-security/end-to-end-supply-chain/securing-code" rel="noopener">https://docs.github.com/en/code-security/supply-chain-security/end-to-end-supply-chain/securing-code</a></li></ul>
+        <h2>Where this idea came from</h2><p class="meta">Public incident / advisory</p><p>Wiz chained three Artifactory vulnerabilities; Antrea and Nx incidents exploited known CI/CD flaws. Also GitHub secure-code guidance.</p><ul class='refs'><li><a href="https://www.wiz.io/blog/artifactory-under-attack-in-the-wild-exploitation-of-cve-2026-42016-cve-2026-4201" rel="noopener">https://www.wiz.io/blog/artifactory-under-attack-in-the-wild-exploitation-of-cve-2026-42016-cve-2026-4201</a></li><li><a href="https://docs.github.com/en/code-security/supply-chain-security/end-to-end-supply-chain/securing-code" rel="noopener">https://docs.github.com/en/code-security/supply-chain-security/end-to-end-supply-chain/securing-code</a></li></ul>
         
         <h2>Mitigations</h2>
         <ul><li><span class="id">M1720</span> Implement regular patches and updates</li><li><span class="id">M1730</span> Implement code reviews</li><li><span class="id">M1732</span> Implement code scanning for security risks</li></ul>
         <h2>Detections</h2>
         <ul><li><span class="id">D1170</span> Configure application audit logs to detect injection attacks</li><li><span class="id">D1260</span> Implement regular security audit and review</li><li><span class="id">D1261</span> Implement penetration testing</li><li><span class="id">D1262</span> Implement vulnerability assessment</li><li><span class="id">D1500</span> Configure monitoring of used artifacts and open-source libraries</li><li><span class="id">D1510</span> Implement Intrusion Detection System and anti-malware</li></ul>
-        <div class='notice'><strong>Identified, not yet observed here.</strong> OSC&amp;R (like ATT&amp;CK) lists techniques from pentest research, OWASP/NIST/SLSA guidance, and analog attacker behavior — not only from named public breaches. No incident in this corpus maps here yet. The references below are how the original authors knew it existed.</div>
+        <h2>Observed in incidents (1)</h2><ul><li><a href="../incidents/AS190.html">In-the-wild JFrog Artifactory auth bypass (CVE-2026-42016/42018/82329)</a></li></ul>
         <h2>References</h2>
         <ul class='refs'><li><a href="https://docs.github.com/en/code-security/supply-chain-security/end-to-end-supply-chain/securing-code" rel="noopener">https://docs.github.com/en/code-security/supply-chain-security/end-to-end-supply-chain/securing-code</a></li></ul>
         

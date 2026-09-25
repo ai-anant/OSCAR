@@ -2,26 +2,29 @@ techniques:
   T0100:
     summary: Discover naming conventions
     tactic: Reconnaissance
-    kind: guidance
-    note: Recorded from defender guidance (OWASP, NIST, SLSA, CISA, or vendor secure-development docs) as an attacker-side
-      behavior.
+    kind: incident
+    note: TXTBOOK reconstructed Tinkoff/T-Bank private package namespaces; Birsan found internal names
+      via public docs and DNS. Also plain OWASP recon guidance.
     sources:
+    - https://www.cloudsek.com/blog/txtbook-a-supply-chain-heist-rehearsed-in-public
     - https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/01-Information_Gathering/README
   T0101:
     summary: Discover technology stacks
     tactic: Reconnaissance
-    kind: guidance
-    note: Recorded from defender guidance (OWASP, NIST, SLSA, CISA, or vendor secure-development docs) as an attacker-side
-      behavior.
+    kind: incident
+    note: Polyfill.io attackers picked a JS library embedded across hundreds of thousands of sites; dependency-confusion
+      operators profile target stacks. Also OWASP recon guidance.
     sources:
+    - https://sansec.io/research/polyfill-supply-chain-attack
     - https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/01-Information_Gathering/README
   T0102:
     summary: Discover used open-source dependencies
     tactic: Reconnaissance
-    kind: guidance
-    note: Recorded from defender guidance (OWASP, NIST, SLSA, CISA, or vendor secure-development docs) as an attacker-side
-      behavior.
+    kind: incident
+    note: Birsan dependency confusion and llms.txt unclaimed-package squatting both started by enumerating
+      a target’s dependencies. Also OWASP guidance.
     sources:
+    - https://safedep.io/defi-infostealer-fake-arbitrage-bot-npm
     - https://cheatsheetseries.owasp.org/cheatsheets/Vulnerable_Dependency_Management_Cheat_Sheet.html
   T0103:
     summary: Scan public artifacts for secrets
@@ -34,10 +37,11 @@ techniques:
   T0104:
     summary: Discover coding flaws
     tactic: Reconnaissance
-    kind: guidance
-    note: Recorded from defender guidance (OWASP, NIST, SLSA, CISA, or vendor secure-development docs) as an attacker-side
-      behavior.
+    kind: incident
+    note: Wiz chained three Artifactory vulnerabilities; Antrea and Nx incidents exploited known CI/CD
+      flaws. Also GitHub secure-code guidance.
     sources:
+    - https://www.wiz.io/blog/artifactory-under-attack-in-the-wild-exploitation-of-cve-2026-42016-cve-2026-4201
     - https://docs.github.com/en/code-security/supply-chain-security/end-to-end-supply-chain/securing-code
   T0105:
     summary: Active scanning
@@ -51,15 +55,16 @@ techniques:
     summary: Scan configuration on public resources
     tactic: Reconnaissance
     kind: article
-    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident report.
+    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident
+      report.
     sources:
     - https://www.scmagazine.com/resource/cloud-security/5-challenges-to-public-cloud-security
   T0107:
     summary: Discover internal artifacts names
     tactic: Reconnaissance
     kind: research
-    note: Sibling of T0102. Internal package names are what Birsan enumerated from public artifacts before dependency
-      confusion. Original YAML had no URL.
+    note: Sibling of T0102. Internal package names are what Birsan enumerated from public artifacts before
+      dependency confusion. Original YAML had no URL.
     sources:
     - https://medium.com/@alex.birsan/dependency-confusion-4a5d60fec610
   T0108:
@@ -83,7 +88,8 @@ techniques:
     summary: Advertise malicious artifact
     tactic: Resource Development
     kind: article
-    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident report.
+    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident
+      report.
     sources:
     - https://www.bleepingcomputer.com/news/security/malicious-lolip0p-pypi-packages-install-info-stealing-malware/
   T0111:
@@ -99,8 +105,8 @@ techniques:
     summary: Compromised token
     tactic: Initial Access
     kind: guidance
-    note: Recorded from defender guidance (OWASP, NIST, SLSA, CISA, or vendor secure-development docs) as an attacker-side
-      behavior.
+    note: Recorded from defender guidance (OWASP, NIST, SLSA, CISA, or vendor secure-development docs)
+      as an attacker-side behavior.
     sources:
     - https://docs.github.com/en/actions/security-guides/automatic-token-authentication
     - https://support.google.com/googleapi/answer/6310037?hl=en
@@ -116,7 +122,8 @@ techniques:
     summary: Compromised service account
     tactic: Initial Access
     kind: article
-    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident report.
+    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident
+      report.
     sources:
     - https://stackoverflow.blog/2021/01/25/a-deeper-dive-into-our-may-2019-security-incident/
   T0115:
@@ -131,15 +138,16 @@ techniques:
     summary: Shadow IT
     tactic: Initial Access
     kind: article
-    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident report.
+    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident
+      report.
     sources:
     - https://www.thirdpartytrust.com/blog/what-is-shadow-it-digital-supply-chain/
   T0117:
     summary: SQL injection
     tactic: Execution
     kind: guidance
-    note: Recorded from defender guidance (OWASP, NIST, SLSA, CISA, or vendor secure-development docs) as an attacker-side
-      behavior.
+    note: Recorded from defender guidance (OWASP, NIST, SLSA, CISA, or vendor secure-development docs)
+      as an attacker-side behavior.
     sources:
     - https://www.spiceworks.com/it-security/application-security/articles/what-is-sql-injection/
     - https://owasp.org/www-community/attacks/SQL_Injection
@@ -148,8 +156,8 @@ techniques:
     summary: Command injection
     tactic: Execution
     kind: guidance
-    note: Recorded from defender guidance (OWASP, NIST, SLSA, CISA, or vendor secure-development docs) as an attacker-side
-      behavior.
+    note: Recorded from defender guidance (OWASP, NIST, SLSA, CISA, or vendor secure-development docs)
+      as an attacker-side behavior.
     sources:
     - https://owasp.org/www-community/attacks/Command_Injection
     - https://portswigger.net/web-security/os-command-injection
@@ -157,8 +165,8 @@ techniques:
     summary: Cross-site scripting
     tactic: Execution
     kind: guidance
-    note: Recorded from defender guidance (OWASP, NIST, SLSA, CISA, or vendor secure-development docs) as an attacker-side
-      behavior.
+    note: Recorded from defender guidance (OWASP, NIST, SLSA, CISA, or vendor secure-development docs)
+      as an attacker-side behavior.
     sources:
     - https://owasp.org/www-community/attacks/xss/
     - https://www.splunk.com/en_us/blog/learn/cross-site-scripting-xss-attacks.html
@@ -190,8 +198,8 @@ techniques:
     summary: Exposed internal API
     tactic: Initial Access
     kind: guidance
-    note: Recorded from defender guidance (OWASP, NIST, SLSA, CISA, or vendor secure-development docs) as an attacker-side
-      behavior.
+    note: Recorded from defender guidance (OWASP, NIST, SLSA, CISA, or vendor secure-development docs)
+      as an attacker-side behavior.
     sources:
     - https://owasp.org/www-project-api-security/
     - https://techcrunch.com/2023/01/19/t-mobile-data-breach/
@@ -199,8 +207,8 @@ techniques:
     summary: Unencrypted data at rest
     tactic: Collection
     kind: guidance
-    note: Recorded from defender guidance (OWASP, NIST, SLSA, CISA, or vendor secure-development docs) as an attacker-side
-      behavior.
+    note: Recorded from defender guidance (OWASP, NIST, SLSA, CISA, or vendor secure-development docs)
+      as an attacker-side behavior.
     sources:
     - https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/protecting-data-at-rest.html
     - https://cloud.google.com/docs/security/encryption/default-encryption
@@ -209,8 +217,8 @@ techniques:
     summary: Unencrypted data in transit
     tactic: Collection
     kind: guidance
-    note: Recorded from defender guidance (OWASP, NIST, SLSA, CISA, or vendor secure-development docs) as an attacker-side
-      behavior.
+    note: Recorded from defender guidance (OWASP, NIST, SLSA, CISA, or vendor secure-development docs)
+      as an attacker-side behavior.
     sources:
     - https://docs.aws.amazon.com/whitepapers/latest/efs-encrypted-file-systems/encryption-of-data-in-transit.html
     - https://cloud.google.com/docs/security/encryption-in-transit
@@ -218,7 +226,8 @@ techniques:
     summary: Exposed storage
     tactic: Initial Access
     kind: article
-    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident report.
+    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident
+      report.
     sources:
     - https://www.trendmicro.com/vinfo/es/security/news/virtualization-and-cloud/a-misconfigured-amazon-s3-exposed-almost-50-thousand-pii-in-australia
     - https://www.darkreading.com/application-security/cloud-misconfig-exposes-3tb-sensitive-airport-data-amazon-s3-bucket
@@ -226,7 +235,8 @@ techniques:
     summary: Exposed database
     tactic: Initial Access
     kind: article
-    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident report.
+    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident
+      report.
     sources:
     - https://securitytrails.com/blog/open-exposed-databases
   T0128:
@@ -291,8 +301,8 @@ techniques:
     summary: Vulnerable CICD system
     tactic: Initial Access
     kind: guidance
-    note: Recorded from defender guidance (OWASP, NIST, SLSA, CISA, or vendor secure-development docs) as an attacker-side
-      behavior.
+    note: Recorded from defender guidance (OWASP, NIST, SLSA, CISA, or vendor secure-development docs)
+      as an attacker-side behavior.
     sources:
     - https://www.paloaltonetworks.com/blog/prisma-cloud/shift-left-ci-cd-security-for-your-software-supply-chain/
     - https://owasp.org/www-project-top-10-ci-cd-security-risks/
@@ -300,14 +310,16 @@ techniques:
     summary: Brandjacking
     tactic: Initial Access
     kind: article
-    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident report.
+    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident
+      report.
     sources:
     - https://www.mend.io/resources/blog/new-supply-chain-attack-methods-april/
   T0137:
     summary: Weak authentication methods
     tactic: Initial Access
     kind: article
-    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident report.
+    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident
+      report.
     sources:
     - https://affinity-it-security.com/what-is-weak-authentication/
   T0138:
@@ -321,14 +333,16 @@ techniques:
     summary: Resource hijacking
     tactic: Impact
     kind: article
-    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident report.
+    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident
+      report.
     sources:
     - https://socprime.com/blog/purpleurchin-campaign-detection-a-new-crypto-mining-operation-massively-abuses-github-actions-and-other-popular-free-ci-cd-service-accounts/
   T0140:
     summary: Harvest tokens from environment variables
     tactic: Credential Access
     kind: article
-    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident report.
+    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident
+      report.
     sources:
     - https://www.trendmicro.com/en_ie/research/22/h/analyzing-hidden-danger-of-environment-variables-for-keeping-secrets.html
     - https://developer.hashicorp.com/vault/docs/what-is-vault
@@ -344,16 +358,19 @@ techniques:
     summary: Accidental public disclosure of internal resources
     tactic: Reconnaissance
     kind: article
-    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident report.
+    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident
+      report.
     sources:
     - https://duo.com/blog/beyond-s3-exposed-resources-on-aws
   T0143:
     summary: External user accounts
     tactic: Initial Access
-    kind: guidance
-    note: 'OWASP CICD-SEC-2 (inadequate IAM): guest, contractor, and SSO-linked external identities. YAML had an
-      empty references list.'
+    kind: incident
+    note: AS20 (@7nohe) let any external commenter run the publish path; prt-scan and hackerbot-claw used
+      throwaway external accounts. Also OWASP CICD-SEC-2.
     sources:
+    - https://www.stepsecurity.io/blog/7nohe-openapi-react-query-codegen-compromised-npm-publishing-workflow
+    - https://www.stepsecurity.io/blog/prt-scan-github-actions-exfiltration-campaign
     - https://owasp.org/www-project-top-10-ci-cd-security-risks/
   T0144:
     summary: Misconfigured traffic log settings
@@ -367,7 +384,8 @@ techniques:
     summary: Bypass of outbound traffic control
     tactic: Exfiltration
     kind: article
-    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident report.
+    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident
+      report.
     sources:
     - https://www.xorlab.com/en/blog/data-exfiltration-most-common-techniques-and-best-prevention-tactics
   T0146:
@@ -397,15 +415,18 @@ techniques:
   T0149:
     summary: Delete repositories
     tactic: Impact
-    kind: guidance
-    note: SLSA availability threat — delete source so the pipeline cannot rebuild. Original YAML had no URL.
+    kind: incident
+    note: Destructive npm packages and wget-to-wipeout Go modules deleted host codebases on remote trigger;
+      SLSA models the same as an availability threat.
     sources:
+    - https://socket.dev/blog/destructive-npm-packages-enable-remote-system-wipe
     - https://slsa.dev/spec/v1.0/threats
   T0150:
     summary: Runtime logic bomb
     tactic: Execution
     kind: article
-    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident report.
+    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident
+      report.
     sources:
     - https://www.csoonline.com/article/2115905/logic-bomb.html
     - https://threatpost.com/discord-stealing-malware-npm-packages/163265/
@@ -425,7 +446,8 @@ techniques:
     summary: IDE
     tactic: Execution
     kind: article
-    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident report.
+    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident
+      report.
     sources:
     - https://www.trendmicro.com/en_us/research/23/a/attacking-the-supply-chain-developer.html
   T0153:
@@ -462,7 +484,8 @@ techniques:
     summary: Combosquatting
     tactic: Initial Access
     kind: article
-    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident report.
+    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident
+      report.
     sources:
     - https://dev.to/sumstrm/different-typosquatting-attacks-to-know-of-for-a-secure-supply-chain-4j70
   T0158:
@@ -485,8 +508,8 @@ techniques:
     summary: Implant in zombie instance
     tactic: Persistence
     kind: analog
-    note: Cloud persistence analog of ATT&CK T1525 Implant Internal Image (backdoor on an instance that looks idle).
-      Original YAML had no URL.
+    note: Cloud persistence analog of ATT&CK T1525 Implant Internal Image (backdoor on an instance that
+      looks idle). Original YAML had no URL.
     sources:
     - https://attack.mitre.org/techniques/T1525/
   T0162:
@@ -500,16 +523,18 @@ techniques:
     summary: Runtime leakage of password
     tactic: Credential Access
     kind: article
-    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident report.
+    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident
+      report.
     sources:
     - https://www.trendmicro.com/en_ie/research/22/h/analyzing-hidden-danger-of-environment-variables-for-keeping-secrets.html
   T0164:
     summary: Inject malicious dependency to privileged user repository
     tactic: Privilege Escalation
-    kind: guidance
-    note: Recorded from defender guidance (OWASP, NIST, SLSA, CISA, or vendor secure-development docs) as an attacker-side
-      behavior.
+    kind: incident
+    note: arrayref/proc-macro1 injected a build-time dependency into privileged maintainer repos (arrayref
+      in 35% of environments); OWASP CICD-SEC-3 names the pattern.
     sources:
+    - https://www.wiz.io/blog/rust-supply-chain-attack-on-arrayref-significant-overlap-with-dprk-campaigns
     - https://owasp.org/www-project-top-10-ci-cd-security-risks/CICD-SEC-03-Dependency-Chain-Abuse
   T0165:
     summary: Create access token
@@ -531,7 +556,8 @@ techniques:
     summary: Recursive PR
     tactic: Persistence
     kind: article
-    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident report.
+    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident
+      report.
     sources:
     - https://nathandavison.com/blog/github-actions-and-the-threat-of-malicious-pull-requests
   T0168:
@@ -573,21 +599,24 @@ techniques:
     summary: Auto merge rules in SCM
     tactic: Execution
     kind: article
-    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident report.
+    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident
+      report.
     sources:
     - https://securityintelligence.com/posts/abusing-source-code-management-systems/
   T0174:
     summary: SaaS sprawl
     tactic: Defense Evasion
     kind: article
-    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident report.
+    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident
+      report.
     sources:
     - https://www.beamy.io/resources/blog/what-is-saas-sprawl/
   T0175:
     summary: Untagged resources
     tactic: Persistence
     kind: article
-    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident report.
+    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident
+      report.
     sources:
     - https://ismsguy.medium.com/treating-the-mishmash-of-missing-tag-resources-in-aws-using-the-cloud-custodian-part-1-63ca506f12f2
     - https://www.infoworld.com/article/3246986/better-cloud-management-through-cloud-resource-tagging.html
@@ -595,21 +624,24 @@ techniques:
     summary: Disable or misconfigure security measures
     tactic: Defense Evasion
     kind: article
-    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident report.
+    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident
+      report.
     sources:
     - https://www.upguard.com/blog/cloud-misconfiguration
   T0177:
     summary: Misconfiguration of serverless workloads
     tactic: Impact
     kind: article
-    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident report.
+    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident
+      report.
     sources:
     - https://cloudsecurityalliance.org/blog/2022/11/20/top-threat-9-to-cloud-computing-misconfiguration-and-exploitation-of-serverless-and-container-workloads/
   T0178:
     summary: Deploy keys
     tactic: Persistence
     kind: article
-    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident report.
+    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident
+      report.
     sources:
     - https://www.ibm.com/downloads/cas/OG6KNX1E
   T0179:
@@ -623,14 +655,16 @@ techniques:
     summary: Compromise services / servers
     tactic: Initial Access
     kind: article
-    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident report.
+    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident
+      report.
     sources:
     - https://research.nccgroup.com/2022/01/13/10-real-world-stories-of-how-weve-compromised-ci-cd-pipelines/
   T0181:
     summary: Malicious module injection
     tactic: Initial Access
     kind: article
-    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident report.
+    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident
+      report.
     sources:
     - https://www.trendmicro.com/vinfo/us/security/news/virtualization-and-cloud/infrastructure-as-code-security-risks-and-how-to-avoid-them
     - https://about.gitlab.com/blog/2022/02/17/fantastic-infrastructure-as-code-security-attacks-and-how-to-find-them/
@@ -674,7 +708,8 @@ techniques:
     summary: Exposed storage
     tactic: Reconnaissance
     kind: article
-    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident report.
+    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident
+      report.
     sources:
     - https://www.trendmicro.com/vinfo/es/security/news/virtualization-and-cloud/a-misconfigured-amazon-s3-exposed-almost-50-thousand-pii-in-australia
     - https://www.darkreading.com/application-security/cloud-misconfig-exposes-3tb-sensitive-airport-data-amazon-s3-bucket
@@ -682,8 +717,8 @@ techniques:
     summary: Cross Site Request Forgery
     tactic: Execution
     kind: guidance
-    note: Recorded from defender guidance (OWASP, NIST, SLSA, CISA, or vendor secure-development docs) as an attacker-side
-      behavior.
+    note: Recorded from defender guidance (OWASP, NIST, SLSA, CISA, or vendor secure-development docs)
+      as an attacker-side behavior.
     sources:
     - https://www.securityweek.com/csrf-vulnerability-kudu-scm-allowed-code-execution-azure-services/
     - https://owasp.org/www-community/attacks/csrf
@@ -691,16 +726,19 @@ techniques:
     summary: Secrets in configuration files
     tactic: Credential Access
     kind: article
-    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident report.
+    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident
+      report.
     sources:
     - https://spectralops.io/blog/where-your-code-secrets-hide-filetypes/
   T0190:
     summary: Weak encryption
     tactic: Collection
-    kind: guidance
-    note: Recorded from defender guidance (OWASP, NIST, SLSA, CISA, or vendor secure-development docs) as an attacker-side
-      behavior.
+    kind: incident
+    note: Velora SDK beaconed over plain HTTP; SleeperGem fetched payloads with certificate verification
+      off. Also OWASP weak-crypto guidance.
     sources:
+    - https://opensourcemalware.com/blog/velora-formerly-paraswap-sdk-version-941-compromised-and-installing-malware
+    - https://www.stepsecurity.io/blog/sleepergem-compromised-rubygems-drop-persistent-backdoor
     - https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/09-Testing_for_Weak_Cryptography/04-Testing_for_Weak_Encryption
   T0191:
     summary: Malicious code in artifacts
@@ -723,7 +761,8 @@ techniques:
     summary: Sensitive information in environment variables
     tactic: Collection
     kind: article
-    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident report.
+    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident
+      report.
     sources:
     - https://www.trendmicro.com/en_fi/research/22/h/analyzing-hidden-danger-of-environment-variables-for-keeping-secrets.html
   T0194:
@@ -737,7 +776,8 @@ techniques:
     summary: Spoofed Commits
     tactic: Defense Evasion
     kind: article
-    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident report.
+    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident
+      report.
     sources:
     - https://www.arnica.io/blog/demystifying-the-pl0x-github-attack
   T0196:
@@ -751,7 +791,8 @@ techniques:
     summary: Use code from untrusted source
     tactic: Initial Access
     kind: article
-    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident report.
+    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident
+      report.
     sources:
     - https://www.thirdpartytrust.com/blog/what-is-shadow-it-digital-supply-chain/
     - https://www.bleepingcomputer.com/news/security/new-xcodespy-malware-targets-ios-devs-in-supply-chain-attack/
@@ -759,7 +800,8 @@ techniques:
     summary: Malicious Build Time Dependencies
     tactic: Defense Evasion
     kind: article
-    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident report.
+    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident
+      report.
     sources:
     - https://i.blackhat.com/BH-US-23/Presentations/US-23-Long-Reflections-On-Trust.pdf
   T0199:

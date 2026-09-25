@@ -2,35 +2,41 @@ id: AS84
 type: Attack Story
 date: 2026-08
 platforms:
-  - npm
-
+- npm
 summary: npm bin-entry harvesting against Google CLIs
-description: |
-  SafeDep documented 21 malicious npm packages that targeted Google by
+description: 'SafeDep documented 21 malicious npm packages that targeted Google by
+
   squatting CLI binary names from scoped packages, not the package names
+
   themselves. Installing an unscoped package whose `bin` field collides
+
   with a scoped Google CLI can put attacker code on PATH. Standard
+
   dependency-confusion defenses that watch package names miss this.
 
+  '
 attacks:
-  - attack: bin name collision
-    index: 1
-    stage: supply-chain
-    customer: 0
-    supplier: 2
-    techniques:
-      - techniqueID: T0120
-        techName: Dependency confusion
-        tactic: Initial Access
-        comment: Collision on bin/CLI names rather than package names.
-      - techniqueID: T0109
-        techName: Publish malicious artifact
-        tactic: Resource Development
-        comment: 21 unscoped packages with colliding bin entries.
-      - techniqueID: T0151
-        techName: Installation scripts
-        tactic: Execution
-        comment: Attacker binary lands on PATH at install.
-
+- attack: bin name collision
+  index: 1
+  stage: supply-chain
+  customer: 0
+  supplier: 2
+  techniques:
+  - techniqueID: T0120
+    techName: Dependency confusion
+    tactic: Initial Access
+    comment: Collision on bin/CLI names rather than package names.
+  - techniqueID: T0109
+    techName: Publish malicious artifact
+    tactic: Resource Development
+    comment: 21 unscoped packages with colliding bin entries.
+  - techniqueID: T0151
+    techName: Installation scripts
+    tactic: Execution
+    comment: Attacker binary lands on PATH at install.
+  - techniqueID: T0101
+    techName: Discover technology stacks
+    tactic: Reconnaissance
+    comment: Chose a JavaScript library embedded across hundreds of thousands of sites.
 links:
-  - https://safedep.io/google-dep-confusion-bin-harvesting
+- https://safedep.io/google-dep-confusion-bin-harvesting

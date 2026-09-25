@@ -2,54 +2,65 @@ id: AS75
 type: Attack Story
 date: 2026-02
 platforms:
-  - github-actions
-  - git
-  - ai-agents
-
+- github-actions
+- git
+- ai-agents
 summary: hackerbot-claw autonomous GitHub Actions exploitation
-description: |
-  StepSecurity documented hackerbot-claw, an account describing itself as
+description: 'StepSecurity documented hackerbot-claw, an account describing itself as
+
   an autonomous security-research agent on Claude Opus, scanning public
+
   repos for exploitable GitHub Actions and opening PRs. Hits included
+
   avelino/awesome-go (poisoned Go script / token theft), Microsoft,
+
   Datadog, CNCF projects, ambient-code/platform (prompt injection into
+
   project instructions), and aquasecurity/trivy (stolen PAT later used
+
   toward the Trivy VS Code extension on Open VSX). Common tell: outbound
+
   curl to hackmoltrepeat.com from the CI runner. No human weekend
+
   operator — continuous bot. StepSecurity, with independent verification
+
   by Thierry Abaléa (Shipfox).
 
+  '
 attacks:
-  - attack: autonomous gha exploitation
-    index: 1
-    stage: supply-chain
-    customer: 0
-    supplier: 2
-    techniques:
-      - techniqueID: T0147
-        techName: Scan public CI/CD configurations for secrets and vulnerable actions
-        tactic: Reconnaissance
-        comment: Bot scanned public workflows for injection and secret-leak bugs.
-      - techniqueID: T0118
-        techName: Command injection
-        tactic: Execution
-        comment: PRs that executed attacker code in privileged workflows.
-      - techniqueID: T0166
-        techName: Trigger pipeline execution
-        tactic: Execution
-        comment: PRs and workflow runs as the execution path.
-      - techniqueID: T0140
-        techName: Harvest tokens from environment variables
-        tactic: Credential Access
-        comment: Stolen PATs (Trivy and others).
-      - techniqueID: T0210
-        techName: Poison AI coding-agent config or workspace
-        tactic: Persistence
-        comment: Project-level instruction injection on ambient-code/platform.
-      - techniqueID: T0156
-        techName: Exfiltration over webhooks
-        tactic: Exfiltration
-        comment: Outbound curl to hackmoltrepeat.com from CI.
-
+- attack: autonomous gha exploitation
+  index: 1
+  stage: supply-chain
+  customer: 0
+  supplier: 2
+  techniques:
+  - techniqueID: T0147
+    techName: Scan public CI/CD configurations for secrets and vulnerable actions
+    tactic: Reconnaissance
+    comment: Bot scanned public workflows for injection and secret-leak bugs.
+  - techniqueID: T0118
+    techName: Command injection
+    tactic: Execution
+    comment: PRs that executed attacker code in privileged workflows.
+  - techniqueID: T0166
+    techName: Trigger pipeline execution
+    tactic: Execution
+    comment: PRs and workflow runs as the execution path.
+  - techniqueID: T0140
+    techName: Harvest tokens from environment variables
+    tactic: Credential Access
+    comment: Stolen PATs (Trivy and others).
+  - techniqueID: T0210
+    techName: Poison AI coding-agent config or workspace
+    tactic: Persistence
+    comment: Project-level instruction injection on ambient-code/platform.
+  - techniqueID: T0156
+    techName: Exfiltration over webhooks
+    tactic: Exfiltration
+    comment: Outbound curl to hackmoltrepeat.com from CI.
+  - techniqueID: T0143
+    techName: External user accounts
+    tactic: Initial Access
+    comment: Autonomous external account opened the PRs.
 links:
-  - https://www.stepsecurity.io/blog/hackerbot-claw-github-actions-exploitation
+- https://www.stepsecurity.io/blog/hackerbot-claw-github-actions-exploitation

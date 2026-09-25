@@ -12,7 +12,7 @@
         ],
         "url": "techniques/T0100.html",
         "description": "This technique involves analyzing the naming conventions used in container images, source code repositories, and other related artifacts.\nBy examining the naming conventions, an attacker can gain insights into the technologies and frameworks used in the application, as well as potentially identifying weak spots or vulnerabilities that can be exploited.\nFor example, an attacker might use this technique to identify the specific version of a library or software component used in an application, which could then be cross-referenced with known vulnerabilities to determine if the application is at risk.\nAlternatively, an attacker might analyze naming conventions to determine the structure and organization of a codebase, which could aid in future attacks.\n",
-        "incidentCount": 0
+        "incidentCount": 2
       },
       {
         "id": "T0101",
@@ -25,7 +25,7 @@
         ],
         "url": "techniques/T0101.html",
         "description": "This technique involves analyzing the technology stacks used in an application, such as programming languages, frameworks, libraries, and other related technologies.\nBy identifying the specific technology stack used in an application, an attacker can gain insights into the potential vulnerabilities associated with that technology, as well as potential attack vectors and weak spots in the application.\nFor example, an attacker might use this technique to identify specific versions of a library or software component used in an application, which could then be cross-referenced with known vulnerabilities to determine if the application is at risk.\nAlternatively, an attacker might analyze the technology stack to determine the overall architecture of the application and identify potential attack vectors or weak spots.\n",
-        "incidentCount": 0
+        "incidentCount": 1
       },
       {
         "id": "T0102",
@@ -63,7 +63,7 @@
         ],
         "url": "techniques/T0104.html",
         "description": "This technique involves identifying coding flaws in an application's codebase, including vulnerabilities such as buffer overflows, race conditions, injection flaws, and other software bugs that can be exploited by attackers to gain unauthorized access or cause system disruption.\nAn attacker can use this technique to gain insight into potential weaknesses in the application's codebase and identify attack vectors that can be exploited in future attacks.\nBy discovering coding flaws in an application, an attacker can develop a better understanding of the application's architecture and potential vulnerabilities.\n",
-        "incidentCount": 0
+        "incidentCount": 1
       },
       {
         "id": "T0105",
@@ -455,7 +455,7 @@
         ],
         "url": "techniques/T0143.html",
         "description": "External User Accounts attack technique in the CI/CD, SCM posture and cloud security involves compromising external user accounts to gain unauthorized access to CI/CD pipelines, source code repositories or cloud systems.\nAttackers may gain unauthorized access to these accounts through various means, such as phishing, social engineering, or password cracking. \nOnce compromised, attackers can inject malicious code into CI/CD pipelines, tamper with deployment pipelines, manipulate source code repositories, or access cloud systems. \nThis can result in the deployment of unauthorized or malicious code to production systems, introduction of vulnerabilities or backdoors into source code, theft of intellectual property, or other malicious activities.\n",
-        "incidentCount": 0
+        "incidentCount": 3
       },
       {
         "id": "T0153",
@@ -1236,7 +1236,7 @@
         ],
         "url": "techniques/T0190.html",
         "description": "A weak encryption attack in cloud security occurs when an attacker exploits vulnerabilities in the encryption mechanism used by a cloud service to gain unauthorized access to sensitive information. \nThis can happen when the encryption algorithm used by the cloud service is weak or when the encryption keys are not properly managed.\n",
-        "incidentCount": 0
+        "incidentCount": 1
       },
       {
         "id": "T0192",
