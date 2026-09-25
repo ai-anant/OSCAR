@@ -1,5 +1,16 @@
 entries:
 - date: '2026-09-25'
+  id: expanded-scope-rewalk
+  title: 'Expanded-scope re-walk: SafeDep reinfection on actions-cool, kilocode research'
+  items:
+  - Re-walked tracked feeds with the wider scope (research/demo/lure patterns now in scope). SafeDep “Mini
+    Shai-Hulud is still infecting” attached to AS197 actions-cool — four months after the tag hijack,
+    six more repos infected 20–24 September; kitty-monitor backdoor, gh-token wiper, stepsecurity.io /etc/hosts
+    blocking.
+  - AS288 kilocode early risk signals added as research (StepSecurity; no exploitation — the pre-attack
+    end of the chain).
+  - OSM/StepSecurity remaining items are show episodes and product posts, already classified.
+- date: '2026-09-25'
   id: story-status-model
   title: Stories now distinguish real incidents, research, and demos
   items:

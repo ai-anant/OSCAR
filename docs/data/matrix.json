@@ -976,7 +976,7 @@
         ],
         "url": "techniques/T0176.html",
         "description": "Attackers disable or misconfigure security controls so that later activity is\nnot observed or blocked. In software supply chains this is more often a\ncomplete disablement than a subtle misconfiguration: turning off a GitHub\nAction required-review check, uninstalling an endpoint agent on a build\nrunner, skipping a signing gate, or emptying a security-group rule.\nMisconfiguration (over-permissive logging, broken audit settings) remains\nin scope as the quieter variant of the same Defense Evasion technique.\n",
-        "incidentCount": 5
+        "incidentCount": 6
       },
       {
         "id": "T0182",

@@ -1,0 +1,30 @@
+id: AS288
+type: Attack Story
+status: research
+date: 2026-02
+platforms:
+  - npm
+  - ai-agents
+
+summary: kilocode npm early supply-chain risk signals
+description: |
+  StepSecurity detected early supply-chain risk signals in a legitimate
+  kilocode npm release: small behavior changes that quietly weaken trust
+  before any attack happens. No exploitation observed — recorded as
+  research showing the pre-attack end of the kill chain (the same
+  weak-trust state attacks like AS66/AS74 exploit).
+
+attacks:
+  - attack: behavior drift
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0176
+        techName: Disable or misconfigure security measures
+        tactic: Defense Evasion
+        comment: Behavior changes that weaken trust before an attack.
+
+links:
+  - https://www.stepsecurity.io/blog/stepsecurity-detects-early-supply-chain-risk-signals-in-kilocode-npm
