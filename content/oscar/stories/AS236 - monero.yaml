@@ -1,0 +1,40 @@
+id: AS236
+type: Attack Story
+date: 2019-11
+platforms:
+  - git
+
+summary: Monero CLI binaries stole wallet seeds
+description: |
+  Catalogued from the tstromberg supplychain-attack-data dataset
+  (community-curated incident corpus). Included because first-party
+  sources exist for it; see the links below — vendor advisories, project
+  incident reports, and researcher write-ups. Not based on aggregator
+  coverage.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0172
+        techName: Runtime backdoor
+        tactic: Execution
+        comment: Backdoor/RAT payload documented by the cited sources.
+      - techniqueID: T0184
+        techName: Harvesting sensitive information from files
+        tactic: Credential Access
+        comment: Credential or wallet material targeted.
+      - techniqueID: T0184
+        techName: Harvesting sensitive information from files
+        tactic: Credential Access
+        comment: Wallet/keys targeted.
+
+links:
+  - https://github.com/monero-project/monero/issues/6151
+  - https://web.getmonero.org/2019/11/19/warning-compromised-binaries.html
+  - https://serhack.me/articles/cli-binaries-compromised-monero-analysis/
+  - https://bartblaze.blogspot.com/2019/11/monero-project-compromised.html
+  - https://arstechnica.com/information-technology/2019/11/official-monero-website-is-hacked-to-deliver-currency-stealing-malware/

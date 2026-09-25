@@ -1,0 +1,34 @@
+id: AS262
+type: Attack Story
+date: 2007-12
+platforms:
+  - windows
+  - ai-agents
+
+summary: SquirrelMail release tarballs enabled remote file inclusion
+description: |
+  Catalogued from the tstromberg supplychain-attack-data dataset
+  (community-curated incident corpus). Included because first-party
+  sources exist for it; see the links below — vendor advisories, project
+  incident reports, and researcher write-ups. Not based on aggregator
+  coverage.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0209
+        techName: Compromise package registry or CDN origin
+        tactic: Initial Access
+        comment: Distribution origin hosted the trojanized artifact.
+
+links:
+  - https://marc.info/?l=squirrelmail-devel&m=119756462212214
+  - http://marc.info/?l=squirrelmail-devel&m=119765235203392&w=2
+  - http://marc.info/?l=bugtraq&m=119765643909825&w=2
+  - https://lwn.net/Articles/262688/
+  - https://lwn.net/Articles/262090/
+  - https://lwn.net/Articles/262691/

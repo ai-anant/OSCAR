@@ -1,0 +1,35 @@
+id: AS245
+type: Attack Story
+date: 2026-04
+platforms:
+  - npm
+
+summary: pgserve npm CanisterSprawl credential stealer
+description: |
+  Catalogued from the tstromberg supplychain-attack-data dataset
+  (community-curated incident corpus). Included because first-party
+  sources exist for it; see the links below — vendor advisories, project
+  incident reports, and researcher write-ups. Not based on aggregator
+  coverage.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0121
+        techName: Compromised legitimate artifact
+        tactic: Resource Development
+        comment: Published package versions carried the payload.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Named in the tstromberg supplychain-attack-data corpus with first-party references.
+
+links:
+  - https://www.stepsecurity.io/blog/pgserve-compromised-on-npm-malicious-versions-harvest-credentials
+  - https://github.com/iarna/pgserve/issues/25
+  - https://blog.gitguardian.com/three-supply-chain-campaigns-hit-npm-pypi-and-docker-hub-in-48-hours/
+  - https://www.ossprey.com/blog/pgserve-npm-worm-blockchain-c2

@@ -1,0 +1,33 @@
+id: AS200
+type: Attack Story
+date: 2018-07
+platforms:
+  - linux
+
+summary: AUR acroread PKGBUILD ran remote shell scripts
+description: |
+  Catalogued from the tstromberg supplychain-attack-data dataset
+  (community-curated incident corpus). Included because first-party
+  sources exist for it; see the links below — vendor advisories, project
+  incident reports, and researcher write-ups. Not based on aggregator
+  coverage.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Named in the tstromberg supplychain-attack-data corpus with first-party references.
+
+links:
+  - https://lists.archlinux.org/pipermail/aur-general/2018-July/034151.html
+  - https://lists.archlinux.org/pipermail/aur-general/2018-July/034152.html
+  - https://lists.archlinux.org/pipermail/aur-general/2018-July/034153.html
+  - https://lists.archlinux.org/pipermail/aur-general/2018-July/034162.html
+  - https://lists.archlinux.org/pipermail/aur-general/2018-July/034169.html
+  - https://lwn.net/Articles/759461/

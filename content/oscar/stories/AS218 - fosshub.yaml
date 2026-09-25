@@ -1,0 +1,33 @@
+id: AS218
+type: Attack Story
+date: 2016-08
+platforms:
+  - windows
+
+summary: FossHub served MBR-overwriting installers
+description: |
+  Catalogued from the tstromberg supplychain-attack-data dataset
+  (community-curated incident corpus). Included because first-party
+  sources exist for it; see the links below — vendor advisories, project
+  incident reports, and researcher write-ups. Not based on aggregator
+  coverage.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0209
+        techName: Compromise package registry or CDN origin
+        tactic: Initial Access
+        comment: Distribution origin hosted the trojanized artifact.
+
+links:
+  - https://web.archive.org/web/20160807013940/http://www.audacityteam.org/compromised-download-partner/
+  - https://web.archive.org/web/20161118223300/http://www.audacityteam.org/compromised-download-partner/
+  - https://web.archive.org/web/20161030034854/http://news.softpedia.com/news/hacker-compromises-fosshub-to-distribute-mbr-hijacking-malware-506932.shtml
+  - https://www.theregister.com/security/2016/08/05/classic-shell-hackers-we-infected-fosshub-so-ransomware-couldnt-and-yeah-also-for-fun/1258425
+  - https://coddec.github.io/Classic-Shell/www.classicshell.net/forum/viewtopic7812.html?f=7&t=6441
+  - https://www.classicshell.net/forum/viewtopic.php?p=27955

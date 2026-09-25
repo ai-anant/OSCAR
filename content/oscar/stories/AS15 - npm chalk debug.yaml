@@ -61,3 +61,5 @@ links:
   - https://www.aikido.dev/blog/npm-debug-and-chalk-packages-compromised
   - https://www.stepsecurity.io/blog/supply-chain-security-alert-popular-npm-package-compromised
   - https://safedep.io/multiple-npm-packages-compromised-billion-downloads
+  - https://jfrog.com/blog/new-compromised-packages-in-largest-npm-attack-in-history/
+  - https://threats.wiz.io/all-incidents/qix-npm-package-supply-chain-compromise

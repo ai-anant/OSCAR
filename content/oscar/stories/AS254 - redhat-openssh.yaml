@@ -1,0 +1,33 @@
+id: AS254
+type: Attack Story
+date: 2008-08
+platforms:
+  - git
+
+summary: Intruder signed tampered OpenSSH RPMs with Red Hat key
+description: |
+  Catalogued from the tstromberg supplychain-attack-data dataset
+  (community-curated incident corpus). Included because first-party
+  sources exist for it; see the links below — vendor advisories, project
+  incident reports, and researcher write-ups. Not based on aggregator
+  coverage.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Named in the tstromberg supplychain-attack-data corpus with first-party references.
+
+links:
+  - https://lwn.net/Articles/295180/
+  - https://access.redhat.com/errata/RHSA-2008:0855.html
+  - https://security.access.redhat.com/data/openssh-blacklist.html
+  - https://security.access.redhat.com/data/openssh-blacklist-1.0.sh
+  - https://lwn.net/Articles/294188/
+  - https://lwn.net/Articles/294834/

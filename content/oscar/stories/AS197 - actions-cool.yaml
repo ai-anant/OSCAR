@@ -1,0 +1,31 @@
+id: AS197
+type: Attack Story
+date: 2026-05
+platforms:
+  - git
+  - github-actions
+
+summary: actions-cool GitHub Actions tags rewritten by TeamPCP
+description: |
+  Catalogued from the tstromberg supplychain-attack-data dataset
+  (community-curated incident corpus). Included because first-party
+  sources exist for it; see the links below — vendor advisories, project
+  incident reports, and researcher write-ups. Not based on aggregator
+  coverage.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0122
+        techName: Vulnerability in third-party CI/CD actions
+        tactic: Initial Access
+        comment: Actions/tags/workflows as the compromise path.
+
+links:
+  - https://www.stepsecurity.io/blog/actions-cool-issues-helper-github-action-compromised-all-tags-point-to-imposter-commit-that-exfiltrates-ci-cd-credentials
+  - https://cybersecuritynews.com/compromised-github-action-exfiltrates-workflow-credentials/
+  - https://pumasecurity.io/resources/blog/teampcp-github-actions-supply-chain/

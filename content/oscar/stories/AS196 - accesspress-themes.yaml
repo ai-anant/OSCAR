@@ -1,0 +1,35 @@
+id: AS196
+type: Attack Story
+date: 2021-09
+platforms:
+  - git
+
+summary: AccessPress add-ons created backdoors
+description: |
+  Catalogued from the tstromberg supplychain-attack-data dataset
+  (community-curated incident corpus). Included because first-party
+  sources exist for it; see the links below — vendor advisories, project
+  incident reports, and researcher write-ups. Not based on aggregator
+  coverage.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0172
+        techName: Runtime backdoor
+        tactic: Execution
+        comment: Backdoor/RAT payload documented by the cited sources.
+      - techniqueID: T0184
+        techName: Harvesting sensitive information from files
+        tactic: Credential Access
+        comment: Credential or wallet material targeted.
+
+links:
+  - https://jetpack.com/resources/backdoor-found-in-themes-and-plugins-from-accesspress-themes/
+  - https://blog.sucuri.net/2022/01/accesspress-themes-hit-with-targeted-supply-chain-attack.html
+  - https://arstechnica.com/information-technology/2022/01/supply-chain-attack-used-legitimate-wordpress-add-ons-to-backdoor-sites/
+  - https://its.ny.gov/2022-012

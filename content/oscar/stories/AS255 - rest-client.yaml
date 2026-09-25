@@ -1,0 +1,43 @@
+id: AS255
+type: Attack Story
+date: 2019-08
+platforms:
+  - rubygems
+
+summary: rest-client gem backdoor stole credentials
+description: |
+  Catalogued from the tstromberg supplychain-attack-data dataset
+  (community-curated incident corpus). Included because first-party
+  sources exist for it; see the links below — vendor advisories, project
+  incident reports, and researcher write-ups. Not based on aggregator
+  coverage.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0172
+        techName: Runtime backdoor
+        tactic: Execution
+        comment: Backdoor/RAT payload documented by the cited sources.
+      - techniqueID: T0184
+        techName: Harvesting sensitive information from files
+        tactic: Credential Access
+        comment: Credential or wallet material targeted.
+      - techniqueID: T0121
+        techName: Compromised legitimate artifact
+        tactic: Resource Development
+        comment: Published package versions carried the payload.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Named in the tstromberg supplychain-attack-data corpus with first-party references.
+
+links:
+  - https://www.sonatype.com/blog/anatomy-of-the-rubygems-rest-client-hack-and-getting-creative-about-open-source-security
+  - https://github.com/rest-client/rest-client/issues/713
+  - https://snyk.io/blog/code-execution-back-door-found-in-rubys-rest-client-library/
+  - https://www.helpnetsecurity.com/2019/08/21/backdoored-ruby-gems/

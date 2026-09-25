@@ -37,3 +37,4 @@ attacks:
 links:
   - https://opensourcemalware.com/blog/velora-formerly-paraswap-sdk-version-941-compromised-and-installing-malware
   - https://safedep.io/malicious-velora-dex-sdk-npm-compromised-rat
+  - https://www.stepsecurity.io/blog/velora-dex-sdk-compromised-on-npm-malicious-version-drops-macos-backdoor-via-launchctl-persistence

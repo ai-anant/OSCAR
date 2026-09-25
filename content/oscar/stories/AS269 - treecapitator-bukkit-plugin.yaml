@@ -1,0 +1,31 @@
+id: AS269
+type: Attack Story
+date: 2023-05
+platforms:
+  - git
+  - cicd-saas
+
+summary: Treecapitator plugin shipped Fracturiser malware
+description: |
+  Catalogued from the tstromberg supplychain-attack-data dataset
+  (community-curated incident corpus). Included because first-party
+  sources exist for it; see the links below — vendor advisories, project
+  incident reports, and researcher write-ups. Not based on aggregator
+  coverage.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0111
+        techName: Malicious code contribution to an open-source repository
+        tactic: Resource Development
+        comment: Malicious code in distributed plugin/mod packages.
+
+links:
+  - https://support.curseforge.com/en/support/solutions/articles/9000228509-june-2023-infected-mods-detection-tool-and-report
+  - https://prismlauncher.org/news/cf-compromised-alert/
+  - https://www.bitdefender.com/en-au/blog/labs/infected-minecraft-mods-lead-to-multi-stage-multi-platform-infostealer-malware

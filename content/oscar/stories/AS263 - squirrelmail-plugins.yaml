@@ -1,0 +1,32 @@
+id: AS263
+type: Attack Story
+date: 2009-06
+platforms:
+  - git
+  - cicd-saas
+  - ai-agents
+
+summary: SquirrelMail plugin archives tried to mail passwords out
+description: |
+  Catalogued from the tstromberg supplychain-attack-data dataset
+  (community-curated incident corpus). Included because first-party
+  sources exist for it; see the links below — vendor advisories, project
+  incident reports, and researcher write-ups. Not based on aggregator
+  coverage.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0111
+        techName: Malicious code contribution to an open-source repository
+        tactic: Resource Development
+        comment: Malicious code in distributed plugin/mod packages.
+
+links:
+  - https://lwn.net/Articles/344727/
+  - https://marc.info/?l=squirrelmail-announce&m=124534891405634&w=2
+  - https://www.infosecurity-magazine.com/news/squirrelmail-open-source-email-project-hacked/

@@ -1,0 +1,45 @@
+id: AS213
+type: Attack Story
+date: 2022-05
+platforms:
+  - pypi
+
+summary: ctx PyPI account stole environment variables
+description: |
+  Catalogued from the tstromberg supplychain-attack-data dataset
+  (community-curated incident corpus). Included because first-party
+  sources exist for it; see the links below — vendor advisories, project
+  incident reports, and researcher write-ups. Not based on aggregator
+  coverage.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0172
+        techName: Runtime backdoor
+        tactic: Execution
+        comment: Backdoor/RAT payload documented by the cited sources.
+      - techniqueID: T0184
+        techName: Harvesting sensitive information from files
+        tactic: Credential Access
+        comment: Credential or wallet material targeted.
+      - techniqueID: T0121
+        techName: Compromised legitimate artifact
+        tactic: Resource Development
+        comment: Published package versions carried the payload.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Named in the tstromberg supplychain-attack-data corpus with first-party references.
+
+links:
+  - https://orca.security/resources/blog/python-supply-chain-attack-ctx-phpass/
+  - https://www.crowdstrike.com/en-us/blog/how-crowdstrike-detects-poisoned-python-packages-ctx-phpass/
+  - https://www.sonatype.com/blog/pypi-package-ctx-compromised-are-you-at-risk
+  - https://cybersecuritynews.com/attackers-compromised-pypi-package/
+  - https://isc.sans.edu/diary/28678
+  - https://python-security.readthedocs.io/pypi-vuln/index-2022-05-24-ctx-domain-takeover.html

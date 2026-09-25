@@ -1,0 +1,31 @@
+id: AS202
+type: Attack Story
+date: 2026-07
+platforms:
+  - linux
+
+summary: AUR adoption disabled after a second malicious commit wave
+description: |
+  Catalogued from the tstromberg supplychain-attack-data dataset
+  (community-curated incident corpus). Included because first-party
+  sources exist for it; see the links below — vendor advisories, project
+  incident reports, and researcher write-ups. Not based on aggregator
+  coverage.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Named in the tstromberg supplychain-attack-data corpus with first-party references.
+
+links:
+  - https://corgea.com/research/arch-aur-openconnect-sso-malware-wave-august-2026
+  - https://www.phoronix.com/news/Arch-Linux-AUR-Adoptions-Halted
+  - https://cybersecuritynews.com/arch-linux-disables-aur-package/
+  - https://www.hexnode.com/blogs/arch-linux-aur-malware-campaign/

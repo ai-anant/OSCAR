@@ -1,0 +1,40 @@
+id: AS215
+type: Attack Story
+date: 2025-08
+platforms:
+  - git
+  - cicd-saas
+
+summary: Essential Plugin WordPress.org portfolio backdoor
+description: |
+  Catalogued from the tstromberg supplychain-attack-data dataset
+  (community-curated incident corpus). Included because first-party
+  sources exist for it; see the links below — vendor advisories, project
+  incident reports, and researcher write-ups. Not based on aggregator
+  coverage.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0172
+        techName: Runtime backdoor
+        tactic: Execution
+        comment: Backdoor/RAT payload documented by the cited sources.
+      - techniqueID: T0184
+        techName: Harvesting sensitive information from files
+        tactic: Credential Access
+        comment: Credential or wallet material targeted.
+      - techniqueID: T0111
+        techName: Malicious code contribution to an open-source repository
+        tactic: Resource Development
+        comment: Malicious code in distributed plugin/mod packages.
+
+links:
+  - https://anchor.host/someone-bought-30-wordpress-plugins-and-planted-a-backdoor-in-all-of-them/
+  - https://www.technadu.com/wordpress-essential-plugin-backdoor-disseminated-to-over-20000-active-wordpress-installations/625912/
+  - https://wpspear.com/essentialplugin-flippa-backdoor/
+  - https://mysites.guru/blog/essential-plugin-wordpress-backdoor/

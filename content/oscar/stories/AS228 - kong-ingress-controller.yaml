@@ -1,0 +1,32 @@
+id: AS228
+type: Attack Story
+date: 2024-12
+platforms:
+  - docker
+
+summary: Kong Ingress image shipped cryptominer
+description: |
+  Catalogued from the tstromberg supplychain-attack-data dataset
+  (community-curated incident corpus). Included because first-party
+  sources exist for it; see the links below — vendor advisories, project
+  incident reports, and researcher write-ups. Not based on aggregator
+  coverage.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0184
+        techName: Harvesting sensitive information from files
+        tactic: Credential Access
+        comment: Wallet/keys targeted.
+
+links:
+  - https://github.com/Kong/kubernetes-ingress-controller/security/advisories/GHSA-58mg-ww7q-xw3p
+  - https://konghq.com/blog/product-releases/december-2024-unauthorized-kong-ingress-controller-3-4-0-build
+  - https://hackread.com/malicious-kong-ingress-controller-image-dockerhub/
+  - https://www.armosec.io/blog/kong-ingress-controller-cryptojacking/
+  - https://github.com/Kong/kubernetes-ingress-controller/issues/6907

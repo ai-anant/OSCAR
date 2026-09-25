@@ -1,0 +1,33 @@
+id: AS266
+type: Attack Story
+date: 1999-01
+platforms:
+  - windows
+
+summary: tcp-wrappers tarball granted remote root
+description: |
+  Catalogued from the tstromberg supplychain-attack-data dataset
+  (community-curated incident corpus). Included because first-party
+  sources exist for it; see the links below — vendor advisories, project
+  incident reports, and researcher write-ups. Not based on aggregator
+  coverage.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0209
+        techName: Compromise package registry or CDN origin
+        tactic: Initial Access
+        comment: Distribution origin hosted the trojanized artifact.
+
+links:
+  - https://seclists.org/bugtraq/1999/Jan/257
+  - https://web.archive.org/web/20140720105610/http://www.cert.org/advisories/CA-1999-01.html
+  - https://seclists.org/bugtraq/1999/Jan/282
+  - https://www.cs.toronto.edu/sunmanagers/1999/0096.html
+  - https://attrition.org/security/advisory/fedcirc/1999/fedcirc.99.01.txt
+  - https://en.wikipedia.org/wiki/TCP_Wrappers#Security

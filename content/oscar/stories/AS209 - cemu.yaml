@@ -1,0 +1,37 @@
+id: AS209
+type: Attack Story
+date: 2026-05
+platforms:
+  - git
+
+summary: TeamPCP backdoored the Cemu 2.6 Linux release assets
+description: |
+  Catalogued from the tstromberg supplychain-attack-data dataset
+  (community-curated incident corpus). Included because first-party
+  sources exist for it; see the links below — vendor advisories, project
+  incident reports, and researcher write-ups. Not based on aggregator
+  coverage.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0172
+        techName: Runtime backdoor
+        tactic: Execution
+        comment: Backdoor/RAT payload documented by the cited sources.
+      - techniqueID: T0184
+        techName: Harvesting sensitive information from files
+        tactic: Credential Access
+        comment: Credential or wallet material targeted.
+
+links:
+  - https://securitylabs.datadoghq.com/articles/backdoored-cemu-release-teampcp-supply-chain-campaign/
+  - https://corgea.com/research/cemu-linux-release-assets-teampcp-malware
+  - https://github.com/cemu-project/Cemu/issues/1911
+  - https://www.gamingonlinux.com/2026/05/popular-emulator-cemu-was-recently-compromised-with-malware-in-linux-downloads/
+  - https://www.xda-developers.com/20000-linux-users-grabbed-malicious-cemu-build-steals-passwords-coding-cloud-credentials/
+  - https://www.neowin.net/news/popular-wii-u-emulator-cemu-has-been-offering-compromised-downloads-for-days/

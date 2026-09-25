@@ -1,0 +1,37 @@
+id: AS276
+type: Attack Story
+date: 2007-02
+platforms:
+  - git
+  - cicd-saas
+  - windows
+
+summary: WordPress download enabled remote execution
+description: |
+  Catalogued from the tstromberg supplychain-attack-data dataset
+  (community-curated incident corpus). Included because first-party
+  sources exist for it; see the links below — vendor advisories, project
+  incident reports, and researcher write-ups. Not based on aggregator
+  coverage.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0111
+        techName: Malicious code contribution to an open-source repository
+        tactic: Resource Development
+        comment: Malicious code in distributed plugin/mod packages.
+      - techniqueID: T0209
+        techName: Compromise package registry or CDN origin
+        tactic: Initial Access
+        comment: Distribution origin hosted the trojanized artifact.
+
+links:
+  - https://wordpress.org/news/2007/03/upgrade-212/
+  - https://ifsec.blogspot.com/2007/03/wordpress-code-compromised-to-enable.html
+  - https://threatpost.com/wordpress-fixes-security-issues-in-core-engine-021622/21404/
+  - https://www.thetechherald.com/tech-news/wordpress-211-infected-with-backdoor-code/

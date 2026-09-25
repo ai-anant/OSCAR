@@ -1,0 +1,31 @@
+id: AS219
+type: Attack Story
+date: 2018-06
+platforms:
+  - git
+  - linux
+
+summary: Gentoo GitHub hack modified ebuilds
+description: |
+  Catalogued from the tstromberg supplychain-attack-data dataset
+  (community-curated incident corpus). Included because first-party
+  sources exist for it; see the links below — vendor advisories, project
+  incident reports, and researcher write-ups. Not based on aggregator
+  coverage.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Named in the tstromberg supplychain-attack-data corpus with first-party references.
+
+links:
+  - https://arstechnica.com/information-technology/2018/06/gentoo-linux-github-organization-hacked-and-defaced/
+  - https://www.gentoo.org/news/2018/06/28/Github-gentoo-org-hacked.html
+  - https://wiki.gentoo.org/wiki/Project:Infrastructure/Incident_reports/2018-06-28_Github

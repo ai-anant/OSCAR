@@ -1,0 +1,38 @@
+id: AS206
+type: Attack Story
+date: 2026-05
+platforms:
+  - packagist
+
+summary: bfunky/http-parser Packagist package backdoored with host stealer
+description: |
+  Catalogued from the tstromberg supplychain-attack-data dataset
+  (community-curated incident corpus). Included because first-party
+  sources exist for it; see the links below — vendor advisories, project
+  incident reports, and researcher write-ups. Not based on aggregator
+  coverage.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0172
+        techName: Runtime backdoor
+        tactic: Execution
+        comment: Backdoor/RAT payload documented by the cited sources.
+      - techniqueID: T0184
+        techName: Harvesting sensitive information from files
+        tactic: Credential Access
+        comment: Credential or wallet material targeted.
+      - techniqueID: T0121
+        techName: Compromised legitimate artifact
+        tactic: Resource Development
+        comment: Published package versions carried the payload.
+
+links:
+  - https://www.reddit.com/r/blueteamsec/comments/1tfhhl9/somebody_backdoored_the_package_bfunkyhttpparser/
+  - https://github.com/bfunky/http-parser/commit/d1c67b2a59301c753e69eabee2ef1c265b111936
+  - https://packagist.org/packages/bfunky/http-parser

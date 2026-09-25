@@ -1,0 +1,41 @@
+id: AS261
+type: Attack Story
+date: 2024-12
+platforms:
+  - git
+
+summary: "@solana/web3.js stole private keys"
+description: |
+  Catalogued from the tstromberg supplychain-attack-data dataset
+  (community-curated incident corpus). Included because first-party
+  sources exist for it; see the links below — vendor advisories, project
+  incident reports, and researcher write-ups. Not based on aggregator
+  coverage.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0172
+        techName: Runtime backdoor
+        tactic: Execution
+        comment: Backdoor/RAT payload documented by the cited sources.
+      - techniqueID: T0184
+        techName: Harvesting sensitive information from files
+        tactic: Credential Access
+        comment: Credential or wallet material targeted.
+      - techniqueID: T0184
+        techName: Harvesting sensitive information from files
+        tactic: Credential Access
+        comment: Wallet/keys targeted.
+
+links:
+  - https://nvd.nist.gov/vuln/detail/CVE-2024-54134
+  - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-54134
+  - https://www.cyfrin.io/blog/critical-security-alert-solana-web3-js-library-compromise
+  - https://github.com/solana-labs/solana-web3.js/releases/tag/v1.95.8
+  - https://www.theregister.com/security/2024/12/05/solana-javascript-sdk-backdoored-to-steal-keys-funds/1065507
+  - https://github.com/advisories/GHSA-jcxm-7wvp-g6p5

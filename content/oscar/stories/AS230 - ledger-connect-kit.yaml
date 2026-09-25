@@ -1,0 +1,37 @@
+id: AS230
+type: Attack Story
+date: 2023-12
+platforms:
+  - ai-agents
+
+summary: Ledger Connect Kit shipped wallet drainer
+description: |
+  Catalogued from the tstromberg supplychain-attack-data dataset
+  (community-curated incident corpus). Included because first-party
+  sources exist for it; see the links below — vendor advisories, project
+  incident reports, and researcher write-ups. Not based on aggregator
+  coverage.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0172
+        techName: Runtime backdoor
+        tactic: Execution
+        comment: Backdoor/RAT payload documented by the cited sources.
+      - techniqueID: T0184
+        techName: Harvesting sensitive information from files
+        tactic: Credential Access
+        comment: Credential or wallet material targeted.
+      - techniqueID: T0184
+        techName: Harvesting sensitive information from files
+        tactic: Credential Access
+        comment: Wallet/keys targeted.
+
+links:
+  - https://www.ledger.com/blog/security-incident-report
+  - https://www.blockaid.io/blog/attack-report-ledger-connect-kit

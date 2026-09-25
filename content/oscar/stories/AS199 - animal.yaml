@@ -1,0 +1,35 @@
+id: AS199
+type: Attack Story
+date: 1975-01
+platforms:
+  - ai-agents
+
+summary: ANIMAL trojan replicated across mainframes
+description: |
+  Catalogued from the tstromberg supplychain-attack-data dataset
+  (community-curated incident corpus). Included because first-party
+  sources exist for it; see the links below — vendor advisories, project
+  incident reports, and researcher write-ups. Not based on aggregator
+  coverage.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0172
+        techName: Runtime backdoor
+        tactic: Execution
+        comment: Backdoor/RAT payload documented by the cited sources.
+      - techniqueID: T0184
+        techName: Harvesting sensitive information from files
+        tactic: Credential Access
+        comment: Credential or wallet material targeted.
+
+links:
+  - https://www.fourmilab.ch/documents/univac/animal.html
+  - https://www.fourmilab.ch/documents/univac/animalsrc.html
+  - https://en.wikipedia.org/wiki/Timeline_of_computer_viruses_and_worms#1975
+  - https://www.computerhope.com/jargon/a/animal.htm

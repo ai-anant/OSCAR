@@ -1,0 +1,31 @@
+id: AS205
+type: Attack Story
+date: 2023-06
+platforms:
+  - git
+
+summary: Better MC modpacks shipped Fracturiser malware
+description: |
+  Catalogued from the tstromberg supplychain-attack-data dataset
+  (community-curated incident corpus). Included because first-party
+  sources exist for it; see the links below — vendor advisories, project
+  incident reports, and researcher write-ups. Not based on aggregator
+  coverage.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0111
+        techName: Malicious code contribution to an open-source repository
+        tactic: Resource Development
+        comment: Malicious code in distributed plugin/mod packages.
+
+links:
+  - https://support.curseforge.com/en/support/solutions/articles/9000228509-june-2023-infected-mods-detection-tool-and-report
+  - https://www.reddit.com/r/feedthebeast/comments/142zxka/some_curseforge_accounts_might_be/
+  - https://github.com/fractureiser-investigation/fractureiser
+  - https://raw.githubusercontent.com/fractureiser-investigation/fractureiser/main/docs/tech.md

@@ -1,0 +1,33 @@
+id: AS246
+type: Attack Story
+date: 2022-05
+platforms:
+  - packagist
+  - git
+
+summary: hautelook/phpass hijacked through GitHub organization
+description: |
+  Catalogued from the tstromberg supplychain-attack-data dataset
+  (community-curated incident corpus). Included because first-party
+  sources exist for it; see the links below — vendor advisories, project
+  incident reports, and researcher write-ups. Not based on aggregator
+  coverage.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Named in the tstromberg supplychain-attack-data corpus with first-party references.
+
+links:
+  - https://www.concretecms.org/about/project-news/security/supply-chain-hack-phpass-repo-jacking
+  - https://orca.security/resources/blog/python-supply-chain-attack-ctx-phpass/
+  - https://www.crowdstrike.com/en-us/blog/how-crowdstrike-detects-poisoned-python-packages-ctx-phpass/
+  - https://www.sonatype.com/blog/pypi-package-ctx-compromised-are-you-at-risk
+  - https://cybersecuritynews.com/attackers-compromised-pypi-package/

@@ -1,0 +1,40 @@
+id: AS198
+type: Attack Story
+date: 2026-07
+platforms:
+  - git
+  - cicd-saas
+
+summary: ARVE WordPress plugin shipped a hardcoded admin backdoor
+description: |
+  Catalogued from the tstromberg supplychain-attack-data dataset
+  (community-curated incident corpus). Included because first-party
+  sources exist for it; see the links below — vendor advisories, project
+  incident reports, and researcher write-ups. Not based on aggregator
+  coverage.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0172
+        techName: Runtime backdoor
+        tactic: Execution
+        comment: Backdoor/RAT payload documented by the cited sources.
+      - techniqueID: T0184
+        techName: Harvesting sensitive information from files
+        tactic: Credential Access
+        comment: Credential or wallet material targeted.
+      - techniqueID: T0111
+        techName: Malicious code contribution to an open-source repository
+        tactic: Resource Development
+        comment: Malicious code in distributed plugin/mod packages.
+
+links:
+  - https://www.wordfence.com/blog/2026/07/wordfence-prism-detected-backdoored-wordpress-plugin-within-two-hours-of-it-being-introduced/
+  - https://github.com/advisories/GHSA-45wh-rxq4-jqc6
+  - https://hackread.com/wordfence-critical-backdoor-arve-wordpress-plugin/
+  - https://cybersecuritynews.com/wordpress-plugin-backdoor/

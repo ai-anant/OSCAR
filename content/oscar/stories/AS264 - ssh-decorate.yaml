@@ -1,0 +1,43 @@
+id: AS264
+type: Attack Story
+date: 2018-05
+platforms:
+  - pypi
+
+summary: ssh-decorate PyPI releases stole SSH credentials
+description: |
+  Catalogued from the tstromberg supplychain-attack-data dataset
+  (community-curated incident corpus). Included because first-party
+  sources exist for it; see the links below — vendor advisories, project
+  incident reports, and researcher write-ups. Not based on aggregator
+  coverage.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0172
+        techName: Runtime backdoor
+        tactic: Execution
+        comment: Backdoor/RAT payload documented by the cited sources.
+      - techniqueID: T0184
+        techName: Harvesting sensitive information from files
+        tactic: Credential Access
+        comment: Credential or wallet material targeted.
+      - techniqueID: T0121
+        techName: Compromised legitimate artifact
+        tactic: Resource Development
+        comment: Published package versions carried the payload.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Named in the tstromberg supplychain-attack-data corpus with first-party references.
+
+links:
+  - https://securityaffairs.com/72298/malware/ssh-decorator-backdoor.html
+  - https://www.reddit.com/r/Python/comments/8hvzja/backdoor_in_sshdecorator_package/
+  - https://www.securitynewspaper.com/2018/05/10/researchers-found-backdoor-python-library-steal-ssh-credentials/
+  - https://data.safetycli.com/packages/pypi/ssh-decorate/

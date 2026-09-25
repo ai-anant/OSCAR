@@ -1,0 +1,30 @@
+id: AS241
+type: Attack Story
+date: 2026-03
+platforms:
+  - git
+
+summary: OpenGov form builder carried CanisterWorm
+description: |
+  Catalogued from the tstromberg supplychain-attack-data dataset
+  (community-curated incident corpus). Included because first-party
+  sources exist for it; see the links below — vendor advisories, project
+  incident reports, and researcher write-ups. Not based on aggregator
+  coverage.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Named in the tstromberg supplychain-attack-data corpus with first-party references.
+
+links:
+  - https://www.stepsecurity.io/blog/canisterworm-how-a-self-propagating-npm-worm-is-spreading-backdoors-across-the-ecosystem
+  - https://osv.dev/vulnerability/MAL-2026-2210
+  - https://www.stepsecurity.io/blog/trivy-compromised-a-second-time---malicious-v0-69-4-release

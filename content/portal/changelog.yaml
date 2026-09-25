@@ -1,5 +1,16 @@
 entries:
 - date: '2026-09-24'
+  id: tstromberg-dataset
+  title: 'tstromberg/supplychain-attack-data: 90 new incidents with first-party sources'
+  items:
+  - Walked all 182 attack records in the dataset. 31 overlapping records attached to existing stories
+    (Shai-Hulud waves, tj-actions/reviewdog, Ultralytics, node-ipc, jscrambler, telnyx, LiteLLM, Velora,
+    Cline, GlassWorm, Notepad++, Qix drainer).
+  - 90 remaining records became AS196–AS285 — each only because a first-party source (vendor advisory,
+    project incident report, researcher write-up, primary mailing list) exists. Aggregator-only and source-less
+    records (ANIMAL 1975 pre-cs, Ken Thompson demo) still came in via primary papers.
+  - Corpus now 284 stories.
+- date: '2026-09-24'
   id: daemon-tools-gtig-wiz
   title: DAEMON Tools signed-installer backdoor plus Wiz/GTIG attaches
   items:

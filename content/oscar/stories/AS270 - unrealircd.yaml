@@ -1,0 +1,33 @@
+id: AS270
+type: Attack Story
+date: 2009-11
+platforms:
+  - windows
+
+summary: UnrealIRCd tarball enabled remote execution
+description: |
+  Catalogued from the tstromberg supplychain-attack-data dataset
+  (community-curated incident corpus). Included because first-party
+  sources exist for it; see the links below — vendor advisories, project
+  incident reports, and researcher write-ups. Not based on aggregator
+  coverage.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0209
+        techName: Compromise package registry or CDN origin
+        tactic: Initial Access
+        comment: Distribution origin hosted the trojanized artifact.
+
+links:
+  - https://forums.unrealircd.org/viewtopic.php?t=6562
+  - https://www.rapid7.com/db/modules/exploit/unix/irc/unreal_ircd_3281_backdoor/
+  - https://lwn.net/Articles/392201/
+  - https://www.theregister.com/software/2010/06/14/linux-irc-server-leaves-backdoor-open/1373423
+  - https://arstechnica.com/information-technology/2010/06/unreal-ircd-backdoored-for-months/
+  - https://seclists.org/dailydave/2010/q2/56

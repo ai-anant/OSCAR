@@ -1,0 +1,33 @@
+id: AS249
+type: Attack Story
+date: 2019-07
+platforms:
+  - windows
+
+summary: PureScript installer dependencies were sabotaged
+description: |
+  Catalogued from the tstromberg supplychain-attack-data dataset
+  (community-curated incident corpus). Included because first-party
+  sources exist for it; see the links below — vendor advisories, project
+  incident reports, and researcher write-ups. Not based on aggregator
+  coverage.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0209
+        techName: Compromise package registry or CDN origin
+        tactic: Initial Access
+        comment: Distribution origin hosted the trojanized artifact.
+
+links:
+  - https://harry.garrood.me/blog/malicious-code-in-purescript-npm-installer/
+  - https://github.com/purescript/npm-installer/issues/12
+  - https://jarrodoverson.com/post/how-two-malicious-npm-packages-targeted-sabotaged-one-other-fed7199099c8/
+  - https://www.theregister.com/security/2019/07/15/malicious-code-ousted-from-purescripts-npm-installer-but-who-put-it-there-in-the-first-place/457385
+  - https://securityaffairs.com/88433/hacking/npm-installer-purescript-compromised.html
+  - https://sechub.in/view/1744975

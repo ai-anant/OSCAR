@@ -1,0 +1,33 @@
+id: AS240
+type: Attack Story
+date: 2018-08
+platforms:
+  - git
+
+summary: Octopus Scanner infected NetBeans builds
+description: |
+  Catalogued from the tstromberg supplychain-attack-data dataset
+  (community-curated incident corpus). Included because first-party
+  sources exist for it; see the links below — vendor advisories, project
+  incident reports, and researcher write-ups. Not based on aggregator
+  coverage.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Named in the tstromberg supplychain-attack-data corpus with first-party references.
+
+links:
+  - https://github.blog/security/vulnerability-research/the-octopus-scanner-malware-attacking-the-open-source-supply-chain/
+  - https://cycode.com/blog/beyond-solarwinds-the-octopus-scanner-supply-chain-attack/
+  - https://www.sonatype.com/blog/octopus-scanner-compromises-26-oss-projects-on-github
+  - https://cyberscoop.com/github-octopus-malware-supply-chain/
+  - https://www.techtarget.com/searchsecurity/news/252483808/Supply-chain-attack-hits-26-open-source-projects-on-GitHub
+  - https://cloudsecurityalliance.org/blog/2020/06/10/the-octopus-scanner-malware-attacking-the-open-source-supply-chain

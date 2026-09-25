@@ -61,3 +61,5 @@ gaps: []
 links:
   - https://github.com/ultralytics/ultralytics/issues/18027
   - https://www.stepsecurity.io/blog/crypto-mining-campaign-targets-ultralytics-pypi-package
+  - https://github.com/ultralytics/ultralytics/issues/18029
+  - https://github.com/ultralytics/ultralytics/security/advisories/GHSA-32hc-9xrg-cc9g

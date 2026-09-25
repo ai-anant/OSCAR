@@ -1,0 +1,34 @@
+id: AS279
+type: Attack Story
+date: 2024-06
+platforms:
+  - git
+
+summary: Contact Form 7 addon created backdoors
+description: |
+  Catalogued from the tstromberg supplychain-attack-data dataset
+  (community-curated incident corpus). Included because first-party
+  sources exist for it; see the links below — vendor advisories, project
+  incident reports, and researcher write-ups. Not based on aggregator
+  coverage.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0172
+        techName: Runtime backdoor
+        tactic: Execution
+        comment: Backdoor/RAT payload documented by the cited sources.
+      - techniqueID: T0184
+        techName: Harvesting sensitive information from files
+        tactic: Credential Access
+        comment: Credential or wallet material targeted.
+
+links:
+  - https://www.wordfence.com/blog/2024/06/supply-chain-attack-on-wordpress-org-plugins-leads-to-5-maliciously-compromised-wordpress-plugins/
+  - https://cveawg.mitre.org/api/cve/CVE-2024-6297
+  - https://wpscan.com/vulnerability/2c9eb68a-bf19-42df-9c71-f85c440225bc/

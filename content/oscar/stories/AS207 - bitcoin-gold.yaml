@@ -1,0 +1,41 @@
+id: AS207
+type: Attack Story
+date: 2017-11
+platforms:
+  - git
+
+summary: Bitcoin Gold wallet generated weak keys
+description: |
+  Catalogued from the tstromberg supplychain-attack-data dataset
+  (community-curated incident corpus). Included because first-party
+  sources exist for it; see the links below — vendor advisories, project
+  incident reports, and researcher write-ups. Not based on aggregator
+  coverage.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0172
+        techName: Runtime backdoor
+        tactic: Execution
+        comment: Backdoor/RAT payload documented by the cited sources.
+      - techniqueID: T0184
+        techName: Harvesting sensitive information from files
+        tactic: Credential Access
+        comment: Credential or wallet material targeted.
+      - techniqueID: T0184
+        techName: Harvesting sensitive information from files
+        tactic: Credential Access
+        comment: Wallet/keys targeted.
+
+links:
+  - https://web.archive.org/web/20201109001210/https://www.bitcoingold.org/critical-warning-nov-26/
+  - https://btgofficial.org/critical-warning-nov-26/
+  - https://www.bitcoingold.org/vulnerable-core-wallet-update/
+  - https://github.com/BTCGPU/BTCGPU/issues/231
+  - https://wccftech.com/bitcoin-gold-official-wallet-compromised/
+  - https://securityaffairs.com/66161/hacking/bitcoin-gold-security-breach.html

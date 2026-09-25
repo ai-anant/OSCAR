@@ -1,0 +1,35 @@
+id: AS211
+type: Attack Story
+date: 2022-01
+platforms:
+  - npm
+  - ai-agents
+
+summary: colors.js npm maintainer sabotage broke apps
+description: |
+  Catalogued from the tstromberg supplychain-attack-data dataset
+  (community-curated incident corpus). Included because first-party
+  sources exist for it; see the links below — vendor advisories, project
+  incident reports, and researcher write-ups. Not based on aggregator
+  coverage.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0121
+        techName: Compromised legitimate artifact
+        tactic: Resource Development
+        comment: Published package versions carried the payload.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Named in the tstromberg supplychain-attack-data corpus with first-party references.
+
+links:
+  - https://github.com/Marak/colors.js/issues/285
+  - https://snyk.io/blog/open-source-npm-packages-colors-faker-sabotaged/
+  - https://github.com/Marak/colors.js/commit/6bc50e79eeaa1d87369bb3e7e608ebed18c5cf26

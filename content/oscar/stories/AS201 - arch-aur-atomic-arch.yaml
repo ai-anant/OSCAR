@@ -1,0 +1,32 @@
+id: AS201
+type: Attack Story
+date: 2026-06
+platforms:
+  - linux
+
+summary: Orphaned AUR packages adopted and rewritten to steal credentials
+description: |
+  Catalogued from the tstromberg supplychain-attack-data dataset
+  (community-curated incident corpus). Included because first-party
+  sources exist for it; see the links below — vendor advisories, project
+  incident reports, and researcher write-ups. Not based on aggregator
+  coverage.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Named in the tstromberg supplychain-attack-data corpus with first-party references.
+
+links:
+  - https://www.sonatype.com/blog/atomic-arch-npm-campaign-adds-malicious-dependency
+  - https://www.stepsecurity.io/blog/400-aur-packages-hijacked-atomic-arch-campaign
+  - https://www.truesec.com/hub/blog/supply-chain-attack-compromising-arch-linux-aur-packages-infostealer-rootkit
+  - https://cybersecuritynews.com/arch-linux-aur-packages-compromised/
+  - https://safedep.io/ti/campaigns/atomic-arch/

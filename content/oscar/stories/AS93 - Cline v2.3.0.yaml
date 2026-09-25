@@ -30,3 +30,5 @@ attacks:
 
 links:
   - https://safedep.io/cline-cli-compromised
+  - https://cline.bot/blog/post-mortem-unauthorized-cline-cli-npm
+  - https://www.stepsecurity.io/blog/cline-supply-chain-attack-detected-cline-2-3-0-silently-installs-openclaw

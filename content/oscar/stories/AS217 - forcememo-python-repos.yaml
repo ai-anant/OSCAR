@@ -1,0 +1,31 @@
+id: AS217
+type: Attack Story
+date: 2026-03
+platforms:
+  - git
+
+summary: ForceMemo force-pushed Python malware
+description: |
+  Catalogued from the tstromberg supplychain-attack-data dataset
+  (community-curated incident corpus). Included because first-party
+  sources exist for it; see the links below — vendor advisories, project
+  incident reports, and researcher write-ups. Not based on aggregator
+  coverage.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Named in the tstromberg supplychain-attack-data corpus with first-party references.
+
+links:
+  - https://www.stepsecurity.io/blog/forcememo-hundreds-of-github-python-repos-compromised-via-account-takeover-and-force-push
+  - https://cybersecuritynews.com/forcememo-hijacks-github-accounts/
+  - https://github.com/watercrawl/watercrawl-py/commit/16f7797f15a75d632e55d03af07a31d4336a88db
+  - https://data.gharchive.org/2026-03-10-21.json.gz

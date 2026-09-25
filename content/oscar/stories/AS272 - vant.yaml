@@ -1,0 +1,33 @@
+id: AS272
+type: Attack Story
+date: 2024-12
+platforms:
+  - npm
+
+summary: vant npm packages shipped XMRig
+description: |
+  Catalogued from the tstromberg supplychain-attack-data dataset
+  (community-curated incident corpus). Included because first-party
+  sources exist for it; see the links below — vendor advisories, project
+  incident reports, and researcher write-ups. Not based on aggregator
+  coverage.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0121
+        techName: Compromised legitimate artifact
+        tactic: Resource Development
+        comment: Published package versions carried the payload.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Named in the tstromberg supplychain-attack-data corpus with first-party references.
+
+links:
+  - https://www.sonatype.com/blog/npm-packages-rspack-vant-compromised-blocked-by-sonatype
+  - https://securitylabs.datadoghq.com/articles/2025-q1-threat-roundup/#mut-1692-compromises-rspack-maintainers-account-to-distribute-cryptojacking-and-infostealer-malware

@@ -1,0 +1,30 @@
+id: AS220
+type: Attack Story
+date: 2025-06
+platforms:
+  - git
+
+summary: gluestack-ui packages shipped malware
+description: |
+  Catalogued from the tstromberg supplychain-attack-data dataset
+  (community-curated incident corpus). Included because first-party
+  sources exist for it; see the links below — vendor advisories, project
+  incident reports, and researcher write-ups. Not based on aggregator
+  coverage.
+
+attacks:
+  - attack: campaign
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Named in the tstromberg supplychain-attack-data corpus with first-party references.
+
+links:
+  - https://scanoss.com/lessons-from-the-gluestack-supply-chain-attack/
+  - https://www.aikido.dev/blog/supply-chain-attack-on-react-native-aria-ecosystem
+  - https://gluestack.io/blogs/public-incident-report

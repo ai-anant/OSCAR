@@ -33,3 +33,5 @@ attacks:
 links:
   - https://safedep.io/malicious-node-ipc-npm-compromise
   - https://socket.dev/blog/node-ipc-package-compromised
+  - https://snyk.io/blog/peacenotwar-protestware-node-ipc-package-vulnerability/
+  - https://github.com/advisories/GHSA-97m3-w2cp-4xx6

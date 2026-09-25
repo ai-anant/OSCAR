@@ -30,7 +30,7 @@
 <main>
 <p class="crumb">OSC&amp;R / <a href="index.html">Techniques</a> / T0122</p>
 
-        <p class="meta">T0122 · Initial Access · TA03 · observed in 6 incident(s)</p>
+        <p class="meta">T0122 · Initial Access · TA03 · observed in 7 incident(s)</p>
         <h1>Vulnerability in third-party CI/CD actions</h1>
         <div class="chips"><span class="chip">CI/CD Posture</span> <span class="chip">Container Security</span> <span class="chip">Infrastructure as code</span> <span class="chip">Open Source Security</span></div>
         <p>The use of 3rd party Github actions is very common. <br>Similar to using 3rd party libraries this can also introduce security risks - a malicious Github action has access to very sensitive information - i.e exfiltrating environment variables, including backdoors or malware in source code, infecting build artifacts.</p>
@@ -40,7 +40,7 @@
         <ul><li><span class="id">M1120</span> Store credentials in vault</li><li><span class="id">M1220</span> Use only trusted third-party Github actions from reputable sources</li><li><span class="id">M1221</span> Review the Github action source code</li><li><span class="id">M1222</span> Limit the permissions granted to third-party Github actions</li></ul>
         <h2>Detections</h2>
         <ul><li><span class="id">D1260</span> Implement regular security audit and review</li><li><span class="id">D1261</span> Implement penetration testing</li><li><span class="id">D1262</span> Implement vulnerability assessment</li><li><span class="id">D1590</span> Implement continuous monitoring and logging of the CI/CD process</li></ul>
-        <h2>Observed in incidents (6)</h2><ul><li><a href="../incidents/AS118.html">codfish/semantic-release-action tag hijack (Miasma)</a></li><li><a href="../incidents/AS17.html">Team PCP CI/CD secrets campaign</a></li><li><a href="../incidents/AS12.html">tj-actions/changed-files GitHub Action</a></li><li><a href="../incidents/AS3.html">Codecov Breach</a></li><li><a href="../incidents/AS13.html">Ultralytics PyPI compromise</a></li><li><a href="../incidents/AS16.html">TanStack Mini Shai-Hulud (CVE-2026-45321)</a></li></ul>
+        <h2>Observed in incidents (7)</h2><ul><li><a href="../incidents/AS197.html">actions-cool GitHub Actions tags rewritten by TeamPCP</a></li><li><a href="../incidents/AS118.html">codfish/semantic-release-action tag hijack (Miasma)</a></li><li><a href="../incidents/AS17.html">Team PCP CI/CD secrets campaign</a></li><li><a href="../incidents/AS12.html">tj-actions/changed-files GitHub Action</a></li><li><a href="../incidents/AS3.html">Codecov Breach</a></li><li><a href="../incidents/AS13.html">Ultralytics PyPI compromise</a></li><li><a href="../incidents/AS16.html">TanStack Mini Shai-Hulud (CVE-2026-45321)</a></li></ul>
         <h2>References</h2>
         <ul class='refs'><li><a href="https://www.truesec.com/hub/blog/secure-your-software-supply-chain-trusting-3rd-parties" rel="noopener">https://www.truesec.com/hub/blog/secure-your-software-supply-chain-trusting-3rd-parties</a></li></ul>
         
