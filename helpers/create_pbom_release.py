@@ -255,7 +255,7 @@ def generate_matrix(oscar_source_path, pbom_data_path):
                     "id": y['id'],
                     "name": y['summary'],
                     "tooltip": y['summary'],
-                    "url": f"https://ai-anant.github.io/OSCAR/techniques/{y['id']}.html",
+                    "url": f"https://ai-anant.github.io/supply-chain-incidences-catalogue/techniques/{y['id']}.html",
                     "description": y['description'],
                     # "subTechniques": [] if y['subTechniques']==[None] else y['subTechniques'],
                     # "subTechniquesAmount": len([] if y['subTechniques']==[None] else y['subTechniques']),

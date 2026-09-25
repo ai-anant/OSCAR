@@ -111,9 +111,10 @@ def page(title, body, root_prefix, crumb, extra_head=""):
     <header class="top">
       <div class="ai-banner">{BANNER}</div>
       <div class="bar">
-        <a class="brand" href="{root_prefix}index.html">OSC&amp;R</a>
+        <a class="brand" href="{root_prefix}index.html">SCIC</a>
         <nav>
-          <a href="{root_prefix}index.html">Matrix</a>
+          <a href="{root_prefix}index.html">Home</a>
+          <a href="{root_prefix}matrix.html">OSC&R Matrix</a>
           <a href="{root_prefix}techniques/index.html">Techniques</a>
           <a href="{root_prefix}incidents/index.html">Incident mapping</a>
           <a href="{root_prefix}platforms/index.html">Platforms</a>
@@ -128,10 +129,10 @@ def page(title, body, root_prefix, crumb, extra_head=""):
     </header>"""
     footer = f"""
     <footer>
-      <p>OSC&amp;R (Open Software Supply Chain Attack Reference) was created by
+      <p>The Open Software Supply Chain Attack Reference (OSC&R) was created by
       <a href="https://github.com/pbom-dev/OSCAR">pbom-dev</a> and its original contributors.
-      This fork is AI-maintained to continue that legacy. Apache-2.0. See
-      <a href="{root_prefix}about.html">About &amp; attribution</a>.</p>
+      This catalogue is AI-maintained to continue that legacy. Apache-2.0. See
+      <a href="{root_prefix}about.html">About & attribution</a>.</p>
     </footer>"""
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -254,6 +255,30 @@ h2 { font-size: 1.15rem; margin-top: 1.6rem; }
 .filter-bar button.on, .filter-bar button:hover, .filter-bar a:hover, .filter-bar a.on {
   border-color: var(--copper); color: var(--ink); text-decoration: none;
 }
+.dash { display: grid; grid-template-columns: repeat(auto-fit, minmax(21rem, 1fr)); gap: 1rem; margin: 1.2rem 0; }
+.dash .panelbox { background: var(--panel); border: 1px solid var(--line); padding: 0.9rem 1rem 1.1rem; }
+.dash .panelbox h3 { margin: 0 0 0.7rem; font-size: 0.95rem; color: var(--ink); }
+.dash .panelbox .sub { color: var(--muted); font-size: 0.78rem; margin: 0.45rem 0 0; }
+.hbar { display: grid; gap: 0.3rem; }
+.hbar .hb { display: grid; grid-template-columns: 9.5rem 1fr 2.6rem; gap: 0.5rem; align-items: center;
+  font-size: 0.78rem; }
+.hbar .hb .track { background: var(--panel-2); border: 1px solid var(--line); height: 0.85rem; position: relative; }
+.hbar .hb .fill { position: absolute; inset: 0 auto 0 0; background: linear-gradient(90deg, var(--copper-dim), var(--copper)); }
+.hbar .hb .val { color: var(--copper); font-family: ui-monospace, monospace; text-align: right; }
+.bars { display: flex; align-items: flex-end; gap: 3px; height: 9.5rem; margin-top: 0.6rem; }
+.bars .b { flex: 1 1 0; background: linear-gradient(180deg, var(--copper), var(--copper-dim));
+  min-width: 3px; position: relative; border-radius: 1px 1px 0 0; }
+.bars .b:hover::after {
+  content: attr(data-tip); position: absolute; bottom: 105%; left: 50%; transform: translateX(-50%);
+  background: #000d; color: var(--ink); padding: 0.25rem 0.45rem; font-size: 0.72rem;
+  white-space: nowrap; border: 1px solid var(--line); z-index: 5;
+}
+.tline { display: flex; gap: 0.9rem; flex-wrap: wrap; margin-top: 0.5rem; }
+.tline span { font-size: 0.78rem; color: var(--muted); }
+.big { font-size: 2.2rem; color: var(--copper); font-weight: 700; line-height: 1.1; }
+.era { display: grid; grid-template-columns: 6.2rem 1fr; gap: 0.6rem; align-items: baseline;
+  font-size: 0.82rem; margin: 0.3rem 0; }
+.era .n { font-family: ui-monospace, monospace; color: var(--teal); }
 .card.hidden { display: none !important; }
 .meta { color: var(--muted); font-size: 0.9rem; }
 .card { background: var(--panel); border: 1px solid var(--line); padding: 1rem 1.1rem; margin: 0.8rem 0; }
@@ -386,14 +411,156 @@ def build(dest):
             + "".join(cells) + "</div>"
         )
     n_tech, n_mit, n_det, n_story = len(techs), len(mits), len(dets), len(stories)
-    home = f"""
-    <h1>Open Software Supply Chain Attack Reference</h1>
-    <p class="lede">OSC&amp;R is a comprehensive, systematic, and actionable way to understand
-    attacker behaviors and techniques against the software supply chain — analogous to MITRE ATT&amp;CK,
-    scoped to source, build, artifacts, and the CI/CD path into production.</p>
+
+    # ---------- dashboard data ----------
+    # incidents per year
+    per_year = Counter()
+    for s in stories.values():
+        d = str(s.get("date") or "")
+        if d[:4].isdigit():
+            per_year[d[:4]] += 1
+    years = sorted(per_year)
+
+    # top techniques
+    top_techs = usage.most_common(12)
+    max_top = top_techs[0][1] if top_techs else 1
+    top_rows = "".join(
+        f'<div class="hb"><span class="id">{html.escape(tid)}</span>'
+        f'<span class="track"><span class="fill" style="width:{round(100 * n / max_top)}%"></span></span>'
+        f'<span class="val">{n}</span></div>'
+        for tid, n in top_techs
+    )
+
+    # incidents per platform
+    per_plat = Counter()
+    for s in stories.values():
+        for p in s.get("platforms") or []:
+            if p:
+                per_plat[p] += 1
+    top_plats = per_plat.most_common(12)
+    max_plat = top_plats[0][1] if top_plats else 1
+    plat_rows = "".join(
+        f'<div class="hb"><a href="platforms/{html.escape(slug)}.html">{html.escape(plat_labels.get(slug, slug))}</a>'
+        f'<span class="track"><span class="fill" style="width:{round(100 * n / max_plat)}%"></span></span>'
+        f'<span class="val">{n}</span></div>'
+        for slug, n in top_plats
+    )
+
+    # observed vs identified techniques
+    n_observed = sum(1 for tid in techs if usage[tid] > 0)
+    n_identified = n_tech - n_observed
+
+    # era split (pre-2020 classics vs modern wave)
+    eras = Counter()
+    for s in stories.values():
+        d = str(s.get("date") or "")
+        y = int(d[:4]) if d[:4].isdigit() else 0
+        if y == 0:
+            eras["unknown"] += 1
+        elif y < 2020:
+            eras["pre-2020 classics"] += 1
+        elif y < 2025:
+            eras["2020–2024"] += 1
+        else:
+            eras["2025–2026 wave"] += 1
+
+    # top actors / malware names from summaries (crude but useful)
+    name_pat = re.compile(r"\b([A-Z][A-Za-z0-9]*(?:-[A-Za-z0-9]+)+|[A-Z]{2,}[A-Za-z0-9]*)\b")
+    name_hits = Counter()
+    for s in stories.values():
+        blob = (s.get("summary") or "") + " " + (s.get("description") or "")[:300]
+        for m in name_pat.findall(blob):
+            if len(m) >= 5 and m.lower() not in ("supply", "chain", "github", "windows", "chrome", "firefox", "linux", "package", "attack", "campaign", "backdoor", "stealer", "malware", "npm", "pypi", "pytorch", "solarwinds", "circleci", "codecov", "ultralytics", "dependabot", "wednesday"):
+                name_hits[m] += 1
+    top_names = name_hits.most_common(10)
+    name_chips = " ".join(
+        f'<a class="chip" href="incidents/index.html">{html.escape(nm)} <b>{c}</b></a>'
+        for nm, c in top_names
+    ) or '<span class="muted">—</span>'
+
+    year_bars = "".join(
+        f'<div class="b" data-tip="{y}: {per_year[y]} incidents" style="height:{round(100 * per_year[y] / max(per_year.values()))}%"></div>'
+        for y in years
+    )
+    year_labels = "".join(f"<span>{y[2:]}</span>" for y in years)
+
+    dash = f"""
+    <h1>Supply Chain Incidences Catalogue</h1>
+    <p class="lede">An AI-maintained continuation of the Open Software Supply Chain Attack
+    Reference (OSC&R): {n_story} documented incidents, {n_tech} techniques, and the
+    ecosystems they hit — analogous to MITRE ATT&CK, scoped to source, build, artifacts,
+    and the CI/CD path into production.</p>
     <div class="notice">{BANNER} Original project:
     <a href="https://github.com/pbom-dev/OSCAR">github.com/pbom-dev/OSCAR</a>.
-    This site is published from <a href="https://github.com/ai-anant/OSCAR">ai-anant/OSCAR</a>.</div>
+    This catalogue is published from
+    <a href="https://github.com/ai-anant/supply-chain-incidences-catalogue">ai-anant/supply-chain-incidences-catalogue</a>.</div>
+    <div class="stats">
+      <div class="stat"><b>{n_story}</b> incidents</div>
+      <div class="stat"><b>{n_tech}</b> techniques</div>
+      <div class="stat"><b>{n_observed}</b> observed in incidents</div>
+      <div class="stat"><b>{n_identified}</b> identified from research</div>
+      <div class="stat"><b>{n_mit}</b> mitigations</div>
+      <div class="stat"><b>{n_det}</b> detections</div>
+      <div class="stat"><b>{len(per_plat)}</b> platforms</div>
+    </div>
+
+    <div class="dash">
+      <div class="panelbox" style="grid-column: 1 / -1;">
+        <h3>Incidents per year</h3>
+        <div class="bars">{year_bars}</div>
+        <div class="tline">{''.join(f'<span>{y}</span>' for y in years)}</div>
+        <p class="sub">Hover a bar for the count. 2025–2026 is the worm/ATO wave
+        (Shai-Hulud and descendants); the pre-2020 bars are the classic vendor-updater era.</p>
+      </div>
+      <div class="panelbox">
+        <h3>Most-used techniques</h3>
+        <div class="hbar">{top_rows}</div>
+        <p class="sub">By number of incidents mapping to each technique. Full list in the
+        <a href="matrix.html">OSC&R matrix</a>.</p>
+      </div>
+      <div class="panelbox">
+        <h3>Incidents per platform</h3>
+        <div class="hbar">{plat_rows}</div>
+        <p class="sub">Grouped lists per ecosystem in
+        <a href="platforms/index.html">Platforms</a>.</p>
+      </div>
+      <div class="panelbox">
+        <h3>Eras</h3>
+        <div class="era"><span class="n">{eras.get('pre-2020 classics', 0)}</span> pre-2020 classics (CCleaner, NotPetya, ShadowHammer era)</div>
+        <div class="era"><span class="n">{eras.get('2020–2024', 0)}</span> 2020–2024 (extension and registry hijack era)</div>
+        <div class="era"><span class="n">{eras.get('2025–2026 wave', 0)}</span> 2025–2026 worm/ATO wave</div>
+        <p class="sub">The 2025–2026 wave is roughly one incident every three days per
+        StepSecurity's tracking.</p>
+      </div>
+      <div class="panelbox">
+        <h3>Frequently seen in write-ups</h3>
+        <div class="chips">{name_chips}</div>
+        <p class="sub">Actor / malware names appearing most often across incident summaries.</p>
+      </div>
+    </div>
+
+    <div class="dash">
+      <div class="panelbox"><h3>Browse</h3>
+        <p><a href="matrix.html">OSC&R matrix</a> — techniques × tactics, heat-mapped by incident count</p>
+        <p><a href="incidents/index.html">Incident mapping</a> — every incident → techniques</p>
+        <p><a href="platforms/index.html">Platforms</a> — all incidents for npm, PyPI, GitHub Actions, …</p>
+        <p><a href="stories/index.html">Attack stories</a> — chronological list</p>
+      </div>
+      <div class="panelbox"><h3>Project</h3>
+        <p><a href="guidance.html">Guidance mapping</a> — OWASP / NIST / SLSA / CISA</p>
+        <p><a href="origins.html">Origins</a> — where each technique came from</p>
+        <p><a href="sources.html">Sources</a> — the watch list this catalogue tracks</p>
+        <p><a href="changelog.html">Changelog</a> — what the AI maintainer added</p>
+      </div>
+    </div>
+    """
+    write(os.path.join(dest, "index.html"), page("Home", dash, "", "SCIC / Home"))
+
+    matrix_body = f"""
+    <h1>OSC&R Matrix</h1>
+    <p class="lede">Open Software Supply Chain Attack Reference — techniques × tactics.
+    The matrix is heat-mapped by how many incidents in this catalogue map to each technique.</p>
+    <div class="notice">{BANNER}</div>
     <div class="stats">
       <div class="stat"><b>{n_tech}</b> techniques</div>
       <div class="stat"><b>{n_mit}</b> mitigations</div>
@@ -440,7 +607,7 @@ def build(dest):
     applyFilter();
     </script>
     """
-    write(os.path.join(dest, "index.html"), page("Matrix", home, "", "OSC&amp;R / Matrix"))
+    write(os.path.join(dest, "matrix.html"), page("OSC&R Matrix", matrix_body, "", "SCIC / OSC&R Matrix"))
 
     # techniques index + pages
     rows = []

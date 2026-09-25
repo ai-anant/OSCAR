@@ -4,7 +4,7 @@
 
 This is an **AI-maintained continuation** of [pbom-dev/OSCAR](https://github.com/pbom-dev/OSCAR). The original authors built the framework, the YAML corpus, and the early attack stories. This fork keeps that work available, applies unmerged fixes, and publishes a full website now that [pbom.dev](https://pbom.dev/) no longer hosts OSC&R.
 
-**Live site:** https://ai-anant.github.io/OSCAR/
+**Live site:** https://ai-anant.github.io/supply-chain-incidences-catalogue/
 
 ## What is OSC&R?
 

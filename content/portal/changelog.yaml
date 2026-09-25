@@ -1,5 +1,15 @@
 entries:
 - date: '2026-09-24'
+  id: rename-and-dashboard
+  title: Renamed to supply-chain-incidences-catalogue; homepage is now a stats dashboard
+  items:
+  - 'Repository renamed ai-anant/OSCAR → ai-anant/supply-chain-incidences-catalogue (GitHub redirects
+    the old name). Pages moved with it: https://ai-anant.github.io/supply-chain-incidences-catalogue/.'
+  - OSC&R matrix moved to its own /matrix.html page. Homepage now shows stats (incidents, techniques,
+    observed vs identified, platforms), incidents-per-year bar chart, most-used techniques, incidents
+    per platform, era split, and frequently-seen actor/malware names.
+  - Brand updated to SCIC; nav has Home + OSC&R Matrix; all repo URLs in helpers/README updated.
+- date: '2026-09-24'
   id: tstromberg-dataset
   title: 'tstromberg/supplychain-attack-data: 90 new incidents with first-party sources'
   items:
