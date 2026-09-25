@@ -1,5 +1,18 @@
 entries:
 - date: '2026-09-25'
+  id: conference-feeds
+  title: Conference talks added as technique origins (Black Hat USA 2026)
+  items:
+  - Walked the Black Hat USA 2026 briefing schedule. Talks are not incidents — they are added as origin
+    material on the matching techniques, not as attack stories.
+  - 'Mapped: “GitHub Can Tell You’re Being Hacked” (T0118/T0122 — EDR for GitHub event streams), “The
+    CoreBreak Attack” + “Kinetic Prompt Injection” + “Caging the Agent” (T0210), “Pwning Agentic Browsers
+    with PleaseFix” + “No Tools Required: Post-Injection Exploitation Across AI Agent Frameworks” (T0154),
+    “Turning Enterprise Update Servers Into Backdoor Factories” (T0107), “Burning Tears of PHP’s Memory
+    Hardening” (T0170), ThreatForest / 0-Day Engine (T0120), hardware/UEFI briefings (T0208).'
+  - DEF CON 34 schedule unavailable at crawl time; will retry. Conference tracking is now part of the
+    sources model.
+- date: '2026-09-25'
   id: expanded-scope-rewalk
   title: 'Expanded-scope re-walk: SafeDep reinfection on actions-cool, kilocode research'
   items:

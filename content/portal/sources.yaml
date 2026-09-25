@@ -1,130 +1,119 @@
-# First-party sources OSC&R intake tracks.
-# Add a row here to watch a new blog/advisory feed. Do not list aggregators
-# (The Hacker News, BleepingComputer) as primary sources.
-
 sources:
-  - name: SafeDep Blog
-    url: https://safedep.io/blog/
-    kind: research
-    track: true
-    note: Open-source malware and supply-chain write-ups (ulid-xyz, Deep-Live-Cam, Mini Shai-Hulud, mathmain, GemStuffer).
-
-  - name: ReversingLabs blog
-    url: https://www.reversinglabs.com/blog/
-    kind: research
-    track: true
-    note: Registry malware write-ups (tw-pkgprobe-7731 / Twilio npm campaign).
-
-  - name: CloudSEK blog
-    url: https://www.cloudsek.com/blog
-    kind: research
-    track: true
-    note: GHAPPIER npm trusted-publishing loader and related campaign write-ups.
-
-  - name: Checkmarx Zero
-    url: https://checkmarx.com/zero/
-    kind: research
-    track: true
-    note: Malicious-package campaigns (indexed-btree runtime loaders).
-
-  - name: CrowdStrike blog
-    url: https://www.crowdstrike.com/en-us/blog/
-    kind: research
-    track: true
-    note: PhantomRaven and related npm stealers.
-
-  - name: StepSecurity Threat Intel
-    url: https://www.stepsecurity.io/blog?category=Threat+Intel
-    kind: research
-    track: true
-    note: CI/CD worms, Team PCP, crates.io, GitHub Actions tag poisoning.
-
-  - name: Sansec research
-    url: https://sansec.io/research
-    kind: research
-    track: true
-    note: Magecart / CDN / embedded-script supply chain (Polyfill.io, Brevo).
-
-  - name: OpenSourceMalware blog
-    url: https://opensourcemalware.com/blog
-    kind: research
-    track: true
-    note: Community malware intel write-ups (WeaselBiscuit, PolinRider, StubMaker). RSS at https://opensourcemalware.com/rss.xml. Homepage is a threat-search UI, not the feed.
-
-  - name: Morphisec blog
-    url: https://www.morphisec.com/blog/
-    kind: research
-    track: true
-    note: Hades campaign, AI-assistant config persistence.
-
-  - name: Socket Blog
-    url: https://socket.dev/blog
-    kind: research
-    track: true
-    note: Registry compromises, worms, extension/MCP supply chain.
-
-  - name: Aikido blog
-    url: https://www.aikido.dev/blog
-    kind: research
-    track: true
-    note: Graphalgo Terraform/Go modules, npm campaign write-ups.
-
-  - name: Wiz blog
-    url: https://www.wiz.io/blog
-    kind: research
-    track: true
-    note: Artifact-registry and cloud-adjacent supply-chain exploitation.
-
-  - name: Google Threat Intelligence / Mandiant
-    url: https://cloud.google.com/blog/topics/threat-intelligence
-    kind: research
-    track: true
-    note: DUSTMAKER, AI-assistant session hijack, TeamPCP.
-
-  - name: CISA alerts
-    url: https://www.cisa.gov/news-events/cybersecurity-advisories
-    kind: advisory
-    track: true
-    note: Government advisories on supply-chain compromises.
-
-  - name: GitHub Changelog (npm / Actions)
-    url: https://github.blog/changelog/
-    kind: advisory
-    track: true
-    note: npm and Actions platform security-default changes.
-
-  - name: Rust blog (security)
-    url: https://blog.rust-lang.org/
-    kind: advisory
-    track: true
-    note: crates.io incident advisories (arrayref / proc-macro1).
-
-  - name: RubyGems blog
-    url: https://blog.rubygems.org/
-    kind: advisory
-    track: true
-    note: Registry and API-key incidents.
-
-  - name: OWASP Top 10 CI/CD
-    url: https://owasp.org/www-project-top-10-ci-cd-security-risks/
-    kind: guidance
-    track: false
-    note: Guidance baseline; re-read when the project publishes a new version, not daily.
-
-  - name: NIST SSDF (SP 800-218)
-    url: https://csrc.nist.gov/pubs/sp/800/218/final
-    kind: guidance
-    track: false
-    note: Provenance / SSDF practices.
-
-  - name: SLSA threats
-    url: https://slsa.dev/spec/v1.0/threats
-    kind: guidance
-    track: false
-    note: Build/source/dependency threat model.
-
-  - name: CISA Secure Software Attestation
-    url: https://www.cisa.gov/resources-tools/resources/secure-software-development-attestation-form
-    kind: guidance
-    track: false
-    note: Producer attestation requirements.
+- name: SafeDep Blog
+  url: https://safedep.io/blog/
+  kind: research
+  track: true
+  note: Open-source malware and supply-chain write-ups (ulid-xyz, Deep-Live-Cam, Mini Shai-Hulud, mathmain,
+    GemStuffer).
+- name: ReversingLabs blog
+  url: https://www.reversinglabs.com/blog/
+  kind: research
+  track: true
+  note: Registry malware write-ups (tw-pkgprobe-7731 / Twilio npm campaign).
+- name: CloudSEK blog
+  url: https://www.cloudsek.com/blog
+  kind: research
+  track: true
+  note: GHAPPIER npm trusted-publishing loader and related campaign write-ups.
+- name: Checkmarx Zero
+  url: https://checkmarx.com/zero/
+  kind: research
+  track: true
+  note: Malicious-package campaigns (indexed-btree runtime loaders).
+- name: CrowdStrike blog
+  url: https://www.crowdstrike.com/en-us/blog/
+  kind: research
+  track: true
+  note: PhantomRaven and related npm stealers.
+- name: StepSecurity Threat Intel
+  url: https://www.stepsecurity.io/blog?category=Threat+Intel
+  kind: research
+  track: true
+  note: CI/CD worms, Team PCP, crates.io, GitHub Actions tag poisoning.
+- name: Sansec research
+  url: https://sansec.io/research
+  kind: research
+  track: true
+  note: Magecart / CDN / embedded-script supply chain (Polyfill.io, Brevo).
+- name: OpenSourceMalware blog
+  url: https://opensourcemalware.com/blog
+  kind: research
+  track: true
+  note: Community malware intel write-ups (WeaselBiscuit, PolinRider, StubMaker). RSS at https://opensourcemalware.com/rss.xml.
+    Homepage is a threat-search UI, not the feed.
+- name: Morphisec blog
+  url: https://www.morphisec.com/blog/
+  kind: research
+  track: true
+  note: Hades campaign, AI-assistant config persistence.
+- name: Socket Blog
+  url: https://socket.dev/blog
+  kind: research
+  track: true
+  note: Registry compromises, worms, extension/MCP supply chain.
+- name: Aikido blog
+  url: https://www.aikido.dev/blog
+  kind: research
+  track: true
+  note: Graphalgo Terraform/Go modules, npm campaign write-ups.
+- name: Wiz blog
+  url: https://www.wiz.io/blog
+  kind: research
+  track: true
+  note: Artifact-registry and cloud-adjacent supply-chain exploitation.
+- name: Google Threat Intelligence / Mandiant
+  url: https://cloud.google.com/blog/topics/threat-intelligence
+  kind: research
+  track: true
+  note: DUSTMAKER, AI-assistant session hijack, TeamPCP.
+- name: CISA alerts
+  url: https://www.cisa.gov/news-events/cybersecurity-advisories
+  kind: advisory
+  track: true
+  note: Government advisories on supply-chain compromises.
+- name: GitHub Changelog (npm / Actions)
+  url: https://github.blog/changelog/
+  kind: advisory
+  track: true
+  note: npm and Actions platform security-default changes.
+- name: Rust blog (security)
+  url: https://blog.rust-lang.org/
+  kind: advisory
+  track: true
+  note: crates.io incident advisories (arrayref / proc-macro1).
+- name: RubyGems blog
+  url: https://blog.rubygems.org/
+  kind: advisory
+  track: true
+  note: Registry and API-key incidents.
+- name: OWASP Top 10 CI/CD
+  url: https://owasp.org/www-project-top-10-ci-cd-security-risks/
+  kind: guidance
+  track: false
+  note: Guidance baseline; re-read when the project publishes a new version, not daily.
+- name: NIST SSDF (SP 800-218)
+  url: https://csrc.nist.gov/pubs/sp/800/218/final
+  kind: guidance
+  track: false
+  note: Provenance / SSDF practices.
+- name: SLSA threats
+  url: https://slsa.dev/spec/v1.0/threats
+  kind: guidance
+  track: false
+  note: Build/source/dependency threat model.
+- name: CISA Secure Software Attestation
+  url: https://www.cisa.gov/resources-tools/resources/secure-software-development-attestation-form
+  kind: guidance
+  track: false
+  note: Producer attestation requirements.
+- name: Black Hat briefings
+  url: https://www.blackhat.com/us-26/briefings/schedule/index.html
+  kind: conference
+  track: false
+  note: Talks mapped as technique origins, not incidents. Re-read per event (US/EU/Asia).
+- name: DEF CON talks
+  url: https://defcon.org/
+  kind: conference
+  track: false
+  note: Same model — origin material only. DEF CON 34 included LiteLLM security research (presented before
+    publication).

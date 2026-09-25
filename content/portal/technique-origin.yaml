@@ -63,10 +63,12 @@ techniques:
     summary: Discover internal artifacts names
     tactic: Reconnaissance
     kind: research
-    note: Sibling of T0102. Internal package names are what Birsan enumerated from public artifacts before
-      dependency confusion. Original YAML had no URL.
+    note: 'Birsan dependency confusion; TXTBOOK/T-Bank private namespace reconstruction; conference: Black
+      Hat USA 2026 “Turning Enterprise Update Servers Into Backdoor Factories (0_o)” treats internal artifact/update
+      infrastructure as the target.'
     sources:
     - https://medium.com/@alex.birsan/dependency-confusion-4a5d60fec610
+    - https://www.blackhat.com/us-26/briefings/schedule/index.html
   T0108:
     summary: Accounts in public registry
     tactic: Resource Development
@@ -156,11 +158,13 @@ techniques:
     summary: Command injection
     tactic: Execution
     kind: guidance
-    note: Recorded from defender guidance (OWASP, NIST, SLSA, CISA, or vendor secure-development docs)
-      as an attacker-side behavior.
+    note: 'Nx s1ngularity PR-title injection, Antrea Job DSL eval, prt-scan payloads; conference: Black
+      Hat USA 2026 “GitHub Can Tell You’re Being Hacked” (Weinberger/Weizman, Microsoft) covers Actions
+      event-stream detection of exactly these patterns.'
     sources:
     - https://owasp.org/www-community/attacks/Command_Injection
     - https://portswigger.net/web-security/os-command-injection
+    - https://www.blackhat.com/us-26/briefings/schedule/index.html
   T0119:
     summary: Cross-site scripting
     tactic: Execution
@@ -175,10 +179,13 @@ techniques:
     summary: Dependency confusion
     tactic: Initial Access
     kind: research
-    note: Identified in published CI/CD or supply-chain security research cited below.
+    note: 'Birsan 2021; Google bin-entry harvesting, TXTBOOK, sl4x0 waves; conference: Black Hat USA 2026
+      “ThreatForest: Automated Attack Trees from Source Code” and “The 0-Day Engine” formalize how researchers
+      reason about dependency attack paths.'
     sources:
     - https://medium.com/@alex.birsan/dependency-confusion-4a5d60fec610
     - https://pytorch.org/blog/compromised-nightly-dependency/
+    - https://www.blackhat.com/us-26/briefings/schedule/index.html
   T0121:
     summary: Compromised legitimate artifact
     tactic: Resource Development
@@ -191,9 +198,12 @@ techniques:
     summary: Vulnerability in third-party CI/CD actions
     tactic: Initial Access
     kind: research
-    note: Identified in published CI/CD or supply-chain security research cited below.
+    note: 'tj-actions, Trivy Action tags, codfish floating tags; conference: Black Hat USA 2026 “GitHub
+      Can Tell You’re Being Hacked. You’re Just Not Listening: Building EDR for GitHub from Its Own Event
+      Stream” — defensive detection for the same surface.'
     sources:
     - https://www.truesec.com/hub/blog/secure-your-software-supply-chain-trusting-3rd-parties
+    - https://www.blackhat.com/us-26/briefings/schedule/index.html
   T0123:
     summary: Exposed internal API
     tactic: Initial Access
@@ -461,9 +471,12 @@ techniques:
     summary: Malicious IDE extension
     tactic: Initial Access
     kind: research
-    note: Identified in published CI/CD or supply-chain security research cited below.
+    note: 'DarkGPT, IoliteLabs, Nx Console 18.95.0; conference: Black Hat USA 2026 “Pwning Agentic Browsers
+      with PleaseFix” and “No Tools Required: Post-Injection Exploitation Across AI Agent Frameworks”
+      extend the class to agentic browsers/agents.'
     sources:
     - https://blog.aquasec.com/can-you-trust-your-vscode-extensions
+    - https://www.blackhat.com/us-26/briefings/schedule/index.html
   T0155:
     summary: Cloud workload
     tactic: Execution
@@ -582,10 +595,14 @@ techniques:
     summary: Malicious compiler or interpreter
     tactic: Defense Evasion
     kind: research
-    note: Identified in published CI/CD or supply-chain security research cited below.
+    note: 'Ken Thompson’s 1983 trusting-trust demo is the original; conference talks formalize compiler-level
+      attacks: Black Hat USA 2026 “Burning Tears of PHP’s Memory Hardening” (engine/interpreter-level
+      exploitation).'
     sources:
     - https://jfrog.com/blog/detecting-known-and-unknown-malicious-packages-and-how-they-obfuscate-their-malicious-code/
     - https://network-king.net/compiler-flaw-facilitates-supply-chain-attacks/
+    - https://www.blackhat.com/us-26/briefings/schedule/index.html
+    - https://www.cs.cmu.edu/~rdriley/487/papers/Thompson_1984_ReflectionsonTrustingTrust.pdf
   T0172:
     summary: Runtime backdoor
     tactic: Execution
@@ -876,10 +893,13 @@ techniques:
     summary: Compromise code-signing identity
     tactic: Defense Evasion
     kind: incident
-    note: This fork, from SLSA signed-but-malicious artifacts; SolarWinds is the canonical case.
+    note: 'ShadowHammer/CCleaner signed updates, DAEMON Tools signed binaries; conference: Black Hat USA
+      2026 briefings on hardware/UEFI (EL2 attack surface, USB wallet AI-assisted exploitation) extend
+      signature-trust attacks.'
     sources:
     - https://slsa.dev/spec/v1.0/threats
     - https://orangematter.solarwinds.com/2021/05/07/an-investigative-update-of-the-cyberattack/
+    - https://www.blackhat.com/us-26/briefings/schedule/index.html
   T0209:
     summary: Compromise package registry or CDN origin
     tactic: Initial Access
@@ -891,11 +911,15 @@ techniques:
     summary: Poison AI coding-agent config or workspace
     tactic: Persistence
     kind: incident
-    note: This fork, from Morphisec Hades, GTIG DUSTMAKER, and Mandiant AI Risk 2026.
+    note: 'Hades, Claude Code hooks, Antrea project-injection; conference: Black Hat USA 2026 “The CoreBreak
+      Attack: Turning AI Agents into Credentials Exfiltration Vectors”, “Kinetic Prompt Injection”, “Caging
+      the Agent: How Roblox Built Multi-Layer Sandboxes to Secure Claude Code” — offensive and defensive
+      views of the same class.'
     sources:
     - https://www.morphisec.com/blog/when-your-ai-coding-assistant-becomes-the-attack-the-hades-supply-chain-campaign/
     - https://cloud.google.com/blog/topics/threat-intelligence/from-prompting-to-autonomy-the-evolution-of-adversarial-ai
     - https://cloud.google.com/security/resources/ai-risk-and-resilience-2026
+    - https://www.blackhat.com/us-26/briefings/schedule/index.html
   T0211:
     summary: Abuse registry-adjacent builders as remote execution
     tactic: Execution
