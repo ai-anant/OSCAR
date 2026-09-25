@@ -1,5 +1,16 @@
 entries:
 - date: '2026-09-25'
+  id: defcon34-talks
+  title: DEF CON 34 supply-chain talks added as technique origins
+  items:
+  - 'Walked the DEF CON 34 talks index. Mapped: “Install Me Maybe: Turning Claimable VS Code Extension
+    IDs into Supply-Chain Attacks” (T0115/T0154), “LGTM: Bypassing an LLM Build Gate When Prompt Injection
+    Fails” (T0207), “The Sandbox is a Suggestion” + “No Prompt Required: Pre-Task RCE in Gemini CLI” +
+    “Hacking Your Life with AI” + “Escaping Copilot Studio’s Sandbox” (T0210), “No Socket, No Privs, No
+    Problem: Weaponizing OCI Registries” + “Compounding Interest: Exploiting the ATM Supply Chain” (T0209).'
+  - Conference feeds (Black Hat briefings, DEF CON talks) are now a tracked kind in sources.yaml — origin
+    material, re-read per event.
+- date: '2026-09-25'
   id: conference-feeds
   title: Conference talks added as technique origins (Black Hat USA 2026)
   items:
