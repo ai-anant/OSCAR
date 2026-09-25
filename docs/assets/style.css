@@ -128,6 +128,11 @@ h2 { font-size: 1.15rem; margin-top: 1.6rem; }
 .inc-card h3 a { color: inherit; }
 .inc-card .plat { position: relative; z-index: 2; }
 .inc-card .card-link:focus-visible + .stage ~ h3 { outline: 2px solid var(--copper); }
+.status { display: inline-block; margin-left: 0.5rem; padding: 0.05rem 0.4rem;
+  border-radius: 2px; font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.04em; }
+.status.research { background: #1c2a44; color: #7fa7e8; border: 1px solid #2c3d5e; }
+.status.demo { background: #2b2333; color: #c99ce8; border: 1px solid #3d2e4a; }
+.sep { flex-basis: 100%; height: 0; }
 .meta { color: var(--muted); font-size: 0.9rem; }
 .card { background: var(--panel); border: 1px solid var(--line); padding: 1rem 1.1rem; margin: 0.8rem 0; }
 .card h3 { margin-top: 0; }

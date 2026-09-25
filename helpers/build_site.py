@@ -285,6 +285,11 @@ h2 { font-size: 1.15rem; margin-top: 1.6rem; }
 .inc-card h3 a { color: inherit; }
 .inc-card .plat { position: relative; z-index: 2; }
 .inc-card .card-link:focus-visible + .stage ~ h3 { outline: 2px solid var(--copper); }
+.status { display: inline-block; margin-left: 0.5rem; padding: 0.05rem 0.4rem;
+  border-radius: 2px; font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.04em; }
+.status.research { background: #1c2a44; color: #7fa7e8; border: 1px solid #2c3d5e; }
+.status.demo { background: #2b2333; color: #c99ce8; border: 1px solid #3d2e4a; }
+.sep { flex-basis: 100%; height: 0; }
 .meta { color: var(--muted); font-size: 0.9rem; }
 .card { background: var(--panel); border: 1px solid var(--line); padding: 1rem 1.1rem; margin: 0.8rem 0; }
 .card h3 { margin-top: 0; }
@@ -718,6 +723,12 @@ def build(dest):
     def story_card(s, story_href, plat_href):
         n_techs = sum(len(a.get("techniques") or []) for a in s.get("attacks") or [])
         plats = [p for p in (s.get("platforms") or []) if p]
+        status = s.get("status") or "incident"
+        status_badges = {
+            "incident": "",
+            "research": '<span class="status research" title="Bug/PoC found by a researcher or vendor; no confirmed in-the-wild exploitation">research</span>',
+            "demo": '<span class="status demo" title="Author demonstration or concept; no victim">demo</span>',
+        }
         chips = "".join(
             f'<a class="plat" href="{html.escape(plat_href)}{html.escape(p)}.html">{html.escape(plat_labels.get(p, p))}</a>'
             if plat_href
@@ -725,9 +736,9 @@ def build(dest):
             for p in plats
         )
         return (
-            f'<div class="card inc-card" data-platforms="{" ".join(html.escape(p) for p in plats)}">'
+            f'<div class="card inc-card status-{status}" data-platforms="{" ".join(html.escape(p) for p in plats)}" data-status="{status}">'
             f'<a class="card-link" href="{story_href}{html.escape(s["id"])}.html"></a>'
-            f'<div class="stage">{html.escape(str(s.get("date") or ""))}</div>'
+            f'<div class="stage">{html.escape(str(s.get("date") or ""))}{status_badges.get(status, "")}</div>'
             f'<h3><a href="{story_href}{html.escape(s["id"])}.html">{html.escape(s["summary"])}</a></h3>'
             f'<p>{chips}</p>'
             f'<p class="muted">{n_techs} mapped OSC&R techniques</p></div>'
@@ -751,22 +762,65 @@ def build(dest):
             f'{html.escape(plat_labels.get(p, p))} ({plat_counts[p]})</a>'
         )
 
+    n_incident = sum(1 for s in stories.values() if (s.get("status") or "incident") == "incident")
+    n_research = sum(1 for s in stories.values() if s.get("status") == "research")
+    n_demo = sum(1 for s in stories.values() if s.get("status") == "demo")
+    status_btns = (
+        f'<span class="status-btns" id="status-btns">'
+        f'<button type="button" class="on" data-status-filter="all">All {len(ordered_stories)}</button>'
+        f'<button type="button" data-status-filter="incident">Real incidents {n_incident}</button>'
+        f'<button type="button" data-status-filter="research">Research {n_research}</button>'
+        f'<button type="button" data-status-filter="demo">Demos {n_demo}</button>'
+        f'</span>'
+    )
     inc_index = f"""
-    <h1>Incident → OSC&amp;R mapping</h1>
-    <p class="lede">Real software-supply-chain incidents mapped onto OSC&amp;R techniques,
-    tagged by the registry or platform that was hit. Open a platform for the full group.</p>
-    <div class="filter-bar">{''.join(filter_btns)}</div>
+    <h1>Incident → OSC&R mapping</h1>
+    <p class="lede">Software-supply-chain events mapped onto OSC&R techniques,
+    tagged by the registry or platform that was hit. Open a platform for the full group.
+    <strong>Real incidents</strong> hit victims in the wild; <strong>research</strong> entries are
+    bug/PoC discoveries with no confirmed exploitation; <strong>demos</strong> are author
+    demonstrations with no victim.</p>
+    <div class="filter-bar">{status_btns}<span class="sep"></span>{''.join(filter_btns)}</div>
+    <script>
+    (function() {{
+      const btns = document.getElementById('status-btns');
+      btns.addEventListener('click', function(e) {{
+        const b = e.target.closest('button'); if (!b) return;
+        btns.querySelectorAll('button').forEach(x => x.classList.toggle('on', x === b));
+        const v = b.getAttribute('data-status-filter');
+        document.querySelectorAll('.inc-card').forEach(c => {{
+          const show = v === 'all' || c.getAttribute('data-status') === v;
+          c.style.display = show ? '' : 'none';
+        }});
+      }});
+    }})();
+    </script>
     {''.join(story_card(s, '', '../platforms/') for s in ordered_stories)}
     """
-    write(os.path.join(dest, "incidents", "index.html"), page("Incident mapping", inc_index, "../", "OSC&amp;R / Incident mapping"))
+    write(os.path.join(dest, "incidents", "index.html"), page("Incident mapping", inc_index, "../", "OSC&R / Incident mapping"))
 
     st_index = f"""
     <h1>Attack stories</h1>
-    <p class="lede">Narrative reconstructions of supply-chain attacks, using OSC&amp;R techniques
-    as the shared language.</p>
+    <p class="lede">Narrative reconstructions of supply-chain events, using OSC&R techniques
+    as the shared language. Real incidents, research discoveries, and demos are labelled.</p>
+    <div class="filter-bar">{status_btns}</div>
+    <script>
+    (function() {{
+      const btns = document.getElementById('status-btns');
+      btns.addEventListener('click', function(e) {{
+        const b = e.target.closest('button'); if (!b) return;
+        btns.querySelectorAll('button').forEach(x => x.classList.toggle('on', x === b));
+        const v = b.getAttribute('data-status-filter');
+        document.querySelectorAll('.inc-card').forEach(c => {{
+          const show = v === 'all' || c.getAttribute('data-status') === v;
+          c.style.display = show ? '' : 'none';
+        }});
+      }});
+    }})();
+    </script>
     {''.join(story_card(s, '', '../platforms/') for s in ordered_stories)}
     """
-    write(os.path.join(dest, "stories", "index.html"), page("Attack stories", st_index, "../", "OSC&amp;R / Attack stories"))
+    write(os.path.join(dest, "stories", "index.html"), page("Attack stories", st_index, "../", "OSC&R / Attack stories"))
 
     by_plat = {p: [] for p in used_plats}
     for s in ordered_stories:

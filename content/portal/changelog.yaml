@@ -1,5 +1,18 @@
 entries:
 - date: '2026-09-25'
+  id: story-status-model
+  title: Stories now distinguish real incidents, research, and demos
+  items:
+  - 'Added a status field to attack stories: incident (default — real-world attack), research (bug/PoC
+    discovery, no confirmed in-the-wild exploitation), demo (author demonstration, no victim).'
+  - 'AS287 added: fwupd dangling S3 bucket + CVE-2020-10759 signature-verification bypass (justinsteven)
+    — tagged research because it is bug discovery, not a real incident.'
+  - 'Tagged research: AS23 repo-jacking demo, AS24 Gato runner research, AS203 Amazon Q prompt injection,
+    AS157 MCP config poisoning. Tagged demo: AS199 ANIMAL (1975, pre-cs), AS212 Ken Thompson compiler
+    demo (1983).'
+  - Incidents and stories pages now have Real incidents / Research / Demos filter buttons and badges on
+    cards.
+- date: '2026-09-25'
   id: zero-ref-origin-audit
   title: 'Zero-reference technique audit: every technique now has an incident or sharp origin'
   items:

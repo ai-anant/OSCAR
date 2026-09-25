@@ -54,6 +54,8 @@ REQUIRED = {
     "Attack Story": ["id", "type", "summary", "description", "attacks", "links", "platforms"],
 }
 
+STORY_STATUS = {"incident", "research", "demo"}
+
 
 def load_all(kind_dir, expected_type):
     items = {}
@@ -96,6 +98,11 @@ def load_all(kind_dir, expected_type):
                 errors.append(f"{path}: unknown tactic {data.get('tactic')!r}")
             if not isinstance(data.get("realm"), list):
                 errors.append(f"{path}: realm must be a list")
+
+        if expected_type == "Attack Story":
+            status = data.get("status", "incident")
+            if status not in STORY_STATUS:
+                errors.append(f"{path}: unknown status {status!r} (use incident, research, or demo)")
     return items, errors
 
 

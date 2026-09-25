@@ -1,0 +1,38 @@
+id: AS287
+type: Attack Story
+status: research
+date: 2020-04
+platforms:
+  - linux
+
+summary: fwupd dangling S3 bucket and CVE-2020-10759 signature-verification bypass
+description: |
+  Justin Steven’s April 2020 advisory covered two related fwupd findings:
+  an abandoned Amazon S3 bucket that fwupd metadata could be redirected
+  to (a dangling- infrastructure takeover opportunity), and
+  CVE-2020-10759, a bypass of fwupd’s PGP signature verification that let
+  a malicious metadata file make unsigned firmware look authentic. Both
+  are researcher bug discovery: the bucket was never used to ship malware
+  to fwupd users, and the bypass had no documented victims. Included as
+  research, not a real-world incident — it demonstrates that update
+  infrastructure and artifact verification are attacker targets
+  (T0209/T0207 class), but no in-the-wild exploitation is known.
+
+attacks:
+  - attack: researcher findings
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0209
+        techName: Compromise package registry or CDN origin
+        tactic: Initial Access
+        comment: Dangling S3 bucket as a metadata-redirect opportunity (not exploited).
+      - techniqueID: T0207
+        techName: Skip or forge artifact integrity verification
+        tactic: Defense Evasion
+        comment: CVE-2020-10759 PGP verification bypass PoC.
+
+links:
+  - https://github.com/justinsteven/advisories/blob/master/2020_fwupd_dangling_s3_bucket_and_CVE-2020-10759_signature_verification_bypass.md

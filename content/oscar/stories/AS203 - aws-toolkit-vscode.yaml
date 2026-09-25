@@ -2,35 +2,38 @@ id: AS203
 type: Attack Story
 date: 2025-07
 platforms:
-  - vscode
-  - ai-agents
-
+- vscode
+- ai-agents
 summary: Amazon Q extension prompt injection
-description: |
-  Catalogued from the tstromberg supplychain-attack-data dataset
+description: 'Catalogued from the tstromberg supplychain-attack-data dataset
+
   (community-curated incident corpus). Included because first-party
+
   sources exist for it; see the links below — vendor advisories, project
+
   incident reports, and researcher write-ups. Not based on aggregator
+
   coverage.
 
+  '
 attacks:
-  - attack: campaign
-    index: 1
-    stage: supply-chain
-    customer: 0
-    supplier: 2
-    techniques:
-      - techniqueID: T0154
-        techName: Malicious IDE extension
-        tactic: Initial Access
-        comment: IDE/browser extension as the delivery.
-      - techniqueID: T0210
-        techName: Poison AI coding-agent config or workspace
-        tactic: Persistence
-        comment: Prompt injection in the AI tool.
-
+- attack: campaign
+  index: 1
+  stage: supply-chain
+  customer: 0
+  supplier: 2
+  techniques:
+  - techniqueID: T0154
+    techName: Malicious IDE extension
+    tactic: Initial Access
+    comment: IDE/browser extension as the delivery.
+  - techniqueID: T0210
+    techName: Poison AI coding-agent config or workspace
+    tactic: Persistence
+    comment: Prompt injection in the AI tool.
 links:
-  - https://aws.amazon.com/security/security-bulletins/AWS-2025-015/
-  - https://github.com/aws/aws-toolkit-vscode/security/advisories/GHSA-7g7f-ff96-5gcw
-  - https://www.reversinglabs.com/blog/aws-amazonq-ai-incident
-  - https://github.com/vectara/awesome-agent-failures/blob/main/docs/case-studies/amazon-q-supply-chain-attack.md
+- https://aws.amazon.com/security/security-bulletins/AWS-2025-015/
+- https://github.com/aws/aws-toolkit-vscode/security/advisories/GHSA-7g7f-ff96-5gcw
+- https://www.reversinglabs.com/blog/aws-amazonq-ai-incident
+- https://github.com/vectara/awesome-agent-failures/blob/main/docs/case-studies/amazon-q-supply-chain-attack.md
+status: research
