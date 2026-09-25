@@ -280,6 +280,11 @@ h2 { font-size: 1.15rem; margin-top: 1.6rem; }
   font-size: 0.82rem; margin: 0.3rem 0; }
 .era .n { font-family: ui-monospace, monospace; color: var(--teal); }
 .card.hidden { display: none !important; }
+.inc-card { position: relative; display: block; }
+.inc-card .card-link { position: absolute; inset: 0; z-index: 1; }
+.inc-card h3 a { color: inherit; }
+.inc-card .plat { position: relative; z-index: 2; }
+.inc-card .card-link:focus-visible + .stage ~ h3 { outline: 2px solid var(--copper); }
 .meta { color: var(--muted); font-size: 0.9rem; }
 .card { background: var(--panel); border: 1px solid var(--line); padding: 1rem 1.1rem; margin: 0.8rem 0; }
 .card h3 { margin-top: 0; }
@@ -714,21 +719,18 @@ def build(dest):
         n_techs = sum(len(a.get("techniques") or []) for a in s.get("attacks") or [])
         plats = [p for p in (s.get("platforms") or []) if p]
         chips = "".join(
-            f'<span class="plat">{html.escape(plat_labels.get(p, p))}</span>'
-            if not plat_href
-            else (
-                f'<a class="plat" href="{html.escape(plat_href)}{html.escape(p)}.html" '
-                f'onclick="event.stopPropagation()">{html.escape(plat_labels.get(p, p))}</a>'
-            )
+            f'<a class="plat" href="{html.escape(plat_href)}{html.escape(p)}.html">{html.escape(plat_labels.get(p, p))}</a>'
+            if plat_href
+            else f'<span class="plat">{html.escape(plat_labels.get(p, p))}</span>'
             for p in plats
         )
         return (
-            f'<a class="card inc-card" data-platforms="{" ".join(html.escape(p) for p in plats)}" '
-            f'href="{story_href}{html.escape(s["id"])}.html" style="display:block">'
+            f'<div class="card inc-card" data-platforms="{" ".join(html.escape(p) for p in plats)}">'
+            f'<a class="card-link" href="{story_href}{html.escape(s["id"])}.html"></a>'
             f'<div class="stage">{html.escape(str(s.get("date") or ""))}</div>'
-            f'<h3>{html.escape(s["summary"])}</h3>'
+            f'<h3><a href="{story_href}{html.escape(s["id"])}.html">{html.escape(s["summary"])}</a></h3>'
             f'<p>{chips}</p>'
-            f'<p class="muted">{n_techs} mapped OSC&amp;R techniques</p></a>'
+            f'<p class="muted">{n_techs} mapped OSC&R techniques</p></div>'
         )
 
     used_plats = sorted(

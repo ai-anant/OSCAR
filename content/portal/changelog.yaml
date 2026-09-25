@@ -1,4 +1,13 @@
 entries:
+- date: '2026-09-25'
+  id: fix-nested-anchor-cards
+  title: Fixed blank cards on incident/platform lists (nested anchors)
+  items:
+  - Incident and platform cards were <a> elements containing platform <a> chips. HTML forbids nested anchors,
+    so the browser closed each card at its first chip and rendered the remaining chips plus technique
+    count as a stray empty anchor — the blank block below every title.
+  - Cards are now <div> wrappers with a full-card overlay link; platform chips stay clickable above the
+    overlay. Zero nested anchors remain.
 - date: '2026-09-24'
   id: platform-tag-audit
   title: Platform-tag audit of the tstromberg batch (43 stories corrected)
