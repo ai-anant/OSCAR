@@ -2,35 +2,37 @@ id: AS234
 type: Attack Story
 date: 2018-05
 platforms:
-  - ai-agents
-
+- npm
 summary: getcookies backdoor reached mailparser dependency chain
-description: |
-  Catalogued from the tstromberg supplychain-attack-data dataset
+description: 'Catalogued from the tstromberg supplychain-attack-data dataset
+
   (community-curated incident corpus). Included because first-party
+
   sources exist for it; see the links below — vendor advisories, project
+
   incident reports, and researcher write-ups. Not based on aggregator
+
   coverage.
 
+  '
 attacks:
-  - attack: campaign
-    index: 1
-    stage: supply-chain
-    customer: 0
-    supplier: 2
-    techniques:
-      - techniqueID: T0172
-        techName: Runtime backdoor
-        tactic: Execution
-        comment: Backdoor/RAT payload documented by the cited sources.
-      - techniqueID: T0184
-        techName: Harvesting sensitive information from files
-        tactic: Credential Access
-        comment: Credential or wallet material targeted.
-
+- attack: campaign
+  index: 1
+  stage: supply-chain
+  customer: 0
+  supplier: 2
+  techniques:
+  - techniqueID: T0172
+    techName: Runtime backdoor
+    tactic: Execution
+    comment: Backdoor/RAT payload documented by the cited sources.
+  - techniqueID: T0184
+    techName: Harvesting sensitive information from files
+    tactic: Credential Access
+    comment: Credential or wallet material targeted.
 links:
-  - https://blog.npmjs.org/post/173526807575/reported-malicious-module-getcookies
-  - https://thenewstack.io/npm-attackers-sneak-a-backdoor-into-node-js-deployments-through-dependencies/
-  - https://www.theregister.com/security/2018/05/05/cookie-code-compromise-caper-caught-and-crumbled/357957
-  - https://news.ycombinator.com/item?id=16975025
-  - https://dl.acm.org/doi/pdf/10.1145/3510457.3513044
+- https://blog.npmjs.org/post/173526807575/reported-malicious-module-getcookies
+- https://thenewstack.io/npm-attackers-sneak-a-backdoor-into-node-js-deployments-through-dependencies/
+- https://www.theregister.com/security/2018/05/05/cookie-code-compromise-caper-caught-and-crumbled/357957
+- https://news.ycombinator.com/item?id=16975025
+- https://dl.acm.org/doi/pdf/10.1145/3510457.3513044

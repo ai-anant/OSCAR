@@ -2,35 +2,36 @@ id: AS216
 type: Attack Story
 date: 2022-01
 platforms:
-  - npm
-  - ai-agents
-
+- npm
 summary: faker.js npm maintainer sabotage broke apps
-description: |
-  Catalogued from the tstromberg supplychain-attack-data dataset
+description: 'Catalogued from the tstromberg supplychain-attack-data dataset
+
   (community-curated incident corpus). Included because first-party
+
   sources exist for it; see the links below — vendor advisories, project
+
   incident reports, and researcher write-ups. Not based on aggregator
+
   coverage.
 
+  '
 attacks:
-  - attack: campaign
-    index: 1
-    stage: supply-chain
-    customer: 0
-    supplier: 2
-    techniques:
-      - techniqueID: T0121
-        techName: Compromised legitimate artifact
-        tactic: Resource Development
-        comment: Published package versions carried the payload.
-      - techniqueID: T0109
-        techName: Publish malicious artifact
-        tactic: Resource Development
-        comment: Named in the tstromberg supplychain-attack-data corpus with first-party references.
-
+- attack: campaign
+  index: 1
+  stage: supply-chain
+  customer: 0
+  supplier: 2
+  techniques:
+  - techniqueID: T0121
+    techName: Compromised legitimate artifact
+    tactic: Resource Development
+    comment: Published package versions carried the payload.
+  - techniqueID: T0109
+    techName: Publish malicious artifact
+    tactic: Resource Development
+    comment: Named in the tstromberg supplychain-attack-data corpus with first-party references.
 links:
-  - https://github.com/faker-js/faker/issues/1046
-  - https://snyk.io/blog/open-source-npm-packages-colors-faker-sabotaged/
-  - https://blog.sonatype.com/fakerjs-colorsjs-maintainer-intentionally-sabotages-popular-npm-libraries
-  - https://web.archive.org/web/20220105121928id_/https://registry.npmjs.org/faker/-/faker-6.6.6.tgz
+- https://github.com/faker-js/faker/issues/1046
+- https://snyk.io/blog/open-source-npm-packages-colors-faker-sabotaged/
+- https://blog.sonatype.com/fakerjs-colorsjs-maintainer-intentionally-sabotages-popular-npm-libraries
+- https://web.archive.org/web/20220105121928id_/https://registry.npmjs.org/faker/-/faker-6.6.6.tgz

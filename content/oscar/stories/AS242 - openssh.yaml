@@ -2,40 +2,42 @@ id: AS242
 type: Attack Story
 date: 2002-07
 platforms:
-  - windows
-
+- linux
 summary: OpenSSH tarballs shipped trojan horse
-description: |
-  Catalogued from the tstromberg supplychain-attack-data dataset
+description: 'Catalogued from the tstromberg supplychain-attack-data dataset
+
   (community-curated incident corpus). Included because first-party
+
   sources exist for it; see the links below — vendor advisories, project
+
   incident reports, and researcher write-ups. Not based on aggregator
+
   coverage.
 
+  '
 attacks:
-  - attack: campaign
-    index: 1
-    stage: supply-chain
-    customer: 0
-    supplier: 2
-    techniques:
-      - techniqueID: T0172
-        techName: Runtime backdoor
-        tactic: Execution
-        comment: Backdoor/RAT payload documented by the cited sources.
-      - techniqueID: T0184
-        techName: Harvesting sensitive information from files
-        tactic: Credential Access
-        comment: Credential or wallet material targeted.
-      - techniqueID: T0209
-        techName: Compromise package registry or CDN origin
-        tactic: Initial Access
-        comment: Distribution origin hosted the trojanized artifact.
-
+- attack: campaign
+  index: 1
+  stage: supply-chain
+  customer: 0
+  supplier: 2
+  techniques:
+  - techniqueID: T0172
+    techName: Runtime backdoor
+    tactic: Execution
+    comment: Backdoor/RAT payload documented by the cited sources.
+  - techniqueID: T0184
+    techName: Harvesting sensitive information from files
+    tactic: Credential Access
+    comment: Credential or wallet material targeted.
+  - techniqueID: T0209
+    techName: Compromise package registry or CDN origin
+    tactic: Initial Access
+    comment: Distribution origin hosted the trojanized artifact.
 links:
-  - https://www.openssh.com/txt/trojan.adv
-  - https://marc.info/?l=bugtraq&m=102821663814127&w=2
-  - https://blog.isosceles.com/openssh-backdoors/
-  - https://groups.google.com/g/comp.security.announce/c/Y7V0PyvQXJ8
-  - https://sourceware.org/legacy-ml/cygwin/2002-08/msg00102.html
-  - https://undeadly.org/cgi?action=article&sid=20020801122759
+- https://www.openssh.com/txt/trojan.adv
+- https://marc.info/?l=bugtraq&m=102821663814127&w=2
+- https://blog.isosceles.com/openssh-backdoors/
+- https://groups.google.com/g/comp.security.announce/c/Y7V0PyvQXJ8
+- https://sourceware.org/legacy-ml/cygwin/2002-08/msg00102.html
+- https://undeadly.org/cgi?action=article&sid=20020801122759

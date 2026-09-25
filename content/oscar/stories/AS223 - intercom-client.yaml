@@ -2,29 +2,32 @@ id: AS223
 type: Attack Story
 date: 2026-04
 platforms:
-  - ai-agents
-
+- npm
+- git
 summary: Intercom Node SDK hit by Mini Shai-Hulud
-description: |
-  Catalogued from the tstromberg supplychain-attack-data dataset
+description: 'Catalogued from the tstromberg supplychain-attack-data dataset
+
   (community-curated incident corpus). Included because first-party
+
   sources exist for it; see the links below — vendor advisories, project
+
   incident reports, and researcher write-ups. Not based on aggregator
+
   coverage.
 
+  '
 attacks:
-  - attack: campaign
-    index: 1
-    stage: supply-chain
-    customer: 0
-    supplier: 2
-    techniques:
-      - techniqueID: T0109
-        techName: Publish malicious artifact
-        tactic: Resource Development
-        comment: Named in the tstromberg supplychain-attack-data corpus with first-party references.
-
+- attack: campaign
+  index: 1
+  stage: supply-chain
+  customer: 0
+  supplier: 2
+  techniques:
+  - techniqueID: T0109
+    techName: Publish malicious artifact
+    tactic: Resource Development
+    comment: Named in the tstromberg supplychain-attack-data corpus with first-party references.
 links:
-  - https://www.stepsecurity.io/blog/shai-hulud-worm-pivots-to-multi-cloud-intercom-client-hijacked
-  - https://github.com/intercom/intercom-node/issues/518
-  - https://semgrep.dev/blog/2026/malicious-intercom-php-package-spreads-mini-shai-hulud-attack-to-packagist-via-composer-plugin/
+- https://www.stepsecurity.io/blog/shai-hulud-worm-pivots-to-multi-cloud-intercom-client-hijacked
+- https://github.com/intercom/intercom-node/issues/518
+- https://semgrep.dev/blog/2026/malicious-intercom-php-package-spreads-mini-shai-hulud-attack-to-packagist-via-composer-plugin/

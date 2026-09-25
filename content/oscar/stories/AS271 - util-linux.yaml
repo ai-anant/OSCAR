@@ -2,33 +2,35 @@ id: AS271
 type: Attack Story
 date: 1999-01
 platforms:
-  - git
-
+- linux
 summary: util-linux source archive trojanized
-description: |
-  Catalogued from the tstromberg supplychain-attack-data dataset
+description: 'Catalogued from the tstromberg supplychain-attack-data dataset
+
   (community-curated incident corpus). Included because first-party
+
   sources exist for it; see the links below — vendor advisories, project
+
   incident reports, and researcher write-ups. Not based on aggregator
+
   coverage.
 
+  '
 attacks:
-  - attack: campaign
-    index: 1
-    stage: supply-chain
-    customer: 0
-    supplier: 2
-    techniques:
-      - techniqueID: T0172
-        techName: Runtime backdoor
-        tactic: Execution
-        comment: Backdoor/RAT payload documented by the cited sources.
-      - techniqueID: T0184
-        techName: Harvesting sensitive information from files
-        tactic: Credential Access
-        comment: Credential or wallet material targeted.
-
+- attack: campaign
+  index: 1
+  stage: supply-chain
+  customer: 0
+  supplier: 2
+  techniques:
+  - techniqueID: T0172
+    techName: Runtime backdoor
+    tactic: Execution
+    comment: Backdoor/RAT payload documented by the cited sources.
+  - techniqueID: T0184
+    techName: Harvesting sensitive information from files
+    tactic: Credential Access
+    comment: Credential or wallet material targeted.
 links:
-  - https://seclists.org/bugtraq/1999/Jan/286
-  - https://www.linuxtoday.com/security/cert-advisory-ca-99-02-trojan-horses/
-  - https://www.linuxtoday.com/security/util-linux-2-9g-compromised/
+- https://seclists.org/bugtraq/1999/Jan/286
+- https://www.linuxtoday.com/security/cert-advisory-ca-99-02-trojan-horses/
+- https://www.linuxtoday.com/security/util-linux-2-9g-compromised/

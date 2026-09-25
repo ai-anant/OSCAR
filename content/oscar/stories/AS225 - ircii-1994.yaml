@@ -2,36 +2,38 @@ id: AS225
 type: Attack Story
 date: 1994-05
 platforms:
-  - git
-
+- linux
 summary: ircII source installed account backdoor
-description: |
-  Catalogued from the tstromberg supplychain-attack-data dataset
+description: 'Catalogued from the tstromberg supplychain-attack-data dataset
+
   (community-curated incident corpus). Included because first-party
+
   sources exist for it; see the links below — vendor advisories, project
+
   incident reports, and researcher write-ups. Not based on aggregator
+
   coverage.
 
+  '
 attacks:
-  - attack: campaign
-    index: 1
-    stage: supply-chain
-    customer: 0
-    supplier: 2
-    techniques:
-      - techniqueID: T0172
-        techName: Runtime backdoor
-        tactic: Execution
-        comment: Backdoor/RAT payload documented by the cited sources.
-      - techniqueID: T0184
-        techName: Harvesting sensitive information from files
-        tactic: Credential Access
-        comment: Credential or wallet material targeted.
-
+- attack: campaign
+  index: 1
+  stage: supply-chain
+  customer: 0
+  supplier: 2
+  techniques:
+  - techniqueID: T0172
+    techName: Runtime backdoor
+    tactic: Execution
+    comment: Backdoor/RAT payload documented by the cited sources.
+  - techniqueID: T0184
+    techName: Harvesting sensitive information from files
+    tactic: Credential Access
+    comment: Credential or wallet material targeted.
 links:
-  - https://stuff.mit.edu/afs/athena.mit.edu/astaff/reference/cert/Advisories/CA-94:14.trojan.horse.in.IRC.client.for.UNIX
-  - https://www.sei.cmu.edu/documents/2339/1995_001_001_83550.pdf
-  - https://www.irchelp.org/security/irc-backdoor.txt
-  - https://www.neperos.com/article/q38ic72d5f3aa2f1
-  - https://seclists.org/bugtraq/1994/Oct/151
-  - https://seclists.org/bugtraq/1994/Oct/154
+- https://stuff.mit.edu/afs/athena.mit.edu/astaff/reference/cert/Advisories/CA-94:14.trojan.horse.in.IRC.client.for.UNIX
+- https://www.sei.cmu.edu/documents/2339/1995_001_001_83550.pdf
+- https://www.irchelp.org/security/irc-backdoor.txt
+- https://www.neperos.com/article/q38ic72d5f3aa2f1
+- https://seclists.org/bugtraq/1994/Oct/151
+- https://seclists.org/bugtraq/1994/Oct/154

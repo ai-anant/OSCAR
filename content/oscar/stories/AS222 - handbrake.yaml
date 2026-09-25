@@ -2,38 +2,40 @@ id: AS222
 type: Attack Story
 date: 2017-05
 platforms:
-  - windows
-
+- macos
 summary: HandBrake mirror delivered Proton RAT
-description: |
-  Catalogued from the tstromberg supplychain-attack-data dataset
+description: 'Catalogued from the tstromberg supplychain-attack-data dataset
+
   (community-curated incident corpus). Included because first-party
+
   sources exist for it; see the links below — vendor advisories, project
+
   incident reports, and researcher write-ups. Not based on aggregator
+
   coverage.
 
+  '
 attacks:
-  - attack: campaign
-    index: 1
-    stage: supply-chain
-    customer: 0
-    supplier: 2
-    techniques:
-      - techniqueID: T0172
-        techName: Runtime backdoor
-        tactic: Execution
-        comment: Backdoor/RAT payload documented by the cited sources.
-      - techniqueID: T0184
-        techName: Harvesting sensitive information from files
-        tactic: Credential Access
-        comment: Credential or wallet material targeted.
-      - techniqueID: T0209
-        techName: Compromise package registry or CDN origin
-        tactic: Initial Access
-        comment: Distribution origin hosted the trojanized artifact.
-
+- attack: campaign
+  index: 1
+  stage: supply-chain
+  customer: 0
+  supplier: 2
+  techniques:
+  - techniqueID: T0172
+    techName: Runtime backdoor
+    tactic: Execution
+    comment: Backdoor/RAT payload documented by the cited sources.
+  - techniqueID: T0184
+    techName: Harvesting sensitive information from files
+    tactic: Credential Access
+    comment: Credential or wallet material targeted.
+  - techniqueID: T0209
+    techName: Compromise package registry or CDN origin
+    tactic: Initial Access
+    comment: Distribution origin hosted the trojanized artifact.
 links:
-  - https://arstechnica.com/information-technology/2017/05/handbrake-download-server-hacked-to-distribute-mac-malware/
-  - https://securelist.com/proton-mac-os-x-rat/79960/
-  - https://forum.handbrake.fr/viewtopic.php?f=33&t=36380
-  - https://www.cybereason.com/blog/labs-proton-b-what-this-mac-malware-actually-does
+- https://arstechnica.com/information-technology/2017/05/handbrake-download-server-hacked-to-distribute-mac-malware/
+- https://securelist.com/proton-mac-os-x-rat/79960/
+- https://forum.handbrake.fr/viewtopic.php?f=33&t=36380
+- https://www.cybereason.com/blog/labs-proton-b-what-this-mac-malware-actually-does

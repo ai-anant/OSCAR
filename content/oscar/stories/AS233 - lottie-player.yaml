@@ -2,31 +2,33 @@ id: AS233
 type: Attack Story
 date: 2024-10
 platforms:
-  - ai-agents
-
+- npm
 summary: lottie-player prompted wallet drains
-description: |
-  Catalogued from the tstromberg supplychain-attack-data dataset
+description: 'Catalogued from the tstromberg supplychain-attack-data dataset
+
   (community-curated incident corpus). Included because first-party
+
   sources exist for it; see the links below — vendor advisories, project
+
   incident reports, and researcher write-ups. Not based on aggregator
+
   coverage.
 
+  '
 attacks:
-  - attack: campaign
-    index: 1
-    stage: supply-chain
-    customer: 0
-    supplier: 2
-    techniques:
-      - techniqueID: T0184
-        techName: Harvesting sensitive information from files
-        tactic: Credential Access
-        comment: Wallet/keys targeted.
-
+- attack: campaign
+  index: 1
+  stage: supply-chain
+  customer: 0
+  supplier: 2
+  techniques:
+  - techniqueID: T0184
+    techName: Harvesting sensitive information from files
+    tactic: Credential Access
+    comment: Wallet/keys targeted.
 links:
-  - https://www.wiz.io/blog/lottie-player-supply-chain-attack
-  - https://www.sonatype.com/blog/lottie-player-compromised-in-supply-chain-attack-all-you-need-to-know
-  - https://www.reversinglabs.com/blog/differential-analysis-raises-red-flags-over-lottiefiles-lottie-player
-  - https://github.com/LottieFiles/lottie-player/issues/254
-  - https://lottiefiles.com/blog/lottiefiles-updates/incident-report-unauthorized-versions-of-lottie-player-npm-package
+- https://www.wiz.io/blog/lottie-player-supply-chain-attack
+- https://www.sonatype.com/blog/lottie-player-compromised-in-supply-chain-attack-all-you-need-to-know
+- https://www.reversinglabs.com/blog/differential-analysis-raises-red-flags-over-lottiefiles-lottie-player
+- https://github.com/LottieFiles/lottie-player/issues/254
+- https://lottiefiles.com/blog/lottiefiles-updates/incident-report-unauthorized-versions-of-lottie-player-npm-package

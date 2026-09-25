@@ -2,31 +2,33 @@ id: AS239
 type: Attack Story
 date: 2025-07
 platforms:
-  - ai-agents
-
+- pypi
 summary: num2words maintainer phishing shipped malware
-description: |
-  Catalogued from the tstromberg supplychain-attack-data dataset
+description: 'Catalogued from the tstromberg supplychain-attack-data dataset
+
   (community-curated incident corpus). Included because first-party
+
   sources exist for it; see the links below — vendor advisories, project
+
   incident reports, and researcher write-ups. Not based on aggregator
+
   coverage.
 
+  '
 attacks:
-  - attack: campaign
-    index: 1
-    stage: supply-chain
-    customer: 0
-    supplier: 2
-    techniques:
-      - techniqueID: T0109
-        techName: Publish malicious artifact
-        tactic: Resource Development
-        comment: Named in the tstromberg supplychain-attack-data corpus with first-party references.
-
+- attack: campaign
+  index: 1
+  stage: supply-chain
+  customer: 0
+  supplier: 2
+  techniques:
+  - techniqueID: T0109
+    techName: Publish malicious artifact
+    tactic: Resource Development
+    comment: Named in the tstromberg supplychain-attack-data corpus with first-party references.
 links:
-  - https://www.stepsecurity.io/blog/supply-chain-security-alert-num2words-pypi-package-shows-signs-of-compromise
-  - https://github.com/advisories/GHSA-jxr6-qrxx-2ph2
-  - https://github.com/pypa/advisory-database/tree/main/vulns/num2words/PYSEC-2025-72.yaml
-  - https://github.com/ossf/malicious-packages/blob/main/osv/malicious/pypi/num2words/MAL-2025-6794.json
-  - https://x.com/SFLinux/status/1949906299308953827
+- https://www.stepsecurity.io/blog/supply-chain-security-alert-num2words-pypi-package-shows-signs-of-compromise
+- https://github.com/advisories/GHSA-jxr6-qrxx-2ph2
+- https://github.com/pypa/advisory-database/tree/main/vulns/num2words/PYSEC-2025-72.yaml
+- https://github.com/ossf/malicious-packages/blob/main/osv/malicious/pypi/num2words/MAL-2025-6794.json
+- https://x.com/SFLinux/status/1949906299308953827

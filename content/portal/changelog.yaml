@@ -1,20 +1,31 @@
 entries:
+- date: '2026-09-24'
+  id: platform-tag-audit
+  title: Platform-tag audit of the tstromberg batch (43 stories corrected)
+  items:
+  - 'Corrected wrong tags from the bulk import: AS212 Ken Thompson 1983 demo was tagged git/GitHub — it
+    predates both; platform is linux.'
+  - 'Fixed: npm packages wrongly tagged git (rand-user-agent, @solana/web3.js), Chrome extensions wrongly
+    tagged vscode (Great Suspender, Nano, Ledger Connect Kit), macOS cases (HandBrake, Monero CLI), PyPI/Gem
+    cases (Top.gg, rest-client, strong_password, ssh-decorate), Unix daemon/source cases (OpenSSH, tcpdump,
+    wu-ftpd, UnrealIRCd, ProFTPD, PEAR, Sendmail, SquirrelMail, monkey.org, tcp-wrappers, util-linux,
+    ircII, Irssi).'
+  - Removed false ai-agents tags where the match came from substring hits (colors.js, faker.js, lottie,
+    mailparser, num2words, Intercom, SquirrelMail, sendmail, guardrails-ai).
 - date: '2026-09-25'
   id: actions-cool-reenabling
   title: actions-cool tags still live; J7Tracker extensions; extra coverage
   items:
-  - 'Rewrote AS197 from SafeDep and Socket: actions-cool/issues-helper and
-    maintain-one-comment tags, hijacked 18 May, were re-enabled 16 Sep still
-    pointing at Mini Shai-Hulud; six public default branches infected 20–24 Sep.
-    Primary URLs: https://safedep.io/mini-shai-hulud-reinfection-github-repositories
+  - 'Rewrote AS197 from SafeDep and Socket: actions-cool/issues-helper and maintain-one-comment tags,
+    hijacked 18 May, were re-enabled 16 Sep still pointing at Mini Shai-Hulud; six public default branches
+    infected 20–24 Sep. Primary URLs: https://safedep.io/mini-shai-hulud-reinfection-github-repositories
     and https://socket.dev/blog/mini-shai-hulud-actions.'
-  - 'New AS286: Socket J7Tracker/VREO/Orbit Tracker Chrome and Firefox extensions
-    stealing Axiom Trade and Padre session/wallet data
-    (https://socket.dev/blog/chrome-firefox-crypto-data-theft).'
-  - Attached Aikido MemTensor URL variant to AS39; Anthropic alignment assessment
-    and Socket follow-up to AS65; Rust 17 Sep crate-owner targeting advisory to AS18.
-  - Skipped GitLab incoming-email research (vuln, not in-the-wild), GTIG CI/CD
-    hardening guidance, OSM show #22, and product/Forrester posts.
+  - 'New AS286: Socket J7Tracker/VREO/Orbit Tracker Chrome and Firefox extensions stealing Axiom Trade
+    and Padre session/wallet data (https://socket.dev/blog/chrome-firefox-crypto-data-theft).'
+  - Attached Aikido MemTensor URL variant to AS39; Anthropic alignment assessment and Socket follow-up
+    to AS65; Rust 17 Sep crate-owner targeting advisory to AS18.
+  - Skipped GitLab incoming-email research (vuln, not in-the-wild), GTIG CI/CD hardening guidance, OSM
+    show
 - date: '2026-09-24'
   id: rename-and-dashboard
   title: Renamed to supply-chain-incidences-catalogue; homepage is now a stats dashboard

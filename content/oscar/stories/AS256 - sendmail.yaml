@@ -2,41 +2,42 @@ id: AS256
 type: Attack Story
 date: 2002-09
 platforms:
-  - windows
-  - ai-agents
-
+- linux
 summary: Sendmail FTP tarball shipped trojan
-description: |
-  Catalogued from the tstromberg supplychain-attack-data dataset
+description: 'Catalogued from the tstromberg supplychain-attack-data dataset
+
   (community-curated incident corpus). Included because first-party
+
   sources exist for it; see the links below — vendor advisories, project
+
   incident reports, and researcher write-ups. Not based on aggregator
+
   coverage.
 
+  '
 attacks:
-  - attack: campaign
-    index: 1
-    stage: supply-chain
-    customer: 0
-    supplier: 2
-    techniques:
-      - techniqueID: T0172
-        techName: Runtime backdoor
-        tactic: Execution
-        comment: Backdoor/RAT payload documented by the cited sources.
-      - techniqueID: T0184
-        techName: Harvesting sensitive information from files
-        tactic: Credential Access
-        comment: Credential or wallet material targeted.
-      - techniqueID: T0209
-        techName: Compromise package registry or CDN origin
-        tactic: Initial Access
-        comment: Distribution origin hosted the trojanized artifact.
-
+- attack: campaign
+  index: 1
+  stage: supply-chain
+  customer: 0
+  supplier: 2
+  techniques:
+  - techniqueID: T0172
+    techName: Runtime backdoor
+    tactic: Execution
+    comment: Backdoor/RAT payload documented by the cited sources.
+  - techniqueID: T0184
+    techName: Harvesting sensitive information from files
+    tactic: Credential Access
+    comment: Credential or wallet material targeted.
+  - techniqueID: T0209
+    techName: Compromise package registry or CDN origin
+    tactic: Initial Access
+    comment: Distribution origin hosted the trojanized artifact.
 links:
-  - https://web.archive.org/web/20140720105607/http://www.cert.org/advisories/CA-2002-28.html
-  - https://seclists.org/bugtraq/2002/Oct/122
-  - https://www.exploit-db.com/exploits/21919
-  - https://www.theregister.com/2002/10/11/sendmail_trojan_looks_familiar/
-  - https://web.archive.org/web/20210515121835/https://www.securityfocus.com/bid/5921/info
-  - https://nvd.nist.gov/vuln/detail/CVE-1999-0661
+- https://web.archive.org/web/20140720105607/http://www.cert.org/advisories/CA-2002-28.html
+- https://seclists.org/bugtraq/2002/Oct/122
+- https://www.exploit-db.com/exploits/21919
+- https://www.theregister.com/2002/10/11/sendmail_trojan_looks_familiar/
+- https://web.archive.org/web/20210515121835/https://www.securityfocus.com/bid/5921/info
+- https://nvd.nist.gov/vuln/detail/CVE-1999-0661

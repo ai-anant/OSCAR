@@ -2,34 +2,37 @@ id: AS214
 type: Attack Story
 date: 2026-04
 platforms:
-  - pypi
-
+- pypi
+- docker
 summary: elementary-data PyPI and GHCR releases forged
-description: |
-  Catalogued from the tstromberg supplychain-attack-data dataset
+description: 'Catalogued from the tstromberg supplychain-attack-data dataset
+
   (community-curated incident corpus). Included because first-party
+
   sources exist for it; see the links below — vendor advisories, project
+
   incident reports, and researcher write-ups. Not based on aggregator
+
   coverage.
 
+  '
 attacks:
-  - attack: campaign
-    index: 1
-    stage: supply-chain
-    customer: 0
-    supplier: 2
-    techniques:
-      - techniqueID: T0121
-        techName: Compromised legitimate artifact
-        tactic: Resource Development
-        comment: Published package versions carried the payload.
-      - techniqueID: T0109
-        techName: Publish malicious artifact
-        tactic: Resource Development
-        comment: Named in the tstromberg supplychain-attack-data corpus with first-party references.
-
+- attack: campaign
+  index: 1
+  stage: supply-chain
+  customer: 0
+  supplier: 2
+  techniques:
+  - techniqueID: T0121
+    techName: Compromised legitimate artifact
+    tactic: Resource Development
+    comment: Published package versions carried the payload.
+  - techniqueID: T0109
+    techName: Publish malicious artifact
+    tactic: Resource Development
+    comment: Named in the tstromberg supplychain-attack-data corpus with first-party references.
 links:
-  - https://www.elementary-data.com/post/security-incident-report-malicious-release-of-elementary-oss-python-cli-v0-23-3
-  - https://www.stepsecurity.io/blog/elementary-data-compromised-on-pypi-and-ghcr-forged-release-pushed-via-github-actions-script-injection
-  - https://snyk.io/blog/malicious-release-of-elementary-data-pypi-package-steals-cloud-credentials-from-data-engineers/
-  - https://cybersecuritynews.com/pypi-package-hacked-with-malware/
+- https://www.elementary-data.com/post/security-incident-report-malicious-release-of-elementary-oss-python-cli-v0-23-3
+- https://www.stepsecurity.io/blog/elementary-data-compromised-on-pypi-and-ghcr-forged-release-pushed-via-github-actions-script-injection
+- https://snyk.io/blog/malicious-release-of-elementary-data-pypi-package-steals-cloud-credentials-from-data-engineers/
+- https://cybersecuritynews.com/pypi-package-hacked-with-malware/

@@ -2,32 +2,34 @@ id: AS268
 type: Attack Story
 date: 2024-03
 platforms:
-  - git
-
+- pypi
 summary: Top.gg Python SDK stole credentials
-description: |
-  Catalogued from the tstromberg supplychain-attack-data dataset
+description: 'Catalogued from the tstromberg supplychain-attack-data dataset
+
   (community-curated incident corpus). Included because first-party
+
   sources exist for it; see the links below — vendor advisories, project
+
   incident reports, and researcher write-ups. Not based on aggregator
+
   coverage.
 
+  '
 attacks:
-  - attack: campaign
-    index: 1
-    stage: supply-chain
-    customer: 0
-    supplier: 2
-    techniques:
-      - techniqueID: T0172
-        techName: Runtime backdoor
-        tactic: Execution
-        comment: Backdoor/RAT payload documented by the cited sources.
-      - techniqueID: T0184
-        techName: Harvesting sensitive information from files
-        tactic: Credential Access
-        comment: Credential or wallet material targeted.
-
+- attack: campaign
+  index: 1
+  stage: supply-chain
+  customer: 0
+  supplier: 2
+  techniques:
+  - techniqueID: T0172
+    techName: Runtime backdoor
+    tactic: Execution
+    comment: Backdoor/RAT payload documented by the cited sources.
+  - techniqueID: T0184
+    techName: Harvesting sensitive information from files
+    tactic: Credential Access
+    comment: Credential or wallet material targeted.
 links:
-  - https://checkmarx.com/blog/over-170k-users-affected-by-attack-using-fake-python-infrastructure/
-  - https://siliconangle.com/2024/03/21/top-gg-hit-supply-chain-attack-stolen-browser-cookies/
+- https://checkmarx.com/blog/over-170k-users-affected-by-attack-using-fake-python-infrastructure/
+- https://siliconangle.com/2024/03/21/top-gg-hit-supply-chain-attack-stolen-browser-cookies/

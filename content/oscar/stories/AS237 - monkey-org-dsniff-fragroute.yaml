@@ -2,40 +2,42 @@ id: AS237
 type: Attack Story
 date: 2002-05
 platforms:
-  - windows
-
+- linux
 summary: monkey.org tarballs shipped backdoors
-description: |
-  Catalogued from the tstromberg supplychain-attack-data dataset
+description: 'Catalogued from the tstromberg supplychain-attack-data dataset
+
   (community-curated incident corpus). Included because first-party
+
   sources exist for it; see the links below — vendor advisories, project
+
   incident reports, and researcher write-ups. Not based on aggregator
+
   coverage.
 
+  '
 attacks:
-  - attack: campaign
-    index: 1
-    stage: supply-chain
-    customer: 0
-    supplier: 2
-    techniques:
-      - techniqueID: T0172
-        techName: Runtime backdoor
-        tactic: Execution
-        comment: Backdoor/RAT payload documented by the cited sources.
-      - techniqueID: T0184
-        techName: Harvesting sensitive information from files
-        tactic: Credential Access
-        comment: Credential or wallet material targeted.
-      - techniqueID: T0209
-        techName: Compromise package registry or CDN origin
-        tactic: Initial Access
-        comment: Distribution origin hosted the trojanized artifact.
-
+- attack: campaign
+  index: 1
+  stage: supply-chain
+  customer: 0
+  supplier: 2
+  techniques:
+  - techniqueID: T0172
+    techName: Runtime backdoor
+    tactic: Execution
+    comment: Backdoor/RAT payload documented by the cited sources.
+  - techniqueID: T0184
+    techName: Harvesting sensitive information from files
+    tactic: Credential Access
+    comment: Credential or wallet material targeted.
+  - techniqueID: T0209
+    techName: Compromise package registry or CDN origin
+    tactic: Initial Access
+    comment: Distribution origin hosted the trojanized artifact.
 links:
-  - https://seclists.org/bugtraq/2002/May/290
-  - https://seclists.org/bugtraq/2002/May/294
-  - https://artofhacking.com/tucops3/hack/unix/live/aoh_unix5397.htm
-  - https://www.helpnetsecurity.com/2002/06/03/backdoored-dsniff-fragroute-and-fragrouter/
-  - https://seclists.org/isn/2002/Jun/8
-  - https://lwn.net/Articles/809/
+- https://seclists.org/bugtraq/2002/May/290
+- https://seclists.org/bugtraq/2002/May/294
+- https://artofhacking.com/tucops3/hack/unix/live/aoh_unix5397.htm
+- https://www.helpnetsecurity.com/2002/06/03/backdoored-dsniff-fragroute-and-fragrouter/
+- https://seclists.org/isn/2002/Jun/8
+- https://lwn.net/Articles/809/

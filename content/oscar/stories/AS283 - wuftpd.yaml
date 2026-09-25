@@ -2,39 +2,41 @@ id: AS283
 type: Attack Story
 date: 1994-04
 platforms:
-  - windows
-
+- linux
 summary: wu-ftpd tarball shipped backdoor
-description: |
-  Catalogued from the tstromberg supplychain-attack-data dataset
+description: 'Catalogued from the tstromberg supplychain-attack-data dataset
+
   (community-curated incident corpus). Included because first-party
+
   sources exist for it; see the links below — vendor advisories, project
+
   incident reports, and researcher write-ups. Not based on aggregator
+
   coverage.
 
+  '
 attacks:
-  - attack: campaign
-    index: 1
-    stage: supply-chain
-    customer: 0
-    supplier: 2
-    techniques:
-      - techniqueID: T0172
-        techName: Runtime backdoor
-        tactic: Execution
-        comment: Backdoor/RAT payload documented by the cited sources.
-      - techniqueID: T0184
-        techName: Harvesting sensitive information from files
-        tactic: Credential Access
-        comment: Credential or wallet material targeted.
-      - techniqueID: T0209
-        techName: Compromise package registry or CDN origin
-        tactic: Initial Access
-        comment: Distribution origin hosted the trojanized artifact.
-
+- attack: campaign
+  index: 1
+  stage: supply-chain
+  customer: 0
+  supplier: 2
+  techniques:
+  - techniqueID: T0172
+    techName: Runtime backdoor
+    tactic: Execution
+    comment: Backdoor/RAT payload documented by the cited sources.
+  - techniqueID: T0184
+    techName: Harvesting sensitive information from files
+    tactic: Credential Access
+    comment: Credential or wallet material targeted.
+  - techniqueID: T0209
+    techName: Compromise package registry or CDN origin
+    tactic: Initial Access
+    comment: Distribution origin hosted the trojanized artifact.
 links:
-  - https://www.sei.cmu.edu/documents/517/1994_019_001_496252.pdf
-  - https://seclists.org/nanog/1994/Apr/3
-  - https://ftp.gwdg.de/pub/misc/wu-ftpd/ftp.wu-ftpd.org/wu-ftpd-attic/
-  - https://seclists.org/bugtraq/1994/Apr/13
-  - https://groups.google.com/g/comp.unix.admin/c/5gZt3uQbJ9E
+- https://www.sei.cmu.edu/documents/517/1994_019_001_496252.pdf
+- https://seclists.org/nanog/1994/Apr/3
+- https://ftp.gwdg.de/pub/misc/wu-ftpd/ftp.wu-ftpd.org/wu-ftpd-attic/
+- https://seclists.org/bugtraq/1994/Apr/13
+- https://groups.google.com/g/comp.unix.admin/c/5gZt3uQbJ9E

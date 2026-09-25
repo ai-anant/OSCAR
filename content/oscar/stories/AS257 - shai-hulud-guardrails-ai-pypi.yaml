@@ -2,36 +2,37 @@ id: AS257
 type: Attack Story
 date: 2026-05
 platforms:
-  - pypi
-  - ai-agents
-
+- pypi
 summary: guardrails-ai PyPI package carried Shai-Hulud
-description: |
-  Catalogued from the tstromberg supplychain-attack-data dataset
+description: 'Catalogued from the tstromberg supplychain-attack-data dataset
+
   (community-curated incident corpus). Included because first-party
+
   sources exist for it; see the links below — vendor advisories, project
+
   incident reports, and researcher write-ups. Not based on aggregator
+
   coverage.
 
+  '
 attacks:
-  - attack: campaign
-    index: 1
-    stage: supply-chain
-    customer: 0
-    supplier: 2
-    techniques:
-      - techniqueID: T0121
-        techName: Compromised legitimate artifact
-        tactic: Resource Development
-        comment: Published package versions carried the payload.
-      - techniqueID: T0109
-        techName: Publish malicious artifact
-        tactic: Resource Development
-        comment: Named in the tstromberg supplychain-attack-data corpus with first-party references.
-
+- attack: campaign
+  index: 1
+  stage: supply-chain
+  customer: 0
+  supplier: 2
+  techniques:
+  - techniqueID: T0121
+    techName: Compromised legitimate artifact
+    tactic: Resource Development
+    comment: Published package versions carried the payload.
+  - techniqueID: T0109
+    techName: Publish malicious artifact
+    tactic: Resource Development
+    comment: Named in the tstromberg supplychain-attack-data corpus with first-party references.
 links:
-  - https://research.jfrog.com/post/shai-hulud-here-we-go-again/
-  - https://www.securityweek.com/over-100-npm-pypi-packages-hit-in-new-shai-hulud-supply-chain-attacks/
-  - https://www.aikido.dev/blog/mini-shai-hulud-is-back-tanstack-compromised
-  - https://github.com/guardrails-ai/guardrails/security/advisories/GHSA-xmpw-2vmm-p4p6
-  - https://gist.github.com/beowolx2/a3ceeb18d1f1cec977d5cc6eaf41c96a
+- https://research.jfrog.com/post/shai-hulud-here-we-go-again/
+- https://www.securityweek.com/over-100-npm-pypi-packages-hit-in-new-shai-hulud-supply-chain-attacks/
+- https://www.aikido.dev/blog/mini-shai-hulud-is-back-tanstack-compromised
+- https://github.com/guardrails-ai/guardrails/security/advisories/GHSA-xmpw-2vmm-p4p6
+- https://gist.github.com/beowolx2/a3ceeb18d1f1cec977d5cc6eaf41c96a

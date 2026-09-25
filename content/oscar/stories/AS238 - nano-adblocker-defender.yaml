@@ -2,29 +2,31 @@ id: AS238
 type: Attack Story
 date: 2020-10
 platforms:
-  - vscode
-
+- browser-extensions
 summary: Nano extensions shipped malicious updates
-description: |
-  Catalogued from the tstromberg supplychain-attack-data dataset
+description: 'Catalogued from the tstromberg supplychain-attack-data dataset
+
   (community-curated incident corpus). Included because first-party
+
   sources exist for it; see the links below — vendor advisories, project
+
   incident reports, and researcher write-ups. Not based on aggregator
+
   coverage.
 
+  '
 attacks:
-  - attack: campaign
-    index: 1
-    stage: supply-chain
-    customer: 0
-    supplier: 2
-    techniques:
-      - techniqueID: T0154
-        techName: Malicious IDE extension
-        tactic: Initial Access
-        comment: IDE/browser extension as the delivery.
-
+- attack: campaign
+  index: 1
+  stage: supply-chain
+  customer: 0
+  supplier: 2
+  techniques:
+  - techniqueID: T0154
+    techName: Malicious IDE extension
+    tactic: Initial Access
+    comment: IDE/browser extension as the delivery.
 links:
-  - https://arstechnica.com/information-technology/2020/10/popular-chromium-ad-blockers-caught-stealing-user-data-and-accessing-accounts/
-  - https://github.com/jspenguin2017/Snippets/issues/2
-  - https://github.com/NanoAdblocker/NanoCore/issues/362
+- https://arstechnica.com/information-technology/2020/10/popular-chromium-ad-blockers-caught-stealing-user-data-and-accessing-accounts/
+- https://github.com/jspenguin2017/Snippets/issues/2
+- https://github.com/NanoAdblocker/NanoCore/issues/362
