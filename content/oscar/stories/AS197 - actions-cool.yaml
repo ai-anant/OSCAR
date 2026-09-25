@@ -4,17 +4,33 @@ date: 2026-05
 platforms:
   - git
   - github-actions
+  - vscode
+  - ai-agents
 
-summary: actions-cool GitHub Actions tags rewritten by TeamPCP
+summary: actions-cool GitHub Action tags still serve Mini Shai-Hulud after re-enablement
 description: |
-  Catalogued from the tstromberg supplychain-attack-data dataset
-  (community-curated incident corpus). Included because first-party
-  sources exist for it; see the links below — vendor advisories, project
-  incident reports, and researcher write-ups. Not based on aggregator
-  coverage.
+  On 18 May 2026 an attacker moved all 53 tags of actions-cool/issues-helper
+  and all 15 tags of actions-cool/maintain-one-comment to unsigned
+  "Build action for <tag>" commits. The malicious action.yml runs a Bun
+  payload first, then the real action so the workflow still succeeds.
+  GitHub disabled both repositories on 19 May (terms-of-service), which
+  stopped downloads. On 16 September 2026 both repositories became
+  reachable again with the May tags still pointing at the payload, so
+  every workflow that pins by tag rather than SHA resumed executing it.
+  SafeDep found six newly infected default branches between 20 and 24
+  September (jd-opensource/micro-app, MaaXYZ/MaaFramework,
+  ant-design/pro-components, Moonofweisheng/wot-design-uni,
+  vbenjs/vben-admin-thin-next, nineaiyu/xadmin-client). The payload
+  reads the ghs_ token from Runner.Worker memory, commits .claude/ and
+  .vscode/tasks.json hooks (github-actions[bot], GraphQL), and on a
+  developer machine installs kitty-monitor. Byte-identical to the May
+  Mini Shai-Hulud build (blob 2931c1be, 500,143 bytes); C2
+  t.m-kosche.com. The payload also writes 127.0.0.1 stepsecurity.io
+  entries on the runner. Socket reports ~15,000 dependents of
+  issues-helper. Tags were not cleaned before re-enablement.
 
 attacks:
-  - attack: campaign
+  - attack: Hijacked actions-cool tags
     index: 1
     stage: supply-chain
     customer: 0
@@ -23,9 +39,62 @@ attacks:
       - techniqueID: T0122
         techName: Vulnerability in third-party CI/CD actions
         tactic: Initial Access
-        comment: Actions/tags/workflows as the compromise path.
+        comment: Workflows that call actions-cool/issues-helper or maintain-one-comment by mutable tag.
+      - techniqueID: T0121
+        techName: Compromised legitimate artifact
+        tactic: Resource Development
+        comment: Real actions-cool issue-bot actions; tags rewritten 18 May 2026, still malicious in September.
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: 53 issues-helper tags and 15 maintain-one-comment tags moved to wrapper commits that run Bun then the real action.
+      - techniqueID: T0159
+        techName: Malicious artifact execution
+        tactic: Execution
+        comment: oven-sh/setup-bun then bun run $GITHUB_ACTION_PATH/index.js on the runner before the housekeeping step.
+      - techniqueID: T0183
+        techName: Harvesting short-lived token
+        tactic: Credential Access
+        comment: Payload reads the ghs_ token from Runner.Worker memory.
+      - techniqueID: T0140
+        techName: Harvest tokens from environment variables
+        tactic: Credential Access
+        comment: CI secrets available to the composite action are stolen, then used to commit into the consuming repo.
+      - techniqueID: T0193
+        techName: Sensitive information in environment variables
+        tactic: Collection
+        comment: Issue-bot workflows often run on schedule or issue events with a repo token.
+      - techniqueID: T0202
+        techName: Inadequate CI/CD workflow permissions
+        tactic: Persistence
+        comment: GITHUB_TOKEN was enough to push verified github-actions[bot] commits onto default branches.
+      - techniqueID: T0169
+        techName: Push implants across repositories
+        tactic: Lateral Movement
+        comment: Six public default branches received .claude/ and .vscode hook commits 20–24 September 2026.
+      - techniqueID: T0210
+        techName: Poison AI coding-agent config or workspace
+        tactic: Persistence
+        comment: .claude/settings.json SessionStart and .vscode/tasks.json run node .claude/setup.mjs on folder open.
+      - techniqueID: T0152
+        techName: IDE
+        tactic: Execution
+        comment: VS Code folderOpen task downloads Bun 1.3.14 and runs the same index.js on the developer machine.
+      - techniqueID: T0176
+        techName: Disable or misconfigure security measures
+        tactic: Defense Evasion
+        comment: Payload sudo-writes 127.0.0.1 stepsecurity.io entries into /etc/hosts on the runner.
+      - techniqueID: T0168
+        techName: Exfiltration to code repositories
+        tactic: Exfiltration
+        comment: Commits go through the GraphQL API with the victim repository token so GitHub shows them as verified.
+
+gaps:
+  - Mutable-tag reactivation after a GitHub disablement (containment that left the tags in place) is not a named OSC&R technique.
+  - Reading ghs_ from Runner.Worker process memory is more specific than T0183.
 
 links:
   - https://www.stepsecurity.io/blog/actions-cool-issues-helper-github-action-compromised-all-tags-point-to-imposter-commit-that-exfiltrates-ci-cd-credentials
-  - https://cybersecuritynews.com/compromised-github-action-exfiltrates-workflow-credentials/
   - https://pumasecurity.io/resources/blog/teampcp-github-actions-supply-chain/
+  - https://safedep.io/mini-shai-hulud-reinfection-github-repositories
+  - https://socket.dev/blog/mini-shai-hulud-actions

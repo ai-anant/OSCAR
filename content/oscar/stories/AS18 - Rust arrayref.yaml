@@ -13,6 +13,10 @@ description: |
   (dtolney) staged the typosquat of David Tolnay's proc-macro2. The Rust
   Security Response Team deleted the malicious crates and locked the
   account; Nextron Systems reported it. Exposure windows were 86–107 minutes.
+  On 17 September 2026 the crates.io team warned that rust-lang members
+  and popular crate owners were still being targeted with fake job or
+  contract video calls (missing-codec installs, clipboard-pasted
+  commands) aimed at stealing publish access.
 
 attacks:
   - attack: crates.io
@@ -108,6 +112,7 @@ gaps:
 
 links:
   - https://blog.rust-lang.org/2026/08/20/supply-chain-attack-on-arrayref
+  - https://blog.rust-lang.org/2026/09/17/targeted-attacks/
   - https://www.stepsecurity.io/blog/arrayref-rust-crate-supply-chain-attack
   - https://github.com/rustsec/advisory-db/issues/3161
   - https://safedep.io/arrayref-proc-macro1-rust-build-time-malware

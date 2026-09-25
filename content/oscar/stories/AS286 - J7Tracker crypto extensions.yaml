@@ -1,0 +1,45 @@
+id: AS286
+type: Attack Story
+date: 2026-09
+platforms:
+  - browser-extensions
+
+summary: J7Tracker / VREO / Orbit Tracker steal Axiom and Padre session and wallet data
+description: |
+  Socket (9 September 2026) documented six Chrome and Firefox extensions
+  in one publisher operation targeting Axiom Trade and Padre (now
+  Terminal) users. Chrome J7Tracker and VREO and Firefox VREO share a
+  byte-identical axiom-fetch-intercept.js module that pulls authenticated
+  user info, wallet bundle data, Firebase access tokens, and app state
+  to attacker Vercel deployments. Firefox Orbit Tracker arrived weeks
+  later with a separate collector and C2 (susi.bonto.run) but the same
+  Axiom fields (sBundles, bundleKey) and leftover J7Tracker popup
+  artifacts; it was still live at publication. Earlier Chrome GhostApe
+  and GhostApe Color in the same publisher portfolio were MockApe
+  brandjacks (even reusing the legitimate MockApe store ID). Chrome
+  listings were removed in July 2026 (J7Tracker/VREO as malware;
+  GhostApe pair as policy). Shared hardcoded id 7680513699 ties
+  J7Tracker/VREO.
+
+attacks:
+  - attack: Marketplace extensions
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0109
+        techName: Publish malicious artifact
+        tactic: Resource Development
+        comment: Chrome Web Store and Firefox Add-ons listings (J7Tracker, VREO, Orbit Tracker, GhostApe).
+      - techniqueID: T0136
+        techName: Brandjacking
+        tactic: Initial Access
+        comment: GhostApe cloned MockApe including the legitimate Chrome store ID; VREO/Orbit pose as trader tools.
+      - techniqueID: T0184
+        techName: Harvesting sensitive information from files
+        tactic: Credential Access
+        comment: Axiom/Padre session tokens, Firebase access tokens, wallet bundle keys, cookies.
+
+links:
+  - https://socket.dev/blog/chrome-firefox-crypto-data-theft

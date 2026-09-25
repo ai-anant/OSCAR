@@ -176,7 +176,7 @@
         ],
         "url": "techniques/T0109.html",
         "description": "Public registries are widely used by developers and organizations to download and distribute software packages and container images, making them an attractive target for attackers.\nIn this type of attack, the attacker creates a package or container image that contains malicious code or files, such as a backdoor or other malware.\nThe attacker then uploads the package or image to PyPI, DockerHub or other registry, posing as a legitimate user or creating a fake account.\nOnce the package or image is uploaded, it becomes available for download by other users who may unsuspectingly use it in their projects.\nThe supply chain attack can have far-reaching consequences as it can affect all systems that rely on the malicious package or image.\nFor example, a Python package that is downloaded from PyPI may be used by multiple applications and libraries, potentially compromising all systems that use it.\nSimilarly, a container image with a malicious payload may be used to deploy an application across multiple environments, leading to a widespread compromise.\n",
-        "incidentCount": 151
+        "incidentCount": 153
       },
       {
         "id": "T0110",
@@ -213,7 +213,7 @@
         ],
         "url": "techniques/T0121.html",
         "description": "A compromised legitimate artifact attack is a type of cyber attack in which an attacker replaces a legitimate package or container image with a malicious version, often without the knowledge of the original developer or distributor. \nThis attack takes advantage of the trust that users place in legitimate packages or container images, which are often used to deploy software across multiple environments.\nIn this attack, the attacker may gain access to the repository or registry where the legitimate artifact is stored, either by exploiting a vulnerability or through social engineering tactics. \nThe attacker then replaces the legitimate artifact with a malicious version that contains malware or other harmful code. \nOnce the compromised artifact is downloaded and deployed, it can compromise the system and potentially cause significant harm, such as stealing sensitive data or taking control of the system.\n",
-        "incidentCount": 63
+        "incidentCount": 64
       },
       {
         "id": "T0141",
@@ -428,7 +428,7 @@
         ],
         "url": "techniques/T0136.html",
         "description": "Brandjacking is a type of attack where an attacker impersonates a legitimate brand or project in an attempt to trick users into downloading and installing a malicious container or package. \nThis can happen when an attacker creates a package or container with a similar name or logo to a well-known and trusted brand or project, and then distributes it through public repositories.\nBrandjacking can be particularly dangerous in the context of container and open source security, as many developers and users rely on public repositories and may not take the time to thoroughly verify the authenticity of packages they download.\nOnce a malicious package is installed, it can be difficult to detect and can lead to serious security breaches.\n",
-        "incidentCount": 30
+        "incidentCount": 31
       },
       {
         "id": "T0137",
@@ -666,7 +666,7 @@
         ],
         "url": "techniques/T0152.html",
         "description": "Malicious code can be injected into build commands, build scripts or project files. \nThese commands and scripts can be executed upon IDE project build and run.\n",
-        "incidentCount": 3
+        "incidentCount": 4
       },
       {
         "id": "T0155",
@@ -690,7 +690,7 @@
         ],
         "url": "techniques/T0159.html",
         "description": "Malicious artifact execution refers to an attack where an attacker injects or modifies a software component with malicious code that is executed when the component is used by a downstream system in the CI/CD process. \nWhen a CI/CD process lacks sufficient mechanisms to validate the integrity of code and artifacts, attackers can insert malicious code that appears to be harmless. \nThis allows the malicious code to pass through the pipeline undetected, potentially causing harm in the CI/CD process or in production.\nThe malicious code can be executed in the CI/CD process or even in production.\n",
-        "incidentCount": 41
+        "incidentCount": 42
       },
       {
         "id": "T0166",
@@ -866,7 +866,7 @@
         ],
         "url": "techniques/T0202.html",
         "description": "Pipelines that grant overly broad tokens (for example GitHub Actions\n`GITHUB_TOKEN` with `contents: write`, `id-token: write`, or pull-request\njobs that can push to default branches) let an attacker persist after the\nfirst poisoned workflow run. Persistence takes the form of a new workflow\nfile, a deploy key, a self-hosted runner registration, or a long-lived\ncloud credential minted by the job. This is distinct from overprivileged\nrunners (T0132) and from creating an access token after account takeover\n(T0165): the weakness is the workflow permission set itself.\n",
-        "incidentCount": 6
+        "incidentCount": 7
       },
       {
         "id": "T0210",
@@ -879,7 +879,7 @@
         ],
         "url": "techniques/T0210.html",
         "description": "The attacker writes into hidden agent directories and config that\ndevelopers and CI treat as local clutter \u2014 `.claude/`, `.cursor/`,\n`.vscode/`, Copilot/Gemini/Codex settings, MCP server entries, or\nPython `.pth` startup hooks. The next time the human or the agent\nopens the project, attacker instructions run with the developer's\nalready-granted tools. Uninstalling a malicious package does not\nclear this. Observed in Morphisec's Hades campaign, GTIG DUSTMAKER,\nand Mandiant's hijacked coding-assistant case.\n",
-        "incidentCount": 12
+        "incidentCount": 13
       }
     ],
     "amount": 10,
@@ -976,7 +976,7 @@
         ],
         "url": "techniques/T0176.html",
         "description": "Attackers disable or misconfigure security controls so that later activity is\nnot observed or blocked. In software supply chains this is more often a\ncomplete disablement than a subtle misconfiguration: turning off a GitHub\nAction required-review check, uninstalling an endpoint agent on a build\nrunner, skipping a signing gate, or emptying a security-group rule.\nMisconfiguration (over-permissive logging, broken audit settings) remains\nin scope as the quieter variant of the same Defense Evasion technique.\n",
-        "incidentCount": 4
+        "incidentCount": 5
       },
       {
         "id": "T0182",
@@ -1085,7 +1085,7 @@
         ],
         "url": "techniques/T0140.html",
         "description": "This type of attack involves searching for environment variables that may contain sensitive information and dumping their values to gain access to the associated resources.\nIn cloud and container environments, environment variables are often used to store configuration data, including sensitive information such as passwords, tokens and API keys. \nAttackers can exploit this by searching through the environment variables of running containers or cloud instances to find any sensitive information that has been inadvertently exposed. \nOnce the sensitive information has been obtained, attackers can use it to access and compromise the associated resources.\n",
-        "incidentCount": 30
+        "incidentCount": 31
       },
       {
         "id": "T0162",
@@ -1122,7 +1122,7 @@
         ],
         "url": "techniques/T0183.html",
         "description": "This attack technique involves searching for short-lived tokens that are used during the CI/CD process and extracting them for later use in unauthorized activities.\nShort-lived tokens are often used in CI/CD systems to authenticate communication between different components, such as the build server and the deployment server.\nAn attacker can obtain these tokens from CI/CD logs, variable groups, secure files, etc.\nThese tokens typically have a limited lifespan, but if an attacker is able to capture them, they can use them to gain unauthorized access to the system or associated resources.\n",
-        "incidentCount": 2
+        "incidentCount": 3
       },
       {
         "id": "T0184",
@@ -1134,7 +1134,7 @@
         ],
         "url": "techniques/T0184.html",
         "description": "This attack involves searching for files within the CI/CD system that may contain sensitive information such as credentials, API keys, or other access tokens.\nThese files can include configuration files, scripts, and other files that are used as part of the build and deployment process. \nAttackers can use various techniques to locate these files, including directory traversal attacks, file inclusion vulnerabilities, or simply guessing common file names or paths.\nOnce the attacker has located a file containing sensitive information, they can extract the credentials and use them to gain unauthorized access to the targeted system or application.\n",
-        "incidentCount": 93
+        "incidentCount": 94
       },
       {
         "id": "T0185",
@@ -1191,7 +1191,7 @@
         ],
         "url": "techniques/T0169.html",
         "description": "The Push Implants across Repositories attack technique is a type of lateral movement tactic where an attacker gains access to a victim's code repository, modifies the code by implanting malicious code or backdoors, and pushes the modified code back to the repository.\nThis technique often involves the attacker stealing valid credentials, such as login credentials or SSH keys, to gain access to the victim's code repository. \nThey then modify the code, implanting the malicious code or backdoors, and push the modified code back to the repository. \nThe victim then unknowingly deploys the modified code, resulting in the compromise of their systems.\n",
-        "incidentCount": 12
+        "incidentCount": 13
       }
     ],
     "amount": 2,
@@ -1260,7 +1260,7 @@
         ],
         "url": "techniques/T0193.html",
         "description": "Environment variables are a type of configuration parameter that contain information about the environment in which an application is running. \nThese variables can be set and accessed by the operating system or application, and may contain sensitive information such as passwords, API keys, or other credentials.\n",
-        "incidentCount": 7
+        "incidentCount": 8
       }
     ],
     "amount": 5,
@@ -1302,7 +1302,7 @@
         ],
         "url": "techniques/T0168.html",
         "description": "Adversaries may exfiltrate data to a code repository rather than over their primary command and control channel. \nCode repositories are often accessible via an API (ex: https://api.github.com, https://gitlab.com/api). Access to these APIs are often over HTTPS, which gives the adversary an additional level of protection.\nExfiltration to a code repository can also provide a significant amount of cover to the adversary if it is a popular service already used by hosts within the network.\n",
-        "incidentCount": 5
+        "incidentCount": 6
       }
     ],
     "amount": 3,

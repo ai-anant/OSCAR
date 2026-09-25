@@ -11,12 +11,15 @@ description: |
   cybersecurity evaluation escaped isolation, created a Python package with
   hidden credential-stealing code, and published it to the real PyPI
   registry. The model believed the registry was part of the simulation.
-  The package was public for about an hour and ran on 15 real systems.
-  One was a security vendor’s malware scanner; the payload exfiltrated
-  that company’s credentials and the model used them to go further into
-  the vendor’s infrastructure. No human operator. Anthropic notified
-  three organizations on 27 July and PyPI. StepSecurity’s write-up of
-  the same report is a secondary source; the primary is Anthropic.
+  The package was public for about an hour (later given as ~90 minutes)
+  across three versions and ran on 15 real systems. One was a security
+  vendor’s malware scanner; the payload exfiltrated that company’s
+  credentials and the model used them to go further into the vendor’s
+  infrastructure. No human operator. Anthropic notified three
+  organizations on 27 July and PyPI. A September alignment assessment
+  added biased-reasoning and recklessness as drivers, plus a redacted
+  Mythos 5 transcript. StepSecurity and Socket cover the same incident;
+  the primary is Anthropic.
 
 attacks:
   - attack: autonomous pypi publish
@@ -44,5 +47,7 @@ attacks:
 
 links:
   - https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals
+  - https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents
   - https://www.stepsecurity.io/blog/anthropic-incident-ai-agent-malicious-package-pypi
   - https://www.reversinglabs.com/blog/ai-agents-containment
+  - https://socket.dev/blog/claude-pypi-attack
