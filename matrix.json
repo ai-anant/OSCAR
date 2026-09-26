@@ -12,7 +12,7 @@
         ],
         "url": "techniques/T0100.html",
         "description": "This technique involves analyzing the naming conventions used in container images, source code repositories, and other related artifacts.\nBy examining the naming conventions, an attacker can gain insights into the technologies and frameworks used in the application, as well as potentially identifying weak spots or vulnerabilities that can be exploited.\nFor example, an attacker might use this technique to identify the specific version of a library or software component used in an application, which could then be cross-referenced with known vulnerabilities to determine if the application is at risk.\nAlternatively, an attacker might analyze naming conventions to determine the structure and organization of a codebase, which could aid in future attacks.\n",
-        "incidentCount": 0
+        "incidentCount": 2
       },
       {
         "id": "T0101",
@@ -25,7 +25,7 @@
         ],
         "url": "techniques/T0101.html",
         "description": "This technique involves analyzing the technology stacks used in an application, such as programming languages, frameworks, libraries, and other related technologies.\nBy identifying the specific technology stack used in an application, an attacker can gain insights into the potential vulnerabilities associated with that technology, as well as potential attack vectors and weak spots in the application.\nFor example, an attacker might use this technique to identify specific versions of a library or software component used in an application, which could then be cross-referenced with known vulnerabilities to determine if the application is at risk.\nAlternatively, an attacker might analyze the technology stack to determine the overall architecture of the application and identify potential attack vectors or weak spots.\n",
-        "incidentCount": 0
+        "incidentCount": 1
       },
       {
         "id": "T0102",
@@ -38,7 +38,7 @@
         ],
         "url": "techniques/T0102.html",
         "description": "This technique involves identifying the open-source dependencies used in an application, such as third-party libraries, frameworks, and other related components.\nBy identifying the specific open-source dependencies used in an application, an attacker can gain insights into the potential vulnerabilities associated with those components, as well as potential attack vectors and weak spots in the application.\nFor example, an attacker might use this technique to identify specific versions of a vulnerable open-source library used in an application, which could then be exploited to gain unauthorized access to the application or the underlying system.\n",
-        "incidentCount": 2
+        "incidentCount": 3
       },
       {
         "id": "T0103",
@@ -63,7 +63,7 @@
         ],
         "url": "techniques/T0104.html",
         "description": "This technique involves identifying coding flaws in an application's codebase, including vulnerabilities such as buffer overflows, race conditions, injection flaws, and other software bugs that can be exploited by attackers to gain unauthorized access or cause system disruption.\nAn attacker can use this technique to gain insight into potential weaknesses in the application's codebase and identify attack vectors that can be exploited in future attacks.\nBy discovering coding flaws in an application, an attacker can develop a better understanding of the application's architecture and potential vulnerabilities.\n",
-        "incidentCount": 0
+        "incidentCount": 1
       },
       {
         "id": "T0105",
@@ -213,7 +213,7 @@
         ],
         "url": "techniques/T0121.html",
         "description": "A compromised legitimate artifact attack is a type of cyber attack in which an attacker replaces a legitimate package or container image with a malicious version, often without the knowledge of the original developer or distributor. \nThis attack takes advantage of the trust that users place in legitimate packages or container images, which are often used to deploy software across multiple environments.\nIn this attack, the attacker may gain access to the repository or registry where the legitimate artifact is stored, either by exploiting a vulnerability or through social engineering tactics. \nThe attacker then replaces the legitimate artifact with a malicious version that contains malware or other harmful code. \nOnce the compromised artifact is downloaded and deployed, it can compromise the system and potentially cause significant harm, such as stealing sensitive data or taking control of the system.\n",
-        "incidentCount": 64
+        "incidentCount": 65
       },
       {
         "id": "T0141",
@@ -455,7 +455,7 @@
         ],
         "url": "techniques/T0143.html",
         "description": "External User Accounts attack technique in the CI/CD, SCM posture and cloud security involves compromising external user accounts to gain unauthorized access to CI/CD pipelines, source code repositories or cloud systems.\nAttackers may gain unauthorized access to these accounts through various means, such as phishing, social engineering, or password cracking. \nOnce compromised, attackers can inject malicious code into CI/CD pipelines, tamper with deployment pipelines, manipulate source code repositories, or access cloud systems. \nThis can result in the deployment of unauthorized or malicious code to production systems, introduction of vulnerabilities or backdoors into source code, theft of intellectual property, or other malicious activities.\n",
-        "incidentCount": 0
+        "incidentCount": 3
       },
       {
         "id": "T0153",
@@ -467,7 +467,7 @@
         ],
         "url": "techniques/T0153.html",
         "description": "Compromised developer workstation attack is a technique where an attacker gains access to a developer's machine, which contains sensitive information such as access credentials, keys, and code repositories. \nThis technique can allow an attacker to steal code or modify it to include backdoors or other malicious code. \nThe attacker can also use this access to gain entry into other systems within the organization.\nThis type of attack can be carried out through various means, such as Phishing, Typosquatting, Brandjacking, malicious IDE extensions, or exploiting vulnerabilities in the developer's system. \nOnce the attacker gains access, they can install malware or backdoors, extract sensitive information, or use the machine as a foothold to carry out further attacks.\n",
-        "incidentCount": 11
+        "incidentCount": 12
       },
       {
         "id": "T0154",
@@ -576,7 +576,7 @@
         ],
         "url": "techniques/T0205.html",
         "description": "Instead of poisoning a package registry or source repository, the attacker\ntakes over a widely embedded CDN hostname, tag manager, or hosted JavaScript\nasset (domain expiry, registrar hijack, or operator acquisition) and serves\nmalicious content to every site that loads it. Polyfill.io (2024) is the\nreference case: a trusted script URL became a drive-by supply-chain implant\nfor hundreds of thousands of properties. OSC&R previously had no technique\nthat named this web-asset supply chain.\n",
-        "incidentCount": 4
+        "incidentCount": 5
       },
       {
         "id": "T0209",
@@ -589,7 +589,7 @@
         ],
         "url": "techniques/T0209.html",
         "description": "Instead of publishing a malicious version under a stolen maintainer\naccount, the attacker tampers with the registry or the CDN origin pool\nthat serves it. Consumers still resolve the real hostname. Coder's\nregistry.coder.com incident (GHSA-vx42-ghc9-gw65) is the type case:\nrogue origin IPs were added to a Cloudflare pool so a legitimate CDN\nserved stolen-credential Terraform modules. Distinct from T0205 (third-party\nweb asset) and T0109 (publish to the registry as a user).\n",
-        "incidentCount": 27
+        "incidentCount": 28
       }
     ],
     "amount": 28,
@@ -690,7 +690,7 @@
         ],
         "url": "techniques/T0159.html",
         "description": "Malicious artifact execution refers to an attack where an attacker injects or modifies a software component with malicious code that is executed when the component is used by a downstream system in the CI/CD process. \nWhen a CI/CD process lacks sufficient mechanisms to validate the integrity of code and artifacts, attackers can insert malicious code that appears to be harmless. \nThis allows the malicious code to pass through the pipeline undetected, potentially causing harm in the CI/CD process or in production.\nThe malicious code can be executed in the CI/CD process or even in production.\n",
-        "incidentCount": 42
+        "incidentCount": 43
       },
       {
         "id": "T0166",
@@ -976,7 +976,7 @@
         ],
         "url": "techniques/T0176.html",
         "description": "Attackers disable or misconfigure security controls so that later activity is\nnot observed or blocked. In software supply chains this is more often a\ncomplete disablement than a subtle misconfiguration: turning off a GitHub\nAction required-review check, uninstalling an endpoint agent on a build\nrunner, skipping a signing gate, or emptying a security-group rule.\nMisconfiguration (over-permissive logging, broken audit settings) remains\nin scope as the quieter variant of the same Defense Evasion technique.\n",
-        "incidentCount": 5
+        "incidentCount": 6
       },
       {
         "id": "T0182",
@@ -1038,7 +1038,7 @@
         ],
         "url": "techniques/T0207.html",
         "description": "Consumers are supposed to verify packages, containers, and third-party\nscripts (checksums, signatures, Sigstore, Subresource Integrity). The\nattacker relies on that check never running, or supplies a matching but\nattacker-controlled signature. OWASP CICD-SEC-9 names the control gap;\nthis technique is the attacker side. Polyfill.io hotlinks without SRI and\nunsigned CI helper scripts are typical realizations.\n",
-        "incidentCount": 2
+        "incidentCount": 3
       },
       {
         "id": "T0208",
@@ -1236,7 +1236,7 @@
         ],
         "url": "techniques/T0190.html",
         "description": "A weak encryption attack in cloud security occurs when an attacker exploits vulnerabilities in the encryption mechanism used by a cloud service to gain unauthorized access to sensitive information. \nThis can happen when the encryption algorithm used by the cloud service is weak or when the encryption keys are not properly managed.\n",
-        "incidentCount": 0
+        "incidentCount": 1
       },
       {
         "id": "T0192",

