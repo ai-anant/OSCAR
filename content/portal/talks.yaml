@@ -1,195 +1,386 @@
-# Conference talks in the software-supply-chain field.
-# Not attack stories. A talk is origin material: techniques lists only IDs the
-# abstract actually describes. Empty techniques means recorded, not mapped.
 talks:
-  - id: dc34-install-me-maybe
-    event: DEF CON 34
-    title: "Install Me Maybe: Turning Claimable VS Code Extension IDs into Supply-Chain Attacks"
-    speakers: [Raphael Silva]
-    url: https://defcon.org/html/defcon-34/dc-34-speakers.html#content_66645
-    field: supply-chain
-    techniques: [T0115, T0154]
-    note: Unclaimed VS Code extension IDs, same class as repo-jacking.
-
-  - id: dc34-lgtm
-    event: DEF CON 34
-    title: "LGTM: Bypassing an LLM Build Gate When Prompt Injection Fails"
-    speakers: [Aviv Donenfeld]
-    url: https://defcon.org/html/defcon-34/dc-34-speakers.html#content_66588
-    field: ai-supply-chain
-    techniques: [T0154, T0207]
-    note: OpenSearch uses a model as the only gate between an anonymous pull request and CI secrets.
-
-  - id: dc34-oci-registries
-    event: DEF CON 34
-    title: "No Socket, No Privs, No Problem: Weaponizing OCI Registries for SSRF, Credential Theft, and Container Escapes"
-    speakers: [David Rochester, Nicholas Gould]
-    url: https://defcon.org/html/defcon-34/dc-34-speakers.html#content_66615
-    field: supply-chain
-    techniques: [T0209]
-    note: Registry-origin attacks extended to OCI.
-
-  - id: dc34-atm-supply-chain
-    event: DEF CON 34
-    title: "Compounding Interest: Exploiting the ATM Supply Chain"
-    speakers: [Matt Burch]
-    url: https://defcon.org/html/defcon-34/dc-34-speakers.html#content_66627
-    field: supply-chain
-    techniques: [T0209]
-    note: Hardware supply-chain compromise, same origin class as a registry.
-
-  - id: dc34-sandbox-suggestion
-    event: DEF CON 34
-    title: "The Sandbox is a Suggestion: Deconstructing AI Agent Sandboxes"
-    speakers: [Elad Meged]
-    url: https://defcon.org/html/defcon-34/dc-34-speakers.html#content_66604
-    field: ai-supply-chain
-    techniques: [T0210]
-    note: Agent sandbox is not a trust boundary.
-
-  - id: dc34-gemini-cli
-    event: DEF CON 34
-    title: "No Prompt Required: Pre-Task RCE in Google Gemini CLI"
-    speakers: [Elad Meged]
-    url: https://defcon.org/html/defcon-34/dc-34-speakers.html#content_66656
-    field: ai-supply-chain
-    techniques: [T0210]
-    note: Pre-task code execution in the Gemini CLI agent.
-
-  - id: dc34-hacking-your-life
-    event: DEF CON 34
-    title: "Hacking Your Life with AI Can Get You Hacked: How AI Orchestration Platforms Ship RCE by Design"
-    speakers: [Peyton Kennedy]
-    url: https://defcon.org/html/defcon-34/dc-34-speakers.html#content_66644
-    field: ai-supply-chain
-    techniques: [T0210]
-    note: Orchestration platforms run attacker instructions with the user's tools.
-
-  - id: dc34-copilot-studio
-    event: DEF CON 34
-    title: "Wrestling with a Python: Escaping Copilot Studio's AI-Guarded Sandbox"
-    speakers: [Ryan Hausknecht, Simon Maxwell-Stewart]
-    url: https://defcon.org/html/defcon-34/dc-34-speakers.html#content_66642
-    field: ai-supply-chain
-    techniques: [T0210]
-    note: Escape of an AI-guarded agent sandbox.
-
-  - id: dc34-waf-agent-takeover
-    event: DEF CON 34
-    title: "Your WAF Blocked Us, That Was The Exploit - Remote Agent Takeover via Cloudflare, Sentry and Claude"
-    speakers: [Barak Sternberg, Nevo Poran, Ron Bobrov]
-    url: https://defcon.org/html/defcon-34/dc-34-speakers.html#content_66668
-    field: ai-supply-chain
-    techniques: [T0210]
-    note: >-
-      Payloads in Cloudflare WAF logs and Sentry stack traces are read by agents.
-      Sentry's Seer poisons Cursor. Persistence is config poisoning and memory
-      injection ("agentic rootkits"). Claude network-sandbox bypass is the exfil step.
-
-  - id: dc34-firewallfalcon
-    event: DEF CON 34
-    title: "Hacking the Hackers who Hack Hackers: Supply-Chain Backdoors in Underground VPN Infrastructure"
-    speakers: [Assaf Morag]
-    url: https://defcon.org/html/defcon-34/dc-34-speakers.html#content_66596
-    field: supply-chain
-    techniques: [T0110, T0197]
-    note: >-
-      FirewallFalcon is promoted on Telegram as a legitimate open-source VPN/SSH
-      manager and installed from outside a vetted registry. It ships backdoors, a
-      rogue TLS root, and DNS hijack. Not a registry publish (T0109) and not a
-      commit into someone else's repo (T0138).
-
-  - id: dc34-offguard
-    event: DEF CON 34
-    title: "OffGuard: Breaking the Most Popular AI Gateway from Auth Bypass to Cloud Compromise"
-    speakers: [Yaara Shriki]
-    url: https://defcon.org/html/defcon-34/dc-34-speakers.html#content_66651
-    field: ai-supply-chain
-    techniques: []
-    gap: >-
-      LiteLLM product vulnerabilities: MCP-layer auth bypass, sandbox-escape RCE,
-      SSRF to cloud credentials, default credentials on about 1 in 10 instances.
-      No OSC&R technique names an AI-gateway control plane. Not mapped to T0137;
-      weak login is only one finding, not the talk.
-
-  - id: dc34-one-chain
-    event: DEF CON 34
-    title: "One Chain to Own Them All — Breaking AI Infrastructures"
-    speakers: ["Ji'an Zhou", Lei Lu]
-    url: https://defcon.org/html/defcon-34/dc-34-speakers.html#content_66609
-    field: ai-supply-chain
-    techniques: []
-    gap: >-
-      vLLM, ComfyUI, and NVIDIA Dynamo load attacker weights via torch.load
-      (CVE-2026-24747). That is a malicious model file executed by an inference
-      API, not a registry publish (T0109) and not a URL package install (T0197).
-      No technique for model-weight loading. Vulnerability research, not an incident.
-
-  - id: dc34-local-ai-runtimes
-    event: DEF CON 34
-    title: "Breaking Local AI Runtimes: Exploiting llama.cpp and Ollama"
-    speakers: [Ofek Itach, Vladimir Tokarev]
-    url: https://defcon.org/html/defcon-34/dc-34-speakers.html#content_66575
-    field: ai-adjacent
-    techniques: []
-    gap: >-
-      The abstract says this is not prompt injection. JNI use-after-free, a server
-      race, and a GGUF metadata heap read in llama.cpp and Ollama. Product memory
-      corruption, not a supply-chain publish and not T0210.
-
-  - id: dc34-data-tomb-raider
-    event: DEF CON 34
-    title: "Data Tomb Raider: Raiding Modern AI Vaults with Legacy Flaws for Treasure Stealing"
-    speakers: [Dolev Taler, Mark Vaitsman]
-    url: https://defcon.org/html/defcon-34/dc-34-speakers.html#content_66592
-    field: ai-adjacent
-    techniques: []
-    gap: >-
-      One-click parameter-to-prompt against Microsoft 365 Copilot, exfil through
-      Bing. SaaS assistant prompt injection, not coding-agent config poison (T0210)
-      and not a package or registry.
-
-  - id: bhus26-update-servers
-    event: Black Hat USA 2026
-    title: "Turning Enterprise Update Servers Into Backdoor Factories (0_o)"
-    speakers: []
-    url: https://www.blackhat.com/us-26/briefings/schedule/index.html
-    field: supply-chain
-    techniques: [T0107]
-    note: Internal artifact and update infrastructure as the target. Per-talk page not stored; schedule index only.
-
-  - id: bhus26-github-edr
-    event: Black Hat USA 2026
-    title: "GitHub Can Tell You’re Being Hacked. You’re Just Not Listening: Building EDR for GitHub from Its Own Event Stream"
-    speakers: [Mor Weinberger, Yossi Weizman]
-    url: https://www.blackhat.com/us-26/briefings/schedule/index.html
-    field: supply-chain
-    techniques: [T0118, T0122]
-    note: Defensive detection for Actions event-stream abuse. Per-talk page not stored; schedule index only.
-
-  - id: bhus26-threatforest
-    event: Black Hat USA 2026
-    title: "ThreatForest: Automated Attack Trees from Source Code"
-    speakers: []
-    url: https://www.blackhat.com/us-26/briefings/schedule/index.html
-    field: supply-chain
-    techniques: [T0120]
-    note: How researchers reason about dependency attack paths. Per-talk page not stored.
-
-  - id: bhus26-0day-engine
-    event: Black Hat USA 2026
-    title: "The 0-Day Engine"
-    speakers: []
-    url: https://www.blackhat.com/us-26/briefings/schedule/index.html
-    field: supply-chain
-    techniques: [T0120]
-    note: Same class as ThreatForest. Per-talk page not stored.
-
-  - id: bhus26-php-hardening
-    event: Black Hat USA 2026
-    title: "Burning Tears of PHP’s Memory Hardening"
-    speakers: []
-    url: https://www.blackhat.com/us-26/briefings/schedule/index.html
-    field: supply-chain
-    techniques: [T0170]
-    note: Engine and interpreter-level exploitation, trusting-trust class. Per-talk page not stored.
+- id: dc34-install-me-maybe
+  event: DEF CON 34
+  title: 'Install Me Maybe: Turning Claimable VS Code Extension IDs into Supply-Chain Attacks'
+  speakers:
+  - Raphael Silva
+  url: https://defcon.org/html/defcon-34/dc-34-speakers.html#content_66645
+  field: supply-chain
+  techniques:
+  - T0115
+  - T0154
+  note: Unclaimed VS Code extension IDs, same class as repo-jacking.
+- id: dc34-lgtm
+  event: DEF CON 34
+  title: 'LGTM: Bypassing an LLM Build Gate When Prompt Injection Fails'
+  speakers:
+  - Aviv Donenfeld
+  url: https://defcon.org/html/defcon-34/dc-34-speakers.html#content_66588
+  field: ai-supply-chain
+  techniques:
+  - T0154
+  - T0207
+  note: OpenSearch uses a model as the only gate between an anonymous pull request and CI secrets.
+- id: dc34-oci-registries
+  event: DEF CON 34
+  title: 'No Socket, No Privs, No Problem: Weaponizing OCI Registries for SSRF, Credential Theft, and
+    Container Escapes'
+  speakers:
+  - David Rochester
+  - Nicholas Gould
+  url: https://defcon.org/html/defcon-34/dc-34-speakers.html#content_66615
+  field: supply-chain
+  techniques:
+  - T0209
+  note: Registry-origin attacks extended to OCI.
+- id: dc34-atm-supply-chain
+  event: DEF CON 34
+  title: 'Compounding Interest: Exploiting the ATM Supply Chain'
+  speakers:
+  - Matt Burch
+  url: https://defcon.org/html/defcon-34/dc-34-speakers.html#content_66627
+  field: supply-chain
+  techniques:
+  - T0209
+  note: Hardware supply-chain compromise, same origin class as a registry.
+- id: dc34-sandbox-suggestion
+  event: DEF CON 34
+  title: 'The Sandbox is a Suggestion: Deconstructing AI Agent Sandboxes'
+  speakers:
+  - Elad Meged
+  url: https://defcon.org/html/defcon-34/dc-34-speakers.html#content_66604
+  field: ai-supply-chain
+  techniques:
+  - T0210
+  note: Agent sandbox is not a trust boundary.
+- id: dc34-gemini-cli
+  event: DEF CON 34
+  title: 'No Prompt Required: Pre-Task RCE in Google Gemini CLI'
+  speakers:
+  - Elad Meged
+  url: https://defcon.org/html/defcon-34/dc-34-speakers.html#content_66656
+  field: ai-supply-chain
+  techniques:
+  - T0210
+  note: Pre-task code execution in the Gemini CLI agent.
+- id: dc34-hacking-your-life
+  event: DEF CON 34
+  title: 'Hacking Your Life with AI Can Get You Hacked: How AI Orchestration Platforms Ship RCE by Design'
+  speakers:
+  - Peyton Kennedy
+  url: https://defcon.org/html/defcon-34/dc-34-speakers.html#content_66644
+  field: ai-supply-chain
+  techniques:
+  - T0210
+  note: Orchestration platforms run attacker instructions with the user's tools.
+- id: dc34-copilot-studio
+  event: DEF CON 34
+  title: 'Wrestling with a Python: Escaping Copilot Studio''s AI-Guarded Sandbox'
+  speakers:
+  - Ryan Hausknecht
+  - Simon Maxwell-Stewart
+  url: https://defcon.org/html/defcon-34/dc-34-speakers.html#content_66642
+  field: ai-supply-chain
+  techniques:
+  - T0210
+  note: Escape of an AI-guarded agent sandbox.
+- id: dc34-waf-agent-takeover
+  event: DEF CON 34
+  title: Your WAF Blocked Us, That Was The Exploit - Remote Agent Takeover via Cloudflare, Sentry and
+    Claude
+  speakers:
+  - Barak Sternberg
+  - Nevo Poran
+  - Ron Bobrov
+  url: https://defcon.org/html/defcon-34/dc-34-speakers.html#content_66668
+  field: ai-supply-chain
+  techniques:
+  - T0210
+  note: Payloads in Cloudflare WAF logs and Sentry stack traces are read by agents. Sentry's Seer poisons
+    Cursor. Persistence is config poisoning and memory injection ("agentic rootkits"). Claude network-sandbox
+    bypass is the exfil step.
+- id: dc34-firewallfalcon
+  event: DEF CON 34
+  title: 'Hacking the Hackers who Hack Hackers: Supply-Chain Backdoors in Underground VPN Infrastructure'
+  speakers:
+  - Assaf Morag
+  url: https://defcon.org/html/defcon-34/dc-34-speakers.html#content_66596
+  field: supply-chain
+  techniques:
+  - T0110
+  - T0197
+  note: FirewallFalcon is promoted on Telegram as a legitimate open-source VPN/SSH manager and installed
+    from outside a vetted registry. It ships backdoors, a rogue TLS root, and DNS hijack. Not a registry
+    publish (T0109) and not a commit into someone else's repo (T0138).
+- id: dc34-offguard
+  event: DEF CON 34
+  title: 'OffGuard: Breaking the Most Popular AI Gateway from Auth Bypass to Cloud Compromise'
+  speakers:
+  - Yaara Shriki
+  url: https://defcon.org/html/defcon-34/dc-34-speakers.html#content_66651
+  field: ai-supply-chain
+  techniques: []
+  gap: 'LiteLLM product vulnerabilities: MCP-layer auth bypass, sandbox-escape RCE, SSRF to cloud credentials,
+    default credentials on about 1 in 10 instances. No OSC&R technique names an AI-gateway control plane.
+    Not mapped to T0137; weak login is only one finding, not the talk.'
+- id: dc34-one-chain
+  event: DEF CON 34
+  title: One Chain to Own Them All — Breaking AI Infrastructures
+  speakers:
+  - Ji'an Zhou
+  - Lei Lu
+  url: https://defcon.org/html/defcon-34/dc-34-speakers.html#content_66609
+  field: ai-supply-chain
+  techniques: []
+  gap: vLLM, ComfyUI, and NVIDIA Dynamo load attacker weights via torch.load (CVE-2026-24747). That is
+    a malicious model file executed by an inference API, not a registry publish (T0109) and not a URL
+    package install (T0197). No technique for model-weight loading. Vulnerability research, not an incident.
+- id: dc34-local-ai-runtimes
+  event: DEF CON 34
+  title: 'Breaking Local AI Runtimes: Exploiting llama.cpp and Ollama'
+  speakers:
+  - Ofek Itach
+  - Vladimir Tokarev
+  url: https://defcon.org/html/defcon-34/dc-34-speakers.html#content_66575
+  field: ai-adjacent
+  techniques: []
+  gap: The abstract says this is not prompt injection. JNI use-after-free, a server race, and a GGUF metadata
+    heap read in llama.cpp and Ollama. Product memory corruption, not a supply-chain publish and not T0210.
+- id: dc34-data-tomb-raider
+  event: DEF CON 34
+  title: 'Data Tomb Raider: Raiding Modern AI Vaults with Legacy Flaws for Treasure Stealing'
+  speakers:
+  - Dolev Taler
+  - Mark Vaitsman
+  url: https://defcon.org/html/defcon-34/dc-34-speakers.html#content_66592
+  field: ai-adjacent
+  techniques: []
+  gap: One-click parameter-to-prompt against Microsoft 365 Copilot, exfil through Bing. SaaS assistant
+    prompt injection, not coding-agent config poison (T0210) and not a package or registry.
+- id: bhus26-update-servers
+  event: Black Hat USA 2026
+  title: Turning Enterprise Update Servers Into Backdoor Factories (0_o)
+  speakers: []
+  url: https://www.blackhat.com/us-26/briefings/schedule/index.html
+  field: supply-chain
+  techniques:
+  - T0107
+  note: Internal artifact and update infrastructure as the target. Per-talk page not stored; schedule
+    index only.
+- id: bhus26-github-edr
+  event: Black Hat USA 2026
+  title: 'GitHub Can Tell You’re Being Hacked. You’re Just Not Listening: Building EDR for GitHub from
+    Its Own Event Stream'
+  speakers:
+  - Mor Weinberger
+  - Yossi Weizman
+  url: https://www.blackhat.com/us-26/briefings/schedule/index.html
+  field: supply-chain
+  techniques:
+  - T0118
+  - T0122
+  note: Defensive detection for Actions event-stream abuse. Per-talk page not stored; schedule index only.
+- id: bhus26-threatforest
+  event: Black Hat USA 2026
+  title: 'ThreatForest: Automated Attack Trees from Source Code'
+  speakers: []
+  url: https://www.blackhat.com/us-26/briefings/schedule/index.html
+  field: supply-chain
+  techniques:
+  - T0120
+  note: How researchers reason about dependency attack paths. Per-talk page not stored.
+- id: bhus26-0day-engine
+  event: Black Hat USA 2026
+  title: The 0-Day Engine
+  speakers: []
+  url: https://www.blackhat.com/us-26/briefings/schedule/index.html
+  field: supply-chain
+  techniques:
+  - T0120
+  note: Same class as ThreatForest. Per-talk page not stored.
+- id: bhus26-php-hardening
+  event: Black Hat USA 2026
+  title: Burning Tears of PHP’s Memory Hardening
+  speakers: []
+  url: https://www.blackhat.com/us-26/briefings/schedule/index.html
+  field: supply-chain
+  techniques:
+  - T0170
+  note: Engine and interpreter-level exploitation, trusting-trust class. Per-talk page not stored.
+- id: dc31-actions-worm
+  event: DEF CON 31
+  title: 'The GitHub Actions Worm: Compromising GitHub repositories through the Actions dependency tree'
+  speakers:
+  - Asi Greenholts
+  url: https://defcon.org/html/defcon-31/dc-31-speakers.html#Greenholts
+  field: supply-chain
+  techniques:
+  - T0122
+  - T0169
+  note: 'PoC: take over one Action, then spread through the implicit Actions dependency tree. Research,
+    not an incident.'
+- id: dc31-vscode-trust
+  event: DEF CON 31
+  title: Visual Studio Code is why I have (Workspace) Trust issues
+  speakers:
+  - Thomas Chauchefoin
+  - Paul Gerste
+  url: https://defcon.org/html/defcon-31/dc-31-speakers.html#Chauchefoin
+  field: supply-chain
+  techniques:
+  - T0152
+  note: Malicious Visual Studio projects execute on open. Workspace Trust is the control. Also IDE product
+    bugs (CVE-2021-43891, CVE-2022-30129), which are not mapped.
+- id: dc32-xz
+  event: DEF CON 32
+  title: 'The XZ Backdoor Story: The Undercover Operation That Set the Internet on Fire'
+  speakers:
+  - Thomas Roccia
+  url: https://defcon.org/html/defcon-32/dc-32-speakers.html#54442
+  field: supply-chain
+  techniques:
+  - T0111
+  - T0121
+  note: Jia Tan's maintainer commits and the backdoored liblzma release. War story of the incident, not
+    a new incident.
+- id: dc32-grand-theft-actions
+  event: DEF CON 32
+  title: 'Grand Theft Actions: Abusing Self-Hosted GitHub Runners at Scale'
+  speakers:
+  - Adnan Khan
+  - John Stawinski
+  url: https://defcon.org/html/defcon-32/dc-32-speakers.html#54489
+  field: supply-chain
+  techniques:
+  - T0132
+  - T0111
+  note: Self-hosted runner misconfiguration used to push code to main on major open-source projects, including
+    PyTorch.
+- id: dc32-oh-my-dc
+  event: DEF CON 32
+  title: 'OH-MY-DC: Abusing OIDC all the way to your cloud'
+  speakers:
+  - Aviad Hahami
+  url: https://defcon.org/html/defcon-32/dc-32-speakers.html#54494
+  field: supply-chain
+  techniques:
+  - T0183
+  note: A leaked OIDC token from one repository, plus an under-configured trust policy, reaches the cloud.
+- id: dc32-cloudquarry
+  event: DEF CON 32
+  title: 'AWS CloudQuarry: Digging for secrets in public AMIs'
+  speakers:
+  - Eduard Agavriloae
+  - Matei Josephs
+  url: https://defcon.org/html/defcon-32/dc-32-speakers.html#54518
+  field: supply-chain
+  techniques:
+  - T0103
+  note: Scanned 3.1 million public AMIs for credentials.
+- id: dc32-incubated-ml
+  event: DEF CON 32
+  title: 'Incubated Machine Learning Exploits: Backdooring ML Pipelines Using Input-Handling Bugs'
+  speakers:
+  - Suha Sabi Hussain
+  url: https://defcon.org/html/defcon-32/dc-32-speakers.html#54540
+  field: ai-supply-chain
+  techniques: []
+  gap: 'Model backdoors via serialization bugs in ML tools. Same hole as torch.load talks: no technique
+    for a malicious model file.'
+- id: dc33-tj-actions
+  event: DEF CON 33
+  title: 'Not Just a Pipeline Leak: Reconstructing the Real Attack Behind tj-actions'
+  speakers:
+  - Aviad Hahami
+  url: https://defcon.org/html/defcon-33/dc-33-speakers.html#content_60297
+  field: supply-chain
+  techniques:
+  - T0122
+  note: Reconstruction of the March 2025 tj-actions campaign. Says compromise started months earlier and
+    used other projects for lateral movement. Same incident, not a new story.
+- id: dc33-abandoned-s3
+  event: DEF CON 33
+  title: 'Edge of Tomorrow: Foiling Large Supply Chain Attacks By Taking 5k Abandoned S3 Buckets from
+    Malware and Benign Software'
+  speakers:
+  - Maksim Shudrak
+  url: https://defcon.org/html/defcon-33/dc-33-speakers.html#content_60312
+  field: supply-chain
+  techniques:
+  - T0205
+  note: Abandoned S3 buckets still referenced by software and malware. Claimed before they could be reused
+    as the update origin. Hypothetical worm, not an incident.
+- id: dc33-loading-models
+  event: DEF CON 33
+  title: 'Loading Models, Launching Shells: Abusing AI File Formats for Code Execution'
+  speakers:
+  - Cyrus Parzian
+  url: https://defcon.org/html/defcon-33/dc-33-speakers.html#content_60325
+  field: ai-supply-chain
+  techniques: []
+  gap: ONNX, HDF5, NPZ, and similar formats execute on default load. Malicious model file. No technique
+    for that.
+- id: dc33-torchscript
+  event: DEF CON 33
+  title: 'Safe Harbor or Hostile Waters: Unveiling the Hidden Perils of the TorchScript Engine in PyTorch'
+  speakers:
+  - Ji'an Zhou
+  - Lishuo Song
+  url: https://defcon.org/html/defcon-33/dc-33-speakers.html#content_60302
+  field: ai-supply-chain
+  techniques: []
+  gap: torch.load(weights_only=True) still loads TorchScript and can execute. Same model-file hole as
+    One Chain. Not mapped.
+- id: dc33-invitation
+  event: DEF CON 33
+  title: Invitation Is All You Need! Invoking Gemini for Workspace Agents with a Simple Google Calendar
+    Invite
+  speakers:
+  - Ben Nassi
+  - Or Yair
+  - Stav Cohen
+  url: https://defcon.org/html/defcon-33/dc-33-speakers.html#content_60375
+  field: ai-adjacent
+  techniques: []
+  gap: Calendar-invite prompt injection into Gemini Workspace agents. Not coding-agent config poison (T0210).
+- id: dc33-copilot-voids
+  event: DEF CON 33
+  title: 'Mind the Data Voids: Hijacking Copilot Trust to Deliver C2 Instructions with Microsoft Authority'
+  speakers:
+  - Tobias Diehl
+  url: https://defcon.org/html/defcon-33/dc-33-speakers.html#content_60361
+  field: ai-adjacent
+  techniques: []
+  gap: Poisoned search results make Copilot emit C2 install steps. Not a package, registry, or agent-config
+    write.
+- id: dc33-solar
+  event: DEF CON 33
+  title: 'Rebadged, Relabeled, and Rooted: Pwnage via the Solar Supply Chain'
+  speakers:
+  - Anthony Rose
+  - Jake Krasnov
+  url: https://defcon.org/html/defcon-33/dc-33-speakers.html#content_60352
+  field: supply-chain
+  techniques: []
+  gap: Unsigned solar firmware, rebadged OEMs, unauthenticated cloud APIs. Hardware supply chain. T0207
+    is package, container, and script integrity, not firmware. Not mapped.
+- id: dc30-pickles
+  event: DEF CON 30
+  title: 'Backdooring Pickles: A decade only made things worse'
+  speakers:
+  - ColwaterQ
+  url: https://media.defcon.org/DEF%20CON%2030/DEF%20CON%2030%20presentations/ColwaterQ%20-%20Backdooring%20Pickles%20A%20decade%20only%20made%20things%20worse.pdf
+  field: ai-supply-chain
+  techniques: []
+  gap: Slides filename and title only. DEF CON 30 has no speakers page. Pickle backdoors are the model-file
+    class. Not mapped.
+- id: dc29-sast
+  event: DEF CON 29
+  title: Abusing SAST tools! When scanners do more than just scanning
+  speakers:
+  - Rotem Bar
+  url: https://defcon.org/html/defcon-29/dc-29-speakers.html#rbar
+  field: supply-chain
+  techniques: []
+  gap: SAST and secret scanners run in CI on untrusted code and can be made to fetch remote resources
+    or execute. No technique names the scanner as the execution primitive. Cider Security research.

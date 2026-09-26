@@ -111,6 +111,7 @@ sources:
   kind: conference
   track: false
   note: Talks mapped as technique origins, not incidents. Re-read per event (US/EU/Asia).
+    Editions before USA 2026 are not walked — the schedule pages block this environment.
 - name: DEF CON talks
   url: https://defcon.org/
   kind: conference

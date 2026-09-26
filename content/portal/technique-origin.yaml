@@ -30,10 +30,12 @@ techniques:
     summary: Scan public artifacts for secrets
     tactic: Reconnaissance
     kind: research
-    note: Identified in published CI/CD or supply-chain security research cited below.
+    note: 'Identified in published CI/CD or supply-chain security research cited below. DEF CON 32: CloudQuarry,
+      secrets in 3.1 million public AMIs.'
     sources:
     - https://cycode.com/introducing-container-secret-scanning/
     - https://docs.gitlab.com/ee/user/application_security/secret_detection/
+    - https://defcon.org/html/defcon-32/dc-32-speakers.html#54518
   T0104:
     summary: Discover coding flaws
     tactic: Reconnaissance
@@ -90,9 +92,9 @@ techniques:
     summary: Advertise malicious artifact
     tactic: Resource Development
     kind: article
-    note: 'Inherited article citation; conference: DEF CON 34 “Hacking the Hackers who Hack Hackers”
-      (Morag) — FirewallFalcon is promoted on Telegram as a legitimate open-source VPN manager and
-      installs backdoors. Forum-style advertisement of a malicious tool, not a registry upload.'
+    note: 'Inherited article citation; conference: DEF CON 34 “Hacking the Hackers who Hack Hackers” (Morag)
+      — FirewallFalcon is promoted on Telegram as a legitimate open-source VPN manager and installs backdoors.
+      Forum-style advertisement of a malicious tool, not a registry upload.'
     sources:
     - https://defcon.org/html/defcon-34/dc-34-speakers.html#content_66596
     - https://www.bleepingcomputer.com/news/security/malicious-lolip0p-pypi-packages-install-info-stealing-malware/
@@ -100,11 +102,13 @@ techniques:
     summary: Malicious code contribution to an open-source repository
     tactic: Resource Development
     kind: research
-    note: Identified in published CI/CD or supply-chain security research cited below.
+    note: 'Identified in published CI/CD or supply-chain security research cited below. DEF CON 32: XZ
+      backdoor story (Roccia) — maintainer commits.'
     sources:
     - https://thenewstack.io/php-supply-chain-attack-shows-open-sources-virtues-and-vices/
     - https://www.darkreading.com/vulnerabilities-threats/35k-malicious-code-insertions-in-github-attack-bug-bounty
     - https://www.legitsecurity.com/blog/how-a-massive-widespread-malware-attack-almost-occurred-on-github
+    - https://defcon.org/html/defcon-32/dc-32-speakers.html#54442
   T0112:
     summary: Compromised token
     tactic: Initial Access
@@ -195,20 +199,25 @@ techniques:
     summary: Compromised legitimate artifact
     tactic: Resource Development
     kind: research
-    note: Identified in published CI/CD or supply-chain security research cited below.
+    note: 'Identified in published CI/CD or supply-chain security research cited below. DEF CON 32: XZ
+      backdoor story — backdoored liblzma release.'
     sources:
     - https://www.legitsecurity.com/blog/why-you-can-still-get-hacked-even-after-signing-your-software-artifacts
     - https://owasp.org/www-project-top-10-ci-cd-security-risks/CICD-SEC-09-Improper-Artifact-Integrity-Validation
+    - https://defcon.org/html/defcon-32/dc-32-speakers.html#54442
   T0122:
     summary: Vulnerability in third-party CI/CD actions
     tactic: Initial Access
     kind: research
     note: 'tj-actions, Trivy Action tags, codfish floating tags; conference: Black Hat USA 2026 “GitHub
       Can Tell You’re Being Hacked. You’re Just Not Listening: Building EDR for GitHub from Its Own Event
-      Stream” — defensive detection for the same surface.'
+      Stream” — defensive detection for the same surface. DEF CON 31: GitHub Actions Worm (Greenholts).
+      DEF CON 33: tj-actions reconstruction (Hahami).'
     sources:
     - https://www.truesec.com/hub/blog/secure-your-software-supply-chain-trusting-3rd-parties
     - https://www.blackhat.com/us-26/briefings/schedule/index.html
+    - https://defcon.org/html/defcon-31/dc-31-speakers.html#Greenholts
+    - https://defcon.org/html/defcon-33/dc-33-speakers.html#content_60297
   T0123:
     summary: Exposed internal API
     tactic: Initial Access
@@ -289,13 +298,15 @@ techniques:
     summary: Overprivileged CI/CD Runners
     tactic: Privilege Escalation
     kind: research
-    note: Identified in published CI/CD or supply-chain security research cited below.
+    note: 'Identified in published CI/CD or supply-chain security research cited below. DEF CON 32: Grand
+      Theft Actions, self-hosted runners (Khan/Stawinski).'
     sources:
     - https://www.legitsecurity.com/blog/github-privilege-escalation-vulnerability
     - https://dl.acm.org/doi/fullHtml/10.1145/3529320.3529325
     - https://blog.lightspin.io/kubernetes-pod-privilege-escalation
     - https://learn.snyk.io/lessons/container-runs-in-privileged-mode/kubernetes/
     - https://sysdig.com/blog/detecting-mitigating-cve-2022-0492-sysdig/
+    - https://defcon.org/html/defcon-32/dc-32-speakers.html#54489
   T0133:
     summary: Vulnerable CICD plugins
     tactic: Initial Access
@@ -461,10 +472,11 @@ techniques:
     summary: IDE
     tactic: Execution
     kind: article
-    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident
-      report.
+    note: 'Cited from a security article or vendor blog in the original YAML; not a first-party incident
+      report. DEF CON 31: malicious Visual Studio projects and Workspace Trust (Chauchefoin/Gerste).'
     sources:
     - https://www.trendmicro.com/en_us/research/23/a/attacking-the-supply-chain-developer.html
+    - https://defcon.org/html/defcon-31/dc-31-speakers.html#Chauchefoin
   T0153:
     summary: Compromised developer workstation
     tactic: Initial Access
@@ -592,12 +604,14 @@ techniques:
     summary: Push implants across repositories
     tactic: Lateral Movement
     kind: research
-    note: Identified in published CI/CD or supply-chain security research cited below.
+    note: 'Identified in published CI/CD or supply-chain security research cited below. DEF CON 31: GitHub
+      Actions Worm spreads through the Actions dependency tree.'
     sources:
     - https://owasp.org/www-project-top-10-ci-cd-security-risks/CICD-SEC-01-Insufficient-Flow-Control-Mechanisms
     - https://news-web.php.net/php.internals/113981
     - https://brew.sh/2021/04/21/security-incident-disclosure/
     - https://www.cidersecurity.io/blog/research/bypassing-required-reviews-using-github-actions/
+    - https://defcon.org/html/defcon-31/dc-31-speakers.html#Greenholts
   T0170:
     summary: Malicious compiler or interpreter
     tactic: Defense Evasion
@@ -704,9 +718,11 @@ techniques:
     summary: Harvesting short-lived token
     tactic: Credential Access
     kind: research
-    note: Identified in published CI/CD or supply-chain security research cited below.
+    note: 'Identified in published CI/CD or supply-chain security research cited below. DEF CON 32: OH-MY-DC,
+      leaked CI OIDC token to cloud (Hahami).'
     sources:
     - https://www.synacktiv.com/en/publications/cicd-secrets-extraction-tips-and-tricks.html
+    - https://defcon.org/html/defcon-32/dc-32-speakers.html#54494
   T0184:
     summary: Harvesting sensitive information from files
     tactic: Credential Access
@@ -815,9 +831,9 @@ techniques:
     summary: Use code from untrusted source
     tactic: Initial Access
     kind: article
-    note: 'Inherited article citation; conference: DEF CON 34 “Hacking the Hackers who Hack Hackers”
-      (Morag) — operators install FirewallFalcon from GitHub/Telegram, outside a vetted registry,
-      and it ships a backdoor, a rogue TLS root, and DNS hijack.'
+    note: 'Inherited article citation; conference: DEF CON 34 “Hacking the Hackers who Hack Hackers” (Morag)
+      — operators install FirewallFalcon from GitHub/Telegram, outside a vetted registry, and it ships
+      a backdoor, a rogue TLS root, and DNS hijack.'
     sources:
     - https://defcon.org/html/defcon-34/dc-34-speakers.html#content_66596
     - https://www.thirdpartytrust.com/blog/what-is-shadow-it-digital-supply-chain/
@@ -877,10 +893,12 @@ techniques:
     summary: Compromise third-party CDN or hosted web asset
     tactic: Initial Access
     kind: incident
-    note: This fork, after Polyfill.io (Sansec) showed CDN/web-asset takeover was unnamed.
+    note: 'This fork, after Polyfill.io (Sansec) showed CDN/web-asset takeover was unnamed. DEF CON 33:
+      abandoned S3 buckets still referenced by software (Shudrak).'
     sources:
     - https://sansec.io/research/polyfill-supply-chain-attack
     - https://www.cisa.gov/news-events/alerts/2024/06/27/widespread-security-compromise-polyfillio-supply-chain-attack
+    - https://defcon.org/html/defcon-33/dc-33-speakers.html#content_60312
   T0206:
     summary: Forge or omit build provenance
     tactic: Defense Evasion
@@ -926,10 +944,10 @@ techniques:
     summary: Poison AI coding-agent config or workspace
     tactic: Persistence
     kind: incident
-    note: 'Hades, Claude Code hooks; DEF CON 34: “The Sandbox is a Suggestion”, “No Prompt Required:
-      Pre-Task RCE in Google Gemini CLI”, “Hacking Your Life with AI”, “Wrestling with a Python”,
-      and “Your WAF Blocked Us” (Sternberg/Poran/Bobrov) — WAF logs and Sentry traces poison the
-      agent, Seer infects Cursor, persistence is config poisoning. Catalog: content/portal/talks.yaml.'
+    note: 'Hades, Claude Code hooks; DEF CON 34: “The Sandbox is a Suggestion”, “No Prompt Required: Pre-Task
+      RCE in Google Gemini CLI”, “Hacking Your Life with AI”, “Wrestling with a Python”, and “Your WAF
+      Blocked Us” (Sternberg/Poran/Bobrov) — WAF logs and Sentry traces poison the agent, Seer infects
+      Cursor, persistence is config poisoning. Catalog: content/portal/talks.yaml.'
     sources:
     - https://www.morphisec.com/blog/when-your-ai-coding-assistant-becomes-the-attack-the-hades-supply-chain-campaign/
     - https://cloud.google.com/blog/topics/threat-intelligence/from-prompting-to-autonomy-the-evolution-of-adversarial-ai

@@ -1,5 +1,24 @@
 entries:
 - date: '2026-09-26'
+  id: defcon-2021-2025-talks
+  title: DEF CON 29–33 supply-chain and AI talks scanned
+  items:
+  - 'Walked DEF CON 29, 31, 32, and 33 speaker pages, and the DEF CON 30 presentation
+    index (speakers page 404s). Added 16 talks to content/portal/talks.yaml. Technique
+    IDs only where the abstract describes that technique.'
+  - 'Mapped: GitHub Actions Worm (T0122/T0169), VS Code Workspace Trust (T0152), XZ
+    backdoor story (T0111/T0121), Grand Theft Actions (T0132/T0111), OH-MY-DC (T0183),
+    CloudQuarry (T0103), tj-actions reconstruction (T0122), abandoned S3 buckets (T0205).'
+  - 'Recorded, not mapped: pickle/ONNX/TorchScript model-file talks, Gemini calendar
+    promptware, Copilot data-void C2, solar firmware supply chain, SAST-scanner RCE in CI.
+    No technique names a malicious model file or a scanner-as-execution primitive.'
+  - 'Reviewed and left out: IDE product bugs (Worming through IDEs), tractor/farm device
+    talks, browser-extension API bugs, Defender update hijack, Windows Downdate, Llama 3
+    red-team process. Not this field.'
+  - 'Black Hat USA/EU/Asia 2021–2025 not added. Schedule pages are Cloudflare-blocked
+    from here, and the extract that gets through returns session times without titles.
+    USA 2026 remains the only Black Hat walk with named talks.'
+- date: '2026-09-26'
   id: defcon34-talks-catalog
   title: DEF CON 34 talks catalogued; two new mappings, four recorded as gaps
   items:
