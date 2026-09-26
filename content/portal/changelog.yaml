@@ -1,5 +1,22 @@
 entries:
 - date: '2026-09-26'
+  id: defcon34-talks-catalog
+  title: DEF CON 34 talks catalogued; two new mappings, four recorded as gaps
+  items:
+  - 'Talks are entries in content/portal/talks.yaml, rendered at /talks.html. Not attack stories.
+    A technique ID is set only when the abstract describes that technique.'
+  - 'Mapped: “Your WAF Blocked Us” (Sternberg/Poran/Bobrov) onto T0210 — Sentry Seer poisons Cursor,
+    persistence is config poisoning. “Hacking the Hackers who Hack Hackers” (Morag, FirewallFalcon)
+    onto T0110 and T0197 — Telegram-advertised OSS tool installed outside a registry, ships a backdoor.
+    Not T0109 (no registry upload) and not T0138 (not a commit into someone else''s repo).'
+  - 'Recorded, not mapped: OffGuard (LiteLLM MCP auth bypass / sandbox escape / SSRF — no technique
+    for an AI-gateway control plane), One Chain to Own Them All (torch.load of attacker weights,
+    CVE-2026-24747 — not a registry publish), Breaking Local AI Runtimes (llama.cpp/Ollama memory
+    corruption; the abstract says it is not prompt injection), Data Tomb Raider (M365 Copilot
+    parameter-to-prompt — not T0210).'
+  - Previously named DEF CON 34 and Black Hat USA 2026 talks are in the same catalog, with per-talk
+    anchors where the speakers page has them. Black Hat entries still point at the schedule index.
+- date: '2026-09-26'
   id: placeholder-domain-clickfix
   title: Placeholder domain third-party.com turned live ClickFix server (AS289)
   items:

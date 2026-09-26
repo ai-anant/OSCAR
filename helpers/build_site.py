@@ -121,6 +121,7 @@ def page(title, body, root_prefix, crumb, extra_head=""):
           <a href="{root_prefix}stories/index.html">Attack stories</a>
           <a href="{root_prefix}guidance.html">Guidance</a>
           <a href="{root_prefix}origins.html">Origins</a>
+          <a href="{root_prefix}talks.html">Talks</a>
           <a href="{root_prefix}sources.html">Sources</a>
           <a href="{root_prefix}changelog.html">Changelog</a>
           <a href="{root_prefix}about.html">About</a>
@@ -559,6 +560,7 @@ def build(dest):
       <div class="panelbox"><h3>Project</h3>
         <p><a href="guidance.html">Guidance mapping</a> — OWASP / NIST / SLSA / CISA</p>
         <p><a href="origins.html">Origins</a> — where each technique came from</p>
+        <p><a href="talks.html">Conference talks</a> — supply-chain and AI talks, mapped or gapped</p>
         <p><a href="sources.html">Sources</a> — the watch list this catalogue tracks</p>
         <p><a href="changelog.html">Changelog</a> — what the AI maintainer added</p>
       </div>
@@ -1012,6 +1014,41 @@ def build(dest):
     {''.join(reference) or '<p class="muted">None.</p>'}
     """
     write(os.path.join(dest, "sources.html"), page("Sources", sources_body, "", "OSC&amp;R / Sources"))
+
+    talks_doc = {}
+    talks_path = os.path.join(portal, "talks.yaml")
+    if os.path.exists(talks_path):
+        with open(talks_path) as f:
+            talks_doc = yaml.safe_load(f) or {}
+    talk_cards = []
+    for t in talks_doc.get("talks") or []:
+        tids = t.get("techniques") or []
+        if tids:
+            chips = " ".join(
+                f'<a href="techniques/{html.escape(tid)}.html">{html.escape(tid)}</a>'
+                for tid in tids
+            )
+            status = f'<p class="meta">mapped · {html.escape(t.get("field") or "")}</p><p>{chips}</p>'
+        else:
+            status = f'<p class="meta">recorded, not mapped · {html.escape(t.get("field") or "")}</p>'
+        speakers = ", ".join(t.get("speakers") or [])
+        body_note = t.get("gap") or t.get("note") or ""
+        talk_cards.append(
+            f'<div class="card"><p class="stage">{html.escape(t.get("event") or "")}</p>'
+            f'<h3><a href="{html.escape(t.get("url") or "#")}">{html.escape(t.get("title") or "")}</a></h3>'
+            f'<p class="muted">{html.escape(speakers)}</p>'
+            f'{status}'
+            f'<p>{html.escape(body_note)}</p></div>'
+        )
+    talks_body = f"""
+    <h1>Conference talks</h1>
+    <p class="lede">Supply-chain and AI talks from conferences we have walked.
+    These are not attack stories. A technique link means the abstract describes that
+    technique. “Recorded, not mapped” means the talk is in the field but no OSC&amp;R
+    ID fits — a wrong mapping is worse than a gap.</p>
+    {''.join(talk_cards) or '<p class="muted">No talks yet.</p>'}
+    """
+    write(os.path.join(dest, "talks.html"), page("Talks", talks_body, "", "OSC&amp;R / Talks"))
 
     unused_n = sum(1 for tid in techs if usage[tid] == 0)
     doc_blocks = []

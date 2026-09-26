@@ -115,5 +115,5 @@ sources:
   url: https://defcon.org/
   kind: conference
   track: false
-  note: Same model — origin material only. DEF CON 34 included LiteLLM security research (presented before
-    publication).
+  note: Same model — origin material only. Per-talk list is content/portal/talks.yaml. DEF CON 34
+    included LiteLLM security research (presented before publication).

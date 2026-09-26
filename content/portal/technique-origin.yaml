@@ -90,9 +90,11 @@ techniques:
     summary: Advertise malicious artifact
     tactic: Resource Development
     kind: article
-    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident
-      report.
+    note: 'Inherited article citation; conference: DEF CON 34 “Hacking the Hackers who Hack Hackers”
+      (Morag) — FirewallFalcon is promoted on Telegram as a legitimate open-source VPN manager and
+      installs backdoors. Forum-style advertisement of a malicious tool, not a registry upload.'
     sources:
+    - https://defcon.org/html/defcon-34/dc-34-speakers.html#content_66596
     - https://www.bleepingcomputer.com/news/security/malicious-lolip0p-pypi-packages-install-info-stealing-malware/
   T0111:
     summary: Malicious code contribution to an open-source repository
@@ -138,7 +140,7 @@ techniques:
     sources:
     - https://blog.securityinnovation.com/repo-jacking-exploiting-the-dependency-supply-chain
     - https://github.blog/2018-04-18-new-tools-for-open-source-maintainers/#popular-repository-namespace-retirement
-    - https://defcon.org/html/defcon-34/dc-34-speakers.html
+    - https://defcon.org/html/defcon-34/dc-34-speakers.html#content_66645
   T0116:
     summary: Shadow IT
     tactic: Initial Access
@@ -480,7 +482,8 @@ techniques:
     sources:
     - https://blog.aquasec.com/can-you-trust-your-vscode-extensions
     - https://www.blackhat.com/us-26/briefings/schedule/index.html
-    - https://defcon.org/html/defcon-34/dc-34-speakers.html
+    - https://defcon.org/html/defcon-34/dc-34-speakers.html#content_66645
+    - https://defcon.org/html/defcon-34/dc-34-speakers.html#content_66588
   T0155:
     summary: Cloud workload
     tactic: Execution
@@ -812,9 +815,11 @@ techniques:
     summary: Use code from untrusted source
     tactic: Initial Access
     kind: article
-    note: Cited from a security article or vendor blog in the original YAML; not a first-party incident
-      report.
+    note: 'Inherited article citation; conference: DEF CON 34 “Hacking the Hackers who Hack Hackers”
+      (Morag) — operators install FirewallFalcon from GitHub/Telegram, outside a vetted registry,
+      and it ships a backdoor, a rogue TLS root, and DNS hijack.'
     sources:
+    - https://defcon.org/html/defcon-34/dc-34-speakers.html#content_66596
     - https://www.thirdpartytrust.com/blog/what-is-shadow-it-digital-supply-chain/
     - https://www.bleepingcomputer.com/news/security/new-xcodespy-malware-targets-ios-devs-in-supply-chain-attack/
   T0198:
@@ -894,7 +899,7 @@ techniques:
     sources:
     - https://owasp.org/www-project-top-10-ci-cd-security-risks/
     - https://www.w3.org/TR/SRI/
-    - https://defcon.org/html/defcon-34/dc-34-speakers.html
+    - https://defcon.org/html/defcon-34/dc-34-speakers.html#content_66588
   T0208:
     summary: Compromise code-signing identity
     tactic: Defense Evasion
@@ -915,22 +920,26 @@ techniques:
       Interest: Exploiting the ATM Supply Chain” extend registry-origin attacks to OCI and hardware.'
     sources:
     - https://github.com/coder/coder/security/advisories/GHSA-vx42-ghc9-gw65
-    - https://defcon.org/html/defcon-34/dc-34-speakers.html
+    - https://defcon.org/html/defcon-34/dc-34-speakers.html#content_66615
+    - https://defcon.org/html/defcon-34/dc-34-speakers.html#content_66627
   T0210:
     summary: Poison AI coding-agent config or workspace
     tactic: Persistence
     kind: incident
-    note: 'Hades, Claude Code hooks; DEF CON 34: “The Sandbox is a Suggestion: Deconstructing AI Agent
-      Sandboxes”, “No Prompt Required: Pre-Task RCE in Google Gemini CLI”, “Hacking Your Life with AI
-      Can Get You Hacked: How AI Orchestration Platforms Ship RCE by Design”, “Wrestling with a Python:
-      Escaping Copilot Studio’s AI-Guarded Sandbox” — the agentic-security track is now a primary source
-      for this class.'
+    note: 'Hades, Claude Code hooks; DEF CON 34: “The Sandbox is a Suggestion”, “No Prompt Required:
+      Pre-Task RCE in Google Gemini CLI”, “Hacking Your Life with AI”, “Wrestling with a Python”,
+      and “Your WAF Blocked Us” (Sternberg/Poran/Bobrov) — WAF logs and Sentry traces poison the
+      agent, Seer infects Cursor, persistence is config poisoning. Catalog: content/portal/talks.yaml.'
     sources:
     - https://www.morphisec.com/blog/when-your-ai-coding-assistant-becomes-the-attack-the-hades-supply-chain-campaign/
     - https://cloud.google.com/blog/topics/threat-intelligence/from-prompting-to-autonomy-the-evolution-of-adversarial-ai
     - https://cloud.google.com/security/resources/ai-risk-and-resilience-2026
     - https://www.blackhat.com/us-26/briefings/schedule/index.html
-    - https://defcon.org/html/defcon-34/dc-34-speakers.html
+    - https://defcon.org/html/defcon-34/dc-34-speakers.html#content_66668
+    - https://defcon.org/html/defcon-34/dc-34-speakers.html#content_66604
+    - https://defcon.org/html/defcon-34/dc-34-speakers.html#content_66656
+    - https://defcon.org/html/defcon-34/dc-34-speakers.html#content_66644
+    - https://defcon.org/html/defcon-34/dc-34-speakers.html#content_66642
   T0211:
     summary: Abuse registry-adjacent builders as remote execution
     tactic: Execution
